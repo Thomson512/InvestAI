@@ -45,3 +45,48 @@ Survivorship bias vznikne, když z historie vyhodíš jména, která později do
 - **Stejný `universe_hash` musí sedět na dataset i na shadow.** Dataset builder si hash uloží. Když v1 potichu přepíšeš, hash se buď rozjede, nebo (hůř) zůstane a ty porovnáváš jinou historii pod stejným otiskem.
 - **Index se mění dopředu, ne dozadu.** S&P 500 v roce 2027 nebude stejný jako dnes. To patří do `universe.v2.json` s novým `constructed_at` a novým hashem. Řada v1 zůstane archívem toho, na čem se sbírala první evidence.
 
+## Dataset (IEX, fail-closed)
+
+`scripts/build_dataset.py` stáhne denní bary z Alpaca (IEX) pro celé univerzum + `SPY` (reference pro relativní sílu). 400 sessions zpět, max 100 symbolů na request.
+
+```bash
+# klíče jen z env, nikdy do gitu
+set ALPACA_KEY_ID=...
+set ALPACA_SECRET_KEY=...
+python scripts/build_dataset.py
+```
+
+Výstup `data/dataset.json` (gitignore) obsahuje `generated_at`, `universe_hash`, `source_dataset_sha256`, `latest_session`.
+
+**Fail-closed:** selhání kteréhokoli chunku = konec, částečný soubor se nezapíše. Díra v evidenci by znehodnotila shadow i pozdější live.
+
+**Feed `alpaca_iex`:** IEX je ~3 % konsolidovaného objemu. Likviditní práh kalibruj jen na tomto feedu (`config/liquidity.v1.json`, pole `feed`). Práh ze SIP/Yahoo sem nepatří.
+
+## Signály (point-in-time)
+
+`scripts/evaluate_signals.py` rozhodne `BUY_CANDIDATE` / `REJECT` podle `config/strategy.v1.json`.
+
+Funkce dostane index dne v řadě SPY a smí vidět **jen bary s datem <= tento den**. Žádné `bars[index+1:]`, žádné rolling okno na celé sérii dopředu. Look-ahead by znehodnotil celou evidenci.
+
+```bash
+python scripts/evaluate_signals.py
+```
+
+Filtry: close > SMA150, close nad 30denním high (předchozích 30 seancí), RS excess vs SPY za 63 dní >= 10 %. Stop = 2×ATR14, target = 4.5R.
+
+**Tvrdá brána:** market breadth = podíl jmen nad SMA150. Pod `min_market_breadth_pct` (50) neprojde žádný kandidát.
+
+## Forward shadow
+
+`scripts/forward_shadow.py` simuluje virtuální portfolio. **Stejné CZK stropy jako live** z `strategy.v1.json`: risk 500, pozice 8000, max 8 otevřených, max 2 vstupy za seanci. Shares se nepočítají z procent equity — jinak by shadow měřil jiný systém.
+
+Náklady (`config/costs.v1.json`): baseline / conservative / severe (slippage 5 / 10 / 20 bps, FX fee 15 bps). Kurz USD/CZK při vstupu ≠ výstupu (FX drift).
+
+```bash
+python scripts/forward_shadow.py
+```
+
+`data/report.json`: per scénář completed_trades, winners, losers, win_rate_pct, realized_pnl, marked_pnl, max_drawdown_pct, expectancy, profit_factor; per obchod entry/exit, ceny, exit_reason, r_multiple, costs.
+
+**Paper gate:** `promotion_authorized` je true jen při ≥90 dnech **a** ≥100 obchodech. Jinak vždy false.
+

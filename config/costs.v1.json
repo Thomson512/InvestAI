@@ -1,0 +1,35 @@
+{
+  "schema_version": "1.0",
+  "currency": "CZK",
+  "quote_currency": "USD",
+  "paper_gate": {
+    "min_days": 90,
+    "min_trades": 100
+  },
+  "fx": {
+    "pair": "USD/CZK",
+    "base_rate": 21.0,
+    "origin": "2024-01-01",
+    "daily_drift_bps": -2.0,
+    "wobble_amp": 0.0015,
+    "wobble_period_days": 7,
+    "notes": "Deterministický stín USD/CZK. Kurz při vstupu ≠ výstupu. Posilující CZK zhoršuje USD stop-out (typicky z -1.0 R směrem k -1.4 R). Není live FX feed."
+  },
+  "scenarios": {
+    "baseline": {
+      "commission_bps": 0,
+      "slippage_bps": 5,
+      "fx_fee_bps": 15
+    },
+    "conservative": {
+      "commission_bps": 0,
+      "slippage_bps": 10,
+      "fx_fee_bps": 15
+    },
+    "severe": {
+      "commission_bps": 0,
+      "slippage_bps": 20,
+      "fx_fee_bps": 15
+    }
+  }
+}

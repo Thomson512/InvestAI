@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0",
+  "feed": "alpaca_iex",
+  "alpaca_feed": "iex",
+  "timeframe": "1Day",
+  "adjustment": "all",
+  "lookback_sessions": 400,
+  "lookback_calendar_days": 650,
+  "max_symbols_per_request": 100,
+  "min_avg_daily_dollar_volume_iex": null,
+  "notes": "IEX zachycuje ~3 % konsolidovaného objemu. Likviditní práh kalibruj výhradně na IEX, ne na SIP/Yahoo/konsolidovaná data. Null práh = ještě nezkalibrováno."
+}
