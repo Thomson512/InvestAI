@@ -90,3 +90,79 @@ python scripts/forward_shadow.py
 
 **Paper gate:** `promotion_authorized` je true jen při ≥90 dnech **a** ≥100 obchodech. Jinak vždy false.
 
+## Denní shadow workflow
+
+`.github/workflows/daily-shadow.yml` — cron `15 21 * * 1-5` (po US close) + ruční `workflow_dispatch`. Timeout 60 min.
+
+Pořadí: NYSE session gate → `build_dataset` → `evaluate_signals` → `forward_shadow`. Evidence jde na větev `runtime/evidence`, ne do `main`.
+
+O víkendu a NYSE svátku je **no-op**: dataset se nestahuje ani nepřepisuje. Job summary začíná `SHADOW: <N> trades, <M> open, PnL <X> CZK`.
+
+Workflow má jen Alpaca market-data secrets (`ALPACA_KEY_ID`, `ALPACA_SECRET_KEY`). Žádný broker, žádné T212 credentials.
+
+Tři měsíce jen sbírat. Neobchodovat.
+
+## Control plane (Supabase)
+
+Schéma `trading` v `supabase/migrations/0001_control_plane.sql`. Kill switch default **false**. RLS zapnuté, žádné policy — čte/píše jen `service_role`.
+
+`can_trade()` hlídá jen **vstupy**, vždy fail-closed. Chybějící data = `allowed=false`. Důvody v pořadí: `KILL_SWITCH_OFF`, `MISSING_RISK_LIMITS`, `NO_PNL_RECORD_TODAY`, `INVALID_OPENING_EQUITY`, `DAILY_LOSS_LIMIT`, `MAX_DRAWDOWN`, `HEARTBEAT_STALE`, `UNRESOLVED_FENCE`.
+
+`can_close_position()` ignoruje kill switch i denní ztrátu a vrací vždy `true`. Jinak by vypnutí zamklo výstup z otevřených pozic.
+
+### Jak aplikovat
+
+1. Supabase → SQL Editor.
+2. Vlož **celý obsah** `supabase/migrations/0001_control_plane.sql` z tohoto repa. Ne vlastní přepis — databáze by se rozešla s migrací.
+3. Run.
+4. Stejně spusť `supabase/verify/0001_control_plane.sql`. Končí `ROLLBACK`, data neponechá. Když nějaký `RAISE EXCEPTION` spadne, migrace nesedí.
+
+Po migraci je `trading_enabled = false`. Limity a dnešní `daily_pnl` se musí vložit explicitně, jinak `can_trade()` zůstane zavřené.
+
+## Broker snapshot (jen čtení)
+
+`scripts/broker_snapshot.py` čte T212 **demo** GET-only. Base URL je natvrdo `https://demo.trading212.com`. Když `T212_ENVIRONMENT != demo`, `RuntimeError` **před** HTTP.
+
+```powershell
+$env:T212_ENVIRONMENT="demo"
+$env:T212_API_KEY="..."
+python scripts/broker_snapshot.py
+```
+
+Výstup `data/snapshot.json`: `account_total_value`, `available_to_trade`, `positions`, `active_orders`, `fetched_at`.
+
+`global_blockers(snapshot)` — pozice je chráněná jen aktivním SELL typu `STOP` / `STOP_LIMIT`. Nechráněná pozice nad `smoke_exemption_czk` (250) → `unprotected_position:{ticker}`. Jedna stačí k zastavení všech nových vstupů.
+
+Klíč nikdy do logu. Žádný POST/PUT/DELETE.
+
+## Durable fence
+
+`scripts/fence.py` brání duplicitnímu odeslání. T212 nemá `clientOrderId`; timeout u market příkazu neříká, jestli dorazil. Retry = riziko dvojité pozice.
+
+`fence_key = {session_date}:{symbol}:{param_hash}`
+
+1. INSERT `PENDING` do `trading.trade_fences` **před** POSTem. Konflikt PK → `SKIP`, broker se nevolá.
+2. Jediný send, timeout 15 s, **žádný retry**.
+3. Timeout / 5xx → `UNCERTAIN`, nenulový exit, zastavit. Řeší člověk.
+4. Úspěch → `SENT`, readback → `CONFIRMED`.
+5. `NEVER_SENT` jen když zároveň chybí artefakt odeslání **a** broker potvrdí, že se pozice ani hotovost nezměnily.
+
+Fence žije v databázi, ne v souboru na runneru.
+
+## Submit order (jeden symbol, demo)
+
+`scripts/submit_order.py` — market buy + ochranný SELL STOP. Default `--dry-run=true` (žádný POST). Ostrý běh: `--dry-run=false`.
+
+Guardy **před** HTTP: `T212_ENVIRONMENT=demo`, `ENABLE_LIVE_EXECUTION=false`. Pak `can_trade()`, `global_blockers()`, fence, jeden POST buy, readback, jeden POST stop, readback, fence `CONFIRMED`.
+
+Když stop selže: `CRITICAL`, přesný návod na ruční STOP, fence `UNCERTAIN`, nenulový exit, **žádný retry**.
+
+```powershell
+$env:T212_ENVIRONMENT="demo"
+$env:ENABLE_LIVE_EXECUTION="false"
+python scripts/submit_order.py --symbol AAPL --quantity 1 --stop-price 180 --session-date 2026-09-07
+python scripts/submit_order.py --symbol AAPL --quantity 1 --stop-price 180 --session-date 2026-09-07 --dry-run=false
+```
+
+Jeden symbol na běh. První ostrý běh ručně, malá částka, ověř v T212 app.
+

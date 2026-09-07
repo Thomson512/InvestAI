@@ -5,7 +5,8 @@ description = "Automatizovaný obchodní systém — zafixovaná strategie"
 requires-python = ">=3.12"
 
 [project.optional-dependencies]
-test = ["pytest>=8.0"]
+test = ["pytest>=8.0", "tzdata"]
+shadow = ["pandas-market-calendars>=4.0", "tzdata"]
 
 [tool.pytest.ini_options]
 pythonpath = ["."]

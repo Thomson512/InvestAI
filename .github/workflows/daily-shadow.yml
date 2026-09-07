@@ -1,0 +1,87 @@
+name: daily-shadow
+
+on:
+  schedule:
+    - cron: "15 21 * * 1-5"
+  workflow_dispatch:
+
+concurrency:
+  group: daily-shadow
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  shadow:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install session-gate dependency
+        run: pip install "pandas-market-calendars>=4.0"
+
+      - name: NYSE session gate
+        id: gate
+        run: python scripts/session_gate.py
+
+      - name: No-op summary (NYSE closed)
+        if: steps.gate.outputs.open != 'true'
+        run: python scripts/shadow_summary.py --noop --reason "${{ steps.gate.outputs.reason }}"
+
+      # Market data only. Do not add T212 / broker credentials to this job.
+      - name: Build dataset
+        if: steps.gate.outputs.open == 'true'
+        env:
+          ALPACA_KEY_ID: ${{ secrets.ALPACA_KEY_ID }}
+          ALPACA_SECRET_KEY: ${{ secrets.ALPACA_SECRET_KEY }}
+        run: python scripts/build_dataset.py
+
+      - name: Evaluate signals
+        if: steps.gate.outputs.open == 'true'
+        run: python scripts/evaluate_signals.py
+
+      - name: Forward shadow
+        if: steps.gate.outputs.open == 'true'
+        run: python scripts/forward_shadow.py
+
+      - name: Job summary
+        if: steps.gate.outputs.open == 'true'
+        run: python scripts/shadow_summary.py
+
+      - name: Publish evidence to runtime/evidence
+        if: steps.gate.outputs.open == 'true'
+        run: |
+          set -euo pipefail
+          SESSION=$(python -c "import json; print(json.load(open('data/report.json'))['last_session'])")
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git fetch origin runtime/evidence:refs/remotes/origin/runtime/evidence || true
+          WORK="${RUNNER_TEMP}/investai-evidence"
+          rm -rf "$WORK"
+          if git rev-parse --verify origin/runtime/evidence >/dev/null 2>&1; then
+            git worktree add "$WORK" origin/runtime/evidence
+          else
+            git worktree add --detach "$WORK"
+            git -C "$WORK" checkout --orphan runtime/evidence
+            git -C "$WORK" rm -rf . >/dev/null 2>&1 || true
+          fi
+          mkdir -p "$WORK/evidence/latest" "$WORK/evidence/sessions/${SESSION}"
+          cp data/dataset.json data/signals.json data/report.json "$WORK/evidence/latest/"
+          cp data/dataset.json data/signals.json data/report.json "$WORK/evidence/sessions/${SESSION}/"
+          git -C "$WORK" add evidence
+          if git -C "$WORK" diff --cached --quiet; then
+            echo "No evidence changes"
+          else
+            git -C "$WORK" commit -m "shadow evidence ${SESSION}"
+            git -C "$WORK" push origin HEAD:runtime/evidence
+          fi
