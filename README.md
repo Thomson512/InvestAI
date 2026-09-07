@@ -188,6 +188,15 @@ Bez tohoto běhu `can_trade()` vrátí `NO_PNL_RECORD_TODAY` nebo `HEARTBEAT_STA
 
 Výstup z pozice jde přes `can_close_position()`, **nikdy** přes `can_trade()`. Kill switch vstupy vypne, výstupy ne.
 
+## Protective stop guard
+
+`.github/workflows/protective-stop-guard.yml` — jen `workflow_dispatch`. Vstupy: `symbol` (povinný), `dry_run` default **true**.
+
+Když pozice už má SELL STOP → no-op. Jinak stop z ATR (`strategy.v1`) nebo fallback `config/protective_stop.v1.json`. Dry-run vypíše plán, žádný POST. `dry_run=false`: fence (`STOP:` v klíči) → jeden POST → readback. Timeout/5xx → `UNCERTAIN`, nenulový exit, žádný retry.
+
+Buyer při `GLOBAL_BLOCKER:unprotected_position:…` přidá druhý řádek:  
+`FIX: gh workflow run protective-stop-guard.yml -f symbol=<X>`
+
 ## Externí dispatcher
 
 GitHub `schedule:` nespolehlivě vynechává běhy. Zdroj v repu: `supabase/functions/dispatch-loop/index.ts`.

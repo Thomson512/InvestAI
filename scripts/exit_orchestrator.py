@@ -304,9 +304,10 @@ def run_exit(
 
     extra: list[str] = []
     if unprotected:
-        extra.append(
-            "FIX: gh workflow run protective-stop-guard.yml -f symbol=" + ",".join(unprotected)
-        )
+        extra = [
+            f"FIX: gh workflow run protective-stop-guard.yml -f symbol={name}"
+            for name in unprotected
+        ]
         outcome = f"UNPROTECTED {' '.join(unprotected)}"
     elif drift["broker_only"] or drift["evidence_only"]:
         outcome = (

@@ -1,0 +1,5 @@
+{
+  "schema_version": "1.0",
+  "fallback_stop_pct": 4.0,
+  "notes": "Osiřelá pozice nemá entry. Když chybí bary pro ATR, stop = last * (1 - fallback_stop_pct/100). ATR násobek a perioda jdou ze strategy.v1."
+}

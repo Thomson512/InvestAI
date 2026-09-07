@@ -1,0 +1,77 @@
+name: protective-stop-guard
+
+on:
+  workflow_dispatch:
+    inputs:
+      symbol:
+        description: "Jeden ticker (např. AAPL)"
+        required: true
+        type: string
+      dry_run:
+        description: "true = jen plán, žádný POST"
+        required: false
+        type: boolean
+        default: true
+
+concurrency:
+  group: protective-stop-guard-${{ inputs.symbol }}
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+env:
+  T212_ENVIRONMENT: demo
+  ENABLE_LIVE_EXECUTION: "false"
+
+jobs:
+  guard:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install tzdata
+        run: pip install tzdata
+
+      - name: Reject batch symbols
+        run: |
+          set -euo pipefail
+          SYM="${{ inputs.symbol }}"
+          case "$SYM" in
+            *","*|" "*|*[[:space:]]*) echo "Jeden symbol na běh." >&2; exit 1 ;;
+          esac
+
+      - name: Load dataset for ATR
+        run: |
+          set -euo pipefail
+          mkdir -p data
+          git fetch origin runtime/evidence:refs/remotes/origin/runtime/evidence || true
+          if git cat-file -e origin/runtime/evidence:evidence/latest/dataset.json 2>/dev/null; then
+            git show origin/runtime/evidence:evidence/latest/dataset.json > data/dataset.json
+          fi
+
+      - name: Broker snapshot
+        env:
+          T212_API_KEY: ${{ secrets.T212_API_KEY }}
+        run: python scripts/broker_snapshot.py --output data/snapshot.json
+
+      - name: Protective stop
+        env:
+          T212_API_KEY: ${{ secrets.T212_API_KEY }}
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+        run: |
+          python scripts/protective_stop_guard.py \
+            --symbol "${{ inputs.symbol }}" \
+            --dry-run ${{ inputs.dry_run }} \
+            --snapshot data/snapshot.json \
+            --dataset data/dataset.json
