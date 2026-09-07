@@ -10,8 +10,13 @@ import threading
 import urllib.error
 import urllib.request
 from dataclasses import dataclass
+from pathlib import Path
 from typing import Callable, Protocol
 from urllib.parse import quote
+
+_REPO_ROOT = Path(__file__).resolve().parent.parent
+if str(_REPO_ROOT) not in sys.path:
+    sys.path.insert(0, str(_REPO_ROOT))
 
 from scripts.param_hash import compute_param_hash
 
@@ -98,15 +103,16 @@ class RestFenceStore:
         self._key = service_key
         self._http_open = http_open or urllib.request.urlopen
 
-    def _headers(self) -> dict[str, str]:
-        return {
+    def _headers(self, *, prefer: str | None = None) -> dict[str, str]:
+        # public.trade_fences (0003). Profile trading PostgREST odmítne 406.
+        headers = {
             "apikey": self._key,
             "Authorization": f"Bearer {self._key}",
-            "Accept-Profile": "trading",
-            "Content-Profile": "trading",
             "Content-Type": "application/json",
-            "Prefer": "return=representation",
         }
+        if prefer:
+            headers["Prefer"] = prefer
+        return headers
 
     def _open(self, request: urllib.request.Request, timeout: float = 15) -> object:
         return self._http_open(request, timeout=timeout)
@@ -137,17 +143,20 @@ class RestFenceStore:
             }
         ).encode("utf-8")
         request = urllib.request.Request(
-            self._url, data=payload, headers=self._headers(), method="POST"
+            self._url,
+            data=payload,
+            headers=self._headers(prefer="return=minimal"),
+            method="POST",
         )
         try:
             with self._open(request) as response:
                 response.read()
             return True
         except urllib.error.HTTPError as exc:
+            body = exc.read().decode("utf-8", errors="replace")[:240]
             if exc.code == 409:
-                exc.read()
                 return False
-            raise FenceError(f"INSERT fence selhal HTTP {exc.code}") from None
+            raise FenceError(f"INSERT fence selhal HTTP {exc.code}: {body}") from None
 
     def set_state(self, fence_key: str, state: str, order_id: str | None = None) -> None:
         body: dict[str, object] = {"state": state}
@@ -156,7 +165,7 @@ class RestFenceStore:
         request = urllib.request.Request(
             f"{self._url}?fence_key=eq.{quote(fence_key)}",
             data=json.dumps(body).encode("utf-8"),
-            headers=self._headers(),
+            headers=self._headers(prefer="return=minimal"),
             method="PATCH",
         )
         with self._open(request) as response:
@@ -233,11 +242,12 @@ def run_fenced_send(
     except Exception as exc:
         store.set_state(fence_key, STATE_UNCERTAIN)
         # Po zahájení send je výsledek neznámý. Žádný retry. Člověk.
+        detail = " ".join(str(exc).split())[:200]
         return FenceResult(
             outcome=STATE_UNCERTAIN,
             fence_key=fence_key,
             exit_code=EXIT_UNCERTAIN,
-            reason="send_uncertain",
+            reason=f"send_uncertain:{detail}" if detail else "send_uncertain",
         )
 
     order_id = None if sent is None else sent.get("order_id") or sent.get("id")

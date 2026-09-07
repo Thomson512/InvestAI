@@ -1,0 +1,109 @@
+name: buyer
+
+on:
+  schedule:
+    - cron: "*/10 13-20 * * 1-5"
+  workflow_dispatch:
+
+concurrency:
+  group: buyer
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+env:
+  T212_ENVIRONMENT: demo
+  ENABLE_LIVE_EXECUTION: "false"
+
+jobs:
+  buy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install "pandas-market-calendars>=4.0" tzdata
+
+      - name: NYSE session gate
+        id: gate
+        run: python scripts/session_gate.py --mode buyer
+
+      - name: Load shortlist and buyer history
+        run: |
+          set -euo pipefail
+          mkdir -p data
+          git fetch origin runtime/evidence:refs/remotes/origin/runtime/evidence || true
+          if git cat-file -e origin/runtime/evidence:evidence/buyer/history.jsonl 2>/dev/null; then
+            git show origin/runtime/evidence:evidence/buyer/history.jsonl > data/buyer_history.jsonl
+          fi
+          if [ "${{ steps.gate.outputs.open }}" = "true" ] && git cat-file -e origin/runtime/evidence:evidence/latest/signals.json 2>/dev/null; then
+            git show origin/runtime/evidence:evidence/latest/signals.json > data/signals.json
+          fi
+
+      - name: Outcome MARKET_CLOSED
+        if: steps.gate.outputs.open != 'true'
+        run: python scripts/buyer_summary.py --outcome MARKET_CLOSED --session "${{ steps.gate.outputs.session }}" --prepare-only
+
+      - name: Broker snapshot
+        id: snapshot
+        if: steps.gate.outputs.open == 'true'
+        env:
+          T212_API_KEY: ${{ secrets.T212_API_KEY }}
+        run: python scripts/broker_snapshot.py --output data/snapshot.json
+
+      - name: Freshness, preselect, quotes, FX, finalize, fence, submit
+        id: buyer
+        if: steps.gate.outputs.open == 'true'
+        env:
+          T212_API_KEY: ${{ secrets.T212_API_KEY }}
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+          ALPACA_KEY_ID: ${{ secrets.ALPACA_KEY_ID }}
+          ALPACA_SECRET_KEY: ${{ secrets.ALPACA_SECRET_KEY }}
+        run: python scripts/buyer.py --session "${{ steps.gate.outputs.session }}" --dry-run false
+
+      - name: Publish summary
+        if: always() && hashFiles('data/buyer_evidence.json') != ''
+        run: python scripts/buyer_summary.py
+
+      - name: Publish evidence to runtime/evidence
+        if: always() && hashFiles('data/buyer_evidence.json') != ''
+        run: |
+          set -euo pipefail
+          SESSION="${{ steps.gate.outputs.session }}"
+          STAMP=$(python -c "import json; print(json.load(open('data/buyer_evidence.json'))['generated_at'].replace(':',''))")
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git fetch origin runtime/evidence:refs/remotes/origin/runtime/evidence || true
+          WORK="${RUNNER_TEMP}/investai-evidence"
+          rm -rf "$WORK"
+          if git rev-parse --verify origin/runtime/evidence >/dev/null 2>&1; then
+            git worktree add "$WORK" origin/runtime/evidence
+          else
+            git worktree add --detach "$WORK"
+            git -C "$WORK" checkout --orphan runtime/evidence
+            git -C "$WORK" rm -rf . >/dev/null 2>&1 || true
+          fi
+          mkdir -p "$WORK/evidence/buyer" "$WORK/evidence/buyer/sessions/${SESSION}"
+          cp data/buyer_evidence.json "$WORK/evidence/buyer/latest.json"
+          cp data/buyer_evidence.json "$WORK/evidence/buyer/sessions/${SESSION}/${STAMP}.json"
+          if [ -f data/buyer_history.jsonl ]; then
+            cp data/buyer_history.jsonl "$WORK/evidence/buyer/history.jsonl"
+          fi
+          git -C "$WORK" add evidence/buyer
+          if git -C "$WORK" diff --cached --quiet; then
+            echo "No buyer evidence changes"
+          else
+            git -C "$WORK" commit -m "buyer ${SESSION} $(python -c "import json; print(json.load(open('data/buyer_evidence.json'))['outcome'])")"
+            git -C "$WORK" push origin HEAD:runtime/evidence
+          fi

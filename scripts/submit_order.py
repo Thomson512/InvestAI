@@ -12,6 +12,10 @@ from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Callable
 
+_REPO_ROOT = Path(__file__).resolve().parent.parent
+if str(_REPO_ROOT) not in sys.path:
+    sys.path.insert(0, str(_REPO_ROOT))
+
 from scripts.broker_snapshot import (
     DEMO_BASE_URL,
     ORDERS_PATH,
@@ -143,8 +147,6 @@ def default_can_trade(env: dict[str, str] | None = None) -> tuple[bool, str]:
     headers = {
         "apikey": key,
         "Authorization": f"Bearer {key}",
-        "Accept-Profile": "trading",
-        "Content-Profile": "trading",
         "Content-Type": "application/json",
     }
     request = urllib.request.Request(
@@ -153,6 +155,9 @@ def default_can_trade(env: dict[str, str] | None = None) -> tuple[bool, str]:
     try:
         with urllib.request.urlopen(request, timeout=15) as response:
             payload = json.loads(response.read().decode("utf-8"))
+    except urllib.error.HTTPError as exc:
+        exc.read()
+        return False, f"CONTROL_PLANE_UNREACHABLE:{exc.code}"
     except Exception:
         return False, "CONTROL_PLANE_UNREACHABLE"
     row = payload[0] if isinstance(payload, list) and payload else payload
@@ -430,7 +435,8 @@ def main(argv: list[str] | None = None) -> int:
         print(json.dumps(result.plan["stop"]["body"], indent=2))
     if result.critical:
         print(result.critical, file=sys.stderr)
-    print(f"OUTCOME: {result.outcome} reason={result.reason}")
+    extra = f" fence={result.fence_key}" if result.fence_key else ""
+    print(f"OUTCOME: {result.outcome} reason={result.reason}{extra}")
     return result.exit_code
 
 

@@ -10,6 +10,10 @@ from dataclasses import dataclass, field
 from datetime import date, datetime, timezone
 from pathlib import Path
 
+_REPO_ROOT = Path(__file__).resolve().parent.parent
+if str(_REPO_ROOT) not in sys.path:
+    sys.path.insert(0, str(_REPO_ROOT))
+
 from scripts.evaluate_signals import DECISION_BUY, bar_date, evaluate_signals
 from scripts.param_hash import compute_param_hash
 

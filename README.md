@@ -116,6 +116,7 @@ Schéma `trading` v `supabase/migrations/0001_control_plane.sql`. Kill switch de
 2. Vlož **celý obsah** `supabase/migrations/0001_control_plane.sql` z tohoto repa. Ne vlastní přepis — databáze by se rozešla s migrací.
 3. Run.
 4. Stejně spusť `supabase/verify/0001_control_plane.sql`. Končí `ROLLBACK`, data neponechá. Když nějaký `RAISE EXCEPTION` spadne, migrace nesedí.
+5. Pak spusť `supabase/migrations/0002_public_rpc.sql` — bez toho PostgREST `can_trade` na `/rest/v1/rpc/can_trade` nevidí (vystavuje jen `public`).
 
 Po migraci je `trading_enabled = false`. Limity a dnešní `daily_pnl` se musí vložit explicitně, jinak `can_trade()` zůstane zavřené.
 
@@ -165,4 +166,14 @@ python scripts/submit_order.py --symbol AAPL --quantity 1 --stop-price 180 --ses
 ```
 
 Jeden symbol na běh. První ostrý běh ručně, malá částka, ověř v T212 app.
+
+## Buyer workflow
+
+`.github/workflows/buyer.yml` — cron `*/10 13-20 * * 1-5` (UTC) + `workflow_dispatch`. Env natvrdo `T212_ENVIRONMENT=demo`, `ENABLE_LIVE_EXECUTION=false`.
+
+Řetěz: NYSE regular hours → snapshot → freshness shortlistu (`config/buyer.v1.json`) → `global_blockers` před kandidáty → IEX kotace + spread → ČNB USD/CZK → quantity/stop/target → fence → jeden demo submit + protective stop.
+
+První řádek job summary je přesně `OUTCOME: <hodnota>` (`MARKET_CLOSED`, `NO_CANDIDATES`, `GLOBAL_BLOCKER:…`, `FRESHNESS_FAIL`, `SPREAD_REJECTED:<symbol>`, `FENCE_EXISTS:<symbol>`, `ORDER_SUBMITTED:<order_id>`). Stejné pole `outcome` je v `runtime/evidence` (`evidence/buyer/`).
+
+24 h v řadě jiný výsledek než `ORDER_SUBMITTED` / `NO_CANDIDATES` / `MARKET_CLOSED` → `::warning::`. Job neselže.
 

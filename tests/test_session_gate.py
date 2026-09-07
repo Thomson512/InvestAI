@@ -4,6 +4,7 @@ from datetime import date, datetime, timezone
 from pathlib import Path
 
 from scripts.session_gate import (
+    evaluate_buyer_gate,
     evaluate_gate,
     nyse_session_date,
     shadow_summary_line,
@@ -69,3 +70,21 @@ def test_session_date_uses_new_york() -> None:
     # 2026-09-08 02:30 UTC = still 2026-09-07 in New York
     now = datetime(2026, 9, 8, 2, 30, tzinfo=timezone.utc)
     assert nyse_session_date(now) == date(2026, 9, 7)
+
+
+def test_buyer_gate_outside_hours_is_closed() -> None:
+    now = datetime(2026, 9, 8, 12, 0, tzinfo=timezone.utc)  # 08:00 ET
+    start = datetime(2026, 9, 8, 13, 30, tzinfo=timezone.utc)
+    end = datetime(2026, 9, 8, 20, 0, tzinfo=timezone.utc)
+    result = evaluate_buyer_gate(now, is_open=lambda day: True, window=(start, end))
+    assert result["open"] is False
+    assert result["reason"] == "outside_hours"
+
+
+def test_buyer_gate_regular_hours_is_open() -> None:
+    now = datetime(2026, 9, 8, 15, 0, tzinfo=timezone.utc)  # 11:00 ET
+    start = datetime(2026, 9, 8, 13, 30, tzinfo=timezone.utc)
+    end = datetime(2026, 9, 8, 20, 0, tzinfo=timezone.utc)
+    result = evaluate_buyer_gate(now, is_open=lambda day: True, window=(start, end))
+    assert result["open"] is True
+    assert result["reason"] is None

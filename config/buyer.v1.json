@@ -1,0 +1,11 @@
+{
+  "schema_version": "1.0",
+  "freshness_max_age_hours": 72,
+  "max_spread_bps": 20,
+  "quote_feed": "iex",
+  "fx_source": "cnb",
+  "fx_url": "https://www.cnb.cz/cs/financni-trhy/devizovy-trh/kurzy-devizoveho-trhu/kurzy-devizoveho-trhu/denni_kurz.txt",
+  "shortlist_path": "data/signals.json",
+  "snapshot_path": "data/snapshot.json",
+  "notes": "Shortlist z poslední shadow seance. 72 h pokryje pátek close → pondělní regular hours. Spread filtr jen na IEX kotaci."
+}

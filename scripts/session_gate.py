@@ -10,7 +10,7 @@ from pathlib import Path
 from typing import Callable
 from zoneinfo import ZoneInfo, ZoneInfoNotFoundError
 
-CLOSED_REASONS = ("weekend", "holiday")
+CLOSED_REASONS = ("weekend", "holiday", "outside_hours")
 
 
 class SessionGateError(RuntimeError):
@@ -67,6 +67,47 @@ def evaluate_gate(day: date, *, is_open: Callable[[date], bool] | None = None) -
     }
 
 
+def nyse_regular_window(day: date) -> tuple[datetime, datetime] | None:
+    try:
+        import pandas_market_calendars as mcal
+    except ImportError as exc:
+        raise SessionGateError("Chybí pandas-market-calendars.") from exc
+    calendar = mcal.get_calendar("NYSE")
+    schedule = calendar.schedule(start_date=day.isoformat(), end_date=day.isoformat())
+    if schedule.empty:
+        return None
+    start = schedule.iloc[0]["market_open"].to_pydatetime()
+    end = schedule.iloc[0]["market_close"].to_pydatetime()
+    if start.tzinfo is None:
+        start = start.replace(tzinfo=timezone.utc)
+    if end.tzinfo is None:
+        end = end.replace(tzinfo=timezone.utc)
+    return start, end
+
+
+def evaluate_buyer_gate(
+    now: datetime | None = None,
+    *,
+    is_open: Callable[[date], bool] | None = None,
+    window: tuple[datetime, datetime] | None = None,
+) -> dict:
+    """Kalendář NYSE + regular hours. Mimo seanci = MARKET_CLOSED."""
+    now = now or datetime.now(timezone.utc)
+    if now.tzinfo is None:
+        now = now.replace(tzinfo=timezone.utc)
+    day = nyse_session_date(now)
+    calendar = evaluate_gate(day, is_open=is_open)
+    if not calendar["open"]:
+        return calendar
+    bounds = window if window is not None else nyse_regular_window(day)
+    if bounds is None:
+        return {"open": False, "session": day.isoformat(), "reason": "holiday"}
+    start, end = bounds
+    if now < start or now >= end:
+        return {"open": False, "session": day.isoformat(), "reason": "outside_hours"}
+    return {"open": True, "session": day.isoformat(), "reason": None}
+
+
 def shadow_summary_line(completed_trades: int, open_positions: int, pnl_czk: object) -> str:
     return f"SHADOW: {completed_trades} trades, {open_positions} open, PnL {pnl_czk} CZK"
 
@@ -74,9 +115,14 @@ def shadow_summary_line(completed_trades: int, open_positions: int, pnl_czk: obj
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description="NYSE session gate (no-op mimo seanci).")
     parser.add_argument("--date", type=str, default=None, help="YYYY-MM-DD (default: dnes ET)")
+    parser.add_argument("--mode", choices=("shadow", "buyer"), default="shadow")
     args = parser.parse_args(argv)
-    day = date.fromisoformat(args.date) if args.date else nyse_session_date()
-    result = evaluate_gate(day)
+    if args.mode == "buyer":
+        result = evaluate_buyer_gate()
+        day = date.fromisoformat(result["session"])
+    else:
+        day = date.fromisoformat(args.date) if args.date else nyse_session_date()
+        result = evaluate_gate(day)
     write_github_output(result["open"], day, result["reason"])
     if result["open"]:
         print(f"OPEN {result['session']}")
