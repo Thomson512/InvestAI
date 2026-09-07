@@ -117,6 +117,7 @@ Schéma `trading` v `supabase/migrations/0001_control_plane.sql`. Kill switch de
 3. Run.
 4. Stejně spusť `supabase/verify/0001_control_plane.sql`. Končí `ROLLBACK`, data neponechá. Když nějaký `RAISE EXCEPTION` spadne, migrace nesedí.
 5. Pak spusť `supabase/migrations/0002_public_rpc.sql` — bez toho PostgREST `can_trade` na `/rest/v1/rpc/can_trade` nevidí (vystavuje jen `public`).
+6. `0003_public_trade_fences.sql` a `0004_public_daily_pnl.sql` — view `trade_fences`, `daily_pnl`, `scheduler_heartbeat` pro service_role.
 
 Po migraci je `trading_enabled = false`. Limity a dnešní `daily_pnl` se musí vložit explicitně, jinak `can_trade()` zůstane zavřené.
 
@@ -169,11 +170,32 @@ Jeden symbol na běh. První ostrý běh ručně, malá částka, ověř v T212 
 
 ## Buyer workflow
 
-`.github/workflows/buyer.yml` — cron `*/10 13-20 * * 1-5` (UTC) + `workflow_dispatch`. Env natvrdo `T212_ENVIRONMENT=demo`, `ENABLE_LIVE_EXECUTION=false`.
+`.github/workflows/buyer.yml` — jen `workflow_dispatch`. Nativní GitHub cron je vypnutý (nespolehlivé doručení). Spouští `pg_cron` + `dispatch-loop`. Env natvrdo `T212_ENVIRONMENT=demo`, `ENABLE_LIVE_EXECUTION=false`.
 
 Řetěz: NYSE regular hours → snapshot → freshness shortlistu (`config/buyer.v1.json`) → `global_blockers` před kandidáty → IEX kotace + spread → ČNB USD/CZK → quantity/stop/target → fence → jeden demo submit + protective stop.
 
 První řádek job summary je přesně `OUTCOME: <hodnota>` (`MARKET_CLOSED`, `NO_CANDIDATES`, `GLOBAL_BLOCKER:…`, `FRESHNESS_FAIL`, `SPREAD_REJECTED:<symbol>`, `FENCE_EXISTS:<symbol>`, `ORDER_SUBMITTED:<order_id>`). Stejné pole `outcome` je v `runtime/evidence` (`evidence/buyer/`).
 
 24 h v řadě jiný výsledek než `ORDER_SUBMITTED` / `NO_CANDIDATES` / `MARKET_CLOSED` → `::warning::`. Job neselže.
+
+## Exit orchestrator
+
+`.github/workflows/exit-orchestrator.yml` — jen `workflow_dispatch`, stejný dispatcher jako buyer. Mimo NYSE regular hours **no-op**: první řádek `EXIT: NO-OP MARKET_CLOSED`, `daily_pnl` se nezapisuje.
+
+V seanci: snapshot → každá pozice musí mít aktivní SELL STOP → reconciliace proti evidenci (fence CONFIRMED + buyer book) → UPSERT `trading.daily_pnl` → UPSERT heartbeat `exit-orchestrator`.
+
+Bez tohoto běhu `can_trade()` vrátí `NO_PNL_RECORD_TODAY` nebo `HEARTBEAT_STALE`. To je záměr a musí to být vidět v job summary (`EXIT: …`).
+
+Výstup z pozice jde přes `can_close_position()`, **nikdy** přes `can_trade()`. Kill switch vstupy vypne, výstupy ne.
+
+## Externí dispatcher
+
+GitHub `schedule:` nespolehlivě vynechává běhy. Zdroj v repu: `supabase/functions/dispatch-loop/index.ts`.
+
+1. Deploy funkce: `supabase functions deploy dispatch-loop`.
+2. Secret funkce: `GH_DISPATCH_TOKEN` (PAT / fine-grained, scope **actions:write**). Volitelně `GH_OWNER`, `GH_REPO`, `GH_DISPATCH_REF`.
+3. Vault: `dispatch_loop_url` = `https://<project>.supabase.co/functions/v1/dispatch-loop`, `dispatch_loop_key` = service_role JWT.
+4. SQL Editor: celý `supabase/migrations/0005_dispatch_cron.sql`.
+
+Cron `*/10 13-20 * * 1-5` (UTC) volá `trading.dispatch_workflow('buyer.yml')` a totéž pro `exit-orchestrator.yml`. Funkce zaloguje každý dispatch (workflow, status), token nikdy.
 

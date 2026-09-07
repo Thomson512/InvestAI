@@ -1,11 +1,11 @@
-name: buyer
+name: exit-orchestrator
 
 on:
-  # Nativní schedule vypnutý — doručuje nespolehlivě. Spouští pg_cron + dispatch-loop.
+  # Nativní schedule vypnutý — stejný důvod jako buyer. Spouští pg_cron + dispatch-loop.
   workflow_dispatch:
 
 concurrency:
-  group: buyer
+  group: exit-orchestrator
   cancel-in-progress: false
 
 permissions:
@@ -16,9 +16,9 @@ env:
   ENABLE_LIVE_EXECUTION: "false"
 
 jobs:
-  buy:
+  exit:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 15
     steps:
       - name: Checkout main
         uses: actions/checkout@v4
@@ -37,50 +37,47 @@ jobs:
         id: gate
         run: python scripts/session_gate.py --mode buyer
 
-      - name: Load shortlist and buyer history
+      - name: Load evidence book
         run: |
           set -euo pipefail
           mkdir -p data
           git fetch origin runtime/evidence:refs/remotes/origin/runtime/evidence || true
-          if git cat-file -e origin/runtime/evidence:evidence/buyer/history.jsonl 2>/dev/null; then
-            git show origin/runtime/evidence:evidence/buyer/history.jsonl > data/buyer_history.jsonl
+          if git cat-file -e origin/runtime/evidence:evidence/exit/book.json 2>/dev/null; then
+            git show origin/runtime/evidence:evidence/exit/book.json > data/expected_positions.json
           fi
-          if [ "${{ steps.gate.outputs.open }}" = "true" ] && git cat-file -e origin/runtime/evidence:evidence/latest/signals.json 2>/dev/null; then
-            git show origin/runtime/evidence:evidence/latest/signals.json > data/signals.json
+          if git cat-file -e origin/runtime/evidence:evidence/buyer/latest.json 2>/dev/null; then
+            git show origin/runtime/evidence:evidence/buyer/latest.json > data/buyer_evidence.json
           fi
 
-      - name: Outcome MARKET_CLOSED
+      - name: No-op (NYSE closed)
         if: steps.gate.outputs.open != 'true'
-        run: python scripts/buyer_summary.py --outcome MARKET_CLOSED --session "${{ steps.gate.outputs.session }}" --prepare-only
+        run: python scripts/exit_orchestrator.py --session "${{ steps.gate.outputs.session }}" --noop --reason "${{ steps.gate.outputs.reason }}"
 
       - name: Broker snapshot
-        id: snapshot
         if: steps.gate.outputs.open == 'true'
         env:
           T212_API_KEY: ${{ secrets.T212_API_KEY }}
         run: python scripts/broker_snapshot.py --output data/snapshot.json
 
-      - name: Freshness, preselect, quotes, FX, finalize, fence, submit
-        id: buyer
+      - name: Stops, reconcile, daily_pnl, heartbeat
         if: steps.gate.outputs.open == 'true'
         env:
           T212_API_KEY: ${{ secrets.T212_API_KEY }}
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
-          ALPACA_KEY_ID: ${{ secrets.ALPACA_KEY_ID }}
-          ALPACA_SECRET_KEY: ${{ secrets.ALPACA_SECRET_KEY }}
-        run: python scripts/buyer.py --session "${{ steps.gate.outputs.session }}" --dry-run false
-
-      - name: Publish summary
-        if: always() && hashFiles('data/buyer_evidence.json') != ''
-        run: python scripts/buyer_summary.py
+        run: |
+          python scripts/exit_orchestrator.py \
+            --session "${{ steps.gate.outputs.session }}" \
+            --snapshot data/snapshot.json \
+            --book data/expected_positions.json \
+            --buyer-evidence data/buyer_evidence.json
 
       - name: Publish evidence to runtime/evidence
-        if: always() && hashFiles('data/buyer_evidence.json') != ''
+        if: always() && hashFiles('data/exit_evidence.json') != ''
         run: |
           set -euo pipefail
           SESSION="${{ steps.gate.outputs.session }}"
-          STAMP=$(python -c "import json; print(json.load(open('data/buyer_evidence.json'))['generated_at'].replace(':',''))")
+          STAMP=$(python -c "import json; print(json.load(open('data/exit_evidence.json'))['generated_at'].replace(':',''))")
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git fetch origin runtime/evidence:refs/remotes/origin/runtime/evidence || true
@@ -93,16 +90,13 @@ jobs:
             git -C "$WORK" checkout --orphan runtime/evidence
             git -C "$WORK" rm -rf . >/dev/null 2>&1 || true
           fi
-          mkdir -p "$WORK/evidence/buyer" "$WORK/evidence/buyer/sessions/${SESSION}"
-          cp data/buyer_evidence.json "$WORK/evidence/buyer/latest.json"
-          cp data/buyer_evidence.json "$WORK/evidence/buyer/sessions/${SESSION}/${STAMP}.json"
-          if [ -f data/buyer_history.jsonl ]; then
-            cp data/buyer_history.jsonl "$WORK/evidence/buyer/history.jsonl"
-          fi
-          git -C "$WORK" add evidence/buyer
+          mkdir -p "$WORK/evidence/exit" "$WORK/evidence/exit/sessions/${SESSION}"
+          cp data/exit_evidence.json "$WORK/evidence/exit/latest.json"
+          cp data/exit_evidence.json "$WORK/evidence/exit/sessions/${SESSION}/${STAMP}.json"
+          git -C "$WORK" add evidence/exit
           if git -C "$WORK" diff --cached --quiet; then
-            echo "No buyer evidence changes"
+            echo "No exit evidence changes"
           else
-            git -C "$WORK" commit -m "buyer ${SESSION} $(python -c "import json; print(json.load(open('data/buyer_evidence.json'))['outcome'])")"
+            git -C "$WORK" commit -m "exit ${SESSION}"
             git -C "$WORK" push origin HEAD:runtime/evidence
           fi
