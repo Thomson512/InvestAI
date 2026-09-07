@@ -21,7 +21,7 @@ from scripts.broker_snapshot import (
     ORDERS_PATH,
     auth_headers,
     global_blockers,
-    require_api_key,
+    require_t212_credentials,
     require_demo_environment,
 )
 from scripts.fence import (
@@ -288,7 +288,7 @@ def submit_order(
         )
 
     source = env if env is not None else os.environ
-    headers = auth_headers(require_api_key(source))
+    headers = auth_headers(*require_t212_credentials(source))
     poster = http_post or default_http_post
     getter = http_get
     fence_store = store or store_from_env(source)

@@ -14,7 +14,7 @@ _REPO_ROOT = Path(__file__).resolve().parent.parent
 if str(_REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(_REPO_ROOT))
 
-from scripts.broker_snapshot import is_protective_sell, normalize_ticker
+from scripts.broker_snapshot import is_protective_sell, normalize_ticker, require_t212_credentials
 from scripts.evaluate_signals import atr_wilder
 from scripts.exit_orchestrator import default_can_close_position
 from scripts.fence import (
@@ -43,7 +43,6 @@ from scripts.submit_order import (
     post_once,
     protective_stop_plan,
     readback_order,
-    require_api_key,
     require_submit_guards,
     t212_ticker,
 )
@@ -207,7 +206,7 @@ def run_guard(
 
     digest = f"STOP:{compute_param_hash()}"
     source = env if env is not None else os.environ
-    headers = auth_headers(require_api_key(source))
+    headers = auth_headers(*require_t212_credentials(source))
     poster = http_post or default_http_post
     posts = {"n": 0}
 

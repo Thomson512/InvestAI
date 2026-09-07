@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import argparse
+import base64
 import json
 import os
 import sys
@@ -49,12 +50,28 @@ def require_api_key(env: dict[str, str] | None = None) -> str:
     source = env if env is not None else os.environ
     key = (source.get("T212_API_KEY") or "").strip()
     if not key:
-        raise BrokerSnapshotError("Chybí T212_API_KEY v prostředí.")
+        raise BrokerSnapshotError("Chybí T212_API_KEY (API Key ID) v prostředí.")
     return key
 
 
-def auth_headers(api_key: str) -> dict[str, str]:
-    return {"Authorization": api_key, "Accept": "application/json"}
+def require_api_secret(env: dict[str, str] | None = None) -> str:
+    source = env if env is not None else os.environ
+    secret = (source.get("T212_API_SECRET") or "").strip()
+    if not secret:
+        raise BrokerSnapshotError("Chybí T212_API_SECRET (tajný klíč) v prostředí.")
+    return secret
+
+
+def require_t212_credentials(env: dict[str, str] | None = None) -> tuple[str, str]:
+    return require_api_key(env), require_api_secret(env)
+
+
+def auth_headers(api_key: str, api_secret: str | None = None) -> dict[str, str]:
+    """T212 Basic: base64(API_KEY_ID:API_SECRET). Nikdy nelogovat."""
+    if not api_secret:
+        raise BrokerSnapshotError("Chybí T212_API_SECRET (tajný klíč).")
+    token = base64.b64encode(f"{api_key}:{api_secret}".encode("utf-8")).decode("ascii")
+    return {"Authorization": f"Basic {token}", "Accept": "application/json"}
 
 
 def _safe_url_for_error(url: str) -> str:
@@ -238,9 +255,9 @@ def fetch_snapshot(
     config: dict | None = None,
 ) -> dict:
     require_demo_environment(env)
-    api_key = require_api_key(env)
+    api_key, api_secret = require_t212_credentials(env)
     getter = http_get or default_http_get
-    headers = auth_headers(api_key)
+    headers = auth_headers(api_key, api_secret)
     now = now or datetime.now(timezone.utc)
 
     def pull(path: str) -> object:

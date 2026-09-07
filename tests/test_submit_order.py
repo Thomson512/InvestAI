@@ -15,7 +15,8 @@ from scripts.submit_order import (
 SAFE_ENV = {
     "T212_ENVIRONMENT": "demo",
     "ENABLE_LIVE_EXECUTION": "false",
-    "T212_API_KEY": "secret-key-xyz",
+    "T212_API_KEY": "key-id-xyz",
+    "T212_API_SECRET": "secret-key-xyz",
 }
 
 

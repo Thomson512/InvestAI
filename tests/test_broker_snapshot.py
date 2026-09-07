@@ -9,6 +9,7 @@ import pytest
 from scripts.broker_snapshot import (
     DEMO_BASE_URL,
     BrokerSnapshotError,
+    auth_headers,
     fetch_snapshot,
     get_with_retry,
     global_blockers,
@@ -16,7 +17,11 @@ from scripts.broker_snapshot import (
 
 
 FIXED = datetime(2026, 9, 7, 20, 40, tzinfo=timezone.utc)
-DEMO_ENV = {"T212_ENVIRONMENT": "demo", "T212_API_KEY": "secret-key-xyz"}
+DEMO_ENV = {
+    "T212_ENVIRONMENT": "demo",
+    "T212_API_KEY": "key-id-xyz",
+    "T212_API_SECRET": "secret-key-xyz",
+}
 
 
 def _http_payloads() -> dict[str, object]:
@@ -66,6 +71,24 @@ def test_guard_rejects_non_demo_before_http() -> None:
         fetch_snapshot(env={"T212_ENVIRONMENT": "live", "T212_API_KEY": "x"}, http_get=forbidden)
     with pytest.raises(RuntimeError, match="T212_ENVIRONMENT"):
         fetch_snapshot(env={"T212_API_KEY": "x"}, http_get=forbidden)
+
+
+def test_missing_secret_fail_closed_before_http() -> None:
+    def forbidden(url: str, headers: dict[str, str]) -> object:
+        raise AssertionError("HTTP se nesmí volat")
+
+    with pytest.raises(BrokerSnapshotError, match="T212_API_SECRET"):
+        fetch_snapshot(
+            env={"T212_ENVIRONMENT": "demo", "T212_API_KEY": "only-id"},
+            http_get=forbidden,
+        )
+
+
+def test_auth_headers_use_http_basic() -> None:
+    headers = auth_headers("key-id", "secret")
+    assert headers["Authorization"].startswith("Basic ")
+    assert "key-id" not in headers["Authorization"]
+    assert "secret" not in headers["Authorization"]
 
 
 def test_fetch_snapshot_get_only_demo_fields() -> None:

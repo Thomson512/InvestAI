@@ -57,12 +57,14 @@ jobs:
         if: steps.gate.outputs.open == 'true'
         env:
           T212_API_KEY: ${{ secrets.T212_API_KEY }}
+          T212_API_SECRET: ${{ secrets.T212_API_SECRET }}
         run: python scripts/broker_snapshot.py --output data/snapshot.json
 
       - name: Stops, reconcile, daily_pnl, heartbeat
         if: steps.gate.outputs.open == 'true'
         env:
           T212_API_KEY: ${{ secrets.T212_API_KEY }}
+          T212_API_SECRET: ${{ secrets.T212_API_SECRET }}
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
         run: |

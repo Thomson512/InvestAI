@@ -127,7 +127,8 @@ Po migraci je `trading_enabled = false`. Limity a dnešní `daily_pnl` se musí 
 
 ```powershell
 $env:T212_ENVIRONMENT="demo"
-$env:T212_API_KEY="..."
+$env:T212_API_KEY="..."   # API Key ID
+$env:T212_API_SECRET="..."  # tajný klíč (viditelný jen při vytvoření)
 python scripts/broker_snapshot.py
 ```
 
