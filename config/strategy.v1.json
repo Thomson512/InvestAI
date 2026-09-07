@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0",
+  "strategy_version": "v1",
+  "frozen_at": "2026-09-07T00:00:00Z",
+  "strategy_name": "breakout_relative_strength",
+  "parameters": {
+    "breakout_lookback_days": 30,
+    "trend_filter_sma": 150,
+    "relative_strength_lookback_days": 63,
+    "min_rs_excess_pct": 10,
+    "atr_period": 14,
+    "stop_atr_multiple": 2.0,
+    "reward_to_risk": 4.5,
+    "min_market_breadth_pct": 50,
+    "max_open_positions": 8,
+    "max_risk_per_trade_czk": 500,
+    "max_position_value_czk": 8000,
+    "max_new_entries_per_session": 2
+  }
+}

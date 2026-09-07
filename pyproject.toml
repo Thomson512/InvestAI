@@ -1,0 +1,12 @@
+[project]
+name = "investai"
+version = "0.1.0"
+description = "Automatizovaný obchodní systém — zafixovaná strategie"
+requires-python = ">=3.12"
+
+[project.optional-dependencies]
+test = ["pytest>=8.0"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
