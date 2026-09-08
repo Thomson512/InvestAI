@@ -83,5 +83,5 @@ jobs:
             echo "No evidence changes"
           else
             git -C "$WORK" commit -m "shadow evidence ${SESSION}"
-            git -C "$WORK" push origin HEAD:runtime/evidence
+            bash scripts/push_runtime_evidence.sh "$WORK"
           fi

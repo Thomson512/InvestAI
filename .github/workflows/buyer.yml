@@ -106,5 +106,5 @@ jobs:
             echo "No buyer evidence changes"
           else
             git -C "$WORK" commit -m "buyer ${SESSION} $(python -c "import json; print(json.load(open('data/buyer_evidence.json'))['outcome'])")"
-            git -C "$WORK" push origin HEAD:runtime/evidence
+            bash scripts/push_runtime_evidence.sh "$WORK"
           fi

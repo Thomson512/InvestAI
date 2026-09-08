@@ -53,6 +53,10 @@ jobs:
         if: steps.gate.outputs.open != 'true'
         run: python scripts/exit_orchestrator.py --session "${{ steps.gate.outputs.session }}" --noop --reason "${{ steps.gate.outputs.reason }}"
 
+      - name: Wait for buyer T212 snapshot
+        if: steps.gate.outputs.open == 'true'
+        run: sleep 50
+
       - name: Broker snapshot
         if: steps.gate.outputs.open == 'true'
         env:
@@ -100,5 +104,5 @@ jobs:
             echo "No exit evidence changes"
           else
             git -C "$WORK" commit -m "exit ${SESSION}"
-            git -C "$WORK" push origin HEAD:runtime/evidence
+            bash scripts/push_runtime_evidence.sh "$WORK"
           fi
