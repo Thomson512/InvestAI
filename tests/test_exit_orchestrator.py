@@ -130,6 +130,45 @@ def test_unprotected_still_writes_pnl() -> None:
     assert "protective-stop-guard.yml" in result.extra_summary[0]
 
 
+def test_auto_stop_runs_for_first_unprotected() -> None:
+    store = MemoryControlPlane()
+    seen: list[str] = []
+
+    class Guard:
+        outcome = "STOP_PLACED AAPL id=1"
+
+    result = run_exit(
+        session_date="2026-09-08",
+        snapshot=_snapshot(
+            positions=[{"ticker": "AAPL_US_EQ", "quantity": 2, "value_czk": 8000, "current_price": 200}],
+            orders=[],
+        ),
+        store=store,
+        can_close_fn=lambda: (True, "OK"),
+        now=NOW,
+        place_stop_fn=lambda symbol: seen.append(symbol) or Guard(),
+    )
+    assert seen == ["AAPL"]
+    assert result.pnl_written is True
+    assert result.outcome == "UNPROTECTED AAPL"
+    assert result.extra_summary[0] == "AUTO-STOP: STOP_PLACED AAPL id=1"
+
+
+def test_confirms_uncertain_when_stop_is_on_broker() -> None:
+    store = MemoryControlPlane()
+    store.uncertain_symbols.add("MSFT")
+    store.fences.add("MSFT")
+    positions, orders = _protected_msft()
+    run_exit(
+        session_date="2026-09-08",
+        snapshot=_snapshot(equity=64000, positions=positions, orders=orders),
+        store=store,
+        can_close_fn=lambda: (True, "OK"),
+        now=NOW,
+    )
+    assert store.uncertain_symbols == set()
+
+
 def test_drift_is_visible() -> None:
     store = MemoryControlPlane()
     store.fences.add("NVDA")

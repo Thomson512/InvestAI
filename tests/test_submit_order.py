@@ -148,6 +148,7 @@ def test_happy_path_buy_then_stop_confirms() -> None:
         http_get=http_get,
         dry_run=False,
         param_hash="p",
+        settle_sec=0,
     )
     assert result.outcome == "CONFIRMED"
     assert result.exit_code == 0
@@ -156,6 +157,39 @@ def test_happy_path_buy_then_stop_confirms() -> None:
         f"{DEMO_BASE_URL}/api/v0/equity/orders/stop",
     ]
     assert store.get(result.fence_key).state == "CONFIRMED"
+
+
+def test_stop_retries_retryable_http_then_confirms() -> None:
+    posts: list[str] = []
+
+    def http_post(url: str, headers: dict, body: dict) -> dict:
+        posts.append(url)
+        if url.endswith("/market"):
+            return {"id": 11, "status": "FILLED"}
+        if posts.count(url) == 1:
+            from scripts.submit_order import SubmitError
+
+            raise SubmitError("T212 HTTP 429 POST: too many requests")
+        return {"id": 22, "type": "STOP", "side": "SELL"}
+
+    result = submit_order(
+        symbol="AAPL",
+        quantity=1,
+        stop_price=180,
+        session_date="2026-09-07",
+        env=SAFE_ENV,
+        can_trade_fn=_ok_trade,
+        snapshot={"positions": [], "active_orders": []},
+        store=MemoryFenceStore(),
+        http_post=http_post,
+        http_get=lambda url, headers: [{"id": 11}, {"id": 22, "type": "STOP"}],
+        dry_run=False,
+        param_hash="p",
+        settle_sec=0,
+        sleep_fn=lambda _: None,
+    )
+    assert result.outcome == "CONFIRMED"
+    assert posts.count(f"{DEMO_BASE_URL}/api/v0/equity/orders/stop") == 2
 
 
 def test_stop_failure_is_critical_uncertain_no_retry() -> None:
@@ -181,6 +215,7 @@ def test_stop_failure_is_critical_uncertain_no_retry() -> None:
         http_get=lambda url, headers: [{"id": 11}],
         dry_run=False,
         param_hash="p",
+        settle_sec=0,
     )
     assert result.outcome == "UNPROTECTED"
     assert result.exit_code == EXIT_UNCERTAIN

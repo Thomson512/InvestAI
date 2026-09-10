@@ -48,6 +48,9 @@ jobs:
           if git cat-file -e origin/runtime/evidence:evidence/buyer/latest.json 2>/dev/null; then
             git show origin/runtime/evidence:evidence/buyer/latest.json > data/buyer_evidence.json
           fi
+          if git cat-file -e origin/runtime/evidence:evidence/latest/dataset.json 2>/dev/null; then
+            git show origin/runtime/evidence:evidence/latest/dataset.json > data/dataset.json
+          fi
 
       - name: No-op (NYSE closed)
         if: steps.gate.outputs.open != 'true'
@@ -76,7 +79,8 @@ jobs:
             --session "${{ steps.gate.outputs.session }}" \
             --snapshot data/snapshot.json \
             --book data/expected_positions.json \
-            --buyer-evidence data/buyer_evidence.json
+            --buyer-evidence data/buyer_evidence.json \
+            --dataset data/dataset.json
 
       - name: Publish evidence to runtime/evidence
         if: always() && hashFiles('data/exit_evidence.json') != ''

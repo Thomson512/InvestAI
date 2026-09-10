@@ -39,6 +39,7 @@ class ControlPlane(Protocol):
     ) -> None: ...
     def upsert_heartbeat(self, loop_name: str, last_seen: str) -> None: ...
     def confirmed_symbols(self) -> set[str]: ...
+    def confirm_uncertain_for_symbols(self, symbols: set[str]) -> None: ...
 
 
 @dataclass
@@ -55,6 +56,7 @@ class MemoryControlPlane:
         self.pnl: dict[str, dict] = {}
         self.heartbeats: dict[str, str] = {}
         self.fences: set[str] = set()
+        self.uncertain_symbols: set[str] = set()
 
     def get_daily_pnl(self, trade_date: str) -> dict | None:
         row = self.pnl.get(trade_date)
@@ -75,6 +77,9 @@ class MemoryControlPlane:
 
     def confirmed_symbols(self) -> set[str]:
         return set(self.fences)
+
+    def confirm_uncertain_for_symbols(self, symbols: set[str]) -> None:
+        self.uncertain_symbols -= {normalize_ticker(name) for name in symbols if name}
 
 
 class RestControlPlane:
@@ -164,6 +169,16 @@ class RestControlPlane:
             for row in rows
             if isinstance(row, dict) and row.get("symbol")
         }
+
+    def confirm_uncertain_for_symbols(self, symbols: set[str]) -> None:
+        payload = json.dumps({"state": "CONFIRMED"}).encode("utf-8")
+        for symbol in sorted({normalize_ticker(name) for name in symbols if name}):
+            self._request(
+                "PATCH",
+                f"/trade_fences?state=eq.UNCERTAIN&symbol=eq.{quote(symbol)}",
+                data=payload,
+                prefer="return=minimal",
+            )
 
 
 def default_can_close_position(env: dict[str, str] | None = None) -> tuple[bool, str]:
@@ -268,6 +283,25 @@ def account_equity(snapshot: dict) -> float:
     return equity
 
 
+def default_place_stop(
+    symbol: str,
+    *,
+    session_date: str,
+    snapshot: dict,
+    dataset: dict | None = None,
+):
+    """Jeden fenced SELL STOP. Fence klíč STOP:… — jiný než nákupní fence."""
+    from scripts.protective_stop_guard import bars_for_symbol, run_guard
+
+    return run_guard(
+        symbol=symbol,
+        session_date=session_date,
+        snapshot=snapshot,
+        dry_run=False,
+        bars=bars_for_symbol(dataset, symbol),
+    )
+
+
 def first_line(result: ExitResult) -> str:
     return f"EXIT: {result.outcome}"
 
@@ -281,6 +315,7 @@ def run_exit(
     buyer_evidence: dict | None = None,
     can_close_fn: Callable[[], tuple[bool, str]] | None = None,
     now: datetime | None = None,
+    place_stop_fn: Callable[[str], object] | None = None,
 ) -> ExitResult:
     now = now or datetime.now(timezone.utc)
     allowed, close_reason = (can_close_fn or default_can_close_position)()
@@ -303,11 +338,20 @@ def run_exit(
     store.upsert_heartbeat(EXIT_LOOP_NAME, seen)
 
     extra: list[str] = []
+    if unprotected and place_stop_fn is not None:
+        try:
+            guard = place_stop_fn(unprotected[0])
+            extra.append(f"AUTO-STOP: {getattr(guard, 'outcome', guard)}")
+        except Exception as exc:
+            extra.append(f"AUTO-STOP: FAIL {exc}")
+    protected = broker_symbols(snapshot) - set(unprotected)
+    if protected:
+        store.confirm_uncertain_for_symbols(protected)
     if unprotected:
-        extra = [
+        extra.extend(
             f"FIX: gh workflow run protective-stop-guard.yml -f symbol={name}"
             for name in unprotected
-        ]
+        )
         outcome = f"UNPROTECTED {' '.join(unprotected)}"
     elif drift["broker_only"] or drift["evidence_only"]:
         outcome = (
@@ -370,6 +414,7 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--snapshot", type=Path, default=DEFAULT_SNAPSHOT)
     parser.add_argument("--book", type=Path, default=None)
     parser.add_argument("--buyer-evidence", type=Path, default=None)
+    parser.add_argument("--dataset", type=Path, default=None)
     parser.add_argument("--evidence", type=Path, default=DEFAULT_EVIDENCE)
     parser.add_argument("--noop", action="store_true")
     parser.add_argument("--reason", default="")
@@ -389,12 +434,23 @@ def main(argv: list[str] | None = None) -> int:
             if args.buyer_evidence and args.buyer_evidence.is_file()
             else None
         )
+        dataset = load_json(args.dataset) if args.dataset and args.dataset.is_file() else None
+
+        def place(symbol: str):
+            return default_place_stop(
+                symbol,
+                session_date=args.session,
+                snapshot=snapshot,
+                dataset=dataset,
+            )
+
         result = run_exit(
             session_date=args.session,
             snapshot=snapshot,
             store=control_plane_from_env(),
             book=book,
             buyer_evidence=buyer,
+            place_stop_fn=place,
         )
     except RuntimeError as exc:
         print(f"FAIL-CLOSED: {exc}", file=sys.stderr)

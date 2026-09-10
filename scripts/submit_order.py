@@ -1,4 +1,4 @@
-"""Jeden demo market buy + ochranný stop. Dry-run default, žádný retry."""
+"""Jeden demo market buy + ochranný stop. Dry-run default. Market bez retry; stop smí 429/400."""
 
 from __future__ import annotations
 
@@ -6,6 +6,7 @@ import argparse
 import json
 import os
 import sys
+import time
 import urllib.error
 import urllib.request
 from dataclasses import dataclass, field
@@ -132,8 +133,9 @@ def unprotected_stop_instructions(
         f"  2. Najdi pozici {ticker}.\n"
         f"  3. SELL STOP, quantity {quantity}, stopPrice {stop_price}.\n"
         f"  4. Ověř, že příkaz STOP je aktivní.\n"
-        f"  5. Fence {fence_key} je UNCERTAIN — po nasazení stopu stav řeší člověk.\n"
-        "Žádný automatický retry."
+        f"  5. Fence {fence_key} je UNCERTAIN — po aktivním STOP na brokerovi "
+        "exit nastaví CONFIRMED.\n"
+        "Market se neopakuje. Stop zkusí exit (jiný fence STOP:…)."
     )
 
 
@@ -201,6 +203,29 @@ def default_http_post(url: str, headers: dict[str, str], body: dict) -> dict:
         raise SubmitError("T212 POST síťové selhání") from exc
 
 
+RETRYABLE_STOP_STATUS = {400, 408, 429, 500, 502, 503, 504}
+STOP_SETTLE_SEC = 3
+STOP_ATTEMPTS = 3
+
+
+def _http_status_from_error(exc: BaseException) -> int | None:
+    text = str(exc)
+    if "HTTP " not in text:
+        return None
+    try:
+        return int(text.split("HTTP ", 1)[1].split()[0])
+    except (IndexError, ValueError):
+        return None
+
+
+def retryable_stop_error(exc: BaseException) -> bool:
+    """Timeout po odeslání neretřuj — příkaz mohl projít. 429/400/5xx ano."""
+    if isinstance(exc, TimeoutError):
+        return False
+    status = _http_status_from_error(exc)
+    return status in RETRYABLE_STOP_STATUS
+
+
 def _order_id(payload: dict) -> str | None:
     value = payload.get("id", payload.get("order_id"))
     return None if value is None else str(value)
@@ -243,6 +268,9 @@ def submit_order(
     http_post: HttpPost | None = None,
     http_get: HttpGet | None = None,
     param_hash: str | None = None,
+    settle_sec: float = STOP_SETTLE_SEC,
+    sleep_fn: Callable[[float], None] = time.sleep,
+    stop_attempts: int = STOP_ATTEMPTS,
 ) -> SubmitResult:
     require_submit_guards(env)
     if "," in symbol or " " in symbol.strip():
@@ -339,12 +367,24 @@ def submit_order(
     # run_fenced_send označí CONFIRMED po buy readback. Stop ještě chybí — vrať SENT.
     fence_store.set_state(fenced.fence_key, STATE_SENT, order_id=fenced.order_id)
 
-    try:
-        if posts["n"] >= 2:
-            raise SubmitError("Žádný retry stop POST.")
-        posts["n"] += 1
-        stop_payload = post_once(stop["url"], headers, stop["body"], http_post=poster)
-    except Exception:
+    if settle_sec > 0:
+        sleep_fn(settle_sec)
+    stop_payload: dict | None = None
+    last_error: BaseException | None = None
+    for attempt in range(max(1, stop_attempts)):
+        try:
+            stop_payload = post_once(stop["url"], headers, stop["body"], http_post=poster)
+            last_error = None
+            break
+        except TimeoutError as exc:
+            last_error = exc
+            break
+        except Exception as exc:
+            last_error = exc
+            if (not retryable_stop_error(exc)) or attempt >= max(1, stop_attempts) - 1:
+                break
+            sleep_fn(2**attempt)
+    if stop_payload is None:
         critical = unprotected_stop_instructions(
             ticker=ticker_id,
             quantity=quantity,
