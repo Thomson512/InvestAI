@@ -115,6 +115,7 @@ def test_dry_run_default_prints_plan_without_post_or_fence() -> None:
     assert store.get(result.fence_key) is None
     assert result.plan["market"]["url"] == f"{DEMO_BASE_URL}/api/v0/equity/orders/market"
     assert result.plan["stop"]["body"]["quantity"] == -1
+    assert result.plan["stop"]["body"]["timeValidity"] == "GOOD_TILL_CANCEL"
     assert parse_dry_run("false") is False
     assert parse_dry_run("true") is True
 

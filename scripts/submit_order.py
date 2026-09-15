@@ -115,6 +115,7 @@ def protective_stop_plan(ticker: str, quantity: float, stop_price: float) -> dic
             "ticker": ticker,
             "quantity": -abs(quantity),
             "stopPrice": stop_price,
+            "timeValidity": "GOOD_TILL_CANCEL",
         },
     }
 

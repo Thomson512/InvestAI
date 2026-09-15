@@ -197,6 +197,7 @@ def test_places_stop_once_via_fence() -> None:
     assert len(posts) == 1
     assert posts[0]["quantity"] == -2.0
     assert posts[0]["stopPrice"] == 192.0
+    assert posts[0]["timeValidity"] == "GOOD_TILL_CANCEL"
     assert result.fence_key and ":AAPL:STOP:" in result.fence_key
 
 
