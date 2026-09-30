@@ -3,7 +3,7 @@ from __future__ import annotations
 import pytest
 
 from scripts.broker_snapshot import DEMO_BASE_URL
-from scripts.fence import MemoryFenceStore, STATE_UNCERTAIN
+from scripts.fence import MemoryFenceStore, STATE_NEVER_SENT, STATE_UNCERTAIN
 from scripts.submit_order import (
     EXIT_STOP,
     EXIT_UNCERTAIN,
@@ -232,6 +232,30 @@ def test_stop_failure_is_critical_uncertain_no_retry() -> None:
     assert unprotected_stop_instructions(
         ticker="AAPL_US_EQ", quantity=2, stop_price=170.5, fence_key="k"
     ).startswith("CRITICAL")
+
+
+def test_market_404_ticker_missing_is_never_sent() -> None:
+    def http_post(url: str, headers: dict, body: dict) -> dict:
+        raise RuntimeError('T212 HTTP 404 POST: {"detail":"Ticker does not exist"}')
+
+    store = MemoryFenceStore()
+    result = submit_order(
+        symbol="RVTY",
+        quantity=1,
+        stop_price=130,
+        session_date="2026-09-16",
+        env=SAFE_ENV,
+        can_trade_fn=_ok_trade,
+        snapshot={"positions": [], "active_orders": []},
+        store=store,
+        http_post=http_post,
+        dry_run=False,
+        param_hash="p",
+        settle_sec=0,
+    )
+    assert result.outcome == STATE_NEVER_SENT
+    assert result.exit_code == 1
+    assert store.get(result.fence_key).state == STATE_NEVER_SENT
 
 
 def test_rejects_batch_symbols() -> None:

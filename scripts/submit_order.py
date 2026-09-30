@@ -30,6 +30,7 @@ from scripts.fence import (
     EXIT_UNCERTAIN,
     OUTCOME_SKIP,
     STATE_CONFIRMED,
+    STATE_NEVER_SENT,
     STATE_SENT,
     STATE_UNCERTAIN,
     FenceStore,
@@ -352,6 +353,15 @@ def submit_order(
             dry_run=False,
             fence_key=fenced.fence_key,
             reason="fence_exists",
+            plan=plan,
+        )
+    if fenced.outcome == STATE_NEVER_SENT:
+        return SubmitResult(
+            outcome=STATE_NEVER_SENT,
+            exit_code=fenced.exit_code or 1,
+            dry_run=False,
+            fence_key=fenced.fence_key,
+            reason=fenced.reason,
             plan=plan,
         )
     if fenced.outcome != STATE_CONFIRMED:

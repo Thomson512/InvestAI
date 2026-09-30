@@ -67,6 +67,32 @@ def test_timeout_is_uncertain_nonzero_exit_no_retry() -> None:
     assert row.state == STATE_UNCERTAIN
 
 
+def test_http_404_ticker_missing_is_never_sent() -> None:
+    store = MemoryFenceStore()
+    calls = {"n": 0}
+
+    def send() -> dict:
+        calls["n"] += 1
+        raise RuntimeError(
+            'T212 HTTP 404 POST: {"detail":"Ticker does not exist"}'
+        )
+
+    result = run_fenced_send(
+        session_date="2026-09-16",
+        symbol="RVTY",
+        param_hash="p",
+        store=store,
+        send_once=send,
+    )
+    assert result.outcome == STATE_NEVER_SENT
+    assert result.exit_code == 1
+    assert calls["n"] == 1
+    row = store.get(result.fence_key)
+    assert row is not None
+    assert row.state == STATE_NEVER_SENT
+    assert "send_rejected" in (result.reason or "")
+
+
 def test_concurrent_claim_only_one_sends() -> None:
     store = MemoryFenceStore()
     barrier = threading.Barrier(2)

@@ -144,6 +144,24 @@ def test_can_trade_maps_to_global_blocker() -> None:
         submit_fn=lambda **kwargs: (_ for _ in ()).throw(AssertionError("submit")),
     )
     assert result.outcome == "GLOBAL_BLOCKER:KILL_SWITCH_OFF"
+    assert result.exit_code == 0
+
+
+def test_unresolved_fence_fails_job() -> None:
+    result = run_buyer(
+        session_date="2026-09-07",
+        shortlist=_shortlist(_buy()),
+        snapshot={"positions": [], "active_orders": []},
+        config=CONFIG,
+        strategy=STRATEGY,
+        now=NOW,
+        can_trade_fn=lambda: (False, "UNRESOLVED_FENCE"),
+        http_get=lambda url, headers: (_ for _ in ()).throw(AssertionError("HTTP")),
+        submit_fn=lambda **kwargs: (_ for _ in ()).throw(AssertionError("submit")),
+    )
+    assert result.outcome == "GLOBAL_BLOCKER:UNRESOLVED_FENCE"
+    assert result.exit_code == 1
+    assert any("UNRESOLVED_FENCE" in line for line in result.extra_summary)
 
 
 def test_no_candidates() -> None:
@@ -244,6 +262,27 @@ def test_streak_warns_only_on_unhealthy_24h() -> None:
     warning = streak_warning(bad, now)
     assert warning is not None
     assert warning.startswith("::warning::")
+
+
+def test_unresolved_fence_summary_exits_nonzero(tmp_path: Path, capsys) -> None:
+    from scripts.buyer_summary import main as summary_main
+
+    evidence = tmp_path / "buyer_evidence.json"
+    evidence.write_text(
+        json.dumps(
+            {
+                "outcome": "GLOBAL_BLOCKER:UNRESOLVED_FENCE",
+                "session_date": "2026-09-30",
+                "generated_at": "2026-09-30T13:40:26Z",
+                "official": True,
+                "extra_summary": [],
+            }
+        ),
+        encoding="utf-8",
+    )
+    code = summary_main(["--evidence", str(evidence), "--history", str(tmp_path / "h.jsonl")])
+    assert code == 1
+    assert "UNRESOLVED_FENCE" in capsys.readouterr().out
 
 
 def test_fetch_quotes_uses_iex_feed() -> None:

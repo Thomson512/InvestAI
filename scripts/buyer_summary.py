@@ -15,6 +15,7 @@ if str(_REPO_ROOT) not in sys.path:
 from scripts.buyer import (
     DEFAULT_EVIDENCE,
     OUTCOME_MARKET_CLOSED,
+    UNRESOLVED_FENCE_ERROR,
     is_healthy_outcome,
     is_official_outcome,
 )
@@ -139,8 +140,13 @@ def main(argv: list[str] | None = None) -> int:
     if warning:
         print(warning)
         extra = [*extra, warning]
+    if "UNRESOLVED_FENCE" in outcome:
+        print(UNRESOLVED_FENCE_ERROR)
+        extra = [*extra, UNRESOLVED_FENCE_ERROR]
 
     write_step_summary(first, extra or None)
+    if "UNRESOLVED_FENCE" in outcome:
+        return 1
     return 0
 
 

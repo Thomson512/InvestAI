@@ -44,6 +44,12 @@ BPS = 10_000.0
 OUTCOME_MARKET_CLOSED = "MARKET_CLOSED"
 OUTCOME_NO_CANDIDATES = "NO_CANDIDATES"
 OUTCOME_FRESHNESS_FAIL = "FRESHNESS_FAIL"
+REASON_UNRESOLVED_FENCE = "UNRESOLVED_FENCE"
+UNRESOLVED_FENCE_ERROR = (
+    "::error::UNRESOLVED_FENCE — visí fence UNCERTAIN, nákupy stojí. "
+    "SQL: SELECT fence_key, symbol, state, order_id FROM trading.trade_fences "
+    "WHERE state = 'UNCERTAIN'; rozhodni CONFIRMED nebo NEVER_SENT."
+)
 HEALTHY_FAMILIES = frozenset(
     {OUTCOME_MARKET_CLOSED, OUTCOME_NO_CANDIDATES, "ORDER_SUBMITTED"}
 )
@@ -318,7 +324,12 @@ def run_buyer(
 
     allowed, reason = (can_trade_fn or (lambda: default_can_trade(env)))()
     if not allowed:
-        return _ok(global_blocker_outcome(reason))
+        extra: list[str] = []
+        result = _ok(global_blocker_outcome(reason), extra=extra)
+        if reason == REASON_UNRESOLVED_FENCE:
+            result.exit_code = 1
+            result.extra_summary = [UNRESOLVED_FENCE_ERROR]
+        return result
 
     if open_position_count(snapshot) >= int(sizing["max_open_positions"]):
         return _ok(global_blocker_outcome("max_open_positions"))
@@ -453,8 +464,14 @@ def main(argv: list[str] | None = None) -> int:
         return 1
     write_evidence(args.evidence, result, args.session)
     write_github_output(result)
-    if result.fail_closed:
-        print(f"FAIL-CLOSED: {result.fail_closed}", file=sys.stderr)
+    for line in result.extra_summary:
+        if line.startswith("::error::") or line.startswith("::warning::"):
+            print(line)
+    if result.fail_closed or result.exit_code:
+        if result.fail_closed:
+            print(f"FAIL-CLOSED: {result.fail_closed}", file=sys.stderr)
+        else:
+            print(f"BUYER {result.outcome}", file=sys.stderr)
         return result.exit_code or 1
     print(f"BUYER {result.outcome}")
     return 0

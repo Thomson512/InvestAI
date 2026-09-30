@@ -240,14 +240,23 @@ def run_fenced_send(
     try:
         sent = _once()
     except Exception as exc:
-        store.set_state(fence_key, STATE_UNCERTAIN)
-        # Po zahájení send je výsledek neznámý. Žádný retry. Člověk.
         detail = " ".join(str(exc).split())[:200]
+        if classify_send_failure(exc):
+            # Timeout/5xx: výsledek neznámý. Žádný retry. Člověk.
+            store.set_state(fence_key, STATE_UNCERTAIN)
+            return FenceResult(
+                outcome=STATE_UNCERTAIN,
+                fence_key=fence_key,
+                exit_code=EXIT_UNCERTAIN,
+                reason=f"send_uncertain:{detail}" if detail else "send_uncertain",
+            )
+        # 4xx / ticker neexistuje: příkaz na brokerovi nevznikl.
+        store.set_state(fence_key, STATE_NEVER_SENT)
         return FenceResult(
-            outcome=STATE_UNCERTAIN,
+            outcome=STATE_NEVER_SENT,
             fence_key=fence_key,
-            exit_code=EXIT_UNCERTAIN,
-            reason=f"send_uncertain:{detail}" if detail else "send_uncertain",
+            exit_code=1,
+            reason=f"send_rejected:{detail}" if detail else "send_rejected",
         )
 
     order_id = None if sent is None else sent.get("order_id") or sent.get("id")
