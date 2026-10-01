@@ -70,7 +70,7 @@ def streak_warning(history: list[dict], now: datetime) -> str | None:
     last = str(history[-1].get("outcome") or "?") if history else "?"
     return (
         f"::warning::Buyer streak: {STREAK_HOURS}h bez ORDER_SUBMITTED / "
-        f"NO_CANDIDATES / MARKET_CLOSED (poslední: {last})"
+        f"NO_CANDIDATES / MARKET_CLOSED / COUNCIL_REJECT (poslední: {last})"
     )
 
 

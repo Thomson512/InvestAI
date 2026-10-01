@@ -18,7 +18,7 @@ env:
 jobs:
   buy:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 25
     steps:
       - name: Checkout main
         uses: actions/checkout@v4
@@ -48,6 +48,9 @@ jobs:
           if [ "${{ steps.gate.outputs.open }}" = "true" ] && git cat-file -e origin/runtime/evidence:evidence/latest/signals.json 2>/dev/null; then
             git show origin/runtime/evidence:evidence/latest/signals.json > data/signals.json
           fi
+          if git cat-file -e origin/runtime/evidence:evidence/buyer/council_cache.json 2>/dev/null; then
+            git show origin/runtime/evidence:evidence/buyer/council_cache.json > data/council_cache.json
+          fi
 
       - name: Outcome MARKET_CLOSED
         if: steps.gate.outputs.open != 'true'
@@ -61,7 +64,7 @@ jobs:
           T212_API_SECRET: ${{ secrets.T212_API_SECRET }}
         run: python scripts/broker_snapshot.py --output data/snapshot.json
 
-      - name: Freshness, preselect, quotes, FX, finalize, fence, submit
+      - name: Freshness, preselect, quotes, FX, finalize, council, fence, submit
         id: buyer
         if: steps.gate.outputs.open == 'true'
         env:
@@ -71,6 +74,8 @@ jobs:
           SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
           ALPACA_KEY_ID: ${{ secrets.ALPACA_KEY_ID }}
           ALPACA_SECRET_KEY: ${{ secrets.ALPACA_SECRET_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: python scripts/buyer.py --session "${{ steps.gate.outputs.session }}" --dry-run false
 
       - name: Publish summary
@@ -100,6 +105,9 @@ jobs:
           cp data/buyer_evidence.json "$WORK/evidence/buyer/sessions/${SESSION}/${STAMP}.json"
           if [ -f data/buyer_history.jsonl ]; then
             cp data/buyer_history.jsonl "$WORK/evidence/buyer/history.jsonl"
+          fi
+          if [ -f data/council_cache.json ]; then
+            cp data/council_cache.json "$WORK/evidence/buyer/council_cache.json"
           fi
           git -C "$WORK" add evidence/buyer
           if git -C "$WORK" diff --cached --quiet; then

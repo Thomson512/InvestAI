@@ -204,6 +204,7 @@ def test_fence_exists() -> None:
         strategy=STRATEGY,
         now=NOW,
         can_trade_fn=lambda: (True, "OK"),
+        env={},
         http_get=_http(),
         submit_fn=lambda **kwargs: SubmitResult(
             outcome="SKIP", exit_code=0, dry_run=False, reason="fence_exists", fence_key="k"
@@ -227,6 +228,7 @@ def test_order_submitted() -> None:
         strategy=STRATEGY,
         now=NOW,
         can_trade_fn=lambda: (True, "OK"),
+        env={},
         http_get=_http(),
         submit_fn=submit,
     )
@@ -283,6 +285,77 @@ def test_unresolved_fence_summary_exits_nonzero(tmp_path: Path, capsys) -> None:
     code = summary_main(["--evidence", str(evidence), "--history", str(tmp_path / "h.jsonl")])
     assert code == 1
     assert "UNRESOLVED_FENCE" in capsys.readouterr().out
+
+
+def test_council_reject_skips_submit() -> None:
+    def council(**kwargs):
+        return {"verdict": "REJECT", "reason": "Claude CRO rejected the proposal", "findings": []}
+
+    result = run_buyer(
+        session_date="2026-09-07",
+        shortlist=_shortlist(_buy()),
+        snapshot={"positions": [], "active_orders": []},
+        config=CONFIG,
+        strategy=STRATEGY,
+        now=NOW,
+        can_trade_fn=lambda: (True, "OK"),
+        http_get=_http(),
+        council_fn=council,
+        submit_fn=lambda **kwargs: (_ for _ in ()).throw(AssertionError("submit")),
+    )
+    assert result.outcome == "COUNCIL_REJECT:AAPL"
+    assert result.exit_code == 0
+    assert result.evidence["council"]["verdict"] == "REJECT"
+
+
+def test_council_unavailable_skips_submit() -> None:
+    from scripts.council import CouncilUnavailable
+
+    def unavailable(**kwargs):
+        raise CouncilUnavailable("schema")
+
+    result = run_buyer(
+        session_date="2026-09-07",
+        shortlist=_shortlist(_buy()),
+        snapshot={"positions": [], "active_orders": []},
+        config=CONFIG,
+        strategy=STRATEGY,
+        now=NOW,
+        can_trade_fn=lambda: (True, "OK"),
+        http_get=_http(),
+        council_fn=unavailable,
+        submit_fn=lambda **kwargs: (_ for _ in ()).throw(AssertionError("submit")),
+    )
+    assert result.outcome == "COUNCIL_UNAVAILABLE:AAPL"
+    assert result.exit_code == 0
+
+
+def test_council_approve_submits_once_without_resizing() -> None:
+    captured: dict = {}
+
+    def council(**kwargs):
+        return {"verdict": "APPROVE", "reason": "4/6", "findings": [{"agent": "Claude CRO"}]}
+
+    def submit(**kwargs):
+        captured.update(kwargs)
+        return _submitted("42")
+
+    result = run_buyer(
+        session_date="2026-09-07",
+        shortlist=_shortlist(_buy()),
+        snapshot={"positions": [], "active_orders": []},
+        config=CONFIG,
+        strategy=STRATEGY,
+        now=NOW,
+        can_trade_fn=lambda: (True, "OK"),
+        http_get=_http(),
+        council_fn=council,
+        submit_fn=submit,
+    )
+    assert result.outcome == "ORDER_SUBMITTED:42"
+    assert captured["quantity"] == 1.0
+    assert captured["stop_price"] == 180.0
+    assert result.evidence["council"]["verdict"] == "APPROVE"
 
 
 def test_fetch_quotes_uses_iex_feed() -> None:

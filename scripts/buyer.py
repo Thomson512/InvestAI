@@ -1,4 +1,4 @@
-"""Buyer řetěz: freshness → preselect → kotace → ČNB FX → finalize → fence/submit."""
+"""Buyer řetěz: freshness → preselect → kotace → ČNB FX → finalize → council → fence/submit."""
 
 from __future__ import annotations
 
@@ -20,6 +20,7 @@ if str(_REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(_REPO_ROOT))
 
 from scripts.broker_snapshot import global_blockers, normalize_ticker
+from scripts.council import CouncilUnavailable, council_configured, review_candidate
 from scripts.evaluate_signals import DECISION_BUY
 from scripts.fence import MemoryFenceStore, OUTCOME_SKIP, STATE_CONFIRMED
 from scripts.forward_shadow import require_live_sizing, size_shares
@@ -51,12 +52,13 @@ UNRESOLVED_FENCE_ERROR = (
     "WHERE state = 'UNCERTAIN'; rozhodni CONFIRMED nebo NEVER_SENT."
 )
 HEALTHY_FAMILIES = frozenset(
-    {OUTCOME_MARKET_CLOSED, OUTCOME_NO_CANDIDATES, "ORDER_SUBMITTED"}
+    {OUTCOME_MARKET_CLOSED, OUTCOME_NO_CANDIDATES, "ORDER_SUBMITTED", "COUNCIL_REJECT"}
 )
 OUTCOME_RE = re.compile(
     r"^(MARKET_CLOSED|NO_CANDIDATES|FRESHNESS_FAIL|"
     r"GLOBAL_BLOCKER:.+|SPREAD_REJECTED:[A-Z0-9.]+|"
-    r"FENCE_EXISTS:[A-Z0-9.]+|ORDER_SUBMITTED:.+)$"
+    r"FENCE_EXISTS:[A-Z0-9.]+|ORDER_SUBMITTED:.+|"
+    r"COUNCIL_REJECT:[A-Z0-9.]+|COUNCIL_UNAVAILABLE:[A-Z0-9.]+)$"
 )
 
 HttpGet = Callable[[str, dict[str, str]], object]
@@ -93,6 +95,10 @@ def outcome_family(outcome: str) -> str:
         return "SPREAD_REJECTED"
     if outcome.startswith("FENCE_EXISTS:"):
         return "FENCE_EXISTS"
+    if outcome.startswith("COUNCIL_REJECT:"):
+        return "COUNCIL_REJECT"
+    if outcome.startswith("COUNCIL_UNAVAILABLE:"):
+        return "COUNCIL_UNAVAILABLE"
     return outcome
 
 
@@ -114,6 +120,14 @@ def fence_exists_outcome(symbol: str) -> str:
 
 def order_submitted_outcome(order_id: str) -> str:
     return f"ORDER_SUBMITTED:{order_id}"
+
+
+def council_reject_outcome(symbol: str) -> str:
+    return f"COUNCIL_REJECT:{symbol}"
+
+
+def council_unavailable_outcome(symbol: str) -> str:
+    return f"COUNCIL_UNAVAILABLE:{symbol}"
 
 
 def shortlist_close_at(asof_session: str) -> datetime:
@@ -306,6 +320,7 @@ def run_buyer(
     can_trade_fn: CanTradeFn | None = None,
     http_get: HttpGet | None = None,
     submit_fn: Callable[..., SubmitResult] | None = None,
+    council_fn: Callable[..., dict] | None = None,
     dry_run: bool = False,
 ) -> BuyerResult:
     now = now or datetime.now(timezone.utc)
@@ -363,12 +378,63 @@ def run_buyer(
     fx_rate = fetch_cnb_usdczk(http_get=http_get, url=str(config.get("fx_url") or CNB_DAILY_URL))
 
     plan = None
+    chosen_signal: dict | None = None
     for row, quote in tradable:
         plan = finalize_plan(row, quote, fx_rate, sizing, params)
         if plan:
+            chosen_signal = row
             break
-    if plan is None:
+    if plan is None or chosen_signal is None:
         return _ok(OUTCOME_NO_CANDIDATES, reason="unsizable")
+
+    source_env = env if env is not None else os.environ
+    council_evidence = None
+    if council_fn is not None or council_configured(source_env):
+        try:
+            if council_fn is not None:
+                decision = council_fn(
+                    plan=plan,
+                    signal=chosen_signal,
+                    shortlist=shortlist,
+                    param_hash=param_hash,
+                    env=source_env,
+                )
+            else:
+                decision = review_candidate(
+                    plan=plan,
+                    signal=chosen_signal,
+                    shortlist=shortlist,
+                    param_hash=param_hash,
+                    env=source_env,
+                )
+        except CouncilUnavailable as exc:
+            return _ok(
+                council_unavailable_outcome(str(plan["symbol"])),
+                extra=[f"council: {exc}"],
+                plan=plan,
+                council_error=str(exc),
+            )
+        council_evidence = {
+            "verdict": decision.get("verdict"),
+            "reason": decision.get("reason"),
+            "cached": bool(decision.get("cached")),
+            "findings": decision.get("findings") or [],
+        }
+        verdict = decision.get("verdict")
+        if verdict == "REJECT":
+            return _ok(
+                council_reject_outcome(str(plan["symbol"])),
+                extra=[f"council: {decision.get('reason') or 'REJECT'}"],
+                plan=plan,
+                council=council_evidence,
+            )
+        if verdict != "APPROVE":
+            return _ok(
+                council_unavailable_outcome(str(plan["symbol"])),
+                extra=[f"council: {decision.get('reason') or verdict}"],
+                plan=plan,
+                council=council_evidence,
+            )
 
     submit = submit_fn or submit_order
     result = submit(
@@ -385,13 +451,15 @@ def run_buyer(
     if result.outcome == OUTCOME_SKIP or result.reason == "fence_exists":
         return _ok(fence_exists_outcome(plan["symbol"]), fence_key=result.fence_key)
     if result.outcome == STATE_CONFIRMED and result.buy_order_id:
-        return _ok(
-            order_submitted_outcome(result.buy_order_id),
-            plan=plan,
-            fence_key=result.fence_key,
-            stop_order_id=result.stop_order_id,
-            param_hash=param_hash,
-        )
+        evidence = {
+            "plan": plan,
+            "fence_key": result.fence_key,
+            "stop_order_id": result.stop_order_id,
+            "param_hash": param_hash,
+        }
+        if council_evidence is not None:
+            evidence["council"] = council_evidence
+        return _ok(order_submitted_outcome(result.buy_order_id), **evidence)
     if result.outcome == "STOP":
         reason_text = result.reason.replace("can_trade:", "", 1)
         if result.reason.startswith("can_trade:"):

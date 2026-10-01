@@ -173,11 +173,13 @@ Jeden symbol na běh. První ostrý běh ručně, malá částka, ověř v T212 
 
 `.github/workflows/buyer.yml` — jen `workflow_dispatch`. Nativní GitHub cron je vypnutý (nespolehlivé doručení). Spouští `pg_cron` + `dispatch-loop`. Env natvrdo `T212_ENVIRONMENT=demo`, `ENABLE_LIVE_EXECUTION=false`.
 
-Řetěz: NYSE regular hours → snapshot → freshness shortlistu (`config/buyer.v1.json`) → `global_blockers` před kandidáty → IEX kotace + spread → ČNB USD/CZK → quantity/stop/target → fence → jeden demo submit + protective stop.
+Řetěz: NYSE regular hours → snapshot → freshness shortlistu (`config/buyer.v1.json`) → `global_blockers` před kandidáty → IEX kotace + spread → ČNB USD/CZK → quantity/stop/target → AI council → fence → jeden demo submit + protective stop.
 
-První řádek job summary je přesně `OUTCOME: <hodnota>` (`MARKET_CLOSED`, `NO_CANDIDATES`, `GLOBAL_BLOCKER:…`, `FRESHNESS_FAIL`, `SPREAD_REJECTED:<symbol>`, `FENCE_EXISTS:<symbol>`, `ORDER_SUBMITTED:<order_id>`). Stejné pole `outcome` je v `runtime/evidence` (`evidence/buyer/`).
+AI council (`scripts/council.py`, prahy v `config/council.v1.json`) běží jen když jsou v prostředí `OPENAI_API_KEY` i `ANTHROPIC_API_KEY`. Šest rolí komentuje jediného kandidáta, kterého už vybral Python. Verdikt skládá kód: schválení vyžaduje souhlas Claude CRO a aspoň 4 ze 6 hlasů s jistotou ≥ 0,65. Rada nemění cenu, stop, target ani počet kusů. Rozhodnutí se cacheuje podle `seance + symbol + param_hash` na `evidence/buyer/council_cache.json` a platí do další signální seance. Bez klíčů se council nevolá a buyer obchoduje jako dřív.
 
-24 h v řadě jiný výsledek než `ORDER_SUBMITTED` / `NO_CANDIDATES` / `MARKET_CLOSED` → `::warning::`. Job neselže.
+První řádek job summary je přesně `OUTCOME: <hodnota>` (`MARKET_CLOSED`, `NO_CANDIDATES`, `GLOBAL_BLOCKER:…`, `FRESHNESS_FAIL`, `SPREAD_REJECTED:<symbol>`, `FENCE_EXISTS:<symbol>`, `COUNCIL_REJECT:<symbol>`, `COUNCIL_UNAVAILABLE:<symbol>`, `ORDER_SUBMITTED:<order_id>`). Stejné pole `outcome` je v `runtime/evidence` (`evidence/buyer/`).
+
+24 h v řadě jiný výsledek než `ORDER_SUBMITTED` / `NO_CANDIDATES` / `MARKET_CLOSED` / `COUNCIL_REJECT` → `::warning::`. `COUNCIL_UNAVAILABLE` (výpadek provideru, rozbité schéma, chybějící člen) job neselže, ale do toho varování se počítá. Job neselže.
 
 ## Exit orchestrator
 
