@@ -329,6 +329,29 @@ def _extract_claude_tool_input(payload: Mapping[str, Any]) -> dict:
     return matches[0]["input"]
 
 
+def _http_error_text(exc: urllib.error.HTTPError, url: str) -> str:
+    """Anthropic/OpenAI error message, without the request body or the API key."""
+    host = urlsplit(url).netloc or "api"
+    detail = ""
+    try:
+        raw = exc.read()
+    except Exception:
+        raw = b""
+    if raw:
+        try:
+            payload = json.loads(raw.decode("utf-8", errors="replace"))
+        except json.JSONDecodeError:
+            payload = None
+        if isinstance(payload, dict):
+            error = payload.get("error")
+            message = error.get("message") if isinstance(error, dict) else payload.get("message")
+            if isinstance(message, str):
+                detail = " ".join(message.split())
+    if detail:
+        return f"HTTP {exc.code} {host}: {detail[:300]}"
+    return f"HTTP {exc.code} {host}"
+
+
 class UrllibTransport:
     def request(
         self,
@@ -349,7 +372,7 @@ class UrllibTransport:
             with urllib.request.urlopen(request, timeout=timeout) as response:
                 raw = response.read()
         except urllib.error.HTTPError as exc:
-            raise CouncilUnavailable(f"HTTP {exc.code} {urlsplit(url).netloc}") from None
+            raise CouncilUnavailable(_http_error_text(exc, url)) from None
         except urllib.error.URLError as exc:
             raise CouncilUnavailable(f"HTTP failed {urlsplit(url).netloc}: {exc.reason}") from None
         try:
@@ -473,8 +496,14 @@ def _call_claude(
     max_searches: int,
     transport: UrllibTransport,
 ) -> dict:
-    print(f"AGENT_START={AGENT_CRO}", flush=True)
+    print(f"AGENT_START={AGENT_CRO} model={model}", flush=True)
     headers = _anthropic_headers(api_key)
+    web_tool = {
+        "type": "web_search_20250305",
+        "name": "web_search",
+        "max_uses": max_searches,
+        "allowed_callers": ["direct"],
+    }
     research_messages: list[dict[str, Any]] = [
         {
             "role": "user",
@@ -487,6 +516,8 @@ def _call_claude(
         }
     ]
     research: dict[str, Any] | None = None
+    call_count = 0
+    sources: dict[str, dict[str, str]] = {}
     for _ in range(2):
         research = transport.request(
             "POST",
@@ -500,26 +531,24 @@ def _call_claude(
                     "You have no broker authority."
                 ),
                 "messages": research_messages,
-                "tools": [
-                    {
-                        "type": "web_search_20250305",
-                        "name": "web_search",
-                        "max_uses": max_searches,
-                    }
-                ],
+                "tools": [web_tool],
             },
             timeout,
         )
+        found_calls, found_sources = _claude_web_sources(research)
+        call_count += found_calls
+        for row in found_sources:
+            sources.setdefault(_normalize_url(row["url"]), row)
         if research.get("stop_reason") != "pause_turn":
             break
+        # pause_turn continues only by replaying the assistant turn unchanged.
         research_messages.append({"role": "assistant", "content": research.get("content", [])})
-        research_messages.append({"role": "user", "content": "Continue the web research."})
     if research is None or research.get("stop_reason") == "pause_turn":
         raise CouncilUnavailable("Anthropic web research did not finish.")
-    call_count, sources = _claude_web_sources(research)
     if call_count < 1 or not sources:
         raise CouncilUnavailable("Claude CRO produced no verifiable web search.")
     summary = _claude_research_text(research) or "Web research completed."
+    verified_sources = [sources[key] for key in sorted(sources)]
     finding_payload = transport.request(
         "POST",
         ANTHROPIC_MESSAGES_URL,
@@ -537,7 +566,7 @@ def _call_claude(
                     "role": "user",
                     "content": (
                         f"{prompt}\n\nVERIFIED_WEB_RESEARCH:\n"
-                        f"{json.dumps({'summary': summary, 'sources': sources}, ensure_ascii=False, sort_keys=True)}\n\n"
+                        f"{json.dumps({'summary': summary, 'sources': verified_sources}, ensure_ascii=False, sort_keys=True)}\n\n"
                         f"EVIDENCE:\n{json.dumps(evidence, ensure_ascii=False, sort_keys=True)}"
                     ),
                 }
@@ -546,10 +575,15 @@ def _call_claude(
                 {
                     "name": CRO_TOOL_NAME,
                     "description": "Submit the InvestAI CRO finding.",
+                    "strict": True,
                     "input_schema": _finding_schema(AGENT_CRO),
                 }
             ],
-            "tool_choice": {"type": "tool", "name": CRO_TOOL_NAME},
+            "tool_choice": {
+                "type": "tool",
+                "name": CRO_TOOL_NAME,
+                "disable_parallel_tool_use": True,
+            },
         },
         timeout,
     )
@@ -557,7 +591,7 @@ def _call_claude(
     if finding["sources"]:
         raise CouncilUnavailable("Claude CRO returned sources; Python attaches provenance.")
     print(f"AGENT_DONE={AGENT_CRO}", flush=True)
-    return {**finding, "provenance_ok": True, "sources": [{"url": row["url"]} for row in sources]}
+    return {**finding, "provenance_ok": True, "sources": [{"url": row["url"]} for row in verified_sources]}
 
 
 def _public_finding(finding: Mapping[str, Any]) -> dict:
