@@ -579,11 +579,6 @@ def _call_claude(
                     "input_schema": _finding_schema(AGENT_CRO),
                 }
             ],
-            "tool_choice": {
-                "type": "tool",
-                "name": CRO_TOOL_NAME,
-                "disable_parallel_tool_use": True,
-            },
         },
         timeout,
     )

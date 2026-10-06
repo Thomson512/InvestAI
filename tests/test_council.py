@@ -235,6 +235,7 @@ class _Scripted:
                     {"type": "text", "text": "no material conflict"},
                 ],
             }
+        assert "tool_choice" not in body
         return {
             "content": [
                 {
@@ -392,6 +393,7 @@ def test_pause_turn_replays_assistant_without_a_new_user_message(tmp_path: Path)
                 assert body["messages"][1]["content"][1]["content"][0]["encrypted_content"] == "keep-me"
                 return {"stop_reason": "end_turn", "content": [{"type": "text", "text": "done"}]}
             assert tools[0]["strict"] is True
+            assert "tool_choice" not in body
             return {
                 "content": [
                     {
