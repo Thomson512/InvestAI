@@ -678,6 +678,295 @@
           ]
         }
       ]
+    },
+    "2026-10-12:NTAP:673ad8b9e4541815f6d8141f4b89136ba864d5cb82aa2ad4b7c43650484a79c7": {
+      "verdict": "APPROVE",
+      "reason": "6/6 approved with Claude CRO and confidence >= 0.65",
+      "symbol": "NTAP",
+      "asof_session": "2026-10-12",
+      "param_hash": "673ad8b9e4541815f6d8141f4b89136ba864d5cb82aa2ad4b7c43650484a79c7",
+      "generated_at": "2026-10-13T15:02:04Z",
+      "findings": [
+        {
+          "agent": "Scanner Agent",
+          "verdict": "APPROVE",
+          "confidence": 0.92,
+          "thesis": "The packet is internally coherent. Entry (235.62), stop (223.8743) and target (288.47565) produce a plausible risk:reward (~4.5:1) and the stop distance (~11.7457) is ~1.53 ATR (ATR_14 = 7.6704), which is consistent with a breakout-based setup. Breakout_strength (0.6479), RS excess (33.6115), breadth_gate = PASS and a high score (88.4349) with tier A are mutually consistent indicators supporting the trade. Spread_bps (18.27) and quantity = 1.0 are provided and do not contradict other fields. The authoritative note is respected.",
+          "risks": [
+            "Stop is relatively close in ATR terms (~1.5 ATR) — susceptible to intraday noise or stop-hunts/gapping through the stop overnight",
+            "Execution slippage and transaction costs (spread_bps 18.27) could meaningfully affect realized entry/stop on a single-share quantity",
+            "Quantity = 1.0 is authoritative but may not reflect portfolio sizing or diversification — position-sizing risk remains",
+            "Model/data staleness risk: packet as-of 2026-10-12; market conditions can change after that timestamp",
+            "Event/overnight gap risk could invalidate stop placement between sessions"
+          ],
+          "sources": []
+        },
+        {
+          "agent": "Market Regime Agent",
+          "verdict": "APPROVE",
+          "confidence": 0.67,
+          "thesis": "As of the quant packet timestamp (session 2026-10-12) the market breadth gate passed and breadth is positive (market_breadth_pct 57.6), S&P was trading near recent highs while overall volatility remained subdued — a backdrop that generally supports momentum breakouts. Technology sector weakness on Oct 12, 2026 was concentrated in chip/memory names and created headwinds for growth-heavy indexes, but NetApp (NTAP) is more exposed to enterprise storage/software demand than to semiconductor cyclicality and there were no material, immediate company-specific negative headlines on Oct 12–13, 2026 that would clearly invalidate a momentum entry. Given the packet’s strong breakout_strength (0.6479) and breadth PASS, the overall regime is supportive of attempting a momentum breakout on NTAP, with cau",
+          "risks": [
+            "Technology-sector selloff (chip/memory weakness) could broaden and pressure NTAP despite its enterprise focus.",
+            "Higher Treasury yields or renewed hawkish Fed commentary could sap risk appetite and blunt breakouts.",
+            "Low/altered liquidity around the Columbus Day period and intra-day bond-market closure can increase volatility or produce false breakouts.",
+            "Company-specific news (guidance revisions, earnings surprises, large contract losses) could invalidate the setup after entry.",
+            "Spread and execution risk (spread_bps ~18.3) may widen in fast moves, increasing slippage."
+          ],
+          "sources": [
+            {
+              "url": "https://apnews.com/article/a2edaf9ec297fb75ff2a4e245063ec08"
+            },
+            {
+              "url": "https://apnews.com/article/a9a26b9706963afe9bdeda1b2eb1f51d"
+            },
+            {
+              "url": "https://apnews.com/article/f07713e8b2e438ac5903b50f5ce97235"
+            },
+            {
+              "url": "https://bellwize.com/markets/2026-10-12-market-recap/"
+            },
+            {
+              "url": "https://deanfi.com/insights/marketpulse/2026-10-12/"
+            },
+            {
+              "url": "https://en.wikipedia.org/wiki/Closing_milestones_of_the_Dow_Jones_Industrial_Average"
+            },
+            {
+              "url": "https://investors.netapp.com/news/news-details/2026/NetApp-Reports-Fourth-Quarter-and-Fiscal-Year-2026-Results/default.aspx"
+            },
+            {
+              "url": "https://investors.netapp.com/news/news-details/2026/NetApp-Reports-Third-Quarter-of-Fiscal-Year-2026-Results/default.aspx"
+            },
+            {
+              "url": "https://s21.q4cdn.com/371534297/files/doc_earnings/2026/q2/transcript/q2-transcript.pdf"
+            },
+            {
+              "url": "https://s21.q4cdn.com/371534297/files/doc_news/NetApp-Hosts-Second-Quarter-of-Fiscal-Year-2026-Financial-Results-Webcast-2025.pdf"
+            },
+            {
+              "url": "https://stockmarketwatch.com/digest/2026-10-12"
+            },
+            {
+              "url": "https://swingfolio.com/daily/us/2026-10-12/afternoon"
+            },
+            {
+              "url": "https://veloxmacro.com/vix/"
+            },
+            {
+              "url": "https://www.fool.com/coverage/stock-market-today/2026/10/12/stock-market-today-oct-12-dow-gains-as-memory-stocks-weigh-on-nasdaq/"
+            },
+            {
+              "url": "https://www.investing.com/news/stock-market-news/us-stocks-mixed-at-close-of-trade-dow-jones-industrial-average-up-038-4945191"
+            },
+            {
+              "url": "https://www.kiplinger.com/investing/stocks/17494/next-week-earnings-calendar-stocks"
+            },
+            {
+              "url": "https://www.kiplinger.com/investing/stocks/is-the-stock-market-closed-on-columbus-day"
+            },
+            {
+              "url": "https://www.netapp.com/newsroom/press-releases/?contentType=Press+Release"
+            },
+            {
+              "url": "https://www.reddit.com/r/getagraph/comments/1x44kfg/buy_signal_netapp_inc_12_oct_2026_1113_23536/"
+            },
+            {
+              "url": "https://www.thecorequant.com/the-wall-street-wrap-october-12-2026"
+            },
+            {
+              "url": "https://www.wmtmt.com/notes/daily-2026-10-12"
+            }
+          ]
+        },
+        {
+          "agent": "News and Event Agent",
+          "verdict": "APPROVE",
+          "confidence": 0.85,
+          "thesis": "Web search through the most recent public filings and press releases shows NetApp (NTAP) reported fourth-quarter/fiscal‑year 2026 results for the period ending April 24, 2026 and provided forward-looking fiscal‑2027 outlook in its releases and SEC filings; the company has announced strategic acquisitions (notably DataPelago on July 16, 2026, and press reporting of other smaller buys) that reinforce its AI/data‑infrastructure positioning; there are active patent litigations and IPR proceedings (e.g., Valtrus-related matters with venue/motion activity in 2026) but no disclosed injunctions, trading halts, regulatory enforcement actions, or adverse judgments that would constitute a verified material event arguing against opening a new long at this time.",
+          "risks": [
+            "Ongoing patent litigation/IPR proceedings (Valtrus and related cases) could produce an adverse judgment, injunction, or material damages award.",
+            "Acquisition/integration risk — recent buys (DataPelago and others reported) may not deliver expected revenue or margin benefit.",
+            "Earnings or guidance misses in upcoming quarters could be material to the stock given recent growth positioning in enterprise AI.",
+            "Macro or sectorwide weakness in enterprise IT spending that materially reduces demand for NetApp products and services.",
+            "Unidentified or newly emerging regulatory, enforcement, or trading‑halt events that may arise between this search and trade execution."
+          ],
+          "sources": [
+            {
+              "url": "https://docketnexus.com/party/netapp-inc/"
+            },
+            {
+              "url": "https://dockets.justia.com/docket/new-york/nysdce/1%3A2025cv06138/646443"
+            },
+            {
+              "url": "https://en.wikipedia.org/wiki/NetApp"
+            },
+            {
+              "url": "https://investors.netapp.com/news/news-details/2026/NetApp-Acquires-DataPelago-Making-Data-AI-Ready-at-the-Infrastructure-Layer/default.aspx"
+            },
+            {
+              "url": "https://investors.netapp.com/news/news-details/2026/NetApp-Reports-Fourth-Quarter-and-Fiscal-Year-2026-Results/default.aspx"
+            },
+            {
+              "url": "https://investors.netapp.com/news/news-details/2026/NetApp-Reports-Third-Quarter-of-Fiscal-Year-2026-Results/default.aspx"
+            },
+            {
+              "url": "https://ptacts.uspto.gov/ptacts/public-informations/petitions/1558626/download-documents?artifactId=z1KlOm_V04q2SrqJpbpQtCu8HxsxZWJYGx5rnt-70tcYo2qnrCsgFkI"
+            },
+            {
+              "url": "https://s21.q4cdn.com/371534297/files/doc_earnings/2026/q2/transcript/q2-transcript.pdf"
+            },
+            {
+              "url": "https://www.axios.com/newsletters/axios-pro-rata-5a70c03a-b31e-486b-ab85-62ad78eb33b4"
+            },
+            {
+              "url": "https://www.law360.com/texas/articles/2529136"
+            },
+            {
+              "url": "https://www.leagle.com/decision/infdco20260923l52"
+            },
+            {
+              "url": "https://www.netapp.com/media/126243-financial-q4-fy25.pdf"
+            },
+            {
+              "url": "https://www.netapp.com/newsroom/press-releases/?contentType=Press+Release"
+            },
+            {
+              "url": "https://www.netapp.com/pdf.html?item=%2Fmedia%2F126245-earnings-slides-q4-fy25.pdf&v=20255291742"
+            },
+            {
+              "url": "https://www.reddit.com/r/Netlist_/comments/1v1i1b5/updated_catalysts_72026/"
+            },
+            {
+              "url": "https://www.reddit.com/r/Netlist_/comments/1vm2sv9/sterne_kessler_client_netlist_negotiates_fiveyear/"
+            },
+            {
+              "url": "https://www.reddit.com/r/Optionmillionaires/comments/1wzsnwq/ntap/"
+            },
+            {
+              "url": "https://www.reddit.com/r/getagraph/comments/1x44kfg/buy_signal_netapp_inc_12_oct_2026_1113_23536/"
+            },
+            {
+              "url": "https://www.sec.gov/Archives/edgar/data/1002047/000119312526076545/ntap-ex99_1.htm"
+            },
+            {
+              "url": "https://www.sec.gov/Archives/edgar/data/1002047/000119312526245196/ntap-20260521.htm"
+            },
+            {
+              "url": "https://www.sec.gov/Archives/edgar/data/1002047/000119312526259683/0001193125-26-259683-index.htm"
+            },
+            {
+              "url": "https://www.sec.gov/Archives/edgar/data/1002047/000119312526321239/ntap-2026_ars.pdf"
+            },
+            {
+              "url": "https://www.sec.gov/Archives/edgar/data/1002047/000119312526380207/ntap-20260731.htm"
+            },
+            {
+              "url": "https://www.youtube.com/watch?v=6CmXZxPm0-s"
+            }
+          ]
+        },
+        {
+          "agent": "Technical Context Agent",
+          "verdict": "APPROVE",
+          "confidence": 0.82,
+          "thesis": "Breakout strength (0.6479) indicates a moderate-to-strong breakout; relative strength is very strong (+33.6115% excess), and market breadth (57.6%) is constructive. ATR (7.6704) shows meaningful intraday volatility. The provided stop (223.8743) is below the stated entry and the provided target (288.47565) is above the stated entry, so the stop and target align with a bullish long setup and do not contradict the breakout signal.",
+          "risks": [
+            "Intraday volatility (ATR 7.6704) could trigger the stop during normal price swings",
+            "Breakout failure / false breakout leading to rapid reversal",
+            "Overall market breadth could weaken, undermining the breakout",
+            "Gap risk at market open could bypass the stop or target",
+            "Target may not be reached within a desired timeframe; execution and timing risk"
+          ],
+          "sources": []
+        },
+        {
+          "agent": "Thesis Agent",
+          "verdict": "APPROVE",
+          "confidence": 0.82,
+          "thesis": "Bull case: The quant packet shows a coherent momentum breakout setup — an authoritative entry of 235.62, stop at 223.8743 and target at 288.47565 with a high score (88.4349), tier A, breakout_strength 0.6479 and very strong RS excess (33.6115%). Market breadth passed (57.6%) and the specialists uniformly view the regime and signal as supportive, yielding a favorable asymmetric opportunity consistent with the model’s stated risk/reward. Bear case: The stop is relatively tight in volatility terms (~1.5 ATR per the packet) so intraday noise, false breakouts, stop-hunts or an overnight gap could trigger the stop before the trend resumes. Broader macro/sector pressure (tech/enterprise IT weakness, higher rates) or company-specific adverse news (earnings, guidance, litigation outcomes, acquisiti",
+          "risks": [
+            "Stop proximity: stop is ~1.5 ATR (intraday volatility could hit stop during normal swings)",
+            "Execution/slippage and transaction-cost risk (spread_bps ~18.27) could materially affect entry/stop on the stated single-share quantity",
+            "Position-sizing risk: quantity = 1.0 is authoritative but may not reflect portfolio diversification or sizing constraints",
+            "Overnight/gap risk: gaps can bypass the stop or target and invalidate risk math between sessions",
+            "False-breakout risk: breakout_strength is moderate-to-strong but can fail and reverse quickly"
+          ],
+          "sources": []
+        },
+        {
+          "agent": "Claude CRO",
+          "verdict": "APPROVE",
+          "confidence": 0.66,
+          "thesis": "I found no verified event that argues against buying NTAP. There is no injunction, adverse judgment, trading halt, guidance cut or regulatory action. All five specialists approved, and none of them contradicts another. The next earnings report is Dec 1, 2026, outside the near-term window. Fundamentals are supportive: raised guidance and an Evercore ISI upgrade to Outperform with a $300 target. The packet is internally coherent, breadth passed, and relative strength is strong. The remaining risks are valuation and crowding, execution, and incomplete evidence. NTAP is at an all-time high after a gain of about 97% in a year, and it trades above the average analyst target of about $213. The price has moved above the packet entry, and the ~18 bps spread adds slippage risk. The stop is about 1.5",
+          "risks": [
+            "Valuation and crowding: all-time high after about a 97% one-year gain, with price above the consensus average target of about $213",
+            "Price has moved above the packet entry, and the ~18 bps spread adds slippage risk (no recomputation performed)",
+            "Stop is about 1.5 ATR away and is vulnerable to intraday noise, false breakouts and overnight gaps",
+            "Insider selling by the CEO and a director in September 2026, context unverified",
+            "Valtrus patent litigation and IPR proceedings not independently verified for adverse outcomes"
+          ],
+          "sources": [
+            {
+              "url": "https://finance.yahoo.com/news/netapp-hosts-second-quarter-fiscal-210100608.html"
+            },
+            {
+              "url": "https://finance.yahoo.com/quote/NTAP/"
+            },
+            {
+              "url": "https://in.investing.com/news/stock-market-news/netapp-stock-hits-alltime-high-at-23979-93CH-5630973"
+            },
+            {
+              "url": "https://investors.netapp.com/news/news-details/2025/NetApp-Hosts-Second-Quarter-of-Fiscal-Year-2026-Financial-Results-Webcast/default.aspx"
+            },
+            {
+              "url": "https://robinhood.com/us/en/stocks/NTAP/"
+            },
+            {
+              "url": "https://stockanalysis.com/stocks/ntap/"
+            },
+            {
+              "url": "https://www.businesswire.com/news/home/20251125723759/en/NetApp-Reports-Second-Quarter-of-Fiscal-Year-2026-Results"
+            },
+            {
+              "url": "https://www.cnn.com/markets/stocks/NTAP"
+            },
+            {
+              "url": "https://www.etoro.com/markets/ntap"
+            },
+            {
+              "url": "https://www.investing.com/equities/network-appliance-inc"
+            },
+            {
+              "url": "https://www.marketbeat.com/instant-alerts/price-netapp-nasdaq-ntap-reaches-new-1-year-high-whats-next-2026-10-13/"
+            },
+            {
+              "url": "https://www.marketbeat.com/stocks/NASDAQ/NTAP/target"
+            },
+            {
+              "url": "https://www.netapp.com/newsroom/press-releases/news-rel-20250731-433694/"
+            },
+            {
+              "url": "https://www.netapp.com/newsroom/press-releases/news-rel-20251125-results-880920/"
+            },
+            {
+              "url": "https://www.netapp.com/newsroom/press-releases/news-rel-20260811-108821/"
+            },
+            {
+              "url": "https://www.sec.gov/Archives/edgar/data/0001002047/000100204726000003/ntap-ex99_1.htm"
+            },
+            {
+              "url": "https://www.sec.gov/Archives/edgar/data/1002047/000119312526076545/ntap-ex99_1.htm"
+            },
+            {
+              "url": "https://www.tipranks.com/stocks/ntap/earnings"
+            },
+            {
+              "url": "https://www.tradingview.com/news/tradingview:13c1bb5231213:0-netapp-reports-second-quarter-of-fiscal-year-2026-results/"
+            }
+          ]
+        }
+      ]
     }
   }
 }
