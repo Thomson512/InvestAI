@@ -315,6 +315,369 @@
           ]
         }
       ]
+    },
+    "2026-10-12:XOM:673ad8b9e4541815f6d8141f4b89136ba864d5cb82aa2ad4b7c43650484a79c7": {
+      "verdict": "APPROVE",
+      "reason": "6/6 approved with Claude CRO and confidence >= 0.65",
+      "symbol": "XOM",
+      "asof_session": "2026-10-12",
+      "param_hash": "673ad8b9e4541815f6d8141f4b89136ba864d5cb82aa2ad4b7c43650484a79c7",
+      "generated_at": "2026-10-13T14:52:00Z",
+      "findings": [
+        {
+          "agent": "Scanner Agent",
+          "verdict": "APPROVE",
+          "confidence": 0.9,
+          "thesis": "The packet is internally coherent: authoritative fields (entry_usd 174.21, stop_price 165.4439, target_price 213.65745, quantity 2.0) are present and mutually consistent (stop < entry < target). Required metrics are included (atr_14, rs_excess_pct, breakout_strength) and breadth_gate = PASS; no fields required by the packet are missing or contradictory.",
+          "risks": [
+            "Gap risk or overnight moves could invalidate the stop before execution.",
+            "Slippage and the quoted spread (spread_bps present) may impair execution relative to the nominal entry/stop.",
+            "Model or parameter risk: packet params may be stale by the time of execution.",
+            "Concentration/position sizing risk if quantity = 2 does not match portfolio risk limits or lot sizes.",
+            "Event-specific risk (earnings, macro news, dividends) not represented in the packet could affect trade outcome."
+          ],
+          "sources": []
+        },
+        {
+          "agent": "Market Regime Agent",
+          "verdict": "APPROVE",
+          "confidence": 0.78,
+          "thesis": "Market-level backdrop is supportive of a momentum breakout in XOM. Internal breadth is positive (breadth_gate PASS; market_breadth_pct 57.6) and major indexes are holding near record levels while volatility is low (VIX ~15), indicating risk-on positioning without panic. The energy sector is leading on rising crude (WTI ~$90–91), and XOM shows strong relative strength in the quant packet (rs_excess_pct 15.7, breakout_strength 1.1278). Given these factors, a momentum breakout for XOM from the supplied entry levels is regime-consistent. Note: entry_usd, stop_price, target_price and quantity from the EVIDENCE packet are treated as authoritative and were not recomputed.",
+          "risks": [
+            "Sharp reversal in crude oil prices that would sap sector momentum (energy sensitivity).",
+            "Sudden market volatility spike (VIX surge) or broad-market pullback that negates momentum despite sector leadership.",
+            "Company-specific adverse news (earnings surprise, regulatory, or operational issue) that could derail XOM’s breakout.",
+            "Narrow leadership: large-cap/sector concentration could leave the breakout vulnerable if breadth deteriorates.",
+            "Unexpected macro shocks (rates, geopolitical escalation) that quickly reprice risk assets."
+          ],
+          "sources": [
+            {
+              "url": "https://apnews.com/article/3fac4fd7f87efb27714c1d85f4e1af91"
+            },
+            {
+              "url": "https://apnews.com/article/4499d3b2906917ed3d8670095bf1c321"
+            },
+            {
+              "url": "https://apnews.com/article/5d0f953dbf96febb0690c1aef23fa8a9"
+            },
+            {
+              "url": "https://apnews.com/article/a2edaf9ec297fb75ff2a4e245063ec08"
+            },
+            {
+              "url": "https://apnews.com/article/a9a26b9706963afe9bdeda1b2eb1f51d"
+            },
+            {
+              "url": "https://apnews.com/article/dafbd0c4037ee10e2a9e305f3cfa8e70"
+            },
+            {
+              "url": "https://apnews.com/article/f07713e8b2e438ac5903b50f5ce97235"
+            },
+            {
+              "url": "https://bellwize.com/markets/2026-10-12-market-recap/"
+            },
+            {
+              "url": "https://cdn.cboe.com/resources/regulation/rule_filings/approved/2026/SR-CBOE-2026-014.pdf"
+            },
+            {
+              "url": "https://cdn.cboe.com/resources/regulation/rule_filings/pending/2026/SR-CBOE-2026-004.pdf"
+            },
+            {
+              "url": "https://chartexchange.com/symbol/index-vix/historical/"
+            },
+            {
+              "url": "https://chartexchange.com/symbol/nyse-xom/historical/"
+            },
+            {
+              "url": "https://deanfi.com/insights/marketpulse/2026-10-12/"
+            },
+            {
+              "url": "https://en.wikipedia.org/wiki/Advance%E2%80%93decline_line"
+            },
+            {
+              "url": "https://en.wikipedia.org/wiki/McClellan_oscillator"
+            },
+            {
+              "url": "https://es.investing.com/equities/exxon-mobil-historical-data"
+            },
+            {
+              "url": "https://finance.yahoo.com/quote/%5EVIX/history/"
+            },
+            {
+              "url": "https://finance.yahoo.com/quote/XOM/history/?p=XOM"
+            },
+            {
+              "url": "https://fwnbc.marketminute.com/quote/NY%3AXOM/historical"
+            },
+            {
+              "url": "https://investor.exxonmobil.com/sec-filings/all-sec-filings/content/0000034088-26-000067/0000034088-26-000067.pdf"
+            },
+            {
+              "url": "https://investor.exxonmobil.com/sec-filings/annual-reports/content/0000034088-26-000045/0000034088-26-000045.pdf"
+            },
+            {
+              "url": "https://ir.exxonmobil.com/static-files/77c7c94e-2891-4042-8d68-17634797e85f"
+            },
+            {
+              "url": "https://markets.financialcontent.com/wss/quote/ny%3Axom"
+            },
+            {
+              "url": "https://markets.ft.markitdigital.com/data/commodities/tearsheet/historical?c=WTI+Crude+Oil"
+            },
+            {
+              "url": "https://metacap.si/markets/sectors/"
+            },
+            {
+              "url": "https://old.yardeni.com/wp-content/uploads/mb_20251006.pdf?_hsmi=2"
+            },
+            {
+              "url": "https://on.spdji.com/rs/838-LDP-483/images/dashboard-us-2026-03.pdf"
+            },
+            {
+              "url": "https://stockanalysis.com/stocks/xom/history/"
+            },
+            {
+              "url": "https://stockdoz.com/advance-decline-line/2026/"
+            },
+            {
+              "url": "https://stockscan.io/stocks/XOM/price-history"
+            },
+            {
+              "url": "https://stockvs.com/en/stock/xom"
+            },
+            {
+              "url": "https://www.cboe.com/tradable_products/vix/vix_historical_data"
+            },
+            {
+              "url": "https://www.cypresscapital.com/charts/"
+            },
+            {
+              "url": "https://www.investdavenport.com/download/equity-research-market-commentary-march-2026/?refresh=69af07875b8351773078407&wpdmdl=20284"
+            },
+            {
+              "url": "https://www.investech.com/daily-data/"
+            },
+            {
+              "url": "https://www.investing.com/news/stock-market-news/us-stocks-mixed-at-close-of-trade-dow-jones-industrial-average-up-038-4945191"
+            },
+            {
+              "url": "https://www.kiplinger.com/investing/stocks/17494/next-week-earnings-calendar-stocks"
+            },
+            {
+              "url": "https://www.kiplinger.com/investing/stocks/is-the-stock-market-closed-on-columbus-day"
+            },
+            {
+              "url": "https://www.kiplinger.com/investing/stocks/is-the-stock-market-open-on-labor-day"
+            },
+            {
+              "url": "https://www.kiplinger.com/investing/stocks/stocks-climb-a-wall-of-worry-ahead-of-earnings-stock-market-today"
+            },
+            {
+              "url": "https://www.nyse.com/xbcf7t9"
+            },
+            {
+              "url": "https://www.portfolio-terminal.com/markets/stock-market-close/october-12-2026"
+            },
+            {
+              "url": "https://www.portfolio-terminal.com/markets/vix/october-2026"
+            },
+            {
+              "url": "https://www.psprs.com/wp-content/uploads/2026/02/02-19-2026-Investment-Committee-Meeting-Materials.pdf"
+            },
+            {
+              "url": "https://www.reddit.com/r/Daytrading/comments/1x4lgsx/evening_market_report_945_central_101226/"
+            },
+            {
+              "url": "https://www.reddit.com/r/MarketProbabilities/comments/1x4kua0/why_the_sp_and_nasdaq_slipped_while_8_of_11/"
+            },
+            {
+              "url": "https://www.socwa.com/wp-content/uploads/2026/04/FCM-Agenda-Packet-2026.04.21.pdf"
+            },
+            {
+              "url": "https://www.statmuse.com/money/ask/xom-stock"
+            },
+            {
+              "url": "https://www.tipranks.com/news/sp-500-top-stock-gainers-today-10-12-26"
+            }
+          ]
+        },
+        {
+          "agent": "News and Event Agent",
+          "verdict": "APPROVE",
+          "confidence": 0.78,
+          "thesis": "Public filings and company disclosures (SEC filings and ExxonMobil press releases) show strong second-quarter 2026 results (Q2 2026 earnings reported at ~$14.5 billion; results and earnings call referenced on July 31, 2026), and the company completed a corporate reorganization/merger transaction effective July 1, 2026 (creation/description of ExxonMobil Holdings Corporation / related subsidiary steps per PRE 14A and SEC filings). Company guidance/capex range (2026 cash capital expenditures ~$27–29 billion) was reiterated in filings. There are ongoing climate- and securities-related litigations and regulatory matters disclosed in public dockets and company filings, but I did not find a new adverse ruling, regulatory enforcement action, trading halt, or announced hostile merger/asset-sale th",
+          "risks": [
+            "Active and broad climate-related litigation and securities class actions involving ExxonMobil that remain pending and could produce adverse rulings or material settlements in the future.",
+            "Ongoing regulatory or governmental review (state and federal) of oil & gas companies — potential for fines, restrictions, or rulings that could be material.",
+            "Corporate reorganization/merger completed July 1, 2026 may have tax, governance, or transitional risks that could affect near-term share behavior.",
+            "Commodity price volatility (oil & gas prices) that materially affects earnings and cash flow.",
+            "Geopolitical or macro events that could materially alter demand, margins, or supply disruptions."
+          ],
+          "sources": [
+            {
+              "url": "https://climate.law.columbia.edu/news/climate-litigation-updates-july-30-2026"
+            },
+            {
+              "url": "https://d1io3yog0oux5.cloudfront.net/exxonmobil/sec/0001193125-26-098908/0001193125-26-098908.pdf"
+            },
+            {
+              "url": "https://en.wikipedia.org/wiki/Chevron_USA_Inc._v._Plaquemines_Parish"
+            },
+            {
+              "url": "https://en.wikipedia.org/wiki/ExxonMobil"
+            },
+            {
+              "url": "https://en.wikipedia.org/wiki/People_v._Exxon_Mobil"
+            },
+            {
+              "url": "https://en.wikipedia.org/wiki/Suncor_Energy_%28U.S.A.%29_Inc._v._County_Commissioners_of_Boulder_County"
+            },
+            {
+              "url": "https://exxonmobilsecuritieslitigation.com/"
+            },
+            {
+              "url": "https://investor.exxonmobil.com/?sf177336380=1"
+            },
+            {
+              "url": "https://investor.exxonmobil.com/company-information/press-releases?page=1"
+            },
+            {
+              "url": "https://investor.exxonmobil.com/company-information/press-releases/detail/1204/exxonmobil-announces-first-quarter-2026-results?_kx=MYprLEFy8H1YdDyCX72-lk724JhZYQDglcYJ93ErNv4.RaD4Px"
+            },
+            {
+              "url": "https://investor.exxonmobil.com/company-information/press-releases/detail/1208/exxonmobil-announces-second-quarter-2026-results"
+            },
+            {
+              "url": "https://investor.exxonmobil.com/news-events/ir-calendar/detail/20260731-2q-2026-earnings-call"
+            },
+            {
+              "url": "https://investor.exxonmobil.com/sec-filings/all-sec-filings/content/0000034088-26-000033/0000034088-26-000033.pdf"
+            },
+            {
+              "url": "https://investor.exxonmobil.com/sec-filings/all-sec-filings/content/0000034088-26-000093/xom-20260630.htm"
+            },
+            {
+              "url": "https://investor.exxonmobil.com/sec-filings/all-sec-filings/content/0001193125-26-098908/0001193125-26-098908.pdf"
+            },
+            {
+              "url": "https://investor.exxonmobil.com/sec-filings/all-sec-filings/content/0001999371-24-005715/0001999371-24-005715.pdf"
+            },
+            {
+              "url": "https://ir.exxonmobil.com/static-files/8a29e184-a5d3-41ab-a95a-7f7713c8518d"
+            },
+            {
+              "url": "https://law.justia.com/cases/federal/district-courts/texas/txedce/1%3A2025cv00011/235144/132/"
+            },
+            {
+              "url": "https://mfgaccountabilityproject.org/wp-content/uploads/2026/03/MAP_Case_Tracker-9-March-2026.pdf"
+            },
+            {
+              "url": "https://www.sec.gov/Archives/edgar/data/34088/000003408826000045/xom-20251231.htm"
+            },
+            {
+              "url": "https://www.sec.gov/Archives/edgar/data/34088/000003408826000065/xom-20260501.htm"
+            },
+            {
+              "url": "https://www.sec.gov/Archives/edgar/data/34088/000003408826000093/xom-20260630.htm"
+            }
+          ]
+        },
+        {
+          "agent": "Technical Context Agent",
+          "verdict": "APPROVE",
+          "confidence": 0.78,
+          "thesis": "Breakout is positive (breakout_strength=1.1278) with strong relative strength (rs_excess_pct=15.6952%) and supportive market breadth (market_breadth_pct=57.6, breadth_gate=PASS). ATR indicates moderate intraday volatility (atr_14=3.3631). Stop (165.4439) is below entry (174.21) and target (213.65745) is above entry, so the supplied parameters are internally consistent for a long breakout trade.",
+          "risks": [
+            "Breakout strength is modest rather than extreme; may produce false breakouts.",
+            "Market breadth is only moderate (57.6%); wider market weakness could weaken the move.",
+            "ATR shows non-negligible volatility (atr_14=3.3631); intraday whipsaws could hit the stop.",
+            "Tail risks (news, gaps) could breach the stop before intended execution."
+          ],
+          "sources": []
+        },
+        {
+          "agent": "Thesis Agent",
+          "verdict": "APPROVE",
+          "confidence": 0.81,
+          "thesis": "Bull case: The quant packet presents a coherent momentum breakout trade (entry_usd 174.21, stop_price 165.4439, target_price 213.65745, quantity 2.0) with supportive metrics—breakout_strength 1.1278, rs_excess_pct 15.6952, breadth_gate = PASS and market_breadth_pct 57.6—consistent with the specialists’ view that the current regime is risk-on and energy/sector leadership can carry the breakout to the target. Bear case: The breakout is modest (not extreme) and vulnerable to false breakouts and intraday whipsaws (atr_14 = 3.3631); a reversal in the underlying commodity/sector, a broad-market volatility spike, or adverse company-specific/regulatory/legal news could quickly negate momentum and hit the stop or gap through it. What would invalidate the idea: a clear regime shift or event that mea",
+          "risks": [
+            "Gap risk / overnight moves that can invalidate the stop before execution.",
+            "Execution risk: slippage and the quoted spread (spread_bps) may prevent fills at the stated entry/stop.",
+            "Commodity/sector reversal (sharp decline in oil prices) that removes sector leadership.",
+            "Broad-market volatility spike (VIX surge) or breadth deterioration that undermines momentum despite current PASS.",
+            "Company-specific adverse news, regulatory action, or adverse legal rulings from ongoing litigation."
+          ],
+          "sources": []
+        },
+        {
+          "agent": "Claude CRO",
+          "verdict": "APPROVE",
+          "confidence": 0.67,
+          "thesis": "All five specialists approve. The quant packet is internally consistent (stop < entry < target, breadth gate PASS, rs_excess 15.7%, breakout strength 1.13, spread about 11 bps). The News and Event specialist found no new adverse ruling, enforcement action, halt or hostile transaction. Q2 2026 results were strong, and the July 1 reorganization is already complete. The risk is acceptable but not clean. The Market Regime specialist describes crude as rising, while the verified web research shows Brent and WTI easing on supply-relief headlines on Oct 12-13 (WTI about $90-93, Brent about $103-106, with Middle East risk persisting). That contradicts the claim of sector leadership on rising crude. Crude is also geopolitically elevated, so a reversal is a real threat to the energy breakout. Pendin",
+          "risks": [
+            "Crude is elevated on geopolitical risk and is easing on supply-relief headlines. The Market Regime specialist's 'rising crude' premise is contradicted by the web research, so a sharper oil reversal could remove sector leadership.",
+            "The breakout is modest. ATR of 3.36 against a stop about 8.8 points below entry raises whipsaw and false-breakout risk.",
+            "Gap risk could breach the stop before execution.",
+            "Market breadth is only moderate at 57.6%.",
+            "Pending climate litigation and securities class actions, and regulatory reviews, could produce adverse rulings."
+          ],
+          "sources": [
+            {
+              "url": "https://convextrade.com/today/oil-price"
+            },
+            {
+              "url": "https://en.wikipedia.org/wiki/2020%E2%80%932022_world_oil_market_chronology"
+            },
+            {
+              "url": "https://en.wikipedia.org/wiki/2026%E2%80%932028_world_oil_market_chronology"
+            },
+            {
+              "url": "https://finance.yahoo.com/quote/XOM/"
+            },
+            {
+              "url": "https://fred.stlouisfed.org/series/DCOILWTICO"
+            },
+            {
+              "url": "https://hdfcsky.com/news/brent-crude-oil-price-today-october-12-2026-brent-falls-1-5percent-to-103-wti-drops-1-8percent-to-90-2-middle-east-risks-persist"
+            },
+            {
+              "url": "https://hdfcsky.com/news/brent-crude-oil-price-today-october-13-2026-brent-slips-to-105-6-wti-at-92-8-as-russian-diesel-supply-offers-relief"
+            },
+            {
+              "url": "https://journalarta.com/en/2026/10/13/xom-stock-gains-1-90-on-monday-testing-key-resistance"
+            },
+            {
+              "url": "https://public.com/stocks/xom/news"
+            },
+            {
+              "url": "https://stocktwits.com/symbol/XOM"
+            },
+            {
+              "url": "https://www.cnn.com/markets/stocks/XOM"
+            },
+            {
+              "url": "https://www.investing.com/commodities/crude-oil-historical-data"
+            },
+            {
+              "url": "https://www.investing.com/equities/exxon-mobil"
+            },
+            {
+              "url": "https://www.macrotrends.net/2516/wti-crude-oil-prices-10-year-daily-chart"
+            },
+            {
+              "url": "https://www.marketbeat.com/instant-alerts/price-exxonmobil-nyse-xom-shares-up-18-whats-next-2026-10-12/"
+            },
+            {
+              "url": "https://www.marketbeat.com/stocks/NYSE/xom/news"
+            },
+            {
+              "url": "https://www.marketbeat.com/stocks/nyse/xom/news"
+            },
+            {
+              "url": "https://www.oilpriceapi.com/live/wti-crude-oil-price"
+            }
+          ]
+        }
+      ]
     }
   }
 }
