@@ -338,21 +338,29 @@ def run_exit(
     store.upsert_heartbeat(EXIT_LOOP_NAME, seen)
 
     extra: list[str] = []
+    stopped: set[str] = set()
     if unprotected and place_stop_fn is not None:
+        symbol = unprotected[0]
         try:
-            guard = place_stop_fn(unprotected[0])
-            extra.append(f"AUTO-STOP: {getattr(guard, 'outcome', guard)}")
+            guard = place_stop_fn(symbol)
+            outcome_text = str(getattr(guard, "outcome", guard))
+            extra.append(f"AUTO-STOP: {outcome_text}")
+            if outcome_text.startswith("STOP_PLACED"):
+                stopped.add(symbol)
         except Exception as exc:
             extra.append(f"AUTO-STOP: FAIL {exc}")
-    protected = broker_symbols(snapshot) - set(unprotected)
+    # Stop položený v tomhle běhu už chrání pozici. Fence UNCERTAIN potvrď hned,
+    # ať další buyer nečeká na další exit cyklus.
+    protected = (broker_symbols(snapshot) - set(unprotected)) | stopped
     if protected:
         store.confirm_uncertain_for_symbols(protected)
-    if unprotected:
+    still_open = [name for name in unprotected if name not in stopped]
+    if still_open:
         extra.extend(
             f"FIX: gh workflow run protective-stop-guard.yml -f symbol={name}"
-            for name in unprotected
+            for name in still_open
         )
-        outcome = f"UNPROTECTED {' '.join(unprotected)}"
+        outcome = f"UNPROTECTED {' '.join(still_open)}"
     elif drift["broker_only"] or drift["evidence_only"]:
         outcome = (
             f"DRIFT broker_only={','.join(drift['broker_only']) or '-'} "
@@ -371,7 +379,7 @@ def run_exit(
             "session_date": session_date,
             "close_allowed": True,
             "close_reason": close_reason,
-            "unprotected": unprotected,
+            "unprotected": still_open,
             "reconcile": drift,
             "daily_pnl": {
                 "trade_date": session_date,

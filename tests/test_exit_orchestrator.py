@@ -150,8 +150,86 @@ def test_auto_stop_runs_for_first_unprotected() -> None:
     )
     assert seen == ["AAPL"]
     assert result.pnl_written is True
-    assert result.outcome == "UNPROTECTED AAPL"
-    assert result.extra_summary[0] == "AUTO-STOP: STOP_PLACED AAPL id=1"
+    assert result.extra_summary == ["AUTO-STOP: STOP_PLACED AAPL id=1"]
+    assert result.evidence["unprotected"] == []
+    assert result.outcome.startswith("DRIFT ")
+    assert "broker_only=AAPL" in result.outcome
+
+
+def test_auto_stop_confirms_uncertain_fence_immediately() -> None:
+    store = MemoryControlPlane()
+    store.uncertain_symbols.add("AAPL")
+
+    class Guard:
+        outcome = "STOP_PLACED AAPL id=1"
+
+    run_exit(
+        session_date="2026-09-08",
+        snapshot=_snapshot(
+            positions=[{"ticker": "AAPL_US_EQ", "quantity": 2, "value_czk": 8000, "current_price": 200}],
+            orders=[],
+        ),
+        store=store,
+        can_close_fn=lambda: (True, "OK"),
+        now=NOW,
+        place_stop_fn=lambda symbol: Guard(),
+    )
+    assert store.uncertain_symbols == set()
+
+
+def test_failed_auto_stop_leaves_fence_uncertain() -> None:
+    store = MemoryControlPlane()
+    store.uncertain_symbols.update({"AAPL", "MSFT"})
+
+    class Guard:
+        outcome = "UNCERTAIN AAPL timeout"
+
+    result = run_exit(
+        session_date="2026-09-08",
+        snapshot=_snapshot(
+            positions=[
+                {"ticker": "AAPL_US_EQ", "quantity": 2, "value_czk": 8000},
+                {"ticker": "MSFT_US_EQ", "quantity": 1, "value_czk": 5000},
+            ],
+            orders=[],
+        ),
+        store=store,
+        can_close_fn=lambda: (True, "OK"),
+        now=NOW,
+        place_stop_fn=lambda symbol: Guard(),
+    )
+    assert store.uncertain_symbols == {"AAPL", "MSFT"}
+    assert result.outcome == "UNPROTECTED AAPL MSFT"
+    assert any(line.startswith("FIX:") and "symbol=AAPL" in line for line in result.extra_summary)
+
+
+def test_auto_stop_confirms_only_the_symbol_it_protected() -> None:
+    store = MemoryControlPlane()
+    store.uncertain_symbols.update({"AAPL", "MSFT"})
+    seen: list[str] = []
+
+    class Guard:
+        outcome = "STOP_PLACED AAPL id=9"
+
+    result = run_exit(
+        session_date="2026-09-08",
+        snapshot=_snapshot(
+            positions=[
+                {"ticker": "AAPL_US_EQ", "quantity": 2, "value_czk": 8000},
+                {"ticker": "MSFT_US_EQ", "quantity": 1, "value_czk": 5000},
+            ],
+            orders=[],
+        ),
+        store=store,
+        can_close_fn=lambda: (True, "OK"),
+        now=NOW,
+        place_stop_fn=lambda symbol: seen.append(symbol) or Guard(),
+    )
+    assert seen == ["AAPL"]
+    assert store.uncertain_symbols == {"MSFT"}
+    assert result.outcome == "UNPROTECTED MSFT"
+    assert result.evidence["unprotected"] == ["MSFT"]
+    assert not any("symbol=AAPL" in line for line in result.extra_summary)
 
 
 def test_confirms_uncertain_when_stop_is_on_broker() -> None:

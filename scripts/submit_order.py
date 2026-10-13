@@ -66,6 +66,7 @@ class SubmitResult:
     reason: str = ""
     plan: dict = field(default_factory=dict)
     critical: str | None = None
+    broker_error: str | None = None
 
 
 def require_live_execution_off(env: dict[str, str] | None = None) -> None:
@@ -121,13 +122,23 @@ def protective_stop_plan(ticker: str, quantity: float, stop_price: float) -> dic
     }
 
 
+def public_broker_error(exc: BaseException | None) -> str:
+    """Jednořádkový text do logu. Authorization už maže default_http_post."""
+    if exc is None:
+        return "unknown"
+    text = " ".join(str(exc).split())
+    return (text or exc.__class__.__name__)[:300]
+
+
 def unprotected_stop_instructions(
     *,
     ticker: str,
     quantity: float,
     stop_price: float,
     fence_key: str,
+    broker_error: str | None = None,
 ) -> str:
+    broker_line = f"\nBroker: {broker_error}" if broker_error else ""
     return (
         "CRITICAL: Nechráněná pozice po selhání ochranného stopu. NEPOKRAČUJ.\n"
         f"Ruční stop v T212 DEMO pro {ticker}:\n"
@@ -138,6 +149,7 @@ def unprotected_stop_instructions(
         f"  5. Fence {fence_key} je UNCERTAIN — po aktivním STOP na brokerovi "
         "exit nastaví CONFIRMED.\n"
         "Market se neopakuje. Stop zkusí exit (jiný fence STOP:…)."
+        f"{broker_line}"
     )
 
 
@@ -396,11 +408,13 @@ def submit_order(
                 break
             sleep_fn(2**attempt)
     if stop_payload is None:
+        broker_error = public_broker_error(last_error)
         critical = unprotected_stop_instructions(
             ticker=ticker_id,
             quantity=quantity,
             stop_price=stop_price,
             fence_key=fenced.fence_key,
+            broker_error=broker_error,
         )
         fence_store.set_state(fenced.fence_key, STATE_UNCERTAIN, order_id=fenced.order_id)
         return SubmitResult(
@@ -412,16 +426,19 @@ def submit_order(
             reason="protective_stop_failed",
             plan=plan,
             critical=critical,
+            broker_error=broker_error,
         )
 
     stop_id = _order_id(stop_payload)
     if getter is not None and stop_id:
         if not readback_order(stop_id, http_get=getter, headers=headers, expect_type="STOP"):
+            broker_error = "stop readback failed"
             critical = unprotected_stop_instructions(
                 ticker=ticker_id,
                 quantity=quantity,
                 stop_price=stop_price,
                 fence_key=fenced.fence_key,
+                broker_error=broker_error,
             )
             fence_store.set_state(fenced.fence_key, STATE_UNCERTAIN, order_id=fenced.order_id)
             return SubmitResult(
@@ -434,6 +451,7 @@ def submit_order(
                 reason="stop_readback_failed",
                 plan=plan,
                 critical=critical,
+                broker_error=broker_error,
             )
 
     fence_store.set_state(fenced.fence_key, STATE_CONFIRMED, order_id=fenced.order_id)

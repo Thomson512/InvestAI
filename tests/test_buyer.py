@@ -239,6 +239,35 @@ def test_order_submitted() -> None:
     assert captured["dry_run"] is False
 
 
+def test_protective_stop_failure_puts_broker_error_in_log_line() -> None:
+    result = run_buyer(
+        session_date="2026-09-07",
+        shortlist=_shortlist(_buy()),
+        snapshot={"positions": [], "active_orders": []},
+        config=CONFIG,
+        strategy=STRATEGY,
+        now=NOW,
+        can_trade_fn=lambda: (True, "OK"),
+        env={},
+        http_get=_http(),
+        submit_fn=lambda **kwargs: SubmitResult(
+            outcome="UNPROTECTED",
+            exit_code=2,
+            dry_run=False,
+            reason="protective_stop_failed",
+            fence_key="k",
+            broker_error='T212 HTTP 400 POST: {"code":"invalid stop"}',
+            critical="CRITICAL: ruční stop",
+        ),
+    )
+    assert result.outcome == "protective_stop_failed"
+    assert result.fail_closed == "protective_stop_failed"
+    assert result.extra_summary[0] == (
+        '::error::protective_stop_failed — T212 HTTP 400 POST: {"code":"invalid stop"}'
+    )
+    assert result.extra_summary[1] == "CRITICAL: ruční stop"
+
+
 def test_outcome_line_and_evidence_field(tmp_path: Path) -> None:
     line = outcome_line("ORDER_SUBMITTED:1")
     assert line == "OUTCOME: ORDER_SUBMITTED:1"

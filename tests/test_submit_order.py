@@ -220,10 +220,13 @@ def test_stop_failure_is_critical_uncertain_no_retry() -> None:
     )
     assert result.outcome == "UNPROTECTED"
     assert result.exit_code == EXIT_UNCERTAIN
+    assert result.reason == "protective_stop_failed"
+    assert result.broker_error == "timed out"
     assert result.critical is not None
     assert "CRITICAL" in result.critical
     assert "SELL STOP" in result.critical
     assert "170.5" in result.critical
+    assert "Broker: timed out" in result.critical
     assert posts == [
         f"{DEMO_BASE_URL}/api/v0/equity/orders/market",
         f"{DEMO_BASE_URL}/api/v0/equity/orders/stop",
@@ -232,6 +235,37 @@ def test_stop_failure_is_critical_uncertain_no_retry() -> None:
     assert unprotected_stop_instructions(
         ticker="AAPL_US_EQ", quantity=2, stop_price=170.5, fence_key="k"
     ).startswith("CRITICAL")
+
+
+def test_stop_http_error_is_kept_after_retries() -> None:
+    def http_post(url: str, headers: dict, body: dict) -> dict:
+        if url.endswith("/stop"):
+            from scripts.submit_order import SubmitError
+
+            raise SubmitError('T212 HTTP 400 POST: {"error":"stop price precision"}')
+        return {"id": 11, "status": "FILLED"}
+
+    result = submit_order(
+        symbol="NTAP",
+        quantity=1,
+        stop_price=223.8743,
+        session_date="2026-10-13",
+        env=SAFE_ENV,
+        can_trade_fn=_ok_trade,
+        snapshot={"positions": [], "active_orders": []},
+        store=MemoryFenceStore(),
+        http_post=http_post,
+        http_get=lambda url, headers: [{"id": 11}],
+        dry_run=False,
+        param_hash="p",
+        settle_sec=0,
+        sleep_fn=lambda _: None,
+        stop_attempts=3,
+    )
+    assert result.reason == "protective_stop_failed"
+    assert result.broker_error == 'T212 HTTP 400 POST: {"error":"stop price precision"}'
+    assert result.critical is not None
+    assert "stop price precision" in result.critical
 
 
 def test_market_404_ticker_missing_is_never_sent() -> None:

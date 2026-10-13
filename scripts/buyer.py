@@ -472,11 +472,16 @@ def run_buyer(
             fail_closed=result.reason or "STOP",
             evidence={"plan": plan, "submit": result.reason},
         )
+    extra: list[str] = []
+    if result.broker_error:
+        extra.append(f"::error::{result.reason} — {result.broker_error}")
+    if result.critical:
+        extra.append(result.critical)
     return BuyerResult(
         outcome=result.reason or result.outcome,
         exit_code=result.exit_code or 2,
         fail_closed=result.reason or result.outcome,
-        extra_summary=[result.critical] if result.critical else [],
+        extra_summary=extra,
         evidence={"plan": plan, "submit": result.reason, "fence_key": result.fence_key},
     )
 
