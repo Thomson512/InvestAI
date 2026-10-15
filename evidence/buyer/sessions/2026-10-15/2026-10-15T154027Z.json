@@ -1,0 +1,335 @@
+{
+  "outcome": "COUNCIL_REJECT:IFF",
+  "session_date": "2026-10-15",
+  "generated_at": "2026-10-15T15:40:27Z",
+  "official": true,
+  "extra_summary": [
+    "council: Claude CRO rejected the proposal"
+  ],
+  "plan": {
+    "symbol": "IFF",
+    "quantity": 4.0,
+    "entry_usd": 90.84,
+    "stop_price": 86.3743,
+    "target_price": 110.93565,
+    "fx_usdczk": 21.732,
+    "spread_bps": 5.505698397841453
+  },
+  "council": {
+    "verdict": "REJECT",
+    "reason": "Claude CRO rejected the proposal",
+    "cached": true,
+    "findings": [
+      {
+        "agent": "Scanner Agent",
+        "verdict": "APPROVE",
+        "confidence": 0.92,
+        "thesis": "Packet is internally coherent: authoritative fields (entry_usd, stop_price, target_price, quantity) are present and ordered logically (stop_price < entry_usd < target_price). Risk metrics and qualifiers are consistent with a plausible setup (ATR provided, stop distance exceeds ATR, positive RS excess, breadth gate PASS, breakout_strength <1). No missing required authoritative fields and no internal contradictions detected.",
+        "risks": [
+          "Market risk: price may gap through the stop on news or at open, producing larger-than-intended loss.",
+          "Liquidity/spread risk: actual execution price may differ from entry due to realized spread or transient liquidity, despite reported spread_bps.",
+          "Model risk: breakout and RS signals may fail during regime shifts; historical metrics may not persist.",
+          "Position-size concentration: quantity is small (4.0), which may reflect sizing constraints or rounding—could under/overexpose relative to risk target."
+        ],
+        "sources": []
+      },
+      {
+        "agent": "Market Regime Agent",
+        "verdict": "REJECT",
+        "confidence": 0.78,
+        "thesis": "U.S. market internals turned hostile over the Oct 14–15 session span: the S&P 500 slid (~1.1% on Oct 14 and continued weakness into Oct 15) and breadth showed a large negative advancer/decliner skew, indicating poor participation for breakouts. ([finance.yahoo.com](https://finance.yahoo.com/markets/stocks/articles/stock-market-news-oct-15-123000001.html?utm_source=openai))\nMaterials (IFF’s sector) has not been leading—sector tone was flat-to-lower on the recent sessions—so a stock-level momentum breakout in IFF must overcome a weak sector and deteriorating market breadth. ([streetstats.finance](https://streetstats.finance/markets/sectors-industries?utm_source=openai))\nGiven the clear deterioration in breadth and index price action since the quant packet timestamp (2026-10-14), the market b",
+        "risks": [
+          "Quant packet shows a passed breadth gate, strong breakout_strength and favorable RS — if that internal signal is based on end-of-day data and IFF-specific order flow is strong, a breakout could still succeed despite a weak broader tape. ([thetrading.tools](https://www.thetrading.tools/advance-decline-line?utm_source=openai))",
+          "VIX remains in the mid-teens (moderate volatility) which could allow volatile intraday breakouts; sudden volatility compression or a one-day reversal in breadth could change the regime quickly. ([finance.yahoo.com](https://finance.yahoo.com/quote/%5EVIX/history/?p=%5EVIX&utm_source=openai))",
+          "IFF has an upcoming quarterly results date (nov 3, 2026) which could create idiosyncratic news risk and widen intraday moves; corporate-specific catalysts could override sector/index weakness. ([ir.iff.com](https://ir.iff.com/press-releases/?page=1&utm_source=openai))"
+        ],
+        "sources": [
+          {
+            "url": "https://2ndocean.com/en/2026/10/13.html"
+          },
+          {
+            "url": "https://apnews.com/article/224008b0bae0921d1e2867a4b1ecf511"
+          },
+          {
+            "url": "https://apnews.com/article/704d3190f0fba2908df07c85f26346ec"
+          },
+          {
+            "url": "https://apnews.com/article/a2edaf9ec297fb75ff2a4e245063ec08"
+          },
+          {
+            "url": "https://apnews.com/article/a9a26b9706963afe9bdeda1b2eb1f51d"
+          },
+          {
+            "url": "https://apnews.com/article/e889ad7dee2b7dd959f1b8bc87366914"
+          },
+          {
+            "url": "https://apnews.com/article/f07713e8b2e438ac5903b50f5ce97235"
+          },
+          {
+            "url": "https://bullstory.io/en-us/investing/sp-500-today"
+          },
+          {
+            "url": "https://ca.investing.com/indices/s-p-composite-1500-materials-historical-data"
+          },
+          {
+            "url": "https://chartexchange.com/symbol/index-vix/historical/"
+          },
+          {
+            "url": "https://chartrow.com/sp500/market-breadth"
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/International_Flavors_%26_Fragrances"
+          },
+          {
+            "url": "https://finance.yahoo.com/markets/stocks/articles/stock-market-news-oct-15-123000001.html"
+          },
+          {
+            "url": "https://finance.yahoo.com/quote/%5EVIX/history/?p=%5EVIX"
+          },
+          {
+            "url": "https://iff.gcs-web.com/static-files/f16fd231-96a8-4b30-89cf-fb0ed227aecb"
+          },
+          {
+            "url": "https://indexbreadth.com/learn/market-breadth-eod-14-october-2026/"
+          },
+          {
+            "url": "https://inversionistas.net/ticker/XLP/historico"
+          },
+          {
+            "url": "https://ir.iff.com/press-releases/?page=1"
+          },
+          {
+            "url": "https://ir.iff.com/static-files/eaaad844-308f-44f8-b4d5-348e8a36e1a3"
+          },
+          {
+            "url": "https://ir.iff.com/static-files/fcccc95e-2c69-4474-81cb-59450b1a1f7f"
+          },
+          {
+            "url": "https://materials.proxyvote.com/Approved/459506/20260303/AR_627231.PDF"
+          },
+          {
+            "url": "https://portfolioslab.com/symbol/IFF"
+          },
+          {
+            "url": "https://smartinvestorsdaily.com/stocks/nyse/iff"
+          },
+          {
+            "url": "https://static1.squarespace.com/static/5a81d8eba8b2b09013eb0de6/t/68e8fedf63a9d958588cd0fd/1760100063707/Fairlead%2BStrategies%2B-%2BStarting%2BLine%2B10-10-2025.pdf"
+          },
+          {
+            "url": "https://stockanalysis.com/stocks/iff/"
+          },
+          {
+            "url": "https://stocksetups.com/today"
+          },
+          {
+            "url": "https://streetstats.finance/markets/sectors-industries"
+          },
+          {
+            "url": "https://swingfolio.com/us/sectors/us-consumer-staples"
+          },
+          {
+            "url": "https://www.algovestiq.com/market/sectors/materials"
+          },
+          {
+            "url": "https://www.benzinga.com/quote/IFF/news"
+          },
+          {
+            "url": "https://www.bloomberg.com/markets/sectors/materials"
+          },
+          {
+            "url": "https://www.cypresscapital.com/charts/"
+          },
+          {
+            "url": "https://www.kiplinger.com/investing/stocks/openai-revenue-woes-weigh-on-tech-stocks-stock-market-today"
+          },
+          {
+            "url": "https://www.kiplinger.com/investing/stocks/stocks-struggle-ahead-of-september-cpi-report-stock-market-today"
+          },
+          {
+            "url": "https://www.okmrf.org/wp-content/uploads/2025/12/2026-02-26-Electronic-Investment-Committee-Agenda-1.pdf"
+          },
+          {
+            "url": "https://www.reddit.com/r/HollowPointTrading/comments/1x6b9b9/daily_point_blank_the_rebound_still_has_to_clear/"
+          },
+          {
+            "url": "https://www.reddit.com/r/stocks/comments/1x47c4e/is_anyone_else_noticing_a_growing_bearish_market/"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/51253/000005125326000010/iff2025annualreport-final.pdf"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/51253/000005125326000028/iff-20260804.htm"
+          },
+          {
+            "url": "https://www.spglobal.com/spdji/en/indices/equity/sp-composite-1500-consumer-staples-sector/"
+          },
+          {
+            "url": "https://www.statmuse.com/money/ask/s-and-p-500-close-each-day-october-2026"
+          },
+          {
+            "url": "https://www.thetrading.tools/advance-decline-line"
+          }
+        ]
+      },
+      {
+        "agent": "News and Event Agent",
+        "verdict": "APPROVE",
+        "confidence": 0.8,
+        "thesis": "Web search (SEC filings and company press releases) shows multiple verified material corporate actions for IFF: a May 29, 2026 agreement to sell the Food Ingredients business (≈$4.3B) and subsequent disclosures classifying the disposal group as discontinued operations; additional announced divestiture of botanical extracts/vitamins/food enhancement activities to SuanNutra (Carbyne Equity) expected to close in 2026; Q2 2026 results and guidance that reflect these separations and a use-of-proceeds plan; ongoing but managed litigation relating to fragrance antitrust class actions (direct‑purchaser settlement activity, a $26M contribution to a settlement fund and a recognized provision of ~$43M), plus related filings describing remaining potential exposure. I found no verified trading halts, r",
+        "risks": [
+          "Execution risk on the announced divestitures (regulatory approvals, closing delays, separation accounting) that could affect near-term results or guidance.",
+          "Ongoing antitrust/fragrance-related litigation (indirect-purchaser and end‑user actions remain unresolved) with potential additional settlements or provisions.",
+          "Operational and financial volatility from transforming the portfolio (discontinued operations, potential impairments, changes to revenue mix).",
+          "Local site litigation (e.g., Jacksonville odor lawsuit and related class actions) that may lead to additional costs or reputational impact.",
+          "Macroeconomic/FX and input-cost risks cited in recent filings that could affect forward guidance."
+        ],
+        "sources": [
+          {
+            "url": "https://app.midpage.ai/document/in-re-fragrance-end-user--12ef0581-748b-49a3-b113-efad85df9581"
+          },
+          {
+            "url": "https://cafanotices.com/Portals/0/Document%20Files/Fragrance/9.%20Proposed%20Long%20Form%20Notice.pdf?ver=NcpWr70kMzi2narpwxDe8g%3D%3D"
+          },
+          {
+            "url": "https://iff.gcs-web.com/financial-information/quarterly-results"
+          },
+          {
+            "url": "https://ir.iff.com/"
+          },
+          {
+            "url": "https://ir.iff.com/financial-information/sec-filings"
+          },
+          {
+            "url": "https://ir.iff.com/news-releases/news-release-details/iff-enters-agreement-sell-its-food-ingredients-business-cvc"
+          },
+          {
+            "url": "https://ir.iff.com/node/40256"
+          },
+          {
+            "url": "https://ir.iff.com/node/40291"
+          },
+          {
+            "url": "https://ir.iff.com/static-files/fcccc95e-2c69-4474-81cb-59450b1a1f7f"
+          },
+          {
+            "url": "https://www.iff.com/wp-content/uploads/2024/10/p8577-esg-report-2021-v5-reduced.pdf"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/51253/000005125326000010/iff2025annualreport-final.pdf"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/51253/000005125326000028/0000051253-26-000028-index.htm"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/51253/000005125326000028/iff-20260804.htm"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/51253/000005125326000030/iff-20260630.htm"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/51253/000005125326000032/iff-20260804.htm"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/51253/000119312526249963/d118591d8k.htm"
+          },
+          {
+            "url": "https://www.youtube.com/watch?v=zai_JJQLrRw"
+          }
+        ]
+      },
+      {
+        "agent": "Technical Context Agent",
+        "verdict": "APPROVE",
+        "confidence": 0.83,
+        "thesis": "Long candidate: breakout_strength 0.8778 with RS excess +13.3068% and breadth PASS (market_breadth_pct 56.8) supports a continuation. ATR 14 = 1.6304 indicates moderate intraday volatility. Entry 90.93 with stop at 86.3743 is below the entry (consistent with a long breakout), and target 111.43065 provides a defined upside objective.",
+        "risks": [
+          "Moderate intraday volatility (ATR 1.6304) could cause stop to be hit before continuation.",
+          "Market breadth is only modestly positive (56.8%), so broader participation could fade and cause breakout failure.",
+          "Breakouts can fail despite strong metrics; adherence to the stop is required to limit loss."
+        ],
+        "sources": []
+      },
+      {
+        "agent": "Thesis Agent",
+        "verdict": "APPROVE",
+        "confidence": 0.83,
+        "thesis": "Bull case: The quant setup is a coherent long-breakout trade with an authoritative entry at 90.93, stop at 86.3743 and target at 111.43065 (quantity 4). Breakout_strength (0.8778), RS excess (+13.3068%) and a breadth_gate PASS (market_breadth_pct 56.8) support continuation; ATR_14 = 1.6304 implies manageable intraday volatility and a defined risk via the stop. Technical context and corporate disclosures do not contradict the breakout signal, so the setup offers a favorable reward-to-defined-risk opportunity. Bear case: Broader market internals and sector tone can turn quickly — a deterioration in breadth or weak sector leadership could cause the breakout to fail despite the stock-level signal. Idiosyncratic corporate events (earnings, divestiture execution issues, litigation or other news)",
+        "risks": [
+          "Market/gap risk: price may gap through the stop on news or at open, producing larger-than-intended loss.",
+          "Liquidity/execution risk: realized spread or transient liquidity could cause actual execution to differ from the listed entry (spread_bps noted).",
+          "Model/regime risk: breakout and RS signals can fail during market-regime shifts; recent deterioration in internals could increase failure probability.",
+          "Position-size concentration/rounding: quantity 4.0 may reflect sizing constraints and could misalign with risk targets.",
+          "Corporate/event risk: upcoming company-specific events (earnings, divestiture execution, litigation) could create idiosyncratic volatility that overrides technical signals."
+        ],
+        "sources": []
+      },
+      {
+        "agent": "Claude CRO",
+        "verdict": "REJECT",
+        "confidence": 0.6,
+        "thesis": "REJECT. The risks are verified but moderate, and I could not resolve the conflict between specialists, so confidence stays below the 0.65 approval threshold. I did not recompute price, stop, target or size.\n\n1. Event risk: IFF reports Q3 2026 results after the close on 2026-11-03, about three weeks out. The trade would be held into a binary event. Q2 adjusted EPS of $0.82 missed the $1.09 consensus, and revenue of $1.95B missed the $2.68B forecast. Part of the gap may come from discontinued-operations accounting for the divestitures, but I could not confirm that.\n\n2. Extended setup: the stock closed at a 52-week high and is up about 34% year to date, with a TTM P/E near 86. The entry is already close to published consensus targets (about $92.7 to $96). Citigroup's target is $100 and Argus'",
+        "risks": [
+          "Q3 earnings on 2026-11-03 after close create binary event and gap risk within the likely holding window; Q2 adjusted EPS and revenue missed consensus",
+          "Stock at 52-week high, up about 34% YTD, TTM P/E about 86; entry is near consensus analyst targets and the quant target of about 111 exceeds published targets",
+          "Market Regime Agent REJECT (S&P 500 down about 1.1% on Oct 14, weak breadth, soft Materials sector) conflicts with the quant breadth PASS and could not be verified",
+          "Divestitures have not closed and fragrance antitrust litigation is unresolved",
+          "Overbought signals with no clear news catalyst raise short-term profit-taking and breakout-failure risk"
+        ],
+        "sources": [
+          {
+            "url": "https://asktraders.com/analysis/international-flavors-fragrances-shares-close-at-a-52-week-high"
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/2026_Indoor_Football_League_season"
+          },
+          {
+            "url": "https://finance.yahoo.com/markets/stocks/articles/iff-release-third-quarter-2026-201500848.html"
+          },
+          {
+            "url": "https://finance.yahoo.com/quote/IFF/"
+          },
+          {
+            "url": "https://investor.icf.com/news-releases/news-release-details/icf-announces-timing-third-quarter-2026-earnings-release-and"
+          },
+          {
+            "url": "https://ir.iff.com/news-releases/news-release-details/iff-release-third-quarter-2026-results-november-3-2026"
+          },
+          {
+            "url": "https://ph.investing.com/news/stock-market-news/iff-stock-reaches-52week-high-at-8932-usd-93CH-2629014"
+          },
+          {
+            "url": "https://rallies.ai/news/iff-updates-financial-calendar-with-third-quarter-2026-earnings-release-and-webcast-schedule-429cc5a3f851bc90"
+          },
+          {
+            "url": "https://robinhood.com/us/en/stocks/IFF/"
+          },
+          {
+            "url": "https://stockhouse.com/news/press-releases/2026/10/13/iff-to-release-third-quarter-2026-results-on-november-3-2026"
+          },
+          {
+            "url": "https://tradersunion.com/news/stocks/show/3796597-iff-surges-3-84percent-today-to/"
+          },
+          {
+            "url": "https://www.01net.it/iff-to-release-third-quarter-2026-results-on-november-3-2026/"
+          },
+          {
+            "url": "https://www.cnn.com/markets/stocks/IFF"
+          },
+          {
+            "url": "https://www.marketbeat.com/instant-alerts/price-international-flavors-fragrances-nyse-iff-hits-new-1-year-high-whats-next-2026-10-14/"
+          },
+          {
+            "url": "https://www.marketbeat.com/stocks/NYSE/IFF/?Vote=1"
+          },
+          {
+            "url": "https://www.nextearningsdate.com/iff.html"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/0000051253/000005125326000015/q12026991pressreleaseofiff.htm"
+          }
+        ]
+      }
+    ]
+  }
+}
