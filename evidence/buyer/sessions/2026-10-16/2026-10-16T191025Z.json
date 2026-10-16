@@ -1,0 +1,321 @@
+{
+  "outcome": "COUNCIL_REJECT:CTSH",
+  "session_date": "2026-10-16",
+  "generated_at": "2026-10-16T19:10:25Z",
+  "official": true,
+  "extra_summary": [
+    "council: Claude CRO rejected the proposal"
+  ],
+  "plan": {
+    "symbol": "CTSH",
+    "quantity": 5.0,
+    "entry_usd": 65.31,
+    "stop_price": 60.9992,
+    "target_price": 84.7086,
+    "fx_usdczk": 21.622,
+    "spread_bps": 9.191176470588584
+  },
+  "council": {
+    "verdict": "REJECT",
+    "reason": "Claude CRO rejected the proposal",
+    "cached": true,
+    "findings": [
+      {
+        "agent": "Scanner Agent",
+        "verdict": "APPROVE",
+        "confidence": 0.79,
+        "thesis": "The packet is internally coherent for a long trade in CTSH. Authoritative fields are consistent: entry_usd = 66.86, stop_price = 60.9992, target_price = 93.2336, quantity = 3, ATR_14 = 2.3879. The stop is below the entry and the target is above the entry, breakout_strength is positive (0.5426), breadth_gate = PASS, tier = A, and RS_excess_pct is strongly positive (43.7515). No fields contradict one another and the packet contains the required authoritative trade parameters.",
+        "risks": [
+          "Price gaps or slippage at open could invalidate the stop or change execution price",
+          "Event risk (earnings/news) could drive outsized volatility relative to the ATR",
+          "Concentration risk given a small absolute quantity may still expose capital if position sizing is part of a larger portfolio plan",
+          "Market-wide sell-offs could overwhelm single-stock breakout signals",
+          "Model regime change: past breakout/breadth signals may not persist going forward"
+        ],
+        "sources": []
+      },
+      {
+        "agent": "Market Regime Agent",
+        "verdict": "APPROVE",
+        "confidence": 0.75,
+        "thesis": "As of the quant packet date (October 15, 2026) the internal signals show a moderate breakout strength (0.5426), breadth gate PASS and market_breadth_pct 60.8% — a constructive backdrop for new momentum entries. Public market data around October 15–16, 2026 shows major US indices trading near recent highs with mixed but not deeply negative action in technology; sector weakness is present but not widespread or panic-driven, and there are no material adverse CTSH-specific headlines found in the recent news flow. Given the packet’s tier A rating, positive relative strength, and the market’s neutral-to-slightly-bullish condition on October 15–16, 2026, the broader regime supports attempting the supplied momentum breakout for CTSH.",
+        "risks": [
+          "Technology-sector weakness or a rotation into defensives that pulls CTSH below the entry (XLK/Nasdaq underperformance).",
+          "A sudden rise in Treasury yields or an inflation surprise that disproportionately hits growth/tech names and increases volatility (VIX spike).",
+          "Company-specific negative event, earnings or guidance revision for CTSH after Oct 15, 2026 that gaps the stock below the stop price.",
+          "Overnight or opening gap that bypasses the entry and immediately violates the stop (gap risk).",
+          "Market breadth deteriorates intra-day (advance/decline flips) invalidating the breadth gate despite earlier pass."
+        ],
+        "sources": [
+          {
+            "url": "https://apnews.com/article/224008b0bae0921d1e2867a4b1ecf511"
+          },
+          {
+            "url": "https://apnews.com/article/704d3190f0fba2908df07c85f26346ec"
+          },
+          {
+            "url": "https://apnews.com/article/d2655f64db7ec8ae450525d58f97b628"
+          },
+          {
+            "url": "https://apnews.com/article/dafbd0c4037ee10e2a9e305f3cfa8e70"
+          },
+          {
+            "url": "https://apnews.com/article/e889ad7dee2b7dd959f1b8bc87366914"
+          },
+          {
+            "url": "https://apnews.com/article/f07713e8b2e438ac5903b50f5ce97235"
+          },
+          {
+            "url": "https://apnews.com/article/f0a4f8aa60a6a24237c419aba38f31fd"
+          },
+          {
+            "url": "https://chartexchange.com/symbol/index-vix/historical/"
+          },
+          {
+            "url": "https://chartrow.com/quote/xlk"
+          },
+          {
+            "url": "https://cognizant.q4cdn.com/123993165/files/doc_earnings/2025/q4/transcript/Transcript_CTSHQ4-2025-Earnings-Call.pdf"
+          },
+          {
+            "url": "https://convextrade.com/metrics/xlk"
+          },
+          {
+            "url": "https://eoddata.com/stockquote/INDEX/SP500.htm"
+          },
+          {
+            "url": "https://finance.yahoo.com/quote/%5EGSPC/history/?ltr=1&period1=1789084800&period2=1789776000"
+          },
+          {
+            "url": "https://indexbreadth.com/learn/market-breadth-eod-15-october-2026/"
+          },
+          {
+            "url": "https://investors.cognizant.com/news-and-events/news/news-details/2026/Cognizant-Reports-Second-Quarter-2026-Results/default.aspx"
+          },
+          {
+            "url": "https://news.cognizant.com/2026-04-29-Cognizant-Reports-First-Quarter-2026-Results?asPDF=1"
+          },
+          {
+            "url": "https://news.cognizant.com/press-releases-financial"
+          },
+          {
+            "url": "https://thefinancialcurrent.com/news/2026-10-15-market-close"
+          },
+          {
+            "url": "https://www.cypresscapital.com/charts/"
+          },
+          {
+            "url": "https://www.kiplinger.com/investing/stocks/nasdaq-nosedives-as-ai-boosts-consumer-prices-stock-market-today"
+          },
+          {
+            "url": "https://www.kiplinger.com/investing/stocks/stocks-struggle-ahead-of-september-cpi-report-stock-market-today"
+          },
+          {
+            "url": "https://www.portfolio-terminal.com/markets/sp-500/october-2026"
+          },
+          {
+            "url": "https://www.reddit.com/r/HollowPointTrading/comments/1x6vxra/the_dow_leads_while_semiconductors_lag_a_divided/"
+          },
+          {
+            "url": "https://www.reddit.com/r/TheMoat/comments/1x6lpna/daily_charts_15_oct_2026/"
+          },
+          {
+            "url": "https://www.reddit.com/r/getagraph/comments/1wz52jh/buy_signal_cognizant_technology_6_oct_2026_1107/"
+          },
+          {
+            "url": "https://www.reddit.com/r/stocknear/comments/1wvyapl/analyst_report_cognizant_technology_solutions/"
+          },
+          {
+            "url": "https://www.reddit.com/r/stocknear/comments/1x1lodu/analyst_report_cognizant_technology_solutions/"
+          },
+          {
+            "url": "https://www.reddit.com/r/u_Mark_deAburg/comments/1x7caa3/market_watch_tech_momentum_fades_10_defensive/"
+          },
+          {
+            "url": "https://www.statmuse.com/money/ask/s-and-p-500-close-each-day-october-2026"
+          }
+        ]
+      },
+      {
+        "agent": "News and Event Agent",
+        "verdict": "REJECT",
+        "confidence": 0.82,
+        "thesis": "Search found verified material legal and regulatory developments adverse to a new long in CTSH: (1) SEC/SEC‑filed disclosures and court records show a U.S. District Court order (March 27, 2026) that could raise a post‑trial award to approximately $298 million and related adverse trial rulings (denial of JMOL and related post‑trial activity), and (2) ongoing regulatory and investigatory matters (DOJ/SEC inquiries, shareholder derivative litigation and other suits, plus class actions and data‑breach related litigation) disclosed in Cognizant’s recent 10‑Q/10‑K and press filings. These are material, unresolved liabilities and regulatory risks that materially increase downside and therefore argue against initiating a new long position.",
+        "risks": [
+          "Near‑term cash/earnings impact from potential ~$298M judgment, including interest and attorney fees.",
+          "Further regulatory penalties or enforcement (DOJ/SEC) or additional liabilities from related litigation.",
+          "Ongoing shareholder derivative suits and stockholder litigation that could lead to settlement costs or governance distractions.",
+          "Class actions and data‑security litigation that could produce additional material liabilities or reputational damage.",
+          "Uncertainty around guidance and integration costs from recent acquisitions which, combined with legal/regulatory costs, could compress margins and free cash flow."
+        ],
+        "sources": [
+          {
+            "url": "https://claimwatch.org/litigation/cognizant-and-trizetto-data-security-breach-class-action"
+          },
+          {
+            "url": "https://cognizant.q4cdn.com/123993165/files/doc_earnings/2024/q2/filing/CTS-form-10-Q-Final.pdf"
+          },
+          {
+            "url": "https://cognizant.q4cdn.com/123993165/files/doc_earnings/2025/q2/filing/CTS-form-10-Q-Final.pdf"
+          },
+          {
+            "url": "https://cognizant.q4cdn.com/123993165/files/doc_earnings/2025/q3/transcript/Transcript_CTSHQ3-2025-Earnings-Call.pdf"
+          },
+          {
+            "url": "https://cognizant.q4cdn.com/123993165/files/doc_earnings/2025/q4/transcript/Transcript_CTSHQ4-2025-Earnings-Call.pdf"
+          },
+          {
+            "url": "https://cognizant.q4cdn.com/123993165/files/doc_earnings/2026/q1/earnings-result/Q1-26-Earnings-Press-Release.pdf"
+          },
+          {
+            "url": "https://cognizant.q4cdn.com/123993165/files/doc_financials/2025/q4/CTSH-2025-12-31-10K_Final-web.pdf"
+          },
+          {
+            "url": "https://courtdocket.org/cognizant-lawsuit-discrimination-bribery-and-securities-fraud/"
+          },
+          {
+            "url": "https://investors.cognizant.com/news-and-events/news/news-details/2026/Cognizant-Reports-Second-Quarter-2026-Results/default.aspx"
+          },
+          {
+            "url": "https://law.justia.com/cases/federal/district-courts/new-york/nysdce/1%3A2021cv02174/556071/226/"
+          },
+          {
+            "url": "https://news.cognizant.com/2024-06-10-COGNIZANT-TO-ACQUIRE-BELCAN-FOR-APPROXIMATELY-1-3-BILLION-TO-SIGNIFICANTLY-STRENGTHEN-ENGINEERING-CAPABILITIES-AND-ESTABLISH-A-LEADERSHIP-POSITION-IN-AEROSPACE-DEFENSE-MARKET"
+          },
+          {
+            "url": "https://news.cognizant.com/index.php?l=100&query=company+acquisition&s=14110&submit=Search"
+          },
+          {
+            "url": "https://news.cognizant.com/press-releases-financial"
+          },
+          {
+            "url": "https://www.analystlens.com/stocks/ctsh/8k/2026-07-10"
+          },
+          {
+            "url": "https://www.marketbeat.com/stocks/NASDAQ/CTSH/earnings/"
+          },
+          {
+            "url": "https://www.reddit.com/r/LayoffHedge/comments/1v4hsd6/cognizant_contract_with_iowa_has_actual_carve/"
+          },
+          {
+            "url": "https://www.reddit.com/r/stocknear/comments/1wvyapl/analyst_report_cognizant_technology_solutions/"
+          },
+          {
+            "url": "https://www.reddit.com/r/stocknear/comments/1x1lodu/analyst_report_cognizant_technology_solutions/"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1058290/000105829026000008/ctsh-20251231.htm"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1058290/000105829026000016/ctsh-20260331.htm"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1058290/000105829026000031/ctsh-20260630.htm"
+          }
+        ]
+      },
+      {
+        "agent": "Technical Context Agent",
+        "verdict": "APPROVE",
+        "confidence": 0.8,
+        "thesis": "Moderate-strength breakout (breakout = 0.5426) in a stock with strong relative strength (RS excess = 43.7515%) and supportive market breadth (market breadth = 60.8%). ATR(14) = 2.3879 indicates moderate volatility. The authoritative stop (60.9992) is below the authoritative entry (66.86), consistent with a long breakout, and the authoritative target (93.2336) offers meaningful upside, so the setup is approved from a technical-context perspective.",
+        "risks": [
+          "Breakout strength is moderate (0.5426), so there is risk of a false breakout and early failure.",
+          "ATR(14) = 2.3879 implies material intraday/near-term volatility; the stop could be tested before trend continuation.",
+          "Strong RS does not guarantee continued outperformance if broader market sentiment reverses; monitor market breadth for deterioration.",
+          "Target may be ambitious relative to potential shock events; be prepared to respect the authoritative stop if the setup fails."
+        ],
+        "sources": []
+      },
+      {
+        "agent": "Thesis Agent",
+        "verdict": "APPROVE",
+        "confidence": 0.79,
+        "thesis": "Bull case: The quant packet shows a coherent momentum breakout setup — entry_usd = 66.86 with an authoritative stop_price = 60.9992 and target_price = 93.2336. Breakout_strength = 0.5426 (moderate), breadth_gate = PASS and market_breadth_pct = 60.8% provide a constructive market backdrop. RS_excess_pct = 43.7515% and tier = A indicate strong relative strength and institutional-quality selection. ATR_14 = 2.3879 implies manageable intraday volatility relative to the stop, and the packet’s quantity = 3 is small and consistent with a disciplined test of the breakout. Together these factors support attempting the supplied momentum long with the authoritative stop and target in place.\n\nBear case: Material, unresolved legal/regulatory and litigation risk identified by the News and Event Agent (i",
+        "risks": [
+          "Material legal/regulatory and litigation exposure (post‑trial award/ongoing DOJ/SEC/class actions) that can drive outsized downside",
+          "Overnight/opening gap risk that bypasses the entry and invalidates the stop or execution price",
+          "Macro/regime risks: sector rotation, rising Treasury yields or VIX spikes that disproportionately hit momentum/tech names",
+          "False breakout risk from moderate breakout_strength (0.5426) and potential model regime change",
+          "ATR(14)=2.3879 implies the stop may be intraday‑tested; short-term volatility could trigger stop loss"
+        ],
+        "sources": []
+      },
+      {
+        "agent": "Claude CRO",
+        "verdict": "REJECT",
+        "confidence": 0.68,
+        "thesis": "REJECT the CTSH long entry. I did not recompute price, stop, target or size. Verified reasons against the entry:\n\n1. Earnings fall inside the trade window. Q3 2026 results are due October 29, 2026, before the open, about 9 sessions after the October 15 packet date. The largest daily move in the past year was +11.3% (July 29, 2026). The stop sits about 8.8% below the entry, so an earnings gap could jump past it and the stop would not cap the loss. Only the Scanner and Market Regime agents mentioned event risk generically, and neither gave the date.\n\n2. Fresh regulatory overhang. On October 8, Cognizant was suspended from the U.S. labor certification program, along with Infosys and Microsoft. A report also cites DOL statements about ongoing criminal investigations of IT outsourcing firms. Th",
+        "risks": [
+          "Q3 earnings on Oct 29, 2026 before open: gap risk could bypass the stop (max 1-year daily move +11.3% vs ~8.8% stop distance)",
+          "Oct 8 suspension from the U.S. labor certification program and DOL criminal investigations of IT outsourcing firms",
+          "Entry after ~15% one-week run-up, above the cited analyst targets (TD Cowen $60, consensus ~$66.14); analyst ratings are split 13 Buy / 16 Hold",
+          "Weak tech tape on hot inflation and rate-hike bets",
+          "rs_excess_pct of 43.75% unverified; one source shows a 1-year change of -16%"
+        ],
+        "sources": [
+          {
+            "url": "https://pluang.com/en/news-feed/atos-se-banding-hakim-akhir-litigasi-trizetto"
+          },
+          {
+            "url": "https://stockanalysis.com/stocks/ctsh/"
+          },
+          {
+            "url": "https://stockstotrade.com/news/cognizant-technology-solutions-corporation-ctsh-news-2026_10_13/"
+          },
+          {
+            "url": "https://theprint.in/tech/cognizants-570-million-trade-secret-case-win-against-syntel-thrown-out-on-appeal/1595140/"
+          },
+          {
+            "url": "https://tickernerd.com/stock/ctsh-forecast/"
+          },
+          {
+            "url": "https://www.cnbc.com/quotes/CTSH"
+          },
+          {
+            "url": "https://www.cnn.com/markets/stocks/CTSH"
+          },
+          {
+            "url": "https://www.marketbeat.com/stocks/NASDAQ/CTSH/"
+          },
+          {
+            "url": "https://www.morningstar.com/stocks/xnas/ctsh/quote"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/0001058290/000105829026000016/ctsh-20260331.htm"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/0001058290/000105829026000031/ctsh-20260630.htm"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1058290/000105829021000279/Financial_Report.xlsx"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1058290/000105829022000023/Financial_Report.xlsx"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1058290/000130817924000543/lctsh2023_ars.pdf"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1058290/000130817926000292/ctsh013686-ars.pdf"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1058290/000135994825000474/ctsh013686-ars.pdf"
+          },
+          {
+            "url": "https://www.stocktitan.net/news/CTSH/cognizant-schedules-third-quarter-2026-earnings-release-and-zn8kr9wytau6.html"
+          },
+          {
+            "url": "https://www.stocktitan.net/overview/CTSH/"
+          },
+          {
+            "url": "https://www.streetinsider.com/Reuters/Cognizants+$570+million+trade-secret+case+win+against+Syntel+thrown+out+on+appeal%C2%A0/21721928.html"
+          },
+          {
+            "url": "https://www.timothysykes.com/news/cognizant-technology-solutions-corporation-ctsh-news-2026_10_13/"
+          }
+        ]
+      }
+    ]
+  }
+}
