@@ -1,19 +1,19 @@
 {
-  "outcome": "COUNCIL_REJECT:CTSH",
+  "outcome": "COUNCIL_REJECT:EL",
   "session_date": "2026-10-16",
-  "generated_at": "2026-10-16T19:40:25Z",
+  "generated_at": "2026-10-16T19:50:24Z",
   "official": true,
   "extra_summary": [
     "council: Claude CRO rejected the proposal"
   ],
   "plan": {
-    "symbol": "CTSH",
-    "quantity": 5.0,
-    "entry_usd": 65.58,
-    "stop_price": 60.9992,
-    "target_price": 86.19359999999998,
+    "symbol": "EL",
+    "quantity": 3.0,
+    "entry_usd": 104.98,
+    "stop_price": 100.9219,
+    "target_price": 123.24145000000004,
     "fx_usdczk": 21.622,
-    "spread_bps": 3.050175385084036
+    "spread_bps": 17.160835160645135
   },
   "council": {
     "verdict": "REJECT",
@@ -23,35 +23,40 @@
       {
         "agent": "Scanner Agent",
         "verdict": "APPROVE",
-        "confidence": 0.79,
-        "thesis": "The packet is internally coherent for a long trade in CTSH. Authoritative fields are consistent: entry_usd = 66.86, stop_price = 60.9992, target_price = 93.2336, quantity = 3, ATR_14 = 2.3879. The stop is below the entry and the target is above the entry, breakout_strength is positive (0.5426), breadth_gate = PASS, tier = A, and RS_excess_pct is strongly positive (43.7515). No fields contradict one another and the packet contains the required authoritative trade parameters.",
+        "confidence": 0.87,
+        "thesis": "The packet is internally coherent: authoritative fields (entry_usd 107.64, stop_price 100.9219, target_price 137.87145, quantity 3.0) are present and mutually consistent (stop < entry < target). Stop distance (~6.72 USD) is ~2.13 ATR and target distance (~30.23 USD) is ~9.59 ATR, which is a plausible risk/reward structure. Supporting metrics (breakout_strength 2.9424, rs_excess_pct 26.8693, breadth_gate PASS) align with a constructive setup. No required authoritative fields are missing or contradictory.",
         "risks": [
-          "Price gaps or slippage at open could invalidate the stop or change execution price",
-          "Event risk (earnings/news) could drive outsized volatility relative to the ATR",
-          "Concentration risk given a small absolute quantity may still expose capital if position sizing is part of a larger portfolio plan",
-          "Market-wide sell-offs could overwhelm single-stock breakout signals",
-          "Model regime change: past breakout/breadth signals may not persist going forward"
+          "Gap risk: overnight or intraday gaps could breach the stop before execution.",
+          "Model/parameter risk: underlying signals (breakout strength, RS) may reverse quickly after entry.",
+          "Liquidity/spread risk: although spread_bps is reported, real execution price may differ from entry_usd.",
+          "Concentration/position sizing: quantity is small and may not reflect portfolio diversification or risk limits."
         ],
         "sources": []
       },
       {
         "agent": "Market Regime Agent",
         "verdict": "APPROVE",
-        "confidence": 0.75,
-        "thesis": "As of the quant packet date (October 15, 2026) the internal signals show a moderate breakout strength (0.5426), breadth gate PASS and market_breadth_pct 60.8% — a constructive backdrop for new momentum entries. Public market data around October 15–16, 2026 shows major US indices trading near recent highs with mixed but not deeply negative action in technology; sector weakness is present but not widespread or panic-driven, and there are no material adverse CTSH-specific headlines found in the recent news flow. Given the packet’s tier A rating, positive relative strength, and the market’s neutral-to-slightly-bullish condition on October 15–16, 2026, the broader regime supports attempting the supplied momentum breakout for CTSH.",
+        "confidence": 0.7,
+        "thesis": "Market internals are constructive for a momentum breakout: the quant packet shows breadth gate PASS with market_breadth_pct 60.8 and strong breakout_strength and RS excess for EL. Public tape on 10/15–10/16 shows a broad, positive breadth session with rotation away from mega-cap AI/semiconductors into banks, consumer and healthcare, and volatility at moderate levels — a backdrop that favors idiosyncratic, relative-strength breakouts in non-AI consumer names. Given those regime cues plus the supplied breakout metrics, the backdrop supports taking a momentum-entry for EL per the supplied entry/stop/target parameters.",
         "risks": [
-          "Technology-sector weakness or a rotation into defensives that pulls CTSH below the entry (XLK/Nasdaq underperformance).",
-          "A sudden rise in Treasury yields or an inflation surprise that disproportionately hits growth/tech names and increases volatility (VIX spike).",
-          "Company-specific negative event, earnings or guidance revision for CTSH after Oct 15, 2026 that gaps the stock below the stop price.",
-          "Overnight or opening gap that bypasses the entry and immediately violates the stop (gap risk).",
-          "Market breadth deteriorates intra-day (advance/decline flips) invalidating the breadth gate despite earlier pass."
+          "Hot inflation or stronger-than-expected economic data that re-prices Fed hikes and pushes yields materially higher (pressure on multiple expansion).",
+          "Renewed, concentrated tech/AI-led risk-off that spills into broader risk assets and collapses momentum across sectors.",
+          "Options expiration / short-term macro headlines (today’s OpEx and Oct FOMC risk window) creating intraday whipsaw and false breakouts.",
+          "Company-specific negative news (earnings, guidance, recalls, regulatory) that would negate a sector-level constructive tape.",
+          "VIX or 10-year Treasury yield spikes that quickly dampen risk appetite and widen spreads, increasing chance of stop being hit."
         ],
         "sources": [
           {
-            "url": "https://apnews.com/article/224008b0bae0921d1e2867a4b1ecf511"
+            "url": "https://apnews.com/article/704d3190f0fba2908df07c85f26346ec"
           },
           {
-            "url": "https://apnews.com/article/704d3190f0fba2908df07c85f26346ec"
+            "url": "https://apnews.com/article/a2edaf9ec297fb75ff2a4e245063ec08"
+          },
+          {
+            "url": "https://apnews.com/article/a9a26b9706963afe9bdeda1b2eb1f51d"
+          },
+          {
+            "url": "https://apnews.com/article/ae938216d9d45a4e2c829845b40d83f5"
           },
           {
             "url": "https://apnews.com/article/d2655f64db7ec8ae450525d58f97b628"
@@ -63,46 +68,73 @@
             "url": "https://apnews.com/article/e889ad7dee2b7dd959f1b8bc87366914"
           },
           {
-            "url": "https://apnews.com/article/f07713e8b2e438ac5903b50f5ce97235"
-          },
-          {
             "url": "https://apnews.com/article/f0a4f8aa60a6a24237c419aba38f31fd"
           },
           {
-            "url": "https://chartexchange.com/symbol/index-vix/historical/"
+            "url": "https://cdn.cboe.com/resources/futures/VIX_fact_sheet_2019.pdf"
           },
           {
-            "url": "https://chartrow.com/quote/xlk"
+            "url": "https://cdn.cboe.com/resources/regulation/rule_filings/pending/2026/SR-CBOE-2026-004.pdf"
           },
           {
-            "url": "https://cognizant.q4cdn.com/123993165/files/doc_earnings/2025/q4/transcript/Transcript_CTSHQ4-2025-Earnings-Call.pdf"
+            "url": "https://finance.yahoo.com/markets/stocks/articles/markets-news-oct-15-2026-104407851.html"
           },
           {
-            "url": "https://convextrade.com/metrics/xlk"
+            "url": "https://finance.yahoo.com/quote/%5EVIX/history/"
           },
           {
-            "url": "https://eoddata.com/stockquote/INDEX/SP500.htm"
+            "url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?field_tdr_date_value=2026&type=daily_treasury_real_yield_curve"
           },
           {
-            "url": "https://finance.yahoo.com/quote/%5EGSPC/history/?ltr=1&period1=1789084800&period2=1789776000"
+            "url": "https://jp.investing.com/indices/cboe-vix-oct-futures-4pm-est-mark-historical-data"
           },
           {
-            "url": "https://indexbreadth.com/learn/market-breadth-eod-15-october-2026/"
+            "url": "https://marketone.io/markets/the-closing-bell-2026-10-15"
           },
           {
-            "url": "https://investors.cognizant.com/news-and-events/news/news-details/2026/Cognizant-Reports-Second-Quarter-2026-Results/default.aspx"
+            "url": "https://ph.investing.com/indices/cboe-vix-oct-futures-4pm-est-mark-historical-data"
           },
           {
-            "url": "https://news.cognizant.com/2026-04-29-Cognizant-Reports-First-Quarter-2026-Results?asPDF=1"
+            "url": "https://raydn.us/story/2584-market-wrap-october-15-2026"
           },
           {
-            "url": "https://news.cognizant.com/press-releases-financial"
+            "url": "https://res-certification.cboe.com/resources/us/indices/CSMIValues.pdf"
+          },
+          {
+            "url": "https://res-certification.cboe.com/resources/vix_options/VIX_fact_sheet.pdf"
+          },
+          {
+            "url": "https://sanctuaryresearch.io/briefing/2026-10-15"
+          },
+          {
+            "url": "https://squawkflow.com/calendar"
+          },
+          {
+            "url": "https://tallacoptions.com/Indices/VIX"
+          },
+          {
+            "url": "https://tayloredfinancenews.com/sectors-daily"
           },
           {
             "url": "https://thefinancialcurrent.com/news/2026-10-15-market-close"
           },
           {
-            "url": "https://www.cypresscapital.com/charts/"
+            "url": "https://tickerdaily.com/article/stock-market-today-october-15-2026-sandp-500-closes-near-flat-amid-mixed-earnings"
+          },
+          {
+            "url": "https://uk.investing.com/rates-bonds/u.s.-10-year-bond-yield-historical-data"
+          },
+          {
+            "url": "https://www.cboe.com/delayed_quotes/vix/quote_table/"
+          },
+          {
+            "url": "https://www.cboe.com/tradable-products/vix/vix-futures"
+          },
+          {
+            "url": "https://www.cftc.gov/sites/default/files/filings/ptc/24/09/ptc0912245860.pdf"
+          },
+          {
+            "url": "https://www.kiplinger.com/investing/stocks/blue-chip-stocks/602319/all-30-dow-jones-stocks-ranked-the-pros-weigh-in"
           },
           {
             "url": "https://www.kiplinger.com/investing/stocks/nasdaq-nosedives-as-ai-boosts-consumer-prices-stock-market-today"
@@ -111,208 +143,260 @@
             "url": "https://www.kiplinger.com/investing/stocks/stocks-struggle-ahead-of-september-cpi-report-stock-market-today"
           },
           {
-            "url": "https://www.portfolio-terminal.com/markets/sp-500/october-2026"
+            "url": "https://www.mortgagenewsdaily.com/treasury/10yr"
           },
           {
-            "url": "https://www.reddit.com/r/HollowPointTrading/comments/1x6vxra/the_dow_leads_while_semiconductors_lag_a_divided/"
+            "url": "https://www.outliersecurities.com/fundflow"
           },
           {
-            "url": "https://www.reddit.com/r/TheMoat/comments/1x6lpna/daily_charts_15_oct_2026/"
+            "url": "https://www.portfolio-terminal.com/markets/stock-market-close/october-15-2026"
           },
           {
-            "url": "https://www.reddit.com/r/getagraph/comments/1wz52jh/buy_signal_cognizant_technology_6_oct_2026_1107/"
+            "url": "https://www.reddit.com/r/HollowPointTrading/comments/1x71os7/volatility_eased_the_next_session_still_needs/"
           },
           {
-            "url": "https://www.reddit.com/r/stocknear/comments/1wvyapl/analyst_report_cognizant_technology_solutions/"
+            "url": "https://www.reddit.com/r/HollowPointTrading/comments/1x75564/treasury_yields_ease_before_the_next_price_report/"
           },
           {
-            "url": "https://www.reddit.com/r/stocknear/comments/1x1lodu/analyst_report_cognizant_technology_solutions/"
+            "url": "https://www.reddit.com/r/HollowPointTrading/comments/1x7ey79/the_10year_yield_is_above_the_2year_that_gap/"
           },
           {
-            "url": "https://www.reddit.com/r/u_Mark_deAburg/comments/1x7caa3/market_watch_tech_momentum_fades_10_defensive/"
+            "url": "https://www.reddit.com/r/MortgageBrokerRates/comments/1x61xcp/market_recap_wednesday_october_14_2026_bonds/"
           },
           {
-            "url": "https://www.statmuse.com/money/ask/s-and-p-500-close-each-day-october-2026"
+            "url": "https://www.reddit.com/r/Polymarket/comments/1x6pap8/the_10year_treasury_yield_is_above_5_can_it_fall/"
+          },
+          {
+            "url": "https://www.sec.gov/files/rules/sro/cboe/2026/34-106216.pdf"
+          },
+          {
+            "url": "https://www.wmtmt.com/notes/daily-2026-10-15"
+          },
+          {
+            "url": "https://ycharts.com/indices/%5EVIX/level"
+          },
+          {
+            "url": "https://za.investing.com/indices/us-spx-vix-futures-contracts"
           }
         ]
       },
       {
         "agent": "News and Event Agent",
         "verdict": "REJECT",
-        "confidence": 0.82,
-        "thesis": "Search found verified material legal and regulatory developments adverse to a new long in CTSH: (1) SEC/SEC‑filed disclosures and court records show a U.S. District Court order (March 27, 2026) that could raise a post‑trial award to approximately $298 million and related adverse trial rulings (denial of JMOL and related post‑trial activity), and (2) ongoing regulatory and investigatory matters (DOJ/SEC inquiries, shareholder derivative litigation and other suits, plus class actions and data‑breach related litigation) disclosed in Cognizant’s recent 10‑Q/10‑K and press filings. These are material, unresolved liabilities and regulatory risks that materially increase downside and therefore argue against initiating a new long position.",
+        "confidence": 0.87,
+        "thesis": "Web search found verified, material litigation and settlement events for The Estée Lauder Companies Inc. (ticker EL): a proposed $210 million securities-class-action settlement (Stipulation filed May 6, 2026) related to alleged concealment of reliance on gray‑market sales in China; the company recorded a $210 million loss contingency and referenced the matter in SEC filings for the quarter ended June 30, 2026, and reporting indicates the settlement funding and final court approval occurred in mid‑October 2026 (court nod reported Oct 15, 2026). This is a verified, material legal event that argues against opening a new long at this time.",
         "risks": [
-          "Near‑term cash/earnings impact from potential ~$298M judgment, including interest and attorney fees.",
-          "Further regulatory penalties or enforcement (DOJ/SEC) or additional liabilities from related litigation.",
-          "Ongoing shareholder derivative suits and stockholder litigation that could lead to settlement costs or governance distractions.",
-          "Class actions and data‑security litigation that could produce additional material liabilities or reputational damage.",
-          "Uncertainty around guidance and integration costs from recent acquisitions which, combined with legal/regulatory costs, could compress margins and free cash flow."
+          "$210 million securities‑class settlement recorded as a loss contingency — potential near‑term earnings and cash flow impact.",
+          "Uncertainty around insurance recoveries and final net company expense despite filings noting insurance involvement.",
+          "Related and ongoing litigation and regulatory exposures (including data‑incident class actions) could produce additional charges or distractions.",
+          "Reputational and operational impacts from the alleged conduct (China gray‑market sales practices) that could affect future sales in key markets.",
+          "The company has already signaled modest near‑term sales/EPS impacts in recent disclosures (e.g., Q4 FY2026 commentary), increasing execution risk for short‑term investors."
         ],
         "sources": [
           {
-            "url": "https://claimwatch.org/litigation/cognizant-and-trizetto-data-security-breach-class-action"
+            "url": "https://app.edgar.tools/companies/EL/disclosures/commitments-contingencies"
           },
           {
-            "url": "https://cognizant.q4cdn.com/123993165/files/doc_earnings/2024/q2/filing/CTS-form-10-Q-Final.pdf"
+            "url": "https://assets.alm.com/c9/17/6ddee4b54453a1637ed829f36c70/blackburn-estee-lauder-complaint.pdf"
           },
           {
-            "url": "https://cognizant.q4cdn.com/123993165/files/doc_earnings/2025/q2/filing/CTS-form-10-Q-Final.pdf"
+            "url": "https://cases.justia.com/federal/district-courts/new-york/nysdce/1%3A2023cv10669/611620/89/0.pdf"
           },
           {
-            "url": "https://cognizant.q4cdn.com/123993165/files/doc_earnings/2025/q3/transcript/Transcript_CTSHQ3-2025-Earnings-Call.pdf"
+            "url": "https://docketnexus.com/party/estee-lauder-inc/?activity=meaningful"
           },
           {
-            "url": "https://cognizant.q4cdn.com/123993165/files/doc_earnings/2025/q4/transcript/Transcript_CTSHQ4-2025-Earnings-Call.pdf"
+            "url": "https://dockets.justia.com/docket/california/cacdce/2%3A2026cv01341/1005939"
           },
           {
-            "url": "https://cognizant.q4cdn.com/123993165/files/doc_earnings/2026/q1/earnings-result/Q1-26-Earnings-Press-Release.pdf"
+            "url": "https://dockets.justia.com/docket/new-york/nysdce/1%3A2026cv06961/670584"
           },
           {
-            "url": "https://cognizant.q4cdn.com/123993165/files/doc_financials/2025/q4/CTSH-2025-12-31-10K_Final-web.pdf"
+            "url": "https://esteelaudererisasettlement.com/wp-content/uploads/2024/02/153-01-Ex-1-Settlement-Agreement.pdf"
           },
           {
-            "url": "https://courtdocket.org/cognizant-lawsuit-discrimination-bribery-and-securities-fraud/"
+            "url": "https://financialfilings.com/filings/estee-lauder-companies-inc/annual-report/2026/64523919/"
           },
           {
-            "url": "https://investors.cognizant.com/news-and-events/news/news-details/2026/Cognizant-Reports-Second-Quarter-2026-Results/default.aspx"
+            "url": "https://investors.elcompanies.com/en/investors/earnings-and-financials/quarterly-earnings/2026"
           },
           {
-            "url": "https://law.justia.com/cases/federal/district-courts/new-york/nysdce/1%3A2021cv02174/556071/226/"
+            "url": "https://law.justia.com/cases/federal/district-courts/new-york/nysdce/1%3A2023cv10669/611620/140/"
           },
           {
-            "url": "https://news.cognizant.com/2024-06-10-COGNIZANT-TO-ACQUIRE-BELCAN-FOR-APPROXIMATELY-1-3-BILLION-TO-SIGNIFICANTLY-STRENGTHEN-ENGINEERING-CAPABILITIES-AND-ESTABLISH-A-LEADERSHIP-POSITION-IN-AEROSPACE-DEFENSE-MARKET"
+            "url": "https://news.bloomberglaw.com/business-and-practice/estee-lauders-210-million-investor-deal-gets-final-court-nod"
           },
           {
-            "url": "https://news.cognizant.com/index.php?l=100&query=company+acquisition&s=14110&submit=Search"
+            "url": "https://news.bloomberglaw.com/class-action/estee-lauders-210-million-investor-deal-gets-final-court-nod"
           },
           {
-            "url": "https://news.cognizant.com/press-releases-financial"
+            "url": "https://www.elcompanies.com/en/investors/events-and-presentations"
           },
           {
-            "url": "https://www.analystlens.com/stocks/ctsh/8k/2026-07-10"
+            "url": "https://www.elcompanies.com/en/investors/investor-resources/investor-toolkit"
           },
           {
-            "url": "https://www.marketbeat.com/stocks/NASDAQ/CTSH/earnings/"
+            "url": "https://www.elcompanies.com/en/news-and-media/newsroom/press-releases/2026/05-01-2026-110042145"
           },
           {
-            "url": "https://www.reddit.com/r/LayoffHedge/comments/1v4hsd6/cognizant_contract_with_iowa_has_actual_carve/"
+            "url": "https://www.elcompanies.com/en/news-and-media/newsroom/press-releases/2026/08-19-2026-110037466"
           },
           {
-            "url": "https://www.reddit.com/r/stocknear/comments/1wvyapl/analyst_report_cognizant_technology_solutions/"
+            "url": "https://www.esteelaudersecuritiessettlement.com/Home/"
           },
           {
-            "url": "https://www.reddit.com/r/stocknear/comments/1x1lodu/analyst_report_cognizant_technology_solutions/"
+            "url": "https://www.esteelaudersettlement.ca/documents/en/estee-lauder-judgment-en.pdf"
           },
           {
-            "url": "https://www.sec.gov/Archives/edgar/data/1058290/000105829026000008/ctsh-20251231.htm"
+            "url": "https://www.esteelaudersettlement.ca/documents/en/estee-lauder-pre-approval-notice-longform-en.pdf"
           },
           {
-            "url": "https://www.sec.gov/Archives/edgar/data/1058290/000105829026000016/ctsh-20260331.htm"
+            "url": "https://www.esteelaudersettlement.ca/documents/en/estee-lauder-settlement-agreement-en.pdf"
           },
           {
-            "url": "https://www.sec.gov/Archives/edgar/data/1058290/000105829026000031/ctsh-20260630.htm"
+            "url": "https://www.esteelaudersettlement.ca/en"
+          },
+          {
+            "url": "https://www.investing.com/news/stock-market-news/estee-lauder-reaches-210-million-settlement-of-lawsuit-over-china-sales-4669459?ampMode=1"
+          },
+          {
+            "url": "https://www.labaton.com/cases/mcalice-v-the-estee-lauder-companies-inc"
+          },
+          {
+            "url": "https://www.nycourts.gov/reporter/pdfs/2026/2026_31765.pdf"
+          },
+          {
+            "url": "https://www.otcmarkets.com/filing/conv_pdf?guid=9Oj-kpytg4McLhh&id=19399833"
+          },
+          {
+            "url": "https://www.prnewswire.com/news-releases/labaton-keller-sucharow-llp-announces-pendency-and-proposed-settlement-of-class-action-involving-purchasers-of-estee-lauder-securities-302791900.html"
+          },
+          {
+            "url": "https://www.reddit.com/r/EsteeLauder/comments/1v94y6f/deadline_to_submit_claims_on_the_est%C3%A9e_lauder/"
+          },
+          {
+            "url": "https://www.reddit.com/r/MakeupAddictionCanada/comments/1sxsaa4/estee_lauder_class_action_lawsuit/"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1001250/000100125026000017/0001001250-26-000017-index.htm"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1001250/000100125026000017/fy2026q3exhibit991.htm"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1001250/000100125026000019/el-20260331.htm"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1001250/000100125026000041/el-20260630.htm"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1001250/000110465925093189/tm2524283d2_ars.pdf"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1001250/000110465926112186/tm2625458d2_ars.pdf"
+          },
+          {
+            "url": "https://www.secinfo.com/duhpd.N16.htm"
+          },
+          {
+            "url": "https://www.veritaglobal.net/ImpacMortgage/document/2610593260630000000000009"
           }
         ]
       },
       {
         "agent": "Technical Context Agent",
         "verdict": "APPROVE",
-        "confidence": 0.8,
-        "thesis": "Moderate-strength breakout (breakout = 0.5426) in a stock with strong relative strength (RS excess = 43.7515%) and supportive market breadth (market breadth = 60.8%). ATR(14) = 2.3879 indicates moderate volatility. The authoritative stop (60.9992) is below the authoritative entry (66.86), consistent with a long breakout, and the authoritative target (93.2336) offers meaningful upside, so the setup is approved from a technical-context perspective.",
+        "confidence": 0.87,
+        "thesis": "Technical picture supports a long trade: breakout_strength=2.9424 (strong breakout signal), rs_excess_pct=26.8693 (very strong relative strength), breadth_gate=PASS with market_breadth_pct=60.8% (market participation supportive), and ATR_14=3.1541 (volatility context). Stop_price (100.9219) is below the supplied entry (107.64), and the supplied target_price (137.87145) implies materially larger upside than the defined downside — overall consistent with a validated long breakout setup.",
         "risks": [
-          "Breakout strength is moderate (0.5426), so there is risk of a false breakout and early failure.",
-          "ATR(14) = 2.3879 implies material intraday/near-term volatility; the stop could be tested before trend continuation.",
-          "Strong RS does not guarantee continued outperformance if broader market sentiment reverses; monitor market breadth for deterioration.",
-          "Target may be ambitious relative to potential shock events; be prepared to respect the authoritative stop if the setup fails."
+          "False breakout / failure to hold above breakout level",
+          "Volatility may hit the stop (ATR ~3.15) before trend continuation",
+          "Market breadth could deteriorate and invalidate the setup",
+          "Event or news risk not reflected in these technical fields",
+          "Execution risk (slippage) around entry/stop levels"
         ],
         "sources": []
       },
       {
         "agent": "Thesis Agent",
         "verdict": "APPROVE",
-        "confidence": 0.79,
-        "thesis": "Bull case: The quant packet shows a coherent momentum breakout setup — entry_usd = 66.86 with an authoritative stop_price = 60.9992 and target_price = 93.2336. Breakout_strength = 0.5426 (moderate), breadth_gate = PASS and market_breadth_pct = 60.8% provide a constructive market backdrop. RS_excess_pct = 43.7515% and tier = A indicate strong relative strength and institutional-quality selection. ATR_14 = 2.3879 implies manageable intraday volatility relative to the stop, and the packet’s quantity = 3 is small and consistent with a disciplined test of the breakout. Together these factors support attempting the supplied momentum long with the authoritative stop and target in place.\n\nBear case: Material, unresolved legal/regulatory and litigation risk identified by the News and Event Agent (i",
+        "confidence": 0.8,
+        "thesis": "Bull case: The quant packet signals a validated momentum breakout—strong breakout_strength (2.9424), very strong relative strength (rs_excess_pct 26.8693), and breadth_gate PASS (market_breadth_pct 60.8)—supporting a long entry at the authoritative entry_usd (107.64) with the supplied stop_price (100.9219) and target_price (137.87145). Market-regime commentary matches this (rotation into non‑AI consumer names, moderate volatility), so the defined risk/reward and quantity (3.0) are coherent for a momentum trade. Bear case: The setup can fail via a classic false breakout or intraday/overnight gap through the stop; macro shocks (rapid rise in yields or VIX), options/OpEx/FOMC-induced whipsaw, or rapid deterioration in market breadth would likely hit the stop. Material, company‑specific negati",
         "risks": [
-          "Material legal/regulatory and litigation exposure (post‑trial award/ongoing DOJ/SEC/class actions) that can drive outsized downside",
-          "Overnight/opening gap risk that bypasses the entry and invalidates the stop or execution price",
-          "Macro/regime risks: sector rotation, rising Treasury yields or VIX spikes that disproportionately hit momentum/tech names",
-          "False breakout risk from moderate breakout_strength (0.5426) and potential model regime change",
-          "ATR(14)=2.3879 implies the stop may be intraday‑tested; short-term volatility could trigger stop loss"
+          "Gap risk: overnight/intraday gaps could breach the stop before execution.",
+          "False breakout / technical failure to hold above breakout level.",
+          "Macro regime risk: rapid rise in yields or VIX (risk‑off) that reverses momentum.",
+          "Event/OpEx/FOMC headline-driven intraday whipsaw causing stop hit.",
+          "Liquidity/execution risk: spread/slippage differing from packet assumptions."
         ],
         "sources": []
       },
       {
         "agent": "Claude CRO",
         "verdict": "REJECT",
-        "confidence": 0.68,
-        "thesis": "REJECT the CTSH long entry. I did not recompute price, stop, target or size. Verified reasons against the entry:\n\n1. Earnings fall inside the trade window. Q3 2026 results are due October 29, 2026, before the open, about 9 sessions after the October 15 packet date. The largest daily move in the past year was +11.3% (July 29, 2026). The stop sits about 8.8% below the entry, so an earnings gap could jump past it and the stop would not cap the loss. Only the Scanner and Market Regime agents mentioned event risk generically, and neither gave the date.\n\n2. Fresh regulatory overhang. On October 8, Cognizant was suspended from the U.S. labor certification program, along with Infosys and Microsoft. A report also cites DOL statements about ongoing criminal investigations of IT outsourcing firms. Th",
+        "confidence": 0.6,
+        "thesis": "The News and Event Agent's rejection reason does not hold up. The $210M securities settlement received final approval and was fully funded, with insurer contributions, by June 30, 2026. It removes an open legal risk and adds no new cash or earnings hit, so I am not counting it against the entry. I still reject, for these reasons. (1) The fiscal Q1 2027 earnings report is reportedly due Nov. 3, inside the likely holding window. An earnings gap could jump past the stop without filling at it. No specialist flagged this specific event. I found the date on one aggregator and could not confirm it on the company's site. (2) The stock looks extended against analyst anchors. The consensus is Hold with an average target near $105, and recent target changes are $104 (UBS) and $112 (Morgan Stanley). T",
         "risks": [
-          "Q3 earnings on Oct 29, 2026 before open: gap risk could bypass the stop (max 1-year daily move +11.3% vs ~8.8% stop distance)",
-          "Oct 8 suspension from the U.S. labor certification program and DOL criminal investigations of IT outsourcing firms",
-          "Entry after ~15% one-week run-up, above the cited analyst targets (TD Cowen $60, consensus ~$66.14); analyst ratings are split 13 Buy / 16 Hold",
-          "Weak tech tape on hot inflation and rate-hike bets",
-          "rs_excess_pct of 43.75% unverified; one source shows a 1-year change of -16%"
+          "Earnings event (reported Nov. 3, single-source date) inside holding window; gap risk past the stop",
+          "Price extended above consensus analyst targets (~$105) with Hold consensus; packet target above 12-month high",
+          "Thin fundamentals: very high P/E, margin weakness, quick ratio 0.90, debt-to-equity 1.79",
+          "Insider selling by a director and the general counsel",
+          "Macro risk from yields, VIX and the FOMC window could reverse momentum"
         ],
         "sources": [
           {
-            "url": "https://pluang.com/en/news-feed/atos-se-banding-hakim-akhir-litigasi-trizetto"
+            "url": "https://cosmeticsbusiness.com/est%C3%A9e-lauder-companies-agrees-210-million-settlement-in"
           },
           {
-            "url": "https://stockanalysis.com/stocks/ctsh/"
+            "url": "https://finance.yahoo.com/quote/EL/"
           },
           {
-            "url": "https://stockstotrade.com/news/cognizant-technology-solutions-corporation-ctsh-news-2026_10_13/"
+            "url": "https://insights.citeline.com/hbw-insight/beauty/policy-and-regulation/legal/estee-lauder-investors-agree-to-210m-settlement-over-chinese-gray-market-activity-RU7T57YKFFEYZES3QH6TYI5UN4/"
           },
           {
-            "url": "https://theprint.in/tech/cognizants-570-million-trade-secret-case-win-against-syntel-thrown-out-on-appeal/1595140/"
+            "url": "https://news.bloombergtax.com/daily-tax-report-state/estee-lauders-210-million-investor-deal-gets-final-court-nod"
           },
           {
-            "url": "https://tickernerd.com/stock/ctsh-forecast/"
+            "url": "https://ng.investing.com/news/stock-market-news/bernstein-raises-estee-lauder-stock-price-target-on-margin-outlook-93CH-2740741"
           },
           {
-            "url": "https://www.cnbc.com/quotes/CTSH"
+            "url": "https://stockanalysis.com/stocks/el/"
           },
           {
-            "url": "https://www.cnn.com/markets/stocks/CTSH"
+            "url": "https://www.cnn.com/markets/stocks/EL"
           },
           {
-            "url": "https://www.marketbeat.com/stocks/NASDAQ/CTSH/"
+            "url": "https://www.defenseworld.net/2026/10/16/estee-lauder-companies-nyseel-stock-price-target-raised-at-morgan-stanley.html"
           },
           {
-            "url": "https://www.morningstar.com/stocks/xnas/ctsh/quote"
+            "url": "https://www.investing.com/equities/estee-lauder"
           },
           {
-            "url": "https://www.sec.gov/Archives/edgar/data/0001058290/000105829026000016/ctsh-20260331.htm"
+            "url": "https://www.ktmc.com/new-cases/the-estee-lauder-companies-inc/"
           },
           {
-            "url": "https://www.sec.gov/Archives/edgar/data/0001058290/000105829026000031/ctsh-20260630.htm"
+            "url": "https://www.labaton.com/cases/mcalice-v-the-estee-lauder-companies-inc"
           },
           {
-            "url": "https://www.sec.gov/Archives/edgar/data/1058290/000105829021000279/Financial_Report.xlsx"
+            "url": "https://www.labaton.com/news-insights/labaton-keller-sucharow-secures-$210-million-settlement-for-estee-lauder-investors-in-securities-fraud-class-action"
           },
           {
-            "url": "https://www.sec.gov/Archives/edgar/data/1058290/000105829022000023/Financial_Report.xlsx"
+            "url": "https://www.law360.com/amp/articles/2538599"
           },
           {
-            "url": "https://www.sec.gov/Archives/edgar/data/1058290/000130817924000543/lctsh2023_ars.pdf"
+            "url": "https://www.law360.com/articles/2538599/est-e-lauder-s-210m-investor-settlement-wins-final-ok"
           },
           {
-            "url": "https://www.sec.gov/Archives/edgar/data/1058290/000130817926000292/ctsh013686-ars.pdf"
+            "url": "https://www.marketbeat.com/instant-alerts/analyst-estee-lauder-companies-nyse-el-stock-price-expected-to-rise-morgan-stanley-analyst-says-2026-10-15/"
           },
           {
-            "url": "https://www.sec.gov/Archives/edgar/data/1058290/000135994825000474/ctsh013686-ars.pdf"
+            "url": "https://www.marketbeat.com/stocks/NYSE/EL/"
           },
           {
-            "url": "https://www.stocktitan.net/news/CTSH/cognizant-schedules-third-quarter-2026-earnings-release-and-zn8kr9wytau6.html"
+            "url": "https://www.personalcareinsights.com/news/estee-lauder-china-lawsuit.html"
           },
           {
-            "url": "https://www.stocktitan.net/overview/CTSH/"
-          },
-          {
-            "url": "https://www.streetinsider.com/Reuters/Cognizants+$570+million+trade-secret+case+win+against+Syntel+thrown+out+on+appeal%C2%A0/21721928.html"
-          },
-          {
-            "url": "https://www.timothysykes.com/news/cognizant-technology-solutions-corporation-ctsh-news-2026_10_13/"
+            "url": "https://www.sec.gov/Archives/edgar/data/0001001250/000100125026000041/el-20260630.htm"
           }
         ]
       }
