@@ -1,50 +1,50 @@
 {
-  "outcome": "COUNCIL_REJECT:CTSH",
+  "outcome": "COUNCIL_REJECT:MDT",
   "session_date": "2026-10-16",
-  "generated_at": "2026-10-16T16:00:22Z",
+  "generated_at": "2026-10-16T16:10:26Z",
   "official": true,
   "extra_summary": [
-    "council: Claude CRO rejected the proposal"
+    "council: At least one specialist rejected the proposal"
   ],
   "plan": {
-    "symbol": "CTSH",
-    "quantity": 5.0,
-    "entry_usd": 65.04,
-    "stop_price": 60.9992,
-    "target_price": 83.22360000000003,
+    "symbol": "MDT",
+    "quantity": 3.0,
+    "entry_usd": 94.76,
+    "stop_price": 90.7847,
+    "target_price": 112.64885000000002,
     "fx_usdczk": 21.622,
-    "spread_bps": 6.151953245156298
+    "spread_bps": 2.1108179419535866
   },
   "council": {
     "verdict": "REJECT",
-    "reason": "Claude CRO rejected the proposal",
+    "reason": "At least one specialist rejected the proposal",
     "cached": true,
     "findings": [
       {
         "agent": "Scanner Agent",
         "verdict": "APPROVE",
-        "confidence": 0.79,
-        "thesis": "The packet is internally coherent for a long trade in CTSH. Authoritative fields are consistent: entry_usd = 66.86, stop_price = 60.9992, target_price = 93.2336, quantity = 3, ATR_14 = 2.3879. The stop is below the entry and the target is above the entry, breakout_strength is positive (0.5426), breadth_gate = PASS, tier = A, and RS_excess_pct is strongly positive (43.7515). No fields contradict one another and the packet contains the required authoritative trade parameters.",
+        "confidence": 0.84,
+        "thesis": "The packet is internally coherent. The authoritative fields (entry_usd 96.11, stop_price 90.7847, target_price 120.07385, quantity 3.0) are present and consistent: stop is below entry and target is above entry. The stop distance (96.11 - 90.7847 = 5.3253) corresponds to ~2.27 ATR (ATR_14 = 2.3427), which is a plausible stop placement relative to volatility. Breakout_strength (0.8131) and positive RS_excess_pct (11.3786) support a bullish setup; breadth_gate is PASS and market_breadth_pct (60.8) is constructive. Spread_bps (~7.29) is small relative to price, and tier B / score profile is consistent with a medium-strength candidate. All required authoritative fields are present and there are no internal contradictions in the provided packet.",
         "risks": [
-          "Price gaps or slippage at open could invalidate the stop or change execution price",
-          "Event risk (earnings/news) could drive outsized volatility relative to the ATR",
-          "Concentration risk given a small absolute quantity may still expose capital if position sizing is part of a larger portfolio plan",
-          "Market-wide sell-offs could overwhelm single-stock breakout signals",
-          "Model regime change: past breakout/breadth signals may not persist going forward"
+          "Gap/overnight risk could trigger stop before intraday execution price is reached.",
+          "Stop distance is only ~2.3 ATR — susceptible to being taken out by normal volatility in a turbulent market.",
+          "Execution risk and slippage despite a modest spread (market conditions can widen spreads).",
+          "Model/data risk: packet parameters and param_hash are treated as authoritative but cannot be externally validated here.",
+          "Event risk (earnings, corporate actions, macro shocks) not accounted for in the packet."
         ],
         "sources": []
       },
       {
         "agent": "Market Regime Agent",
         "verdict": "APPROVE",
-        "confidence": 0.75,
-        "thesis": "As of the quant packet date (October 15, 2026) the internal signals show a moderate breakout strength (0.5426), breadth gate PASS and market_breadth_pct 60.8% — a constructive backdrop for new momentum entries. Public market data around October 15–16, 2026 shows major US indices trading near recent highs with mixed but not deeply negative action in technology; sector weakness is present but not widespread or panic-driven, and there are no material adverse CTSH-specific headlines found in the recent news flow. Given the packet’s tier A rating, positive relative strength, and the market’s neutral-to-slightly-bullish condition on October 15–16, 2026, the broader regime supports attempting the supplied momentum breakout for CTSH.",
+        "confidence": 0.78,
+        "thesis": "Market tape around the quant packet (session 2026-10-15) was constructive for risk assets: the S&P 500 closed modestly higher and breadth participation was positive across sectors with healthcare among the leaders. Volatility was moderate. The supplied quant metrics show breadth_gate PASS, market_breadth_pct 60.8 and strong breakout_strength (0.8131), and MDT has recent positive company/earnings-related news — collectively these factors make the broader regime supportive of a momentum breakout in MDT.",
         "risks": [
-          "Technology-sector weakness or a rotation into defensives that pulls CTSH below the entry (XLK/Nasdaq underperformance).",
-          "A sudden rise in Treasury yields or an inflation surprise that disproportionately hits growth/tech names and increases volatility (VIX spike).",
-          "Company-specific negative event, earnings or guidance revision for CTSH after Oct 15, 2026 that gaps the stock below the stop price.",
-          "Overnight or opening gap that bypasses the entry and immediately violates the stop (gap risk).",
-          "Market breadth deteriorates intra-day (advance/decline flips) invalidating the breadth gate despite earlier pass."
+          "Near-term macro risk: sticky inflation and market sensitivity to Fed policy (upcoming FOMC/policy-event risk) could reverse risk-on tape and increase volatility.",
+          "Sector rotation risk: healthcare leadership could fade quickly if flows rotate back into megacap growth (AI/semis) or if defensive bid dissipates.",
+          "Company-specific corporate actions (e.g., MiniMed exchange/transaction or other corporate news) could cause idiosyncratic volatility that breaks momentum.",
+          "Execution risk: intraday liquidity and the quoted spread (as provided) could widen in stress, harming entry/exit.",
+          "Technical failure risk: breakout may fail to sustain acceptance above key levels, requiring disciplined stop adherence (stop_price provided in packet)."
         ],
         "sources": [
           {
@@ -54,10 +54,7 @@
             "url": "https://apnews.com/article/704d3190f0fba2908df07c85f26346ec"
           },
           {
-            "url": "https://apnews.com/article/d2655f64db7ec8ae450525d58f97b628"
-          },
-          {
-            "url": "https://apnews.com/article/dafbd0c4037ee10e2a9e305f3cfa8e70"
+            "url": "https://apnews.com/article/a9a26b9706963afe9bdeda1b2eb1f51d"
           },
           {
             "url": "https://apnews.com/article/e889ad7dee2b7dd959f1b8bc87366914"
@@ -69,43 +66,64 @@
             "url": "https://apnews.com/article/f0a4f8aa60a6a24237c419aba38f31fd"
           },
           {
+            "url": "https://breadthmarket.com/breadth"
+          },
+          {
             "url": "https://chartexchange.com/symbol/index-vix/historical/"
           },
           {
-            "url": "https://chartrow.com/quote/xlk"
+            "url": "https://chartexchange.com/symbol/nyse-mdt/news/?date=2026-10-15"
           },
           {
-            "url": "https://cognizant.q4cdn.com/123993165/files/doc_earnings/2025/q4/transcript/Transcript_CTSHQ4-2025-Earnings-Call.pdf"
-          },
-          {
-            "url": "https://convextrade.com/metrics/xlk"
+            "url": "https://chartrow.com/sp500/sector-performance"
           },
           {
             "url": "https://eoddata.com/stockquote/INDEX/SP500.htm"
           },
           {
-            "url": "https://finance.yahoo.com/quote/%5EGSPC/history/?ltr=1&period1=1789084800&period2=1789776000"
+            "url": "https://filecache.investorroom.com/mr5ir_medtronic/858/Press_Release-FY26Q2-FINAL.pdf"
+          },
+          {
+            "url": "https://filecache.investorroom.com/mr5ir_medtronic/890/Press_Release-FY26Q4-vfinal.pdf"
+          },
+          {
+            "url": "https://finance.yahoo.com/quote/MDT/"
           },
           {
             "url": "https://indexbreadth.com/learn/market-breadth-eod-15-october-2026/"
           },
           {
-            "url": "https://investors.cognizant.com/news-and-events/news/news-details/2026/Cognizant-Reports-Second-Quarter-2026-Results/default.aspx"
+            "url": "https://metacap.si/markets/sectors/"
           },
           {
-            "url": "https://news.cognizant.com/2026-04-29-Cognizant-Reports-First-Quarter-2026-Results?asPDF=1"
+            "url": "https://mma.prnewswire.com/media/2692712/Earnings_Presentation_FY25Q4_FINAL.pdf"
           },
           {
-            "url": "https://news.cognizant.com/press-releases-financial"
+            "url": "https://mma.prnewswire.com/media/2825595/Earnings_Presentation_FY26Q2.pdf"
           },
           {
-            "url": "https://thefinancialcurrent.com/news/2026-10-15-market-close"
+            "url": "https://news.medtronic.com/2025-08-19-Medtronic-reports-first-quarter-fiscal-2026-financial-results?asPDF=1"
           },
           {
-            "url": "https://www.cypresscapital.com/charts/"
+            "url": "https://news.medtronic.com/2026-02-17-Medtronic-reports-strong-third-quarter-fiscal-2026-results-with-highest-enterprise-revenue-growth-in-10-quarters?_sp=ee13f507-4019-4591-ad62-81f1ad615eb8"
           },
           {
-            "url": "https://www.kiplinger.com/investing/stocks/nasdaq-nosedives-as-ai-boosts-consumer-prices-stock-market-today"
+            "url": "https://news.medtronic.com/2026-06-03-Medtronic-reports-fourth-quarter-and-full-year-fiscal-2026-results-delivers-highest-annual-revenue-growth-in-10-years"
+          },
+          {
+            "url": "https://news.medtronic.com/press-releases?advanced=1&asset_types%5B0%5D=117&asset_types%5B1%5D=115&asset_types%5B2%5D=116&asset_types%5B3%5D=118&asset_types%5B4%5D=125&asset_types%5B5%5D=136&have_asset_types=1&keywords=quarter&l=100"
+          },
+          {
+            "url": "https://plutux.ai/insights/20261016_healthcare_ai_rotation_oct15"
+          },
+          {
+            "url": "https://sanctuaryresearch.io/briefing/2026-10-15"
+          },
+          {
+            "url": "https://stocks.pkladog.com/reports/2026-10-15/"
+          },
+          {
+            "url": "https://www.kiplinger.com/investing/stocks/17494/next-week-earnings-calendar-stocks"
           },
           {
             "url": "https://www.kiplinger.com/investing/stocks/stocks-struggle-ahead-of-september-cpi-report-stock-market-today"
@@ -117,113 +135,191 @@
             "url": "https://www.reddit.com/r/HollowPointTrading/comments/1x6vxra/the_dow_leads_while_semiconductors_lag_a_divided/"
           },
           {
-            "url": "https://www.reddit.com/r/TheMoat/comments/1x6lpna/daily_charts_15_oct_2026/"
+            "url": "https://www.reddit.com/r/HollowPointTrading/comments/1x6yuvg/small_caps_join_the_rebound_the_next_test_is/"
           },
           {
-            "url": "https://www.reddit.com/r/getagraph/comments/1wz52jh/buy_signal_cognizant_technology_6_oct_2026_1107/"
+            "url": "https://www.reddit.com/r/HollowPointTrading/comments/1x6zksi/value_has_the_edge_the_rebound_still_has_more/"
           },
           {
-            "url": "https://www.reddit.com/r/stocknear/comments/1wvyapl/analyst_report_cognizant_technology_solutions/"
+            "url": "https://www.reddit.com/r/HollowPointTrading/comments/1x71os7/volatility_eased_the_next_session_still_needs/"
           },
           {
-            "url": "https://www.reddit.com/r/stocknear/comments/1x1lodu/analyst_report_cognizant_technology_solutions/"
+            "url": "https://www.reddit.com/r/HollowPointTrading/comments/1x74kw2/health_care_led_the_gain_materials_held_more_of/"
           },
           {
-            "url": "https://www.reddit.com/r/u_Mark_deAburg/comments/1x7caa3/market_watch_tech_momentum_fades_10_defensive/"
+            "url": "https://www.reddit.com/r/Metricshour/comments/1w4iygf/upcoming_earnings_calendar_breakdown_sep_12_2026/"
           },
           {
-            "url": "https://www.statmuse.com/money/ask/s-and-p-500-close-each-day-october-2026"
+            "url": "https://www.reddit.com/r/Optionmillionaires/comments/1w48jnb/mdt_medtronic_reports_q1_nongaap_eps_145/"
+          },
+          {
+            "url": "https://www.reddit.com/r/dividends/comments/1wk7uba/medtronic_exchange_offer/"
+          },
+          {
+            "url": "https://www.reddit.com/r/getagraph/comments/1twmyzr/medtronic_plcnysemdt_financials_q42026/"
+          },
+          {
+            "url": "https://www.reddit.com/r/smallstreetbets/comments/1tvw4r6/medtronics_turnaround_is_getting_harder_to_ignore/"
+          },
+          {
+            "url": "https://www.reddit.com/r/stocknear/comments/1w48dzs/medtronic_plc_mdt_earnings_released/"
+          },
+          {
+            "url": "https://www.stocktitan.net/news/MDT/"
+          },
+          {
+            "url": "https://www.tipranks.com/news/sp-500-top-stock-gainers-today-10-15-26"
+          },
+          {
+            "url": "https://www.youtube.com/watch?v=yHKxz_4Uerw"
+          },
+          {
+            "url": "https://ycharts.com/indicators/vix_volatility_index"
           }
         ]
       },
       {
         "agent": "News and Event Agent",
         "verdict": "REJECT",
-        "confidence": 0.82,
-        "thesis": "Search found verified material legal and regulatory developments adverse to a new long in CTSH: (1) SEC/SEC‑filed disclosures and court records show a U.S. District Court order (March 27, 2026) that could raise a post‑trial award to approximately $298 million and related adverse trial rulings (denial of JMOL and related post‑trial activity), and (2) ongoing regulatory and investigatory matters (DOJ/SEC inquiries, shareholder derivative litigation and other suits, plus class actions and data‑breach related litigation) disclosed in Cognizant’s recent 10‑Q/10‑K and press filings. These are material, unresolved liabilities and regulatory risks that materially increase downside and therefore argue against initiating a new long position.",
+        "confidence": 0.78,
+        "thesis": "Web search identified multiple verified, material adverse events in 2026 that increase near-term regulatory, legal, and operational risk for MDT: a Class 1 FDA removal/recall of the Harmony delivery catheter system (May 2026) and multiple Class 2 recalls across Medtronic product lines in 2026, together with active product‑liability and patent litigation (including ongoing pacemaker/SCS suits and appeals). These events create credible downside risk to revenue, regulatory scrutiny, and investor sentiment and therefore argue against initiating a new long.",
         "risks": [
-          "Near‑term cash/earnings impact from potential ~$298M judgment, including interest and attorney fees.",
-          "Further regulatory penalties or enforcement (DOJ/SEC) or additional liabilities from related litigation.",
-          "Ongoing shareholder derivative suits and stockholder litigation that could lead to settlement costs or governance distractions.",
-          "Class actions and data‑security litigation that could produce additional material liabilities or reputational damage.",
-          "Uncertainty around guidance and integration costs from recent acquisitions which, combined with legal/regulatory costs, could compress margins and free cash flow."
+          "Class 1 FDA removal/recall of the Harmony pulmonary valve delivery catheter system (May 2026) — highest-severity recall with potential clinical, regulatory and reputational impact.",
+          "Multiple Class 2 device recalls across Medtronic product lines in 2026 (open/ongoing) — operational disruptions, replacement/credit costs, and potential sales impact.",
+          "Active product‑liability litigation (pacemaker, spinal‑cord stimulator and related suits) — potential for large settlements/jury awards and ongoing legal expenses.",
+          "Patent and commercial litigation (e.g., Recor Medical appeals and other district-court cases) — potential injunctions, damages, or licensing costs.",
+          "Corporate complexity from 2026 MiniMed separation/IPO and related exchange/offer actions — potential short‑term capital allocation and execution risk increasing uncertainty."
         ],
         "sources": [
           {
-            "url": "https://claimwatch.org/litigation/cognizant-and-trizetto-data-security-breach-class-action"
+            "url": "https://app.midpage.ai/document/recor-medical-inc-v-medtronic--650b117e-6e12-4587-b603-2f45eed173f3"
           },
           {
-            "url": "https://cognizant.q4cdn.com/123993165/files/doc_earnings/2024/q2/filing/CTS-form-10-Q-Final.pdf"
+            "url": "https://docketnexus.com/case/mizenko-v-medtronic-inc-72244861/"
           },
           {
-            "url": "https://cognizant.q4cdn.com/123993165/files/doc_earnings/2025/q2/filing/CTS-form-10-Q-Final.pdf"
+            "url": "https://docketnexus.com/party/medtronic-inc/"
           },
           {
-            "url": "https://cognizant.q4cdn.com/123993165/files/doc_earnings/2025/q3/transcript/Transcript_CTSHQ3-2025-Earnings-Call.pdf"
+            "url": "https://en.wikipedia.org/wiki/Medtronic"
           },
           {
-            "url": "https://cognizant.q4cdn.com/123993165/files/doc_earnings/2025/q4/transcript/Transcript_CTSHQ4-2025-Earnings-Call.pdf"
+            "url": "https://law.justia.com/cases/federal/district-courts/minnesota/mndce/0%3A2025cv02304/225572/82/"
           },
           {
-            "url": "https://cognizant.q4cdn.com/123993165/files/doc_earnings/2026/q1/earnings-result/Q1-26-Earnings-Press-Release.pdf"
+            "url": "https://mma.prnewswire.com/media/2692712/Earnings_Presentation_FY25Q4_FINAL.pdf"
           },
           {
-            "url": "https://cognizant.q4cdn.com/123993165/files/doc_financials/2025/q4/CTSH-2025-12-31-10K_Final-web.pdf"
+            "url": "https://mma.prnewswire.com/media/2993805/Medtronic_Q4_FY26___Financial_Schedules.pdf?p=original"
           },
           {
-            "url": "https://courtdocket.org/cognizant-lawsuit-discrimination-bribery-and-securities-fraud/"
+            "url": "https://news.medtronic.com/press-releases?keywords=acquisition&o=5"
           },
           {
-            "url": "https://investors.cognizant.com/news-and-events/news/news-details/2026/Cognizant-Reports-Second-Quarter-2026-Results/default.aspx"
+            "url": "https://nighgoldenberg.com/spinal-cord-stimulator-lawsuit/2/"
           },
           {
-            "url": "https://law.justia.com/cases/federal/district-courts/new-york/nysdce/1%3A2021cv02174/556071/226/"
+            "url": "https://ptacts.uspto.gov/ptacts/public-informations/petitions/1558745/download-documents?artifactId=ICXpY1uqHNcfpkxaFMAndV3tNQU8V9dDqlqzpN0vKDD7qebtMG-p0TA"
           },
           {
-            "url": "https://news.cognizant.com/2024-06-10-COGNIZANT-TO-ACQUIRE-BELCAN-FOR-APPROXIMATELY-1-3-BILLION-TO-SIGNIFICANTLY-STRENGTHEN-ENGINEERING-CAPABILITIES-AND-ESTABLISH-A-LEADERSHIP-POSITION-IN-AEROSPACE-DEFENSE-MARKET"
+            "url": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfRES/res.cfm?id=221278"
           },
           {
-            "url": "https://news.cognizant.com/index.php?l=100&query=company+acquisition&s=14110&submit=Search"
+            "url": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfRes/res.cfm?ID=221037"
           },
           {
-            "url": "https://news.cognizant.com/press-releases-financial"
+            "url": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfres/res.cfm?id=220767"
           },
           {
-            "url": "https://www.analystlens.com/stocks/ctsh/8k/2026-07-10"
+            "url": "https://www.fda.gov/media/191587/download"
           },
           {
-            "url": "https://www.marketbeat.com/stocks/NASDAQ/CTSH/earnings/"
+            "url": "https://www.fda.gov/media/194292/download?attachment="
           },
           {
-            "url": "https://www.reddit.com/r/LayoffHedge/comments/1v4hsd6/cognizant_contract_with_iowa_has_actual_carve/"
+            "url": "https://www.fda.gov/media/194301/download"
           },
           {
-            "url": "https://www.reddit.com/r/stocknear/comments/1wvyapl/analyst_report_cognizant_technology_solutions/"
+            "url": "https://www.fda.gov/media/195195/download"
           },
           {
-            "url": "https://www.reddit.com/r/stocknear/comments/1x1lodu/analyst_report_cognizant_technology_solutions/"
+            "url": "https://www.fda.gov/media/75642/download"
           },
           {
-            "url": "https://www.sec.gov/Archives/edgar/data/1058290/000105829026000008/ctsh-20251231.htm"
+            "url": "https://www.fda.gov/medical-devices/medical-device-recalls-and-early-alerts/pulmonary-valve-catheter-delivery-system-recall-medtronic-removes-harmony-delivery-catheter-system"
           },
           {
-            "url": "https://www.sec.gov/Archives/edgar/data/1058290/000105829026000016/ctsh-20260331.htm"
+            "url": "https://www.medtechdive.com/news/medtronic-closes-scientia-vascular-takeover-continuing-ma-streak/822876/"
           },
           {
-            "url": "https://www.sec.gov/Archives/edgar/data/1058290/000105829026000031/ctsh-20260630.htm"
+            "url": "https://www.medtronic.com/jp-ja/our-company/press/2026-04-medtronic-cathworks.html"
+          },
+          {
+            "url": "https://www.prnewswire.com/news-releases/medtronic-reports-strong-second-quarter-fiscal-2026-financial-results-enterprise-growth-drivers-accelerate-momentum-302617837.html"
+          },
+          {
+            "url": "https://www.reddit.com/r/Gastroparesis/comments/1vhk94x/anyone_else_with_the_medtronic_stimulator_get_a/"
+          },
+          {
+            "url": "https://www.reddit.com/r/Hernia/comments/1vfs7u5/medtronic_mesh_bellweather_jury_awards_88m/"
+          },
+          {
+            "url": "https://www.reddit.com/r/Medtronic780g/comments/1r0q4yi/made_by_abbott_what_the_fda_has_to_say/"
+          },
+          {
+            "url": "https://www.reddit.com/r/Medtronic780g/comments/1s7399u/how_to_push_minimed_to_get_their_act_together/"
+          },
+          {
+            "url": "https://www.reddit.com/r/Medtronic780g/comments/1urd2p3/cracked_and_on_hold/"
+          },
+          {
+            "url": "https://www.reddit.com/r/PacemakerICD/comments/1vtiwvq/insurance_denied_micra_av2/"
+          },
+          {
+            "url": "https://www.reddit.com/r/TandemDiabetes/comments/1t466qg/whats_going_on_with_tandems_supply_problems/"
+          },
+          {
+            "url": "https://www.reddit.com/r/TandemDiabetes/comments/1x65dk0/anyone_know_when_this_will_be_overwhats_going_on/"
+          },
+          {
+            "url": "https://www.reddit.com/r/Wiseek/comments/1wg19gi/mdt_medtronic_launches_exchange_offer_to_complete/"
+          },
+          {
+            "url": "https://www.reddit.com/r/diabetes/comments/rv2yjp"
+          },
+          {
+            "url": "https://www.reddit.com/r/diabetes_t1/comments/1pg2fhe/fck_you_dexcom/"
+          },
+          {
+            "url": "https://www.reddit.com/r/u_scsresearch/comments/1whe92e/scs_override_riegel_v_medtronic_inc/"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1613103/000161310326000010/mdt-20260816.htm"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1613103/000162828026058626/fy26ars82426.pdf"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1613103/000162828026061674/a425-pressreleasexmdtexcha.htm"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/2062583/000114036126034024/ny20073045x3_ars.pdf"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/2062583/000162828026061669/mdt-20260914.htm"
           }
         ]
       },
       {
         "agent": "Technical Context Agent",
         "verdict": "APPROVE",
-        "confidence": 0.8,
-        "thesis": "Moderate-strength breakout (breakout = 0.5426) in a stock with strong relative strength (RS excess = 43.7515%) and supportive market breadth (market breadth = 60.8%). ATR(14) = 2.3879 indicates moderate volatility. The authoritative stop (60.9992) is below the authoritative entry (66.86), consistent with a long breakout, and the authoritative target (93.2336) offers meaningful upside, so the setup is approved from a technical-context perspective.",
+        "confidence": 0.78,
+        "thesis": "Long breakout setup: breakout strength = 0.8131 (strong), relative strength = +11.3786% (outperforming), and breadth = 60.8% (market breadth pass). ATR = 2.3427 indicates present volatility. Stop at 90.7847 is below the entry and target at 120.07385 provides clear upside, so the supplied technical fields are coherent with a long breakout thesis.",
         "risks": [
-          "Breakout strength is moderate (0.5426), so there is risk of a false breakout and early failure.",
-          "ATR(14) = 2.3879 implies material intraday/near-term volatility; the stop could be tested before trend continuation.",
-          "Strong RS does not guarantee continued outperformance if broader market sentiment reverses; monitor market breadth for deterioration.",
-          "Target may be ambitious relative to potential shock events; be prepared to respect the authoritative stop if the setup fails."
+          "False breakout or reversal after initial move",
+          "Volatility risk: ATR = 2.3427 means intraday/short-term noise can trigger the stop",
+          "Market breadth could weaken from 60.8%, undermining the breakout",
+          "Gap risk: price could gap below the stop on adverse news"
         ],
         "sources": []
       },
@@ -231,88 +327,85 @@
         "agent": "Thesis Agent",
         "verdict": "APPROVE",
         "confidence": 0.79,
-        "thesis": "Bull case: The quant packet shows a coherent momentum breakout setup — entry_usd = 66.86 with an authoritative stop_price = 60.9992 and target_price = 93.2336. Breakout_strength = 0.5426 (moderate), breadth_gate = PASS and market_breadth_pct = 60.8% provide a constructive market backdrop. RS_excess_pct = 43.7515% and tier = A indicate strong relative strength and institutional-quality selection. ATR_14 = 2.3879 implies manageable intraday volatility relative to the stop, and the packet’s quantity = 3 is small and consistent with a disciplined test of the breakout. Together these factors support attempting the supplied momentum long with the authoritative stop and target in place.\n\nBear case: Material, unresolved legal/regulatory and litigation risk identified by the News and Event Agent (i",
+        "thesis": "Bull case: The quant packet defines a coherent long breakout trade with authoritative parameters (entry_usd 96.11, stop_price 90.7847, target_price 120.07385, quantity 3.0). Technical signals support the setup: breakout_strength 0.8131, RS_excess_pct +11.3786, breadth_gate PASS and market_breadth_pct 60.8; ATR_14 = 2.3427 (the provided stop distance is ~2.27 ATR per the packet), spread_bps is modest, and the model score/tier profile is consistent with a medium-strength candidate. These factors together constitute a disciplined, momentum-oriented long where risk is defined by the supplied stop and upside by the supplied target. \n\nBear case: Material adverse company-specific events and regime risks could overwhelm the technical setup. The News & Event specialist documents a recent Class 1 FD",
         "risks": [
-          "Material legal/regulatory and litigation exposure (post‑trial award/ongoing DOJ/SEC/class actions) that can drive outsized downside",
-          "Overnight/opening gap risk that bypasses the entry and invalidates the stop or execution price",
-          "Macro/regime risks: sector rotation, rising Treasury yields or VIX spikes that disproportionately hit momentum/tech names",
-          "False breakout risk from moderate breakout_strength (0.5426) and potential model regime change",
-          "ATR(14)=2.3879 implies the stop may be intraday‑tested; short-term volatility could trigger stop loss"
+          "Gap/overnight risk could trigger stop before intraday execution price is reached.",
+          "Stop distance is modest (~2.27 ATR per packet) and susceptible to being taken out by normal or elevated volatility.",
+          "Execution risk and slippage if liquidity worsens or spreads widen in stress.",
+          "Event risk: Class 1 FDA removal/recall (Harmony delivery catheter) and multiple Class 2 recalls in 2026 create regulatory, reputational and sales risk.",
+          "Active product‑liability and patent litigation could produce settlements, injunctions, or material legal costs."
         ],
         "sources": []
       },
       {
         "agent": "Claude CRO",
-        "verdict": "REJECT",
-        "confidence": 0.68,
-        "thesis": "REJECT the CTSH long entry. I did not recompute price, stop, target or size. Verified reasons against the entry:\n\n1. Earnings fall inside the trade window. Q3 2026 results are due October 29, 2026, before the open, about 9 sessions after the October 15 packet date. The largest daily move in the past year was +11.3% (July 29, 2026). The stop sits about 8.8% below the entry, so an earnings gap could jump past it and the stop would not cap the loss. Only the Scanner and Market Regime agents mentioned event risk generically, and neither gave the date.\n\n2. Fresh regulatory overhang. On October 8, Cognizant was suspended from the U.S. labor certification program, along with Infosys and Microsoft. A report also cites DOL statements about ongoing criminal investigations of IT outsourcing firms. Th",
+        "verdict": "APPROVE",
+        "confidence": 0.67,
+        "thesis": "The News and Event Agent's REJECT rests on verified but stale or chronic items. These are the May 2026 Class I Harmony catheter recall, Class II recalls, and ongoing product-liability and patent litigation. The recall is about five months old. MDT has since posted +11.4% relative-strength excess, a strong breakout, and a \"Moderate Buy\" analyst consensus. That suggests the market has already absorbed the recall. The litigation is a long-running background risk for a large-cap medtech and is not a new catalyst. I found no verified, imminent adverse event in the research, such as a new recall, an FDA warning letter, a litigation ruling, or an earnings date inside the trade window. The packet is internally coherent. Breadth gate passes, spread is tight, and four of five other specialists appro",
         "risks": [
-          "Q3 earnings on Oct 29, 2026 before open: gap risk could bypass the stop (max 1-year daily move +11.3% vs ~8.8% stop distance)",
-          "Oct 8 suspension from the U.S. labor certification program and DOL criminal investigations of IT outsourcing firms",
-          "Entry after ~15% one-week run-up, above the cited analyst targets (TD Cowen $60, consensus ~$66.14); analyst ratings are split 13 Buy / 16 Hold",
-          "Weak tech tape on hot inflation and rate-hike bets",
-          "rs_excess_pct of 43.75% unverified; one source shows a 1-year change of -16%"
+          "Fresh device-safety news (new recall escalation, FDA action) could gap the stock through the stop.",
+          "MiniMed split-off/exchange offer timing and execution could cause idiosyncratic volatility that breaks the breakout.",
+          "Active product-liability and patent litigation could produce adverse rulings or settlements.",
+          "Stop is only about 2.3 ATR wide, so normal volatility could trigger it.",
+          "Healthcare sector leadership could fade on a rotation back into growth/AI names or a Fed/inflation shock."
         ],
         "sources": [
           {
-            "url": "https://pluang.com/en/news-feed/atos-se-banding-hakim-akhir-litigasi-trizetto"
+            "url": "https://cardiovascularbusiness.com/topics/clinical/interventional-cardiology/medtronic-recalls-heart-valve-delivery-system-due-safety-risk"
           },
           {
-            "url": "https://stockanalysis.com/stocks/ctsh/"
+            "url": "https://conexiant.com/cardiology/articles/fda-classifies-medtronic-harmony-recall-as-class-i/"
           },
           {
-            "url": "https://stockstotrade.com/news/cognizant-technology-solutions-corporation-ctsh-news-2026_10_13/"
+            "url": "https://finance.yahoo.com/quote/MDT/"
           },
           {
-            "url": "https://theprint.in/tech/cognizants-570-million-trade-secret-case-win-against-syntel-thrown-out-on-appeal/1595140/"
+            "url": "https://finance.yahoo.com/quote/MDT/news/"
           },
           {
-            "url": "https://tickernerd.com/stock/ctsh-forecast/"
+            "url": "https://insights.citeline.com/medtech-insight/policy-and-regulation/recalls/fda-flags-medtronic-harmony-catheter-recall-as-class-i-over-tip-detachment-N4DFGX5I3JGJPJAF2MZQMM3O3U/"
           },
           {
-            "url": "https://www.cnbc.com/quotes/CTSH"
+            "url": "https://robinhood.com/us/en/stocks/MDT/"
           },
           {
-            "url": "https://www.cnn.com/markets/stocks/CTSH"
+            "url": "https://stockanalysis.com/stocks/mdt/"
           },
           {
-            "url": "https://www.marketbeat.com/stocks/NASDAQ/CTSH/"
+            "url": "https://www.crtonline.org/news-detail/fda-announces-class-i-recall-of-medtronic-s-harmon"
           },
           {
-            "url": "https://www.morningstar.com/stocks/xnas/ctsh/quote"
+            "url": "https://www.dicardiology.com/content/medtronic-recalls-harmony-delivery-catheter-part-tpv-system-risk-capsule-break-during-use"
           },
           {
-            "url": "https://www.sec.gov/Archives/edgar/data/0001058290/000105829026000016/ctsh-20260331.htm"
+            "url": "https://www.google.com/finance/quote/MDT:NYSE"
           },
           {
-            "url": "https://www.sec.gov/Archives/edgar/data/0001058290/000105829026000031/ctsh-20260630.htm"
+            "url": "https://www.hpnonline.com/surgical-critical-care/instrument-supply-tracking/article/21265925/fda-class-i-recall-medtronic-harmony-delivery-catheter-part-of-tpv-system"
           },
           {
-            "url": "https://www.sec.gov/Archives/edgar/data/1058290/000105829021000279/Financial_Report.xlsx"
+            "url": "https://www.marketbeat.com/stocks/nyse/mdt/news"
           },
           {
-            "url": "https://www.sec.gov/Archives/edgar/data/1058290/000105829022000023/Financial_Report.xlsx"
+            "url": "https://www.markets.com/instrument/medtronic/"
           },
           {
-            "url": "https://www.sec.gov/Archives/edgar/data/1058290/000130817924000543/lctsh2023_ars.pdf"
+            "url": "https://www.massdevice.com/recall-of-medtronics-harmony-delivery-catheter-is-class-i/"
           },
           {
-            "url": "https://www.sec.gov/Archives/edgar/data/1058290/000130817926000292/ctsh013686-ars.pdf"
+            "url": "https://www.mddionline.com/qa-qc/medtronic-harmony-catheter-recall-fda-warns-of-distal-tip-detachment-during-tpv-procedures"
           },
           {
-            "url": "https://www.sec.gov/Archives/edgar/data/1058290/000135994825000474/ctsh013686-ars.pdf"
+            "url": "https://www.medicaltubingandextrusion.com/fda-recalls-medtronics-harmony-catheter-due-to-risk-of-capsule-breaking-during-use/"
           },
           {
-            "url": "https://www.stocktitan.net/news/CTSH/cognizant-schedules-third-quarter-2026-earnings-release-and-zn8kr9wytau6.html"
+            "url": "https://www.tctmd.com/news/medtronic-recalls-harmony-delivery-catheters-due-breakage-risk"
           },
           {
-            "url": "https://www.stocktitan.net/overview/CTSH/"
+            "url": "https://www.thecerbatgem.com/2026/10/15/medtronic-plc-nysemdt-stock-now-rated-moderate-buy-by-wall-street-analysts.html"
           },
           {
-            "url": "https://www.streetinsider.com/Reuters/Cognizants+$570+million+trade-secret+case+win+against+Syntel+thrown+out+on+appeal%C2%A0/21721928.html"
-          },
-          {
-            "url": "https://www.timothysykes.com/news/cognizant-technology-solutions-corporation-ctsh-news-2026_10_13/"
+            "url": "https://www.timothysykes.com/news/medtronic-plc-mdt-news-2026_10_12-2/"
           }
         ]
       }
