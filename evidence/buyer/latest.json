@@ -1,35 +1,35 @@
 {
-  "outcome": "COUNCIL_REJECT:ACN",
+  "outcome": "COUNCIL_REJECT:CTSH",
   "session_date": "2026-10-21",
-  "generated_at": "2026-10-21T18:30:22Z",
+  "generated_at": "2026-10-21T18:40:18Z",
   "official": true,
   "extra_summary": [
-    "council: Claude CRO rejected the proposal"
+    "council: At least one specialist rejected the proposal"
   ],
   "plan": {
-    "symbol": "ACN",
-    "quantity": 1.0,
-    "entry_usd": 238.26,
-    "stop_price": 222.1061,
-    "target_price": 310.95255,
+    "symbol": "CTSH",
+    "quantity": 4.0,
+    "entry_usd": 69.26,
+    "stop_price": 63.5367,
+    "target_price": 95.01485000000001,
     "fx_usdczk": 21.593,
-    "spread_bps": 10.498246792785604
+    "spread_bps": 4.3324427756518356
   },
   "council": {
     "verdict": "REJECT",
-    "reason": "Claude CRO rejected the proposal",
+    "reason": "At least one specialist rejected the proposal",
     "cached": true,
     "findings": [
       {
         "agent": "Scanner Agent",
         "verdict": "APPROVE",
-        "confidence": 0.88,
-        "thesis": "The packet is internally coherent: authoritative fields present and consistent (entry_usd 240.9, stop_price 222.1061 is below entry, target_price 325.47255 is above entry). Key supporting metadata is present — ATR, breakout_strength (0.8347), market_breadth PASS at 64.8%, strong RS excess — and a concrete quantity (1.0). No fields contradict one another and the authority note is respected.",
+        "confidence": 0.82,
+        "thesis": "Packet is internally coherent: authoritative fields (entry_usd 69.03, stop_price 63.5367, target_price 93.74985, quantity 4.0) are present and consistent (stop < entry < target). Ancillary metrics align with a bullish setup (breakout_strength 1.3981, rs_excess_pct 55.7341, tier A) and ATR 14 of 2.3191 is provided for risk context. No internal contradictions or missing authoritative fields were found.",
         "risks": [
-          "Single-symbol trade risk and company-specific news or events are not reflected in the packet.",
-          "Packet shows volatility (ATR provided); potential for whipsaw around the stop level.",
-          "Quantity of 1.0 may be a placeholder relative to portfolio sizing rules — position-sizing context not included.",
-          "Market-wide shocks or liquidity changes could invalidate breakout assumptions despite breadth metrics."
+          "Market gap / overnight risk can invalidate stop before execution (price gaps below stop).",
+          "Spread and execution cost (spread_bps 18.85) may reduce realized entry/exit efficiency.",
+          "Single-stock / company-specific news can rapidly change outlook despite technical signals.",
+          "Position sizing / concentration risk if quantity 4.0 represents a large portfolio weight relative to risk tolerance."
         ],
         "sources": []
       },
@@ -37,25 +37,22 @@
         "agent": "Market Regime Agent",
         "verdict": "APPROVE",
         "confidence": 0.78,
-        "thesis": "As of the Oct 20, 2026 market session, the US equity backdrop is constructive for a momentum breakout in ACN: broad-market participation was strong (S&P modestly higher with advancers substantially outnumbering decliners and Russell 2000 leadership), volatility (VIX) is subdued relative to recent spikes, and sector rotation has not produced a clear, sustained sell-off in large-cap names. Those conditions (positive breadth, low-to-moderate volatility, and small-cap strength) generally increase the odds that a high breakout_strength signal and the supplied breadth PASS will carry through into a successful momentum move for a large-cap stock like ACN.",
+        "thesis": "On Oct 20, 2026 the U.S. equity backdrop was broadly supportive of momentum breakouts: the S&P 500 closed higher (S&P +0.28%) while the Dow jumped ~1% and the Russell 2000 rallied ~1.65%, indicating a risk-on internal market environment rather than a narrow, defensive session. ([portfolio-terminal.com](https://portfolio-terminal.com/markets/stock-market-close?utm_source=openai)) Market internals were strong (about 69% advancers on the session), confirming the breadth signal in the quant packet. ([thetrading.tools](https://www.thetrading.tools/advance-decline-line?utm_source=openai)) Volatility has retreated from recent spikes (VIX around the mid‑teens / ~17), and the 10‑yr Treasury yield ticked slightly lower to ~5.12% — both are supportive for momentum continuation versus a rising‑volatil",
         "risks": [
-          "Sector/tech-specific weakness or renewed selling in technology/IT services that undercuts Accenture even with broad-market strength.",
-          "Firm-specific news (earnings, guidance, contract delays, regulatory items) could invalidate the breakout independent of market regime.",
-          "A late-session reversal or higher intraday volatility could trigger the supplied stop before momentum confirms.",
-          "Macro shock or a sudden jump in Treasury yields that reverses risk-on breadth quickly."
+          "Sector headwind: technology/AI-group weakness and rotation into industrials/financials could blunt follow-through for an IT services stock like CTSH. ([apnews.com](https://apnews.com/article/0a5ea168499c6ae617c49e10bf48f9c6?utm_source=openai))",
+          "Macro/interest-rate risk: the 10‑yr yield remains elevated (~5.12%); a renewed leg higher in yields would pressure multiple‑sensitive names and could stop momentum. ([investing.com](https://www.investing.com/rates-bonds/u.s.-10-year-bond-yield-historical-data?utm_source=openai))",
+          "Volatility re‑acceleration: VIX can spike quickly around macro prints or earnings; a VIX repricing would likely stall a breakout. ([chartexchange.com](https://chartexchange.com/symbol/index-vix/historical/?utm_source=openai))",
+          "Earnings/headline risk: near-term company or sector‑specific news (earnings, guidance, analyst revisions) can overwhelm market breadth and reverse momentum intraday. (No single‑company earnings read included in this regime check.)"
         ],
         "sources": [
-          {
-            "url": "https://aktie.com/en/articles/u-s-tech-sector-posts-strong-gains-on-october-19-leading-broad-market-rally-cmvg6pqv"
-          },
           {
             "url": "https://apnews.com/article/0a5ea168499c6ae617c49e10bf48f9c6"
           },
           {
-            "url": "https://apnews.com/article/4fa93685cd49e51e7ff0d840fdd38b0d"
+            "url": "https://apnews.com/article/494fbe4361a0360b2f6368e7a6d8f058"
           },
           {
-            "url": "https://apnews.com/article/5aec11ee466841cc2a69b2d23ab77f0e"
+            "url": "https://apnews.com/article/4fa93685cd49e51e7ff0d840fdd38b0d"
           },
           {
             "url": "https://apnews.com/article/b972b64127db5412a2b02c35ecf95c88"
@@ -64,257 +61,231 @@
             "url": "https://apnews.com/article/d2655f64db7ec8ae450525d58f97b628"
           },
           {
-            "url": "https://cdn.cboe.com/resources/options/Cboe2026OPTIONSCalendar.pdf"
-          },
-          {
-            "url": "https://cdn.cboe.com/resources/regulation/rule_filings/approved/2026/SR-CBOE-2026-014.pdf"
-          },
-          {
             "url": "https://chartexchange.com/symbol/index-vix/historical/"
-          },
-          {
-            "url": "https://cincodias.elpais.com/mercados-financieros/2026-10-20/la-negociacion-de-ferrovial-en-ee-uu-se-duplica-desde-su-salto-al-nasdaq-100.html"
-          },
-          {
-            "url": "https://dd9ztr76gkqyi.cloudfront.net/indicators/vix-index"
           },
           {
             "url": "https://deanfi.com/insights/marketpulse/2026-10-20/"
           },
           {
-            "url": "https://es.investing.com/indices/cboe-vix-volatility-historical-data"
+            "url": "https://finance.yahoo.com/markets/stocks/articles/markets-news-oct-20-2026-103252254.html"
           },
           {
-            "url": "https://finance.yahoo.com/quote/%5EVIX/history/"
+            "url": "https://fred.stlouisfed.org/graph/?graph_id=971935"
           },
           {
-            "url": "https://finance.yahoo.com/quote/ACN/"
+            "url": "https://gainbot.ai/brief/2026-10-20"
           },
           {
-            "url": "https://finance.yahoo.com/quote/ACN/history/?p=ACN"
+            "url": "https://hyeongeonnoil.com/en/market/us-10y"
           },
           {
-            "url": "https://fwnbc.marketminute.com/quote/NY%3AACN/historical"
+            "url": "https://portfolio-terminal.com/markets/stock-market-close"
           },
           {
-            "url": "https://markets.financialcontent.com/prnews/quote?Symbol=ny%3Aacn"
+            "url": "https://stocksignal24.com/blog/us-stock-market-closing-bell-2026-10-20"
           },
           {
-            "url": "https://mx.investing.com/indices/volatility-s-p-500-historical-data"
+            "url": "https://swingfolio.com/daily/us/2026-10-20/afternoon"
           },
           {
-            "url": "https://portfolio-terminal.com/markets/vix/october-2026"
+            "url": "https://www.investing.com/news/stock-market-news/us-stocks-mixed-at-close-of-trade-dow-jones-industrial-average-up-102-4961088"
           },
           {
-            "url": "https://research.ftserussell.com/Analytics/FactSheets/Home/DownloadSingleIssue?isManual=True&issueName=US2000USD&openfile=open"
+            "url": "https://www.investing.com/rates-bonds/u.s.-10-year-bond-yield-historical-data"
           },
           {
-            "url": "https://stockanalysis.com/stocks/acn/history/"
+            "url": "https://www.kiplinger.com/investing/stocks/nasdaq-bounces-back-as-ai-trade-freshens-up-stock-market-today"
           },
           {
-            "url": "https://whig.marketminute.com/quote/NY%3AACN/historical"
+            "url": "https://www.kiplinger.com/investing/stocks/stocks-churn-up-even-as-tech-gets-chipped-stock-market-today"
           },
           {
-            "url": "https://www.cboe.com/tradable-products/vix"
+            "url": "https://www.reddit.com/r/HollowPointTrading/comments/1xb2kxs/point_blank_nasdaq_slips_below_zero_while_most_sp/"
           },
           {
-            "url": "https://www.cboe.com/tradable_products/vix/vix_historical_data/?elqTrackId=9ce400d31d724b53862dd84ba8f1236d&elqaid=3502&elqat=2"
+            "url": "https://www.reddit.com/r/RobinHood/comments/1xb2t7y/stock_market_recap_for_tuesday_october_20_2026/"
           },
           {
-            "url": "https://www.eoddata.com/stockquote/NYSE/ACN.htm"
+            "url": "https://www.reddit.com/r/smallstreetbets/comments/1xb2tph/stock_market_recap_for_tuesday_october_20_2026/"
           },
           {
-            "url": "https://www.financecharts.com/etfs/ACN/summary/price"
-          },
-          {
-            "url": "https://www.investing.com/equities/accenture-ltd-historical-data"
-          },
-          {
-            "url": "https://www.investing.com/news/economy-news/trading-day-oil-reversal-lifts-spirits-4961184"
-          },
-          {
-            "url": "https://www.investor.accenture.com/~/media/Files/A/accenture-v4/investors/earnings-reports/2026/accentures-second-quarter-fiscal-2026-earnings-press-release.pdf"
-          },
-          {
-            "url": "https://www.marketbeat.com/stocks/NYSE/ACN/chart/"
-          },
-          {
-            "url": "https://www.portfolio-terminal.com/markets/stock-market-close/october-20-2026"
-          },
-          {
-            "url": "https://www.reddit.com/r/HollowPointTrading/comments/1xb41lw/point_blank_the_sp_closes_higher_while_the_nasdaq/"
-          },
-          {
-            "url": "https://www.reddit.com/r/marketpredictors/comments/1xb2tet/stock_market_recap_for_tuesday_october_20_2026/"
-          },
-          {
-            "url": "https://ycharts.com/companies/ACN/price"
+            "url": "https://www.thetrading.tools/advance-decline-line"
           }
         ]
       },
       {
         "agent": "News and Event Agent",
-        "verdict": "APPROVE",
-        "confidence": 0.82,
-        "thesis": "Public filings and company press releases through October 2026 (including Accenture’s Oct 1, 2026 Q4 & full‑year fiscal 2026 results and the Oct 16, 2026 Form 10‑K) show revenue and EPS above prior guidance, strong free cash flow and shareholder returns, and FY‑2027 outlook calling for modest revenue growth (3%–6% local currency) and EPS expansion. Multiple 2026 acquisitions were announced/completed (e.g., Faculty, Mjølner; OT security-related assets), but these are disclosed as strategic and no material adverse regulatory action, trading halt, or new litigation disclosure that would argue against initiating a new long was found in the reviewed public materials. Therefore no verified material event conflicts with a new long at this time.",
+        "verdict": "REJECT",
+        "confidence": 0.85,
+        "thesis": "Public filings and court records show recent, material adverse litigation exposure for Cognizant (CTSH) — notably a post-trial award referenced at approximately $298 million (order dated March 27, 2026) and ongoing consolidated data-security breach multidistrict litigation — along with active appeals and other legal actions disclosed in SEC filings. These verified legal liabilities and ongoing litigation uncertainty constitute a material negative event that argues against initiating a new long at this time.",
         "risks": [
-          "Acquisition integration costs or future goodwill/impairment charges from recent M&A could negatively affect results.",
-          "Accenture is named in routine litigation matters (disclosed in annual filings); these could evolve into material claims.",
-          "Modest FY‑2027 growth guidance leaves execution risk — missed guidance or macro/FX headwinds could prompt negative market reaction.",
-          "Undisclosed or emerging regulatory/SEC actions (none found in the reviewed disclosures) could appear after this search.",
-          "Market re‑rating or sector rotation unrelated to company fundamentals could still drive downside."
+          "Post-trial judgment referenced at ~ $298 million (order dated March 27, 2026) and related potential additional damages/fees.",
+          "Ongoing consolidated data-security breach multidistrict litigation (MDL) creating continuing liability, discovery and settlement risk.",
+          "Active appeals and related appellate filings that could produce additional unfavorable rulings or remands.",
+          "Other disclosed litigation and class-action matters (e.g., hiring/termination class action) and regulatory/compliance risks noted in recent SEC filings.",
+          "Near-term earnings event (Q3 2026 release scheduled October 29, 2026) that could increase volatility while litigation remains unresolved."
         ],
         "sources": [
           {
-            "url": "https://ebs.publicnow.com/view/51727BC5D84D6B10DD03ABADB3182FCEB061CA68"
+            "url": "https://cognizant.q4cdn.com/123993165/files/doc_earnings/2025/q4/transcript/Transcript_CTSHQ4-2025-Earnings-Call.pdf"
           },
           {
-            "url": "https://en.wikipedia.org/wiki/ACN_Inc."
+            "url": "https://cognizant.q4cdn.com/123993165/files/doc_earnings/2026/q1/filing/Form-10Q-Q1-2026.pdf"
           },
           {
-            "url": "https://investor.accenture.com/~/media/Files/A/accenture-v4/investors/earnings-reports/2026/acn-2-28-2026-10-q.pdf"
+            "url": "https://cognizant.q4cdn.com/123993165/files/doc_financials/2025/q4/CTSH-2025-12-31-10K_Final-web.pdf"
           },
           {
-            "url": "https://newsroom.accenture.com/?page=3"
+            "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0001820872/6705cfa4-93ae-4527-aacc-63b1a0b07088.pdf"
           },
           {
-            "url": "https://newsroom.accenture.com/content/2qfy26-earnings/accenture-reports-second-quarter-fiscal-2026-results.pdf"
+            "url": "https://dockets.justia.com/docket/circuit-courts/ca3/26-1530"
           },
           {
-            "url": "https://newsroom.accenture.com/news/2026/accenture-completes-acquisition-of-faculty"
+            "url": "https://dockets.justia.com/docket/missouri/moedce/4%3A2026md03185/229009"
           },
           {
-            "url": "https://static.seekingalpha.com/uploads/sa_presentations/785/119785/original.pdf"
+            "url": "https://en.wikipedia.org/wiki/Cognizant"
           },
           {
-            "url": "https://substack-post-media.s3.us-east-1.amazonaws.com/post-files/189311340/b8f84772-1e5d-4a34-b244-43f2d67fc0db.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAUM3FPD6BXH6Q74SF%2F20260228%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260228T091112Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEIf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJHMEUCIEa%2BHNwiuyWZIeBXGS0bYV4wn4sDvi3Px%2BLUlzBeGn8tAiEA1D2AkcgiUgPAjDv4miFkubXvB05moPZvXnFWD%2FYn%2Btkq%2BQMITxAEGgwzMDI0NzExMjY5MTUiDNUfjRsGWRUrEYP%2B9irWAxzhkmmG71u5EvjZil0PnEnJj13NhWhjL3qtockhlUU1X3Ut93K5KF%2FOmgsMZfOO%2FgGqe5gJTbHs1esmWMyqCLNrFkXHoL%2FnSM0n%2FDv%2FSfBUUUibyKxW9%2BVf5X2xmQm%2BLaMIzZQRi4uXFSMSRDTf1KpAo8b6g8yDxlIXQZ4ZSdFZD71OukQfHUMT62ZZCBB6V%2B8c9D6P8tJ4r3sCND9Z8a50XwuCapnI%2BDO6V%2Fpw0UgfE31ERcL1m0RUwCu%2B0qRhXgQEd8mYC3%2FVu6RtjxUdsEhd%2BFVfEPR6%2F4xg%2BUVPBFWEWyDc%2FraOXlAhC7zVLoV%2BypW1BouLaTY%2BUkK1DGoPhaiXb7%2BdLTjyyz%2FBl90JDackQ6k215SWzXBuw6GJBTEMD8fvPCpvReRF8th0XRZVAfcYiaz06%2FAAP9CdTFGeTbL5OBu4lmfxnhkYjna6uGxKf4aBK%2F53fM5G4%2B%2BJw5%2BCimPcsF53xJ1SOfapdzdQZKMXNCtEe5oK1rU3f73d0kFlPcWcKRClH%2FMStYJwHeDFqoFJMBm%2BoRj59sbd0bD%2B2vKI4wQ%2BfAYKo5JY9QwnAmHwpCvLt3Gq5aKRnLFdUm5vy3KR3Y%2FCg4Q0fTftWLteSs%2FVzIHi08wkMJ2Ris0GOqUB2ic9daDuh%2BenjtCKqTps9y7DYWXJl%2B7%2BQxCtm6E1j6lFAJyeUhbrfUVL4RoWDfgS2qeFIIyKvt3YE7BFlsbV43hNeae3Jj9KxXQtUSievlRkJo%2F1tIoQEbdw6HGBoki1mgSIOI%2BQoBaoLMvlsYXuBost5mn6vVKIIz06ZMisCEOLTuOw60FOQm3vn9yEvPO%2B13QAaKvzI1KM%2BI4fB0zm%2F7IXMrHm&X-Amz-Signature=33042cd6bc75076abb92cc0225de0bcd556d44e43958dcb36cee3d1b0b4fc1b4&X-Amz-SignedHeaders=host&response-content-disposition=attachment%3B+filename%3D%22Siu_Report_Nf_2026_0227.pdf%22&x-id=GetObject"
+            "url": "https://investors.cognizant.com/home/default.aspx"
           },
           {
-            "url": "https://www.investor.accenture.com/~/media/Files/A/accenture-v4/investors/earnings-reports/2026/accentures-second-quarter-fiscal-2026-earnings-press-release.pdf"
+            "url": "https://investors.cognizant.com/news-and-events/news/news-details/2025/Cognizant-to-Acquire-3Cloud-Creating-a-Leading-Force-in-Microsoft-Azure-Services-and-Enterprise-AI-Transformation/default.aspx"
           },
           {
-            "url": "https://www.marketbeat.com/stocks/NYSE/ACN/earnings/"
+            "url": "https://investors.cognizant.com/news-and-events/news/news-details/2026/Cognizant-Reports-Second-Quarter-2026-Results/default.aspx"
           },
           {
-            "url": "https://www.sec.gov/Archives/edgar/data/0001467373/000130817925000653/acn014223-ars.pdf"
+            "url": "https://investors.cognizant.com/news-and-events/news/news-details/2026/Cognizant-to-Acquire-Astreya-Deepening-Its-AI-First-Managed-Services-Capabilities-at-Scale/default.aspx"
           },
           {
-            "url": "https://www.sec.gov/Archives/edgar/data/1467373/000146737326000014/acn-20260228.htm"
+            "url": "https://news.cognizant.com/news-home?id=1793"
           },
           {
-            "url": "https://www.sec.gov/Archives/edgar/data/1467373/000146737326000035/0001467373-26-000035-index.htm"
+            "url": "https://news.cognizant.com/press-releases-financial?l=100&o=0"
           },
           {
-            "url": "https://www.sec.gov/Archives/edgar/data/1467373/000146737326000037/q4fy26earnings8-kexhibit.htm?trk=article-ssr-frontend-pulse_little-text-block"
+            "url": "https://www.govinfo.gov/content/pkg/FR-2026-06-23/pdf/2026-12527.pdf"
           },
           {
-            "url": "https://www.sec.gov/Archives/edgar/data/1467373/000146737326000049/0001467373-26-000049-index.htm"
+            "url": "https://www.hkexnews.hk/listedco/listconews/sehk/2026/0528/2026052800239.htm"
           },
           {
-            "url": "https://www.sec.gov/Archives/edgar/data/1467373/000146737326000049/acn-20260831.htm"
+            "url": "https://www.marketbeat.com/earnings/reports/2026-10-29-cognizant-technology-solutions-co-stock/"
           },
           {
-            "url": "https://www.trefis.com/data/companies/ACN?from=ACN_why_stock_moved_up_2026-09-17&mod=co_top_accentureacn"
+            "url": "https://www.reddit.com/r/SECWatch/comments/1w0624s/cognizant_technology_solutions_corp_ctsh/"
+          },
+          {
+            "url": "https://www.reddit.com/r/SECWatch/comments/1w062af/cognizant_technology_solutions_corp_ctsh/"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1058290/000105829026000030/exhibit9936302026.htm"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1058290/000105829026000031/ctsh-20260630.htm"
           }
         ]
       },
       {
         "agent": "Technical Context Agent",
         "verdict": "APPROVE",
-        "confidence": 0.78,
-        "thesis": "Entry at 240.90 follows a strong long breakout (breakout_strength 0.8347) with very strong relative strength (rs_excess_pct 68.6694) and positive market breadth (breadth_gate PASS; market_breadth_pct 64.8). ATR_14 is 8.5469 (moderate volatility). The stop is set below entry at 222.1061 and the target is above entry at 325.47255, so the supplied levels are consistent with a directional long trade and do not contradict the breakout signal.",
+        "confidence": 0.86,
+        "thesis": "Breakout strength is positive (1.3981), relative strength is strong (55.7341), and breadth is supportive (64.8%). ATR (14) is 2.3191, indicating the stock has measurable volatility to size stops. Stop is set at 63.5367 (below the entry) and target at 93.74985 (above the entry), which is consistent with a long breakout plan. Approve on the technical-context basis provided.",
         "risks": [
-          "Volatility risk — ATR_14 = 8.5469 implies meaningful intraday/overnight swings that can hit the stop.",
-          "Gap risk — overnight gaps can bypass the stop and produce larger losses than intended.",
-          "Trend failure — breakout may fail or reverse despite strong RS and breadth.",
-          "Target uncertainty — reaching the target requires continued trend; not guaranteed.",
-          "Idiosyncratic/company risk — news or events can rapidly invalidate technicals."
+          "Volatility (ATR 2.3191) could produce larger intraday swings and trigger the stop before trend continuation.",
+          "Market breadth could deteriorate, removing sector/market support for the breakout.",
+          "Target may not be reached; partial or full exits could be required if price action weakens."
         ],
         "sources": []
       },
       {
         "agent": "Thesis Agent",
         "verdict": "APPROVE",
-        "confidence": 0.82,
-        "thesis": "Bull case: The quant packet shows a coherent momentum breakout setup — entry 240.9 with stop_price 222.1061 and target_price 325.47255 — supported by high breakout_strength (0.8347), very strong relative strength (rs_excess_pct 68.6694), and constructive market breadth (breadth_gate PASS; market_breadth_pct 64.8). ATR_14 = 8.5469 implies manageable intraday movement relative to the stop, and the packet includes an explicit quantity (1.0). Together the technical signal and positive regime/context from specialists increase the odds the breakout will continue toward the target. Bear case: The setup can fail due to idiosyncratic or regime risks: meaningful intraday/overnight volatility or gaps (ATR and gap risk) can trigger the stop or produce outsized losses; company-specific events (earnings",
+        "confidence": 0.83,
+        "thesis": "Bull case: The quant packet shows a coherent, technically constructive long setup (entry_usd 69.03, stop_price 63.5367, target_price 93.74985) with strong breakout_strength (1.3981), high relative strength (rs_excess_pct 55.7341) and favorable breadth (market_breadth_pct 64.8). The plan is risk-defined (stop below entry) and position sizing is specified (quantity 4.0), enabling a momentum trade that captures continuation toward the target if market internals remain supportive.\n\nBear case: Material company-specific/legal risks and near-term event risk can overwhelm technicals. Public filings and court records indicate ongoing, material litigation exposure (including a referenced post-trial award and an active MDL), and a near-term earnings release (Q3 2026) could produce headline volatility",
         "risks": [
-          "Single‑symbol / company‑specific event risk (earnings, guidance, M&A integration, litigation, regulatory actions).",
-          "Volatility and gap risk — ATR_14 = 8.5469 implies potential intraday/overnight swings that can hit or gap past the stop_price.",
-          "Breakout failure / whipsaw risk despite strong breakout_strength and RS.",
-          "Market‑regime reversal risk — rapid breadth collapse or VIX spike can negate momentum.",
-          "Quantity (1.0) is provided but position‑sizing context is not included; portfolio sizing or concentration risk not addressed."
+          "Material litigation exposure including a referenced post-trial award and ongoing MDL creating settlement/award risk and legal uncertainty.",
+          "Near-term earnings event (Q3 2026 release) that could produce large, surprise-driven volatility or guidance risk.",
+          "Market gap / overnight risk that can breach the stop prior to execution.",
+          "Macro/regime risk: rising 10‑yr yields or rapid VIX re‑acceleration that pressures multiple‑sensitive names and stalls momentum.",
+          "Sector rotation away from technology/IT services that removes group support for the breakout."
         ],
         "sources": []
       },
       {
         "agent": "Claude CRO",
-        "verdict": "REJECT",
-        "confidence": 0.6,
-        "thesis": "I found no hard event block on ACN. There is no halt, no regulatory action, and no earnings date inside the trade window. Even so, the verified research gives enough reasons to argue against entering now. I did not recompute price, stop, target or size. (1) The stock is extended after a one-way run. It is on a 9-day winning streak, up about 24% since the run began, and up about 31.7% over one month against about 0.6% for the S&P 500. It had lost about a third of its value this year before the Oct 1 outlook. This is a sharp rebound from AI-disruption fears. After the 15.8% Oct 1 spike, the stock closed down 1.94% the next session, which is a precedent for a fade. No Technical or Scanner finding addressed extension or mean-reversion risk. (2) Valuation and analyst targets sit below the entry",
+        "verdict": "APPROVE",
+        "confidence": 0.66,
+        "thesis": "The quant packet is coherent (stop < entry < target, breadth gate PASS, tier A). Four of five specialists approve. The one dissent is the News and Event Agent's REJECT. It treats the roughly $298M post-trial judgment as an adverse liability for Cognizant. The verified research headline reads \"Atos appeals $298M judgment in TriZetto lawsuit\". That points to Atos as the appealing defendant and TriZetto, a Cognizant unit, as the winning party. If so, the REJECT rests on a likely misreading and is not a verified reason against the entry. I did not independently confirm the direction of the award. The real residual risks are the TriZetto data-security MDL, which is a contained, ongoing liability with no verified near-term catalyst. The other risk is the Q3 earnings release on Oct 29, 2026, abou",
         "risks": [
-          "Extended 9-day rally of about 24% and 1-month outperformance of about 30 points raise the odds of a pullback or mean reversion.",
-          "A fade after the Oct 1 spike already occurred, with a 1.94% drop the next session.",
-          "Consensus target of about $225 is below the entry, and valuation is the weakest GF Score component at 4/10.",
-          "AI-driven pricing pressure: management cited lower pricing in Q4, and FY27 organic growth implied by guidance may be only about 0.5% to 3.5%.",
-          "Gap risk and an ATR of 8.55 mean the stop could be hit or gapped through after a vertical move."
+          "Q3 2026 earnings on Oct 29, 2026 could gap the stock through the stop before execution.",
+          "Ongoing data-security multidistrict litigation creates continuing liability, discovery and settlement risk.",
+          "The direction of the ~$298M TriZetto judgment was not independently confirmed; the News Agent read it as adverse, but the evidence suggests it is favorable to Cognizant and under appeal by Atos.",
+          "Appeals could reverse or reduce the favorable judgment, and other disclosed class-action and regulatory matters remain open.",
+          "Sector rotation away from tech and IT services, and a high 10-year yield near 5.12%, could stall the breakout."
         ],
         "sources": [
           {
-            "url": "https://finance.yahoo.com/technology/ai/articles/ai-price-cuts-break-accenture-183050311.html"
+            "url": "https://finance.yahoo.com/quote/CTSH/"
           },
           {
-            "url": "https://moneycheck.com/accenture-acn-stock-gains-0-72-following-strategic-avicado-purchase"
+            "url": "https://pluang.com/en/news-feed/atos-se-banding-hakim-akhir-litigasi-trizetto"
           },
           {
-            "url": "https://pluang.com/en/asset/usstock/ACN/10034"
+            "url": "https://robinhood.com/us/en/stocks/CTSH/"
           },
           {
-            "url": "https://robinhood.com/us/en/stocks/ACN/"
+            "url": "https://simplywall.st/stocks/us/software/nasdaq-ctsh/cognizant-technology-solutions"
           },
           {
-            "url": "https://seekingalpha.com/symbol/ACN"
+            "url": "https://simplywall.st/stocks/us/software/nasdaq-ctsh/cognizant-technology-solutions/news/cognizant-technology-solutions-ctsh-is-back-in-the-spotlight"
           },
           {
-            "url": "https://stockanalysis.com/stocks/acn/"
+            "url": "https://stocktwits.com/symbol/CTSH"
           },
           {
-            "url": "https://www.etoro.com/markets/acn"
+            "url": "https://theprint.in/tech/cognizants-570-million-trade-secret-case-win-against-syntel-thrown-out-on-appeal/1595140/"
           },
           {
-            "url": "https://www.fxleaders.com/news/2026/10/06/accenture-stock-forecast-195-ai-demand-fiscal-2027-growth/"
+            "url": "https://www.cnn.com/markets/stocks/CTSH"
           },
           {
-            "url": "https://www.gurufocus.com/news/9130389/accenture-plc-acn-shares-surge-32-what-gf-score-of-87-tells-investors"
+            "url": "https://www.google.com/finance/quote/CTSH:NASDAQ?hl=en"
           },
           {
-            "url": "https://www.investing.com/equities/accenture-ltd"
+            "url": "https://www.marketbeat.com/instant-alerts/filing-cognizant-technology-solutions-corporation-ctsh-stock-position-decreased-by-assenagon-asset-management-sa-2026-10-20/"
           },
           {
-            "url": "https://www.kraken.com/stocks/acn"
+            "url": "https://www.marketbeat.com/stocks/NASDAQ/CTSH/"
           },
           {
-            "url": "https://www.marketbeat.com/stocks/NYSE/ACN/congress-trades"
+            "url": "https://www.sec.gov/Archives/edgar/data/0001058290/000105829026000016/ctsh-20260331.htm"
           },
           {
-            "url": "https://www.resultsense.com/news/2026-10-02-accenture-forecast-it-services-rally/"
+            "url": "https://www.sec.gov/Archives/edgar/data/0001058290/000105829026000031/ctsh-20260630.htm"
           },
           {
-            "url": "https://www.timothysykes.com/news/accenture-plc-ireland-acn-news-2026_10_01-5/"
+            "url": "https://www.sec.gov/Archives/edgar/data/1058290/000105829021000212/Financial_Report.xlsx"
           },
           {
-            "url": "https://www.timothysykes.com/news/accenture-plc-ireland-acn-news-2026_10_01-6/"
+            "url": "https://www.sec.gov/Archives/edgar/data/1058290/000105829022000023/Financial_Report.xlsx"
           },
           {
-            "url": "https://www.trefis.com/stock/acn/articles/617681/what-did-accentures-quarter-change-for-its-stock/2026-10-06"
+            "url": "https://www.sec.gov/Archives/edgar/data/1058290/000105829025000125/Financial_Report.xlsx"
           },
           {
-            "url": "https://www.trefis.com/stock/acn/articles/619140/accenture-stock-rides-an-8-day-winning-streak-to-a-20-gain/2026-10-17"
+            "url": "https://www.sec.gov/Archives/edgar/data/1058290/000130817924000543/lctsh2023_ars.pdf"
           },
           {
-            "url": "https://www.trefis.com/stock/acn/articles/619325/accenture-stock-climbs-24-on-a-9-day-winning-streak/2026-10-20"
+            "url": "https://www.sec.gov/Archives/edgar/data/1058290/000130817926000292/ctsh013686-ars.pdf"
           },
           {
-            "url": "https://www.vantagemarkets.com/market-analysis/accenture-acn-stock-record-big-deals-fy27-guidance-cfd-analysis-october-2-2026/"
+            "url": "https://www.sec.gov/Archives/edgar/data/1058290/000135994825000474/ctsh013686-ars.pdf"
+          },
+          {
+            "url": "https://www.stocktitan.net/news/CTSH/ingenico-selects-cognizant-as-global-strategic-technology-anolyfrcsx47.html"
           }
         ]
       }
