@@ -1,0 +1,21 @@
+{
+  "outcome": "protective_stop_failed",
+  "session_date": "2026-10-22",
+  "generated_at": "2026-10-22T15:42:11Z",
+  "official": false,
+  "extra_summary": [
+    "::error::protective_stop_failed — T212 HTTP 400 POST: {\"type\":\"/api-errors/selling-equity-not-owned\",\"title\":\"Error while placing the order\",\"status\":400,\"detail\":\"Selling more equities than owned, owned: 0\",\"traceId\":\"11300fc829518bba064ca4258d7f7d80\"}",
+    "CRITICAL: Nechráněná pozice po selhání ochranného stopu. NEPOKRAČUJ.\nRuční stop v T212 DEMO pro A_US_EQ:\n  1. Otevři Trading 212 Practice / Demo.\n  2. Najdi pozici A_US_EQ.\n  3. SELL STOP, quantity 2.0, stopPrice 168.8111.\n  4. Ověř, že příkaz STOP je aktivní.\n  5. Fence 2026-10-22:A:673ad8b9e4541815f6d8141f4b89136ba864d5cb82aa2ad4b7c43650484a79c7 je UNCERTAIN — po aktivním STOP na brokerovi exit nastaví CONFIRMED.\nMarket se neopakuje. Stop zkusí exit (jiný fence STOP:…).\nBroker: T212 HTTP 400 POST: {\"type\":\"/api-errors/selling-equity-not-owned\",\"title\":\"Error while placing the order\",\"status\":400,\"detail\":\"Selling more equities than owned, owned: 0\",\"traceId\":\"11300fc829518bba064ca4258d7f7d80\"}"
+  ],
+  "plan": {
+    "symbol": "A",
+    "quantity": 2.0,
+    "entry_usd": 175.01,
+    "stop_price": 168.8111,
+    "target_price": 202.9050499999999,
+    "fx_usdczk": 21.651,
+    "spread_bps": 17.156582408783194
+  },
+  "submit": "protective_stop_failed",
+  "fence_key": "2026-10-22:A:673ad8b9e4541815f6d8141f4b89136ba864d5cb82aa2ad4b7c43650484a79c7"
+}
