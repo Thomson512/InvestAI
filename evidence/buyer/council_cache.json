@@ -6922,6 +6922,404 @@
           ]
         }
       ]
+    },
+    "2026-10-21:AVY:673ad8b9e4541815f6d8141f4b89136ba864d5cb82aa2ad4b7c43650484a79c7": {
+      "verdict": "REJECT",
+      "reason": "Claude CRO rejected the proposal",
+      "symbol": "AVY",
+      "asof_session": "2026-10-21",
+      "param_hash": "673ad8b9e4541815f6d8141f4b89136ba864d5cb82aa2ad4b7c43650484a79c7",
+      "generated_at": "2026-10-22T15:02:05Z",
+      "findings": [
+        {
+          "agent": "Scanner Agent",
+          "verdict": "APPROVE",
+          "confidence": 0.84,
+          "thesis": "The packet is internally coherent: entry (182.04) sits between stop (173.007) and target (222.6885) as expected for a long setup; quantity is positive (2.0); breadth_gate is PASS and breadth_pct (65.6) supports the signal; score, RS excess, and breakout_strength are present and do not conflict with the authoritative price/size fields.",
+          "risks": [
+            "Breakout_strength is modest (0.2352) — the setup may be a lower-conviction breakout and more susceptible to reversal or chop.",
+            "Stop is ~9.033 USD below entry (~3 ATR) — while a reasonable volatility buffer, intraday or overnight gaps could still trigger larger-than-expected losses.",
+            "Tier B implies medium execution/operational risk relative to higher tiers — monitor liquidity and slippage despite a small quoted spread.",
+            "Model outputs are authoritative per the packet; any external market events (earnings, news, macro) could invalidate the plan before execution."
+          ],
+          "sources": []
+        },
+        {
+          "agent": "Market Regime Agent",
+          "verdict": "APPROVE",
+          "confidence": 0.72,
+          "thesis": "As of the Oct 21, 2026 session the US equity backdrop is constructive for a momentum breakout in AVY: the S&P 500 closed higher on Oct 21, breadth metrics are positive (quant packet market_breadth_pct 65.6%), volatility is moderate and not signaling defensive positioning, and AVY shows relative-strength and a non-hostile sector context. Given the quant breakout_strength (0.2352) and rs_excess_pct (10.9561), the market regime supports attempting the breakout entry at the supplied entry (authority retained).",
+          "risks": [
+            "Materials sector can lag or underperform the broader market—sector weakness would undermine the breakout.",
+            "Idiosyncratic news or corporate action for AVY (e.g., leadership changes, material filings) could cause sudden volatility or gap moves against the trade.",
+            "Moderate breakout_strength (0.2352) indicates the pattern is present but not overwhelmingly strong—false breakouts are possible.",
+            "Overnight gap risk or a volatility spike (VIX re-rates) could breach the supplied stop before intraday execution.",
+            "Execution costs and spread (spread_bps 15.393) may reduce net edge; low post-breakout volume would increase failure probability."
+          ],
+          "sources": [
+            {
+              "url": "https://apnews.com/article/33767691a4a0730b96d6f0c5100ea9b2"
+            },
+            {
+              "url": "https://apnews.com/article/3ec2d8c93a390023ef8104973dea275f"
+            },
+            {
+              "url": "https://averydennison.gcs-web.com/"
+            },
+            {
+              "url": "https://averydennison.gcs-web.com/news-releases"
+            },
+            {
+              "url": "https://averydennison.gcs-web.com/static-files/58422276-ce5c-49f4-b070-056aa303aef0"
+            },
+            {
+              "url": "https://averydennison.gcs-web.com/static-files/652d95f8-0c3e-48a1-b056-cff143a2b156"
+            },
+            {
+              "url": "https://breadthmarket.com/breadth"
+            },
+            {
+              "url": "https://chartexchange.com/symbol/index-spx/historical/"
+            },
+            {
+              "url": "https://chartexchange.com/symbol/nyse-avy/historical/"
+            },
+            {
+              "url": "https://chartrow.com/market-breadth"
+            },
+            {
+              "url": "https://en.wikipedia.org/wiki/AVY"
+            },
+            {
+              "url": "https://en.wikipedia.org/wiki/Avery_Dennison"
+            },
+            {
+              "url": "https://en.wikipedia.org/wiki/Companies_listed_on_the_New_York_Stock_Exchange_%28A%29"
+            },
+            {
+              "url": "https://en.wikipedia.org/wiki/List_of_S%26P_500_companies"
+            },
+            {
+              "url": "https://fred.stlouisfed.org/graph/?graph_id=971935"
+            },
+            {
+              "url": "https://gainbot.ai/brief/2026-10-21"
+            },
+            {
+              "url": "https://investors.averydennison.com/news/default.aspx?page=0"
+            },
+            {
+              "url": "https://stockanalysis.com/stocks/avav/history/"
+            },
+            {
+              "url": "https://stockanalysis.com/stocks/avy/history/"
+            },
+            {
+              "url": "https://stockscan.io/stocks/AVY/price-history"
+            },
+            {
+              "url": "https://stocksdashboards.com/materials-stocks"
+            },
+            {
+              "url": "https://stocksetups.com/today"
+            },
+            {
+              "url": "https://stockvs.com/en/stock/avy"
+            },
+            {
+              "url": "https://tallacoptions.com/Data/EOD/VIX"
+            },
+            {
+              "url": "https://wkow.marketminute.com/quote/NY%3AAVY/historical"
+            },
+            {
+              "url": "https://www.averydennison.com/content/dam/avery_dennison/corporate-new/global/english/news/press-releases/2026/earnings-report-q1-2026/first-quarter-2026-earnings-press-release.pdf"
+            },
+            {
+              "url": "https://www.averydennison.com/en/home/news/press-releases.html"
+            },
+            {
+              "url": "https://www.axios.com/2026/10/19/health-care-stocks-midterms"
+            },
+            {
+              "url": "https://www.cboe.com/tradable-products/vix"
+            },
+            {
+              "url": "https://www.frenzycap.com/industries?node=Materials"
+            },
+            {
+              "url": "https://www.investing.com/indices/s-p-500-materials-historical-data"
+            },
+            {
+              "url": "https://www.kiplinger.com/investing/economy/this-weeks-economic-calendar"
+            },
+            {
+              "url": "https://www.quiverquant.com/stock/AVY/historical-prices/"
+            },
+            {
+              "url": "https://www.reddit.com/r/HollowPointTrading/comments/1xbfo9t/point_blank_shortterm_breadth_still_leads_the/"
+            },
+            {
+              "url": "https://www.reddit.com/r/HollowPointTrading/comments/1xbj0gx/point_blank_nasdaq_futures_lead_overnight_but/"
+            },
+            {
+              "url": "https://www.reddit.com/r/HollowPointTrading/comments/1xbm5pj/point_blank_semiconductors_lead_the_premarket/"
+            },
+            {
+              "url": "https://www.reddit.com/r/HollowPointTrading/comments/1xbnyli/point_blank_chip_strength_meets_a_narrow_opening/"
+            },
+            {
+              "url": "https://www.reddit.com/r/HollowPointTrading/comments/1xbug40/point_blank_six_more_net_advances_is_not_six/"
+            },
+            {
+              "url": "https://www.reddit.com/r/HollowPointTrading/comments/1xbv9ww/point_blank_the_strongest_sector_can_stay_green/"
+            },
+            {
+              "url": "https://www.reddit.com/r/HollowPointTrading/comments/1xbx65j/point_blank_a_buy_count_is_not_a_probability/"
+            },
+            {
+              "url": "https://www.reddit.com/r/SECFilingsAI/comments/1oikst4"
+            },
+            {
+              "url": "https://www.reddit.com/r/SECWatch/comments/1od8fnl"
+            },
+            {
+              "url": "https://www.reddit.com/r/SECWatch/comments/1w7fpbv/seven_institutional_funds_disclose_over_61m_in/"
+            },
+            {
+              "url": "https://www.reddit.com/r/SECWatch/comments/1wi98q2/avery_dennison_corp_avy_avery_dennison_svp_cio/"
+            },
+            {
+              "url": "https://www.reddit.com/r/TheMoat/comments/1xbn8ei/daily_charts_21_oct_2026/"
+            },
+            {
+              "url": "https://www.reddit.com/r/earningsdigest/comments/1oigad8"
+            },
+            {
+              "url": "https://www.reddit.com/r/earningsdigest/comments/1oigae9"
+            },
+            {
+              "url": "https://www.reddit.com/r/earningsdigest/comments/1qxmwbz/avy_2025q4_earnings_call_summary_feb_4_2026/"
+            },
+            {
+              "url": "https://www.reddit.com/r/edgar_news/comments/1nw19w6"
+            },
+            {
+              "url": "https://www.reddit.com/r/edgar_news/comments/1rfn6fb/avery_dennison_corp/"
+            },
+            {
+              "url": "https://www.reddit.com/r/edgar_news/comments/1twkz9l/avery_dennison_corp/"
+            },
+            {
+              "url": "https://www.reddit.com/r/stocknear/comments/1od4x9i"
+            },
+            {
+              "url": "https://www.sec.gov/Archives/edgar/data/8818/000000881826000157/avy-20261009.htm"
+            },
+            {
+              "url": "https://www.statmuse.com/money/ask/s-and-p-500-close-each-day-october-2026"
+            },
+            {
+              "url": "https://www.theatlantic.com/newsletters/2026/10/inflation-trump-consumer-price-index-september/689030/?utm_source=openai"
+            },
+            {
+              "url": "https://zh.wikipedia.org/wiki/%E8%89%BE%E5%88%A9%E4%B8%B9%E5%B0%BC%E6%A3%AE"
+            }
+          ]
+        },
+        {
+          "agent": "News and Event Agent",
+          "verdict": "APPROVE",
+          "confidence": 0.75,
+          "thesis": "Web search (company press releases, investor events and SEC filings) shows Avery Dennison (AVY) reported Q2 2026 results (earnings release and call on/around July 30, 2026) and provided/updated full-year 2026 guidance; there are no recent trading halts, no announced mergers or major regulatory enforcement actions, and no new material corporate event that argues against initiating a new long at the supplied entry/stop/target levels. Ongoing patent litigation and routine civil cases are present in public dockets but nothing in the reviewed records indicates a currently disclosed, company-level adverse ruling or settlement that would be material enough to oppose a new long.",
+          "risks": [
+            "Active patent and IP litigation (multiple docketed cases such as NetMomentum and other patent suits) that could result in future damages, injunctions, or remediation costs.",
+            "Guidance revision risk — company-provided guidance for FY26 could be revised downward on later earnings or macro deterioration.",
+            "Macroeconomic / industry risks (slower end-market demand, supply-chain disruptions) that could materially affect sales and margins.",
+            "Unannounced regulatory or enforcement actions that could appear after the as-of search date.",
+            "Event risk between search date and order execution (earnings update, 8-K, trading halt, M&A announcement)."
+          ],
+          "sources": [
+            {
+              "url": "https://advisortools.zacks.com/proxy/ResearchReport/AVY/report?d=20260104"
+            },
+            {
+              "url": "https://ai-lab.exparte.com/documents/dct/4519723/1-24-cv-06102_complaint_exparte.pdf"
+            },
+            {
+              "url": "https://averydennison.gcs-web.com/news-releases"
+            },
+            {
+              "url": "https://averydennison.gcs-web.com/static-files/8b1d0182-7f71-428d-891e-4f768a6675d5"
+            },
+            {
+              "url": "https://docketnexus.com/case/adasa-inc-v-avery-dennison-corporation-6077158/"
+            },
+            {
+              "url": "https://en.wikipedia.org/wiki/Avery_Dennison"
+            },
+            {
+              "url": "https://en.wikipedia.org/wiki/Dennison"
+            },
+            {
+              "url": "https://investors.averydennison.com/events-and-presentations/default.aspx"
+            },
+            {
+              "url": "https://label.averydennison.com/content/dam/averydennison/lpm-responsive/na/doc/misc/customer-tools/exact-update-current.pdf"
+            },
+            {
+              "url": "https://www.averydennison.com/en/home/company/reports.html"
+            },
+            {
+              "url": "https://www.averydennison.com/en/home/news/press-releases.html"
+            },
+            {
+              "url": "https://www.cafc.uscourts.gov/opinions-orders/11-1339.pdf"
+            },
+            {
+              "url": "https://www.marketbeat.com/earnings/reports/2026-7-30-avery-dennison-co-stock/"
+            },
+            {
+              "url": "https://www.morningstar.com/stocks/xnys/avy/earnings-transcript"
+            },
+            {
+              "url": "https://www.panabee.com/news/avery-dennison-earnings-q3-2026"
+            },
+            {
+              "url": "https://www.reddit.com/r/PocketQuantResearch/comments/1mcm8eg"
+            },
+            {
+              "url": "https://www.reddit.com/r/SECWatch/comments/1w7fpbv/seven_institutional_funds_disclose_over_61m_in/"
+            },
+            {
+              "url": "https://www.reddit.com/r/SECWatch/comments/1wi98q2/avery_dennison_corp_avy_avery_dennison_svp_cio/"
+            },
+            {
+              "url": "https://www.reddit.com/r/earningsdigest/comments/1oigad8"
+            },
+            {
+              "url": "https://www.reddit.com/r/earningsdigest/comments/1oigae9"
+            },
+            {
+              "url": "https://www.reddit.com/r/earningsdigest/comments/1qxmwbz/avy_2025q4_earnings_call_summary_feb_4_2026/"
+            },
+            {
+              "url": "https://www.sec.gov/Archives/edgar/data/0000008818/000000881826000063/avy_2025ir.pdf"
+            },
+            {
+              "url": "https://www.sec.gov/Archives/edgar/data/1748790/000174879026000022/amcr-20260630.htm"
+            },
+            {
+              "url": "https://www.sec.gov/Archives/edgar/data/8818/000000881826000015/0000008818-26-000015-index.html"
+            },
+            {
+              "url": "https://www.sec.gov/Archives/edgar/data/8818/000000881826000109/avy-20260331.htm"
+            },
+            {
+              "url": "https://www.sec.gov/Archives/edgar/data/8818/000119312526102965/d47885ddef14a.htm"
+            },
+            {
+              "url": "https://zh.wikipedia.org/wiki/%E8%89%BE%E5%88%A9%E4%B8%B9%E5%B0%BC%E6%A3%AE"
+            }
+          ]
+        },
+        {
+          "agent": "Technical Context Agent",
+          "verdict": "APPROVE",
+          "confidence": 0.8,
+          "thesis": "Supplied fields are consistent with a long breakout: breakout_strength=0.2352, relative strength (rs_excess_pct)=+10.9561% indicating momentum, breadth shows PASS with market_breadth_pct=65.6% (supportive), ATR=3.0065 (volatility context), stop_price=173.007 is below the entry, and target_price=222.6885 is above the entry — no internal contradictions detected, so the setup is approvable on these metrics.",
+          "risks": [
+            "False breakout or momentum fade leading to stop being hit",
+            "Volatility (ATR=3.0065) may produce whipsaws before trend continuation",
+            "Market breadth can deteriorate (breadth PASS may reverse) preventing target from being reached",
+            "Target may not be achieved within expected time frame; partial fills or slippage not accounted for"
+          ],
+          "sources": []
+        },
+        {
+          "agent": "Thesis Agent",
+          "verdict": "APPROVE",
+          "confidence": 0.78,
+          "thesis": "Authoritative plan: enter long at 182.04, stop at 173.007, target at 222.6885, quantity 2.0. The quant and specialist signals align for a momentum breakout: positive market breadth (breadth_gate PASS; market_breadth_pct 65.6%), meaningful relative strength (rs_excess_pct 10.9561), and a defined risk/reward with stop below entry and target above entry. Execution risks are medium (tier B, spread_bps 15.393) but the setup is internally coherent and approvable given the supplied fields.",
+          "risks": [
+            "Breakout strength is modest (breakout_strength 0.2352); higher chance of false breakout or momentum fade.",
+            "Stop is roughly $9.03 below entry (~3 ATR with ATR_14 3.0065) — gives volatility buffer but still vulnerable to overnight gaps that can exceed the stop.",
+            "Sector/idiosyncratic risk: materials-sector underperformance or adverse company-specific news (litigation, guidance revision, trading halt, M&A) could rapidly negate the setup.",
+            "Execution and liquidity risk: tier B implies medium execution risk; spread_bps 15.393 and low post-breakout volume would reduce net edge and increase slippage.",
+            "Market-regime/ breadth deterioration: a reversal of the supportive breadth environment (quant market_breadth_pct 65.6%) or a volatility spike could prevent the target from being reached."
+          ],
+          "sources": []
+        },
+        {
+          "agent": "Claude CRO",
+          "verdict": "REJECT",
+          "confidence": 0.72,
+          "thesis": "The verified research shows that Avery Dennison reports Q3 2026 earnings before the open on Oct 29, 2026. That is about six trading days after the Oct 21 signal session, so it likely falls inside the holding window. The News and Event Agent missed this. It reported no new material event, and the other specialists cited only generic gap risk. A stop about 3 ATR below entry gives no protection against an overnight or pre-market earnings gap. Further verified negatives: management has said some recent stocking-driven growth may unwind in the second half. Consensus Q3 EPS is about $2.30, roughly 3% below last year's $2.37. BofA and Truist recently cut price targets, and Citi and Jefferies hold Hold ratings. The research also notes leadership turnover, including a departing chief legal officer ",
+          "risks": [
+            "Scheduled Q3 earnings on Oct 29 before the open, inside the likely holding window, with gap risk through the stop",
+            "Management-flagged second-half unwind of customer stockpiling-driven growth",
+            "Consensus Q3 EPS about 3% below the prior year",
+            "Recent analyst target cuts (BofA, Truist) and mixed Hold ratings",
+            "Leadership turnover adds event risk around the earnings print"
+          ],
+          "sources": [
+            {
+              "url": "https://finance.yahoo.com/markets/stocks/articles/avery-dennison-earnings-preview-expect-105959236.html"
+            },
+            {
+              "url": "https://finance.yahoo.com/quote/AVY/"
+            },
+            {
+              "url": "https://finance.yahoo.com/quote/AVY/news/"
+            },
+            {
+              "url": "https://www.ad-hoc-news.de/boerse/news/corporate-news/avery-dennison-stock-heads-toward-october-29-earnings/70227439"
+            },
+            {
+              "url": "https://www.ad-hoc-news.de/boerse/news/nebenwerte/avery-dennison-sets-october-29-earnings-date-for-avery-dennison-stock/70376827"
+            },
+            {
+              "url": "https://www.cnn.com/markets/stocks/AVY"
+            },
+            {
+              "url": "https://www.defenseworld.net/2026/10/22/avery-dennison-avy-set-to-announce-quarterly-earnings-on-thursday.html"
+            },
+            {
+              "url": "https://www.fool.com/quote/nyse/avy/"
+            },
+            {
+              "url": "https://www.investing.com/equities/avery-dennison"
+            },
+            {
+              "url": "https://www.investors.averydennison.com/news/news-details/2026/Avery-Dennison-to-Webcast-Third-Quarter-2026-Earnings-Conference-Call/default.aspx"
+            },
+            {
+              "url": "https://www.marketbeat.com/earnings/reports/2026-10-28-avery-dennison-co-stock/"
+            },
+            {
+              "url": "https://www.marketbeat.com/instant-alerts/filing-avery-dennison-corporation-avy-holdings-increased-by-robeco-institutional-asset-management-bv-2026-10-22/"
+            },
+            {
+              "url": "https://www.marketbeat.com/instant-alerts/upcoming-avery-dennison-avy-set-to-announce-quarterly-earnings-on-thursday-2026-10-22/"
+            },
+            {
+              "url": "https://www.marketbeat.com/stocks/NYSE/AVY/"
+            },
+            {
+              "url": "https://www.marketbeat.com/stocks/NYSE/AVY/news"
+            },
+            {
+              "url": "https://www.nasdaq.com/press-release/avery-dennison-webcast-third-quarter-2026-earnings-conference-call-2026-10-01"
+            },
+            {
+              "url": "https://www.sec.gov/Archives/edgar/data/0000008818/000000881826000075/ex9918k4-28x26.htm"
+            },
+            {
+              "url": "https://www.sec.gov/Archives/edgar/data/0000008818/000000881826000127/ex9918k7-30x26.htm"
+            }
+          ]
+        }
+      ]
     }
   }
 }
