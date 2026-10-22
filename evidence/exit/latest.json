@@ -1,28 +1,22 @@
 {
-  "outcome": "UNPROTECTED DHR",
-  "generated_at": "2026-10-22T17:42:15Z",
+  "outcome": "DRIFT broker_only=- evidence_only=APA,BBY,EXPD,HPQ,MOS,NTAP,NVDA,T",
+  "generated_at": "2026-10-22T17:52:18Z",
   "pnl_written": true,
-  "extra_summary": [
-    "AUTO-STOP: UNCERTAIN DHR send_rejected:T212 HTTP 429 POST: {\"code\":\"BusinessException\",\"context\":{\"type\":\"TooManyRequests\"},\"errorMessage\":\"too many requests\"}",
-    "FIX: gh workflow run protective-stop-guard.yml -f symbol=DHR"
-  ],
+  "extra_summary": [],
   "session_date": "2026-10-22",
   "close_allowed": true,
   "close_reason": "OK",
-  "unprotected": [
-    "DHR"
-  ],
+  "unprotected": [],
   "reconcile": {
     "matched": [
       "A",
       "COP",
       "CVX",
+      "DHR",
       "PSX",
       "XOM"
     ],
-    "broker_only": [
-      "DHR"
-    ],
+    "broker_only": [],
     "evidence_only": [
       "APA",
       "BBY",
@@ -37,11 +31,11 @@
   "daily_pnl": {
     "trade_date": "2026-10-22",
     "opening_equity": 123374.25,
-    "current_equity": 122747.76,
+    "current_equity": 122802.58,
     "peak_equity": 123374.25
   },
   "heartbeat": {
     "loop_name": "exit-orchestrator",
-    "last_seen": "2026-10-22T17:42:11Z"
+    "last_seen": "2026-10-22T17:52:13Z"
   }
 }
