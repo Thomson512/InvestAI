@@ -1,19 +1,19 @@
 {
-  "outcome": "COUNCIL_REJECT:HAS",
+  "outcome": "COUNCIL_REJECT:CTSH",
   "session_date": "2026-10-22",
-  "generated_at": "2026-10-22T17:50:29Z",
+  "generated_at": "2026-10-22T18:00:31Z",
   "official": true,
   "extra_summary": [
     "council: Claude CRO rejected the proposal"
   ],
   "plan": {
-    "symbol": "HAS",
+    "symbol": "CTSH",
     "quantity": 3.0,
-    "entry_usd": 115.45,
-    "stop_price": 107.7981,
-    "target_price": 149.88354999999999,
+    "entry_usd": 72.12,
+    "stop_price": 64.9352,
+    "target_price": 104.45160000000004,
     "fx_usdczk": 21.651,
-    "spread_bps": 19.07404196289222
+    "spread_bps": 11.09877913429499
   },
   "council": {
     "verdict": "REJECT",
@@ -23,29 +23,32 @@
       {
         "agent": "Scanner Agent",
         "verdict": "APPROVE",
-        "confidence": 0.88,
-        "thesis": "The packet is internally coherent: entry (115.65) sits above the stop (107.7981) and beneath the target (150.98355). Stop distance corresponds to ~2.55 ATR (atr_14 3.0809) and yields a reward:risk of roughly 4.5x, which is consistent with a breakout trade given breakout_strength 3.7793 and rs_excess_pct 26.4297. Quantity is provided (2.0) and other fields (spread_bps, tier, score) show no internal contradictions with the authoritative entry/stop/target/quantity values.",
+        "confidence": 0.9,
+        "thesis": "The packet is internally coherent. Authoritative fields are present and consistent: entry (70.9) is above the stop (64.9352) and below the target (97.7416); quantity is positive (3.0); ATR and breakout/RS metrics are reported and align qualitatively with a breakout trade thesis (breakout_strength >1, strong RS and high score). No required authoritative fields are missing or contradictory.",
         "risks": [
-          "Market gap or overnight event risk could skip the stop or entry level, affecting execution.",
-          "Model metric risk: single-number metrics (breakout_strength, rs_excess_pct) may not capture regime shifts or news-driven moves.",
-          "Slippage and execution risk despite low spread_bps; realized fills can change effective risk/reward.",
-          "Target depends on sustained trend continuation; reversal risks remain if momentum fades."
+          "Market gap risk at open could breach the stop without a clean execution.",
+          "Execution/liquidity risk given nonzero spread (spread_bps reported).",
+          "Model/parameter risk: reliance on breakout strength and RS may fail in rotation or sector-wide weakness.",
+          "Concentration risk: small absolute quantity increases sensitivity to discrete share price moves."
         ],
         "sources": []
       },
       {
         "agent": "Market Regime Agent",
         "verdict": "APPROVE",
-        "confidence": 0.72,
-        "thesis": "The near-term US equity backdrop is constructive for a momentum breakout in HAS. Major indices were higher on the 2026-10-21 session, volatility is in the mid-teens (moderate), and breadth readings show a modest positive advance/decline — a risk-on but not overheated market. Hasbro has a company-level catalyst from its Q3 2026 results/releases around Oct 20–21, which supports idiosyncratic momentum. The supplied quant packet already shows breadth_gate=PASS, market_breadth_pct=65.6, breakout_strength=3.7793 and strong relative strength (rs_excess_pct=26.43), which together indicate the regime is favorable for initiating the supplied breakout entry (entry_usd 115.65).",
+        "confidence": 0.78,
+        "thesis": "Market internals and the near-term risk tone are supportive of a momentum breakout for CTSH. On Oct 21, 2026 the S&P 500 rose roughly 0.6% while the Nasdaq outperformed (~+1%) and the Russell 2000 posted modest gains — a broad risk-on session with participation across major indices. ([apnews.com](https://apnews.com/article/3ec2d8c93a390023ef8104973dea275f?utm_source=openai)) Advance-decline metrics show healthy participation (advance share in the mid‑60s to high‑60s), and VIX eased into the mid‑teens, indicating subdued volatility and constructive breadth. ([thetrading.tools](https://www.thetrading.tools/advance-decline-line?utm_source=openai)) However, the 10‑year Treasury yield remains elevated near ~5.1%, which is a macro headwind for long‑duration/tech exposure and could limit multiple",
         "risks": [
-          "Earnings/catalyst already priced in — post-release fade or profit-taking can reverse the breakout quickly.",
-          "Market internals could deteriorate: a sudden VIX spike or reversal in breadth would flip regime to hostile.",
-          "Sector or macro shock (e.g., unexpected macro data, geopolitical headline, sharp rise in rates/oil) could hurt consumer-discretionary/leisure stocks.",
-          "Narrow market advances despite index gains — if leadership narrows further the apparent breadth strength may be fragile.",
-          "Liquidity or execution risk around catalysts could widen spreads and slippage vs. quoted spread_bps."
+          "Elevated 10‑year Treasury yield (~5.1%) could rapidly compress tech/IT multiples and reverse the breakout. ([treasuryratewatch.com](https://treasuryratewatch.com/daily/?utm_source=openai))",
+          "Ongoing AI/tech sector volatility or idiosyncratic negative news for CTSH could cause sharp reversals.",
+          "Upcoming earnings or macro headlines could trigger quick breadth deterioration despite current positive internals.",
+          "Geopolitical or commodity shocks (energy/oil moves) that materially re‑risk the market.",
+          "Relative bid can fade intraday — keep the supplied stop (64.9352) and quantity constraints; liquidity/spread risk given quoted spread_bps in the packet."
         ],
         "sources": [
+          {
+            "url": "https://10xwealthreport.com/stock-market-today-nasdaq-leads-wall-street-rally/"
+          },
           {
             "url": "https://apnews.com/article/33767691a4a0730b96d6f0c5100ea9b2"
           },
@@ -53,49 +56,31 @@
             "url": "https://apnews.com/article/3ec2d8c93a390023ef8104973dea275f"
           },
           {
+            "url": "https://apnews.com/article/ae938216d9d45a4e2c829845b40d83f5"
+          },
+          {
             "url": "https://apnews.com/article/b972b64127db5412a2b02c35ecf95c88"
-          },
-          {
-            "url": "https://apnews.com/article/d2655f64db7ec8ae450525d58f97b628"
-          },
-          {
-            "url": "https://breadthmarket.com/breadth"
           },
           {
             "url": "https://bullstory.io/en-us/investing/sp-500-today"
           },
           {
-            "url": "https://cdn.cboe.com/resources/product_update/2026/Correction-CFE-Futures-Contract-Expirations-for-Current-Products-to-be-Added-in-January-2026.pdf"
+            "url": "https://home.treasury.gov/system/files/221/TentativeAuctionScheduleQ22026.pdf"
           },
           {
-            "url": "https://es.investing.com/indices/volatility-s-p-500-historical-data"
-          },
-          {
-            "url": "https://investor.hasbro.com/investor-relations"
-          },
-          {
-            "url": "https://investor.hasbro.com/node/38441/pdf"
-          },
-          {
-            "url": "https://investor.hasbro.com/press-releases"
-          },
-          {
-            "url": "https://newsroom.hasbro.com/node/37181"
-          },
-          {
-            "url": "https://sg.finance.yahoo.com/quote/%5EVVIX/history/"
+            "url": "https://stockmarketwatch.com/digest/2026-10-21"
           },
           {
             "url": "https://tallacoptions.com/Data/EOD/VIX"
           },
           {
-            "url": "https://www.axios.com/2026/10/19/health-care-stocks-midterms"
+            "url": "https://treasuryratewatch.com/daily/"
           },
           {
-            "url": "https://www.cboe.com/tradable-products/vix"
+            "url": "https://tustin.granicus.com/AgendaViewer.php?clip_id=2821&view_id=5"
           },
           {
-            "url": "https://www.gurufocus.com/economic_indicators/234/vix"
+            "url": "https://www.axios.com/2026/10/19/treasury-yields-hedge-funds-volatility"
           },
           {
             "url": "https://www.kiplinger.com/investing/stocks/17494/next-week-earnings-calendar-stocks"
@@ -104,205 +89,240 @@
             "url": "https://www.kiplinger.com/investing/stocks/dow-gains-529-points-on-3m-data-center-deal-stock-market-today"
           },
           {
-            "url": "https://www.reddit.com/r/HollowPointTrading/comments/1xbnyli/point_blank_chip_strength_meets_a_narrow_opening/"
+            "url": "https://www.mortgagenewsdaily.com/treasury/10yr"
           },
           {
-            "url": "https://www.reddit.com/r/HollowPointTrading/comments/1xbug40/point_blank_six_more_net_advances_is_not_six/"
+            "url": "https://www.reddit.com/r/MortgageBrokerRates/comments/1xbo147/mortgage_market_update_wednesday_october_21_2026/"
           },
           {
-            "url": "https://www.reddit.com/r/mtgfinance/comments/1xb1frj/hasbro_q3_2026_earnings_call_chart/"
+            "url": "https://www.reddit.com/r/MortgageBrokerRates/comments/1xcirnp/mortgage_market_update_thursday_october_22_2026/"
+          },
+          {
+            "url": "https://www.slickcharts.com/treasury/10-year"
+          },
+          {
+            "url": "https://www.theopeningprint.com/p/mrtopstep-weekly-guide-october-19-23-2026"
           },
           {
             "url": "https://www.thetrading.tools/advance-decline-line"
           },
           {
-            "url": "https://www.thetrading.tools/market-breadth"
+            "url": "https://www.thetrading.tools/insights/nasdaq-advance-decline-line-divergence-2000"
+          },
+          {
+            "url": "https://ycharts.com/indicators/10_year_treasury_rate?amp_device_id=a1d87620-c9ab-40df-96ea-e7fd8b4aebc7"
+          },
+          {
+            "url": "https://yieldcurvestoday.com/recap/"
           }
         ]
       },
       {
         "agent": "News and Event Agent",
         "verdict": "APPROVE",
-        "confidence": 0.78,
-        "thesis": "Hasbro (HAS) reported third-quarter 2026 results on October 20, 2026 and raised full-year guidance (revenue and adjusted EBITDA ranges), declared a dividend, and noted continued growth in Magic: The Gathering and digital/licensing businesses. The company disclosed an unauthorized network access event in late March 2026 that has incurred remediation and legal costs but management quantified those impacts and reiterated remediation efforts; existing litigation and shareholder suits are disclosed but contain no new judge/settlement event that would materially overturn the company’s outlook. I found no verified trading halts, regulatory enforcement actions, merger/ACQUISITION announcements, or litigation outcomes that would constitute a material event arguing against initiating a new long as o",
+        "confidence": 0.8,
+        "thesis": "Web search (public filings and company press releases) shows recent Q2 2026 results and raised/updated guidance (July 29, 2026) and no evidence of trading halts, regulatory enforcement actions or adverse court judgments that would materially argue against initiating a new long. The company executed a new credit agreement (term loan and revolving facility) on October 5, 2026. There are ongoing litigations (including consolidated MDL data-security claims and the Syntel/TriZetto matter) but recent reported rulings have been favorable to Cognizant (March 27, 2026 decision remitting punitive damages and related awards). No verified material event surfaced that would compel rejecting a new long at this time.",
         "risks": [
-          "Ongoing unauthorized network access investigation and related legal actions (identified late March 2026) could lead to additional remediation costs, fines, or customer/partner impacts.",
-          "Multiple disclosed lawsuits and shareholder derivative actions remain active; adverse rulings or large settlements could be material.",
-          "Concentration risk: significant profit contribution from Magic: The Gathering increases sensitivity to product demand, supply, or IP/legal disputes.",
-          "Tariff, supply-chain, and geopolitical risks (including manufacturing concentration in China) could raise costs or disrupt product availability.",
-          "Regulatory risk around AI, children’s privacy, or online safety (called out by management) could increase compliance costs or restrict product features."
+          "Consolidated MDL data-security litigation (MDL-3185) remains active — resolution or large settlements could be materially adverse.",
+          "Syntel / TriZetto litigation has outstanding appellate/implementation issues despite recent favorable rulings; future developments or appeals could change exposure.",
+          "Ongoing legal and regulatory uncertainty (e.g., prior SEC-related disclosures) — status and outcomes are uncertain and could be material.",
+          "New credit facilities increase leverage profile; future acquisitions or covenant triggers could affect capital allocation and risk.",
+          "Any material earnings/guidance changes, regulatory actions, trading halts, or merger/major transaction announcements after the search window would materially alter this assessment."
         ],
         "sources": [
           {
-            "url": "https://apnews.com/article/3982e18ed2061f793aa921b6addade05"
+            "url": "https://api.trendonify.com/quote/CTSH/news"
           },
           {
-            "url": "https://apnews.com/article/b972b64127db5412a2b02c35ecf95c88"
+            "url": "https://cognizant.q4cdn.com/123993165/files/doc_earnings/2025/q4/transcript/Transcript_CTSHQ4-2025-Earnings-Call.pdf"
           },
           {
-            "url": "https://corp.hasbro.com/news-releases/news-release-details/hasbro-reports-third-quarter-2026-financial-results"
+            "url": "https://cognizant.q4cdn.com/123993165/files/doc_earnings/2026/q1/earnings-result/Q1-26-Earnings-Press-Release.pdf"
           },
           {
-            "url": "https://corp.hasbro.com/static-files/9e2b2071-0e98-48c6-8df2-5394da38b8df"
+            "url": "https://cognizant.q4cdn.com/123993165/files/doc_earnings/2026/q1/filing/Form-10Q-Q1-2026.pdf"
           },
           {
-            "url": "https://corp.hasbro.com/static-files/ce4fa519-680f-4fcf-9b22-45484df53f23"
+            "url": "https://cognizant.q4cdn.com/123993165/files/doc_financials/2024/ar/CTSH-2024-Annual-Report_Final2.pdf"
           },
           {
-            "url": "https://dockets.justia.com/docket/california/cacdce/2%3A2026cv05542/1021543"
+            "url": "https://docketnexus.com/party/cognizant-technology-solutions-u-s-corporation/"
           },
           {
-            "url": "https://dockets.justia.com/docket/circuit-courts/ca9/26-182"
+            "url": "https://dockets.justia.com/docket/missouri/moedce/4%3A2026cv00917/229154"
           },
           {
-            "url": "https://dockets.justia.com/docket/circuit-courts/cit/1%3A2026cv01253"
+            "url": "https://dockets.justia.com/docket/missouri/moedce/4%3A2026md03185/229009"
           },
           {
-            "url": "https://en.wikipedia.org/wiki/Hasbro"
+            "url": "https://docs.justia.com/cases/federal/district-courts/new-york/nysdce/1%3A2015cv00211/437168/1704"
           },
           {
-            "url": "https://hasbro.gcs-web.com/static-files/f5824da9-0c4e-4e30-8cfe-f0b23f793c38"
+            "url": "https://investors.cognizant.com/home/default.aspx"
           },
           {
-            "url": "https://hasbropr.gcs-web.com/news-releases/news-release-details/hasbro-reports-third-quarter-2026-financial-results"
+            "url": "https://investors.cognizant.com/news-and-events/news/news-details/2026/Cognizant-Reports-Second-Quarter-2026-Results/default.aspx"
           },
           {
-            "url": "https://investor.hasbro.com/investor-relations"
+            "url": "https://law.justia.com/cases/federal/district-courts/new-york/nysdce/1%3A2015cv00211/437168/1681/"
           },
           {
-            "url": "https://investor.hasbro.com/news-releases/news-release-details/hasbro-reports-third-quarter-2026-financial-results"
+            "url": "https://law.justia.com/cases/federal/district-courts/new-york/nysdce/1%3A2015cv00211/437168/1705/"
           },
           {
-            "url": "https://investor.hasbro.com/node/38306"
+            "url": "https://news.bloomberglaw.com/new-york-brief/cognizants-punitive-award-in-trade-secrets-case-cut-again"
           },
           {
-            "url": "https://investor.hasbro.com/press-releases"
+            "url": "https://news.cognizant.com/press-releases-financial"
           },
           {
-            "url": "https://investor.hasbro.com/static-files/a7941780-84de-4269-82dc-1c58d78a5d87"
+            "url": "https://stockrow.com/CTSH/filings"
           },
           {
-            "url": "https://law.justia.com/cases/federal/appellate-courts/ca1/24-1655/24-1655-2026-01-29.html"
+            "url": "https://substack-post-media.s3.us-east-1.amazonaws.com/post-files/200546465/48693713-ae33-4698-9e93-b90d361a32cc.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAUM3FPD6B5OUZI2RP%2F20260613%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260613T115624Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEGIaCXVzLWVhc3QtMSJIMEYCIQDPuYNU8BbGGsRL9nHdk1RaPZ9QDy3BGwtSz%2FfcdkGsHwIhAPAglRQbrXv9hZhSH2BQbU9wgvtpAGHQE0fyFrusylmtKvkDCCsQBBoMMzAyNDcxMTI2OTE1IgwuAa%2BRMSYcF7KJPwAq1gMkjwrSPw%2FwAm7kjLDtT2wJnxANHd%2BzFSZEdjcVlKtQ6sQhFQs7qYJVKC%2FL6%2Fs2GkR2h2N0tnT46LiPlrDU4x2%2BttBtM3lw1DXffZ%2Bg%2BJI1Uf8T6FsuRSJgPiNll9aSicc91vkozForywlWYn9%2FMZRNgQHySUdIra%2FB7XWOounCDH3v0O9v0jjY%2BoYOwjwO9ggb50luWc0%2BraAsSeZWb%2BAnLkOHLRC%2BgK63pVLbqF2QH3jrLcO0hsqQgfJjEubKmvHvOcF6IQLIYbfEjMsrDsdAGYZ7K0hXwWZB5Wqmdgwl3RocrO8zm%2Fa7j%2F9gUuzlW5%2FJ0QxOUBsoVz6JDQHnkFrUhPK1DQ6Kl%2BU3657P9InHklOoiFZYmvZDzhX0nYeDmdUyDWAg%2FBRAVrCW2RgwOaR28NyS29EkjgW5oBxCAgFffZBSxk788AC7PplCDK%2BvNMemfxG3uogpdcO4SmH1C%2Fen13X0kGTsA8ca%2B7OS5RNaLaEPf1CVgKI%2FqMfb4DZyY98FZXcSj79oi6z5R16CGT3ugWhGKPXGWpGnStAHEa7gB%2F4YwtNDfDQs8jtQ0LomuJNW5pzD2xna87A7JDzuGrTKLtdnti%2BNjEXRedBXFyVGHMqMvI2r%2BjCMx7TRBjqkAQd8RFU%2F4LFXJMZqZsXN3ijQCpAAHnWYP7aPN0opvkgUL76cSmTfq96LnCWQ%2BYHUP8cWStgEEG%2Bl%2F4FmMn6CZMne%2F7EHQ6ixDROnOxcvfwpid02V2PzP3kUs1nVnRN7Jiencv5H%2FiLiE%2FPCtlGMR1DaAHH1W5teKWHFXR3yH1zmhQCgC7mybZnDah191CyIuRzN0dla%2Fik9E1c3QjwDgOqpjIe9B&X-Amz-Signature=007b119224d74a2d2013c23ecb5fbfd431c94b47b057ae4df2bbc4b3765b7b59&X-Amz-SignedHeaders=host&response-content-disposition=attachment%3B+filename%3D%22Final_Fs_Di_Watch_List_2026_0604.pdf%22&x-amz-checksum-mode=ENABLED&x-id=GetObject"
           },
           {
-            "url": "https://newsroom.hasbro.com/static-files/6a547bab-57f2-4e21-9300-ca92b2c81198"
+            "url": "https://www.atosgroup.com/sites/default/files/2026-03/PR%20-%20Decision%20of%20the%20US%20District%20Court%20for%20the%20Southern%20District%20of%20New%20York%20in%20the%20TriZetto%20re-trial.pdf"
           },
           {
-            "url": "https://newsroom.hasbro.com/static-files/739bde24-2561-4202-b070-0462c92d9a49"
+            "url": "https://www.cognizantsecuritieslitigation.com/"
           },
           {
-            "url": "https://www.marketbeat.com/stocks/NASDAQ/HAS/earnings/"
+            "url": "https://www.jpml.uscourts.gov/sites/jpml/files/MDL-3185-Transfer_Order-5-26.pdf"
           },
           {
-            "url": "https://www.reddit.com/r/magicTCG/comments/1v2l63o/excerpts_from_the_q2_2026_hasbro_earnings_call_as/"
+            "url": "https://www.marketbeat.com/stocks/NASDAQ/CTSH/news/"
           },
           {
-            "url": "https://www.reddit.com/r/mtg/comments/1rdmsmi/hasbro_shareholders_drop_lawsuit_alleging/"
+            "url": "https://www.moed.uscourts.gov/sites/moed/files/documents/426md03185-0031.pdf"
           },
           {
-            "url": "https://www.reddit.com/r/mtgfinance/comments/1xb1frj/hasbro_q3_2026_earnings_call_chart/"
+            "url": "https://www.nasdaq.com/press-release/decision-us-district-court-southern-district-new-york-trizetto-re-trial-2026-03-28"
           },
           {
-            "url": "https://www.sec.gov/Archives/edgar/data/46080/000004608026000050/has-20260628.htm"
+            "url": "https://www.sahmcapital.com/news/content/atos-unit-syntel-ordered-to-pay-usd-240-million-to-cognizant-trizetto-in-us-case-2026-03-28"
           },
           {
-            "url": "https://www.youtube.com/watch?v=nfDMumdrdyk"
+            "url": "https://www.sec.gov/Archives/edgar/data/1058290/000105829026000030/exhibit9936302026.htm"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1058290/000105829026000031/ctsh-20260630.htm"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1058290/000105829026000033/ctsh-20261005.htm"
+          },
+          {
+            "url": "https://www.secinfo.com/d1Z9ft.Nv.htm"
+          },
+          {
+            "url": "https://www.stocktitan.net/sec-filings/CTSH/8-k.html"
+          },
+          {
+            "url": "https://www.webdisclosure.com/article/atos-se-epa-atos-se-appeals-amended-judgment-in-trizetto-case-0ewjwrBUk4f"
+          },
+          {
+            "url": "https://www.webdisclosure.com/article/atos-se-epa-us-district-court-decision-in-trizetto-re-trial-NkvbzxW1ADs"
           }
         ]
       },
       {
         "agent": "Technical Context Agent",
         "verdict": "APPROVE",
-        "confidence": 0.83,
-        "thesis": "Breakout is strong (breakout_strength=3.7793) with pronounced relative strength (rs_excess_pct=26.4297) and market breadth supportive (breadth_gate=PASS; market_breadth_pct=65.6). ATR is 3.0809, the stop (107.7981) is below the entry (115.65) and provides a cushion (~2.55 ATR), and the target (150.98355) implies a favorable reward-to-risk (~4.5:1). These inputs collectively support approving a long trade under the supplied parameters.",
+        "confidence": 0.82,
+        "thesis": "Signal supports a long trade: breakout_strength=1.142 indicates a confirmed breakout; relative strength (rs_excess_pct=57.6196%) shows the ticker is materially outperforming the market; breadth (market_breadth_pct=65.6%) indicates healthy market participation. ATR(14)=2.2949 implies moderate intraday volatility. Stop is below entry (stop_price=64.9352 vs entry_usd=70.9), and target_price=97.7416 provides a clear upside objective consistent with a long setup.",
         "risks": [
-          "False breakout leading to swift reversal and stop hit",
-          "Market-breadth deterioration/rotation that can erode leadership despite current breadth pass",
-          "Volatility spikes or intraday gaps can exceed ATR-based expectations and hit the stop",
-          "Execution slippage or widening spreads could worsen realized risk"
+          "Volatility risk — ATR of 2.2949 implies meaningful price swings that can hit the stop before trend continuation.",
+          "Market reversal or sector-specific weakness could invalidate the breakout despite current breadth and RS strength.",
+          "Target may require sustained trend and could be missed if liquidity or earnings/news events cause gaps."
         ],
         "sources": []
       },
       {
         "agent": "Thesis Agent",
         "verdict": "APPROVE",
-        "confidence": 0.8,
-        "thesis": "Bull case: The quant packet and specialist findings align for a momentum breakout trade. Entry (115.65) is above the stop (107.7981) with the stop ~2.55 ATR (atr_14 3.0809), yielding a reward:risk (~4.5x) to the target (150.98355). Breakout_strength (3.7793), strong relative strength (rs_excess_pct 26.43), breadth_gate=PASS and market_breadth_pct=65.6 indicate favorable market internals. Company-specific catalysts (Q3 results and raised guidance) and constructive near-term market regime support initiating the supplied breakout setup under the provided quantity and risk parameters.\n\nBear case: The setup can fail via a false breakout or catalyst fade—post-earnings profit-taking or a rapid regime shift (VIX spike, worse breadth) could reverse momentum and hit the stop or gap through it. Compa",
+        "confidence": 0.83,
+        "thesis": "Bull case: Quant and market-internal signals show a momentum breakout setup with entry_usd=70.9, stop_price=64.9352, target_price=97.7416 and quantity=3.0. Breakout_strength (1.142) and strong relative strength (rs_excess_pct=57.6196) combined with healthy market breadth (market_breadth_pct=65.6) and a high score (85.7626) support a directional long where risk is controlled by the supplied stop and upside to the target is available if participation and RS continue.\n\nBear case: The breakout fails if macro or sector rotation reverses risk-on flows — specialists flag elevated 10‑yr yields and potential compression of tech/IT multiples, idiosyncratic negative news (earnings, regulatory or adverse litigation outcomes) for the company, or sudden breadth deterioration. Execution and liquidity fri",
         "risks": [
-          "False breakout and swift reversal hitting the stop",
-          "Earnings/catalyst fade or post-release profit-taking",
-          "Material adverse legal/regulatory outcome or large remediation cost from the disclosed unauthorized access event",
-          "Macro/market regime shock (VIX spike, deteriorating breadth, sector rotation) that erodes momentum",
-          "Execution and liquidity risk: gaps, slippage, or widened spreads that worsen realized risk/reward"
+          "Market gap risk at open could breach the stop without a clean execution.",
+          "Execution/liquidity risk given nonzero spread (spread_bps reported).",
+          "Model/parameter risk: breakout and RS signals can fail during sector rotation or broad-market reversals.",
+          "ATR-driven volatility (ATR(14)=2.2949) can hit the stop before trend continuation.",
+          "Macro headwind: elevated 10‑year Treasury yields could compress multiples and reverse the breakout."
         ],
         "sources": []
       },
       {
         "agent": "Claude CRO",
         "verdict": "REJECT",
-        "confidence": 0.6,
-        "thesis": "I found verified reasons against buying HAS now. None is a hard stop, but the specialists did not address them. I would not approve above 0.65, so the rule makes this a REJECT. I did not recompute price, stop, target or size.\n\n1. Management guided the next quarter down. The CEO said Q4 Magic will likely be down because Wizards shipments moved into Q3. The CFO said Q4 margin will step down from Q3 because the tariff refund benefit was fully recognized in Q3. The next print could look weak even if demand holds. None of the specialists mentioned this.\n\n2. The Q3 beat was partly one-time. Results include about $55M of tariff refunds, which fed into the 52% jump in adjusted operating profit. The adjusted EPS of $2.90 against a $1.86 consensus overstates the run-rate beat.\n\n3. Cost and margin he",
+        "confidence": 0.72,
+        "thesis": "Reject the entry. Cognizant confirmed that it will report Q3 2026 results before the open on 2026-10-29. That is about five trading days after the Oct 22 research date, so the release falls inside the holding window. An overnight gap on the print can jump past the supplied stop, so the stop gives no protection against this event. The News and Event Agent found no material event against a long and missed this catalyst. The Scanner and Thesis agents raised only generic gap risk, not this dated event. The stock has also run about 18% over an 8-day winning streak into a binary event, which makes the setup extended. The last print was mixed: Q2 EPS of $1.37 missed the $1.38 consensus, and the stock rose on the outlook. The consensus analyst price target (about 66.34) sits below the entry area. ",
         "risks": [
-          "Management guided Q4 down: Magic likely lower after shipments moved into Q3, and margin stepping down as the tariff refund benefit is fully recognized in Q3",
-          "About $55M of one-time tariff refunds inflated the Q3 beat and the 52% jump in adjusted operating profit",
-          "Oil-related input costs and Exodus/Warlock amortization are headwinds to margins into 2027",
-          "The stock has run from about $98.49 to about $114-116 post-earnings, and the entry is above the consensus target of about $110.64",
-          "Profit is concentrated in a few brands (Magic, Marvel, Transformers)"
+          "Earnings gap risk on 2026-10-29 before the open (confirmed) can bypass the stop",
+          "Extended short-term run (~18% over 8 days) into a binary event",
+          "Consensus analyst price target below the entry area",
+          "Unverified reports of a Labor Department PERM program suspension",
+          "Open litigation: MDL-3185, Syntel/TriZetto appeals, class actions"
         ],
         "sources": [
           {
-            "url": "https://finance.yahoo.com/markets/stocks/articles/hasbro-reports-third-quarter-2026-103000184.html"
+            "url": "https://finance.yahoo.com/quote/CTSH/"
           },
           {
-            "url": "https://finance.yahoo.com/markets/stocks/articles/hasbro-stock-climbs-q3-earnings-061839676.html"
+            "url": "https://hk.marketscreener.com/news/cognizant-schedules-third-quarter-2026-earnings-release-and-conference-call-ce785ddad188f020"
           },
           {
-            "url": "https://finance.yahoo.com/markets/stocks/articles/why-hasbro-stock-jumped-today-223247114.html"
+            "url": "https://marketscreener.com/news/cognizant-to-acquire-dyflex-solutions-accelerating-ai-led-enterprise-transformation-for-sap-clients-ce785cd9dc8ff721"
           },
           {
-            "url": "https://finance.yahoo.com/quote/HAS.F/earnings/HAS.F-Q3-2026-earnings_call-711035.html"
+            "url": "https://news.cognizant.com/2026-10-02-Cognizant-Schedules-Third-Quarter-2026-Earnings-Release-and-Conference-Call"
           },
           {
-            "url": "https://hdfcsky.com/news/super-micros-ai-fueled-revenue-surge-lifts-sector"
+            "url": "https://stockanalysis.com/stocks/ctsh/"
           },
           {
-            "url": "https://robinhood.com/us/en/stocks/HAS/"
+            "url": "https://stocktwits.com/symbol/CTSH"
           },
           {
-            "url": "https://www.benzinga.com/news/earnings/21/07/22147561/why-hasbros-stock-is-trading-higher-today"
+            "url": "https://tradersunion.com/news/companies/show/3879482-cognizant-stock-falls-to-usd65-9/"
           },
           {
-            "url": "https://www.dailypolitical.com/2026/10/22/hasbro-nasdaqhas-issues-earnings-results-beats-estimates-by-1-04-eps.html"
+            "url": "https://trefis.com/stock/ctsh/articles/619899/cognizant-technology-solutions-stock-climbs-18-on-an-8-day-winning-streak/2026-10-22"
           },
           {
-            "url": "https://www.defenseworld.net/2026/10/21/hasbro-nasdaqhas-reaches-new-1-year-high-following-earnings-beat.html"
+            "url": "https://www.cnn.com/markets/stocks/CTSH"
           },
           {
-            "url": "https://www.fool.com/earnings/call-transcripts/2026/10/20/hasbro-has-q3-2026-earnings-call-transcript/"
+            "url": "https://www.google.com/finance/beta/quote/CTSH:NASDAQ"
           },
           {
-            "url": "https://www.investing.com/news/transcripts/earnings-call-transcript-hasbro-tops-q3-2026-estimates-and-lifts-outlook-93CH-4960320"
+            "url": "https://www.investing.com/equities/cognizant-technology-solutio"
           },
           {
-            "url": "https://www.marketbeat.com/instant-alerts/price-hasbro-nasdaq-has-sets-new-1-year-high-on-earnings-beat-2026-10-20/"
+            "url": "https://www.marketbeat.com/earnings/reports/2026-10-29-cognizant-technology-solutions-co-stock/"
           },
           {
-            "url": "https://www.sec.gov/Archives/edgar/data/0000046080/000004608026000016/exhibit991-apr232026.htm"
+            "url": "https://www.marketbeat.com/stocks/NASDAQ/CTSH/"
           },
           {
-            "url": "https://www.sec.gov/Archives/edgar/data/0000046080/000004608026000029/exhibit991q12026.htm"
+            "url": "https://www.marketbeat.com/stocks/NASDAQ/CTSH/news/"
           },
           {
-            "url": "https://www.sec.gov/Archives/edgar/data/0000046080/000004608026000050/has-20260628.htm"
+            "url": "https://www.sec.gov/Archives/edgar/data/0001058290/000105829026000015/ctsh-20260429.htm"
           },
           {
-            "url": "https://www.sec.gov/Archives/edgar/data/0000046080/000004608026000058/exhibit991q32026.htm"
+            "url": "https://www.sec.gov/Archives/edgar/data/0001058290/000105829026000030/ctsh-20260729.htm"
           },
           {
-            "url": "https://www.sec.gov/Archives/edgar/data/46080/000004608026000006/exhibit991q42025.htm"
+            "url": "https://www.sec.gov/Archives/edgar/data/0001058290/000105829026000030/exhibit9936302026.htm"
           },
           {
-            "url": "https://www.tradingview.com/news/stockstory:8ed2d631b094b:0-why-is-hasbro-has-stock-soaring-today/"
+            "url": "https://www.sec.gov/Archives/edgar/data/0001058290/000105829026000031/ctsh-20260630.htm"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1058290/000105829026000003/ctsh-20260204.htm"
+          },
+          {
+            "url": "https://www.tipranks.com/stocks/ctsh/earnings"
           }
         ]
       }
