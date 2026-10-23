@@ -1,0 +1,295 @@
+{
+  "outcome": "COUNCIL_REJECT:PFE",
+  "session_date": "2026-10-23",
+  "generated_at": "2026-10-23T13:42:10Z",
+  "official": true,
+  "extra_summary": [
+    "council: Claude CRO rejected the proposal"
+  ],
+  "plan": {
+    "symbol": "PFE",
+    "quantity": 12.0,
+    "entry_usd": 30.2,
+    "stop_price": 29.3223,
+    "target_price": 34.14965,
+    "fx_usdczk": 21.741,
+    "spread_bps": 6.624710168929968
+  },
+  "council": {
+    "verdict": "REJECT",
+    "reason": "Claude CRO rejected the proposal",
+    "cached": false,
+    "findings": [
+      {
+        "agent": "Scanner Agent",
+        "verdict": "APPROVE",
+        "confidence": 0.85,
+        "thesis": "Packet is internally coherent: authoritative fields (entry=30.20, stop=29.3223, target=34.14965, qty=12) are consistent (stop is below entry, target is above). Stop distance (~0.8777 USD) is ~1.6 ATR (0.5488), giving a favorable reward:risk (~4.5x). Breadth gate PASS, positive breakout strength (0.562) and RS excess (20.25%) support the long thesis. No internal contradictions detected.",
+        "risks": [
+          "Stop is relatively tight (~1.6 ATR) and may be hit by short-term noise",
+          "Position concentrates exposure to a single equity (quantity 12) — company-specific news could move price sharply",
+          "Quoted spread (6.6247 bps) could impact execution marginally in fast markets",
+          "Technical momentum could reverse before target is reached"
+        ],
+        "sources": []
+      },
+      {
+        "agent": "Market Regime Agent",
+        "verdict": "APPROVE",
+        "confidence": 0.75,
+        "thesis": "Market breadth is positive (breadth_gate PASS; market_breadth_pct 66) and healthcare has held up despite a tech-led S&P drawdown on Oct 22, 2026. Volatility is elevated but not extreme (VIX ~19) and Treasury yields pulled back into the close, which favors defensive/healthcare names. No Pfizer-specific negative headlines were found in the review. Given the quant packet’s constructive metrics (breakout_strength 0.562, rs_excess_pct 20.25) and a broadly supportive breadth/sector backdrop, the market regime is permissive for a momentum breakout in PFE.",
+        "risks": [
+          "Broad-market tech-led selloffs could spill into large-cap and sector leadership, increasing intraday volatility.",
+          "Geopolitical or macro headlines (oil/ Middle East developments) that drove risk-off moves could accelerate selling and negate breadth improvements.",
+          "Unexpected Pfizer-specific news (regulatory, trial, or guidance) would invalidate the sector-level thesis.",
+          "Elevated volatility and lower liquidity around macro calendar events or options expiries may widen execution slippage and stop-hit probability.",
+          "Market breadth readings can reverse quickly; a single strong negative session for advancers would weaken the breakout case."
+        ],
+        "sources": [
+          {
+            "url": "https://apnews.com/article/1970e79d013cbddcae89c53b4b98f384"
+          },
+          {
+            "url": "https://apnews.com/article/204f5d642d88ab55992a6f0e9ccbe8e9"
+          },
+          {
+            "url": "https://apnews.com/article/7b47ef3b037bfba4e34f685329b9b963"
+          },
+          {
+            "url": "https://aveceasar.github.io/sp500-sector-relative-strength/"
+          },
+          {
+            "url": "https://breadthmarket.com/breadth"
+          },
+          {
+            "url": "https://cdn.cboe.com/resources/options/Cboe2026OPTIONSCalendar.pdf"
+          },
+          {
+            "url": "https://cdn.cboe.com/resources/regulation/rule_filings/approved/2026/SR-CBOE-2026-014.pdf"
+          },
+          {
+            "url": "https://finance.yahoo.com/quote/%5EVIX/history/"
+          },
+          {
+            "url": "https://gainbot.ai/brief/2026-10-22"
+          },
+          {
+            "url": "https://home.treasury.gov/system/files/221/TentativeAuctionScheduleQ22026.pdf"
+          },
+          {
+            "url": "https://longniftyshort.com/2026/10/"
+          },
+          {
+            "url": "https://moinary.com/en/market-reference-etfs-weaken-as-nasdaq-listed-breadth-turns-negative-on-october-22"
+          },
+          {
+            "url": "https://moneyweek.com/investments/income-investing/uk-dividends-q3-reach-28-billion"
+          },
+          {
+            "url": "https://stocksdashboards.com/health-care-stocks"
+          },
+          {
+            "url": "https://www.axios.com/2026/10/22/ai-manufacturing-recovery-imbalance"
+          },
+          {
+            "url": "https://www.cboe.com/tradable-products/vix/vix-historical-data"
+          },
+          {
+            "url": "https://www.cypresscapital.com/charts/market-indicators/"
+          },
+          {
+            "url": "https://www.fda.gov/media/194509/download?attachment="
+          },
+          {
+            "url": "https://www.investing.com/indices/volatility-s-p-500-historical-data?cid=1096487"
+          },
+          {
+            "url": "https://www.kiplinger.com/investing/stocks/stocks-shoot-for-the-stars-on-ai-optimism-stock-market-today"
+          },
+          {
+            "url": "https://www.pfizer.com/newsroom/press-releases"
+          },
+          {
+            "url": "https://www.pfizer.com/print/pdf/node/563435"
+          },
+          {
+            "url": "https://www.reddit.com/r/MortgageBrokerRates/comments/1xcujin/mortgage_market_recap_thursday_october_22_2026/"
+          },
+          {
+            "url": "https://www.sec.gov/files/rules/sro/cboe/2026/34-105669-ex5.pdf"
+          },
+          {
+            "url": "https://www.thetrading.tools/advance-decline-line"
+          }
+        ]
+      },
+      {
+        "agent": "News and Event Agent",
+        "verdict": "APPROVE",
+        "confidence": 0.85,
+        "thesis": "Web search through public filings and press releases (through October 2026) shows no verified material adverse event that would argue against initiating a new long in PFE. Pfizer has recently reported quarterly results and in mid-2026 raised or reaffirmed full-year guidance (revenue midpoint increase reported in June 2026 and guidance reaffirmations); there are ongoing litigations and patent disputes (multiple suits and MDL activity) but no single adverse ruling or regulatory action discovered that would be immediately dispositive; no trading halts or announced hostile mergers were found. Notable operational items: a CFO transition was disclosed in June 2026 (guidance reaffirmed at that time) and Pfizer/affiliated approvals and collaborations continue to progress. Overall, nothing uncovere",
+        "risks": [
+          "Ongoing product liability and MDL litigation (e.g., Depo‑Provera and other mass‑tort / MDL activity) that could produce adverse rulings or settlements in the future.",
+          "Active patent and IP litigation (multiple cases, including disputes involving vaccine-related claims) that could lead to damages or injunctions.",
+          "Corporate leadership changes (CFO transition announced June 18, 2026) which could introduce near‑term execution risk.",
+          "Regulatory risk (FDA/EMA reviews and approvals remain possible sources of positive or negative surprises).",
+          "M&A, licensing, or business‑development transactions (e.g., collaborations/in‑licensing) could shift financial outlook or create one‑time earnings impacts."
+        ],
+        "sources": [
+          {
+            "url": "https://app.midpage.ai/document/glaxosmithkline-biologicals-sa-v-pfizer--8e8c2392-6243-48e7-af6f-1dea419a6857"
+          },
+          {
+            "url": "https://app.midpage.ai/document/in-re-depo-provera-depot--591ba37d-90ff-43b4-8cc4-403c9e78fb20"
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/Legal_affairs_of_the_second_Trump_presidency"
+          },
+          {
+            "url": "https://investors.pfizer.com/Investors/news-events/"
+          },
+          {
+            "url": "https://law.justia.com/cases/federal/district-courts/delaware/dedce/1%3A2026cv00013/91694/53/"
+          },
+          {
+            "url": "https://law.justia.com/cases/federal/district-courts/new-york/nysdce/1%3A2022cv01433/575321/66/"
+          },
+          {
+            "url": "https://public-inspection.federalregister.gov/2025-19272.pdf"
+          },
+          {
+            "url": "https://s206.q4cdn.com/795948973/files/doc_events/2025/Dec/16/PFE-2026-Financial-Guidance-Press-Release-FINAL.pdf"
+          },
+          {
+            "url": "https://s206.q4cdn.com/795948973/files/doc_financials/2026/q1/Q1-2026-PFE-Earnings-Release-FINAL.pdf"
+          },
+          {
+            "url": "https://stocklight.com/stocks/us/nyse-pfe/pfizer/annual-reports/nyse-pfe-2026-10K-26684208.pdf"
+          },
+          {
+            "url": "https://www.ded.uscourts.gov/opinion/glaxosmithkline-biologicals-sa-et-al-v-pfizer-inc-et-al-2"
+          },
+          {
+            "url": "https://www.fda.gov/drugs/resources-information-approved-drugs/oncology-cancerhematologic-malignancies-approval-notifications?randparam=286637"
+          },
+          {
+            "url": "https://www.pfizer.com/newsroom/press-releases"
+          },
+          {
+            "url": "https://www.reddit.com/r/testicularcancer/comments/1u65as9/pfas_lawsuit_update_june_2026/"
+          },
+          {
+            "url": "https://www.reddit.com/r/testicularcancer/comments/1uqwnbi/finally_important_update_on_pfas_lawsuits_from/"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/78003/000007800325000167/pfe-12162025xexh99.htm"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/78003/000007800326000087/pfe-20260618.htm"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/78003/000007800326000094/pfe-6282026xex99.htm"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/78003/000007800326000095/pfe-20260628.htm"
+          }
+        ]
+      },
+      {
+        "agent": "Technical Context Agent",
+        "verdict": "APPROVE",
+        "confidence": 0.78,
+        "thesis": "Breakout strength is moderate (0.562) with strong relative strength (RS excess ~20.25%) and healthy market breadth (66% PASS). ATR is 0.5488 indicating modest intraday volatility. The provided stop (29.3223) sits below the entry and the target (34.14965) is above the entry, so the setup is internally consistent for a long trade.",
+        "risks": [
+          "Breakout strength is moderate rather than extreme — higher chance of false break or fade.",
+          "Stop is relatively tight versus short-term volatility (ATR = 0.5488) and could be hit by normal price churn (whipsaw risk).",
+          "Market or news shocks could invalidate the technical setup before the target is reached."
+        ],
+        "sources": []
+      },
+      {
+        "agent": "Thesis Agent",
+        "verdict": "APPROVE",
+        "confidence": 0.81,
+        "thesis": "Quant packet presents an internally consistent long setup with authoritative execution parameters (entry_usd=30.2, stop_price=29.3223, target_price=34.14965, quantity=12). Breadth gate PASS and market_breadth_pct=66% support a market environment receptive to breakouts. Breakout_strength (0.562) and strong relative strength (rs_excess_pct=20.2527) indicate security-level momentum. Stop is placed ~1.6 ATR (atr_14=0.5488) below entry, yielding a materially asymmetric reward:risk per the packet. Specialists across scanner, market regime, news/events and technical context found no single, immediate disqualifying issue, so the trade idea is coherent as presented.",
+        "risks": [
+          "Stop is relatively tight (~1.6 ATR) and could be hit by routine intraday noise or whipsaws before the trend resumes.",
+          "Technical breakout strength is moderate (0.562) — increased chance of a false breakout or short-term fade.",
+          "Company-specific legal, patent, or product‑liability litigation (ongoing MDLs and disputes) could produce adverse rulings or headlines that materially move the stock.",
+          "Unexpected Pfizer-specific negative events (adverse clinical/regulatory decisions, surprise negative guidance, management shock) would rapidly undercut the thesis.",
+          "Macro or regime shocks (risk-off flows, sharp rises in volatility or yields) or a reversal in market breadth could spill into healthcare and invalidate the breakout case."
+        ],
+        "sources": []
+      },
+      {
+        "agent": "Claude CRO",
+        "verdict": "REJECT",
+        "confidence": 0.62,
+        "thesis": "REJECT. I did not recompute price, stop, target or size. The packet is internally coherent and the specialists lean APPROVE, but verified research gives reasons against entering now. (1) Pfizer's Q3 earnings are confirmed for 2026-11-03, before the open. That is about 7 sessions after the 2026-10-22 packet date, so it likely falls inside the holding window. The News and Event Agent did not list this date, so its \"no material event\" conclusion is incomplete. An earnings gap can jump past a stop only ~1.6 ATR away, and a stop order gives no protection against that. (2) Entry is at a fresh 52-week high (~$30.26), above the consensus target of about $28.72 (Hold). The packet target of ~$34.15 is above the highest target found ($33, Scotiabank). JPMorgan, BofA and Cantor are Neutral with target",
+        "risks": [
+          "Confirmed Q3 earnings on 2026-11-03 before the open, inside the likely holding window; overnight gap risk can bypass the ~1.6 ATR stop",
+          "News and Event Agent omitted the earnings date, so the specialists' no-event-risk consensus is incomplete",
+          "Entry at a new 52-week high and above the consensus target (~$28.72, Hold); the packet target exceeds the highest target seen ($33)",
+          "Q2 2026 results included $4.3B of impairments and $842M of legal charges",
+          "Open legal headline (Florida AG COVID-vaccine suit, date and materiality unverified) and competitive pneumococcal vaccine pressure from Vaxcyte"
+        ],
+        "sources": [
+          {
+            "url": "https://finance.yahoo.com/calendar/earnings?symbol=PFE"
+          },
+          {
+            "url": "https://nextearningsdate.com/pfizer.html"
+          },
+          {
+            "url": "https://robinhood.com/us/en/stocks/PFE/"
+          },
+          {
+            "url": "https://stockanalysis.com/stocks/pfe/"
+          },
+          {
+            "url": "https://stocktwits.com/symbol/PFE"
+          },
+          {
+            "url": "https://uk.investing.com/news/stock-market-news/pfizer-stock-hits-52week-high-at-3026-usd-93CH-4926064"
+          },
+          {
+            "url": "https://wboc.com/online_features/press_releases/healthcare-stocks-rushing-higher-with-oncology-push-breakout-test-and-lilly-s-next-growth-chapter/article_c019b451-8bb2-5bcd-b98f-6aebdcf35aa8.html"
+          },
+          {
+            "url": "https://www.cnn.com/markets/stocks/PFE"
+          },
+          {
+            "url": "https://www.google.com/finance/beta/quote/PFE:NYSE"
+          },
+          {
+            "url": "https://www.investing.com/equities/pfizer-earnings"
+          },
+          {
+            "url": "https://www.marketbeat.com/instant-alerts/price-pfizer-nyse-pfe-shares-climb-18-still-a-buy-2026-10-22/"
+          },
+          {
+            "url": "https://www.markets.com/instrument/pfizer/"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/0000078003/000007800326000053/pfe-3292026xex99.htm"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/0000078003/000007800326000087/pfe-20260618.htm"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/0000078003/000007800326000094/pfe-6282026xex99.htm"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/0000078003/000007800326000095/pfe-20260628.htm"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/78003/000007800326000005/pfe-12312025xex99.htm"
+          },
+          {
+            "url": "https://www.tipranks.com/stocks/pfe/earnings"
+          }
+        ]
+      }
+    ]
+  }
+}
