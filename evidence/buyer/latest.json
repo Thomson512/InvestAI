@@ -1,362 +1,331 @@
 {
-  "outcome": "COUNCIL_REJECT:BIIB",
+  "outcome": "COUNCIL_REJECT:CTSH",
   "session_date": "2026-10-23",
-  "generated_at": "2026-10-23T15:12:05Z",
+  "generated_at": "2026-10-23T15:20:22Z",
   "official": true,
   "extra_summary": [
     "council: Claude CRO rejected the proposal"
   ],
   "plan": {
-    "symbol": "BIIB",
-    "quantity": 1.0,
-    "entry_usd": 249.7,
-    "stop_price": 241.324,
-    "target_price": 287.3919999999999,
+    "symbol": "CTSH",
+    "quantity": 5.0,
+    "entry_usd": 70.66,
+    "stop_price": 68.828,
+    "target_price": 78.90399999999997,
     "fx_usdczk": 21.741,
-    "spread_bps": 18.037879547048348
+    "spread_bps": 7.0786437318605735
   },
   "council": {
     "verdict": "REJECT",
     "reason": "Claude CRO rejected the proposal",
-    "cached": false,
+    "cached": true,
     "findings": [
       {
         "agent": "Scanner Agent",
         "verdict": "APPROVE",
-        "confidence": 0.78,
-        "thesis": "The packet is internally coherent for a long breakout trade in BIIB. The authoritative fields show an entry (249.7) with a stop below it (241.324) and a target above it (287.392), quantity is specified (1.0), breadth_gate is PASS, RS excess is strongly positive, and breakout_strength and score are supportive. No required fields are missing and there are no internal contradictions among the provided values.",
+        "confidence": 0.92,
+        "thesis": "The packet is internally coherent. Authoritative fields (entry_usd 69.99, stop_price 68.828, target_price 75.21899999999997, quantity 5.0) are present and non-contradictory: stop is below the entry, target is above the entry, and quantity is positive. Breadth gate is PASS and the packet includes supporting metrics (breakout_strength, rs_excess_pct, score, ATR, spread_bps) consistent with a momentum breakout setup. No required fields are missing and no internal numeric contradictions are evident.",
         "risks": [
-          "Stop may be close to current price volatility — potential for whipsaw or stop-hunt around the level.",
-          "Execution risk: spread and slippage could impact fills (spread_bps provided).",
-          "Model/market risk: breakout may fail despite positive breadth/RS signals.",
-          "Single-share position (quantity=1.0) may not diversify position-sizing risk for larger portfolios."
+          "Provided stop is relatively tight versus the reported volatility (ATR 2.4435) — higher chance of normal volatility triggering the stop.",
+          "Bid/ask spread (15.72889111317644 bps) and market impact could materially affect realized entry/exit versus the authoritative prices.",
+          "Quantity is small and absolute position sizing relative to an account is unknown — position-sizing risk is not addressed in the packet.",
+          "Momentum indicators (high breakout_strength and RS excess) can reverse quickly; the target may not be reached before a reversal or intraday noise triggers the stop."
         ],
         "sources": []
       },
       {
         "agent": "Market Regime Agent",
-        "verdict": "APPROVE",
-        "confidence": 0.7,
-        "thesis": "As of Oct 23, 2026 the micro-regime supports a momentum breakout in BIIB. Market breadth is healthy (breadth gate PASS; market_breadth_pct 66%) and the quant measures show strong breakout_strength (3.95) and pronounced relative strength (RS excess ~22%), indicating stock-specific leadership despite short-term index weakness. Biotech ETFs and sector data show mixed but not collapsing action and recent easing in long-term yields has reduced immediate rate-pressure on growth/healthcare names — an environment that can allow a high-RS biotech breakout to sustain into execution.",
+        "verdict": "REJECT",
+        "confidence": 0.78,
+        "thesis": "Market internals and price action from Oct 22–23, 2026 show a clear risk-off tone led by technology: the S&P 500 lost ~1.2% while the Nasdaq Composite/Nasdaq‑100 fell ~2.6%, with defensive sectors outperforming. That tech-led weakness and noisy macro drivers (energy and European bond stress) create a hostile regime for a momentum breakout in CTSH (a tech/IT services name). Although the supplied quant packet shows a breadth_gate PASS and a high breakout_strength, the observable market regime (broad tech weakness and risk‑off flows) increases the likelihood of a failed breakout or quick reversal, so I recommend rejecting an entry based on a momentum breakout signal today.",
         "risks": [
-          "Macro/geopolitical shocks (oil/Geopolitics) or renewed Treasury-yield spikes could quickly reverse risk appetite and sap biotech momentum.",
-          "Concentrated large-cap weakness (tech) can pull overall market sentiment negative and reduce liquidity even if breadth remains positive.",
-          "Upcoming company-specific events (Biogen Q3 earnings scheduled Oct 28, 2026) could produce sharp volatility that defeats a breakout if results or guidance disappoint.",
-          "Biotech-sector rotation out of the group would negate ETF/sector support and increase downside risk to a breakout attempt.",
-          "High absolute interest-rate regime remains a structural headwind for growth/biotech; any re-acceleration in yields is a material risk to momentum continuation."
+          "Company-specific positive catalyst (e.g., favorable earnings or guidance ahead of Oct 29, 2026) could override the market regime and validate a breakout.",
+          "Rapid market reversal or a strong risk‑on session would reduce the hostility and could change the recommendation.",
+          "Short‑term macro headlines (energy shock, European bond turmoil, Fed commentary) could increase volatility and cause false breakouts.",
+          "Quant packet and internal breadth indicators (breadth_gate PASS, market_breadth_pct 66%) conflict with observed tech weakness — this mixed signal raises model/backdrop mismatch risk."
         ],
         "sources": [
           {
             "url": "https://apnews.com/article/1970e79d013cbddcae89c53b4b98f384"
           },
           {
-            "url": "https://apnews.com/article/204f5d642d88ab55992a6f0e9ccbe8e9"
-          },
-          {
             "url": "https://apnews.com/article/7b47ef3b037bfba4e34f685329b9b963"
           },
           {
-            "url": "https://biogen.gcs-web.com/events-presentations/events"
+            "url": "https://apnews.com/article/b972b64127db5412a2b02c35ecf95c88"
           },
           {
             "url": "https://breadthmarket.com/breadth"
           },
           {
-            "url": "https://dhan.co/us-etf/IBB-ishares-biotechnology-etf-share-price/"
+            "url": "https://ca.investing.com/indices/us-spx-500-historical-data"
           },
           {
-            "url": "https://finance.yahoo.com/quote/IBB/history/"
+            "url": "https://cognizant.q4cdn.com/123993165/files/doc_earnings/2025/q3/transcript/Transcript_CTSHQ3-2025-Earnings-Call.pdf"
           },
           {
-            "url": "https://finance.yahoo.com/quote/XBI/history/"
+            "url": "https://en.wikipedia.org/wiki/Nasdaq_Composite"
           },
           {
-            "url": "https://helious.io/rates"
+            "url": "https://findog.app/en/daily/2026-10-22"
           },
           {
-            "url": "https://indexes.nasdaqomx.com/docs/FS_XNBI.pdf"
+            "url": "https://indexes.nasdaq.com/Index/Breakdown/NDXT"
           },
           {
-            "url": "https://investors.biogen.com/news/news-releases"
+            "url": "https://news.cognizant.com/2026-04-29-Cognizant-Reports-First-Quarter-2026-Results?asPDF=1"
           },
           {
-            "url": "https://investors.biogen.com/static-files/3b3e34a5-48c2-47d7-b5a5-dee6a63d310b"
+            "url": "https://news.cognizant.com/press-releases-financial?l=100&o=0"
           },
           {
-            "url": "https://nexqual.com/markets/"
+            "url": "https://www.axios.com/2026/10/22/ai-manufacturing-recovery-imbalance"
           },
           {
-            "url": "https://prop.theconcepttrader.com/market-snapshot-october-23rd-2026/"
+            "url": "https://www.axios.com/2026/10/22/axios-live-ai-agents-are-changing-how-money-moves"
           },
           {
-            "url": "https://stockanalysis.com/etf/ibb/history/"
+            "url": "https://www.axios.com/2026/10/22/french-bond-market-spillover"
           },
           {
-            "url": "https://stockanalysis.com/etf/xbi/history/"
+            "url": "https://www.axios.com/newsletters/axios-pro-rata-c9b5580d-fe42-4bf9-b1e5-1b769c7cf924"
           },
           {
-            "url": "https://stockscan.io/stocks/IBB/price-history"
-          },
-          {
-            "url": "https://stocksetups.com/today"
-          },
-          {
-            "url": "https://uk.investing.com/etfs/ishares-nasdaq-biotech-historical-data"
-          },
-          {
-            "url": "https://www.axios.com/2026/10/19/treasury-yields-hedge-funds-volatility"
-          },
-          {
-            "url": "https://www.financecharts.com/compare/XBI%2CIBB/performance/total-return-trend-10"
-          },
-          {
-            "url": "https://www.financecharts.com/compare/XBI%2CIBB/summary/volume"
-          },
-          {
-            "url": "https://www.financialcontent.com/quote/NY%3AXBI/historical"
-          },
-          {
-            "url": "https://www.investing.com/etfs/ishares-nasdaq-biotech-historical-data"
-          },
-          {
-            "url": "https://www.ishares.com/us/literature/fact-sheet/ibb-ishares-biotechnology-etf-fund-fact-sheet-en-us.pdf"
+            "url": "https://www.ieconomy.io/en/us-markets-close-2026-10-22"
           },
           {
             "url": "https://www.kiplinger.com/investing/stocks/17494/next-week-earnings-calendar-stocks"
           },
           {
-            "url": "https://www.kiplinger.com/investing/stocks/dow-gains-529-points-on-3m-data-center-deal-stock-market-today"
+            "url": "https://www.marketbeat.com/stocks/NASDAQ/CTSH/earnings/"
           },
           {
-            "url": "https://www.marketbeat.com/stocks/NYSEARCA/XBI/chart/"
+            "url": "https://www.marketdly.com/index.html"
           },
           {
-            "url": "https://www.marketscreener.com/quote/etf/ISHARES-BIOTECHNOLOGY-ETF-4033530/quotes/"
+            "url": "https://www.portfolio-terminal.com/markets/stock-market-close/october-22-2026"
           },
           {
-            "url": "https://www.reddit.com/r/Badboyardie/comments/1x1sbya/biotech_setup_into_the_weekend_is_xbi_coiling_for/"
+            "url": "https://www.sec.gov/Archives/edgar/data/1058290/000105829026000033/ctsh-20261005.htm"
           },
           {
-            "url": "https://www.reddit.com/r/MarketProbabilities/comments/1x4kua0/why_the_sp_and_nasdaq_slipped_while_8_of_11/"
+            "url": "https://www.theatlantic.com/podcasts/2026/10/david-frum-show-kara-swisher-tech-oligarchs-trump-ai/689101/?utm_source=openai"
           },
           {
-            "url": "https://www.reddit.com/r/MortgageBrokerRates/comments/1xcujin/mortgage_market_recap_thursday_october_22_2026/"
-          },
-          {
-            "url": "https://www.reddit.com/r/biotech_stocks/comments/1wzjkol/is_it_just_me_or_the_whole_biotech_sector_is/"
-          },
-          {
-            "url": "https://www.reddit.com/r/biotech_stocks/comments/1x52bwo/rotation_out_of_biotech_has_begun/"
-          },
-          {
-            "url": "https://www.reddit.com/r/pennystocks/comments/1xbw3r6/10_penny_biotechs_im_watching_and_slowly_adding/"
-          },
-          {
-            "url": "https://www.reddit.com/r/u_Mark_deAburg/comments/1v37ww6/xbi_climbs_as_tech_fades/"
-          },
-          {
-            "url": "https://www.reddit.com/r/u_Mark_deAburg/comments/1xcemgh/capital_rotation_intense_bug_leads_tech_surge/"
-          },
-          {
-            "url": "https://www.schwab.wallst.com/schwab/Prospect/research/etfs/reports/reportRetrieve.asp?reportType=etfrc&symbol=IBB"
-          },
-          {
-            "url": "https://www.sec.gov/Archives/edgar/data/1997464/000110465926103744/tm2622024d31_424b2.pdf"
-          },
-          {
-            "url": "https://www.sec.gov/Archives/edgar/data/875045/000087504526000073/0000875045-26-000073-index.htm"
-          },
-          {
-            "url": "https://www.sec.gov/Archives/edgar/data/875045/000087504526000073/exhibit991-q22026pressrele.htm"
-          },
-          {
-            "url": "https://www.sec.gov/Archives/edgar/data/875045/000119312526187407/d173896dars.pdf"
-          },
-          {
-            "url": "https://www.theatlantic.com/national-security/2026/10/trump-iran-war-strikes-after-midterms/689121/?utm_source=openai"
+            "url": "https://www.thetrading.tools/advance-decline-line"
           },
           {
             "url": "https://www.zacks.com/stock/news/3013461/stock-market-news-for-oct-23-2026"
-          },
-          {
-            "url": "https://ycharts.com/companies/IBB/price"
           }
         ]
       },
       {
         "agent": "News and Event Agent",
-        "verdict": "APPROVE",
-        "confidence": 0.7,
-        "thesis": "Web search (Oct 2026) identified two material corporate items: Biogen announced and pursued a definitive acquisition of Apellis (agreement announced March 31, 2026; tender/merger activity reported in SEC filings and investor releases in Q2–Q3 2026) and Biogen reached a settlement of investor securities litigation related to Aduhelm (reported April 2026). I found recent SEC filings and Q2 2026 results and a scheduled Q3 2026 earnings release (Oct 28, 2026). I did not find any verified recent regulatory sanctions, trading halts, adverse trial verdicts, guidance cuts, or other material events that would clearly argue against initiating a new long position at this time.",
+        "verdict": "REJECT",
+        "confidence": 0.82,
+        "thesis": "Verified, recent material developments increase downside and near-term event risk for CTSH: (1) on July 29, 2026 Cognizant reported Q2 2026 results and lowered full‑year 2026 constant‑currency revenue growth guidance (a material guidance revision); (2) the company remains exposed to significant, ongoing litigation (including an October 4, 2024 jury verdict finding discriminatory practices with continuing appeals and related proceedings) and other legal/tax disputes that have produced material judgments/awards and settlement activity in 2025–2026; and (3) a scheduled third‑quarter 2026 earnings release is upcoming on October 29, 2026, creating immediate event risk. These verified items argue against establishing a new long at this time.",
         "risks": [
-          "Acquisition/integration risk from the Apellis transaction (costs, timing, realization of expected benefits, and potential disruption to operations).",
-          "Financing/leverage risk — SEC filings indicate the Apellis transaction is funded with cash and borrowings, which could increase financial leverage and affect capital allocation.",
-          "Uncertainty around contingent milestone payments tied to the acquisition (possible that milestones are not achieved).",
-          "Ongoing legal and compliance exposure — while a securities lawsuit was settled, other litigation or regulatory matters (including referenced settlements/claims) could arise or continue to create volatility.",
-          "Short-term volatility risk around upcoming Q3 2026 earnings release (Oct 28, 2026) which could change the assessment materially."
+          "Upcoming earnings release on October 29, 2026 — short‑term event risk that can cause heightened volatility and adverse surprises.",
+          "July 29, 2026 guidance reduction for FY2026 constant‑currency revenue growth — indicates slower revenue outlook vs prior guidance.",
+          "Ongoing significant litigation (including the October 4, 2024 jury verdict and subsequent appeals/proceedings) and related settlement/derivative activity — potential for material financial/operational impact.",
+          "Regulatory and tax exposures (including Indian tax matters and other regulatory proceedings) that have produced or could produce material liabilities.",
+          "Any newly announced negative guidance, litigation outcomes, trading halts, or regulatory actions prior to entering a position would materially change this recommendation."
         ],
         "sources": [
           {
-            "url": "https://altshares.s3.amazonaws.com/arb/Commentary-ARB.pdf"
+            "url": "https://app.midpage.ai/document/christy-palmer-v-cognizant-technology--db35dc94-f12d-4194-9415-5418f7fafc7e"
           },
           {
-            "url": "https://bankrupt.com/CAR_Public/260703.mbx"
+            "url": "https://beanvest.com/stock/ctsh/moat"
           },
           {
-            "url": "https://biogen.gcs-web.com/events-presentations/events"
+            "url": "https://cases.justia.com/federal/district-courts/california/cacdce/2%3A2017cv06848/689138/714/0.pdf"
           },
           {
-            "url": "https://biogen.gcs-web.com/news-releases/news-release-details/biogen-report-third-quarter-2026-financial-results-october-28"
+            "url": "https://cognizant.q4cdn.com/123993165/files/doc_earnings/2025/q4/transcript/Transcript_CTSHQ4-2025-Earnings-Call.pdf"
           },
           {
-            "url": "https://biogen.gcs-web.com/node/30611/html"
+            "url": "https://cognizant.q4cdn.com/123993165/files/doc_earnings/2026/q1/earnings-result/Q1-26-Earnings-Press-Release.pdf"
           },
           {
-            "url": "https://courts.delaware.gov/Opinions/Download.aspx?id=318950"
+            "url": "https://cognizant.q4cdn.com/123993165/files/doc_earnings/2026/q1/filing/Form-10Q-Q1-2026.pdf"
           },
           {
-            "url": "https://en.wikipedia.org/wiki/Biogen"
+            "url": "https://cognizant.q4cdn.com/123993165/files/doc_financials/2024/q4/cts-december-31-2024-form-10-k-final.pdf"
           },
           {
-            "url": "https://en.wikipedia.org/wiki/Samsung_Biologics"
+            "url": "https://courtdocket.org/cognizant-lawsuit-discrimination-bribery-and-securities-fraud/"
           },
           {
-            "url": "https://investors.biogen.com/node/30441/html"
+            "url": "https://docketnexus.com/party/cognizant-technology-solutions-u-s-corporation/"
           },
           {
-            "url": "https://investors.biogen.com/static-files/3b3e34a5-48c2-47d7-b5a5-dee6a63d310b"
+            "url": "https://dockets.justia.com/docket/circuit-courts/ca2/26-1518"
           },
           {
-            "url": "https://storage.ghost.io/c/7c/31/7c3134cb-15ef-48ae-897a-17839231438d/content/files/2026/04/digest-9-5.pdf"
+            "url": "https://dockets.justia.com/docket/circuit-courts/ca3/26-1530"
           },
           {
-            "url": "https://www.biobucks.co/biotech-ma-tracker-2026"
+            "url": "https://investors.cognizant.com/home/default.aspx"
           },
           {
-            "url": "https://www.fiercepharma.com/pharma/biogen-settles-investor-lawsuit-its-messaging-alzheimers-drug"
+            "url": "https://investors.cognizant.com/news-and-events/news/news-details/2025/Cognizant-to-Acquire-3Cloud-Creating-a-Leading-Force-in-Microsoft-Azure-Services-and-Enterprise-AI-Transformation/default.aspx"
           },
           {
-            "url": "https://www.reddit.com/r/biotech_stocks/comments/1veiuo7/bioxcel_therapeutics_btai_faq_for_getting_payment/"
+            "url": "https://investors.cognizant.com/news-and-events/news/news-details/2026/Cognizant-Reports-Second-Quarter-2026-Results/default.aspx"
           },
           {
-            "url": "https://www.sec.gov/Archives/edgar/data/1492422/000119312526143698/d130703dex991.htm"
+            "url": "https://substack-post-media.s3.us-east-1.amazonaws.com/post-files/200546465/48693713-ae33-4698-9e93-b90d361a32cc.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAUM3FPD6B5OUZI2RP%2F20260613%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260613T115624Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEGIaCXVzLWVhc3QtMSJIMEYCIQDPuYNU8BbGGsRL9nHdk1RaPZ9QDy3BGwtSz%2FfcdkGsHwIhAPAglRQbrXv9hZhSH2BQbU9wgvtpAGHQE0fyFrusylmtKvkDCCsQBBoMMzAyNDcxMTI2OTE1IgwuAa%2BRMSYcF7KJPwAq1gMkjwrSPw%2FwAm7kjLDtT2wJnxANHd%2BzFSZEdjcVlKtQ6sQhFQs7qYJVKC%2FL6%2Fs2GkR2h2N0tnT46LiPlrDU4x2%2BttBtM3lw1DXffZ%2Bg%2BJI1Uf8T6FsuRSJgPiNll9aSicc91vkozForywlWYn9%2FMZRNgQHySUdIra%2FB7XWOounCDH3v0O9v0jjY%2BoYOwjwO9ggb50luWc0%2BraAsSeZWb%2BAnLkOHLRC%2BgK63pVLbqF2QH3jrLcO0hsqQgfJjEubKmvHvOcF6IQLIYbfEjMsrDsdAGYZ7K0hXwWZB5Wqmdgwl3RocrO8zm%2Fa7j%2F9gUuzlW5%2FJ0QxOUBsoVz6JDQHnkFrUhPK1DQ6Kl%2BU3657P9InHklOoiFZYmvZDzhX0nYeDmdUyDWAg%2FBRAVrCW2RgwOaR28NyS29EkjgW5oBxCAgFffZBSxk788AC7PplCDK%2BvNMemfxG3uogpdcO4SmH1C%2Fen13X0kGTsA8ca%2B7OS5RNaLaEPf1CVgKI%2FqMfb4DZyY98FZXcSj79oi6z5R16CGT3ugWhGKPXGWpGnStAHEa7gB%2F4YwtNDfDQs8jtQ0LomuJNW5pzD2xna87A7JDzuGrTKLtdnti%2BNjEXRedBXFyVGHMqMvI2r%2BjCMx7TRBjqkAQd8RFU%2F4LFXJMZqZsXN3ijQCpAAHnWYP7aPN0opvkgUL76cSmTfq96LnCWQ%2BYHUP8cWStgEEG%2Bl%2F4FmMn6CZMne%2F7EHQ6ixDROnOxcvfwpid02V2PzP3kUs1nVnRN7Jiencv5H%2FiLiE%2FPCtlGMR1DaAHH1W5teKWHFXR3yH1zmhQCgC7mybZnDah191CyIuRzN0dla%2Fik9E1c3QjwDgOqpjIe9B&X-Amz-Signature=007b119224d74a2d2013c23ecb5fbfd431c94b47b057ae4df2bbc4b3765b7b59&X-Amz-SignedHeaders=host&response-content-disposition=attachment%3B+filename%3D%22Final_Fs_Di_Watch_List_2026_0604.pdf%22&x-amz-checksum-mode=ENABLED&x-id=GetObject"
           },
           {
-            "url": "https://www.sec.gov/Archives/edgar/data/875045/000087504525000047/biib-20251030.htm"
+            "url": "https://timesofindia.indiatimes.com/business/international-business/cognizant-biased-against-non-indians-us-court/articleshow/114061308.cms"
           },
           {
-            "url": "https://www.sec.gov/Archives/edgar/data/875045/000087504526000073/exhibit991-q22026pressrele.htm"
+            "url": "https://www.bloomberg.com/graphics/2024-cognizant-h1b-visas-discriminates-us-workers/"
           },
           {
-            "url": "https://www.sec.gov/Archives/edgar/data/875045/000087504526000075/biib-20260630.htm"
+            "url": "https://www.cognizant.com/en_us/aem-i/document/ai-and-the-future-of-work-report/new-work-new-world-2026-how-ai-is-reshaping-work_new.pdf"
           },
           {
-            "url": "https://www.stifel.com/newsletters/investmentbanking/bal/marketing/healthcare/biopharma_timopler/2026/BiopharmaMarketUpdate_040626.pdf"
+            "url": "https://www.courthousenews.com/cognizant-goes-on-trial-again-over-claims-it-discriminates-against-non-indian-employees/"
           },
           {
-            "url": "https://www.strategicclaims.net/wp-content/uploads/2026/03/Final-Long-Notice-BioGen.pdf"
+            "url": "https://www.docketalarm.com/cases/California_Central_District_Court/2--17-cv-06848/Christy_Palmer_et_al_v._Cognizant_Technology_Solutions_Corporation_et_al/657/"
           },
           {
-            "url": "https://www.theonlineinvestor.com/mergers/biotechnology-m-and-a/"
+            "url": "https://www.financialexpress.com/business/news/cognizant-cuts-top-end-fy26-revenue-guidance/4305949/"
+          },
+          {
+            "url": "https://www.moneycontrol.com/technology/us-court-finds-cognizant-guilty-of-discrimination-against-non-indians-company-to-appeal-article-12837684.html"
+          },
+          {
+            "url": "https://www.newindianexpress.com/business/2024/Oct/09/cognizant-engaged-in-discrimination-against-non-indian-workers-us-jury"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1058290/000105829026000008/0001058290-26-000008-index.htm"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1058290/000105829026000016/R18.htm"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1058290/000105829026000025/ctsh-20260630.htm"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1058290/000105829026000025/exhibit991.htm"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1058290/000105829026000030/exhibit9936302026.htm"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1058290/000105829026000031/ctsh-20260630.htm"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1058290/000130817926000290/ctsh2026_courtesy-pdf.pdf"
+          },
+          {
+            "url": "https://www.secinfo.com/d1Z9ft.Ng.htm"
+          },
+          {
+            "url": "https://www.supremecourt.gov/DocketPDF/26/26-5700/425553/20260924143035793_King%20Appendix%20FINAL.pdf"
           }
         ]
       },
       {
         "agent": "Technical Context Agent",
         "verdict": "APPROVE",
-        "confidence": 0.8,
-        "thesis": "Long setup supported: breakout strength is strong (breakout_strength=3.9509), relative strength is robust (rs_excess_pct=21.9815), and market breadth is healthy (market_breadth_pct=66.0 with breadth_gate=PASS). ATR (atr_14=6.353) indicates the name has measurable intraday volatility to respect with position sizing. The provided stop (stop_price=241.324) is below the entry (entry_usd=249.7) and the target (target_price=287.3919999999999) is above the entry, so the setup aligns with a long breakout trade as submitted.",
+        "confidence": 0.83,
+        "thesis": "Bullish technical context: strong breakout (5.5938) with high relative strength (59.4646% excess) and supportive market breadth (66.0%, breadth gate PASS). ATR is 2.4435 (moderate volatility). Stop (68.828) is below the entry (69.99) and a target of 75.219 is defined, so risk is explicit and the breakout setup is consistent with a long trade.",
         "risks": [
-          "ATR-driven volatility could hit the stop before trend continuation",
-          "Market breadth can deteriorate, turning a sector/name-specific breakout into a failed move",
-          "Gapping risk at open could invalidate the stop or cause larger-than-expected loss",
-          "Single-symbol exposure; company- or sector-specific news can overwhelm technical setup"
+          "False breakout or quick reversal despite strong breakout metric",
+          "Volatility (ATR 2.4435) could cause whipsaw and premature stop activation",
+          "Market breadth can deteriorate; a weakening breadth reading would undermine the setup",
+          "Event or news risk not captured by these technical fields; could invalidate the breakout"
         ],
         "sources": []
       },
       {
         "agent": "Thesis Agent",
-        "verdict": "APPROVE",
-        "confidence": 0.75,
-        "thesis": "Bull case: The quant and specialist signals align for a momentum breakout trade as submitted. Entry (249.7) sits below the target (287.392) with an explicit stop (241.324) and quantity (1.0). Key supportive metrics: breakout_strength (3.9509), strong relative strength excess (~21.98%), and a healthy market breadth read (breadth_gate PASS; market_breadth_pct 66%). These factors indicate name-specific leadership that can sustain a continuation higher if sector and market micro-regime remain constructive. The trade is therefore coherent as a defined-risk long with a clear reward target and stop.\n\nBear case: The setup can fail from both idiosyncratic and macro/market drivers. Company-specific headlines (earnings on Oct 28, acquisition/integration risks, contingent milestone outcomes, litigatio",
+        "verdict": "REJECT",
+        "confidence": 0.84,
+        "thesis": "Bull case: Quant packet shows a coherent momentum breakout setup with an authoritative entry (69.99), stop (68.828) and target (75.219), strong breakout_strength (5.5938), high RS excess (~59.46%), breadth_gate PASS and supportive market breadth (66%), indicating a technically constructive long if regime and news are benign. Bear case: Market‑regime and event risk outweigh the technical read — recent session(s) were tech‑led weak, creating a hostile environment for breakouts; material company event risk exists (lowered FY26 revenue guidance earlier in 2026, ongoing litigation/tax/regulatory exposures, and an upcoming earnings release on Oct 29, 2026) that can cause heightened volatility or adverse surprises; execution and volatility risks (ATR 2.4435 vs a relatively tight stop, nontrivial ",
         "risks": [
-          "Stop may be close relative to intraday volatility (atr_14=6.353) — whipsaw/stop-hunt risk",
-          "Execution risk: spread and slippage can meaningfully affect fills (spread_bps reported)",
-          "Breakout failure risk despite positive quant signals",
-          "Single-share quantity and position-sizing limitations for larger portfolios",
-          "Macro/regime risk: Treasury-yield spikes or geopolitical shocks can reverse momentum"
+          "Hostile market regime / tech‑led risk‑off that increases likelihood of false breakout or quick reversal (Market Regime Agent).",
+          "Upcoming earnings (Oct 29, 2026) and prior guidance cut that raise near‑term event risk and volatility (News and Event Agent).",
+          "Ongoing litigation, tax and regulatory exposures that can produce material adverse news or financial impact (News and Event Agent).",
+          "Relatively tight stop versus reported volatility (ATR 2.4435) increases chance of being stopped out by normal price action (Scanner Agent, Technical Context Agent).",
+          "Bid/ask spread and market impact (spread_bps ~15.7289) could materially affect realized fills versus authoritative prices (Scanner Agent)."
         ],
         "sources": []
       },
       {
         "agent": "Claude CRO",
         "verdict": "REJECT",
-        "confidence": 0.72,
-        "thesis": "Reject the BIIB long entry. Biogen reports Q3 2026 earnings before the open on Oct 28, a few sessions after the Oct 22 signal. The Market Regime, News and Thesis agents each flag this date as a risk, yet all three still approve. An opening gap on the print could jump past the stop at 241.324, so the stop would not cap the loss. The research cites an implied move of about 4.3%. That is about half the distance from entry to stop, so a gap could easily cross the stop. The entry also comes after a sharp run-up. The stock is at or near its 52-week high of about $254, and it rose 5.3% in one session. This is an extended breakout going into a binary catalyst. Earnings quality is weak. Q2 GAAP EPS fell about 85% year over year, and MS revenue fell 13%. Q3 consensus of about $1.98 is hard to read b",
+        "confidence": 0.8,
+        "thesis": "I reject the CTSH long entry because verified event and regime risks outweigh the technical setup. I did not recompute entry, stop, target or size.\n\nThe quant packet is coherent. Breakout strength is 5.59, relative-strength excess is 59.5%, breadth_gate is PASS, and the stop sits below entry with the target above it. The technical case is real, but it does not cover the risks below.\n\n1. **Earnings event risk.** Cognizant reports Q3 2026 results on Oct 29, 2026, about 5 trading days after the Oct 22 packet session. The stock has also risen about 25% over 9 straight green days. That is an extended, crowded run into a binary event. The stop is only about 1.7% below entry and about 0.5 ATR away (ATR 2.44). A gap through the stop on earnings is plausible, so the stop would not cap the loss.\n\n2.",
         "risks": [
-          "Q3 earnings on Oct 28 pre-market fall inside the holding window, and gap risk can bypass the stop",
-          "Entry follows a 5.3% one-day surge at or near the 52-week high of about $254, so the breakout is extended into a binary event",
-          "Weak earnings quality: Q2 GAAP EPS down about 85% year over year, MS revenue down 13%, and Apellis deal charges and dilution make the print hard to read",
-          "Valuation and analyst caution: BofA Neutral and GF Value about 19% overvalued",
-          "Apellis integration, leverage and dilution risk after the May 14, 2026 close; the News agent's finding is stale, and I did not verify financing details"
+          "Q3 2026 earnings on Oct 29, 2026 is a binary event 5 trading days out, and a gap could jump the stop",
+          "Stock is extended after a 9-day, roughly 25% run, which raises mean-reversion risk into earnings",
+          "FY2026 constant-currency revenue guidance was cut on Jul 29, 2026",
+          "Tech-led risk-off on Oct 22-23, 2026, with the Nasdaq down about 2.6%, contradicts the breadth PASS in the quant packet",
+          "Three specialists (Market Regime, News and Event, Thesis) returned REJECT, against Scanner and Technical Context APPROVE"
         ],
         "sources": [
           {
-            "url": "https://finance.yahoo.com/quote/BIIB/press-releases/"
+            "url": "https://finance.yahoo.com/quote/CTSH/"
           },
           {
-            "url": "https://gurufocus.com/news/9136459/biib-maintained-by-b-of-a-securities-price-target-raised-to-244"
+            "url": "https://hk.marketscreener.com/news/cognizant-schedules-third-quarter-2026-earnings-release-and-conference-call-ce785ddad188f020"
           },
           {
-            "url": "https://investors.biogen.com/events-presentations/events"
+            "url": "https://news.cognizant.com/2026-10-02-Cognizant-Schedules-Third-Quarter-2026-Earnings-Release-and-Conference-Call"
           },
           {
-            "url": "https://investors.biogen.com/events/event-details/q3-2026-earnings-call-webcast"
+            "url": "https://pluang.com/en/news-feed/cognizant-jadwalkan-rilis-laporan-keuangan-kuartal-iii-2026"
           },
           {
-            "url": "https://investors.biogen.com/news/news-releases"
+            "url": "https://robinhood.com/us/en/stocks/CTSH/"
           },
           {
-            "url": "https://robinhood.com/us/en/stocks/BIIB/"
+            "url": "https://simplywall.st/stocks/us/software/nasdaq-ctsh/cognizant-technology-solutions/news/cognizant-technology-solutions-ctsh-agrees-dyflex-deal-as-it"
           },
           {
-            "url": "https://stockanalysis.com/stocks/biib/"
+            "url": "https://stockanalysis.com/stocks/ctsh/"
           },
           {
-            "url": "https://www.biopharmawatch.com/news/BIIB/biogen-third-quarter-2026-financial-results"
+            "url": "https://stocktwits.com/symbol/CTSH"
           },
           {
-            "url": "https://www.cnn.com/markets/stocks/BIIB"
+            "url": "https://www.google.com/finance/quote/CTSH:NASDAQ?hl=en"
           },
           {
-            "url": "https://www.google.com/finance/beta/quote/BIIB:NASDAQ?hl=en"
+            "url": "https://www.marketbeat.com/earnings/reports/2026-10-29-cognizant-technology-solutions-co-stock/"
           },
           {
-            "url": "https://www.marketbeat.com/instant-alerts/upcoming-biogen-biib-expected-to-post-earnings-on-wednesday-2026-10-21/"
+            "url": "https://www.marketbeat.com/instant-alerts/upcoming-cognizant-technology-solutions-ctsh-expected-to-release-quarterly-earnings-on-thursday-2026-10-22/"
           },
           {
-            "url": "https://www.marketbeat.com/stocks/NASDAQ/BIIB/"
+            "url": "https://www.marketbeat.com/stocks/NASDAQ/CTSH/news/"
           },
           {
-            "url": "https://www.sec.gov/Archives/edgar/data/0000875045/000087504526000073/exhibit991-q22026pressrele.htm"
+            "url": "https://www.sec.gov/Archives/edgar/data/0001058290/000105829026000015/exhibit9933312026.htm"
           },
           {
-            "url": "https://www.sec.gov/Archives/edgar/data/0000875045/000087504526000075/biib-20260630.htm"
+            "url": "https://www.sec.gov/Archives/edgar/data/0001058290/000105829026000030/exhibit9916302026.htm"
           },
           {
-            "url": "https://www.sec.gov/Archives/edgar/data/875045/000087504526000003/biib-20260113.htm"
+            "url": "https://www.sec.gov/Archives/edgar/data/0001058290/000105829026000030/exhibit9936302026.htm"
           },
           {
-            "url": "https://www.sec.gov/Archives/edgar/data/875045/000087504526000011/exhibit991-q42025pressrele.htm"
+            "url": "https://www.sec.gov/Archives/edgar/data/1058290/000105829026000003/exhibit99312312025.htm"
           },
           {
-            "url": "https://www.stocktitan.net/news/BIIB/"
+            "url": "https://www.tipranks.com/stocks/ctsh/earnings"
           },
           {
-            "url": "https://www.stocktitan.net/overview/BIIB/"
+            "url": "https://www.trefis.com/stock/ctsh/articles/619899/cognizant-technology-solutions-stock-climbs-18-on-an-8-day-winning-streak/2026-10-22"
           },
           {
-            "url": "https://www.tipranks.com/stocks/biib/earnings"
+            "url": "https://www.trefis.com/stock/ctsh/articles/620094/9-green-days-in-a-row-cognizant-technology-solutions-stock-is-up-25/2026-10-23"
           }
         ]
       }
