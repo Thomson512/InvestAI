@@ -1,292 +1,331 @@
 {
-  "outcome": "COUNCIL_REJECT:PFE",
+  "outcome": "COUNCIL_REJECT:CTSH",
   "session_date": "2026-10-23",
-  "generated_at": "2026-10-23T14:10:25Z",
+  "generated_at": "2026-10-23T14:22:07Z",
   "official": true,
   "extra_summary": [
     "council: Claude CRO rejected the proposal"
   ],
   "plan": {
-    "symbol": "PFE",
-    "quantity": 12.0,
-    "entry_usd": 30.03,
-    "stop_price": 29.3223,
-    "target_price": 33.21465000000001,
+    "symbol": "CTSH",
+    "quantity": 5.0,
+    "entry_usd": 69.99,
+    "stop_price": 68.828,
+    "target_price": 75.21899999999997,
     "fx_usdczk": 21.741,
-    "spread_bps": 3.330557868443485
+    "spread_bps": 15.72889111317644
   },
   "council": {
     "verdict": "REJECT",
     "reason": "Claude CRO rejected the proposal",
-    "cached": true,
+    "cached": false,
     "findings": [
       {
         "agent": "Scanner Agent",
         "verdict": "APPROVE",
-        "confidence": 0.85,
-        "thesis": "Packet is internally coherent: authoritative fields (entry=30.20, stop=29.3223, target=34.14965, qty=12) are consistent (stop is below entry, target is above). Stop distance (~0.8777 USD) is ~1.6 ATR (0.5488), giving a favorable reward:risk (~4.5x). Breadth gate PASS, positive breakout strength (0.562) and RS excess (20.25%) support the long thesis. No internal contradictions detected.",
+        "confidence": 0.92,
+        "thesis": "The packet is internally coherent. Authoritative fields (entry_usd 69.99, stop_price 68.828, target_price 75.21899999999997, quantity 5.0) are present and non-contradictory: stop is below the entry, target is above the entry, and quantity is positive. Breadth gate is PASS and the packet includes supporting metrics (breakout_strength, rs_excess_pct, score, ATR, spread_bps) consistent with a momentum breakout setup. No required fields are missing and no internal numeric contradictions are evident.",
         "risks": [
-          "Stop is relatively tight (~1.6 ATR) and may be hit by short-term noise",
-          "Position concentrates exposure to a single equity (quantity 12) — company-specific news could move price sharply",
-          "Quoted spread (6.6247 bps) could impact execution marginally in fast markets",
-          "Technical momentum could reverse before target is reached"
+          "Provided stop is relatively tight versus the reported volatility (ATR 2.4435) — higher chance of normal volatility triggering the stop.",
+          "Bid/ask spread (15.72889111317644 bps) and market impact could materially affect realized entry/exit versus the authoritative prices.",
+          "Quantity is small and absolute position sizing relative to an account is unknown — position-sizing risk is not addressed in the packet.",
+          "Momentum indicators (high breakout_strength and RS excess) can reverse quickly; the target may not be reached before a reversal or intraday noise triggers the stop."
         ],
         "sources": []
       },
       {
         "agent": "Market Regime Agent",
-        "verdict": "APPROVE",
-        "confidence": 0.75,
-        "thesis": "Market breadth is positive (breadth_gate PASS; market_breadth_pct 66) and healthcare has held up despite a tech-led S&P drawdown on Oct 22, 2026. Volatility is elevated but not extreme (VIX ~19) and Treasury yields pulled back into the close, which favors defensive/healthcare names. No Pfizer-specific negative headlines were found in the review. Given the quant packet’s constructive metrics (breakout_strength 0.562, rs_excess_pct 20.25) and a broadly supportive breadth/sector backdrop, the market regime is permissive for a momentum breakout in PFE.",
+        "verdict": "REJECT",
+        "confidence": 0.78,
+        "thesis": "Market internals and price action from Oct 22–23, 2026 show a clear risk-off tone led by technology: the S&P 500 lost ~1.2% while the Nasdaq Composite/Nasdaq‑100 fell ~2.6%, with defensive sectors outperforming. That tech-led weakness and noisy macro drivers (energy and European bond stress) create a hostile regime for a momentum breakout in CTSH (a tech/IT services name). Although the supplied quant packet shows a breadth_gate PASS and a high breakout_strength, the observable market regime (broad tech weakness and risk‑off flows) increases the likelihood of a failed breakout or quick reversal, so I recommend rejecting an entry based on a momentum breakout signal today.",
         "risks": [
-          "Broad-market tech-led selloffs could spill into large-cap and sector leadership, increasing intraday volatility.",
-          "Geopolitical or macro headlines (oil/ Middle East developments) that drove risk-off moves could accelerate selling and negate breadth improvements.",
-          "Unexpected Pfizer-specific news (regulatory, trial, or guidance) would invalidate the sector-level thesis.",
-          "Elevated volatility and lower liquidity around macro calendar events or options expiries may widen execution slippage and stop-hit probability.",
-          "Market breadth readings can reverse quickly; a single strong negative session for advancers would weaken the breakout case."
+          "Company-specific positive catalyst (e.g., favorable earnings or guidance ahead of Oct 29, 2026) could override the market regime and validate a breakout.",
+          "Rapid market reversal or a strong risk‑on session would reduce the hostility and could change the recommendation.",
+          "Short‑term macro headlines (energy shock, European bond turmoil, Fed commentary) could increase volatility and cause false breakouts.",
+          "Quant packet and internal breadth indicators (breadth_gate PASS, market_breadth_pct 66%) conflict with observed tech weakness — this mixed signal raises model/backdrop mismatch risk."
         ],
         "sources": [
           {
             "url": "https://apnews.com/article/1970e79d013cbddcae89c53b4b98f384"
           },
           {
-            "url": "https://apnews.com/article/204f5d642d88ab55992a6f0e9ccbe8e9"
-          },
-          {
             "url": "https://apnews.com/article/7b47ef3b037bfba4e34f685329b9b963"
           },
           {
-            "url": "https://aveceasar.github.io/sp500-sector-relative-strength/"
+            "url": "https://apnews.com/article/b972b64127db5412a2b02c35ecf95c88"
           },
           {
             "url": "https://breadthmarket.com/breadth"
           },
           {
-            "url": "https://cdn.cboe.com/resources/options/Cboe2026OPTIONSCalendar.pdf"
+            "url": "https://ca.investing.com/indices/us-spx-500-historical-data"
           },
           {
-            "url": "https://cdn.cboe.com/resources/regulation/rule_filings/approved/2026/SR-CBOE-2026-014.pdf"
+            "url": "https://cognizant.q4cdn.com/123993165/files/doc_earnings/2025/q3/transcript/Transcript_CTSHQ3-2025-Earnings-Call.pdf"
           },
           {
-            "url": "https://finance.yahoo.com/quote/%5EVIX/history/"
+            "url": "https://en.wikipedia.org/wiki/Nasdaq_Composite"
           },
           {
-            "url": "https://gainbot.ai/brief/2026-10-22"
+            "url": "https://findog.app/en/daily/2026-10-22"
           },
           {
-            "url": "https://home.treasury.gov/system/files/221/TentativeAuctionScheduleQ22026.pdf"
+            "url": "https://indexes.nasdaq.com/Index/Breakdown/NDXT"
           },
           {
-            "url": "https://longniftyshort.com/2026/10/"
+            "url": "https://news.cognizant.com/2026-04-29-Cognizant-Reports-First-Quarter-2026-Results?asPDF=1"
           },
           {
-            "url": "https://moinary.com/en/market-reference-etfs-weaken-as-nasdaq-listed-breadth-turns-negative-on-october-22"
-          },
-          {
-            "url": "https://moneyweek.com/investments/income-investing/uk-dividends-q3-reach-28-billion"
-          },
-          {
-            "url": "https://stocksdashboards.com/health-care-stocks"
+            "url": "https://news.cognizant.com/press-releases-financial?l=100&o=0"
           },
           {
             "url": "https://www.axios.com/2026/10/22/ai-manufacturing-recovery-imbalance"
           },
           {
-            "url": "https://www.cboe.com/tradable-products/vix/vix-historical-data"
+            "url": "https://www.axios.com/2026/10/22/axios-live-ai-agents-are-changing-how-money-moves"
           },
           {
-            "url": "https://www.cypresscapital.com/charts/market-indicators/"
+            "url": "https://www.axios.com/2026/10/22/french-bond-market-spillover"
           },
           {
-            "url": "https://www.fda.gov/media/194509/download?attachment="
+            "url": "https://www.axios.com/newsletters/axios-pro-rata-c9b5580d-fe42-4bf9-b1e5-1b769c7cf924"
           },
           {
-            "url": "https://www.investing.com/indices/volatility-s-p-500-historical-data?cid=1096487"
+            "url": "https://www.ieconomy.io/en/us-markets-close-2026-10-22"
           },
           {
-            "url": "https://www.kiplinger.com/investing/stocks/stocks-shoot-for-the-stars-on-ai-optimism-stock-market-today"
+            "url": "https://www.kiplinger.com/investing/stocks/17494/next-week-earnings-calendar-stocks"
           },
           {
-            "url": "https://www.pfizer.com/newsroom/press-releases"
+            "url": "https://www.marketbeat.com/stocks/NASDAQ/CTSH/earnings/"
           },
           {
-            "url": "https://www.pfizer.com/print/pdf/node/563435"
+            "url": "https://www.marketdly.com/index.html"
           },
           {
-            "url": "https://www.reddit.com/r/MortgageBrokerRates/comments/1xcujin/mortgage_market_recap_thursday_october_22_2026/"
+            "url": "https://www.portfolio-terminal.com/markets/stock-market-close/october-22-2026"
           },
           {
-            "url": "https://www.sec.gov/files/rules/sro/cboe/2026/34-105669-ex5.pdf"
+            "url": "https://www.sec.gov/Archives/edgar/data/1058290/000105829026000033/ctsh-20261005.htm"
+          },
+          {
+            "url": "https://www.theatlantic.com/podcasts/2026/10/david-frum-show-kara-swisher-tech-oligarchs-trump-ai/689101/?utm_source=openai"
           },
           {
             "url": "https://www.thetrading.tools/advance-decline-line"
+          },
+          {
+            "url": "https://www.zacks.com/stock/news/3013461/stock-market-news-for-oct-23-2026"
           }
         ]
       },
       {
         "agent": "News and Event Agent",
-        "verdict": "APPROVE",
-        "confidence": 0.85,
-        "thesis": "Web search through public filings and press releases (through October 2026) shows no verified material adverse event that would argue against initiating a new long in PFE. Pfizer has recently reported quarterly results and in mid-2026 raised or reaffirmed full-year guidance (revenue midpoint increase reported in June 2026 and guidance reaffirmations); there are ongoing litigations and patent disputes (multiple suits and MDL activity) but no single adverse ruling or regulatory action discovered that would be immediately dispositive; no trading halts or announced hostile mergers were found. Notable operational items: a CFO transition was disclosed in June 2026 (guidance reaffirmed at that time) and Pfizer/affiliated approvals and collaborations continue to progress. Overall, nothing uncovere",
+        "verdict": "REJECT",
+        "confidence": 0.82,
+        "thesis": "Verified, recent material developments increase downside and near-term event risk for CTSH: (1) on July 29, 2026 Cognizant reported Q2 2026 results and lowered full‑year 2026 constant‑currency revenue growth guidance (a material guidance revision); (2) the company remains exposed to significant, ongoing litigation (including an October 4, 2024 jury verdict finding discriminatory practices with continuing appeals and related proceedings) and other legal/tax disputes that have produced material judgments/awards and settlement activity in 2025–2026; and (3) a scheduled third‑quarter 2026 earnings release is upcoming on October 29, 2026, creating immediate event risk. These verified items argue against establishing a new long at this time.",
         "risks": [
-          "Ongoing product liability and MDL litigation (e.g., Depo‑Provera and other mass‑tort / MDL activity) that could produce adverse rulings or settlements in the future.",
-          "Active patent and IP litigation (multiple cases, including disputes involving vaccine-related claims) that could lead to damages or injunctions.",
-          "Corporate leadership changes (CFO transition announced June 18, 2026) which could introduce near‑term execution risk.",
-          "Regulatory risk (FDA/EMA reviews and approvals remain possible sources of positive or negative surprises).",
-          "M&A, licensing, or business‑development transactions (e.g., collaborations/in‑licensing) could shift financial outlook or create one‑time earnings impacts."
+          "Upcoming earnings release on October 29, 2026 — short‑term event risk that can cause heightened volatility and adverse surprises.",
+          "July 29, 2026 guidance reduction for FY2026 constant‑currency revenue growth — indicates slower revenue outlook vs prior guidance.",
+          "Ongoing significant litigation (including the October 4, 2024 jury verdict and subsequent appeals/proceedings) and related settlement/derivative activity — potential for material financial/operational impact.",
+          "Regulatory and tax exposures (including Indian tax matters and other regulatory proceedings) that have produced or could produce material liabilities.",
+          "Any newly announced negative guidance, litigation outcomes, trading halts, or regulatory actions prior to entering a position would materially change this recommendation."
         ],
         "sources": [
           {
-            "url": "https://app.midpage.ai/document/glaxosmithkline-biologicals-sa-v-pfizer--8e8c2392-6243-48e7-af6f-1dea419a6857"
+            "url": "https://app.midpage.ai/document/christy-palmer-v-cognizant-technology--db35dc94-f12d-4194-9415-5418f7fafc7e"
           },
           {
-            "url": "https://app.midpage.ai/document/in-re-depo-provera-depot--591ba37d-90ff-43b4-8cc4-403c9e78fb20"
+            "url": "https://beanvest.com/stock/ctsh/moat"
           },
           {
-            "url": "https://en.wikipedia.org/wiki/Legal_affairs_of_the_second_Trump_presidency"
+            "url": "https://cases.justia.com/federal/district-courts/california/cacdce/2%3A2017cv06848/689138/714/0.pdf"
           },
           {
-            "url": "https://investors.pfizer.com/Investors/news-events/"
+            "url": "https://cognizant.q4cdn.com/123993165/files/doc_earnings/2025/q4/transcript/Transcript_CTSHQ4-2025-Earnings-Call.pdf"
           },
           {
-            "url": "https://law.justia.com/cases/federal/district-courts/delaware/dedce/1%3A2026cv00013/91694/53/"
+            "url": "https://cognizant.q4cdn.com/123993165/files/doc_earnings/2026/q1/earnings-result/Q1-26-Earnings-Press-Release.pdf"
           },
           {
-            "url": "https://law.justia.com/cases/federal/district-courts/new-york/nysdce/1%3A2022cv01433/575321/66/"
+            "url": "https://cognizant.q4cdn.com/123993165/files/doc_earnings/2026/q1/filing/Form-10Q-Q1-2026.pdf"
           },
           {
-            "url": "https://public-inspection.federalregister.gov/2025-19272.pdf"
+            "url": "https://cognizant.q4cdn.com/123993165/files/doc_financials/2024/q4/cts-december-31-2024-form-10-k-final.pdf"
           },
           {
-            "url": "https://s206.q4cdn.com/795948973/files/doc_events/2025/Dec/16/PFE-2026-Financial-Guidance-Press-Release-FINAL.pdf"
+            "url": "https://courtdocket.org/cognizant-lawsuit-discrimination-bribery-and-securities-fraud/"
           },
           {
-            "url": "https://s206.q4cdn.com/795948973/files/doc_financials/2026/q1/Q1-2026-PFE-Earnings-Release-FINAL.pdf"
+            "url": "https://docketnexus.com/party/cognizant-technology-solutions-u-s-corporation/"
           },
           {
-            "url": "https://stocklight.com/stocks/us/nyse-pfe/pfizer/annual-reports/nyse-pfe-2026-10K-26684208.pdf"
+            "url": "https://dockets.justia.com/docket/circuit-courts/ca2/26-1518"
           },
           {
-            "url": "https://www.ded.uscourts.gov/opinion/glaxosmithkline-biologicals-sa-et-al-v-pfizer-inc-et-al-2"
+            "url": "https://dockets.justia.com/docket/circuit-courts/ca3/26-1530"
           },
           {
-            "url": "https://www.fda.gov/drugs/resources-information-approved-drugs/oncology-cancerhematologic-malignancies-approval-notifications?randparam=286637"
+            "url": "https://investors.cognizant.com/home/default.aspx"
           },
           {
-            "url": "https://www.pfizer.com/newsroom/press-releases"
+            "url": "https://investors.cognizant.com/news-and-events/news/news-details/2025/Cognizant-to-Acquire-3Cloud-Creating-a-Leading-Force-in-Microsoft-Azure-Services-and-Enterprise-AI-Transformation/default.aspx"
           },
           {
-            "url": "https://www.reddit.com/r/testicularcancer/comments/1u65as9/pfas_lawsuit_update_june_2026/"
+            "url": "https://investors.cognizant.com/news-and-events/news/news-details/2026/Cognizant-Reports-Second-Quarter-2026-Results/default.aspx"
           },
           {
-            "url": "https://www.reddit.com/r/testicularcancer/comments/1uqwnbi/finally_important_update_on_pfas_lawsuits_from/"
+            "url": "https://substack-post-media.s3.us-east-1.amazonaws.com/post-files/200546465/48693713-ae33-4698-9e93-b90d361a32cc.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAUM3FPD6B5OUZI2RP%2F20260613%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260613T115624Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEGIaCXVzLWVhc3QtMSJIMEYCIQDPuYNU8BbGGsRL9nHdk1RaPZ9QDy3BGwtSz%2FfcdkGsHwIhAPAglRQbrXv9hZhSH2BQbU9wgvtpAGHQE0fyFrusylmtKvkDCCsQBBoMMzAyNDcxMTI2OTE1IgwuAa%2BRMSYcF7KJPwAq1gMkjwrSPw%2FwAm7kjLDtT2wJnxANHd%2BzFSZEdjcVlKtQ6sQhFQs7qYJVKC%2FL6%2Fs2GkR2h2N0tnT46LiPlrDU4x2%2BttBtM3lw1DXffZ%2Bg%2BJI1Uf8T6FsuRSJgPiNll9aSicc91vkozForywlWYn9%2FMZRNgQHySUdIra%2FB7XWOounCDH3v0O9v0jjY%2BoYOwjwO9ggb50luWc0%2BraAsSeZWb%2BAnLkOHLRC%2BgK63pVLbqF2QH3jrLcO0hsqQgfJjEubKmvHvOcF6IQLIYbfEjMsrDsdAGYZ7K0hXwWZB5Wqmdgwl3RocrO8zm%2Fa7j%2F9gUuzlW5%2FJ0QxOUBsoVz6JDQHnkFrUhPK1DQ6Kl%2BU3657P9InHklOoiFZYmvZDzhX0nYeDmdUyDWAg%2FBRAVrCW2RgwOaR28NyS29EkjgW5oBxCAgFffZBSxk788AC7PplCDK%2BvNMemfxG3uogpdcO4SmH1C%2Fen13X0kGTsA8ca%2B7OS5RNaLaEPf1CVgKI%2FqMfb4DZyY98FZXcSj79oi6z5R16CGT3ugWhGKPXGWpGnStAHEa7gB%2F4YwtNDfDQs8jtQ0LomuJNW5pzD2xna87A7JDzuGrTKLtdnti%2BNjEXRedBXFyVGHMqMvI2r%2BjCMx7TRBjqkAQd8RFU%2F4LFXJMZqZsXN3ijQCpAAHnWYP7aPN0opvkgUL76cSmTfq96LnCWQ%2BYHUP8cWStgEEG%2Bl%2F4FmMn6CZMne%2F7EHQ6ixDROnOxcvfwpid02V2PzP3kUs1nVnRN7Jiencv5H%2FiLiE%2FPCtlGMR1DaAHH1W5teKWHFXR3yH1zmhQCgC7mybZnDah191CyIuRzN0dla%2Fik9E1c3QjwDgOqpjIe9B&X-Amz-Signature=007b119224d74a2d2013c23ecb5fbfd431c94b47b057ae4df2bbc4b3765b7b59&X-Amz-SignedHeaders=host&response-content-disposition=attachment%3B+filename%3D%22Final_Fs_Di_Watch_List_2026_0604.pdf%22&x-amz-checksum-mode=ENABLED&x-id=GetObject"
           },
           {
-            "url": "https://www.sec.gov/Archives/edgar/data/78003/000007800325000167/pfe-12162025xexh99.htm"
+            "url": "https://timesofindia.indiatimes.com/business/international-business/cognizant-biased-against-non-indians-us-court/articleshow/114061308.cms"
           },
           {
-            "url": "https://www.sec.gov/Archives/edgar/data/78003/000007800326000087/pfe-20260618.htm"
+            "url": "https://www.bloomberg.com/graphics/2024-cognizant-h1b-visas-discriminates-us-workers/"
           },
           {
-            "url": "https://www.sec.gov/Archives/edgar/data/78003/000007800326000094/pfe-6282026xex99.htm"
+            "url": "https://www.cognizant.com/en_us/aem-i/document/ai-and-the-future-of-work-report/new-work-new-world-2026-how-ai-is-reshaping-work_new.pdf"
           },
           {
-            "url": "https://www.sec.gov/Archives/edgar/data/78003/000007800326000095/pfe-20260628.htm"
+            "url": "https://www.courthousenews.com/cognizant-goes-on-trial-again-over-claims-it-discriminates-against-non-indian-employees/"
+          },
+          {
+            "url": "https://www.docketalarm.com/cases/California_Central_District_Court/2--17-cv-06848/Christy_Palmer_et_al_v._Cognizant_Technology_Solutions_Corporation_et_al/657/"
+          },
+          {
+            "url": "https://www.financialexpress.com/business/news/cognizant-cuts-top-end-fy26-revenue-guidance/4305949/"
+          },
+          {
+            "url": "https://www.moneycontrol.com/technology/us-court-finds-cognizant-guilty-of-discrimination-against-non-indians-company-to-appeal-article-12837684.html"
+          },
+          {
+            "url": "https://www.newindianexpress.com/business/2024/Oct/09/cognizant-engaged-in-discrimination-against-non-indian-workers-us-jury"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1058290/000105829026000008/0001058290-26-000008-index.htm"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1058290/000105829026000016/R18.htm"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1058290/000105829026000025/ctsh-20260630.htm"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1058290/000105829026000025/exhibit991.htm"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1058290/000105829026000030/exhibit9936302026.htm"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1058290/000105829026000031/ctsh-20260630.htm"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1058290/000130817926000290/ctsh2026_courtesy-pdf.pdf"
+          },
+          {
+            "url": "https://www.secinfo.com/d1Z9ft.Ng.htm"
+          },
+          {
+            "url": "https://www.supremecourt.gov/DocketPDF/26/26-5700/425553/20260924143035793_King%20Appendix%20FINAL.pdf"
           }
         ]
       },
       {
         "agent": "Technical Context Agent",
         "verdict": "APPROVE",
-        "confidence": 0.78,
-        "thesis": "Breakout strength is moderate (0.562) with strong relative strength (RS excess ~20.25%) and healthy market breadth (66% PASS). ATR is 0.5488 indicating modest intraday volatility. The provided stop (29.3223) sits below the entry and the target (34.14965) is above the entry, so the setup is internally consistent for a long trade.",
+        "confidence": 0.83,
+        "thesis": "Bullish technical context: strong breakout (5.5938) with high relative strength (59.4646% excess) and supportive market breadth (66.0%, breadth gate PASS). ATR is 2.4435 (moderate volatility). Stop (68.828) is below the entry (69.99) and a target of 75.219 is defined, so risk is explicit and the breakout setup is consistent with a long trade.",
         "risks": [
-          "Breakout strength is moderate rather than extreme — higher chance of false break or fade.",
-          "Stop is relatively tight versus short-term volatility (ATR = 0.5488) and could be hit by normal price churn (whipsaw risk).",
-          "Market or news shocks could invalidate the technical setup before the target is reached."
+          "False breakout or quick reversal despite strong breakout metric",
+          "Volatility (ATR 2.4435) could cause whipsaw and premature stop activation",
+          "Market breadth can deteriorate; a weakening breadth reading would undermine the setup",
+          "Event or news risk not captured by these technical fields; could invalidate the breakout"
         ],
         "sources": []
       },
       {
         "agent": "Thesis Agent",
-        "verdict": "APPROVE",
-        "confidence": 0.81,
-        "thesis": "Quant packet presents an internally consistent long setup with authoritative execution parameters (entry_usd=30.2, stop_price=29.3223, target_price=34.14965, quantity=12). Breadth gate PASS and market_breadth_pct=66% support a market environment receptive to breakouts. Breakout_strength (0.562) and strong relative strength (rs_excess_pct=20.2527) indicate security-level momentum. Stop is placed ~1.6 ATR (atr_14=0.5488) below entry, yielding a materially asymmetric reward:risk per the packet. Specialists across scanner, market regime, news/events and technical context found no single, immediate disqualifying issue, so the trade idea is coherent as presented.",
+        "verdict": "REJECT",
+        "confidence": 0.84,
+        "thesis": "Bull case: Quant packet shows a coherent momentum breakout setup with an authoritative entry (69.99), stop (68.828) and target (75.219), strong breakout_strength (5.5938), high RS excess (~59.46%), breadth_gate PASS and supportive market breadth (66%), indicating a technically constructive long if regime and news are benign. Bear case: Market‑regime and event risk outweigh the technical read — recent session(s) were tech‑led weak, creating a hostile environment for breakouts; material company event risk exists (lowered FY26 revenue guidance earlier in 2026, ongoing litigation/tax/regulatory exposures, and an upcoming earnings release on Oct 29, 2026) that can cause heightened volatility or adverse surprises; execution and volatility risks (ATR 2.4435 vs a relatively tight stop, nontrivial ",
         "risks": [
-          "Stop is relatively tight (~1.6 ATR) and could be hit by routine intraday noise or whipsaws before the trend resumes.",
-          "Technical breakout strength is moderate (0.562) — increased chance of a false breakout or short-term fade.",
-          "Company-specific legal, patent, or product‑liability litigation (ongoing MDLs and disputes) could produce adverse rulings or headlines that materially move the stock.",
-          "Unexpected Pfizer-specific negative events (adverse clinical/regulatory decisions, surprise negative guidance, management shock) would rapidly undercut the thesis.",
-          "Macro or regime shocks (risk-off flows, sharp rises in volatility or yields) or a reversal in market breadth could spill into healthcare and invalidate the breakout case."
+          "Hostile market regime / tech‑led risk‑off that increases likelihood of false breakout or quick reversal (Market Regime Agent).",
+          "Upcoming earnings (Oct 29, 2026) and prior guidance cut that raise near‑term event risk and volatility (News and Event Agent).",
+          "Ongoing litigation, tax and regulatory exposures that can produce material adverse news or financial impact (News and Event Agent).",
+          "Relatively tight stop versus reported volatility (ATR 2.4435) increases chance of being stopped out by normal price action (Scanner Agent, Technical Context Agent).",
+          "Bid/ask spread and market impact (spread_bps ~15.7289) could materially affect realized fills versus authoritative prices (Scanner Agent)."
         ],
         "sources": []
       },
       {
         "agent": "Claude CRO",
         "verdict": "REJECT",
-        "confidence": 0.62,
-        "thesis": "REJECT. I did not recompute price, stop, target or size. The packet is internally coherent and the specialists lean APPROVE, but verified research gives reasons against entering now. (1) Pfizer's Q3 earnings are confirmed for 2026-11-03, before the open. That is about 7 sessions after the 2026-10-22 packet date, so it likely falls inside the holding window. The News and Event Agent did not list this date, so its \"no material event\" conclusion is incomplete. An earnings gap can jump past a stop only ~1.6 ATR away, and a stop order gives no protection against that. (2) Entry is at a fresh 52-week high (~$30.26), above the consensus target of about $28.72 (Hold). The packet target of ~$34.15 is above the highest target found ($33, Scotiabank). JPMorgan, BofA and Cantor are Neutral with target",
+        "confidence": 0.8,
+        "thesis": "I reject the CTSH long entry because verified event and regime risks outweigh the technical setup. I did not recompute entry, stop, target or size.\n\nThe quant packet is coherent. Breakout strength is 5.59, relative-strength excess is 59.5%, breadth_gate is PASS, and the stop sits below entry with the target above it. The technical case is real, but it does not cover the risks below.\n\n1. **Earnings event risk.** Cognizant reports Q3 2026 results on Oct 29, 2026, about 5 trading days after the Oct 22 packet session. The stock has also risen about 25% over 9 straight green days. That is an extended, crowded run into a binary event. The stop is only about 1.7% below entry and about 0.5 ATR away (ATR 2.44). A gap through the stop on earnings is plausible, so the stop would not cap the loss.\n\n2.",
         "risks": [
-          "Confirmed Q3 earnings on 2026-11-03 before the open, inside the likely holding window; overnight gap risk can bypass the ~1.6 ATR stop",
-          "News and Event Agent omitted the earnings date, so the specialists' no-event-risk consensus is incomplete",
-          "Entry at a new 52-week high and above the consensus target (~$28.72, Hold); the packet target exceeds the highest target seen ($33)",
-          "Q2 2026 results included $4.3B of impairments and $842M of legal charges",
-          "Open legal headline (Florida AG COVID-vaccine suit, date and materiality unverified) and competitive pneumococcal vaccine pressure from Vaxcyte"
+          "Q3 2026 earnings on Oct 29, 2026 is a binary event 5 trading days out, and a gap could jump the stop",
+          "Stock is extended after a 9-day, roughly 25% run, which raises mean-reversion risk into earnings",
+          "FY2026 constant-currency revenue guidance was cut on Jul 29, 2026",
+          "Tech-led risk-off on Oct 22-23, 2026, with the Nasdaq down about 2.6%, contradicts the breadth PASS in the quant packet",
+          "Three specialists (Market Regime, News and Event, Thesis) returned REJECT, against Scanner and Technical Context APPROVE"
         ],
         "sources": [
           {
-            "url": "https://finance.yahoo.com/calendar/earnings?symbol=PFE"
+            "url": "https://finance.yahoo.com/quote/CTSH/"
           },
           {
-            "url": "https://nextearningsdate.com/pfizer.html"
+            "url": "https://hk.marketscreener.com/news/cognizant-schedules-third-quarter-2026-earnings-release-and-conference-call-ce785ddad188f020"
           },
           {
-            "url": "https://robinhood.com/us/en/stocks/PFE/"
+            "url": "https://news.cognizant.com/2026-10-02-Cognizant-Schedules-Third-Quarter-2026-Earnings-Release-and-Conference-Call"
           },
           {
-            "url": "https://stockanalysis.com/stocks/pfe/"
+            "url": "https://pluang.com/en/news-feed/cognizant-jadwalkan-rilis-laporan-keuangan-kuartal-iii-2026"
           },
           {
-            "url": "https://stocktwits.com/symbol/PFE"
+            "url": "https://robinhood.com/us/en/stocks/CTSH/"
           },
           {
-            "url": "https://uk.investing.com/news/stock-market-news/pfizer-stock-hits-52week-high-at-3026-usd-93CH-4926064"
+            "url": "https://simplywall.st/stocks/us/software/nasdaq-ctsh/cognizant-technology-solutions/news/cognizant-technology-solutions-ctsh-agrees-dyflex-deal-as-it"
           },
           {
-            "url": "https://wboc.com/online_features/press_releases/healthcare-stocks-rushing-higher-with-oncology-push-breakout-test-and-lilly-s-next-growth-chapter/article_c019b451-8bb2-5bcd-b98f-6aebdcf35aa8.html"
+            "url": "https://stockanalysis.com/stocks/ctsh/"
           },
           {
-            "url": "https://www.cnn.com/markets/stocks/PFE"
+            "url": "https://stocktwits.com/symbol/CTSH"
           },
           {
-            "url": "https://www.google.com/finance/beta/quote/PFE:NYSE"
+            "url": "https://www.google.com/finance/quote/CTSH:NASDAQ?hl=en"
           },
           {
-            "url": "https://www.investing.com/equities/pfizer-earnings"
+            "url": "https://www.marketbeat.com/earnings/reports/2026-10-29-cognizant-technology-solutions-co-stock/"
           },
           {
-            "url": "https://www.marketbeat.com/instant-alerts/price-pfizer-nyse-pfe-shares-climb-18-still-a-buy-2026-10-22/"
+            "url": "https://www.marketbeat.com/instant-alerts/upcoming-cognizant-technology-solutions-ctsh-expected-to-release-quarterly-earnings-on-thursday-2026-10-22/"
           },
           {
-            "url": "https://www.markets.com/instrument/pfizer/"
+            "url": "https://www.marketbeat.com/stocks/NASDAQ/CTSH/news/"
           },
           {
-            "url": "https://www.sec.gov/Archives/edgar/data/0000078003/000007800326000053/pfe-3292026xex99.htm"
+            "url": "https://www.sec.gov/Archives/edgar/data/0001058290/000105829026000015/exhibit9933312026.htm"
           },
           {
-            "url": "https://www.sec.gov/Archives/edgar/data/0000078003/000007800326000087/pfe-20260618.htm"
+            "url": "https://www.sec.gov/Archives/edgar/data/0001058290/000105829026000030/exhibit9916302026.htm"
           },
           {
-            "url": "https://www.sec.gov/Archives/edgar/data/0000078003/000007800326000094/pfe-6282026xex99.htm"
+            "url": "https://www.sec.gov/Archives/edgar/data/0001058290/000105829026000030/exhibit9936302026.htm"
           },
           {
-            "url": "https://www.sec.gov/Archives/edgar/data/0000078003/000007800326000095/pfe-20260628.htm"
+            "url": "https://www.sec.gov/Archives/edgar/data/1058290/000105829026000003/exhibit99312312025.htm"
           },
           {
-            "url": "https://www.sec.gov/Archives/edgar/data/78003/000007800326000005/pfe-12312025xex99.htm"
+            "url": "https://www.tipranks.com/stocks/ctsh/earnings"
           },
           {
-            "url": "https://www.tipranks.com/stocks/pfe/earnings"
+            "url": "https://www.trefis.com/stock/ctsh/articles/619899/cognizant-technology-solutions-stock-climbs-18-on-an-8-day-winning-streak/2026-10-22"
+          },
+          {
+            "url": "https://www.trefis.com/stock/ctsh/articles/620094/9-green-days-in-a-row-cognizant-technology-solutions-stock-is-up-25/2026-10-23"
           }
         ]
       }
