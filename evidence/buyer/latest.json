@@ -1,19 +1,19 @@
 {
-  "outcome": "COUNCIL_REJECT:CTSH",
+  "outcome": "COUNCIL_REJECT:BDX",
   "session_date": "2026-10-23",
-  "generated_at": "2026-10-23T19:10:27Z",
+  "generated_at": "2026-10-23T19:20:28Z",
   "official": true,
   "extra_summary": [
     "council: Claude CRO rejected the proposal"
   ],
   "plan": {
-    "symbol": "CTSH",
-    "quantity": 5.0,
-    "entry_usd": 70.74,
-    "stop_price": 68.828,
-    "target_price": 79.34399999999997,
+    "symbol": "BDX",
+    "quantity": 1.0,
+    "entry_usd": 199.59,
+    "stop_price": 192.5779,
+    "target_price": 231.14445,
     "fx_usdczk": 21.741,
-    "spread_bps": 5.656108597283943
+    "spread_bps": 11.530266950745194
   },
   "council": {
     "verdict": "REJECT",
@@ -23,309 +23,309 @@
       {
         "agent": "Scanner Agent",
         "verdict": "APPROVE",
-        "confidence": 0.92,
-        "thesis": "The packet is internally coherent. Authoritative fields (entry_usd 69.99, stop_price 68.828, target_price 75.21899999999997, quantity 5.0) are present and non-contradictory: stop is below the entry, target is above the entry, and quantity is positive. Breadth gate is PASS and the packet includes supporting metrics (breakout_strength, rs_excess_pct, score, ATR, spread_bps) consistent with a momentum breakout setup. No required fields are missing and no internal numeric contradictions are evident.",
+        "confidence": 0.86,
+        "thesis": "The packet is internally coherent: authoritative fields entry_usd (199.28), stop_price (192.5779), and target_price (229.43945) are present and correctly ordered (stop < entry < target). Quantity is positive (1.0). Required risk/market metrics (atr_14, breakout_strength, rs_excess_pct) and gating fields (breadth_gate = PASS, tier = A) are provided and contain non-contradictory values. No fields conflict with the packet authority statement.",
         "risks": [
-          "Provided stop is relatively tight versus the reported volatility (ATR 2.4435) — higher chance of normal volatility triggering the stop.",
-          "Bid/ask spread (15.72889111317644 bps) and market impact could materially affect realized entry/exit versus the authoritative prices.",
-          "Quantity is small and absolute position sizing relative to an account is unknown — position-sizing risk is not addressed in the packet.",
-          "Momentum indicators (high breakout_strength and RS excess) can reverse quickly; the target may not be reached before a reversal or intraday noise triggers the stop."
+          "Execution risk from non-zero spread_bps that could affect realized fill vs entry_usd.",
+          "Quantity (1.0) may not match an investor's risk-sizing rules — position sizing should be verified by portfolio risk management.",
+          "Market conditions can change after the asof_session date; stop/target assumptions rely on timely execution."
         ],
         "sources": []
       },
       {
         "agent": "Market Regime Agent",
-        "verdict": "REJECT",
-        "confidence": 0.78,
-        "thesis": "Market internals and price action from Oct 22–23, 2026 show a clear risk-off tone led by technology: the S&P 500 lost ~1.2% while the Nasdaq Composite/Nasdaq‑100 fell ~2.6%, with defensive sectors outperforming. That tech-led weakness and noisy macro drivers (energy and European bond stress) create a hostile regime for a momentum breakout in CTSH (a tech/IT services name). Although the supplied quant packet shows a breadth_gate PASS and a high breakout_strength, the observable market regime (broad tech weakness and risk‑off flows) increases the likelihood of a failed breakout or quick reversal, so I recommend rejecting an entry based on a momentum breakout signal today.",
+        "verdict": "APPROVE",
+        "confidence": 0.7,
+        "thesis": "As of the quant packet date (session 2026-10-22) the market backdrop is mixed-to-favorable for a momentum breakout in BDX. Broad-market risk-on signals were uneven (S&P500 pulled back on 10/22 while breadth remained positive per the packet), volatility is elevated but not extreme (VIX in the high teens), and the 10-year yield is high (~4.9–5.0%) — a macro headwind but one that usually penalizes growth/tech more than defensive healthcare. Crucially, the model packet shows strong internal support for this ticker: breadth_gate PASS, market_breadth_pct 66%, breakout_strength 2.3861, and RS_excess_pct 25.24, indicating BDX is showing relative strength versus its peers. Taken together, the cross-section (positive breadth + stock-level RS and breakout metrics) supports approving an entry for a mo",
         "risks": [
-          "Company-specific positive catalyst (e.g., favorable earnings or guidance ahead of Oct 29, 2026) could override the market regime and validate a breakout.",
-          "Rapid market reversal or a strong risk‑on session would reduce the hostility and could change the recommendation.",
-          "Short‑term macro headlines (energy shock, European bond turmoil, Fed commentary) could increase volatility and cause false breakouts.",
-          "Quant packet and internal breadth indicators (breadth_gate PASS, market_breadth_pct 66%) conflict with observed tech weakness — this mixed signal raises model/backdrop mismatch risk."
+          "Overall market weakness on 2026-10-22 could broaden and turn momentum against cyclical breakouts, invalidating a long entry.",
+          "Rising Treasury yields (~4.9–5.0% 10y) and headline macro/energy shocks can increase volatility and compress multiples across the market.",
+          "Elevated VIX/high intra-day volatility increases chance of false breakouts and stop-hunts — tighter stops may be triggered even if thesis remains intact.",
+          "Company-specific news (earnings, FDA, guidance, or material SEC filings) between the packet date and entry could change BDX’s outlook rapidly.",
+          "Liquidity and spread risk around the breakout time may widen (spread_bps in packet non-zero), increasing execution risk."
         ],
         "sources": [
           {
+            "url": "https://abcnews.com/Business/wireStory/major-us-stock-indexes-fared-thursday-10222026-137490327"
+          },
+          {
             "url": "https://apnews.com/article/1970e79d013cbddcae89c53b4b98f384"
+          },
+          {
+            "url": "https://apnews.com/article/204f5d642d88ab55992a6f0e9ccbe8e9"
           },
           {
             "url": "https://apnews.com/article/7b47ef3b037bfba4e34f685329b9b963"
           },
           {
-            "url": "https://apnews.com/article/b972b64127db5412a2b02c35ecf95c88"
+            "url": "https://arxiv.org/abs/1406.3028"
           },
           {
-            "url": "https://breadthmarket.com/breadth"
+            "url": "https://arxiv.org/abs/1910.03532"
           },
           {
-            "url": "https://ca.investing.com/indices/us-spx-500-historical-data"
+            "url": "https://ca.marketscreener.com/quote/etf/STATE-STREET-HEALTH-CARE--29424449/quotes/"
           },
           {
-            "url": "https://cognizant.q4cdn.com/123993165/files/doc_earnings/2025/q3/transcript/Transcript_CTSHQ3-2025-Earnings-Call.pdf"
+            "url": "https://cdn.cboe.com/resources/regulation/rule_filings/approved/2026/SR-CBOE-2026-014.pdf"
           },
           {
-            "url": "https://en.wikipedia.org/wiki/Nasdaq_Composite"
+            "url": "https://chartexchange.com/symbol/nyse-bdx/historical/"
           },
           {
-            "url": "https://findog.app/en/daily/2026-10-22"
+            "url": "https://closelook.net/indices/stock/bdx/price-history/"
           },
           {
-            "url": "https://indexes.nasdaq.com/Index/Breakdown/NDXT"
+            "url": "https://convextrade.com/metrics/xlv"
           },
           {
-            "url": "https://news.cognizant.com/2026-04-29-Cognizant-Reports-First-Quarter-2026-Results?asPDF=1"
+            "url": "https://cxprowealth.com/symbols/XLV"
           },
           {
-            "url": "https://news.cognizant.com/press-releases-financial?l=100&o=0"
+            "url": "https://dd9ztr76gkqyi.cloudfront.net/stocks/BDX/chart"
           },
           {
-            "url": "https://www.axios.com/2026/10/22/ai-manufacturing-recovery-imbalance"
+            "url": "https://fedgazette.com/10-year-treasury-yield/"
           },
           {
-            "url": "https://www.axios.com/2026/10/22/axios-live-ai-agents-are-changing-how-money-moves"
+            "url": "https://icc.illinois.gov/docket/P2024-0044/documents/346966/files/605888.pdf"
           },
           {
-            "url": "https://www.axios.com/2026/10/22/french-bond-market-spillover"
+            "url": "https://investors.bd.com/news-events/press-releases"
           },
           {
-            "url": "https://www.axios.com/newsletters/axios-pro-rata-c9b5580d-fe42-4bf9-b1e5-1b769c7cf924"
+            "url": "https://investors.bd.com/news-events/press-releases/detail/967/bd-reports-third-quarter-fiscal-2026-financial-results"
           },
           {
-            "url": "https://www.ieconomy.io/en/us-markets-close-2026-10-22"
+            "url": "https://investors.bd.com/sec-filings/all-sec-filings/content/0000010795-24-000078/0000010795-24-000078.pdf"
           },
           {
-            "url": "https://www.kiplinger.com/investing/stocks/17494/next-week-earnings-calendar-stocks"
+            "url": "https://investors.bd.com/sec-filings/all-sec-filings/content/0001193125-22-097657/0001193125-22-097657.pdf"
           },
           {
-            "url": "https://www.marketbeat.com/stocks/NASDAQ/CTSH/earnings/"
+            "url": "https://investors.bd.com/sec-filings/all-sec-filings/content/0001628280-26-024472/0001628280-26-024472.pdf"
           },
           {
-            "url": "https://www.marketdly.com/index.html"
+            "url": "https://investors.bd.com/sec-filings/all-sec-filings/content/0001628280-26-031638/0001628280-26-031638.pdf"
+          },
+          {
+            "url": "https://investors.bd.com/stock-data/historical-data"
+          },
+          {
+            "url": "https://kxlt.marketminute.com/quote/NY%3ABDX/historical"
+          },
+          {
+            "url": "https://stockanalysis.com/stocks/bdx/"
+          },
+          {
+            "url": "https://stockanalysis.com/stocks/bdx/history/"
+          },
+          {
+            "url": "https://stockinvest.us/stock-price/BDX"
+          },
+          {
+            "url": "https://stocklight.com/stocks/us/nyse-bdx/becton-dickinson-and/annual-reports/nyse-bdx-2025-10K-251521677.pdf"
+          },
+          {
+            "url": "https://stockscan.io/stocks/BDX/price-history"
+          },
+          {
+            "url": "https://stockscan.io/stocks/XLV/price-history"
+          },
+          {
+            "url": "https://www.axios.com/2026/10/19/treasury-yields-hedge-funds-volatility"
+          },
+          {
+            "url": "https://www.axios.com/2026/10/23/muni-bonds-states-yields"
+          },
+          {
+            "url": "https://www.financialtechwiz.com/stocks/bdx/"
+          },
+          {
+            "url": "https://www.investing.com/rates-bonds/u.s.-10-year-bond-yield-historical-data"
+          },
+          {
+            "url": "https://www.kiplinger.com/investing/stocks/stocks-shoot-for-the-stars-on-ai-optimism-stock-market-today"
+          },
+          {
+            "url": "https://www.marketbeat.com/stocks/NYSE/BDX/"
+          },
+          {
+            "url": "https://www.marketbeat.com/stocks/NYSE/BDX/chart/"
           },
           {
             "url": "https://www.portfolio-terminal.com/markets/stock-market-close/october-22-2026"
           },
           {
-            "url": "https://www.sec.gov/Archives/edgar/data/1058290/000105829026000033/ctsh-20261005.htm"
+            "url": "https://www.reddit.com/r/EverHint/comments/1xcpfwm/global_business_news_october_22_2026_midday/"
           },
           {
-            "url": "https://www.theatlantic.com/podcasts/2026/10/david-frum-show-kara-swisher-tech-oligarchs-trump-ai/689101/?utm_source=openai"
+            "url": "https://www.reddit.com/r/SECWatch/comments/1w0626x/becton_dickinson_co_bdx_becton_dickinson_evp/"
           },
           {
-            "url": "https://www.thetrading.tools/advance-decline-line"
+            "url": "https://www.reddit.com/r/TradingView/comments/1r11ysa/bdx_stock_becton_dickinson_showing_wrong_data/"
           },
           {
-            "url": "https://www.zacks.com/stock/news/3013461/stock-market-news-for-oct-23-2026"
+            "url": "https://www.ssga.com/us/en/individual/etfs/state-street-health-care-select-sector-spdr-etf-xlv"
+          },
+          {
+            "url": "https://www.suredividend.com/wp-content/uploads/2026/05/BDX-2026-05-26.pdf"
+          },
+          {
+            "url": "https://ycharts.com/indices/%5EVIX/level"
           }
         ]
       },
       {
         "agent": "News and Event Agent",
         "verdict": "REJECT",
-        "confidence": 0.82,
-        "thesis": "Verified, recent material developments increase downside and near-term event risk for CTSH: (1) on July 29, 2026 Cognizant reported Q2 2026 results and lowered full‑year 2026 constant‑currency revenue growth guidance (a material guidance revision); (2) the company remains exposed to significant, ongoing litigation (including an October 4, 2024 jury verdict finding discriminatory practices with continuing appeals and related proceedings) and other legal/tax disputes that have produced material judgments/awards and settlement activity in 2025–2026; and (3) a scheduled third‑quarter 2026 earnings release is upcoming on October 29, 2026, creating immediate event risk. These verified items argue against establishing a new long at this time.",
+        "confidence": 0.9,
+        "thesis": "Web search identified multiple verified, material adverse events for BDX that argue against opening a new long: (1) SEC enforcement and related findings that BD made repeated misrepresentations about the Alaris infusion pump (Order/related Plan of Distribution stemming from the Commission’s December 16, 2024 Order and subsequent SEC administrative filings in 2026); (2) an FDA Class I voluntary recall and related communications for certain BD Alaris™ pump infusion sets (recall expanded in 2025); (3) an FDA Warning Letter (Pyxis/Dispensing Warning Letter; Nov 22, 2024) and other regulatory quality actions; and (4) ongoing, significant product-liability litigation and MDLs (ports, pelvic mesh, IVC filters and related matters) disclosed in recent 10-Q/10-K filings. Collectively these regulator",
         "risks": [
-          "Upcoming earnings release on October 29, 2026 — short‑term event risk that can cause heightened volatility and adverse surprises.",
-          "July 29, 2026 guidance reduction for FY2026 constant‑currency revenue growth — indicates slower revenue outlook vs prior guidance.",
-          "Ongoing significant litigation (including the October 4, 2024 jury verdict and subsequent appeals/proceedings) and related settlement/derivative activity — potential for material financial/operational impact.",
-          "Regulatory and tax exposures (including Indian tax matters and other regulatory proceedings) that have produced or could produce material liabilities.",
-          "Any newly announced negative guidance, litigation outcomes, trading halts, or regulatory actions prior to entering a position would materially change this recommendation."
+          "SEC administrative enforcement finding of repeated misrepresentations regarding the Alaris infusion pump and related $175M civil penalty and Fair Fund distribution risk to reputation and governance.",
+          "FDA Class I voluntary recall for certain BD Alaris™ pump infusion sets (expanded recall in 2025) — material product-safety and commercial impact for a key product line.",
+          "FDA Warning Letter (Dispensing / Pyxis) issued Nov 22, 2024 — ongoing regulatory compliance and remediation risk.",
+          "Large, ongoing product-liability litigation and MDLs (implantable ports, pelvic mesh, IVC filters, etc.) with trials and indeterminate loss estimates.",
+          "Operational / supply disruptions (e.g., voluntary ship holds for ChloraPrep/PurPrep in 2026 and past impairment charges) that could impair near-term revenue and margin recovery."
         ],
         "sources": [
           {
-            "url": "https://app.midpage.ai/document/christy-palmer-v-cognizant-technology--db35dc94-f12d-4194-9415-5418f7fafc7e"
+            "url": "https://dockets.justia.com/docket/arizona/azdce/2%3A2026cv03567/1497790"
           },
           {
-            "url": "https://beanvest.com/stock/ctsh/moat"
+            "url": "https://ebs.publicnow.com/view/37BA4D60F2937072C4E19EBF90789411FE5D36C4"
           },
           {
-            "url": "https://cases.justia.com/federal/district-courts/california/cacdce/2%3A2017cv06848/689138/714/0.pdf"
+            "url": "https://investors.bd.com/financial-information"
           },
           {
-            "url": "https://cognizant.q4cdn.com/123993165/files/doc_earnings/2025/q4/transcript/Transcript_CTSHQ4-2025-Earnings-Call.pdf"
+            "url": "https://investors.bd.com/news-events/press-releases"
           },
           {
-            "url": "https://cognizant.q4cdn.com/123993165/files/doc_earnings/2026/q1/earnings-result/Q1-26-Earnings-Press-Release.pdf"
+            "url": "https://investors.bd.com/news-events/press-releases/detail/936/bd-reports-first-quarter-fiscal-2026-financial-results"
           },
           {
-            "url": "https://cognizant.q4cdn.com/123993165/files/doc_earnings/2026/q1/filing/Form-10Q-Q1-2026.pdf"
+            "url": "https://investors.bd.com/news-events/press-releases/detail/967/bd-reports-third-quarter-fiscal-2026-financial-results"
           },
           {
-            "url": "https://cognizant.q4cdn.com/123993165/files/doc_financials/2024/q4/cts-december-31-2024-form-10-k-final.pdf"
+            "url": "https://investors.bd.com/sec-filings/all-sec-filings/content/0000010795-26-000005/bdx-20251231.htm"
           },
           {
-            "url": "https://courtdocket.org/cognizant-lawsuit-discrimination-bribery-and-securities-fraud/"
+            "url": "https://investors.bd.com/sec-filings/all-sec-filings/content/0000010795-26-000035/0000010795-26-000035.pdf"
           },
           {
-            "url": "https://docketnexus.com/party/cognizant-technology-solutions-u-s-corporation/"
+            "url": "https://investors.bd.com/sec-filings/all-sec-filings/content/0000010795-26-000035/bdx-20260630.htm"
           },
           {
-            "url": "https://dockets.justia.com/docket/circuit-courts/ca2/26-1518"
+            "url": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/bd-provides-update-voluntary-recall-certain-bd-alaristm-pump-infusion-sets"
           },
           {
-            "url": "https://dockets.justia.com/docket/circuit-courts/ca3/26-1530"
+            "url": "https://www.sec.gov/Archives/edgar/data/10795/000162828026039005/bdx-20260529.htm"
           },
           {
-            "url": "https://investors.cognizant.com/home/default.aspx"
+            "url": "https://www.sec.gov/Archives/edgar/data/10795/000162828026045374/0001628280-26-045374-index.htm"
           },
           {
-            "url": "https://investors.cognizant.com/news-and-events/news/news-details/2025/Cognizant-to-Acquire-3Cloud-Creating-a-Leading-Force-in-Microsoft-Azure-Services-and-Enterprise-AI-Transformation/default.aspx"
-          },
-          {
-            "url": "https://investors.cognizant.com/news-and-events/news/news-details/2026/Cognizant-Reports-Second-Quarter-2026-Results/default.aspx"
-          },
-          {
-            "url": "https://substack-post-media.s3.us-east-1.amazonaws.com/post-files/200546465/48693713-ae33-4698-9e93-b90d361a32cc.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAUM3FPD6B5OUZI2RP%2F20260613%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260613T115624Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEGIaCXVzLWVhc3QtMSJIMEYCIQDPuYNU8BbGGsRL9nHdk1RaPZ9QDy3BGwtSz%2FfcdkGsHwIhAPAglRQbrXv9hZhSH2BQbU9wgvtpAGHQE0fyFrusylmtKvkDCCsQBBoMMzAyNDcxMTI2OTE1IgwuAa%2BRMSYcF7KJPwAq1gMkjwrSPw%2FwAm7kjLDtT2wJnxANHd%2BzFSZEdjcVlKtQ6sQhFQs7qYJVKC%2FL6%2Fs2GkR2h2N0tnT46LiPlrDU4x2%2BttBtM3lw1DXffZ%2Bg%2BJI1Uf8T6FsuRSJgPiNll9aSicc91vkozForywlWYn9%2FMZRNgQHySUdIra%2FB7XWOounCDH3v0O9v0jjY%2BoYOwjwO9ggb50luWc0%2BraAsSeZWb%2BAnLkOHLRC%2BgK63pVLbqF2QH3jrLcO0hsqQgfJjEubKmvHvOcF6IQLIYbfEjMsrDsdAGYZ7K0hXwWZB5Wqmdgwl3RocrO8zm%2Fa7j%2F9gUuzlW5%2FJ0QxOUBsoVz6JDQHnkFrUhPK1DQ6Kl%2BU3657P9InHklOoiFZYmvZDzhX0nYeDmdUyDWAg%2FBRAVrCW2RgwOaR28NyS29EkjgW5oBxCAgFffZBSxk788AC7PplCDK%2BvNMemfxG3uogpdcO4SmH1C%2Fen13X0kGTsA8ca%2B7OS5RNaLaEPf1CVgKI%2FqMfb4DZyY98FZXcSj79oi6z5R16CGT3ugWhGKPXGWpGnStAHEa7gB%2F4YwtNDfDQs8jtQ0LomuJNW5pzD2xna87A7JDzuGrTKLtdnti%2BNjEXRedBXFyVGHMqMvI2r%2BjCMx7TRBjqkAQd8RFU%2F4LFXJMZqZsXN3ijQCpAAHnWYP7aPN0opvkgUL76cSmTfq96LnCWQ%2BYHUP8cWStgEEG%2Bl%2F4FmMn6CZMne%2F7EHQ6ixDROnOxcvfwpid02V2PzP3kUs1nVnRN7Jiencv5H%2FiLiE%2FPCtlGMR1DaAHH1W5teKWHFXR3yH1zmhQCgC7mybZnDah191CyIuRzN0dla%2Fik9E1c3QjwDgOqpjIe9B&X-Amz-Signature=007b119224d74a2d2013c23ecb5fbfd431c94b47b057ae4df2bbc4b3765b7b59&X-Amz-SignedHeaders=host&response-content-disposition=attachment%3B+filename%3D%22Final_Fs_Di_Watch_List_2026_0604.pdf%22&x-amz-checksum-mode=ENABLED&x-id=GetObject"
-          },
-          {
-            "url": "https://timesofindia.indiatimes.com/business/international-business/cognizant-biased-against-non-indians-us-court/articleshow/114061308.cms"
-          },
-          {
-            "url": "https://www.bloomberg.com/graphics/2024-cognizant-h1b-visas-discriminates-us-workers/"
-          },
-          {
-            "url": "https://www.cognizant.com/en_us/aem-i/document/ai-and-the-future-of-work-report/new-work-new-world-2026-how-ai-is-reshaping-work_new.pdf"
-          },
-          {
-            "url": "https://www.courthousenews.com/cognizant-goes-on-trial-again-over-claims-it-discriminates-against-non-indian-employees/"
-          },
-          {
-            "url": "https://www.docketalarm.com/cases/California_Central_District_Court/2--17-cv-06848/Christy_Palmer_et_al_v._Cognizant_Technology_Solutions_Corporation_et_al/657/"
-          },
-          {
-            "url": "https://www.financialexpress.com/business/news/cognizant-cuts-top-end-fy26-revenue-guidance/4305949/"
-          },
-          {
-            "url": "https://www.moneycontrol.com/technology/us-court-finds-cognizant-guilty-of-discrimination-against-non-indians-company-to-appeal-article-12837684.html"
-          },
-          {
-            "url": "https://www.newindianexpress.com/business/2024/Oct/09/cognizant-engaged-in-discrimination-against-non-indian-workers-us-jury"
-          },
-          {
-            "url": "https://www.sec.gov/Archives/edgar/data/1058290/000105829026000008/0001058290-26-000008-index.htm"
-          },
-          {
-            "url": "https://www.sec.gov/Archives/edgar/data/1058290/000105829026000016/R18.htm"
-          },
-          {
-            "url": "https://www.sec.gov/Archives/edgar/data/1058290/000105829026000025/ctsh-20260630.htm"
-          },
-          {
-            "url": "https://www.sec.gov/Archives/edgar/data/1058290/000105829026000025/exhibit991.htm"
-          },
-          {
-            "url": "https://www.sec.gov/Archives/edgar/data/1058290/000105829026000030/exhibit9936302026.htm"
-          },
-          {
-            "url": "https://www.sec.gov/Archives/edgar/data/1058290/000105829026000031/ctsh-20260630.htm"
-          },
-          {
-            "url": "https://www.sec.gov/Archives/edgar/data/1058290/000130817926000290/ctsh2026_courtesy-pdf.pdf"
-          },
-          {
-            "url": "https://www.secinfo.com/d1Z9ft.Ng.htm"
-          },
-          {
-            "url": "https://www.supremecourt.gov/DocketPDF/26/26-5700/425553/20260924143035793_King%20Appendix%20FINAL.pdf"
+            "url": "https://www.sec.gov/files/litigation/admin/2026/34-105932-dp.pdf"
           }
         ]
       },
       {
         "agent": "Technical Context Agent",
         "verdict": "APPROVE",
-        "confidence": 0.83,
-        "thesis": "Bullish technical context: strong breakout (5.5938) with high relative strength (59.4646% excess) and supportive market breadth (66.0%, breadth gate PASS). ATR is 2.4435 (moderate volatility). Stop (68.828) is below the entry (69.99) and a target of 75.219 is defined, so risk is explicit and the breakout setup is consistent with a long trade.",
+        "confidence": 0.78,
+        "thesis": "The supplied fields collectively support a long trade: breakout_strength 2.3861 denotes a robust breakout; relative strength (rs_excess_pct 25.2436) shows clear outperformance; breadth (market_breadth_pct 66.0, breadth_gate PASS) indicates market participation; ATR 3.9061 indicates the trade's volatility context; stop_price 192.5779 is below the entry (199.28) and does not contradict a long; target_price 229.43945 lies above the entry and defines an upside objective. These signals align to approve the setup given the provided parameters.",
         "risks": [
-          "False breakout or quick reversal despite strong breakout metric",
-          "Volatility (ATR 2.4435) could cause whipsaw and premature stop activation",
-          "Market breadth can deteriorate; a weakening breadth reading would undermine the setup",
-          "Event or news risk not captured by these technical fields; could invalidate the breakout"
+          "Volatility risk: ATR 3.9061 implies meaningful intraday/near-term movement and the stop at 192.5779 may be susceptible to normal price churn.",
+          "Breakout failure: a strong breakout metric (2.3861) is supportive but can still fail, leading to stop-out before the target is reached.",
+          "Market or sector reversal: broad market deterioration could prevent achieving target_price 229.43945 despite favorable individual metrics.",
+          "Execution risks: slippage, spread (spread_bps present in packet) and order execution are not accounted for in these fields."
         ],
         "sources": []
       },
       {
         "agent": "Thesis Agent",
-        "verdict": "REJECT",
-        "confidence": 0.84,
-        "thesis": "Bull case: Quant packet shows a coherent momentum breakout setup with an authoritative entry (69.99), stop (68.828) and target (75.219), strong breakout_strength (5.5938), high RS excess (~59.46%), breadth_gate PASS and supportive market breadth (66%), indicating a technically constructive long if regime and news are benign. Bear case: Market‑regime and event risk outweigh the technical read — recent session(s) were tech‑led weak, creating a hostile environment for breakouts; material company event risk exists (lowered FY26 revenue guidance earlier in 2026, ongoing litigation/tax/regulatory exposures, and an upcoming earnings release on Oct 29, 2026) that can cause heightened volatility or adverse surprises; execution and volatility risks (ATR 2.4435 vs a relatively tight stop, nontrivial ",
+        "verdict": "APPROVE",
+        "confidence": 0.81,
+        "thesis": "Bull case: The quant packet shows a coherent, momentum-driven long setup with entry_usd 199.28, stop_price 192.5779 and target_price 229.43945. Strengths include breakout_strength 2.3861, RS_excess_pct 25.2436, breadth_gate PASS and market_breadth_pct 66%, indicating participation across the market and clear stock-level relative strength. ATR (3.9061) and tier = A support a disciplined trade with defined risk (stop) and upside objective (target). Bear case: Material, company-specific regulatory and safety issues (SEC enforcement, FDA Class I recall/Warning Letter, ongoing MDLs and product-liability exposure) create outsized downside and reputational risk that can depress fundamentals and drive prolonged underperformance. Macro/regime risks (high 10y yields, elevated VIX) and broad-market w",
         "risks": [
-          "Hostile market regime / tech‑led risk‑off that increases likelihood of false breakout or quick reversal (Market Regime Agent).",
-          "Upcoming earnings (Oct 29, 2026) and prior guidance cut that raise near‑term event risk and volatility (News and Event Agent).",
-          "Ongoing litigation, tax and regulatory exposures that can produce material adverse news or financial impact (News and Event Agent).",
-          "Relatively tight stop versus reported volatility (ATR 2.4435) increases chance of being stopped out by normal price action (Scanner Agent, Technical Context Agent).",
-          "Bid/ask spread and market impact (spread_bps ~15.7289) could materially affect realized fills versus authoritative prices (Scanner Agent)."
+          "Regulatory and legal: SEC enforcement findings, FDA Class I recall/Warning Letter, and ongoing MDLs/product-liability litigation could materially impair revenue, margins and sentiment.",
+          "Market regime: rising Treasury yields and elevated VIX or a broad market pullback can undercut momentum breakouts and prevent the target from being reached.",
+          "Breakout failure / volatility: breakout_strength can fail; ATR (3.9061) implies meaningful price churn that may trigger the stop before realizing the thesis.",
+          "Execution and liquidity: non-zero spread_bps and potential slippage may widen realized entry/exit beyond packet assumptions; quantity (1.0) may not match portfolio sizing rules.",
+          "Event risk between packet and execution: company earnings, FDA/SEC updates, or other news can rapidly change outlook and invalidate the setup."
         ],
         "sources": []
       },
       {
         "agent": "Claude CRO",
         "verdict": "REJECT",
-        "confidence": 0.8,
-        "thesis": "I reject the CTSH long entry because verified event and regime risks outweigh the technical setup. I did not recompute entry, stop, target or size.\n\nThe quant packet is coherent. Breakout strength is 5.59, relative-strength excess is 59.5%, breadth_gate is PASS, and the stop sits below entry with the target above it. The technical case is real, but it does not cover the risks below.\n\n1. **Earnings event risk.** Cognizant reports Q3 2026 results on Oct 29, 2026, about 5 trading days after the Oct 22 packet session. The stock has also risen about 25% over 9 straight green days. That is an extended, crowded run into a binary event. The stop is only about 1.7% below entry and about 0.5 ATR away (ATR 2.44). A gap through the stop on earnings is plausible, so the stop would not cap the loss.\n\n2.",
+        "confidence": 0.74,
+        "thesis": "REJECT BDX entry. The quant gates are clean (breadth PASS, tier A, strong relative strength and breakout). Verified company-specific event risk outweighs them.\n\n1. Earnings fall inside the holding window. BD reports fiscal Q4 results on Nov 5, 2026, about 9 trading days after the packet date. A gap through the packet stop is possible, so the stop may not cap the loss. I have not recomputed the stop.\n\n2. The Alaris Class I recall is worsening and was updated this month. The FDA updated it on Oct 6 after more testing showed that infusion performance was overestimated and in some cases significantly worse. The recall covers about 33 million units. On Oct 20 the FDA warned that recalled sets may be packed inside some Cardinal Health procedure kits. The News and Event Agent treated the recall a",
         "risks": [
-          "Q3 2026 earnings on Oct 29, 2026 is a binary event 5 trading days out, and a gap could jump the stop",
-          "Stock is extended after a 9-day, roughly 25% run, which raises mean-reversion risk into earnings",
-          "FY2026 constant-currency revenue guidance was cut on Jul 29, 2026",
-          "Tech-led risk-off on Oct 22-23, 2026, with the Nasdaq down about 2.6%, contradicts the breadth PASS in the quant packet",
-          "Three specialists (Market Regime, News and Event, Thesis) returned REJECT, against Scanner and Technical Context APPROVE"
+          "Earnings on Nov 5, 2026 inside the holding window; gap risk could bypass the stop",
+          "Alaris Class I recall is worsening: about 33M units, FDA update on Oct 6, and a Cardinal Health kit warning on Oct 20",
+          "Disclosure-credibility overhang after the $175M SEC penalty; possible further FDA, SEC or litigation action",
+          "Consent Decree compliance risk disclosed in the 10-Q",
+          "Entry at a 52-week high above the consensus target and GF Value, with Barclays Underweight, a recent downgrade and insider selling"
         ],
         "sources": [
           {
-            "url": "https://finance.yahoo.com/quote/CTSH/"
+            "url": "https://finance.yahoo.com/quote/BDX/"
           },
           {
-            "url": "https://hk.marketscreener.com/news/cognizant-schedules-third-quarter-2026-earnings-release-and-conference-call-ce785ddad188f020"
+            "url": "https://ha2.edelivery-view.com/Public/CCX1000/FDA%20Recall%20-%20BD%20Alaris%20Pump%20Infusion%20Sets.pdf"
           },
           {
-            "url": "https://news.cognizant.com/2026-10-02-Cognizant-Schedules-Third-Quarter-2026-Earnings-Release-and-Conference-Call"
+            "url": "https://investors.bd.com/"
           },
           {
-            "url": "https://pluang.com/en/news-feed/cognizant-jadwalkan-rilis-laporan-keuangan-kuartal-iii-2026"
+            "url": "https://threeheartshome.com/medication-medical-management/infusion-set-recall-bd-and-carefusion-303-inc-remove-bd-alaris-pump-infusion-set/"
           },
           {
-            "url": "https://robinhood.com/us/en/stocks/CTSH/"
+            "url": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfres/res.cfm?id=216289"
           },
           {
-            "url": "https://simplywall.st/stocks/us/software/nasdaq-ctsh/cognizant-technology-solutions/news/cognizant-technology-solutions-ctsh-agrees-dyflex-deal-as-it"
+            "url": "https://www.cnbc.com/quotes/BDX"
           },
           {
-            "url": "https://stockanalysis.com/stocks/ctsh/"
+            "url": "https://www.cnn.com/markets/stocks/BDX"
           },
           {
-            "url": "https://stocktwits.com/symbol/CTSH"
+            "url": "https://www.fdaweb.com/fda-flags-bd-alaris-infusion-sets-over-performance/"
           },
           {
-            "url": "https://www.google.com/finance/quote/CTSH:NASDAQ?hl=en"
+            "url": "https://www.gurufocus.com/news/9138225/becton-dickinson-co-bdx-shares-surge-31-what-gf-score-of-65-tells-investors"
           },
           {
-            "url": "https://www.marketbeat.com/earnings/reports/2026-10-29-cognizant-technology-solutions-co-stock/"
+            "url": "https://www.marketbeat.com/instant-alerts/price-becton-dickinson-and-company-nyse-bdx-hits-new-1-year-high-still-a-buy-2026-10-22/"
           },
           {
-            "url": "https://www.marketbeat.com/instant-alerts/upcoming-cognizant-technology-solutions-ctsh-expected-to-release-quarterly-earnings-on-thursday-2026-10-22/"
+            "url": "https://www.marketbeat.com/stocks/NYSE/BDX/"
           },
           {
-            "url": "https://www.marketbeat.com/stocks/NASDAQ/CTSH/news/"
+            "url": "https://www.marketscreener.com/quote/stock/BECTON-DICKINSON-AND-COMP-11801/news-strategies/"
           },
           {
-            "url": "https://www.sec.gov/Archives/edgar/data/0001058290/000105829026000015/exhibit9933312026.htm"
+            "url": "https://www.medicaldaily.com/bd-alaris-infusion-set-recall-revised-accuracy-claims-479577"
           },
           {
-            "url": "https://www.sec.gov/Archives/edgar/data/0001058290/000105829026000030/exhibit9916302026.htm"
+            "url": "https://www.medicaldaily.com/cardinal-health-presource-kits-recalled-bd-alaris-infusion-sets-480262"
           },
           {
-            "url": "https://www.sec.gov/Archives/edgar/data/0001058290/000105829026000030/exhibit9936302026.htm"
+            "url": "https://www.medtechdive.com/news/fda-correction-dropped-bd-alaris-pumps/806742/"
           },
           {
-            "url": "https://www.sec.gov/Archives/edgar/data/1058290/000105829026000003/exhibit99312312025.htm"
+            "url": "https://www.morningstar.com/stocks/xnys/bdx/quote"
           },
           {
-            "url": "https://www.tipranks.com/stocks/ctsh/earnings"
+            "url": "https://www.ons.org/publications-research/voice/news-views/10-2026/bd-and-carefusion-303-inc-recall-bd-alaris-pump-infusion-sets-model-8100"
           },
           {
-            "url": "https://www.trefis.com/stock/ctsh/articles/619899/cognizant-technology-solutions-stock-climbs-18-on-an-8-day-winning-streak/2026-10-22"
+            "url": "https://www.sec.gov/Archives/edgar/data/0000010795/000001079526000026/bdx-20260331.htm"
           },
           {
-            "url": "https://www.trefis.com/stock/ctsh/articles/620094/9-green-days-in-a-row-cognizant-technology-solutions-stock-is-up-25/2026-10-23"
+            "url": "https://www.stocktitan.net/news/BDX/"
           }
         ]
       }
