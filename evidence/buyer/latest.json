@@ -1,430 +1,300 @@
 {
-  "outcome": "COUNCIL_UNAVAILABLE:HAS",
+  "outcome": "COUNCIL_REJECT:IFF",
   "session_date": "2026-10-23",
-  "generated_at": "2026-10-23T19:42:14Z",
+  "generated_at": "2026-10-23T19:52:13Z",
   "official": true,
   "extra_summary": [
-    "council: Claude CRO found insufficient evidence"
+    "council: Claude CRO rejected the proposal"
   ],
   "plan": {
-    "symbol": "HAS",
+    "symbol": "IFF",
     "quantity": 3.0,
-    "entry_usd": 117.46,
-    "stop_price": 110.8532,
-    "target_price": 147.19059999999996,
+    "entry_usd": 94.18,
+    "stop_price": 90.5138,
+    "target_price": 110.67790000000002,
     "fx_usdczk": 21.741,
-    "spread_bps": 8.517162081593929
+    "spread_bps": 6.3728093467872835
   },
   "council": {
-    "verdict": "NO_TRADE",
-    "reason": "Claude CRO found insufficient evidence",
+    "verdict": "REJECT",
+    "reason": "Claude CRO rejected the proposal",
     "cached": false,
     "findings": [
       {
         "agent": "Scanner Agent",
         "verdict": "APPROVE",
-        "confidence": 0.85,
-        "thesis": "Packet is internally coherent: stop_price is below entry_usd and target_price is above entry_usd, breadth_gate passes, breakout_strength and rs_excess_pct are positive, and tier is A. Required authoritative fields (entry_usd, stop_price, target_price, quantity) are present and consistent with a long setup.",
+        "confidence": 0.87,
+        "thesis": "The packet is internally coherent. Entry (94.18) sits above the stop (90.5138) and below the target (110.6779). Quantity is a positive value (3.0). Breakout_strength is positive, RS_excess_pct is strongly positive, and breadth_gate is PASS — all signals are directionally consistent with a long breakout trade. No fields contradict one another and the authoritative fields noted in the packet are present.",
         "risks": [
-          "Stop is only modestly below entry relative to the reported ATR and could be taken out by normal short-term volatility.",
-          "Spread (non-zero spread_bps) and liquidity could affect execution vs. the authoritative entry price.",
-          "Small absolute quantity means position sizing or commission/rounding effects could materially affect realized performance for this order size."
+          "Overnight or gap risk: actual fill can differ from stop_price if market gaps through the stop before execution.",
+          "Execution and slippage risk: spread and liquidity may cause fills away from entry/stop/target despite their presence in the packet.",
+          "Operational/parameter context missing: packet lacks explicit trade horizon/timeout and execution instructions (market vs limit), which can affect outcome though do not create an internal contradiction."
         ],
         "sources": []
       },
       {
         "agent": "Market Regime Agent",
-        "verdict": "REJECT",
-        "confidence": 0.78,
-        "thesis": "Market regime is hostile to broad momentum breakouts. On Oct 22, 2026 the S&P 500 fell ~1.2% while the Nasdaq plunged (~2.6%), a tech-led weakening that compressed risk appetite. ([apnews.com](https://apnews.com/article/1970e79d013cbddcae89c53b4b98f384?utm_source=openai)) Market-wide breadth turned negative on the same session, indicating participation was not supporting rallies. ([ieconomy.io](https://www.ieconomy.io/en/us-markets-close-2026-10-22?utm_source=openai)) Volatility picked up (VIX ~19 on Oct 22) and the 10‑year Treasury yield dropped toward ~4.95% as investors moved to safety — both classic risk-off signals. ([finance.yahoo.com](https://finance.yahoo.com/quote/%5EVIX/history/?utm_source=openai)) While HAS has a stock-specific positive catalyst (reported strong results around O",
+        "verdict": "APPROVE",
+        "confidence": 0.72,
+        "thesis": "As of the 2026-10-22 session the tape showed a tech-led pullback (S&P -1.21%, Nasdaq -2.60%) with volatility picking up (VIX ~19), but sector leadership rotated toward defensive and materials groups — materials outperformed the broad market on the day. IFF is classified in the Materials / Specialty Chemicals group, so the intra-day/near-term leadership in materials supports the instrument-specific momentum breakout signaled by the quant packet (breadth_gate PASS and strong RS). The broader market weakness raises caution, but sector-level strength plus the packet's breakout_strength and RS_excess_pct make the backdrop supportive for attempting the momentum breakout in IFF. ([portfolio-terminal.com](https://portfolio-terminal.com/markets/stock-market-close/october-22-2026?utm_source=openai))",
         "risks": [
-          "Company-specific upside (Hasbro earnings/guide) could sustain a narrow, stock-specific breakout despite market risk-off.",
-          "Intraday reversal in market risk sentiment (e.g., bond yields stabilizing or positive macro headlines) could quickly flip the backdrop to supportive.",
-          "Liquidity and wider spreads on volatile days increase execution and stop-hit risk (spread_bps in quant packet already elevated).",
-          "Sector/consumer discretionary may decouple from broader tech-led weakness; a favorable sector move could still drive breakout.",
-          "Data used from market session Oct 22, 2026 — further sessions could materially change the backdrop."
+          "Overall market risk-off and elevated volatility (VIX ~19) could snuff a breakout or produce a rapid reversal—watch market action and consider tightening risk controls. ([swingfolio.com](https://swingfolio.com/daily/us/2026-10-22/afternoon?utm_source=openai))",
+          "Leadership was uneven (tech weakness dominant); if risk sentiment broadens the decline, even sector-strong names can gap lower. ([apnews.com](https://apnews.com/article/1970e79d013cbddcae89c53b4b98f384?utm_source=openai))",
+          "Macro or commodity moves (e.g., rising oil) or headlines between entry and target could change sector flows and invalidate momentum. ([apnews.com](https://apnews.com/article/7b47ef3b037bfba4e34f685329b9b963?utm_source=openai))",
+          "Company-specific events (earnings, guidance, M&A news) ahead of November 3, 2026 Q3 release could add idiosyncratic volatility and impair the breakout. ([ca.finance.yahoo.com](https://ca.finance.yahoo.com/quote/IFF/?utm_source=openai))"
         ],
         "sources": [
           {
-            "url": "https://abcnews.com/Business/wireStory/major-us-stock-indexes-fared-thursday-10222026-137490327"
-          },
-          {
             "url": "https://apnews.com/article/1970e79d013cbddcae89c53b4b98f384"
-          },
-          {
-            "url": "https://apnews.com/article/204f5d642d88ab55992a6f0e9ccbe8e9"
           },
           {
             "url": "https://apnews.com/article/7b47ef3b037bfba4e34f685329b9b963"
           },
           {
-            "url": "https://apnews.com/article/b972b64127db5412a2b02c35ecf95c88"
+            "url": "https://app2.msci.com/eqb/ussector/indexperf/dailyperf.html"
           },
           {
-            "url": "https://apnews.com/article/c27809783ae3230b44c26e5ee4bea056"
+            "url": "https://assets.ctfassets.net/kq9jrkvln56p/1cXXsEslkX3KbCYYrgAeM5/a75d3b0fe11794763b48d4522d2f993e/EPGIP_semi_annual_MRFP.pdf"
           },
           {
-            "url": "https://bitcoinprice.corgano.com/market-history/sp-500"
+            "url": "https://ca.finance.yahoo.com/quote/IFF/"
           },
           {
-            "url": "https://breadthmarket.com/breadth"
+            "url": "https://convectramacro.com/sector-pulse"
           },
           {
-            "url": "https://ca.investing.com/indices/cboe-near-term-vix-historical-data"
+            "url": "https://en.wikipedia.org/wiki/List_of_S%26P_500_companies"
           },
           {
-            "url": "https://cdn.cboe.com/resources/options/Cboe2026OPTIONSCalendar.pdf"
+            "url": "https://iff.gcs-web.com/"
           },
           {
-            "url": "https://cdn.cboe.com/resources/regulation/rule_filings/approved/2026/SR-CBOE-2026-014.pdf"
+            "url": "https://ir.iff.com/static-files/fcccc95e-2c69-4474-81cb-59450b1a1f7f"
           },
           {
-            "url": "https://cdn.cboe.com/resources/regulation/rule_filings/approved/2026/SR-CBOE-2026-052.pdf"
+            "url": "https://live.euronext.com/sites/default/files/documentation/index-composition/Euronext_Vigeo_World_120_Index_Composition.pdf"
           },
           {
-            "url": "https://chartexchange.com/symbol/index-spx/historical"
+            "url": "https://market-wrap.com/daily-wrap/2026-10-22/"
           },
           {
-            "url": "https://cincodias.elpais.com/mercados/bolsa/sp-500/historico/"
+            "url": "https://personal.nedbank.co.za/content/dam/NGISingleSiteContent/other/literature/funds/contrarian-value-equity-fund/Monthly-commentary/Contrarian%20Value%20Equity%20Fund%20October%202025.pdf"
           },
           {
-            "url": "https://countryeconomy.com/bonds/usa?dr=2026-10"
+            "url": "https://portfolio-terminal.com/markets/stock-market-close/october-22-2026"
           },
           {
-            "url": "https://dwkitalpha.com/markets/rates/10-year"
+            "url": "https://stockanalysis.com/stocks/iff/"
           },
           {
-            "url": "https://en.wikipedia.org/wiki/Closing_milestones_of_the_S%26P_500"
+            "url": "https://stockmarketwatch.com/digest/2026-10-22"
           },
           {
-            "url": "https://en.wikipedia.org/wiki/October_22"
+            "url": "https://stockviz.com/en/IFF/current-assets"
           },
           {
-            "url": "https://fedgazette.com/10-year-treasury-yield/"
+            "url": "https://streetstats.finance/markets/sectors-industries"
           },
           {
-            "url": "https://fedgazette.com/ledger/"
+            "url": "https://swingfolio.com/daily/us/2026-10-22/afternoon"
           },
           {
-            "url": "https://finance.yahoo.com/quote/%5ESPX/history/"
+            "url": "https://us500.com/sp500-companies-by-sector"
           },
           {
-            "url": "https://finance.yahoo.com/quote/%5EVIX/history/"
+            "url": "https://www.actionsxchangerepository.fidelity.com/ShowDocument/documentPDF.htm?_fax=-18%2342%23-61%23-110%23114%2378%23117%2320%23-1%2396%2339%23-62%23-21%2386%23-100%2337%2316%2335%23-68%2391%23-66%2354%23103%23-16%2369%23-30%2358%23-20%2376%23-84%23-11%23-87%2363%23122%23107%23-17%23-52%23-90%2329%23-4%2393%23113%23-112%23127%23-42%23-97%2330%23-58%2390%23-37%23-66%2341%23-7%23123%23103%23-36%23-4%2390%23110%2329%23-120%2370%23-126%23-7%2313%23-58%2367%2354%23-82%23-19%2398%2318%2381%23-6%2345%23-37%2364%2360%23-51%2338%23-108%23-43%23-60%2347%23-30%23-7%23-109%23-91%23-101%2349%23-16%2317%23-126%23-52%23-119%23-100%237%23-98%23-7%2391%2363%23-40%2354%23103%23-17%23-104%23-82%23-116%2314%232%23-71%2388%23114%232%2357%2348%2378%23-62%23-65%2372%2360%2339%23104%23-87%23-120%23116%23121%23-108%2327%23-24%23-47%23-93%2342%23-36%230%23-118%2334%23-65%2380%2343%23-40%23-80%23-90%23-68%2347%23122%237%23-119%2345%23-37%2377%23-102%2344%23-83%23-37%23-79%23-71%238%23-106%23-51%23"
           },
           {
-            "url": "https://indexes.nasdaqomx.com/Index/History/COMP?selectedDate=10%2F21%2F2026"
+            "url": "https://www.axios.com/newsletters/axios-closer-04c91b1c-87fa-4969-a2c2-5db1aab53e8b"
           },
           {
-            "url": "https://ir.nasdaq.com/stock-information/historic-stock-lookup"
+            "url": "https://www.invesco.com/us-rest/contentdetail?contentId=de0066b451c41410VgnVCM100000c2f1bf0aRCRD"
           },
           {
-            "url": "https://moinary.com/en/market-reference-etfs-weaken-as-nasdaq-listed-breadth-turns-negative-on-october-22"
+            "url": "https://www.jhinvestments.com/content/dam/jhi-investments/JHINV/public/ETFs/Documents/TradeDateHoldingFiles/Trade_Date_Holdings.pdf"
           },
           {
-            "url": "https://portfolio-terminal.com/markets/10-year-treasury-yield"
+            "url": "https://www.kiplinger.com/investing/stocks/dow-gains-529-points-on-3m-data-center-deal-stock-market-today"
           },
           {
-            "url": "https://portfolio-terminal.com/markets/vix/october-2026"
+            "url": "https://www.kiplinger.com/investing/stocks/stocks-to-buy/604680/best-investments-to-inflation-proof-your-portfolio"
           },
           {
-            "url": "https://uk.investing.com/rates-bonds/u.s.-10-year-bond-yield-historical-data"
+            "url": "https://www.sec.gov/Archives/edgar/data/51253/000005125324000006/iff-20231231.htm"
           },
           {
-            "url": "https://www.axios.com/2026/10/19/treasury-yields-hedge-funds-volatility"
+            "url": "https://www.sec.gov/Archives/edgar/data/51253/000005125325000013/iff-20241231.htm"
           },
           {
-            "url": "https://www.axios.com/newsletters/axios-am-045ff9f8-09fb-496d-9127-4068091fbea5"
+            "url": "https://ycharts.com/indicators/vix_volatility_index"
           },
           {
-            "url": "https://www.factiq.com/updates/us-10-year-treasury-yield-falls-to-4-96-on-oct-22-first-close-below-5-since-sep-1237"
-          },
-          {
-            "url": "https://www.federalreserve.gov/releases/H15/"
-          },
-          {
-            "url": "https://www.govinfo.gov/content/pkg/ECONI-2026-09/pdf/ECONI-2026-09.pdf"
-          },
-          {
-            "url": "https://www.govinfo.gov/content/pkg/ERP-2026/pdf/ERP-2026-table42.pdf"
-          },
-          {
-            "url": "https://www.ieconomy.io/en/us-markets-close-2026-10-22"
-          },
-          {
-            "url": "https://www.investing.com/indices/volatility-s-p-500-historical-data?cid=1096487"
-          },
-          {
-            "url": "https://www.kiplinger.com/investing/stocks/nasdaq-bounces-back-as-ai-trade-freshens-up-stock-market-today"
-          },
-          {
-            "url": "https://www.kiplinger.com/investing/what-happens-when-a-treasury-bill-matures"
-          },
-          {
-            "url": "https://www.marketbeat.com/stocks/NASDAQ/NDAQ/chart/"
-          },
-          {
-            "url": "https://www.reddit.com/r/HollowPointTrading/comments/1xc3iu7/point_blank_one_yield_curve_can_contain_different/"
-          },
-          {
-            "url": "https://www.reddit.com/r/HollowPointTrading/comments/1xctx1g/point_blank_a_green_dow_does_not_make_breadth_and/"
-          },
-          {
-            "url": "https://www.reddit.com/r/MortgageBrokerRates/comments/1xcujin/mortgage_market_recap_thursday_october_22_2026/"
-          },
-          {
-            "url": "https://www.reddit.com/r/TheMoat/comments/1xcin05/daily_charts_22_oct_2026/"
-          },
-          {
-            "url": "https://www.reddit.com/r/marketpredictors/comments/1xctmc6/stock_market_recap_for_thursday_october_22_2026/"
-          },
-          {
-            "url": "https://www.reddit.com/r/smallstreetbets/comments/1xctmna/stock_market_recap_for_thursday_october_22_2026/"
-          },
-          {
-            "url": "https://www.statmuse.com/money/ask/nasdaq-close-october-2026"
-          },
-          {
-            "url": "https://www.theatlantic.com/national-security/2026/10/trump-iran-war-strikes-after-midterms/689121/?utm_source=openai"
+            "url": "https://ycharts.com/indices/%5EVIX/level"
           }
         ]
       },
       {
         "agent": "News and Event Agent",
         "verdict": "APPROVE",
-        "confidence": 0.78,
-        "thesis": "Web search (SEC filings and Hasbro press releases) found Hasbro reported third-quarter 2026 results on October 20, 2026 showing strong performance driven by Magic: The Gathering, improved margins and reiterated/raised 2026 guidance; no verified material adverse event (earnings miss, negative guidance, regulatory enforcement action, trading halt, major litigation loss, or announced dilutive merger) was found that argues against initiating a new long position.",
+        "confidence": 0.82,
+        "thesis": "Web search (SEC filings and IFF press releases) shows no equity trading halt or verified material adverse event that would argue against opening a new long. Material items found: (1) IFF announced sale of its Food Ingredients business to CVC (transaction disclosed May 29, 2026) and will treat that business as discontinued operations; (2) IFF reported Q2 2026 results and set continuing-operations guidance (Q2 release Aug 4, 2026) and scheduled Q3 2026 results for November 3, 2026; (3) ongoing antitrust class actions and related settlements/investigations (multiple filings and settlements disclosed in 2025–2026 SEC filings and press releases), including a disclosed settlement activity (direct purchaser and other class actions) but no single verified liability that would clearly invalidate a ",
         "risks": [
-          "Ongoing shareholder litigation and derivative suits (multiple filings noted) that could produce future material expense or distraction if resolved adversely.",
-          "Concentration risk: a material portion of recent upside is driven by Magic: The Gathering — product or platform disruptions (e.g., sales platform issues reported in community channels) could dent near-term results.",
-          "Operational/execution risk around digital and supply-chain initiatives that could affect margins if problems emerge.",
-          "Macroeconomic / consumer discretionary demand risk that could reverse current positive momentum.",
-          "Potential but unobserved regulatory or trading-halt events could arise; no such events were identified in the search."
+          "Ongoing antitrust class actions and related investigations (U.S., Canada and other jurisdictions) — potential additional settlements or judgments could be material.",
+          "Divestiture risk: sale of Food Ingredients to CVC (announced May 29, 2026) changes IFF’s business mix and could create near-term execution or cash-allocation risk.",
+          "Earnings/announcement risk: Q3 2026 results scheduled for Nov 3, 2026 may cause short-term volatility around the position entry.",
+          "Regulatory/investigative risk: additional probes in jurisdictions (e.g., Singapore, India) disclosed in filings could increase uncertainty.",
+          "Debt/capital actions: removal of certain senior notes from NYSE (Sep 25, 2026) is a formality for redeemed notes but highlights recent capital actions."
         ],
         "sources": [
           {
-            "url": "https://corp.hasbro.com/news-releases/news-release-details/hasbro-announce-third-quarter-2026-earnings-october-20-2026"
+            "url": "https://app.midpage.ai/document/in-re-fragrance-end-user--12ef0581-748b-49a3-b113-efad85df9581"
           },
           {
-            "url": "https://corp.hasbro.com/news-releases/news-release-details/hasbro-reports-third-quarter-2026-financial-results"
+            "url": "https://cafanotices.com/Portals/0/Document%20Files/Fragrance/9.%20Proposed%20Long%20Form%20Notice.pdf?ver=NcpWr70kMzi2narpwxDe8g%3D%3D"
           },
           {
-            "url": "https://corp.hasbro.com/node/38146/pdf"
+            "url": "https://iff.gcs-web.com/"
           },
           {
-            "url": "https://corp.hasbro.com/press-releases/quarterly-financials?field_nir_news_category_target_id%5B0%5D=4226&field_nir_news_date_value%5Bmax%5D=&field_nir_news_date_value%5Bmin%5D=&items_per_page_toggle=1&mobile=1&page=1"
+            "url": "https://iff.gcs-web.com/news-releases/news-release-details/iff-release-third-quarter-2026-results-november-3-2026"
           },
           {
-            "url": "https://corp.hasbro.com/static-files/362c9404-47fb-4444-a397-eada685a5c15"
+            "url": "https://iff.gcs-web.com/news-releases/news-release-details/iff-reports-second-quarter-2026-results-announces-use-proceeds"
           },
           {
-            "url": "https://corp.hasbro.com/static-files/5bf5abf7-197e-439e-9035-f53eb30a4d0f"
+            "url": "https://ir.iff.com/node/40201"
           },
           {
-            "url": "https://corp.hasbro.com/static-files/89ffd70e-b0b0-4b4f-8973-815a36b65e79"
+            "url": "https://ir.iff.com/press-releases/?page=0"
           },
           {
-            "url": "https://corp.hasbro.com/static-files/ce4fa519-680f-4fcf-9b22-45484df53f23"
+            "url": "https://ir.iff.com/static-files/7e68d3c6-0ee6-4e52-8330-6524b861e43c"
           },
           {
-            "url": "https://en.wikipedia.org/wiki/Hasbro"
+            "url": "https://ir.iff.com/static-files/c4ee876e-061b-4adc-a6ff-9b8ae0b6a773"
           },
           {
-            "url": "https://hasbro.gcs-web.com/"
+            "url": "https://www.iff.com/about/locations/subsidiaries/"
           },
           {
-            "url": "https://hasbro.gcs-web.com/node/5816"
+            "url": "https://www.prnewswire.com/news-releases/if-you-purchased-in-the-united-states-consumer-products-or-household-goods-not-for-resale-which-contained-certain-fragrance-products-manufactured-or-sold-from-january-1-2018-through-december-31-2023-a-class-action-settlement-302783314.html"
           },
           {
-            "url": "https://hasbro.gcs-web.com/press-releases/investor-news"
+            "url": "https://www.sec.gov/Archives/edgar/data/51253/000005125326000010/iff2025annualreport-final.pdf"
           },
           {
-            "url": "https://investor.hasbro.com/node/38441/pdf"
+            "url": "https://www.sec.gov/Archives/edgar/data/51253/000005125326000015/0000051253-26-000015-index.htm"
           },
           {
-            "url": "https://investor.hasbro.com/press-releases"
+            "url": "https://www.sec.gov/Archives/edgar/data/51253/000005125326000028/iff-20260804.htm"
           },
           {
-            "url": "https://investor.hasbro.com/press-releases/investor-news"
+            "url": "https://www.sec.gov/Archives/edgar/data/51253/000005125326000030/iff-20260630.htm"
           },
           {
-            "url": "https://investor.hasbro.com/static-files/ab01324b-95e1-4bcd-b185-33459d215123"
+            "url": "https://www.sec.gov/Archives/edgar/data/51253/000119312526249963/d118591d8k.htm"
           },
           {
-            "url": "https://newsroom.hasbro.com/corporate-news?aee909b0_field_nir_news_category%5Bvalue%5D=4216"
-          },
-          {
-            "url": "https://newsroom.hasbro.com/node/36776/pdf"
-          },
-          {
-            "url": "https://newsroom.hasbro.com/static-files/6a547bab-57f2-4e21-9300-ca92b2c81198"
-          },
-          {
-            "url": "https://newsroom.hasbro.com/static-files/9c424664-f3c7-4b89-baa4-21b7b2755082"
-          },
-          {
-            "url": "https://www.govinfo.gov/content/pkg/FR-2026-09-18/html/2026-19121.htm"
-          },
-          {
-            "url": "https://www.nasdaqtrader.com/TraderNews.aspx?id=ETA2026-38"
-          },
-          {
-            "url": "https://www.reddit.com/r/CAPR_Stock/comments/1v96uvm/wednesday_halt/"
-          },
-          {
-            "url": "https://www.reddit.com/r/Daytrading/comments/1vehwyq/i_logged_every_nasdaq_halt_for_326_straight/"
-          },
-          {
-            "url": "https://www.reddit.com/r/EverHint/comments/1xb5ebz/global_business_news_october_20_2026_after_hours/"
-          },
-          {
-            "url": "https://www.reddit.com/r/TLRY/comments/1tcl83s/trading_halts/"
-          },
-          {
-            "url": "https://www.reddit.com/r/VampireStocks/comments/1p181x5/list_of_companies_that_are_still_halted_for/"
-          },
-          {
-            "url": "https://www.reddit.com/r/fidelityinvestments/comments/1ujq2yg/halt/"
-          },
-          {
-            "url": "https://www.reddit.com/r/magicTCG/comments/1rdl44v/hasbro_lawsuit_for_overprinting_cards_voluntarily/"
-          },
-          {
-            "url": "https://www.reddit.com/r/magicTCG/comments/1wv1ugk/wotc_an_update_on_the_zeta_set_sale_on_december_9/"
-          },
-          {
-            "url": "https://www.reddit.com/r/stocknear/comments/1odzsc9"
-          },
-          {
-            "url": "https://www.sec.gov/Archives/edgar/data/46080/000004608026000006/0000046080-26-000006-index-headers.html"
-          },
-          {
-            "url": "https://www.sec.gov/Archives/edgar/data/46080/000004608026000006/exhibit991q42025.htm"
-          },
-          {
-            "url": "https://www.sec.gov/Archives/edgar/data/46080/000004608026000011/has-20251228.htm"
-          },
-          {
-            "url": "https://www.sec.gov/Archives/edgar/data/46080/000004608026000016/0000046080-26-000016-index.htm"
-          },
-          {
-            "url": "https://www.sec.gov/Archives/edgar/data/46080/000004608026000026/has-20260329.htm"
-          },
-          {
-            "url": "https://www.sec.gov/Archives/edgar/data/46080/000004608026000029/exhibit991q12026.htm"
-          },
-          {
-            "url": "https://www.sec.gov/Archives/edgar/data/46080/000004608026000029/has-20260520.htm"
-          },
-          {
-            "url": "https://www.sec.gov/Archives/edgar/data/46080/000004608026000044/exhibit991q22026.htm"
-          },
-          {
-            "url": "https://www.sec.gov/Archives/edgar/data/46080/000004608026000050/has-20260628.htm"
-          },
-          {
-            "url": "https://www.sec.gov/Archives/edgar/data/46080/000119312526160426/d36474ddef14a.htm"
-          },
-          {
-            "url": "https://www.sec.gov/Archives/edgar/data/46080/000119312526160429/d31062dars.pdf"
+            "url": "https://www.youtube.com/watch?v=zai_JJQLrRw"
           }
         ]
       },
       {
         "agent": "Technical Context Agent",
         "verdict": "APPROVE",
-        "confidence": 0.85,
-        "thesis": "Metrics support a long: breakout_strength=2.7622 indicates a confirmed breakout, relative strength excess=29.3012% shows strong outperformance, breadth (market_breadth_pct=66.0 with breadth_gate PASS) signals broad participation, ATR=3.1684 quantifies current volatility. Stop_price=110.8532 is below the entry (117.46) and target_price=147.1906 is above the entry, so the stop/target configuration is consistent with a long breakout trade.",
+        "confidence": 0.82,
+        "thesis": "Breakout strength is 2.0387 with strong relative strength (+20.51%) and constructive breadth (66% / breadth_gate PASS). ATR is 1.6656, stop is 90.5138, and target is 110.6779. These readings support a long breakout posture with an explicit stop and target provided and no internal contradiction among the supplied fields.",
         "risks": [
-          "Breakouts can fail and reverse despite strong metrics.",
-          "Volatility (ATR=3.1684) could trigger the stop before continuation.",
-          "Stop placement may be susceptible to intraday noise or short-term market shocks.",
-          "This assessment uses only the supplied technical fields and does not account for fundamental or event risk."
+          "Volatility risk: ATR 1.6656 implies intra-session swings that could trigger the stop before a sustained move higher.",
+          "Breakout fade: elevated breakout strength can still fail or reverse, leading to rapid pullbacks.",
+          "Market breadth reversal: breadth at 66% is constructive but can deteriorate, removing broader market support.",
+          "Target uncertainty: reaching the target is not guaranteed; price may stall or consolidate before the target is met."
         ],
         "sources": []
       },
       {
         "agent": "Thesis Agent",
         "verdict": "APPROVE",
-        "confidence": 0.78,
-        "thesis": "Quant packet presents a coherent long breakout trade: breakout_strength and rs_excess_pct are positive, breadth_gate PASSED, tier is A, and authoritative entry_usd, stop_price, target_price and quantity are provided. News specialist confirms recent company results and no immediate material adverse event. Technical and scanner specialists validate the breakout metrics and stop/target configuration. The Market Regime specialist warns of a hostile, risk‑off session that increases short‑term execution and stop‑hit risk, but that single dissent does not invalidate the internal coherence of the setup.",
+        "confidence": 0.81,
+        "thesis": "Bull case: The quant packet shows a coherent long breakout setup with an authoritative entry at 94.18, stop at 90.5138, target at 110.6779 and quantity 3.0. Key constructive signals in the packet and specialist findings are a positive breakout_strength (2.0387), strong relative strength (RS_excess_pct +20.5087), and constructive market breadth (breadth_gate PASS; market_breadth_pct 66%), which together support attempting a momentum breakout using the supplied entry/stop/target parameters.\n\nBear case: Broader market weakness and elevated volatility can kill or reverse a breakout — specialists flagged a market risk-off backdrop (VIX ~19) and tech-led weakness that may broaden; sector leadership can shift away from materials. Instrument-level risks include ATR-driven intra-session swings (ATR",
         "risks": [
-          "Market/regime risk-off: recent session showed broad participation weakness and higher volatility (VIX up), which can suppress momentum breakouts and increase stop-hit probability (Market Regime Agent).",
-          "Stop proximity to intraday noise: stop_price sits only modestly below entry relative to the reported ATR (ATR=3.1684), so normal volatility could trigger the stop (Scanner and Technical Context Agents).",
-          "Execution and liquidity risk: non-zero spread_bps and potentially wider spreads on volatile days can cause execution slippage versus the authoritative entry; small absolute quantity may amplify commission/rounding effects (Scanner and Market Regime Agents).",
-          "Company-specific operational and legal risks: ongoing shareholder litigation/derivative suits and concentration of recent upside in a single product (Magic: The Gathering) could produce negative surprises that reverse momentum (News and Event Agent).",
-          "Breakout failure risk: even with strong technical metrics, breakouts can fail and reverse — quantitative signals could flip (Technical Context Agent)."
+          "Overnight or gap risk: actual fill can differ from stop_price if market gaps through the stop before execution.",
+          "Execution and slippage risk: spread and liquidity may cause fills away from entry/stop/target despite their presence in the packet.",
+          "Operational/parameter context missing: packet lacks explicit trade horizon/timeout and execution instructions (market vs limit), which can affect outcome.",
+          "Overall market risk-off and elevated volatility (VIX ~19) could snuff a breakout or produce a rapid reversal.",
+          "Leadership was uneven; if risk sentiment broadens the decline, sector-strong names can gap lower and lose momentum."
         ],
         "sources": []
       },
       {
         "agent": "Claude CRO",
-        "verdict": "NO_TRADE",
-        "confidence": 0.55,
-        "thesis": "I found no verified, decisive adverse event for HAS, but two evidence gaps block approval. First, the packet entry of 117.46 does not match the sourced post-earnings price of about 104 premarket on Oct 20. I could not confirm Oct 20-22 closes, so I can't tell whether the stock extended about 12% further or the price data is stale. Second, the Market Regime Agent's REJECT cites an Oct 22 risk-off session: S&P about -1.2%, Nasdaq about -2.6%, negative breadth. That conflicts with the quant breadth_gate PASS at 66%, and the conflict is unresolved. Part of the Q3 beat was non-recurring, including about $55M of tariff refunds. Growth is concentrated in Magic: The Gathering. The News Agent's \"no adverse event\" view missed a pending securities class action, a derivative suit, an unresolved data b",
+        "verdict": "REJECT",
+        "confidence": 0.65,
+        "thesis": "The quant packet is internally coherent and the specialists all approve. Even so, I found verified reasons against opening this long now. (1) Q3 earnings are scheduled for Nov 3, 2026. One source gives Nov 4, but both dates fall inside any plausible holding window. The packet has no timeout or earnings-exit rule. The last earnings reaction was a roughly 9% move, which could gap through the stop, so the stop does not cap the loss. (2) The entry of 94.18 is at or above the MarketBeat consensus targets of about $93.22 to $94.28. The highest target I found is $108, below the packet target of 110.68. The analyst split is mixed, with several Hold ratings and a downgrade to Hold. (3) The stock is extended well above its 50-day and 200-day moving averages after a sharp run to a 1-year high. The ta",
         "risks": [
-          "Packet entry price (117.46) is unreconciled with sourced post-earnings pricing (~104 premarket on Oct 20); possible stale data or a chase after a gap",
-          "Unresolved conflict between the Market Regime REJECT (risk-off, negative breadth, Nasdaq -2.6%) and the quant breadth_gate PASS",
-          "Q3 beat includes about $55M of non-recurring tariff refunds, so the headline overstates the run-rate",
-          "Growth is concentrated in Magic: The Gathering; digital and licensed gaming grew only 3%",
-          "Pending securities class action and shareholder derivative suit; the company cannot estimate a range of possible loss"
+          "Q3 earnings on Nov 3 or 4, 2026 fall inside the likely holding window, and the packet has no earnings-exit or timeout instruction",
+          "The prior earnings reaction was about a 9% move, which could gap through the stop",
+          "Entry is at or above the consensus analyst price target of about $93 to $94",
+          "The stock is extended well above its 50-day and 200-day moving averages after a run to a 1-year high",
+          "Unresolved antitrust exposure: India CCI probe, class-action settlements, and Singapore and India employment investigations"
         ],
         "sources": [
           {
-            "url": "https://finance.yahoo.com/quote/HAS/earnings/HAS-Q3-2026-earnings_call-711035.html"
+            "url": "https://basenotes.com/articles/iff-settles-fragrance-antitrust-suit-for-11-million-as-case-continues-against-givaudan-dsm-firmenich-and-others.20914/"
           },
           {
-            "url": "https://investor.hasbro.com/news-releases/news-release-details/hasbro-reports-third-quarter-2026-financial-results"
+            "url": "https://robinhood.com/us/en/stocks/IFF/"
           },
           {
-            "url": "https://rhodeislandcurrent.com/2026/04/20/add-hasbro-to-the-growing-list-of-defendants-facing-a-class-action-lawsuit-over-a-data-breach/"
+            "url": "https://stockanalysis.com/stocks/iff/"
           },
           {
-            "url": "https://rhodeislandcurrent.com/2026/10/08/hasbro-data-breach-exposed-personal-information-of-600-ri-residents/"
+            "url": "https://stockstory.org/us/stocks/nyse/iff"
           },
           {
-            "url": "https://seekingalpha.com/article/4955537-hasbro-inc-has-q3-2026-earnings-call-transcript"
+            "url": "https://www.business-standard.com/industry/news/cci-probes-fragrance-giants-givaudan-firmenich-iff-over-price-collusion-126082501111_1.html"
           },
           {
-            "url": "https://straussborrelli.com/2026/10/13/hasbro-inc-warn-act-investigation/"
+            "url": "https://www.cnn.com/markets/stocks/IFF"
           },
           {
-            "url": "https://www.claimdepot.com/data-breach/hasbro-2026"
+            "url": "https://www.marketbeat.com/instant-alerts/analyst-international-flavors-fragrances-nyse-iff-price-target-raised-to-10800-2026-10-22/"
           },
           {
-            "url": "https://www.claimdepot.com/investigations/hasbro-data-breach-2026"
+            "url": "https://www.marketbeat.com/instant-alerts/analyst-international-flavors-fragrances-nyse-iff-stock-moved-up-to-strong-buy-by-zacks-research-2026-10-22/"
           },
           {
-            "url": "https://www.investing.com/news/transcripts/earnings-call-transcript-hasbro-tops-q3-2026-estimates-and-lifts-outlook-93CH-4960320"
+            "url": "https://www.marketbeat.com/instant-alerts/estimates-iff-stock-gets-increased-eps-forecast-from-zacks-research-2026-10-23/"
           },
           {
-            "url": "https://www.marketbeat.com/instant-alerts/transcript-hasbro-q3-earnings-call-highlights-2026-10-20/"
+            "url": "https://www.marketbeat.com/instant-alerts/price-international-flavors-fragrances-nyse-iff-sets-new-1-year-high-whats-next-2026-10-20/"
           },
           {
-            "url": "https://www.prnewswire.com/news-releases/hasbro-investigation-initiated-kahn-swick--foti-llc-investigates-the-officers-and-directors-of-hasbro-inc---has-302665678.html"
+            "url": "https://www.marketbeat.com/stocks/NYSE/IFF/?Vote=1"
           },
           {
-            "url": "https://www.sec.gov/Archives/edgar/data/0000046080/000004608026000016/exhibit991-apr232026.htm"
+            "url": "https://www.personalcaremagazine.com/story/50607/us-government-drops-fragrance-cartel-case-symrise"
           },
           {
-            "url": "https://www.sec.gov/Archives/edgar/data/0000046080/000004608026000026/has-20260329.htm"
+            "url": "https://www.sec.gov/Archives/edgar/data/0000051253/000005125326000017/iff-20260331.htm"
           },
           {
-            "url": "https://www.sec.gov/Archives/edgar/data/0000046080/000004608026000044/exhibit991q22026.htm"
+            "url": "https://www.sec.gov/Archives/edgar/data/0000051253/000005125326000030/iff-20260630.htm"
           },
           {
-            "url": "https://www.sec.gov/Archives/edgar/data/0000046080/000004608026000050/has-20260628.htm"
+            "url": "https://www.sec.gov/Archives/edgar/data/51253/000005125325000042/iff-20250630.htm"
           },
           {
-            "url": "https://www.sec.gov/Archives/edgar/data/0000046080/000004608026000058/exhibit991q32026.htm"
+            "url": "https://www.sec.gov/Archives/edgar/data/51253/000005125325000049/iff-20250930.htm"
           },
           {
-            "url": "https://www.sec.gov/Archives/edgar/data/46080/000004608026000006/exhibit991q42025.htm"
+            "url": "https://www.sec.gov/Archives/edgar/data/51253/000005125326000006/iff-20251231.htm"
           },
           {
-            "url": "https://www.sec.gov/Archives/edgar/data/46080/000004608026000013/has-20260401.htm"
+            "url": "https://www.tradingview.com/news/reuters.com,2026:newsml_L4N44M0KR:0-india-investigates-fragrance-giants-over-price-collusion-document-shows/"
           },
           {
-            "url": "https://www.youtube.com/watch?v=IjZ0suaqxC0"
+            "url": "https://x.com/abaantitrust/status/2092315562583978477"
           }
         ]
       }
