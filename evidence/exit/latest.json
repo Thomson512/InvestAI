@@ -1,8 +1,10 @@
 {
-  "outcome": "DRIFT broker_only=- evidence_only=APA,BBY,CME,EXPD,HPQ,MOS,NTAP,NVDA,T",
-  "generated_at": "2026-10-27T17:02:21Z",
+  "outcome": "DRIFT broker_only=HAS evidence_only=APA,BBY,CME,EXPD,HPQ,MOS,NTAP,NVDA,T",
+  "generated_at": "2026-10-27T17:12:41Z",
   "pnl_written": true,
-  "extra_summary": [],
+  "extra_summary": [
+    "AUTO-STOP: STOP_PLACED HAS id=57150115935"
+  ],
   "session_date": "2026-10-27",
   "close_allowed": true,
   "close_reason": "OK",
@@ -16,7 +18,9 @@
       "PSX",
       "XOM"
     ],
-    "broker_only": [],
+    "broker_only": [
+      "HAS"
+    ],
     "evidence_only": [
       "APA",
       "BBY",
@@ -32,11 +36,11 @@
   "daily_pnl": {
     "trade_date": "2026-10-27",
     "opening_equity": 124019.5,
-    "current_equity": 123358.69,
+    "current_equity": 123331.96,
     "peak_equity": 124019.5
   },
   "heartbeat": {
     "loop_name": "exit-orchestrator",
-    "last_seen": "2026-10-27T17:02:17Z"
+    "last_seen": "2026-10-27T17:12:36Z"
   }
 }
