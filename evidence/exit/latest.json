@@ -1,10 +1,8 @@
 {
-  "outcome": "DRIFT broker_only=HAS evidence_only=APA,BBY,CME,EXPD,HPQ,MOS,NTAP,NVDA,T",
-  "generated_at": "2026-10-27T17:12:41Z",
+  "outcome": "DRIFT broker_only=- evidence_only=APA,BBY,CME,EXPD,HPQ,MOS,NTAP,NVDA,T",
+  "generated_at": "2026-10-27T17:22:23Z",
   "pnl_written": true,
-  "extra_summary": [
-    "AUTO-STOP: STOP_PLACED HAS id=57150115935"
-  ],
+  "extra_summary": [],
   "session_date": "2026-10-27",
   "close_allowed": true,
   "close_reason": "OK",
@@ -15,12 +13,11 @@
       "COP",
       "CVX",
       "DHR",
+      "HAS",
       "PSX",
       "XOM"
     ],
-    "broker_only": [
-      "HAS"
-    ],
+    "broker_only": [],
     "evidence_only": [
       "APA",
       "BBY",
@@ -36,11 +33,11 @@
   "daily_pnl": {
     "trade_date": "2026-10-27",
     "opening_equity": 124019.5,
-    "current_equity": 123331.96,
+    "current_equity": 123344.43,
     "peak_equity": 124019.5
   },
   "heartbeat": {
     "loop_name": "exit-orchestrator",
-    "last_seen": "2026-10-27T17:12:36Z"
+    "last_seen": "2026-10-27T17:22:19Z"
   }
 }
