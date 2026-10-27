@@ -11604,6 +11604,332 @@
           ]
         }
       ]
+    },
+    "2026-10-26:HAS:673ad8b9e4541815f6d8141f4b89136ba864d5cb82aa2ad4b7c43650484a79c7": {
+      "verdict": "APPROVE",
+      "reason": "6/6 approved with Claude CRO and confidence >= 0.65",
+      "symbol": "HAS",
+      "asof_session": "2026-10-26",
+      "param_hash": "673ad8b9e4541815f6d8141f4b89136ba864d5cb82aa2ad4b7c43650484a79c7",
+      "generated_at": "2026-10-27T17:02:00Z",
+      "findings": [
+        {
+          "agent": "Scanner Agent",
+          "verdict": "APPROVE",
+          "confidence": 0.85,
+          "thesis": "The packet is internally coherent: authoritative fields (entry_usd 118.64, stop_price 111.885, target_price 149.0375, quantity 3.0) are present and consistent with the provided ATR (stop ≈2.23 ATR) and implied reward:risk (~4.5). Breadth gate is PASS, relative strength excess is positive (≈19.7%), and other metadata (score, breakout_strength, spread_bps) contain no internal contradictions.",
+          "risks": [
+            "Stop distance is only ≈2.23 ATR, so normal intraday/overnight volatility could trigger the stop.",
+            "Breakout_strength is modest (0.1784) and score is mid-range, indicating medium conviction.",
+            "Quantity is small (3 shares), which may reflect discrete sizing or rounding and can affect execution/position management.",
+            "Packet does not include event-specific items (earnings, news) — these idiosyncratic risks are not addressed in the packet.",
+            "Spread_bps, while small, still represents execution cost that can impact a small position sizing"
+          ],
+          "sources": []
+        },
+        {
+          "agent": "Market Regime Agent",
+          "verdict": "APPROVE",
+          "confidence": 0.78,
+          "thesis": "Market backdrop on Oct 26–27, 2026 is constructive for a momentum breakout in HAS: broad U.S. indices were higher with the Nasdaq leading, the VIX eased (sub-20), S&P sector tape shows Consumer Discretionary in positive territory, and HAS has a clear company catalyst (Q3 results reported Oct 20 with a strong post-earnings lift). Quant packet breadth_gate is PASS, market_breadth_pct is 64.8 and breakout_strength is positive (0.1784) with strong relative strength (RS excess ~19.7%), which together support initiating a momentum entry per the supplied trade parameters.",
+          "risks": [
+            "Market leadership remains narrow (AI/mega-cap strength) — rotation away from discretionary could reverse momentum quickly.",
+            "Macro risks — rising Treasury yields or a shift to risk-off around the upcoming Fed calendar could stall breakouts.",
+            "Post-earnings fade risk for HAS — strong initial reaction can consolidate or give back gains.",
+            "Commodity/FX shocks or sector-specific negative headlines (licensing/film/franchise delays) could disproportionately affect Hasbro shares."
+          ],
+          "sources": [
+            {
+              "url": "https://apnews.com/article/088e6d5a0e6df20d3d8614c7f7f82baa"
+            },
+            {
+              "url": "https://apnews.com/article/693ac6c4e67da0332045e66804780be7"
+            },
+            {
+              "url": "https://apnews.com/article/7b47ef3b037bfba4e34f685329b9b963"
+            },
+            {
+              "url": "https://apnews.com/article/be3a56f58a77c5be863f0289d280be92"
+            },
+            {
+              "url": "https://apnews.com/article/e11a2240fc3283c4507d44b9833f30a2"
+            },
+            {
+              "url": "https://buymewhiskey.com/stock-analysis/has"
+            },
+            {
+              "url": "https://chartexchange.com/symbol/nasdaq-has/historical"
+            },
+            {
+              "url": "https://chartrow.com/sp500/sector-performance"
+            },
+            {
+              "url": "https://closelook.net/indices/stock/has/price-history"
+            },
+            {
+              "url": "https://corp.hasbro.com/news-releases/news-release-details/hasbro-announce-third-quarter-2026-earnings-october-20-2026"
+            },
+            {
+              "url": "https://eoddata.com/stockquote/NASDAQ/HAS.htm"
+            },
+            {
+              "url": "https://es.finance.yahoo.com/quote/%5EVIX/history/"
+            },
+            {
+              "url": "https://finance.yahoo.com/quote/HAS/history/"
+            },
+            {
+              "url": "https://investor.hasbro.com/news-releases/news-release-details/hasbro-reports-third-quarter-2026-financial-results"
+            },
+            {
+              "url": "https://investor.hasbro.com/node/38441/pdf"
+            },
+            {
+              "url": "https://metacap.si/markets/sectors/"
+            },
+            {
+              "url": "https://portfolio-terminal.com/markets/stock-market-close"
+            },
+            {
+              "url": "https://stockanalysis.com/stocks/has/"
+            },
+            {
+              "url": "https://stockanalysis.com/stocks/has/history/"
+            },
+            {
+              "url": "https://stockanalysis.com/stocks/has/transcripts/711035-q3-2026/"
+            },
+            {
+              "url": "https://stockcharted.com/has"
+            },
+            {
+              "url": "https://stocks.pkladog.com/reports/2026-10-26/"
+            },
+            {
+              "url": "https://stockscan.io/stocks/HAS/price-history"
+            },
+            {
+              "url": "https://strongtoweradvisors.net/market-commentary/2026-10-26"
+            },
+            {
+              "url": "https://www.axios.com/newsletters/axios-closer-259a2740-4cff-446c-ba8a-5a3e9a0648fe"
+            },
+            {
+              "url": "https://www.axios.com/newsletters/axios-closer-d2a4601b-b932-4f81-bd20-b97f78a7ebb4"
+            },
+            {
+              "url": "https://www.cboe.com/tradable-products/vix"
+            },
+            {
+              "url": "https://www.centrien.com/markethawk-market-close-2026-10-26/"
+            },
+            {
+              "url": "https://www.financecharts.com/stocks/HAS/summary/price"
+            },
+            {
+              "url": "https://www.kiplinger.com/investing/analysts-top-sandp-500-stocks-to-buy-now"
+            },
+            {
+              "url": "https://www.kiplinger.com/investing/economy/this-weeks-economic-calendar"
+            },
+            {
+              "url": "https://www.kiplinger.com/investing/stocks/17494/next-week-earnings-calendar-stocks"
+            },
+            {
+              "url": "https://www.kiplinger.com/investing/stocks/dow-drops-652-points-as-oil-treasury-yields-rise-stock-market-today"
+            },
+            {
+              "url": "https://www.pers.ms.gov/sites/default/files/Content/Board_Materials/2026/August/Materials/Investment%20Committee%20Meeting_August%202026.pdf"
+            },
+            {
+              "url": "https://www.seattlepi.com/business/how-major-us-stock-indexes-fared-monday-10-26-2026-a22495378"
+            },
+            {
+              "url": "https://www.thetrading.tools/market-breadth"
+            },
+            {
+              "url": "https://www.tomshardware.com/tech-industry/artificial-intelligence/big-tech-is-cashing-in-on-ai-while-the-rest-of-corporate-america-sees-no-financial-returns-report-outlines-how-rising-token-costs-threaten-to-squeeze-corporate-profit-margins"
+            },
+            {
+              "url": "https://www.wellingtonshields.com/wp-content/uploads/2026/01/1-28-2026-Background-Noise.pdf"
+            }
+          ]
+        },
+        {
+          "agent": "News and Event Agent",
+          "verdict": "APPROVE",
+          "confidence": 0.8,
+          "thesis": "Web search (most recent: Hasbro Q3 2026 earnings presentation dated October 20, 2026) shows strong reported results and reiterated outlook; no trading halts, no announced mergers or divestitures, and no regulatory enforcement action that would materially alter a new long. Material, disclosed issues found: (1) ongoing shareholder derivative litigation alleging overproduction of Magic: The Gathering (filed Jan 2026) and (2) a 2026 unauthorized network access / data-breach incident disclosed in SEC filings (reported Apr–Jun 2026) with an estimated ~$25M revenue impact and ~$11M incremental costs disclosed by the company. Those matters are active risks but—based on public disclosures and the October 20, 2026 results/guidance—they do not presently constitute a verified material event that argue",
+          "risks": [
+            "Shareholder derivative/class action alleging Hasbro (and certain executives) mismanaged Wizards of the Coast / overprinted Magic: The Gathering sets (complaint filed January 2026) — potential reputational, governance and damages risk if plaintiffs prevail.",
+            "Class-action lawsuits and investigations related to the March–April 2026 unauthorized network access / data breach (disclosed in SEC filings Apr–Jun 2026); company disclosed containment and estimated direct impacts (~$11M costs, ~$25M revenue impact) but litigation or additional remediation costs could increase exposure.",
+            "Concentration risk: Hasbro’s results show increasing concentration in Wizards of the Coast / Magic revenue, which amplifies legal, product, or demand risks tied to that franchise (stated in company presentations).",
+            "Operational/regulatory risks disclosed in recent filings (e.g., tariffs, supply chain, and evolving AI/children’s privacy regulations) could affect future performance but are not new, discrete events.",
+            "No evidence of trading halts, material regulatory enforcement (e.g., SEC penalty/consent order), announced M&A that would impede a new long as of the latest public filings/presentations."
+          ],
+          "sources": [
+            {
+              "url": "https://business.otrecord.news/company/has/"
+            },
+            {
+              "url": "https://corp.hasbro.com/static-files/89ffd70e-b0b0-4b4f-8973-815a36b65e79"
+            },
+            {
+              "url": "https://en.wikipedia.org/wiki/Hasbro"
+            },
+            {
+              "url": "https://finance.yahoo.com/news/lawsuit-accuses-hasbro-overprinting-devaluing-202354141.html"
+            },
+            {
+              "url": "https://hasbro.gcs-web.com/events"
+            },
+            {
+              "url": "https://investor.hasbro.com/news-releases/news-release-details/hasbro-reports-second-quarter-2026-financial-results"
+            },
+            {
+              "url": "https://investor.hasbro.com/node/38146/pdf"
+            },
+            {
+              "url": "https://investor.hasbro.com/static-files/a7941780-84de-4269-82dc-1c58d78a5d87"
+            },
+            {
+              "url": "https://investor.hasbro.com/static-files/bba85223-1f13-46d1-b44d-59e4f882bced"
+            },
+            {
+              "url": "https://magenta-khaki-hbsa.squarespace.com/databreaches/hasbro-data-breach-investigation"
+            },
+            {
+              "url": "https://newsroom.hasbro.com/node/36701/pdf"
+            },
+            {
+              "url": "https://newsroom.hasbro.com/static-files/9c424664-f3c7-4b89-baa4-21b7b2755082"
+            },
+            {
+              "url": "https://openclassactions.com/lawsuits/data-breaches/hasbro-data-breach-class-action-lawsuit.php"
+            },
+            {
+              "url": "https://pbn.com/class-action-lawsuit-filed-against-hasbro-connected-to-data-breach/"
+            },
+            {
+              "url": "https://rhodeislandcurrent.com/2026/01/30/shareholders-sue-hasbro-over-allegedly-printing-too-many-magic-the-gathering-cards/"
+            },
+            {
+              "url": "https://rhodeislandcurrent.com/2026/04/20/add-hasbro-to-the-growing-list-of-defendants-facing-a-class-action-lawsuit-over-a-data-breach/"
+            },
+            {
+              "url": "https://www.pcgamer.com/games/card-games/hasbro-is-being-sued-by-its-own-shareholders-for-printing-so-many-damn-magic-cards-destroying-the-long-term-value-of-the-brand/"
+            },
+            {
+              "url": "https://www.reddit.com/r/IndoGamer/comments/1qq53la/hasbro_is_being_sued_by_its_own_shareholders_for/"
+            },
+            {
+              "url": "https://www.reddit.com/r/magicTCG/comments/1qkciiz/hasbro_ceo_cocks_and_execs_sued_for_alleged/"
+            },
+            {
+              "url": "https://www.sec.gov/Archives/edgar/data/46080/000004608026000050/has-20260628.htm"
+            },
+            {
+              "url": "https://www.thepopverse.com/gaming-magic-the-gathering-hasbro-lawsuit-overprinting"
+            },
+            {
+              "url": "https://www.youtube.com/watch?v=IjZ0suaqxC0"
+            }
+          ]
+        },
+        {
+          "agent": "Technical Context Agent",
+          "verdict": "APPROVE",
+          "confidence": 0.85,
+          "thesis": "Long breakout profile is internally consistent: breakout_strength 0.1784 (positive), strong relative strength (rs_excess_pct 19.6954), and breadth is supportive (market_breadth_pct 64.8 with breadth_gate PASS). ATR (14) is 3.0325 indicating the current volatility regime is measurable and factored. Provided risk management parameters are present and coherent for a long: stop_price 111.885 is below entry (118.64) and target_price 149.0375 is above entry, aligning with a long breakout trade plan.",
+          "risks": [
+            "False breakout leading to stop hit",
+            "Volatility can produce whipsaws around the stop despite ATR being provided",
+            "Market-wide deterioration could overcome current breadth support",
+            "Time required to reach target may be longer than expected"
+          ],
+          "sources": []
+        },
+        {
+          "agent": "Thesis Agent",
+          "verdict": "APPROVE",
+          "confidence": 0.82,
+          "thesis": "Bull case: The quant packet presents a coherent momentum breakout trade: authoritative parameters are entry_usd 118.64, stop_price 111.885, target_price 149.0375 and quantity 3.0. Breadth_gate is PASS, market_breadth_pct is 64.8, rs_excess_pct is strongly positive (~19.7%), and breakout_strength is positive (0.1784). Together these signals and the company’s recent post-earnings lift support initiating a long with a favorable reward:risk profile per the supplied parameters.\n\nBear case: The breakout conviction is moderate (modest breakout_strength and mid-range score). The stop is relatively tight (~2.23 ATR), so routine intraday/overnight volatility or a false breakout can trigger the stop before a sustained move. Macro/regime risk (rising yields or rotation away from discretionary/mega-cap",
+          "risks": [
+            "Stop is only ≈2.23 ATR so normal intraday/overnight volatility can trigger the stop (false-breakout risk).",
+            "Breakout_strength is modest and overall score is mid-range, giving only medium conviction for a sustained move to target.",
+            "Macro/market-regime risks (rising yields, rotation away from discretionary) could stall or reverse the breakout despite current breadth support.",
+            "Post-earnings fade or company-specific shocks (lawsuit outcomes, increased remediation costs from the data breach, franchise/product setbacks) could materially reverse gains.",
+            "Small discrete quantity (3 shares) may reflect sizing/rounding and can complicate execution/position management decisions."
+          ],
+          "sources": []
+        },
+        {
+          "agent": "Claude CRO",
+          "verdict": "APPROVE",
+          "confidence": 0.66,
+          "thesis": "I found no verified disqualifying event. There is no trading halt, no regulatory enforcement action and no pending M&A. All five specialists approve, and none contradicts another. Q3 revenue grew 15%, guidance was raised, the buyback authorization was doubled, breadth gate is PASS, and relative strength is strongly positive. The approval is marginal, just above the 0.65 floor, because of several caution flags. (1) The entry follows a post-earnings extension: an 18% weekly gain and a new 52-week high. (2) The price is at or above most analyst targets, and the packet target exceeds every target found. I did not recompute it. (3) About $48M of tariff refunds helped Q3 adjusted profit and may not recur. (4) Wizards of the Coast has a leadership change effective Nov 2, and Magic revenue is conc",
+          "risks": [
+            "Post-earnings fade after an 18% weekly run to a 52-week high",
+            "Entry is near or above most analyst price targets, and the packet target exceeds all targets found",
+            "Q3 adjusted profit was helped by about $48M of tariff refunds that may not recur, and the share of the guidance lift that comes from them is unknown",
+            "Wizards of the Coast leadership transition (effective Nov 2) amid Magic revenue concentration",
+            "Unresolved Magic overprinting derivative suit and data-breach class actions"
+          ],
+          "sources": [
+            {
+              "url": "https://finance.yahoo.com/markets/stocks/articles/hasbro-nasdaq-reports-strong-q3-104456827.html"
+            },
+            {
+              "url": "https://finance.yahoo.com/markets/stocks/articles/hasbro-stock-gains-focus-earnings-032350309.html"
+            },
+            {
+              "url": "https://finance.yahoo.com/quote/HAS/"
+            },
+            {
+              "url": "https://newsable.asianetnews.com/markets/stocktwits-retail-therapy-defensive-bets-hold-firm-as-hasbro-kohl-s-boston-beer-lead-weekly-consumer-gains-articleshow-2d2x6gv"
+            },
+            {
+              "url": "https://robinhood.com/us/en/stocks/HAS/"
+            },
+            {
+              "url": "https://stocktitan.net/news/HAS/hasbro-announces-new-original-you-tube-series-play-doh-with-tio0hpjnlanx.html"
+            },
+            {
+              "url": "https://stocktitan.net/news/HAS/hasbro-names-dan-ayoub-president-of-wizards-of-the-coast-hasbro-omwj2wr98qbb.html"
+            },
+            {
+              "url": "https://stocktwits.com/symbol/HAS"
+            },
+            {
+              "url": "https://www.benzinga.com/news/26/10/62466842/hasbro-q3-2026-earnings-call-transcript"
+            },
+            {
+              "url": "https://www.fool.com/earnings/call-transcripts/2026/10/20/hasbro-has-q3-2026-earnings-call-transcript/"
+            },
+            {
+              "url": "https://www.investing.com/news/transcripts/earnings-call-transcript-hasbro-tops-q3-2026-estimates-and-lifts-outlook-93CH-4960320"
+            },
+            {
+              "url": "https://www.marketbeat.com/instant-alerts/price-hasbro-nasdaq-has-reaches-new-52-week-high-heres-why-2026-10-26/"
+            },
+            {
+              "url": "https://www.marketbeat.com/stocks/NASDAQ/HAS"
+            },
+            {
+              "url": "https://www.sec.gov/Archives/edgar/data/0000046080/000004608026000016/exhibit991-apr232026.htm"
+            },
+            {
+              "url": "https://www.sec.gov/Archives/edgar/data/0000046080/000004608026000029/exhibit991q12026.htm"
+            },
+            {
+              "url": "https://www.sec.gov/Archives/edgar/data/0000046080/000004608026000058/exhibit991q32026.htm"
+            },
+            {
+              "url": "https://www.sec.gov/Archives/edgar/data/46080/000004608026000006/exhibit991q42025.htm"
+            }
+          ]
+        }
+      ]
     }
   }
 }
