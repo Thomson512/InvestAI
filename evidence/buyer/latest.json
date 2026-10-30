@@ -1,7 +1,272 @@
 {
-  "outcome": "GLOBAL_BLOCKER:max_open_positions",
+  "outcome": "ORDER_SUBMITTED:57300509651",
   "session_date": "2026-10-30",
-  "generated_at": "2026-10-30T18:20:24Z",
+  "generated_at": "2026-10-30T18:32:01Z",
   "official": true,
-  "extra_summary": []
+  "extra_summary": [],
+  "plan": {
+    "symbol": "MO",
+    "quantity": 4.0,
+    "entry_usd": 78.44,
+    "stop_price": 73.6083,
+    "target_price": 100.18265,
+    "fx_usdczk": 21.814,
+    "spread_bps": 3.8253108065031736
+  },
+  "fence_key": "2026-10-30:MO:673ad8b9e4541815f6d8141f4b89136ba864d5cb82aa2ad4b7c43650484a79c7",
+  "stop_order_id": "57300509666",
+  "param_hash": "673ad8b9e4541815f6d8141f4b89136ba864d5cb82aa2ad4b7c43650484a79c7",
+  "council": {
+    "verdict": "APPROVE",
+    "reason": "6/6 approved with Claude CRO and confidence >= 0.65",
+    "cached": false,
+    "findings": [
+      {
+        "agent": "Scanner Agent",
+        "verdict": "APPROVE",
+        "confidence": 0.87,
+        "thesis": "The packet is internally coherent for a long setup: authoritative entry (78.44), stop (73.6083), target (100.18265) and quantity (4.0) are present and mutually consistent (stop < entry < target). Breadth gate = PASS, positive rs_excess_pct and a positive breakout_strength support the bullish signal; ATR is supplied and spread_bps is given. No fields required by the authority statement are missing or contradictory.",
+        "risks": [
+          "Overnight or intraday gapping could cause execution through the stop before it can be filled",
+          "Actual execution costs or temporary liquidity shortfalls may exceed the quoted spread_bps",
+          "Model inputs or market regime may change after the as-of session (2026-10-29), invalidating the setup",
+          "Symbol-specific corporate actions or news could cause abrupt moves outside the planned risk parameters"
+        ],
+        "sources": []
+      },
+      {
+        "agent": "Market Regime Agent",
+        "verdict": "APPROVE",
+        "confidence": 0.72,
+        "thesis": "Quant packet shows a strong internal setup (breakout_strength 0.8544, breadth_gate PASS, market_breadth_pct 72%) and the US tape on Oct 29, 2026 displayed constructive underlying breadth (equal-weight/Russell outperformance) with VIX at moderate levels — a regime that supports momentum breakouts in non-cyclical names. Although headline S&P was slightly down on Oct 29, the broad advance/decline profile and low-to-moderate volatility environment are supportive for a directional momentum entry on MO given the supplied breakout metrics and RS strength.",
+        "risks": [
+          "Headline or sector-specific adverse news (regulatory, litigation, or tobacco-specific developments) could quickly reverse momentum.",
+          "Earnings or company-specific announcements for MO that differ from expectations would invalidate the momentum case.",
+          "Macro or risk-off shock (sharp spike in VIX or equity sell-off, or a sudden move in rates) could degrade breadth and stop out the trade.",
+          "Large-cap tech-driven volatility can flip index behavior despite current breadth — monitoring intraday breadth is required."
+        ],
+        "sources": [
+          {
+            "url": "https://apnews.com/article/16c266731fdf64178f38070af2b42497"
+          },
+          {
+            "url": "https://apnews.com/article/2c26b0b1bbc3bfab9f3f4b902172f458"
+          },
+          {
+            "url": "https://apnews.com/article/be3a56f58a77c5be863f0289d280be92"
+          },
+          {
+            "url": "https://aveceasar.github.io/vix/"
+          },
+          {
+            "url": "https://cdn.cboe.com/resources/options/Cboe2026OPTIONSCalendar.pdf"
+          },
+          {
+            "url": "https://dd9ztr76gkqyi.cloudfront.net/indicators/vix-index"
+          },
+          {
+            "url": "https://eoddata.com/stockquote/INDEX/SP500.htm"
+          },
+          {
+            "url": "https://equibles.com/economicdata/vixcls"
+          },
+          {
+            "url": "https://moneyweek.com/investments/etfs/etf-portfolio-healthcare-update"
+          },
+          {
+            "url": "https://portfolio-terminal.com/markets/sp-500/october-2026"
+          },
+          {
+            "url": "https://portfolio-terminal.com/markets/stock-market-close/october-29-2026"
+          },
+          {
+            "url": "https://stockcharted.com/nyse/today"
+          },
+          {
+            "url": "https://tallacoptions.com/Data/EOD/VIX"
+          },
+          {
+            "url": "https://trendreport.com/stocks/market/"
+          },
+          {
+            "url": "https://www.axios.com/newsletters/axios-pro-rata-d6650505-6d92-4483-babf-3ba65f8d0e83"
+          },
+          {
+            "url": "https://www.cboe.com/tradable-products/vix/"
+          },
+          {
+            "url": "https://www.kiplinger.com/investing/analysts-top-sandp-500-stocks-to-buy-now"
+          },
+          {
+            "url": "https://www.kiplinger.com/investing/live/fed-meeting-updates-and-commentary-october-2026"
+          },
+          {
+            "url": "https://www.market-wrap.com/daily-wrap/2026-10-29/"
+          },
+          {
+            "url": "https://www.reddit.com/r/HollowPointTrading/comments/1xdup2w/point_blank_a_flat_nasdaq_percentage_is_not_a/"
+          },
+          {
+            "url": "https://www.reddit.com/r/HollowPointTrading/comments/1xgoepi/point_blank_technology_turns_fractionally/"
+          },
+          {
+            "url": "https://www.statmuse.com/money/ask/sandp-500-close-by-day-in-2026"
+          }
+        ]
+      },
+      {
+        "agent": "News and Event Agent",
+        "verdict": "APPROVE",
+        "confidence": 0.75,
+        "thesis": "Web search (Oct 2026) shows Altria (MO) reported Q3 2026 results (Oct 29, 2026) with a small EPS beat and accompanying commentary/guidance; there are ongoing litigation matters (Canadian settlements opt-outs, e‑vapor and other tobacco-related suits, and an active procedural interaction with the FDA) but no new adverse ruling, large settlement, trading halt, merger, or regulatory action that constitutes a verified material event arguing against initiating a new long position.",
+        "risks": [
+          "Ongoing tobacco- and nicotine-related litigation (including Canadian matters and e‑vapor suits) could produce adverse rulings or large settlements in future filings.",
+          "Regulatory risk: FDA rulemaking or revised Premarket Tobacco Product Application process could materially affect business or valuation if outcomes change unfavorably.",
+          "Operational/guidance risk: future quarterly results or guidance revisions could be negative and prompt share weakness.",
+          "Appeals or resumed litigation (e.g., paused suits) could restart and produce negative headlines or financial exposure.",
+          "Unanticipated corporate actions (asset sales, equity raises, or trading halts) remain possible and would be material if they occur."
+        ],
+        "sources": [
+          {
+            "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0000764180/53045e14-3d83-4283-9d06-1a181f180c03.html"
+          },
+          {
+            "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0000764180/5c17084d-f04b-46ca-9f38-ecd752ed3b36.html"
+          },
+          {
+            "url": "https://earnings-documents-prod.s3.amazonaws.com/e059ee6a-a3ca-4832-a858-2ff1da0ad7e6/8-K.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAWUJMVP6Y5XKJ4KU4%2F20260129%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260129T131332Z&X-Amz-Expires=900&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEL7%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJHMEUCICkX%2Bi2xH3SguYqVRxl0qcA0QxKg8N8B%2Fnn0eFxQm7l2AiEAzxVNEmXETp9DFWSUL0oxEOXQdStW3tEiDicqLwzPn%2BQqhAUIhv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAEGgw0NTU4OTcwODc5MjEiDN7byfj5i7KBbAhTRCrYBLL4DFv8k4C2ebb%2FdQBSqyj3uq7R7mGkFMOvw%2BvM4xgpw1Dv%2B%2Bj0FCYUqQk4YI5HBfP1WULfngAZvlRjWfTO0hsZAWt6WcXB77Jn%2FpLvhM%2F9%2BIfBLig6BepkH3nNTxclgVwKoRwLZqeEc3uCGSP0y5zkU3J9fS5ZLjygx5vWa%2Bv01aOtK6xAT2gzs261408HP9U4US0lDpGqSXEBfMzfqkFqlt27%2FhLdWlzvjyNcq4bWrZS8BSg3td0ffK6aTQAFVLObf7G7KStECIZGzHir5eC3lfPi4axkp15OgU7LkKggE8nDNtIOeyDyFMh%2BRmWm2nj8nzNeZi%2FDvXuMbxZnNhFijkk1GdC1HfSszkJ7iH%2B2VzicNEb%2FstTAcZyqiMNcnyIh%2FFuIh1meeQXOxd9Nf1HzUQEPT19UbifXs14GVHjDbiWEXG%2BHB28CU9H1tVlJcMGeaIWo8c4QWSqIUia4gpE8pk7fdI%2BeNgMzbvngIpt%2FjZqHzpJ6S7827D5uK2MnaOB%2B76Eryc7nVdDDkwqPkCenzITqNlC1pnrXsyXp8WxcCMDuNN%2B7oKSbxzRroCa%2F7fVSAfZoF4kn2jD%2F%2FQDqrmqAiluObPQb2Nf51iKrZTG%2FiHMB8sLa3k05uozJ3gFzhTeg06C%2BNFpeg7Qa1Rfag%2FJhouLb%2F8KprI9d8ElEsNCtOiKh%2F20ji%2BMS0%2BH1DUOr5U%2FnrgQy7TGio94z2EeY9%2FmWJxijxiHrvcL20tCX51RT71TOFj%2BVlm7bJ%2Bu40NXTf%2FjeA7t%2FUloDlEY6NtWQ9X7dHVc%2B81caeDD8ue3LBjqYAe5S2jOJxVfxHyWCoJz2DCJuM554rceHFX%2BuztshJiBLDnYNHQfePuggpOA1k7yVWbj4AxUEFWL%2B64kWWWTG9thVFS7zezJ%2BzFxjSWI%2FGMdfM3itggvrJa3KbA%2B27j0if0dOVteV6lVNhSCPaehv%2Bxh36KQAoQ6K65O2GnwTIy2RsKHaGzzGCKUBDb7uOkJ4rFimyGFq5pQ2&X-Amz-Signature=b8e8f3fb81624aa037f389cc444e6234e69e10b93d1305ab59d0d18a3e12eb01&X-Amz-SignedHeaders=host"
+          },
+          {
+            "url": "https://fortune.com/company-assets/731/quartr/quarterly-report-10-q-736be-2026-04-30-11-05-21.pdf"
+          },
+          {
+            "url": "https://inve.money/us/stock/MO"
+          },
+          {
+            "url": "https://investor.altria.com/Press-Releases/"
+          },
+          {
+            "url": "https://investor.altria.com/press-releases/news-details/2026/Altria-Reports-2026-Second-Quarter-and-First-Half-Results-Narrows-2026-Full-Year-Earnings-Guidance/default.aspx"
+          },
+          {
+            "url": "https://investor.altria.com/sec-filings/default.aspx"
+          },
+          {
+            "url": "https://news.bloomberglaw.com/class-action/judge-halts-altria-suit-versus-fda-as-tobacco-framework-revised"
+          },
+          {
+            "url": "https://thaler.sh/s/MO/earnings"
+          },
+          {
+            "url": "https://www.law.state.ak.us/press/releases/2025/120525-Juul.html"
+          },
+          {
+            "url": "https://www.marketbeat.com/stocks/NYSE/MO/earnings/"
+          },
+          {
+            "url": "https://www.otcmarkets.com/filing/conv_pdf?guid=6d3-kH2IptX_B3h&id=18875283"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1413329/000162828026021174/pmi_2025xannualreport.pdf"
+          },
+          {
+            "url": "https://www.streetinsider.com/Earnings/Altria%2BGroup%2B%28MO%29%2BTops%2BQ3%2BEPS%2Bby%2B1c%3B%2Boffers%2Bguidance/27252541.html"
+          },
+          {
+            "url": "https://www.streetinsider.com/SEC%2BFilings/Form%2B10-Q%2BALTRIA%2BGROUP%2C%2BINC.%2BFor%3A%2BSep%2B30/27252642.html"
+          }
+        ]
+      },
+      {
+        "agent": "Technical Context Agent",
+        "verdict": "APPROVE",
+        "confidence": 0.82,
+        "thesis": "Long breakout: breakout_strength=0.8544 indicates a robust breakout; relative strength (rs_excess_pct=10.869) shows clear outperformance versus peers; breadth shows broad market support (market_breadth_pct=72 with breadth_gate=PASS); ATR=1.5608 indicates the current volatility environment. Stop is set at 73.6083 (below the authoritative entry 78.44) and target is 100.18265, providing a defined risk/reward framework.",
+        "risks": [
+          "False breakout / reversal that triggers the stop and negates the signal",
+          "Volatility (ATR=1.5608) may cause whipsaw and stop-outs before trend continuation",
+          "Broad market deterioration despite current breadth reading could undermine the trade",
+          "Execution risk and overnight gap risk can cause slippage beyond the stop"
+        ],
+        "sources": []
+      },
+      {
+        "agent": "Thesis Agent",
+        "verdict": "APPROVE",
+        "confidence": 0.79,
+        "thesis": "Bull case: The quant packet and specialist findings present a coherent long breakout setup with authoritative execution parameters (entry 78.44, stop 73.6083, target 100.18265, quantity 4.0). Breakout_strength (0.8544), positive relative strength excess (rs_excess_pct 10.869) and breadth_gate = PASS with market_breadth_pct 72% indicate broad market participation behind the move. ATR (1.5608) and spread_bps (3.8253 bps) are provided so risk can be sized; the technical context and market-regime reviews both judged the Oct 29, 2026 environment supportive of momentum entries in this name. Together these elements form a defined risk/reward trade with objective entry/stop/target levels.\n\nBear case: Material, name-specific or sector/regulatory news (litigation settlements, adverse FDA action, or ",
+        "risks": [
+          "Overnight or intraday gap-through of the stop causing execution beyond intended risk",
+          "Material name-specific adverse news (litigation, regulatory ruling, large settlement)",
+          "Earnings or guidance surprises that reverse momentum",
+          "Macro/regime shock (VIX spike or broad market sell-off) that degrades breadth",
+          "False breakout / whipsaw where price fails to follow through after entry"
+        ],
+        "sources": []
+      },
+      {
+        "agent": "Claude CRO",
+        "verdict": "APPROVE",
+        "confidence": 0.68,
+        "thesis": "I found no verified event or contradictory specialist finding that argues against entry. All five specialists approve with confidence between 0.72 and 0.87. The quant packet is internally consistent: stop < entry < target, the breadth gate passes, and relative strength is positive. Q3 earnings came out on Oct 29 with a small beat, raised full-year EPS guidance and an expanded buyback, so the earnings event has passed. No ex-dividend date is expected until late December. The quoted price of about 78.21 is close to the packet entry, so I see no stale-price conflict. Residual concerns are not verified adverse facts: entry follows an earnings-day advance and sits well above the Q3 average buyback price, valuation is at a premium to the historical P/E, and Q2 operating cash flow was negative. M",
+        "risks": [
+          "Entry follows an earnings-day advance, so a pullback or false breakout is possible",
+          "Litigation and FDA developments were not independently verified in this pass",
+          "Valuation premium to the historical P/E and to one model-based fair value",
+          "Structural cigarette volume decline and weak Q2 operating cash flow against the dividend payout",
+          "Gap-through-stop and macro risk-off shock"
+        ],
+        "sources": [
+          {
+            "url": "https://finance.yahoo.com/markets/stocks/articles/altria-group-incs-dividend-analysis-110138194.html"
+          },
+          {
+            "url": "https://finance.yahoo.com/markets/stocks/articles/altria-just-raised-6-4-114404122.html"
+          },
+          {
+            "url": "https://marketchameleon.com/Overview/MO/Dividends/"
+          },
+          {
+            "url": "https://stockanalysis.com/stocks/mo/dividend/"
+          },
+          {
+            "url": "https://www.benzinga.com/news/26/10/62698366/altria-group-q3-2026-earnings-call-transcript"
+          },
+          {
+            "url": "https://www.gurufocus.com/news/9150681/altria-group-inc-mo-reports-q3-2026-earnings-eps-of-151-beats-estimates-revenue-of-613-billion-surpasses-expectations"
+          },
+          {
+            "url": "https://www.gurufocus.com/news/9150780/altria-group-mo-reports-q3-earnings-beat-affirms-2026-eps-guidance"
+          },
+          {
+            "url": "https://www.investing.com/equities/altria-group-dividends"
+          },
+          {
+            "url": "https://www.koyfin.com/company/mo/dividends/"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/0000764180/000076418026000056/exhibit991erq12026.htm"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/0000764180/000076418026000058/mo-20260331.htm"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/0000764180/000076418026000093/exhibit991erq22026.htm"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/0000764180/000076418026000112/exhibit991erq32026.htm"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/0000764180/000076418026000112/mo-20261028.htm"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/0000764180/000076418026000114/mo-20260930.htm"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/764180/000076418026000007/exhibit991erq42025.htm"
+          }
+        ]
+      }
+    ]
+  }
 }
