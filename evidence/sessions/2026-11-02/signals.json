@@ -1,0 +1,3922 @@
+{
+  "asof_session": "2026-11-02",
+  "asof_index": 399,
+  "market_breadth_pct": 72.0,
+  "breadth_gate": "PASS",
+  "candidate_count": 23,
+  "signals": [
+    {
+      "symbol": "A",
+      "decision": "REJECT",
+      "tier": null,
+      "score": 42.7172,
+      "blockers": [
+        "NO_BREAKOUT"
+      ],
+      "entry_price": 172.02,
+      "stop_price": 162.6222,
+      "target_price": 214.3103,
+      "atr_14": 4.6989,
+      "rs_excess_pct": 25.9685,
+      "breakout_strength": -5.9537
+    },
+    {
+      "symbol": "AAPL",
+      "decision": "REJECT",
+      "tier": null,
+      "score": 17.724,
+      "blockers": [
+        "NO_BREAKOUT"
+      ],
+      "entry_price": 338.7,
+      "stop_price": 325.8379,
+      "target_price": 396.5793,
+      "atr_14": 6.431,
+      "rs_excess_pct": 11.8177,
+      "breakout_strength": -3.6909
+    },
+    {
+      "symbol": "ABT",
+      "decision": "REJECT",
+      "tier": null,
+      "score": 23.5658,
+      "blockers": [
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 110.285,
+      "stop_price": 104.8339,
+      "target_price": 134.8148,
+      "atr_14": 2.7255,
+      "rs_excess_pct": 7.4346,
+      "breakout_strength": 3.2921
+    },
+    {
+      "symbol": "ACN",
+      "decision": "BUY_CANDIDATE",
+      "tier": "A",
+      "score": 102.8479,
+      "blockers": [],
+      "entry_price": 260.995,
+      "stop_price": 240.6863,
+      "target_price": 352.3839,
+      "atr_14": 10.1543,
+      "rs_excess_pct": 56.292,
+      "breakout_strength": 0.242
+    },
+    {
+      "symbol": "ADBE",
+      "decision": "REJECT",
+      "tier": null,
+      "score": -4.8764,
+      "blockers": [
+        "NO_BREAKOUT",
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 251.34,
+      "stop_price": 234.1797,
+      "target_price": 328.5614,
+      "atr_14": 8.5802,
+      "rs_excess_pct": -0.1538,
+      "breakout_strength": -7.6295
+    },
+    {
+      "symbol": "ADI",
+      "decision": "REJECT",
+      "tier": null,
+      "score": 13.0168,
+      "blockers": [
+        "NO_BREAKOUT"
+      ],
+      "entry_price": 413.11,
+      "stop_price": 384.4313,
+      "target_price": 542.164,
+      "atr_14": 14.3393,
+      "rs_excess_pct": 11.2251,
+      "breakout_strength": -4.6794
+    },
+    {
+      "symbol": "ADM",
+      "decision": "REJECT",
+      "tier": null,
+      "score": -14.3061,
+      "blockers": [
+        "BELOW_SMA150",
+        "NO_BREAKOUT",
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 75.8,
+      "stop_price": 72.1375,
+      "target_price": 92.2814,
+      "atr_14": 1.8313,
+      "rs_excess_pct": -2.2309,
+      "breakout_strength": -12.0752
+    },
+    {
+      "symbol": "ADP",
+      "decision": "REJECT",
+      "tier": null,
+      "score": 32.1689,
+      "blockers": [
+        "NO_BREAKOUT"
+      ],
+      "entry_price": 298.83,
+      "stop_price": 285.3573,
+      "target_price": 359.4572,
+      "atr_14": 6.7364,
+      "rs_excess_pct": 13.3614,
+      "breakout_strength": -3.3913
+    },
+    {
+      "symbol": "ADSK",
+      "decision": "BUY_CANDIDATE",
+      "tier": "B",
+      "score": 23.6273,
+      "blockers": [],
+      "entry_price": 257.72,
+      "stop_price": 241.8863,
+      "target_price": 328.9716,
+      "atr_14": 7.9168,
+      "rs_excess_pct": 10.891,
+      "breakout_strength": 0.6169
+    },
+    {
+      "symbol": "AFL",
+      "decision": "REJECT",
+      "tier": null,
+      "score": 7.7603,
+      "blockers": [
+        "NO_BREAKOUT",
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 124.555,
+      "stop_price": 120.992,
+      "target_price": 140.5885,
+      "atr_14": 1.7815,
+      "rs_excess_pct": 2.2429,
+      "breakout_strength": -0.8754
+    },
+    {
+      "symbol": "AIG",
+      "decision": "REJECT",
+      "tier": null,
+      "score": 13.8068,
+      "blockers": [
+        "NO_BREAKOUT",
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 82.4,
+      "stop_price": 79.7482,
+      "target_price": 94.3331,
+      "atr_14": 1.3259,
+      "rs_excess_pct": 6.7861,
+      "breakout_strength": -0.7827
+    },
+    {
+      "symbol": "AIZ",
+      "decision": "REJECT",
+      "tier": null,
+      "score": 21.4022,
+      "blockers": [
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 297.3,
+      "stop_price": 288.2431,
+      "target_price": 338.0562,
+      "atr_14": 4.5285,
+      "rs_excess_pct": 8.1522,
+      "breakout_strength": 0.4256
+    },
+    {
+      "symbol": "AKAM",
+      "decision": "REJECT",
+      "tier": null,
+      "score": -59.6423,
+      "blockers": [
+        "BELOW_SMA150",
+        "NO_BREAKOUT",
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 86.73,
+      "stop_price": 76.2284,
+      "target_price": 133.987,
+      "atr_14": 5.2508,
+      "rs_excess_pct": -27.4399,
+      "breakout_strength": -32.2025
+    },
+    {
+      "symbol": "ALL",
+      "decision": "REJECT",
+      "tier": null,
+      "score": 15.8435,
+      "blockers": [
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 264.03,
+      "stop_price": 253.2774,
+      "target_price": 312.4165,
+      "atr_14": 5.3763,
+      "rs_excess_pct": 3.1829,
+      "breakout_strength": 0.5714
+    },
+    {
+      "symbol": "AMAT",
+      "decision": "REJECT",
+      "tier": null,
+      "score": -60.6,
+      "blockers": [
+        "BELOW_SMA150",
+        "NO_BREAKOUT",
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 374.78,
+      "stop_price": 333.0403,
+      "target_price": 562.6088,
+      "atr_14": 20.8699,
+      "rs_excess_pct": -29.1306,
+      "breakout_strength": -31.4694
+    },
+    {
+      "symbol": "AMGN",
+      "decision": "REJECT",
+      "tier": null,
+      "score": 43.2212,
+      "blockers": [
+        "NO_BREAKOUT"
+      ],
+      "entry_price": 465.45,
+      "stop_price": 443.8406,
+      "target_price": 562.6923,
+      "atr_14": 10.8047,
+      "rs_excess_pct": 22.1706,
+      "breakout_strength": -2.0971
+    },
+    {
+      "symbol": "AMP",
+      "decision": "REJECT",
+      "tier": null,
+      "score": -13.1827,
+      "blockers": [
+        "NO_BREAKOUT",
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 504.375,
+      "stop_price": 483.4839,
+      "target_price": 598.3849,
+      "atr_14": 10.4455,
+      "rs_excess_pct": -6.595,
+      "breakout_strength": -8.1861
+    },
+    {
+      "symbol": "AMZN",
+      "decision": "REJECT",
+      "tier": null,
+      "score": -16.5416,
+      "blockers": [
+        "BELOW_SMA150",
+        "NO_BREAKOUT",
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 245.74,
+      "stop_price": 230.4405,
+      "target_price": 314.5878,
+      "atr_14": 7.6498,
+      "rs_excess_pct": -9.1758,
+      "breakout_strength": -7.3658
+    },
+    {
+      "symbol": "AON",
+      "decision": "REJECT",
+      "tier": null,
+      "score": 0.5466,
+      "blockers": [
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 333.47,
+      "stop_price": 317.7191,
+      "target_price": 404.349,
+      "atr_14": 7.8754,
+      "rs_excess_pct": -4.0925,
+      "breakout_strength": 1.5438
+    },
+    {
+      "symbol": "APA",
+      "decision": "REJECT",
+      "tier": null,
+      "score": 54.229,
+      "blockers": [
+        "NO_BREAKOUT"
+      ],
+      "entry_price": 48.82,
+      "stop_price": 45.4077,
+      "target_price": 64.1751,
+      "atr_14": 1.7061,
+      "rs_excess_pct": 39.2887,
+      "breakout_strength": -7.8172
+    },
+    {
+      "symbol": "APD",
+      "decision": "REJECT",
+      "tier": null,
+      "score": 18.2183,
+      "blockers": [
+        "NO_BREAKOUT"
+      ],
+      "entry_price": 315.99,
+      "stop_price": 306.488,
+      "target_price": 358.7491,
+      "atr_14": 4.751,
+      "rs_excess_pct": 10.162,
+      "breakout_strength": -0.1738
+    },
+    {
+      "symbol": "APH",
+      "decision": "REJECT",
+      "tier": null,
+      "score": -12.0248,
+      "blockers": [
+        "NO_BREAKOUT",
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 79.83,
+      "stop_price": 73.2902,
+      "target_price": 109.2593,
+      "atr_14": 3.2699,
+      "rs_excess_pct": -4.4444,
+      "breakout_strength": -11.2211
+    },
+    {
+      "symbol": "AVY",
+      "decision": "BUY_CANDIDATE",
+      "tier": "B",
+      "score": 23.579,
+      "blockers": [],
+      "entry_price": 186.985,
+      "stop_price": 180.0208,
+      "target_price": 218.324,
+      "atr_14": 3.4821,
+      "rs_excess_pct": 10.8105,
+      "breakout_strength": 0.9148
+    },
+    {
+      "symbol": "AXP",
+      "decision": "REJECT",
+      "tier": null,
+      "score": -1.0268,
+      "blockers": [
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 328.01,
+      "stop_price": 314.6695,
+      "target_price": 388.0424,
+      "atr_14": 6.6703,
+      "rs_excess_pct": -2.8698,
+      "breakout_strength": 0.504
+    },
+    {
+      "symbol": "AZO",
+      "decision": "REJECT",
+      "tier": null,
+      "score": 12.8731,
+      "blockers": [
+        "NO_BREAKOUT",
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 3254.95,
+      "stop_price": 3098.0312,
+      "target_price": 3961.0848,
+      "atr_14": 78.4594,
+      "rs_excess_pct": 9.7274,
+      "breakout_strength": -0.6295
+    },
+    {
+      "symbol": "BA",
+      "decision": "REJECT",
+      "tier": null,
+      "score": -37.7706,
+      "blockers": [
+        "BELOW_SMA150",
+        "NO_BREAKOUT",
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 175.45,
+      "stop_price": 163.8616,
+      "target_price": 227.598,
+      "atr_14": 5.7942,
+      "rs_excess_pct": -23.7755,
+      "breakout_strength": -13.9951
+    },
+    {
+      "symbol": "BAC",
+      "decision": "REJECT",
+      "tier": null,
+      "score": -33.5328,
+      "blockers": [
+        "BELOW_SMA150",
+        "NO_BREAKOUT",
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 49.565,
+      "stop_price": 47.3302,
+      "target_price": 59.6217,
+      "atr_14": 1.1174,
+      "rs_excess_pct": -18.5791,
+      "breakout_strength": -14.9537
+    },
+    {
+      "symbol": "BALL",
+      "decision": "REJECT",
+      "tier": null,
+      "score": 24.3482,
+      "blockers": [
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 68.07,
+      "stop_price": 65.238,
+      "target_price": 80.814,
+      "atr_14": 1.416,
+      "rs_excess_pct": 9.394,
+      "breakout_strength": 2.2686
+    },
+    {
+      "symbol": "BAX",
+      "decision": "REJECT",
+      "tier": null,
+      "score": -9.7632,
+      "blockers": [
+        "NO_BREAKOUT",
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 24.215,
+      "stop_price": 22.399,
+      "target_price": 32.387,
+      "atr_14": 0.908,
+      "rs_excess_pct": -12.3245,
+      "breakout_strength": -7.2222
+    },
+    {
+      "symbol": "BBY",
+      "decision": "REJECT",
+      "tier": null,
+      "score": 33.7505,
+      "blockers": [
+        "NO_BREAKOUT"
+      ],
+      "entry_price": 96.15,
+      "stop_price": 89.8453,
+      "target_price": 124.5213,
+      "atr_14": 3.1524,
+      "rs_excess_pct": 14.766,
+      "breakout_strength": -4.3997
+    },
+    {
+      "symbol": "BDX",
+      "decision": "REJECT",
+      "tier": null,
+      "score": 39.0259,
+      "blockers": [
+        "NO_BREAKOUT"
+      ],
+      "entry_price": 198.595,
+      "stop_price": 191.619,
+      "target_price": 229.9871,
+      "atr_14": 3.488,
+      "rs_excess_pct": 19.6455,
+      "breakout_strength": -0.9007
+    },
+    {
+      "symbol": "BEN",
+      "decision": "REJECT",
+      "tier": null,
+      "score": -9.8196,
+      "blockers": [
+        "NO_BREAKOUT",
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 31.955,
+      "stop_price": 30.4294,
+      "target_price": 38.8202,
+      "atr_14": 0.7628,
+      "rs_excess_pct": -7.5262,
+      "breakout_strength": -4.2403
+    },
+    {
+      "symbol": "BF.B",
+      "decision": "REJECT",
+      "tier": null,
+      "score": 19.8061,
+      "blockers": [
+        "NO_BREAKOUT",
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 30.02,
+      "stop_price": 28.4113,
+      "target_price": 37.2591,
+      "atr_14": 0.8043,
+      "rs_excess_pct": 8.534,
+      "breakout_strength": -0.596
+    },
+    {
+      "symbol": "BIIB",
+      "decision": "REJECT",
+      "tier": null,
+      "score": 37.9416,
+      "blockers": [
+        "NO_BREAKOUT"
+      ],
+      "entry_price": 248.88,
+      "stop_price": 234.5911,
+      "target_price": 313.1801,
+      "atr_14": 7.1445,
+      "rs_excess_pct": 21.5692,
+      "breakout_strength": -3.8256
+    },
+    {
+      "symbol": "BKNG",
+      "decision": "REJECT",
+      "tier": null,
+      "score": -29.4704,
+      "blockers": [
+        "BELOW_SMA150",
+        "NO_BREAKOUT",
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 153.83,
+      "stop_price": 143.3328,
+      "target_price": 201.0675,
+      "atr_14": 5.2486,
+      "rs_excess_pct": -18.3484,
+      "breakout_strength": -11.122
+    },
+    {
+      "symbol": "BLK",
+      "decision": "REJECT",
+      "tier": null,
+      "score": 14.3172,
+      "blockers": [
+        "NO_BREAKOUT",
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 1167.27,
+      "stop_price": 1116.4743,
+      "target_price": 1395.8505,
+      "atr_14": 25.3978,
+      "rs_excess_pct": 5.9071,
+      "breakout_strength": -1.2579
+    },
+    {
+      "symbol": "BMY",
+      "decision": "REJECT",
+      "tier": null,
+      "score": 3.0798,
+      "blockers": [
+        "NO_BREAKOUT",
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 63.03,
+      "stop_price": 59.7858,
+      "target_price": 77.6289,
+      "atr_14": 1.6221,
+      "rs_excess_pct": -1.1566,
+      "breakout_strength": -1.5771
+    },
+    {
+      "symbol": "BNY",
+      "decision": "REJECT",
+      "tier": null,
+      "score": -5.6086,
+      "blockers": [
+        "NO_BREAKOUT",
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 147.805,
+      "stop_price": 142.3735,
+      "target_price": 172.2469,
+      "atr_14": 2.7158,
+      "rs_excess_pct": -3.1194,
+      "breakout_strength": -4.0601
+    },
+    {
+      "symbol": "BRK.B",
+      "decision": "REJECT",
+      "tier": null,
+      "score": 22.8718,
+      "blockers": [
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 556.715,
+      "stop_price": 543.1152,
+      "target_price": 617.9142,
+      "atr_14": 6.7999,
+      "rs_excess_pct": 9.9367,
+      "breakout_strength": 1.1731
+    },
+    {
+      "symbol": "BSX",
+      "decision": "REJECT",
+      "tier": null,
+      "score": -11.3235,
+      "blockers": [
+        "BELOW_SMA150",
+        "NO_BREAKOUT",
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 44.33,
+      "stop_price": 41.2182,
+      "target_price": 58.3333,
+      "atr_14": 1.5559,
+      "rs_excess_pct": -7.484,
+      "breakout_strength": -3.8395
+    },
+    {
+      "symbol": "C",
+      "decision": "REJECT",
+      "tier": null,
+      "score": -16.0607,
+      "blockers": [
+        "BELOW_SMA150",
+        "NO_BREAKOUT",
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 123.11,
+      "stop_price": 116.9479,
+      "target_price": 150.8396,
+      "atr_14": 3.0811,
+      "rs_excess_pct": -7.2803,
+      "breakout_strength": -8.7804
+    },
+    {
+      "symbol": "CAH",
+      "decision": "REJECT",
+      "tier": null,
+      "score": 23.1929,
+      "blockers": [
+        "NO_BREAKOUT"
+      ],
+      "entry_price": 254.35,
+      "stop_price": 243.3311,
+      "target_price": 303.935,
+      "atr_14": 5.5094,
+      "rs_excess_pct": 11.394,
+      "breakout_strength": -2.0186
+    },
+    {
+      "symbol": "CAT",
+      "decision": "REJECT",
+      "tier": null,
+      "score": -57.4146,
+      "blockers": [
+        "BELOW_SMA150",
+        "NO_BREAKOUT",
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 613.64,
+      "stop_price": 555.8583,
+      "target_price": 873.6578,
+      "atr_14": 28.8909,
+      "rs_excess_pct": -27.6396,
+      "breakout_strength": -29.775
+    },
+    {
+      "symbol": "CB",
+      "decision": "REJECT",
+      "tier": null,
+      "score": 18.1012,
+      "blockers": [
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 368.99,
+      "stop_price": 357.3444,
+      "target_price": 421.395,
+      "atr_14": 5.8228,
+      "rs_excess_pct": 8.4793,
+      "breakout_strength": 0.0868
+    },
+    {
+      "symbol": "CCL",
+      "decision": "REJECT",
+      "tier": null,
+      "score": 21.1213,
+      "blockers": [
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 30.03,
+      "stop_price": 28.1187,
+      "target_price": 38.6311,
+      "atr_14": 0.9557,
+      "rs_excess_pct": 4.235,
+      "breakout_strength": 3.0896
+    },
+    {
+      "symbol": "CF",
+      "decision": "REJECT",
+      "tier": null,
+      "score": 0.0252,
+      "blockers": [
+        "NO_BREAKOUT",
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 120.32,
+      "stop_price": 112.5697,
+      "target_price": 155.1965,
+      "atr_14": 3.8752,
+      "rs_excess_pct": 4.6396,
+      "breakout_strength": -5.1216
+    },
+    {
+      "symbol": "CHRW",
+      "decision": "REJECT",
+      "tier": null,
+      "score": -32.9428,
+      "blockers": [
+        "BELOW_SMA150",
+        "NO_BREAKOUT",
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 128.655,
+      "stop_price": 117.7407,
+      "target_price": 177.7696,
+      "atr_14": 5.4572,
+      "rs_excess_pct": -14.3082,
+      "breakout_strength": -18.6346
+    },
+    {
+      "symbol": "CI",
+      "decision": "REJECT",
+      "tier": null,
+      "score": 8.9386,
+      "blockers": [
+        "NO_BREAKOUT"
+      ],
+      "entry_price": 295.41,
+      "stop_price": 281.5129,
+      "target_price": 357.9472,
+      "atr_14": 6.9486,
+      "rs_excess_pct": 10.69,
+      "breakout_strength": -6.5631
+    },
+    {
+      "symbol": "CINF",
+      "decision": "REJECT",
+      "tier": null,
+      "score": 13.7063,
+      "blockers": [
+        "NO_BREAKOUT",
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 183.84,
+      "stop_price": 177.8022,
+      "target_price": 211.0102,
+      "atr_14": 3.0189,
+      "rs_excess_pct": 5.2283,
+      "breakout_strength": -0.3199
+    },
+    {
+      "symbol": "CL",
+      "decision": "REJECT",
+      "tier": null,
+      "score": 17.3472,
+      "blockers": [
+        "NO_BREAKOUT",
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 97.435,
+      "stop_price": 93.3221,
+      "target_price": 115.9431,
+      "atr_14": 2.0565,
+      "rs_excess_pct": 8.1385,
+      "breakout_strength": -0.779
+    },
+    {
+      "symbol": "CLX",
+      "decision": "REJECT",
+      "tier": null,
+      "score": -10.4159,
+      "blockers": [
+        "BELOW_SMA150",
+        "NO_BREAKOUT",
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 89.93,
+      "stop_price": 85.3456,
+      "target_price": 110.5598,
+      "atr_14": 2.2922,
+      "rs_excess_pct": -9.5506,
+      "breakout_strength": -0.8653
+    },
+    {
+      "symbol": "CMCSA",
+      "decision": "REJECT",
+      "tier": null,
+      "score": 1.7666,
+      "blockers": [
+        "BELOW_SMA150",
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 23.86,
+      "stop_price": 22.5396,
+      "target_price": 29.802,
+      "atr_14": 0.6602,
+      "rs_excess_pct": -0.6588,
+      "breakout_strength": 2.4254
+    },
+    {
+      "symbol": "CME",
+      "decision": "REJECT",
+      "tier": null,
+      "score": 31.2866,
+      "blockers": [
+        "NO_BREAKOUT"
+      ],
+      "entry_price": 306.31,
+      "stop_price": 293.2509,
+      "target_price": 365.0759,
+      "atr_14": 6.5295,
+      "rs_excess_pct": 19.4428,
+      "breakout_strength": -0.9699
+    },
+    {
+      "symbol": "CMG",
+      "decision": "REJECT",
+      "tier": null,
+      "score": -2.8034,
+      "blockers": [
+        "BELOW_SMA150",
+        "NO_BREAKOUT",
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 32.915,
+      "stop_price": 30.4879,
+      "target_price": 43.8371,
+      "atr_14": 1.2136,
+      "rs_excess_pct": -0.445,
+      "breakout_strength": -2.3584
+    },
+    {
+      "symbol": "CMI",
+      "decision": "REJECT",
+      "tier": null,
+      "score": -27.4604,
+      "blockers": [
+        "BELOW_SMA150",
+        "NO_BREAKOUT",
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 500.47,
+      "stop_price": 472.013,
+      "target_price": 628.5265,
+      "atr_14": 14.2285,
+      "rs_excess_pct": -18.7671,
+      "breakout_strength": -8.6934
+    },
+    {
+      "symbol": "COF",
+      "decision": "REJECT",
+      "tier": null,
+      "score": 2.5349,
+      "blockers": [
+        "NO_BREAKOUT",
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 210.72,
+      "stop_price": 200.9903,
+      "target_price": 254.5037,
+      "atr_14": 4.8649,
+      "rs_excess_pct": -2.5155,
+      "breakout_strength": -0.3311
+    },
+    {
+      "symbol": "COP",
+      "decision": "REJECT",
+      "tier": null,
+      "score": 41.4819,
+      "blockers": [
+        "NO_BREAKOUT"
+      ],
+      "entry_price": 146.88,
+      "stop_price": 139.6128,
+      "target_price": 179.5824,
+      "atr_14": 3.6336,
+      "rs_excess_pct": 27.5765,
+      "breakout_strength": -4.7841
+    },
+    {
+      "symbol": "COR",
+      "decision": "REJECT",
+      "tier": null,
+      "score": 21.2526,
+      "blockers": [
+        "NO_BREAKOUT"
+      ],
+      "entry_price": 337.83,
+      "stop_price": 324.4106,
+      "target_price": 398.2172,
+      "atr_14": 6.7097,
+      "rs_excess_pct": 12.7376,
+      "breakout_strength": -2.1917
+    },
+    {
+      "symbol": "COST",
+      "decision": "BUY_CANDIDATE",
+      "tier": "B",
+      "score": 22.0425,
+      "blockers": [],
+      "entry_price": 1040.69,
+      "stop_price": 1006.6693,
+      "target_price": 1193.783,
+      "atr_14": 17.0103,
+      "rs_excess_pct": 12.1614,
+      "breakout_strength": 1.9115
+    },
+    {
+      "symbol": "CRM",
+      "decision": "REJECT",
+      "tier": null,
+      "score": 24.7198,
+      "blockers": [
+        "NO_BREAKOUT"
+      ],
+      "entry_price": 226.11,
+      "stop_price": 208.8733,
+      "target_price": 303.6752,
+      "atr_14": 8.6184,
+      "rs_excess_pct": 20.8366,
+      "breakout_strength": -10.4196
+    },
+    {
+      "symbol": "CSCO",
+      "decision": "REJECT",
+      "tier": null,
+      "score": -28.2283,
+      "blockers": [
+        "BELOW_SMA150",
+        "NO_BREAKOUT",
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 101.67,
+      "stop_price": 95.4915,
+      "target_price": 129.4734,
+      "atr_14": 3.0893,
+      "rs_excess_pct": -13.9245,
+      "breakout_strength": -14.3038
+    },
+    {
+      "symbol": "CSX",
+      "decision": "REJECT",
+      "tier": null,
+      "score": 10.1274,
+      "blockers": [
+        "NO_BREAKOUT",
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 51.64,
+      "stop_price": 49.5835,
+      "target_price": 60.8943,
+      "atr_14": 1.0283,
+      "rs_excess_pct": 3.7246,
+      "breakout_strength": -2.3265
+    },
+    {
+      "symbol": "CTAS",
+      "decision": "REJECT",
+      "tier": null,
+      "score": 30.8187,
+      "blockers": [
+        "NO_BREAKOUT"
+      ],
+      "entry_price": 224.79,
+      "stop_price": 215.339,
+      "target_price": 267.3195,
+      "atr_14": 4.7255,
+      "rs_excess_pct": 12.9158,
+      "breakout_strength": -0.836
+    },
+    {
+      "symbol": "CTSH",
+      "decision": "REJECT",
+      "tier": null,
+      "score": 24.9873,
+      "blockers": [
+        "NO_BREAKOUT"
+      ],
+      "entry_price": 65.095,
+      "stop_price": 59.5961,
+      "target_price": 89.8401,
+      "atr_14": 2.7495,
+      "rs_excess_pct": 18.8259,
+      "breakout_strength": -11.9147
+    },
+    {
+      "symbol": "CVS",
+      "decision": "REJECT",
+      "tier": null,
+      "score": -19.0251,
+      "blockers": [
+        "BELOW_SMA150",
+        "NO_BREAKOUT",
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 88.525,
+      "stop_price": 84.3805,
+      "target_price": 107.1752,
+      "atr_14": 2.0722,
+      "rs_excess_pct": -12.3862,
+      "breakout_strength": -6.6389
+    },
+    {
+      "symbol": "CVX",
+      "decision": "REJECT",
+      "tier": null,
+      "score": 36.2861,
+      "blockers": [
+        "NO_BREAKOUT"
+      ],
+      "entry_price": 227.84,
+      "stop_price": 218.5851,
+      "target_price": 269.4871,
+      "atr_14": 4.6275,
+      "rs_excess_pct": 22.928,
+      "breakout_strength": -3.6373
+    },
+    {
+      "symbol": "DE",
+      "decision": "REJECT",
+      "tier": null,
+      "score": 12.3645,
+      "blockers": [
+        "NO_BREAKOUT"
+      ],
+      "entry_price": 667.56,
+      "stop_price": 632.0405,
+      "target_price": 827.3976,
+      "atr_14": 17.7597,
+      "rs_excess_pct": 10.6239,
+      "breakout_strength": -7.2189
+    },
+    {
+      "symbol": "DGX",
+      "decision": "REJECT",
+      "tier": null,
+      "score": 23.8255,
+      "blockers": [
+        "NO_BREAKOUT",
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 250.85,
+      "stop_price": 240.4759,
+      "target_price": 297.5334,
+      "atr_14": 5.187,
+      "rs_excess_pct": 9.9381,
+      "breakout_strength": -2.0079
+    },
+    {
+      "symbol": "DHI",
+      "decision": "REJECT",
+      "tier": null,
+      "score": 11.4552,
+      "blockers": [
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 152.94,
+      "stop_price": 143.8489,
+      "target_price": 193.8497,
+      "atr_14": 4.5455,
+      "rs_excess_pct": 4.2317,
+      "breakout_strength": 2.4655
+    },
+    {
+      "symbol": "DHR",
+      "decision": "REJECT",
+      "tier": null,
+      "score": 30.5039,
+      "blockers": [
+        "NO_BREAKOUT"
+      ],
+      "entry_price": 228.1,
+      "stop_price": 215.8495,
+      "target_price": 283.2272,
+      "atr_14": 6.1252,
+      "rs_excess_pct": 19.5542,
+      "breakout_strength": -4.22
+    },
+    {
+      "symbol": "DIS",
+      "decision": "REJECT",
+      "tier": null,
+      "score": 27.284,
+      "blockers": [
+        "NO_BREAKOUT"
+      ],
+      "entry_price": 113.14,
+      "stop_price": 109.2753,
+      "target_price": 130.5313,
+      "atr_14": 1.9324,
+      "rs_excess_pct": 17.4917,
+      "breakout_strength": -0.2029
+    },
+    {
+      "symbol": "DLTR",
+      "decision": "REJECT",
+      "tier": null,
+      "score": 30.5918,
+      "blockers": [
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 138.61,
+      "stop_price": 130.422,
+      "target_price": 175.456,
+      "atr_14": 4.094,
+      "rs_excess_pct": 8.2505,
+      "breakout_strength": 2.4237
+    },
+    {
+      "symbol": "DOV",
+      "decision": "REJECT",
+      "tier": null,
+      "score": 10.568,
+      "blockers": [
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 215.9,
+      "stop_price": 207.6768,
+      "target_price": 252.9045,
+      "atr_14": 4.1116,
+      "rs_excess_pct": 5.3251,
+      "breakout_strength": 1.0248
+    },
+    {
+      "symbol": "DRI",
+      "decision": "REJECT",
+      "tier": null,
+      "score": 21.3608,
+      "blockers": [
+        "NO_BREAKOUT"
+      ],
+      "entry_price": 223.09,
+      "stop_price": 213.8412,
+      "target_price": 264.7096,
+      "atr_14": 4.6244,
+      "rs_excess_pct": 12.1979,
+      "breakout_strength": -0.5949
+    },
+    {
+      "symbol": "DVA",
+      "decision": "REJECT",
+      "tier": null,
+      "score": -22.103,
+      "blockers": [
+        "BELOW_SMA150",
+        "NO_BREAKOUT",
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 185.55,
+      "stop_price": 172.3847,
+      "target_price": 244.794,
+      "atr_14": 6.5827,
+      "rs_excess_pct": -16.3625,
+      "breakout_strength": -5.7404
+    },
+    {
+      "symbol": "DVN",
+      "decision": "REJECT",
+      "tier": null,
+      "score": 11.2773,
+      "blockers": [
+        "NO_BREAKOUT"
+      ],
+      "entry_price": 48.63,
+      "stop_price": 45.6559,
+      "target_price": 62.0133,
+      "atr_14": 1.487,
+      "rs_excess_pct": 13.3344,
+      "breakout_strength": -6.9638
+    },
+    {
+      "symbol": "EBAY",
+      "decision": "REJECT",
+      "tier": null,
+      "score": 21.2383,
+      "blockers": [
+        "NO_BREAKOUT"
+      ],
+      "entry_price": 120.93,
+      "stop_price": 114.1776,
+      "target_price": 151.316,
+      "atr_14": 3.3762,
+      "rs_excess_pct": 12.8511,
+      "breakout_strength": -2.8675
+    },
+    {
+      "symbol": "ECL",
+      "decision": "BUY_CANDIDATE",
+      "tier": "B",
+      "score": 25.7703,
+      "blockers": [],
+      "entry_price": 308.495,
+      "stop_price": 297.3476,
+      "target_price": 358.6581,
+      "atr_14": 5.5737,
+      "rs_excess_pct": 11.4791,
+      "breakout_strength": 1.0415
+    },
+    {
+      "symbol": "EFX",
+      "decision": "BUY_CANDIDATE",
+      "tier": "B",
+      "score": 26.6706,
+      "blockers": [],
+      "entry_price": 192.575,
+      "stop_price": 180.4091,
+      "target_price": 247.3215,
+      "atr_14": 6.0829,
+      "rs_excess_pct": 11.2706,
+      "breakout_strength": 2.2866
+    },
+    {
+      "symbol": "EL",
+      "decision": "REJECT",
+      "tier": null,
+      "score": 36.1323,
+      "blockers": [
+        "NO_BREAKOUT"
+      ],
+      "entry_price": 104.74,
+      "stop_price": 97.479,
+      "target_price": 137.4144,
+      "atr_14": 3.6305,
+      "rs_excess_pct": 23.0522,
+      "breakout_strength": -5.8263
+    },
+    {
+      "symbol": "ELV",
+      "decision": "REJECT",
+      "tier": null,
+      "score": 10.6825,
+      "blockers": [
+        "NO_BREAKOUT"
+      ],
+      "entry_price": 413.67,
+      "stop_price": 391.1586,
+      "target_price": 514.9712,
+      "atr_14": 11.2557,
+      "rs_excess_pct": 12.1706,
+      "breakout_strength": -8.1142
+    },
+    {
+      "symbol": "EMR",
+      "decision": "REJECT",
+      "tier": null,
+      "score": 16.3367,
+      "blockers": [
+        "NO_BREAKOUT",
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 166.0,
+      "stop_price": 157.5651,
+      "target_price": 203.9572,
+      "atr_14": 4.2175,
+      "rs_excess_pct": 7.0421,
+      "breakout_strength": -3.0544
+    },
+    {
+      "symbol": "EOG",
+      "decision": "REJECT",
+      "tier": null,
+      "score": 20.631,
+      "blockers": [
+        "NO_BREAKOUT"
+      ],
+      "entry_price": 157.9,
+      "stop_price": 150.2863,
+      "target_price": 192.1615,
+      "atr_14": 3.8068,
+      "rs_excess_pct": 12.9369,
+      "breakout_strength": -4.8107
+    },
+    {
+      "symbol": "ETN",
+      "decision": "REJECT",
+      "tier": null,
+      "score": -34.3378,
+      "blockers": [
+        "BELOW_SMA150",
+        "NO_BREAKOUT",
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 365.945,
+      "stop_price": 334.7344,
+      "target_price": 506.3928,
+      "atr_14": 15.6053,
+      "rs_excess_pct": -15.3026,
+      "breakout_strength": -19.0351
+    },
+    {
+      "symbol": "EW",
+      "decision": "REJECT",
+      "tier": null,
+      "score": 11.8298,
+      "blockers": [
+        "NO_BREAKOUT",
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 93.25,
+      "stop_price": 88.3039,
+      "target_price": 115.5073,
+      "atr_14": 2.473,
+      "rs_excess_pct": 6.2697,
+      "breakout_strength": -2.1203
+    },
+    {
+      "symbol": "EXPD",
+      "decision": "BUY_CANDIDATE",
+      "tier": "B",
+      "score": 29.0898,
+      "blockers": [],
+      "entry_price": 200.54,
+      "stop_price": 193.1161,
+      "target_price": 233.9477,
+      "atr_14": 3.712,
+      "rs_excess_pct": 12.6391,
+      "breakout_strength": 0.0349
+    },
+    {
+      "symbol": "EXPE",
+      "decision": "REJECT",
+      "tier": null,
+      "score": 9.5841,
+      "blockers": [
+        "NO_BREAKOUT",
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 299.07,
+      "stop_price": 277.3241,
+      "target_price": 396.9267,
+      "atr_14": 10.873,
+      "rs_excess_pct": -1.8365,
+      "breakout_strength": -0.8684
+    },
+    {
+      "symbol": "F",
+      "decision": "REJECT",
+      "tier": null,
+      "score": -14.5366,
+      "blockers": [
+        "BELOW_SMA150",
+        "NO_BREAKOUT",
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 12.6,
+      "stop_price": 11.9217,
+      "target_price": 15.6525,
+      "atr_14": 0.3392,
+      "rs_excess_pct": -8.2169,
+      "breakout_strength": -6.3197
+    },
+    {
+      "symbol": "FAST",
+      "decision": "REJECT",
+      "tier": null,
+      "score": 17.8144,
+      "blockers": [
+        "NO_BREAKOUT",
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 52.55,
+      "stop_price": 50.0468,
+      "target_price": 63.8143,
+      "atr_14": 1.2516,
+      "rs_excess_pct": 8.4784,
+      "breakout_strength": -1.3886
+    },
+    {
+      "symbol": "FCX",
+      "decision": "REJECT",
+      "tier": null,
+      "score": -19.6018,
+      "blockers": [
+        "BELOW_SMA150",
+        "NO_BREAKOUT",
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 62.95,
+      "stop_price": 57.7058,
+      "target_price": 86.5487,
+      "atr_14": 2.6221,
+      "rs_excess_pct": -3.9399,
+      "breakout_strength": -15.6618
+    },
+    {
+      "symbol": "FDX",
+      "decision": "REJECT",
+      "tier": null,
+      "score": 6.9483,
+      "blockers": [
+        "NO_BREAKOUT",
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 318.45,
+      "stop_price": 304.2741,
+      "target_price": 382.2417,
+      "atr_14": 7.088,
+      "rs_excess_pct": 4.223,
+      "breakout_strength": -0.0031
+    },
+    {
+      "symbol": "FFIV",
+      "decision": "REJECT",
+      "tier": null,
+      "score": -51.6817,
+      "blockers": [
+        "BELOW_SMA150",
+        "NO_BREAKOUT",
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 324.555,
+      "stop_price": 284.6953,
+      "target_price": 503.9238,
+      "atr_14": 19.9299,
+      "rs_excess_pct": -19.007,
+      "breakout_strength": -32.6747
+    },
+    {
+      "symbol": "FIS",
+      "decision": "REJECT",
+      "tier": null,
+      "score": -4.6266,
+      "blockers": [
+        "BELOW_SMA150",
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 40.14,
+      "stop_price": 37.8026,
+      "target_price": 50.6584,
+      "atr_14": 1.1687,
+      "rs_excess_pct": -6.0415,
+      "breakout_strength": 1.4149
+    },
+    {
+      "symbol": "FISV",
+      "decision": "REJECT",
+      "tier": null,
+      "score": -2.6677,
+      "blockers": [
+        "BELOW_SMA150",
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 51.93,
+      "stop_price": 48.9639,
+      "target_price": 65.2773,
+      "atr_14": 1.483,
+      "rs_excess_pct": -4.6712,
+      "breakout_strength": 2.0035
+    },
+    {
+      "symbol": "FITB",
+      "decision": "REJECT",
+      "tier": null,
+      "score": 3.607,
+      "blockers": [
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 54.965,
+      "stop_price": 52.8568,
+      "target_price": 64.4519,
+      "atr_14": 1.0541,
+      "rs_excess_pct": -1.8609,
+      "breakout_strength": 0.6316
+    },
+    {
+      "symbol": "GD",
+      "decision": "REJECT",
+      "tier": null,
+      "score": 2.0929,
+      "blockers": [
+        "NO_BREAKOUT",
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 373.32,
+      "stop_price": 359.8005,
+      "target_price": 434.1576,
+      "atr_14": 6.7597,
+      "rs_excess_pct": -0.5326,
+      "breakout_strength": -3.1947
+    },
+    {
+      "symbol": "GE",
+      "decision": "REJECT",
+      "tier": null,
+      "score": -17.8215,
+      "blockers": [
+        "BELOW_SMA150",
+        "NO_BREAKOUT",
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 315.77,
+      "stop_price": 296.2913,
+      "target_price": 403.4242,
+      "atr_14": 9.7394,
+      "rs_excess_pct": -13.9171,
+      "breakout_strength": -3.9044
+    },
+    {
+      "symbol": "GEN",
+      "decision": "REJECT",
+      "tier": null,
+      "score": 30.1264,
+      "blockers": [
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 29.885,
+      "stop_price": 27.7151,
+      "target_price": 39.6498,
+      "atr_14": 1.085,
+      "rs_excess_pct": 8.3943,
+      "breakout_strength": 1.4082
+    },
+    {
+      "symbol": "GILD",
+      "decision": "REJECT",
+      "tier": null,
+      "score": 49.3886,
+      "blockers": [
+        "NO_BREAKOUT"
+      ],
+      "entry_price": 170.39,
+      "stop_price": 161.6833,
+      "target_price": 209.5701,
+      "atr_14": 4.3533,
+      "rs_excess_pct": 28.8961,
+      "breakout_strength": -2.9393
+    },
+    {
+      "symbol": "GIS",
+      "decision": "REJECT",
+      "tier": null,
+      "score": -2.5772,
+      "blockers": [
+        "NO_BREAKOUT",
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 34.74,
+      "stop_price": 32.6779,
+      "target_price": 44.0192,
+      "atr_14": 1.031,
+      "rs_excess_pct": 0.0625,
+      "breakout_strength": -3.0692
+    },
+    {
+      "symbol": "GL",
+      "decision": "REJECT",
+      "tier": null,
+      "score": -18.9206,
+      "blockers": [
+        "BELOW_SMA150",
+        "NO_BREAKOUT",
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 159.865,
+      "stop_price": 153.3161,
+      "target_price": 189.3351,
+      "atr_14": 3.2745,
+      "rs_excess_pct": -10.834,
+      "breakout_strength": -8.0866
+    },
+    {
+      "symbol": "GLW",
+      "decision": "REJECT",
+      "tier": null,
+      "score": -48.2307,
+      "blockers": [
+        "BELOW_SMA150",
+        "NO_BREAKOUT",
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 123.3,
+      "stop_price": 108.8454,
+      "target_price": 188.3458,
+      "atr_14": 7.2273,
+      "rs_excess_pct": -20.5135,
+      "breakout_strength": -27.7172
+    },
+    {
+      "symbol": "GOOGL",
+      "decision": "REJECT",
+      "tier": null,
+      "score": -47.1944,
+      "blockers": [
+        "BELOW_SMA150",
+        "NO_BREAKOUT",
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 279.045,
+      "stop_price": 258.7196,
+      "target_price": 370.5092,
+      "atr_14": 10.1627,
+      "rs_excess_pct": -23.8362,
+      "breakout_strength": -23.3582
+    },
+    {
+      "symbol": "GPC",
+      "decision": "REJECT",
+      "tier": null,
+      "score": -5.0842,
+      "blockers": [
+        "NO_BREAKOUT",
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 124.67,
+      "stop_price": 118.17,
+      "target_price": 153.92,
+      "atr_14": 3.25,
+      "rs_excess_pct": -3.0063,
+      "breakout_strength": -7.9281
+    },
+    {
+      "symbol": "GS",
+      "decision": "REJECT",
+      "tier": null,
+      "score": -19.0868,
+      "blockers": [
+        "BELOW_SMA150",
+        "NO_BREAKOUT",
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 898.73,
+      "stop_price": 850.2787,
+      "target_price": 1116.7607,
+      "atr_14": 24.2256,
+      "rs_excess_pct": -12.0124,
+      "breakout_strength": -7.0744
+    },
+    {
+      "symbol": "GWW",
+      "decision": "REJECT",
+      "tier": null,
+      "score": 15.8231,
+      "blockers": [
+        "NO_BREAKOUT",
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 1378.29,
+      "stop_price": 1326.2447,
+      "target_price": 1612.4938,
+      "atr_14": 26.0226,
+      "rs_excess_pct": 8.4395,
+      "breakout_strength": -0.2414
+    },
+    {
+      "symbol": "HAL",
+      "decision": "REJECT",
+      "tier": null,
+      "score": 4.522,
+      "blockers": [
+        "BELOW_SMA150",
+        "NO_BREAKOUT",
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 34.615,
+      "stop_price": 32.6425,
+      "target_price": 43.4912,
+      "atr_14": 0.9862,
+      "rs_excess_pct": 9.7643,
+      "breakout_strength": -5.2423
+    },
+    {
+      "symbol": "HAS",
+      "decision": "REJECT",
+      "tier": null,
+      "score": 60.0633,
+      "blockers": [
+        "NO_BREAKOUT"
+      ],
+      "entry_price": 118.34,
+      "stop_price": 112.6159,
+      "target_price": 144.0985,
+      "atr_14": 2.8621,
+      "rs_excess_pct": 32.5182,
+      "breakout_strength": -2.1579
+    },
+    {
+      "symbol": "HBAN",
+      "decision": "REJECT",
+      "tier": null,
+      "score": -6.3377,
+      "blockers": [
+        "BELOW_SMA150",
+        "NO_BREAKOUT",
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 16.02,
+      "stop_price": 15.3983,
+      "target_price": 18.8178,
+      "atr_14": 0.3109,
+      "rs_excess_pct": -5.5942,
+      "breakout_strength": -0.7435
+    },
+    {
+      "symbol": "HD",
+      "decision": "REJECT",
+      "tier": null,
+      "score": 9.0221,
+      "blockers": [
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 341.16,
+      "stop_price": 326.4667,
+      "target_price": 407.28,
+      "atr_14": 7.3467,
+      "rs_excess_pct": 0.8834,
+      "breakout_strength": 1.9392
+    },
+    {
+      "symbol": "HIG",
+      "decision": "REJECT",
+      "tier": null,
+      "score": -4.0745,
+      "blockers": [
+        "NO_BREAKOUT",
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 135.52,
+      "stop_price": 130.3364,
+      "target_price": 158.8463,
+      "atr_14": 2.5918,
+      "rs_excess_pct": -1.9275,
+      "breakout_strength": -3.0095
+    },
+    {
+      "symbol": "HON",
+      "decision": "REJECT",
+      "tier": null,
+      "score": -7.3635,
+      "blockers": [
+        "BELOW_SMA150",
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 223.85,
+      "stop_price": 213.689,
+      "target_price": 269.5744,
+      "atr_14": 5.0805,
+      "rs_excess_pct": -7.547,
+      "breakout_strength": 0.1835
+    },
+    {
+      "symbol": "HPQ",
+      "decision": "REJECT",
+      "tier": null,
+      "score": -8.0513,
+      "blockers": [
+        "NO_BREAKOUT",
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 28.42,
+      "stop_price": 25.3744,
+      "target_price": 42.125,
+      "atr_14": 1.5228,
+      "rs_excess_pct": 1.8803,
+      "breakout_strength": -18.5907
+    },
+    {
+      "symbol": "HRL",
+      "decision": "REJECT",
+      "tier": null,
+      "score": -11.9406,
+      "blockers": [
+        "BELOW_SMA150",
+        "NO_BREAKOUT",
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 21.475,
+      "stop_price": 20.5955,
+      "target_price": 25.4327,
+      "atr_14": 0.4397,
+      "rs_excess_pct": -11.7315,
+      "breakout_strength": -0.2091
+    },
+    {
+      "symbol": "HSY",
+      "decision": "REJECT",
+      "tier": null,
+      "score": -3.9031,
+      "blockers": [
+        "BELOW_SMA150",
+        "NO_BREAKOUT",
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 171.275,
+      "stop_price": 163.0528,
+      "target_price": 208.2748,
+      "atr_14": 4.1111,
+      "rs_excess_pct": -1.3902,
+      "breakout_strength": -2.5129
+    },
+    {
+      "symbol": "IBM",
+      "decision": "REJECT",
+      "tier": null,
+      "score": 12.0321,
+      "blockers": [
+        "NO_BREAKOUT"
+      ],
+      "entry_price": 252.58,
+      "stop_price": 238.9832,
+      "target_price": 313.7656,
+      "atr_14": 6.7984,
+      "rs_excess_pct": 10.4393,
+      "breakout_strength": -2.6873
+    },
+    {
+      "symbol": "ICE",
+      "decision": "BUY_CANDIDATE",
+      "tier": "B",
+      "score": 33.5092,
+      "blockers": [],
+      "entry_price": 172.28,
+      "stop_price": 164.3035,
+      "target_price": 208.1744,
+      "atr_14": 3.9883,
+      "rs_excess_pct": 18.1195,
+      "breakout_strength": 1.4247
+    },
+    {
+      "symbol": "IFF",
+      "decision": "BUY_CANDIDATE",
+      "tier": "B",
+      "score": 38.6262,
+      "blockers": [],
+      "entry_price": 94.63,
+      "stop_price": 90.9811,
+      "target_price": 111.0502,
+      "atr_14": 1.8245,
+      "rs_excess_pct": 19.7691,
+      "breakout_strength": 0.0846
+    },
+    {
+      "symbol": "INTC",
+      "decision": "REJECT",
+      "tier": null,
+      "score": -91.3073,
+      "blockers": [
+        "BELOW_SMA150",
+        "NO_BREAKOUT",
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 59.955,
+      "stop_price": 46.2199,
+      "target_price": 121.7628,
+      "atr_14": 6.8675,
+      "rs_excess_pct": -38.3548,
+      "breakout_strength": -52.9525
+    },
+    {
+      "symbol": "INTU",
+      "decision": "REJECT",
+      "tier": null,
+      "score": 17.444,
+      "blockers": [
+        "NO_BREAKOUT"
+      ],
+      "entry_price": 352.195,
+      "stop_price": 326.1868,
+      "target_price": 469.2319,
+      "atr_14": 13.0041,
+      "rs_excess_pct": 11.5912,
+      "breakout_strength": -1.6284
+    },
+    {
+      "symbol": "IP",
+      "decision": "REJECT",
+      "tier": null,
+      "score": -6.7088,
+      "blockers": [
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 36.63,
+      "stop_price": 34.3849,
+      "target_price": 46.733,
+      "atr_14": 1.1226,
+      "rs_excess_pct": -10.2422,
+      "breakout_strength": 0.2189
+    },
+    {
+      "symbol": "ISRG",
+      "decision": "REJECT",
+      "tier": null,
+      "score": 21.9516,
+      "blockers": [
+        "NO_BREAKOUT"
+      ],
+      "entry_price": 436.68,
+      "stop_price": 411.6424,
+      "target_price": 549.3494,
+      "atr_14": 12.5188,
+      "rs_excess_pct": 20.8069,
+      "breakout_strength": -4.8202
+    },
+    {
+      "symbol": "ITW",
+      "decision": "REJECT",
+      "tier": null,
+      "score": 11.5234,
+      "blockers": [
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 290.1,
+      "stop_price": 278.0091,
+      "target_price": 344.5089,
+      "atr_14": 6.0454,
+      "rs_excess_pct": 1.2107,
+      "breakout_strength": 1.6504
+    },
+    {
+      "symbol": "IVZ",
+      "decision": "REJECT",
+      "tier": null,
+      "score": -22.4015,
+      "blockers": [
+        "BELOW_SMA150",
+        "NO_BREAKOUT",
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 27.8,
+      "stop_price": 26.0549,
+      "target_price": 35.6528,
+      "atr_14": 0.8725,
+      "rs_excess_pct": -10.2927,
+      "breakout_strength": -12.1088
+    },
+    {
+      "symbol": "J",
+      "decision": "BUY_CANDIDATE",
+      "tier": "B",
+      "score": 37.7051,
+      "blockers": [],
+      "entry_price": 159.935,
+      "stop_price": 153.4321,
+      "target_price": 189.1979,
+      "atr_14": 3.2514,
+      "rs_excess_pct": 14.4109,
+      "breakout_strength": 3.0841
+    },
+    {
+      "symbol": "JCI",
+      "decision": "REJECT",
+      "tier": null,
+      "score": -9.1001,
+      "blockers": [
+        "NO_BREAKOUT",
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 146.49,
+      "stop_price": 136.353,
+      "target_price": 192.1063,
+      "atr_14": 5.0685,
+      "rs_excess_pct": -2.2114,
+      "breakout_strength": -8.6322
+    },
+    {
+      "symbol": "JNJ",
+      "decision": "REJECT",
+      "tier": null,
+      "score": 13.3766,
+      "blockers": [
+        "NO_BREAKOUT",
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 270.57,
+      "stop_price": 257.5994,
+      "target_price": 328.9379,
+      "atr_14": 6.4853,
+      "rs_excess_pct": 8.8847,
+      "breakout_strength": -3.9953
+    },
+    {
+      "symbol": "JPM",
+      "decision": "REJECT",
+      "tier": null,
+      "score": -1.7762,
+      "blockers": [
+        "NO_BREAKOUT",
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 340.69,
+      "stop_price": 328.7026,
+      "target_price": 394.6335,
+      "atr_14": 5.9937,
+      "rs_excess_pct": -2.0024,
+      "breakout_strength": -3.3723
+    },
+    {
+      "symbol": "KEY",
+      "decision": "REJECT",
+      "tier": null,
+      "score": -4.3835,
+      "blockers": [
+        "BELOW_SMA150",
+        "NO_BREAKOUT",
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 21.5,
+      "stop_price": 20.6953,
+      "target_price": 25.1211,
+      "atr_14": 0.4023,
+      "rs_excess_pct": -3.7595,
+      "breakout_strength": -0.624
+    },
+    {
+      "symbol": "KLAC",
+      "decision": "REJECT",
+      "tier": null,
+      "score": -45.9434,
+      "blockers": [
+        "BELOW_SMA150",
+        "NO_BREAKOUT",
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 153.1,
+      "stop_price": 136.5347,
+      "target_price": 227.6436,
+      "atr_14": 8.2826,
+      "rs_excess_pct": -19.3287,
+      "breakout_strength": -26.6147
+    },
+    {
+      "symbol": "KMB",
+      "decision": "REJECT",
+      "tier": null,
+      "score": 2.871,
+      "blockers": [
+        "NO_BREAKOUT",
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 108.245,
+      "stop_price": 103.0939,
+      "target_price": 131.4249,
+      "atr_14": 2.5755,
+      "rs_excess_pct": 0.4034,
+      "breakout_strength": -3.9658
+    },
+    {
+      "symbol": "KMI",
+      "decision": "REJECT",
+      "tier": null,
+      "score": 5.9683,
+      "blockers": [
+        "NO_BREAKOUT",
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 32.73,
+      "stop_price": 31.1641,
+      "target_price": 39.7766,
+      "atr_14": 0.783,
+      "rs_excess_pct": 7.5059,
+      "breakout_strength": -4.9652
+    },
+    {
+      "symbol": "KO",
+      "decision": "BUY_CANDIDATE",
+      "tier": "B",
+      "score": 28.8892,
+      "blockers": [],
+      "entry_price": 95.86,
+      "stop_price": 92.6226,
+      "target_price": 110.4283,
+      "atr_14": 1.6187,
+      "rs_excess_pct": 13.6312,
+      "breakout_strength": 0.5191
+    },
+    {
+      "symbol": "KR",
+      "decision": "REJECT",
+      "tier": null,
+      "score": 32.0283,
+      "blockers": [
+        "NO_BREAKOUT"
+      ],
+      "entry_price": 68.37,
+      "stop_price": 64.9547,
+      "target_price": 83.739,
+      "atr_14": 1.7077,
+      "rs_excess_pct": 21.3424,
+      "breakout_strength": -0.2771
+    },
+    {
+      "symbol": "L",
+      "decision": "REJECT",
+      "tier": null,
+      "score": -2.556,
+      "blockers": [
+        "NO_BREAKOUT",
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 111.375,
+      "stop_price": 108.326,
+      "target_price": 125.0955,
+      "atr_14": 1.5245,
+      "rs_excess_pct": -1.6982,
+      "breakout_strength": -2.1137
+    },
+    {
+      "symbol": "LEN",
+      "decision": "REJECT",
+      "tier": null,
+      "score": 18.2667,
+      "blockers": [
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 91.045,
+      "stop_price": 85.1175,
+      "target_price": 117.7187,
+      "atr_14": 2.9637,
+      "rs_excess_pct": 7.5461,
+      "breakout_strength": 3.4485
+    },
+    {
+      "symbol": "LH",
+      "decision": "REJECT",
+      "tier": null,
+      "score": 34.0471,
+      "blockers": [
+        "NO_BREAKOUT"
+      ],
+      "entry_price": 355.66,
+      "stop_price": 337.0644,
+      "target_price": 439.3404,
+      "atr_14": 9.2978,
+      "rs_excess_pct": 16.3013,
+      "breakout_strength": -4.0054
+    },
+    {
+      "symbol": "LHX",
+      "decision": "REJECT",
+      "tier": null,
+      "score": -1.0279,
+      "blockers": [
+        "BELOW_SMA150",
+        "NO_BREAKOUT",
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 279.06,
+      "stop_price": 267.1993,
+      "target_price": 332.4333,
+      "atr_14": 5.9304,
+      "rs_excess_pct": 0.5295,
+      "breakout_strength": -1.5575
+    },
+    {
+      "symbol": "LIN",
+      "decision": "REJECT",
+      "tier": null,
+      "score": 14.8156,
+      "blockers": [
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 519.68,
+      "stop_price": 503.6863,
+      "target_price": 591.6518,
+      "atr_14": 7.9969,
+      "rs_excess_pct": 9.7917,
+      "breakout_strength": 0.4135
+    },
+    {
+      "symbol": "LLY",
+      "decision": "REJECT",
+      "tier": null,
+      "score": 52.1763,
+      "blockers": [
+        "NO_BREAKOUT"
+      ],
+      "entry_price": 1411.75,
+      "stop_price": 1326.3056,
+      "target_price": 1796.2499,
+      "atr_14": 42.7222,
+      "rs_excess_pct": 28.7465,
+      "breakout_strength": -2.4361
+    },
+    {
+      "symbol": "LMT",
+      "decision": "REJECT",
+      "tier": null,
+      "score": 28.2606,
+      "blockers": [
+        "NO_BREAKOUT"
+      ],
+      "entry_price": 643.21,
+      "stop_price": 610.2246,
+      "target_price": 791.6445,
+      "atr_14": 16.4927,
+      "rs_excess_pct": 12.0518,
+      "breakout_strength": -2.002
+    },
+    {
+      "symbol": "LOW",
+      "decision": "REJECT",
+      "tier": null,
+      "score": 9.272,
+      "blockers": [
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 218.15,
+      "stop_price": 208.1376,
+      "target_price": 263.2057,
+      "atr_14": 5.0062,
+      "rs_excess_pct": 2.8768,
+      "breakout_strength": 3.3348
+    },
+    {
+      "symbol": "LUV",
+      "decision": "REJECT",
+      "tier": null,
+      "score": -4.27,
+      "blockers": [
+        "NO_BREAKOUT",
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 43.99,
+      "stop_price": 40.9561,
+      "target_price": 57.6427,
+      "atr_14": 1.517,
+      "rs_excess_pct": -6.937,
+      "breakout_strength": -0.8788
+    },
+    {
+      "symbol": "MA",
+      "decision": "BUY_CANDIDATE",
+      "tier": "B",
+      "score": 41.6068,
+      "blockers": [],
+      "entry_price": 658.385,
+      "stop_price": 634.3464,
+      "target_price": 766.5585,
+      "atr_14": 12.0193,
+      "rs_excess_pct": 17.6682,
+      "breakout_strength": 2.1956
+    },
+    {
+      "symbol": "MAR",
+      "decision": "BUY_CANDIDATE",
+      "tier": "A",
+      "score": 39.6336,
+      "blockers": [],
+      "entry_price": 416.44,
+      "stop_price": 397.6692,
+      "target_price": 500.9087,
+      "atr_14": 9.3854,
+      "rs_excess_pct": 23.1344,
+      "breakout_strength": 2.2453
+    },
+    {
+      "symbol": "MAS",
+      "decision": "BUY_CANDIDATE",
+      "tier": "B",
+      "score": 29.2322,
+      "blockers": [],
+      "entry_price": 83.52,
+      "stop_price": 78.9943,
+      "target_price": 103.8856,
+      "atr_14": 2.2628,
+      "rs_excess_pct": 11.0943,
+      "breakout_strength": 1.6491
+    },
+    {
+      "symbol": "MCD",
+      "decision": "REJECT",
+      "tier": null,
+      "score": 2.981,
+      "blockers": [
+        "BELOW_SMA150",
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 265.61,
+      "stop_price": 255.9623,
+      "target_price": 309.0247,
+      "atr_14": 4.8239,
+      "rs_excess_pct": 1.9156,
+      "breakout_strength": 1.0654
+    },
+    {
+      "symbol": "MCHP",
+      "decision": "REJECT",
+      "tier": null,
+      "score": -11.5652,
+      "blockers": [
+        "BELOW_SMA150",
+        "NO_BREAKOUT",
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 76.11,
+      "stop_price": 69.6758,
+      "target_price": 105.0637,
+      "atr_14": 3.2171,
+      "rs_excess_pct": -2.857,
+      "breakout_strength": -8.7082
+    },
+    {
+      "symbol": "MCK",
+      "decision": "REJECT",
+      "tier": null,
+      "score": 37.2992,
+      "blockers": [
+        "NO_BREAKOUT"
+      ],
+      "entry_price": 998.87,
+      "stop_price": 957.397,
+      "target_price": 1185.4984,
+      "atr_14": 20.7365,
+      "rs_excess_pct": 22.5781,
+      "breakout_strength": -3.027
+    },
+    {
+      "symbol": "MCO",
+      "decision": "REJECT",
+      "tier": null,
+      "score": 17.1519,
+      "blockers": [
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 505.89,
+      "stop_price": 482.2837,
+      "target_price": 612.1185,
+      "atr_14": 11.8032,
+      "rs_excess_pct": 7.1177,
+      "breakout_strength": 1.758
+    },
+    {
+      "symbol": "MDT",
+      "decision": "BUY_CANDIDATE",
+      "tier": "B",
+      "score": 36.1461,
+      "blockers": [],
+      "entry_price": 99.3,
+      "stop_price": 94.8161,
+      "target_price": 119.4776,
+      "atr_14": 2.242,
+      "rs_excess_pct": 18.1137,
+      "breakout_strength": 1.3059
+    },
+    {
+      "symbol": "MET",
+      "decision": "REJECT",
+      "tier": null,
+      "score": 17.6213,
+      "blockers": [
+        "NO_BREAKOUT",
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 100.95,
+      "stop_price": 97.1632,
+      "target_price": 117.9904,
+      "atr_14": 1.8934,
+      "rs_excess_pct": 7.1794,
+      "breakout_strength": -2.5814
+    },
+    {
+      "symbol": "MKC",
+      "decision": "REJECT",
+      "tier": null,
+      "score": -3.8165,
+      "blockers": [
+        "BELOW_SMA150",
+        "NO_BREAKOUT",
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 48.81,
+      "stop_price": 46.1731,
+      "target_price": 60.6761,
+      "atr_14": 1.3185,
+      "rs_excess_pct": -3.0843,
+      "breakout_strength": -0.7322
+    },
+    {
+      "symbol": "MMM",
+      "decision": "REJECT",
+      "tier": null,
+      "score": 11.2511,
+      "blockers": [
+        "NO_BREAKOUT",
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 178.39,
+      "stop_price": 170.4786,
+      "target_price": 213.9911,
+      "atr_14": 3.9557,
+      "rs_excess_pct": 0.9799,
+      "breakout_strength": -0.2042
+    },
+    {
+      "symbol": "MO",
+      "decision": "REJECT",
+      "tier": null,
+      "score": 26.1608,
+      "blockers": [
+        "NO_BREAKOUT"
+      ],
+      "entry_price": 77.16,
+      "stop_price": 73.8978,
+      "target_price": 91.8397,
+      "atr_14": 1.6311,
+      "rs_excess_pct": 17.4123,
+      "breakout_strength": -3.2598
+    },
+    {
+      "symbol": "MOS",
+      "decision": "REJECT",
+      "tier": null,
+      "score": -37.4188,
+      "blockers": [
+        "BELOW_SMA150",
+        "NO_BREAKOUT",
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 19.03,
+      "stop_price": 17.502,
+      "target_price": 25.9062,
+      "atr_14": 0.764,
+      "rs_excess_pct": -13.3414,
+      "breakout_strength": -24.0774
+    },
+    {
+      "symbol": "MPC",
+      "decision": "REJECT",
+      "tier": null,
+      "score": 62.3802,
+      "blockers": [
+        "NO_BREAKOUT"
+      ],
+      "entry_price": 430.48,
+      "stop_price": 396.8372,
+      "target_price": 581.8726,
+      "atr_14": 16.8214,
+      "rs_excess_pct": 40.3159,
+      "breakout_strength": -12.6736
+    },
+    {
+      "symbol": "MRK",
+      "decision": "REJECT",
+      "tier": null,
+      "score": 29.8875,
+      "blockers": [
+        "NO_BREAKOUT"
+      ],
+      "entry_price": 148.44,
+      "stop_price": 139.7845,
+      "target_price": 187.3897,
+      "atr_14": 4.3277,
+      "rs_excess_pct": 18.8465,
+      "breakout_strength": -3.6041
+    },
+    {
+      "symbol": "MRSH",
+      "decision": "BUY_CANDIDATE",
+      "tier": "B",
+      "score": 28.7236,
+      "blockers": [],
+      "entry_price": 205.45,
+      "stop_price": 197.014,
+      "target_price": 243.412,
+      "atr_14": 4.218,
+      "rs_excess_pct": 10.1636,
+      "breakout_strength": 1.3792
+    },
+    {
+      "symbol": "MS",
+      "decision": "REJECT",
+      "tier": null,
+      "score": -21.2499,
+      "blockers": [
+        "BELOW_SMA150",
+        "NO_BREAKOUT",
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 185.745,
+      "stop_price": 176.0006,
+      "target_price": 229.595,
+      "atr_14": 4.8722,
+      "rs_excess_pct": -11.6764,
+      "breakout_strength": -9.5735
+    },
+    {
+      "symbol": "MSFT",
+      "decision": "REJECT",
+      "tier": null,
+      "score": 10.6378,
+      "blockers": [
+        "NO_BREAKOUT",
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 507.0,
+      "stop_price": 481.8071,
+      "target_price": 620.3682,
+      "atr_14": 12.5965,
+      "rs_excess_pct": 5.3006,
+      "breakout_strength": -7.9988
+    },
+    {
+      "symbol": "MSI",
+      "decision": "REJECT",
+      "tier": null,
+      "score": 21.9087,
+      "blockers": [
+        "NO_BREAKOUT"
+      ],
+      "entry_price": 487.41,
+      "stop_price": 472.0072,
+      "target_price": 556.7228,
+      "atr_14": 7.7014,
+      "rs_excess_pct": 12.597,
+      "breakout_strength": -1.9868
+    },
+    {
+      "symbol": "MTB",
+      "decision": "REJECT",
+      "tier": null,
+      "score": -10.3787,
+      "blockers": [
+        "BELOW_SMA150",
+        "NO_BREAKOUT",
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 224.44,
+      "stop_price": 216.8379,
+      "target_price": 258.6493,
+      "atr_14": 3.801,
+      "rs_excess_pct": -8.486,
+      "breakout_strength": -1.8927
+    },
+    {
+      "symbol": "MU",
+      "decision": "REJECT",
+      "tier": null,
+      "score": -29.113,
+      "blockers": [
+        "BELOW_SMA150",
+        "NO_BREAKOUT",
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 833.42,
+      "stop_price": 732.8741,
+      "target_price": 1285.8766,
+      "atr_14": 50.273,
+      "rs_excess_pct": -4.3049,
+      "breakout_strength": -24.8081
+    },
+    {
+      "symbol": "NDAQ",
+      "decision": "BUY_CANDIDATE",
+      "tier": "B",
+      "score": 38.5171,
+      "blockers": [],
+      "entry_price": 108.66,
+      "stop_price": 104.3303,
+      "target_price": 128.1434,
+      "atr_14": 2.1648,
+      "rs_excess_pct": 18.669,
+      "breakout_strength": 0.7837
+    },
+    {
+      "symbol": "NEM",
+      "decision": "REJECT",
+      "tier": null,
+      "score": -0.7413,
+      "blockers": [
+        "BELOW_SMA150",
+        "NO_BREAKOUT"
+      ],
+      "entry_price": 109.11,
+      "stop_price": 101.2066,
+      "target_price": 144.6753,
+      "atr_14": 3.9517,
+      "rs_excess_pct": 14.0698,
+      "breakout_strength": -14.8111
+    },
+    {
+      "symbol": "NFLX",
+      "decision": "REJECT",
+      "tier": null,
+      "score": -28.5474,
+      "blockers": [
+        "BELOW_SMA150",
+        "NO_BREAKOUT",
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 62.36,
+      "stop_price": 58.6047,
+      "target_price": 79.259,
+      "atr_14": 1.8777,
+      "rs_excess_pct": -12.9717,
+      "breakout_strength": -15.5757
+    },
+    {
+      "symbol": "NKE",
+      "decision": "REJECT",
+      "tier": null,
+      "score": -2.7604,
+      "blockers": [
+        "BELOW_SMA150",
+        "NO_BREAKOUT",
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 39.13,
+      "stop_price": 37.0835,
+      "target_price": 48.3393,
+      "atr_14": 1.0233,
+      "rs_excess_pct": -2.4928,
+      "breakout_strength": -0.2676
+    },
+    {
+      "symbol": "NOC",
+      "decision": "REJECT",
+      "tier": null,
+      "score": 1.1316,
+      "blockers": [
+        "NO_BREAKOUT",
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 555.51,
+      "stop_price": 529.3795,
+      "target_price": 673.0975,
+      "atr_14": 13.0653,
+      "rs_excess_pct": 3.4185,
+      "breakout_strength": -3.4248
+    },
+    {
+      "symbol": "NSC",
+      "decision": "REJECT",
+      "tier": null,
+      "score": 11.9314,
+      "blockers": [
+        "NO_BREAKOUT",
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 345.73,
+      "stop_price": 335.1615,
+      "target_price": 393.2884,
+      "atr_14": 5.2843,
+      "rs_excess_pct": 3.8594,
+      "breakout_strength": -0.0376
+    },
+    {
+      "symbol": "NTAP",
+      "decision": "REJECT",
+      "tier": null,
+      "score": -12.2522,
+      "blockers": [
+        "NO_BREAKOUT",
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 185.205,
+      "stop_price": 165.0984,
+      "target_price": 275.6849,
+      "atr_14": 10.0533,
+      "rs_excess_pct": -0.3133,
+      "breakout_strength": -23.11
+    },
+    {
+      "symbol": "NTRS",
+      "decision": "REJECT",
+      "tier": null,
+      "score": -8.4816,
+      "blockers": [
+        "BELOW_SMA150",
+        "NO_BREAKOUT",
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 170.62,
+      "stop_price": 163.9272,
+      "target_price": 200.7377,
+      "atr_14": 3.3464,
+      "rs_excess_pct": -3.7947,
+      "breakout_strength": -4.6869
+    },
+    {
+      "symbol": "NUE",
+      "decision": "REJECT",
+      "tier": null,
+      "score": 20.0862,
+      "blockers": [
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 277.625,
+      "stop_price": 261.2214,
+      "target_price": 351.4414,
+      "atr_14": 8.2018,
+      "rs_excess_pct": 3.806,
+      "breakout_strength": 0.6617
+    },
+    {
+      "symbol": "NVDA",
+      "decision": "REJECT",
+      "tier": null,
+      "score": -19.1676,
+      "blockers": [
+        "BELOW_SMA150",
+        "NO_BREAKOUT",
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 202.205,
+      "stop_price": 189.5273,
+      "target_price": 259.2546,
+      "atr_14": 6.3388,
+      "rs_excess_pct": -2.2633,
+      "breakout_strength": -16.9043
+    },
+    {
+      "symbol": "OKE",
+      "decision": "REJECT",
+      "tier": null,
+      "score": 9.1489,
+      "blockers": [
+        "NO_BREAKOUT",
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 92.53,
+      "stop_price": 88.0565,
+      "target_price": 112.6608,
+      "atr_14": 2.2368,
+      "rs_excess_pct": 9.0045,
+      "breakout_strength": -4.1835
+    },
+    {
+      "symbol": "OMC",
+      "decision": "REJECT",
+      "tier": null,
+      "score": 11.4336,
+      "blockers": [
+        "NO_BREAKOUT",
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 83.985,
+      "stop_price": 79.3002,
+      "target_price": 105.0666,
+      "atr_14": 2.3424,
+      "rs_excess_pct": 5.9161,
+      "breakout_strength": -2.6317
+    },
+    {
+      "symbol": "ORCL",
+      "decision": "REJECT",
+      "tier": null,
+      "score": -37.8596,
+      "blockers": [
+        "BELOW_SMA150",
+        "NO_BREAKOUT",
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 119.115,
+      "stop_price": 103.4278,
+      "target_price": 189.7074,
+      "atr_14": 7.8436,
+      "rs_excess_pct": -15.7227,
+      "breakout_strength": -22.1369
+    },
+    {
+      "symbol": "ORLY",
+      "decision": "REJECT",
+      "tier": null,
+      "score": 0.6893,
+      "blockers": [
+        "NO_BREAKOUT",
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 90.71,
+      "stop_price": 86.6078,
+      "target_price": 109.17,
+      "atr_14": 2.0511,
+      "rs_excess_pct": 1.0112,
+      "breakout_strength": -1.8556
+    },
+    {
+      "symbol": "OXY",
+      "decision": "REJECT",
+      "tier": null,
+      "score": 12.1877,
+      "blockers": [
+        "NO_BREAKOUT"
+      ],
+      "entry_price": 60.715,
+      "stop_price": 57.4671,
+      "target_price": 75.3307,
+      "atr_14": 1.624,
+      "rs_excess_pct": 12.9641,
+      "breakout_strength": -6.5276
+    },
+    {
+      "symbol": "PAYX",
+      "decision": "REJECT",
+      "tier": null,
+      "score": 9.3699,
+      "blockers": [
+        "NO_BREAKOUT",
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 115.46,
+      "stop_price": 109.3793,
+      "target_price": 142.8232,
+      "atr_14": 3.0404,
+      "rs_excess_pct": 0.5366,
+      "breakout_strength": -2.2602
+    },
+    {
+      "symbol": "PCAR",
+      "decision": "REJECT",
+      "tier": null,
+      "score": -33.5022,
+      "blockers": [
+        "BELOW_SMA150",
+        "NO_BREAKOUT",
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 102.79,
+      "stop_price": 97.6749,
+      "target_price": 125.8081,
+      "atr_14": 2.5576,
+      "rs_excess_pct": -21.9541,
+      "breakout_strength": -11.5481
+    },
+    {
+      "symbol": "PEP",
+      "decision": "REJECT",
+      "tier": null,
+      "score": 5.5723,
+      "blockers": [
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 140.45,
+      "stop_price": 134.7892,
+      "target_price": 165.9234,
+      "atr_14": 2.8304,
+      "rs_excess_pct": 4.2724,
+      "breakout_strength": 1.0504
+    },
+    {
+      "symbol": "PFE",
+      "decision": "BUY_CANDIDATE",
+      "tier": "A",
+      "score": 39.1893,
+      "blockers": [],
+      "entry_price": 30.71,
+      "stop_price": 29.5504,
+      "target_price": 35.9281,
+      "atr_14": 0.5798,
+      "rs_excess_pct": 23.1364,
+      "breakout_strength": 0.1794
+    },
+    {
+      "symbol": "PFG",
+      "decision": "REJECT",
+      "tier": null,
+      "score": 1.8062,
+      "blockers": [
+        "NO_BREAKOUT",
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 112.815,
+      "stop_price": 108.2189,
+      "target_price": 133.4975,
+      "atr_14": 2.2981,
+      "rs_excess_pct": 0.8368,
+      "breakout_strength": -4.5437
+    },
+    {
+      "symbol": "PG",
+      "decision": "REJECT",
+      "tier": null,
+      "score": 24.4029,
+      "blockers": [
+        "NO_BREAKOUT"
+      ],
+      "entry_price": 163.62,
+      "stop_price": 157.7228,
+      "target_price": 190.1574,
+      "atr_14": 2.9486,
+      "rs_excess_pct": 13.5143,
+      "breakout_strength": -1.2732
+    },
+    {
+      "symbol": "PGR",
+      "decision": "REJECT",
+      "tier": null,
+      "score": 24.2268,
+      "blockers": [
+        "NO_BREAKOUT"
+      ],
+      "entry_price": 234.1,
+      "stop_price": 224.7492,
+      "target_price": 276.1786,
+      "atr_14": 4.6754,
+      "rs_excess_pct": 13.4053,
+      "breakout_strength": -0.383
+    },
+    {
+      "symbol": "PH",
+      "decision": "REJECT",
+      "tier": null,
+      "score": -10.3719,
+      "blockers": [
+        "BELOW_SMA150",
+        "NO_BREAKOUT",
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 928.37,
+      "stop_price": 879.4472,
+      "target_price": 1148.5227,
+      "atr_14": 24.4614,
+      "rs_excess_pct": -4.0199,
+      "breakout_strength": -6.352
+    },
+    {
+      "symbol": "PHM",
+      "decision": "REJECT",
+      "tier": null,
+      "score": 12.9355,
+      "blockers": [
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 131.32,
+      "stop_price": 123.8568,
+      "target_price": 164.9042,
+      "atr_14": 3.7316,
+      "rs_excess_pct": 2.1548,
+      "breakout_strength": 3.304
+    },
+    {
+      "symbol": "PM",
+      "decision": "REJECT",
+      "tier": null,
+      "score": 26.1146,
+      "blockers": [
+        "NO_BREAKOUT"
+      ],
+      "entry_price": 208.21,
+      "stop_price": 198.7301,
+      "target_price": 250.8697,
+      "atr_14": 4.74,
+      "rs_excess_pct": 14.5764,
+      "breakout_strength": -2.7556
+    },
+    {
+      "symbol": "PNC",
+      "decision": "REJECT",
+      "tier": null,
+      "score": -5.3363,
+      "blockers": [
+        "NO_BREAKOUT",
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 231.725,
+      "stop_price": 223.7765,
+      "target_price": 267.4934,
+      "atr_14": 3.9743,
+      "rs_excess_pct": -5.749,
+      "breakout_strength": -0.4789
+    },
+    {
+      "symbol": "PPG",
+      "decision": "REJECT",
+      "tier": null,
+      "score": 24.549,
+      "blockers": [
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 124.89,
+      "stop_price": 118.8861,
+      "target_price": 151.9076,
+      "atr_14": 3.002,
+      "rs_excess_pct": 8.9015,
+      "breakout_strength": 3.3259
+    },
+    {
+      "symbol": "PRU",
+      "decision": "REJECT",
+      "tier": null,
+      "score": 5.4218,
+      "blockers": [
+        "NO_BREAKOUT",
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 118.26,
+      "stop_price": 113.8491,
+      "target_price": 138.109,
+      "atr_14": 2.2054,
+      "rs_excess_pct": -0.8347,
+      "breakout_strength": -1.2566
+    },
+    {
+      "symbol": "PSKY",
+      "decision": "REJECT",
+      "tier": null,
+      "score": -13.7238,
+      "blockers": [
+        "BELOW_SMA150",
+        "NO_BREAKOUT",
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 9.775,
+      "stop_price": 8.6601,
+      "target_price": 14.7921,
+      "atr_14": 0.5575,
+      "rs_excess_pct": 1.1281,
+      "breakout_strength": -14.8519
+    },
+    {
+      "symbol": "PSX",
+      "decision": "REJECT",
+      "tier": null,
+      "score": 58.1728,
+      "blockers": [
+        "NO_BREAKOUT"
+      ],
+      "entry_price": 275.08,
+      "stop_price": 256.0765,
+      "target_price": 360.5956,
+      "atr_14": 9.5017,
+      "rs_excess_pct": 36.4817,
+      "breakout_strength": -8.083
+    },
+    {
+      "symbol": "PWR",
+      "decision": "REJECT",
+      "tier": null,
+      "score": -22.0506,
+      "blockers": [
+        "BELOW_SMA150",
+        "NO_BREAKOUT",
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 621.04,
+      "stop_price": 567.1352,
+      "target_price": 863.6116,
+      "atr_14": 26.9524,
+      "rs_excess_pct": -8.1245,
+      "breakout_strength": -13.9262
+    },
+    {
+      "symbol": "QCOM",
+      "decision": "REJECT",
+      "tier": null,
+      "score": -19.0584,
+      "blockers": [
+        "BELOW_SMA150",
+        "NO_BREAKOUT",
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 161.88,
+      "stop_price": 146.8871,
+      "target_price": 229.3482,
+      "atr_14": 7.4965,
+      "rs_excess_pct": 2.2865,
+      "breakout_strength": -21.3449
+    },
+    {
+      "symbol": "RF",
+      "decision": "REJECT",
+      "tier": null,
+      "score": -5.2354,
+      "blockers": [
+        "NO_BREAKOUT",
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 28.98,
+      "stop_price": 27.9356,
+      "target_price": 33.6797,
+      "atr_14": 0.5222,
+      "rs_excess_pct": -6.1472,
+      "breakout_strength": -0.1722
+    },
+    {
+      "symbol": "RL",
+      "decision": "REJECT",
+      "tier": null,
+      "score": 13.4611,
+      "blockers": [
+        "NO_BREAKOUT",
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 397.57,
+      "stop_price": 379.7581,
+      "target_price": 477.7234,
+      "atr_14": 8.9059,
+      "rs_excess_pct": 7.4443,
+      "breakout_strength": -1.3547
+    },
+    {
+      "symbol": "ROK",
+      "decision": "REJECT",
+      "tier": null,
+      "score": -2.4754,
+      "blockers": [
+        "NO_BREAKOUT",
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 440.14,
+      "stop_price": 418.4109,
+      "target_price": 537.9208,
+      "atr_14": 10.8645,
+      "rs_excess_pct": 1.3303,
+      "breakout_strength": -4.3569
+    },
+    {
+      "symbol": "ROP",
+      "decision": "BUY_CANDIDATE",
+      "tier": "A",
+      "score": 57.5632,
+      "blockers": [],
+      "entry_price": 479.535,
+      "stop_price": 454.8253,
+      "target_price": 590.7286,
+      "atr_14": 12.3548,
+      "rs_excess_pct": 24.6549,
+      "breakout_strength": 2.1722
+    },
+    {
+      "symbol": "ROST",
+      "decision": "REJECT",
+      "tier": null,
+      "score": -9.6762,
+      "blockers": [
+        "NO_BREAKOUT",
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 230.62,
+      "stop_price": 219.782,
+      "target_price": 279.3909,
+      "atr_14": 5.419,
+      "rs_excess_pct": -5.7787,
+      "breakout_strength": -4.4339
+    },
+    {
+      "symbol": "RSG",
+      "decision": "REJECT",
+      "tier": null,
+      "score": 34.6631,
+      "blockers": [
+        "NO_BREAKOUT"
+      ],
+      "entry_price": 246.05,
+      "stop_price": 236.6081,
+      "target_price": 288.5387,
+      "atr_14": 4.721,
+      "rs_excess_pct": 21.1071,
+      "breakout_strength": -1.0297
+    },
+    {
+      "symbol": "RTX",
+      "decision": "REJECT",
+      "tier": null,
+      "score": 0.2455,
+      "blockers": [
+        "NO_BREAKOUT",
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 202.79,
+      "stop_price": 193.85,
+      "target_price": 243.0198,
+      "atr_14": 4.47,
+      "rs_excess_pct": -4.2658,
+      "breakout_strength": -0.5444
+    },
+    {
+      "symbol": "RVTY",
+      "decision": "REJECT",
+      "tier": null,
+      "score": 58.3919,
+      "blockers": [
+        "NO_BREAKOUT"
+      ],
+      "entry_price": 151.7,
+      "stop_price": 140.4171,
+      "target_price": 202.473,
+      "atr_14": 5.6414,
+      "rs_excess_pct": 38.5659,
+      "breakout_strength": -10.1835
+    },
+    {
+      "symbol": "SBUX",
+      "decision": "REJECT",
+      "tier": null,
+      "score": 4.3882,
+      "blockers": [
+        "NO_BREAKOUT",
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 104.44,
+      "stop_price": 99.6778,
+      "target_price": 125.87,
+      "atr_14": 2.3811,
+      "rs_excess_pct": 2.3267,
+      "breakout_strength": -1.5831
+    },
+    {
+      "symbol": "SCHW",
+      "decision": "REJECT",
+      "tier": null,
+      "score": -31.4768,
+      "blockers": [
+        "BELOW_SMA150",
+        "NO_BREAKOUT",
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 88.73,
+      "stop_price": 85.0324,
+      "target_price": 105.369,
+      "atr_14": 1.8488,
+      "rs_excess_pct": -14.0931,
+      "breakout_strength": -17.3836
+    },
+    {
+      "symbol": "SHW",
+      "decision": "REJECT",
+      "tier": null,
+      "score": 9.146,
+      "blockers": [
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 352.39,
+      "stop_price": 334.3495,
+      "target_price": 433.5723,
+      "atr_14": 9.0203,
+      "rs_excess_pct": -0.0811,
+      "breakout_strength": 1.8115
+    },
+    {
+      "symbol": "SJM",
+      "decision": "REJECT",
+      "tier": null,
+      "score": 28.9154,
+      "blockers": [
+        "NO_BREAKOUT"
+      ],
+      "entry_price": 131.36,
+      "stop_price": 125.5643,
+      "target_price": 157.4407,
+      "atr_14": 2.8979,
+      "rs_excess_pct": 13.4587,
+      "breakout_strength": -1.5551
+    },
+    {
+      "symbol": "SLB",
+      "decision": "REJECT",
+      "tier": null,
+      "score": 2.7373,
+      "blockers": [
+        "NO_BREAKOUT",
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 52.335,
+      "stop_price": 49.3299,
+      "target_price": 65.8579,
+      "atr_14": 1.5025,
+      "rs_excess_pct": 5.762,
+      "breakout_strength": -3.7694
+    },
+    {
+      "symbol": "SNA",
+      "decision": "REJECT",
+      "tier": null,
+      "score": -12.0606,
+      "blockers": [
+        "BELOW_SMA150",
+        "NO_BREAKOUT",
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 365.18,
+      "stop_price": 351.508,
+      "target_price": 426.7041,
+      "atr_14": 6.836,
+      "rs_excess_pct": -10.0508,
+      "breakout_strength": -2.0098
+    },
+    {
+      "symbol": "SPGI",
+      "decision": "BUY_CANDIDATE",
+      "tier": "B",
+      "score": 32.8842,
+      "blockers": [],
+      "entry_price": 474.72,
+      "stop_price": 454.478,
+      "target_price": 565.809,
+      "atr_14": 10.121,
+      "rs_excess_pct": 17.555,
+      "breakout_strength": 0.3615
+    },
+    {
+      "symbol": "STT",
+      "decision": "REJECT",
+      "tier": null,
+      "score": -13.5545,
+      "blockers": [
+        "NO_BREAKOUT",
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 169.33,
+      "stop_price": 161.5258,
+      "target_price": 204.449,
+      "atr_14": 3.9021,
+      "rs_excess_pct": -5.8668,
+      "breakout_strength": -8.0478
+    },
+    {
+      "symbol": "STZ",
+      "decision": "BUY_CANDIDATE",
+      "tier": "B",
+      "score": 15.5779,
+      "blockers": [],
+      "entry_price": 140.71,
+      "stop_price": 133.8194,
+      "target_price": 171.7176,
+      "atr_14": 3.4453,
+      "rs_excess_pct": 10.1291,
+      "breakout_strength": 1.3688
+    },
+    {
+      "symbol": "SWK",
+      "decision": "REJECT",
+      "tier": null,
+      "score": 32.315,
+      "blockers": [
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 106.69,
+      "stop_price": 101.4956,
+      "target_price": 130.0649,
+      "atr_14": 2.5972,
+      "rs_excess_pct": 7.3338,
+      "breakout_strength": 1.8083
+    },
+    {
+      "symbol": "SYK",
+      "decision": "REJECT",
+      "tier": null,
+      "score": -7.8329,
+      "blockers": [
+        "BELOW_SMA150",
+        "NO_BREAKOUT",
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 306.975,
+      "stop_price": 287.6226,
+      "target_price": 394.0608,
+      "atr_14": 9.6762,
+      "rs_excess_pct": -6.0115,
+      "breakout_strength": -1.8214
+    },
+    {
+      "symbol": "SYY",
+      "decision": "REJECT",
+      "tier": null,
+      "score": 3.0283,
+      "blockers": [
+        "NO_BREAKOUT",
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 81.71,
+      "stop_price": 78.6783,
+      "target_price": 95.3529,
+      "atr_14": 1.5159,
+      "rs_excess_pct": 1.5744,
+      "breakout_strength": -2.6798
+    },
+    {
+      "symbol": "T",
+      "decision": "REJECT",
+      "tier": null,
+      "score": -20.9098,
+      "blockers": [
+        "BELOW_SMA150",
+        "NO_BREAKOUT",
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 21.44,
+      "stop_price": 20.0503,
+      "target_price": 27.6937,
+      "atr_14": 0.6949,
+      "rs_excess_pct": -4.9553,
+      "breakout_strength": -15.9545
+    },
+    {
+      "symbol": "TAP",
+      "decision": "REJECT",
+      "tier": null,
+      "score": 16.5435,
+      "blockers": [
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 43.24,
+      "stop_price": 40.9113,
+      "target_price": 53.7191,
+      "atr_14": 1.1643,
+      "rs_excess_pct": 5.6759,
+      "breakout_strength": 3.3461
+    },
+    {
+      "symbol": "TEL",
+      "decision": "REJECT",
+      "tier": null,
+      "score": 2.1397,
+      "blockers": [
+        "NO_BREAKOUT",
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 217.55,
+      "stop_price": 203.5102,
+      "target_price": 280.7293,
+      "atr_14": 7.0199,
+      "rs_excess_pct": 2.8832,
+      "breakout_strength": -4.2178
+    },
+    {
+      "symbol": "TFC",
+      "decision": "REJECT",
+      "tier": null,
+      "score": 1.7162,
+      "blockers": [
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 50.17,
+      "stop_price": 48.2408,
+      "target_price": 58.8514,
+      "atr_14": 0.9646,
+      "rs_excess_pct": -1.5289,
+      "breakout_strength": 1.2104
+    },
+    {
+      "symbol": "TGT",
+      "decision": "REJECT",
+      "tier": null,
+      "score": 21.7185,
+      "blockers": [
+        "NO_BREAKOUT"
+      ],
+      "entry_price": 158.49,
+      "stop_price": 150.3431,
+      "target_price": 195.1509,
+      "atr_14": 4.0734,
+      "rs_excess_pct": 10.0766,
+      "breakout_strength": -1.4274
+    },
+    {
+      "symbol": "TJX",
+      "decision": "REJECT",
+      "tier": null,
+      "score": -13.001,
+      "blockers": [
+        "BELOW_SMA150",
+        "NO_BREAKOUT",
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 141.02,
+      "stop_price": 135.7049,
+      "target_price": 164.9382,
+      "atr_14": 2.6576,
+      "rs_excess_pct": -7.9703,
+      "breakout_strength": -5.0306
+    },
+    {
+      "symbol": "TMO",
+      "decision": "REJECT",
+      "tier": null,
+      "score": 41.4058,
+      "blockers": [
+        "NO_BREAKOUT"
+      ],
+      "entry_price": 682.76,
+      "stop_price": 646.4869,
+      "target_price": 845.9892,
+      "atr_14": 18.1366,
+      "rs_excess_pct": 23.2469,
+      "breakout_strength": -4.0717
+    },
+    {
+      "symbol": "TPR",
+      "decision": "REJECT",
+      "tier": null,
+      "score": -21.0592,
+      "blockers": [
+        "BELOW_SMA150",
+        "NO_BREAKOUT",
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 120.76,
+      "stop_price": 114.2168,
+      "target_price": 150.2042,
+      "atr_14": 3.2716,
+      "rs_excess_pct": -20.055,
+      "breakout_strength": -1.0042
+    },
+    {
+      "symbol": "TRV",
+      "decision": "REJECT",
+      "tier": null,
+      "score": 23.08,
+      "blockers": [
+        "NO_BREAKOUT",
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 398.84,
+      "stop_price": 384.1469,
+      "target_price": 464.959,
+      "atr_14": 7.3466,
+      "rs_excess_pct": 8.2997,
+      "breakout_strength": -2.2091
+    },
+    {
+      "symbol": "TSN",
+      "decision": "REJECT",
+      "tier": null,
+      "score": -0.5979,
+      "blockers": [
+        "BELOW_SMA150",
+        "NO_BREAKOUT",
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 57.08,
+      "stop_price": 55.1116,
+      "target_price": 65.9379,
+      "atr_14": 0.9842,
+      "rs_excess_pct": 0.3908,
+      "breakout_strength": -0.9887
+    },
+    {
+      "symbol": "TT",
+      "decision": "REJECT",
+      "tier": null,
+      "score": -24.6219,
+      "blockers": [
+        "BELOW_SMA150",
+        "NO_BREAKOUT",
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 413.31,
+      "stop_price": 383.7704,
+      "target_price": 546.2383,
+      "atr_14": 14.7698,
+      "rs_excess_pct": -10.0845,
+      "breakout_strength": -14.5374
+    },
+    {
+      "symbol": "TXN",
+      "decision": "REJECT",
+      "tier": null,
+      "score": 15.5946,
+      "blockers": [
+        "NO_BREAKOUT",
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 301.96,
+      "stop_price": 283.0782,
+      "target_price": 386.9281,
+      "atr_14": 9.4409,
+      "rs_excess_pct": 9.2709,
+      "breakout_strength": -3.0533
+    },
+    {
+      "symbol": "TXT",
+      "decision": "REJECT",
+      "tier": null,
+      "score": 2.593,
+      "blockers": [
+        "NO_BREAKOUT",
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 88.525,
+      "stop_price": 83.9046,
+      "target_price": 109.3168,
+      "atr_14": 2.3102,
+      "rs_excess_pct": 1.619,
+      "breakout_strength": -1.4856
+    },
+    {
+      "symbol": "UNH",
+      "decision": "REJECT",
+      "tier": null,
+      "score": -1.0322,
+      "blockers": [
+        "NO_BREAKOUT",
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 400.455,
+      "stop_price": 378.6214,
+      "target_price": 498.7061,
+      "atr_14": 10.9168,
+      "rs_excess_pct": 1.0525,
+      "breakout_strength": -6.1001
+    },
+    {
+      "symbol": "UNP",
+      "decision": "REJECT",
+      "tier": null,
+      "score": 17.8779,
+      "blockers": [
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 307.0,
+      "stop_price": 296.9546,
+      "target_price": 352.2043,
+      "atr_14": 5.0227,
+      "rs_excess_pct": 6.2493,
+      "breakout_strength": 0.8492
+    },
+    {
+      "symbol": "UPS",
+      "decision": "REJECT",
+      "tier": null,
+      "score": 12.4777,
+      "blockers": [
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 109.71,
+      "stop_price": 105.2197,
+      "target_price": 129.9164,
+      "atr_14": 2.2452,
+      "rs_excess_pct": 4.3912,
+      "breakout_strength": 0.6791
+    },
+    {
+      "symbol": "USB",
+      "decision": "REJECT",
+      "tier": null,
+      "score": 0.0371,
+      "blockers": [
+        "NO_BREAKOUT",
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 60.5,
+      "stop_price": 58.2051,
+      "target_price": 70.8269,
+      "atr_14": 1.1474,
+      "rs_excess_pct": -2.6882,
+      "breakout_strength": -0.8115
+    },
+    {
+      "symbol": "V",
+      "decision": "BUY_CANDIDATE",
+      "tier": "B",
+      "score": 41.0052,
+      "blockers": [],
+      "entry_price": 425.53,
+      "stop_price": 410.8116,
+      "target_price": 491.7628,
+      "atr_14": 7.3592,
+      "rs_excess_pct": 17.6007,
+      "breakout_strength": 2.0505
+    },
+    {
+      "symbol": "VLO",
+      "decision": "REJECT",
+      "tier": null,
+      "score": 31.1344,
+      "blockers": [
+        "NO_BREAKOUT"
+      ],
+      "entry_price": 381.51,
+      "stop_price": 347.4978,
+      "target_price": 534.565,
+      "atr_14": 17.0061,
+      "rs_excess_pct": 25.8529,
+      "breakout_strength": -17.2501
+    },
+    {
+      "symbol": "VMC",
+      "decision": "REJECT",
+      "tier": null,
+      "score": 9.7838,
+      "blockers": [
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 289.12,
+      "stop_price": 275.3972,
+      "target_price": 350.8724,
+      "atr_14": 6.8614,
+      "rs_excess_pct": 3.8369,
+      "breakout_strength": 0.9339
+    },
+    {
+      "symbol": "VRSN",
+      "decision": "REJECT",
+      "tier": null,
+      "score": 13.2578,
+      "blockers": [
+        "NO_BREAKOUT",
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 308.44,
+      "stop_price": 293.8769,
+      "target_price": 373.9741,
+      "atr_14": 7.2816,
+      "rs_excess_pct": 5.5436,
+      "breakout_strength": -1.2202
+    },
+    {
+      "symbol": "VTRS",
+      "decision": "REJECT",
+      "tier": null,
+      "score": 18.2744,
+      "blockers": [
+        "NO_BREAKOUT",
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 18.675,
+      "stop_price": 17.7339,
+      "target_price": 22.91,
+      "atr_14": 0.4706,
+      "rs_excess_pct": 8.4596,
+      "breakout_strength": -4.2308
+    },
+    {
+      "symbol": "VZ",
+      "decision": "REJECT",
+      "tier": null,
+      "score": -5.3391,
+      "blockers": [
+        "BELOW_SMA150",
+        "NO_BREAKOUT",
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 45.09,
+      "stop_price": 42.6523,
+      "target_price": 56.0596,
+      "atr_14": 1.2188,
+      "rs_excess_pct": -0.066,
+      "breakout_strength": -5.2731
+    },
+    {
+      "symbol": "WAT",
+      "decision": "REJECT",
+      "tier": null,
+      "score": 26.5149,
+      "blockers": [
+        "NO_BREAKOUT"
+      ],
+      "entry_price": 449.46,
+      "stop_price": 423.5104,
+      "target_price": 566.2331,
+      "atr_14": 12.9748,
+      "rs_excess_pct": 15.6707,
+      "breakout_strength": -6.7414
+    },
+    {
+      "symbol": "WDC",
+      "decision": "REJECT",
+      "tier": null,
+      "score": -64.8074,
+      "blockers": [
+        "BELOW_SMA150",
+        "NO_BREAKOUT",
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 338.525,
+      "stop_price": 288.4154,
+      "target_price": 564.0181,
+      "atr_14": 25.0548,
+      "rs_excess_pct": -36.0159,
+      "breakout_strength": -28.7915
+    },
+    {
+      "symbol": "WFC",
+      "decision": "REJECT",
+      "tier": null,
+      "score": 2.1875,
+      "blockers": [
+        "NO_BREAKOUT",
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 85.905,
+      "stop_price": 82.152,
+      "target_price": 102.7937,
+      "atr_14": 1.8765,
+      "rs_excess_pct": 0.028,
+      "breakout_strength": -1.4173
+    },
+    {
+      "symbol": "WM",
+      "decision": "REJECT",
+      "tier": null,
+      "score": 13.7096,
+      "blockers": [
+        "NO_BREAKOUT",
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 237.68,
+      "stop_price": 227.7317,
+      "target_price": 282.4472,
+      "atr_14": 4.9741,
+      "rs_excess_pct": 8.2197,
+      "breakout_strength": -1.5451
+    },
+    {
+      "symbol": "WMB",
+      "decision": "REJECT",
+      "tier": null,
+      "score": -3.7366,
+      "blockers": [
+        "BELOW_SMA150",
+        "NO_BREAKOUT",
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 71.195,
+      "stop_price": 67.1005,
+      "target_price": 89.6202,
+      "atr_14": 2.0472,
+      "rs_excess_pct": 2.5055,
+      "breakout_strength": -6.2422
+    },
+    {
+      "symbol": "WMT",
+      "decision": "BUY_CANDIDATE",
+      "tier": "B",
+      "score": 29.4321,
+      "blockers": [],
+      "entry_price": 127.71,
+      "stop_price": 122.6681,
+      "target_price": 150.3987,
+      "atr_14": 2.521,
+      "rs_excess_pct": 17.0058,
+      "breakout_strength": 2.7599
+    },
+    {
+      "symbol": "WYNN",
+      "decision": "REJECT",
+      "tier": null,
+      "score": -27.0923,
+      "blockers": [
+        "BELOW_SMA150",
+        "NO_BREAKOUT",
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 77.66,
+      "stop_price": 72.6288,
+      "target_price": 100.3004,
+      "atr_14": 2.5156,
+      "rs_excess_pct": -17.9705,
+      "breakout_strength": -9.1218
+    },
+    {
+      "symbol": "XOM",
+      "decision": "REJECT",
+      "tier": null,
+      "score": 30.5671,
+      "blockers": [
+        "NO_BREAKOUT"
+      ],
+      "entry_price": 179.77,
+      "stop_price": 171.4863,
+      "target_price": 217.0465,
+      "atr_14": 4.1418,
+      "rs_excess_pct": 19.743,
+      "breakout_strength": -4.6186
+    },
+    {
+      "symbol": "XYL",
+      "decision": "REJECT",
+      "tier": null,
+      "score": -29.6448,
+      "blockers": [
+        "BELOW_SMA150",
+        "NO_BREAKOUT",
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 97.255,
+      "stop_price": 90.3193,
+      "target_price": 128.4657,
+      "atr_14": 3.4679,
+      "rs_excess_pct": -17.862,
+      "breakout_strength": -11.7828
+    },
+    {
+      "symbol": "YUM",
+      "decision": "REJECT",
+      "tier": null,
+      "score": 14.1001,
+      "blockers": [
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 157.52,
+      "stop_price": 151.0568,
+      "target_price": 186.6043,
+      "atr_14": 3.2316,
+      "rs_excess_pct": 9.3291,
+      "breakout_strength": 0.2769
+    },
+    {
+      "symbol": "ZBH",
+      "decision": "REJECT",
+      "tier": null,
+      "score": 8.5951,
+      "blockers": [
+        "NO_BREAKOUT",
+        "RS_EXCESS_BELOW_MIN"
+      ],
+      "entry_price": 97.32,
+      "stop_price": 92.8043,
+      "target_price": 117.6408,
+      "atr_14": 2.2579,
+      "rs_excess_pct": 4.0301,
+      "breakout_strength": -1.994
+    }
+  ],
+  "generated_from": {
+    "universe_hash": "7ad575355432378826473b256fd72f995bb9a9b959176be86fa2d1aa1cf63ef5",
+    "source_dataset_sha256": "8c9e536dc88473624d975270ee2ad7e14a7a9ce343212105f1ed2d3b27bc16c7",
+    "param_hash": "673ad8b9e4541815f6d8141f4b89136ba864d5cb82aa2ad4b7c43650484a79c7",
+    "latest_session": "2026-11-02"
+  }
+}
