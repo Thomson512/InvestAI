@@ -1,6 +1,6 @@
 {
-  "outcome": "DRIFT broker_only=- evidence_only=APA,BBY,CME,COP,EXPD,HPQ,MOS,NTAP,NVDA,T,TXN",
-  "generated_at": "2026-11-05T20:42:16Z",
+  "outcome": "DRIFT broker_only=- evidence_only=APA,BBY,CME,COP,CVX,EXPD,HPQ,MOS,NTAP,NVDA,T,TXN",
+  "generated_at": "2026-11-05T20:52:18Z",
   "pnl_written": true,
   "extra_summary": [],
   "session_date": "2026-11-05",
@@ -10,7 +10,6 @@
   "reconcile": {
     "matched": [
       "A",
-      "CVX",
       "DHR",
       "HAS",
       "MDT",
@@ -24,6 +23,7 @@
       "BBY",
       "CME",
       "COP",
+      "CVX",
       "EXPD",
       "HPQ",
       "MOS",
@@ -36,11 +36,11 @@
   "daily_pnl": {
     "trade_date": "2026-11-05",
     "opening_equity": 121411.91,
-    "current_equity": 119921.23,
+    "current_equity": 119945.98,
     "peak_equity": 121511.0
   },
   "heartbeat": {
     "loop_name": "exit-orchestrator",
-    "last_seen": "2026-11-05T20:42:14Z"
+    "last_seen": "2026-11-05T20:52:15Z"
   }
 }
