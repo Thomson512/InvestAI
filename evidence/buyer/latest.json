@@ -1,7 +1,18 @@
 {
-  "outcome": "GLOBAL_BLOCKER:max_open_positions",
+  "outcome": "send_rejected:T212 HTTP 400 POST: {\"type\":\"/api-errors/instrument-suspended\",\"title\":\"Error while placing the order\",\"status\":400,\"detail\":\"Instrument is suspended.\",\"traceId\":\"0d8a1f287d96457fa225168b32f2ebc0\"}",
   "session_date": "2026-11-05",
-  "generated_at": "2026-11-05T15:20:26Z",
-  "official": true,
-  "extra_summary": []
+  "generated_at": "2026-11-05T15:32:47Z",
+  "official": false,
+  "extra_summary": [],
+  "plan": {
+    "symbol": "GEN",
+    "quantity": 11.0,
+    "entry_usd": 30.74,
+    "stop_price": 28.6915,
+    "target_price": 39.958249999999985,
+    "fx_usdczk": 21.646,
+    "spread_bps": 6.508298080051929
+  },
+  "submit": "send_rejected:T212 HTTP 400 POST: {\"type\":\"/api-errors/instrument-suspended\",\"title\":\"Error while placing the order\",\"status\":400,\"detail\":\"Instrument is suspended.\",\"traceId\":\"0d8a1f287d96457fa225168b32f2ebc0\"}",
+  "fence_key": "2026-11-05:GEN:673ad8b9e4541815f6d8141f4b89136ba864d5cb82aa2ad4b7c43650484a79c7"
 }
