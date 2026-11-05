@@ -1,0 +1,51 @@
+{
+  "outcome": "UNPROTECTED MDT",
+  "generated_at": "2026-11-05T15:42:22Z",
+  "pnl_written": true,
+  "extra_summary": [
+    "AUTO-STOP: UNCERTAIN MDT send_rejected:T212 HTTP 400 POST: {\"type\":\"/api-errors/selling-equity-not-owned\",\"title\":\"Error while placing the order\",\"status\":400,\"detail\":\"Selling more equities than owned, owned: 0.0\",\"traceId\":\"d09509323aa96",
+    "FIX: gh workflow run protective-stop-guard.yml -f symbol=MDT"
+  ],
+  "session_date": "2026-11-05",
+  "close_allowed": true,
+  "close_reason": "OK",
+  "unprotected": [
+    "MDT"
+  ],
+  "reconcile": {
+    "matched": [
+      "A",
+      "CVX",
+      "DHR",
+      "HAS",
+      "MDT",
+      "MO",
+      "PSX",
+      "XOM"
+    ],
+    "broker_only": [],
+    "evidence_only": [
+      "APA",
+      "BBY",
+      "CME",
+      "COP",
+      "EXPD",
+      "HPQ",
+      "MOS",
+      "NTAP",
+      "NVDA",
+      "T",
+      "TXN"
+    ]
+  },
+  "daily_pnl": {
+    "trade_date": "2026-11-05",
+    "opening_equity": 121411.91,
+    "current_equity": 121106.4,
+    "peak_equity": 121511.0
+  },
+  "heartbeat": {
+    "loop_name": "exit-orchestrator",
+    "last_seen": "2026-11-05T15:42:15Z"
+  }
+}
