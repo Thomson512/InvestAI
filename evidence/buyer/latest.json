@@ -1,19 +1,19 @@
 {
-  "outcome": "COUNCIL_REJECT:EW",
+  "outcome": "COUNCIL_REJECT:BF.B",
   "session_date": "2026-11-06",
-  "generated_at": "2026-11-06T18:30:21Z",
+  "generated_at": "2026-11-06T18:40:26Z",
   "official": true,
   "extra_summary": [
     "council: Claude CRO rejected the proposal"
   ],
   "plan": {
-    "symbol": "EW",
-    "quantity": 3.0,
-    "entry_usd": 101.79,
-    "stop_price": 95.0462,
-    "target_price": 132.13710000000003,
+    "symbol": "BF.B",
+    "quantity": 11.0,
+    "entry_usd": 30.74,
+    "stop_price": 29.103,
+    "target_price": 38.10649999999998,
     "fx_usdczk": 21.804,
-    "spread_bps": 7.862407862409092
+    "spread_bps": 19.537609899055266
   },
   "council": {
     "verdict": "REJECT",
@@ -23,28 +23,31 @@
       {
         "agent": "Scanner Agent",
         "verdict": "APPROVE",
-        "confidence": 0.86,
-        "thesis": "The packet is internally coherent. The authoritative fields (entry_usd 101.56, stop_price 95.0462, target_price 130.8721, quantity 3.0) present a consistent trade setup: the stop is below the entry and the target is above the entry, the breadth gate is PASS, relative strength is strongly positive (rs_excess_pct 17.263), breakout_strength is moderate (0.5337), and spread_bps is small. Tier B and the numeric score align with a non-top-tier but tradable candidate. No fields contradict each other and the packet contains the required authoritative values.",
+        "confidence": 0.83,
+        "thesis": "The packet is internally coherent. Authoritative fields (entry_usd 30.56, stop_price 29.103, target_price 37.1165, quantity 12.0) are consistent: stop < entry < target and the entry-to-stop distance (≈1.457 USD ≈1.57 ATR given ATR14=0.931) is plausible for a Tier B setup. Supporting metrics are aligned with a constructive signal: positive breakout_strength (0.1455), RS excess (14.4368%), market_breadth_pct 69.2 and breadth_gate PASS. Spread_bps (6.5466) is small and score (29.6212) aligns with a medium-strength selection. The packet contains the required authoritative values and no internal contradictions.",
         "risks": [
-          "Gap risk on open could bypass the stop and produce larger-than-expected loss.",
-          "Execution risk/slippage despite a low spread_bps—actual fills can differ from theoretical entry.",
-          "Position sizing is given (quantity 3.0) but the packet lacks portfolio context—concentration risk relative to account size is unknown.",
-          "Model/market regime risk: breakout_strength is moderate, so the move may fail and require strict stop discipline."
+          "Stop distance is relatively tight (~1.57 ATR) which may lead to higher stop-outs on normal volatility.",
+          "Breakout_strength is modest (0.1455); signal could be fragile despite positive RS and breadth metrics.",
+          "Quantity and position sizing are provided but concentration/portfolio context is unknown (packet does not include portfolio-level constraints).",
+          "Market regime or event risk not represented in the packet; sudden moves could invalidate range assumptions."
         ],
         "sources": []
       },
       {
         "agent": "Market Regime Agent",
         "verdict": "REJECT",
-        "confidence": 0.75,
-        "thesis": "Macro/regime is hostile to momentum breakouts. On Nov 5, 2026 U.S. equities experienced a sharp risk-off move with large index weakness and a material VIX spike; that broad volatility and market sell-off undermines the odds of a reliable momentum breakout even though EW has a fresh positive catalyst (Nov 4 Q3 results and guidance raise). Given the pronounced market-wide risk-off, the backdrop does not support initiating a momentum breakout trade in EW at this time.",
+        "confidence": 0.78,
+        "thesis": "US equity markets experienced a sharp risk‑off move on Nov 5, 2026 (large one‑day declines in major indices and a pronounced jump in implied volatility), creating elevated market volatility and downside risk. Despite the supplied quant packet showing a breadth PASS and strong relative strength/breakout signals for BF.B, the current macro/market regime is hostile to initiating momentum breakout entries — elevated VIX and broad index losses increase failure risk for new long breakouts. Recommend rejecting a momentum breakout entry until market volatility and index direction stabilise.",
         "risks": [
-          "Elevated market volatility and broad index weakness can flush even fundamentally positive names and stop momentum breakouts.",
-          "Event-driven intraday gaps (market or stock-specific) could trigger stop execution risk relative to the quoted stop price.",
-          "If the market stabilizes quickly or healthcare/medical-device sector outperforms, EW’s recent positive earnings and upgrades could still produce a breakout—contrary outcome to this regime call.",
-          "Macro drivers (election/market sentiment) could continue to dominate price action and correlate stocks downward, reducing breakout follow-through probability."
+          "Quant packet shows favorable internals (breadth_gate PASS, market_breadth_pct 69.2) and strong RS — rejecting may miss a continuation if the market quickly mean‑reverts upward.",
+          "Event / liquidity risk: post‑election volatility can produce abrupt reversals; a sudden market rally would make this assessment stale.",
+          "Sector/stock specific risk: consumer‑staples / beverages names can behave defensively and may outperform during risk‑off, which could make BF.B outperform despite overall market weakness.",
+          "Execution risk: elevated spreads and intraday volatility increase slippage versus the supplied spread_bps (6.5466 bps) and ATR assumptions."
         ],
         "sources": [
+          {
+            "url": "https://apnews.com/article/0d235af127a92c68da0cc2c45c028cef"
+          },
           {
             "url": "https://apnews.com/article/4d12764c0b3ce38ffde3077712811182"
           },
@@ -55,103 +58,49 @@
             "url": "https://apnews.com/article/bba6f0bf9035a6e6b1c4fef3e8230b89"
           },
           {
-            "url": "https://business.cch.com/srd/USvTurchynov_indictment.pdf"
+            "url": "https://deanfi.com/insights/marketpulse/2026-11-05/"
           },
           {
-            "url": "https://chartexchange.com/symbol/index-vix/historical"
+            "url": "https://finance.yahoo.com/markets/world-indices/articles/major-us-stock-indexes-fared-212218583.html"
           },
           {
-            "url": "https://en.wikipedia.org/wiki/List_of_largest_daily_changes_in_the_S%26P_500_Index"
+            "url": "https://financepulse.news/us-indices-close-lower-on-2026-11-05-mixed-returns-over-20-sessions-2026-11-05/"
           },
           {
-            "url": "https://finance.yahoo.com/quote/%5EVIX/history/"
-          },
-          {
-            "url": "https://fred.stlouisfed.org/graph/?graph_id=1444286"
-          },
-          {
-            "url": "https://investor.sangamo.com/static-files/3b323163-5ca9-428f-9a77-ed5ba6ff7ddd"
-          },
-          {
-            "url": "https://markets.ohlcx.com/ew"
-          },
-          {
-            "url": "https://portfolio-terminal.com/markets/sp-500"
+            "url": "https://investors.brown-forman.com/investors/news-releases/press-release/2026/Brown-Forman-Reports-First-Quarter-Fiscal-2027-Results-Reaffirms-Full-Year-Outlook/default.aspx"
           },
           {
             "url": "https://portfolio-terminal.com/markets/stock-market-close/november-5-2026"
           },
           {
-            "url": "https://ptacts.uspto.gov/ptacts/public-informations/petitions/1472154/download-documents?artifactId=w2ck_TUoi_foWevjsG-0mqodQWI4-JzmfIJBMOQOQASfXOHoXIuNUac"
+            "url": "https://spxset.com/index.php?type=volume_rolling"
           },
           {
-            "url": "https://returnsview.com/stock/VIX/"
-          },
-          {
-            "url": "https://s3-us-west-1.amazonaws.com/ptab-filings%2FIPR2017-00060%2F2026"
-          },
-          {
-            "url": "https://stockanalysis.com/stocks/ew/"
-          },
-          {
-            "url": "https://stockanalysis.com/stocks/ew/forecast/"
-          },
-          {
-            "url": "https://stockanalysis.com/stocks/ew/transcripts/714238-q3-2026/"
-          },
-          {
-            "url": "https://thesignaledition.com/trackers/interest-rates"
+            "url": "https://tallacoptions.com/Data/EOD/VIX"
           },
           {
             "url": "https://vixchart.com/"
           },
           {
-            "url": "https://www-qc.nasdaq.net/PublicPages/assets/MyMID/Trade_Calendar_2026.pdf"
-          },
-          {
-            "url": "https://www.aries.com/us/en/stocks/EW/filings"
-          },
-          {
             "url": "https://www.axios.com/2026/11/05/nasdaq-plummets-correction"
           },
           {
-            "url": "https://www.axios.com/2026/11/06/trump-stock-market-sell-off"
+            "url": "https://www.axios.com/2026/11/06/ai-stocks-midterms-nasdaq"
           },
           {
-            "url": "https://www.axios.com/newsletters/axios-pro-rata-fbc6f698-c128-41f0-8173-26843eedd925"
+            "url": "https://www.cboe.com/delayed_quotes/_vix/quote_table/"
           },
           {
-            "url": "https://www.edwards.com/newsroom/news/2026-11-04-edwards-lifesciences-reports-third-quarter-results-5267212"
+            "url": "https://www.exent.ai/resources/stock-market-crash-november-2026"
           },
           {
-            "url": "https://www.intro-act.com/uploads/allnewsletter/2026010907291110116892.pdf"
+            "url": "https://www.kiplinger.com/investing/stocks/2-sectors-4-stocks-to-buy-november-2026"
           },
           {
-            "url": "https://www.investors.com/wp-content/uploads/2026/11/DailyGMI_110226.pdf"
+            "url": "https://www.kiplinger.com/investing/stocks/dow-rallies-1-570-points-on-midterm-relief-stock-market-today"
           },
           {
             "url": "https://www.kiplinger.com/investing/stocks/nasdaq-bounces-as-chips-lead-ai-revival-stock-market-today"
-          },
-          {
-            "url": "https://www.merlintrader.com/daily-briefing/"
-          },
-          {
-            "url": "https://www.optionistics.com/quotes/stock-option-chains/VIX?date=2026-11-05&expirations=0&expiry=2026-12-16&greeks=0&nonstd=-1&putcall=all&range=ntm"
-          },
-          {
-            "url": "https://www.rapidtradeview.trade/earnings/reports/ew-2026-q3"
-          },
-          {
-            "url": "https://www.sec.gov/Archives/edgar/data/1099800/000109980026000053/ew-20261104.htm"
-          },
-          {
-            "url": "https://www.sec.gov/Archives/edgar/data/1099800/000109980026000053/ex-991q32026.htm"
-          },
-          {
-            "url": "https://www.smartinvestorsdaily.com/articles/nyse-ew-evercore-isi-gr-reiterate-2026-11-05"
-          },
-          {
-            "url": "https://www.stocktitan.net/sec-filings/EW/8-k-edwards-lifesciences-corp-reports-material-event-c30b6d9a960f.html"
           },
           {
             "url": "https://www.thedailybeast.com/bitter-loser-trump-takes-petty-swipe-at-voters-after-crushing-defeat"
@@ -160,250 +109,253 @@
             "url": "https://www.thedailybeast.com/wall-street-rallies-while-trump-media-spacex-and-tesla-stocks-sink"
           },
           {
-            "url": "https://www.tipranks.com/stocks/ew/earnings/q3-2026-report"
-          },
-          {
-            "url": "https://ycharts.com/indicators/10_year_treasury_rate"
-          },
-          {
             "url": "https://ycharts.com/indicators/vix_volatility_index"
+          },
+          {
+            "url": "https://ycharts.com/indices/%5EVIX/level"
           }
         ]
       },
       {
         "agent": "News and Event Agent",
         "verdict": "APPROVE",
-        "confidence": 0.75,
-        "thesis": "Web search (documents through the Nov 5, 2026 as-of session) identified Edwards Lifesciences (EW) Q3 2026 earnings released Nov 4, 2026 with results that beat estimates and management raising full-year total-company sales growth guidance to approximately 11.5% (up from 10–11%). Material adverse events that would clearly argue against opening a new long were not found. Notable items: the FTC successfully challenged and temporarily enjoined Edwards’ proposed JenaValve acquisition (preliminary injunction actions in Jan 2026) and Edwards subsequently called off that deal; the FTC also secured a $12 million penalty for an HSR reporting violation (July 2026). Edwards has a proposed investor class settlement (~$39 million) in its securities litigation and ongoing patent and contract actions (e.g.",
+        "confidence": 0.8,
+        "thesis": "Web search (company press releases and SEC filings) shows no verified material event that argues against initiating a new long in BF.B. Recent material items: Brown‑Forman reported fiscal Q1 2027 results for the quarter ended July 31, 2026 (sales down ~1%, EPS +6%) and reaffirmed full‑year outlook (press release June/July 2026); the company announced President & CEO Lawson Whiting will retire effective upon appointment of a successor (press release dated July 13, 2026); and Brown‑Forman completed a $500 million 5.375% note offering settling September 21, 2026. Searches revealed routine, ordinary litigation disclosures only and no trading halts, major regulatory enforcement actions, new adverse guidance, or announced mergers/acquisitions that would be material and contra to a new long.",
         "risks": [
-          "FTC antitrust actions and blocked deals (JenaValve preliminarily enjoined Jan 2026) could limit Edwards’ inorganic growth opportunities and future M&A optionality.",
-          "Ongoing patent litigation (e.g., Cardiovalve/MTH IP) could result in injunctions, product restrictions, or damages that become material if rulings go against Edwards.",
-          "Valtech/earn-out dispute in Delaware Chancery raises the risk of contingent payments (complaint filed Feb 16, 2026); press reports have discussed earn-out exposure that could be meaningful to cash flows if resolved against Edwards.",
-          "Securities litigation: proposed investor settlement (~$39M) and related hearings (notice/settlement activity appearing in 2026) create near-term legal cash outflows and distraction risk until fully resolved.",
-          "Regulatory or clinical setbacks (future FDA actions or trial outcomes) or future guidance reductions would materially change the view and should trigger re-review."
+          "CEO transition risk — retirement announced July 13, 2026; successor appointment timing/execution could affect strategy and share price.",
+          "Top‑line weakness/consumer headwinds — Q1 (ended July 31, 2026) showed a modest sales decline and management flagged ongoing consumer pressures.",
+          "Debt issuance — $500M 5.375% notes completed September 21, 2026 increases financial leverage (monitor covenant/usage).",
+          "Industry/regulatory/macroeconomic risk — ongoing trade/tariff pressures and secular shifts in alcohol consumption trends could pressure growth.",
+          "Disclosures & litigation — filings show ordinary routine litigation; monitor for any escalation or new regulatory investigations that would be material."
         ],
         "sources": [
           {
-            "url": "https://assets-us-01.kc-usercontent.com/6239a81e-8f0f-0040-a1df-b4932a10f6ae/9af377bf-6119-4331-b679-952e5f1a7142/edwards-lifesciences-unilateral-pro-innovation-policy-2026A.pdf"
+            "url": "https://apnews.com/article/16a218e4eb68f7e8b53a977d69c4db85"
           },
           {
-            "url": "https://content-archive.fast-edgar.com/20260804/A8Z2R22CZ22YH262222D22Z25JSHWZ2S2282/R19.htm"
+            "url": "https://apnews.com/article/2b36a2efc7334fc2ec1ed0eab2604252"
           },
           {
-            "url": "https://courts.delaware.gov/Opinions/Download.aspx?id=356770"
+            "url": "https://apnews.com/article/68610ac214de5ff1c1b4434191d9b490"
           },
           {
-            "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0001099800/a7726b3c-4e0b-4380-95c2-380762300c88.pdf"
+            "url": "https://apnews.com/article/8948b2725b2aa565d537db7769969c0b"
           },
           {
-            "url": "https://docketnexus.com/document/448245320/"
+            "url": "https://apnews.com/article/bb79fb0bf370ac8c02cf75c1e2672ddc"
           },
           {
-            "url": "https://dockets.justia.com/docket/district-of-columbia/dcdce/1%3A2025cv02569/283489"
+            "url": "https://archive.fast-edgar.com/20260921/AS2ZP22FZZ2RNTZU22ZL2ZYQAGM8ZZ22ZS8Q/"
           },
           {
-            "url": "https://en.wikipedia.org/wiki/Edwards_Lifesciences"
+            "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0000014693/1b976fbf-5e2f-4d86-8dab-4bdbf3c8175d.html"
           },
           {
-            "url": "https://en.wikipedia.org/wiki/Legal_affairs_of_the_second_Trump_presidency"
+            "url": "https://ebs.publicnow.com/view/098C0B8A3982E29EA5CBD7C57518211E3A795B1A"
           },
           {
-            "url": "https://hallapproved.com/dc/cases/federal/district/2026/10780925/"
+            "url": "https://en.wikipedia.org/wiki/Brown-Forman"
           },
           {
-            "url": "https://news.bloomberglaw.com/litigation/edwards-lifesciences-reaches-39-million-investor-settlement"
+            "url": "https://en.wikipedia.org/wiki/Companies_listed_on_the_New_York_Stock_Exchange_%28B%29"
           },
           {
-            "url": "https://s27.q4cdn.com/788244549/files/doc_downloads/2025/12/EW-2025-IC.pdf"
+            "url": "https://finance.yahoo.com/markets/stocks/articles/brown-forman-maintains-full-guidance-151608004.html?.tsrc=rss"
           },
           {
-            "url": "https://s27.q4cdn.com/788244549/files/doc_downloads/2025/12/EW-2025-Investor-Conference-Presentation.pdf"
+            "url": "https://ftp.nyse.com/ShortData/ARCAshvol/ARCAshvol2024/ARCAshvol202406/ARCAshvol20240627.pdf"
           },
           {
-            "url": "https://search.ftc.gov/news-events/news/press-releases/2026/01/statement-ftc-victory-halting-anticompetitive-medical-device-deal"
+            "url": "https://ftp.nyse.com/ShortData/ARCAshvol/ARCAshvol2026/ARCAshvol202602/ARCAshvol20260225.pdf"
           },
           {
-            "url": "https://search.ftc.gov/system/files/ftc_gov/pdf/EdwardsGenesis-ProposedFinalJudgment.pdf"
+            "url": "https://fundamentalytics.com/stocks/bf.b/"
           },
           {
-            "url": "https://search.ftc.gov/system/files/ftc_gov/pdf/litigation-status-report-june-2026.pdf"
+            "url": "https://investors.brown-forman.com/investors/news-releases/press-release/2026/Brown-Forman-Announces-500-Million-Debt-Offering/default.aspx"
           },
           {
-            "url": "https://sectracker.app/en/EW"
+            "url": "https://investors.brown-forman.com/investors/news-releases/press-release/2026/Brown-Forman-Announces-President--CEO-Lawson-Whiting-to-Retire/default.aspx"
           },
           {
-            "url": "https://www.axios.com/2025/03/10/trump-ftc-sues-block-medical-device-deal"
+            "url": "https://investors.brown-forman.com/investors/news-releases/press-release/2026/Brown-Forman-Reports-First-Quarter-Fiscal-2027-Results-Reaffirms-Full-Year-Outlook/default.aspx"
           },
           {
-            "url": "https://www.axios.com/newsletters/axios-pro-rata-2dbab94c-1dc3-43ca-b2fd-8b4959701d52"
+            "url": "https://ir.fbin.com/static-files/e042f31d-d190-42ad-905f-f9fd4e310237"
           },
           {
-            "url": "https://www.axios.com/newsletters/axios-pro-rata-fbc6f698-c128-41f0-8173-26843eedd925"
+            "url": "https://moneyweek.com/investments/investment-strategy/the-alcohol-industry-is-suffering-as-consumers-sober-up-is-it-still-worth-investing-in-the-sector"
           },
           {
-            "url": "https://www.benzinga.com/quote/EW/earnings-forecasts"
+            "url": "https://picks.utilarium.app/company/BF.B/"
           },
           {
-            "url": "https://www.ded.uscourts.gov/sites/ded/files/opinions/23-158.pdf"
+            "url": "https://s28.q4cdn.com/657950427/files/doc_financials/2026/ar/2026-06-17-FY26-Proxy-Statement_ADA-Compliant-2-FINAL.pdf"
           },
           {
-            "url": "https://www.edwards.com/newsroom/news/2026-11-04-edwards-lifesciences-reports-third-quarter-results-5267212"
+            "url": "https://s28.q4cdn.com/657950427/files/doc_financials/2026/ar/6fbaea01-d44c-41df-a16e-e14aa6d60ab4.pdf"
           },
           {
-            "url": "https://www.edwardslifesciencessecuritieslitigation.com/documents"
+            "url": "https://s28.q4cdn.com/657950427/files/doc_financials/2026/q3/FY26_Q3_ER_Final.pdf"
           },
           {
-            "url": "https://www.ftc.gov/legal-library/browse/cases-proceedings/241-0114-edwards-lifesciences-corporation-jenavalve-technology-inc-ftc-v"
+            "url": "https://www.benzinga.com/quote/bf.b"
           },
           {
-            "url": "https://www.ftc.gov/legal-library/browse/cases-proceedings/edwards-lifesciences-corp-jenavalve-technology-inc-matter"
+            "url": "https://www.brown-forman.com/article/brown-forman-announces-president-ceo-lawson-whiting-retire-july-13-2026"
           },
           {
-            "url": "https://www.ftc.gov/legal-library/browse/cases-proceedings/united-states-v-edwards-lifesciences-corp-genesis-medtech-group-ltd"
+            "url": "https://www.brown-forman.com/sites/default/files/team_resources/2025-06/BFB-2025%20IR_10K-POST_V8_ADA_REV2%20%281%29-compressed.pdf"
           },
           {
-            "url": "https://www.ftc.gov/news-events/news/press-releases/2025/08/ftc-challenges-anticompetitive-medical-device-deal"
+            "url": "https://www.chickstockfi.com/en/stocks/BF.B"
           },
           {
-            "url": "https://www.ftc.gov/news-events/news/press-releases/2026/07/ftc-secures-12-million-penalties-pre-merger-reporting-act-violations"
+            "url": "https://www.google.com/finance/quote/BF.B%3ANYSE"
           },
           {
-            "url": "https://www.ftc.gov/system/files/ftc_gov/pdf/d9442_2026.01.28_commission_order_dismissing_complaint_.pdf"
+            "url": "https://www.investing.com/equities/brown-forman-b-earnings"
           },
           {
-            "url": "https://www.kiplinger.com/investing/stocks/17494/next-week-earnings-calendar-stocks"
+            "url": "https://www.kiplinger.com/investing/stocks/dividend-stocks/best-dividend-stocks-you-can-count-on"
           },
           {
-            "url": "https://www.law360.co.uk/articles/2442321/edwards-sued-in-chancery-over-300m-heart-valve-earn-out"
+            "url": "https://www.moomoo.com/stock/BF.B-US?chain_id=Name1K9-3FXPhg.1kd17sg&global_content=%7B%22promote_id%22%3A13764%2C%22sub_promote_id%22%3A58%2C%22f%22%3A%22www.moomoo.com%2Fcurrency%2FEURCNY-FX%22%7D"
           },
           {
-            "url": "https://www.lit-antitrust.aoshearman.com/siteFiles/52105/Antitrust%20-%20FTC%20v.%20EDWARDS%20LIFESCIENCES%20CORP..pdf"
+            "url": "https://www.quantisnow.com/company/BF.B"
           },
           {
-            "url": "https://www.marketbeat.com/stocks/NYSE/EW/earnings/"
+            "url": "https://www.reddit.com/r/u_Rabitai_Trades/comments/1wt83vu/brownforman_bfb_shares_down_05_over_five_sessions/"
           },
           {
-            "url": "https://www.medtechdive.com/news/Edwards-ends-JenaValve-acquisition-FTC-blocks/809346/"
+            "url": "https://www.reddit.com/r/u_raytoei/comments/1pjjzrh/brown_forman_bfb/"
           },
           {
-            "url": "https://www.prnewswire.com/news-releases/notice-of-pendency-and-proposed-settlement-of-class-action-announced-in-edwards-lifesciences-securities-litigation-302870467.html"
+            "url": "https://www.reddit.com/r/u_raytoei/comments/1u681md/brown_forman_bfb_maker_of_jack_daniel_whiskey_is/"
           },
           {
-            "url": "https://www.reddit.com/r/StockMarketChat/comments/1x6uvuq/edwards_lifesciences_ew_faq_for_getting_payment/"
+            "url": "https://www.sec.gov/Archives/edgar/data/14693/000001469326000027/bfb-010_2026integratedarxv.pdf"
           },
           {
-            "url": "https://www.reddit.com/r/bioengineering/comments/1x6utvy/edwards_lifesciences_ew_faq_for_getting_payment/"
+            "url": "https://www.sec.gov/Archives/edgar/data/14693/000001469326000033/bfb-20260713.htm"
           },
           {
-            "url": "https://www.sec.gov/Archives/edgar/data/1099800/000109980026000002/a8-kxexpressreleasexblocked.htm"
+            "url": "https://www.sec.gov/Archives/edgar/data/14693/000001469326000033/fy27julyceoannouncesretire.htm"
           },
           {
-            "url": "https://www.sec.gov/Archives/edgar/data/1099800/000109980026000026/ew-20260331.htm"
+            "url": "https://www.sec.gov/Archives/edgar/data/14693/000119312526395562/d539891d424b2.htm"
           },
           {
-            "url": "https://www.sec.gov/Archives/edgar/data/1099800/000109980026000053/ex-991q32026.htm"
+            "url": "https://www.sec.gov/Archives/edgar/data/14693/000119312526396679/d178040d8k.htm"
           },
           {
-            "url": "https://www.sec.gov/Archives/edgar/data/1099800/000109980026000054/ew-20260930.htm"
+            "url": "https://www.sec.gov/Archives/edgar/data/14693/000119312526396679/d178040dex11.htm"
           },
           {
-            "url": "https://www.trefis.com/data/companies/EW?from=covered_call_finder"
+            "url": "https://www.sec.gov/Archives/edgar/data/14693/000119312526396679/d178040dex51.htm"
+          },
+          {
+            "url": "https://www.stocktitan.net/sec-filings/BF.B/10-q-brown-forman-corp-quarterly-earnings-report-cabe609ba65b.html"
+          },
+          {
+            "url": "https://www.streetinsider.com/stock_lookup.php?q=BF-b"
           }
         ]
       },
       {
         "agent": "Technical Context Agent",
         "verdict": "APPROVE",
-        "confidence": 0.78,
-        "thesis": "Breakout is coherent: breakout_strength=0.5337 (moderate), rs_excess_pct=17.263 (strong relative strength), market_breadth_pct=69.2 with breadth_gate=PASS (broad participation). ATR (atr_14)=2.8644 indicates measurable volatility. stop_price=95.0462 is below the authoritative entry_usd=101.56 (no contradiction for a long), and target_price=130.8721 is above the entry. Given the supplied fields, the setup is consistent with a long breakout and includes an explicit stop and target.",
+        "confidence": 0.82,
+        "thesis": "Long setup aligns with supplied technical fields: breakout_strength=0.1455 (positive breakout), rs_excess_pct=14.4368 (strong relative strength), breadth_gate=PASS with market_breadth_pct=69.2 (supportive market breadth), ATR_14=0.931 (observed volatility), stop_price=29.103 is below the authoritative entry_usd=30.56 (no contradiction), and target_price=37.1165 is above the entry (clear upside target). These supplied fields collectively support an approval of the long breakout setup.",
         "risks": [
-          "Breakout strength is moderate, not extreme — higher chance of failure or consolidation.",
-          "ATR-driven volatility (atr_14=2.8644) could produce whipsaws that hit the stop before trend continuation.",
-          "Market breadth or macro conditions can deteriorate, undermining the breakout despite current breadth pass.",
-          "Execution and slippage risk between theoretical prices and fills."
+          "Breakout strength is modest (breakout_strength=0.1455) — the breakout could be shallow and fail.",
+          "Intraday volatility (ATR_14=0.931) could trigger the stop_price (29.103) before the move to target materializes.",
+          "Market breadth can turn quickly despite the PASS signal; a deterioration in breadth would weaken the setup.",
+          "Ticker- or event-specific risks (corporate action, news) could invalidate technicals — monitor catalyst and liquidity."
         ],
         "sources": []
       },
       {
         "agent": "Thesis Agent",
         "verdict": "APPROVE",
-        "confidence": 0.79,
-        "thesis": "Bull case: Technical setup is coherent for a momentum long—entry_usd 101.56 with a defined stop (95.0462) and target (130.8721). The setup shows strong relative strength (rs_excess_pct 17.263), a breadth_gate PASS and market_breadth_pct 69.2 (broad participation), low spread_bps, and recent positive company-specific news (Q3 beat and raised full-year sales guidance). These factors support a breakout continuation toward the stated target. Bear case: Macro/regime risks dominate—U.S. equities experienced a sharp risk-off and VIX spike, which undermines momentum breakouts and raises gap/stop-bypass risk; breakout_strength is only moderate (0.5337) so failure or consolidation is likely; execution/slippage and intra-day gaps could produce larger-than-expected losses; company-specific legal/regul",
+        "confidence": 0.81,
+        "thesis": "Bull case: The quant packet is internally coherent for a momentum long — authoritative fields show entry_usd 30.56 with stop_price 29.103 and target_price 37.1165 (stop < entry < target). Supporting technicals: positive breakout_strength (0.1455), strong relative strength (rs_excess_pct 14.4368), breadth_gate PASS and market_breadth_pct 69.2, modest spread_bps (6.5466) and a Tier B/score consistent with a medium‑strength setup. These collectively support initiating the breakout long per the supplied plan.\n\nBear case: The breakout signal is fragile — breakout_strength is modest and the stop distance is relatively tight (Scanner and Technical Context note ~1.5–1.6 ATR), so normal intraday volatility or elevated market volatility can trigger stop‑outs before the move to target. Market Regime ",
         "risks": [
-          "Gap risk on open could bypass the stop and produce larger-than-expected loss.",
-          "Execution risk/slippage despite low quoted spread_bps—actual fills can differ from theoretical entry.",
-          "Model/market-regime risk: breakout_strength is moderate (0.5337), increasing failure/false-breakout probability.",
-          "Elevated market volatility/broad index weakness (VIX spike) can flush momentum positions and reduce breakout follow-through odds.",
-          "Company-specific legal and regulatory risks (FTC actions, patent litigation, earn-out disputes, securities settlement) can produce material negative headlines or cash outflows that reverse the trade thesis."
+          "Stop distance is relatively tight (~1.57 ATR) increasing risk of stop‑outs on normal volatility.",
+          "Breakout_strength is modest (0.1455); the breakout could be shallow and fail.",
+          "Market regime risk — elevated implied volatility / broad index weakness increases failure probability for new long breakouts.",
+          "Company‑specific fundamentals: CEO retirement/succession timing, modest recent sales weakness, and recent $500M debt issuance could pressure the stock.",
+          "Execution/liquidity risk and potential slippage versus the supplied spread_bps."
         ],
         "sources": []
       },
       {
         "agent": "Claude CRO",
         "verdict": "REJECT",
-        "confidence": 0.62,
-        "thesis": "Verified systemic event risk argues against opening this long now. The research shows the Nov 5, 2026 AI-trade meltdown. The Dow fell about 1,800 points, the Nasdaq fell about 5.5% and entered correction, and the Magnificent 7 lost roughly $1 trillion. The Market Regime Agent rejected on this basis, and I regard that as a verified reason, not a speculative one. The stock-specific case is decent. EW reported a Q3 beat on Nov 4, raised full-year sales growth guidance to about 11.5%, and has several analyst target increases. Relative strength is strong at 17.3% excess, and the spread is tight. However, breakout_strength is only moderate at 0.5337. The breakout also follows a gap-up on earnings, so it is exposed to a post-earnings fade during a market-wide volatility spike. The stop sits about",
+        "confidence": 0.6,
+        "thesis": "I reject the BF.B long entry. I did not recompute price, stop, target or size. The approving specialists rely mostly on quant-packet fields. The verified outside evidence points the other way.\n\n1. The takeover premium appears to have unwound. Pernod merger talks collapsed, and the stock fell nearly 6% premarket on the news. The Brown family also rejected Sazerac's proposal. The News and Event Agent's \"no material event\" conclusion did not mention either item.\n\n2. The sell-side stance is negative. Morgan Stanley kept its Sell rating on Sept 18, 2026, and Barclays has a Hold. UBS's $30 target is near the entry area, so it gives no support for a target near $37.\n\n3. There is overhead resistance. The entry sits just below the indicative 52-week high of about 31.92. The quote page may be stale.",
         "risks": [
-          "Verified market-wide risk-off on Nov 5, 2026: Nasdaq correction, Dow down about 1,800 points, VIX spike. Momentum breakouts are prone to failure in this regime.",
-          "Overnight or opening gap could bypass the stop and produce a loss larger than planned.",
-          "Post-earnings gap-up fade risk, with only moderate breakout_strength of 0.5337.",
-          "Breadth gate PASS at 69.2% appears inconsistent with the crash-day tape, so the input may be stale or unreliable.",
-          "Specialist disagreement: Market Regime Agent rejects while the other agents approve without weighting the macro shock."
+          "Takeover premium likely unwound after Pernod talks collapsed and the Sazerac proposal was rejected",
+          "Negative or neutral sell-side stance: Morgan Stanley Sell, Barclays Hold, UBS target about $30 near entry",
+          "Entry just below the indicative 52-week high of about 31.92, with modest breakout strength of 0.1455",
+          "Margin strain, sales down about 1% in fiscal Q1 2027, tight dividend coverage, and new $500M debt",
+          "Tariff and trade uncertainty for an American whiskey exporter"
         ],
         "sources": [
           {
-            "url": "https://benzinga.com/z/25174244"
+            "url": "https://247wallst.com/investing/2026/03/04/is-brown-formans-dividend-safe-after-tariffs-battered-earnings/"
           },
           {
-            "url": "https://ca.finance.yahoo.com/research/reports/MS_0P000001VJ_AnalystReport_1793842873000"
+            "url": "https://bitcoinethereumnews.com/finance/brown-forman-warns-of-tariff-uncertainty/"
           },
           {
-            "url": "https://finance.yahoo.com/markets/live/stock-market-today-thursday-november-5-dow-sp-500-nasdaq-oil-rises-chip-stocks-141439950.html"
+            "url": "https://finance.yahoo.com/video/brown-forman-downgraded-morgan-stanley-164735836.html"
           },
           {
-            "url": "https://petragordan.substack.com/p/nasdaq-fell-552-in-a-day-heres-what"
+            "url": "https://investors.brown-forman.com/investors/news-releases/press-release/2026/Brown-Forman-Board-Issues-Statement/default.aspx"
           },
           {
-            "url": "https://simplywall.st/stocks/us/healthcare/nyse-ew/edwards-lifesciences/news/edwards-lifesciences-ew-stock-looks-fully-priced-on-cash-flo"
+            "url": "https://investors.brown-forman.com/investors/news-releases/press-release/2026/Brown-Forman-Reports-Fiscal-2026-Results/default.aspx"
           },
           {
-            "url": "https://www.cnbc.com/2026/11/05/stock-market-selloff-ai-fears.html"
+            "url": "https://natlawreview.com/article/tariff-ied-week-international-trade-november-2-2026"
           },
           {
-            "url": "https://www.cnbc.com/2026/11/05/stock-market-today-live-updates.html"
+            "url": "https://robinhood.com/us/en/stocks/BF.B"
           },
           {
-            "url": "https://www.cnn.com/2026/11/05/investing/tech-heavy-nasdaq-plunges"
+            "url": "https://simplywall.st/stocks/us/food-beverage-tobacco/nyse-bf.b/brown-forman"
           },
           {
-            "url": "https://www.fxstreet.com/amp/analysis/why-the-sell-off-was-overreaction-202002250746"
+            "url": "https://www.brown-forman.com/article/brown-forman-reports-first-half-fiscal-2026-results-reaffirms-full-year-outlook-december-4"
           },
           {
-            "url": "https://www.gurufocus.com/news/9175834/ew-maintains-outperform-rating-by-rbc-capital-price-target-raised-to-115"
+            "url": "https://www.cnbc.com/2025/06/05/brown-forman-warns-of-tariff-uncertainty.html"
           },
           {
-            "url": "https://www.ibtimes.co.uk/us-stocks-ai-semiconductor-selloff-nasdaq-correction-1830555"
+            "url": "https://www.cnbc.com/quotes/BF.B"
           },
           {
-            "url": "https://www.macrotrends.net/stocks/charts/EW/edwards-lifesciences/stock-price-history"
+            "url": "https://www.cnbc.com/quotes/BFB"
           },
           {
-            "url": "https://www.marketbeat.com/instant-alerts/analyst-edwards-lifesciences-nyse-ew-stock-gets-price-target-increase-from-citigroup-2026-11-05/"
+            "url": "https://www.investing.com/equities/brown-forman-b-news"
           },
           {
-            "url": "https://www.marketbeat.com/instant-alerts/filing-edwards-lifesciences-corporation-ew-stock-sold-by-boston-trust-walden-corp-2026-11-06/"
+            "url": "https://www.marketbeat.com/stocks/NYSE/BF-B/institutional-ownership"
           },
           {
-            "url": "https://www.morningstar.com/stocks/xnys/ew/quote"
+            "url": "https://www.marketbeat.com/stocks/NYSE/BF.B/dividend"
           },
           {
-            "url": "https://www.sec.gov/Archives/edgar/data/0001099800/000109980026000038/ex-991q22026.htm"
+            "url": "https://www.marketbeat.com/stocks/NYSE/BF.B/earnings"
           },
           {
-            "url": "https://www.sec.gov/Archives/edgar/data/0001099800/000109980026000053/ex-991q32026.htm"
+            "url": "https://www.marketbeat.com/stocks/NYSE/BF.B/news"
           },
           {
-            "url": "https://www.tradingview.com/news/cnbctv:9a0dad58c094b:0/"
+            "url": "https://www.nbcchicago.com/news/business/money-report/brown-forman-shares-plummet-as-whiskey-maker-warns-of-tariff-uncertainty/3761243/"
           }
         ]
       }
