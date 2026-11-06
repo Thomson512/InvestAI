@@ -1,57 +1,52 @@
 {
-  "outcome": "COUNCIL_REJECT:BDX",
+  "outcome": "COUNCIL_REJECT:CMG",
   "session_date": "2026-11-06",
-  "generated_at": "2026-11-06T17:02:36Z",
+  "generated_at": "2026-11-06T17:10:23Z",
   "official": true,
   "extra_summary": [
     "council: Claude CRO rejected the proposal"
   ],
   "plan": {
-    "symbol": "BDX",
-    "quantity": 1.0,
-    "entry_usd": 214.15,
-    "stop_price": 205.1663,
-    "target_price": 254.57665,
+    "symbol": "CMG",
+    "quantity": 10.0,
+    "entry_usd": 34.82,
+    "stop_price": 32.9415,
+    "target_price": 43.27325000000001,
     "fx_usdczk": 21.804,
-    "spread_bps": 14.486319773826597
+    "spread_bps": 2.872325147206092
   },
   "council": {
     "verdict": "REJECT",
     "reason": "Claude CRO rejected the proposal",
-    "cached": false,
+    "cached": true,
     "findings": [
       {
         "agent": "Scanner Agent",
         "verdict": "APPROVE",
-        "confidence": 0.9,
-        "thesis": "Packet is internally coherent for a long trade in BDX. Entry (214.15) sits between stop (205.1663) and target (254.57665). Stop distance from entry is 8.9837 USD (~4.20% of entry, ≈2.17 ATR using ATR_14=4.1394). Target provides ~40.42665 USD upside (~18.9% from entry), yielding a reward:risk of ≈4.5. Ancillary metrics (breakout_strength=1.7665, rs_excess_pct=26.2758, market_breadth_pct=69.2, tier=A) are consistent with a bullish setup. Authority note is respected: entry, stop, target, and quantity used as provided.",
+        "confidence": 0.83,
+        "thesis": "The packet is internally coherent: entry (34.19) sits above the stop (32.9415) and below the target (39.80825), ATR (1.2217) is similar in magnitude to the entry-to-stop distance (~1.2485), breadth_gate is PASS, and relative strength and score indicate a favorable setup. Quantity (10) and spread_bps are provided and consistent with a small-sized trade. No fields conflict with one another and the authoritative values are respected.",
         "risks": [
-          "Gap risk at market open could bypass the stop and increase realized loss (overnight / headline risk).",
-          "Stop is ~2.17 ATR — susceptible to intraday volatility spikes that could trigger noise stops.",
-          "Quantity is a single share (quantity=1.0) which may be a placeholder for sizing rules; packet does not provide portfolio-level risk limits or max position exposure."
+          "Execution/slippage risk relative to the quoted spread and market conditions at the as-of session (2026-11-05).",
+          "Stop placement is ~1 ATR — normal but susceptible to intraday volatility causing stop-out.",
+          "Model/data risk: packet depends on upstream Python outputs and parameters (param_hash) — if those are stale or incorrect the trade signals may be invalid.",
+          "Concentration/position-size risk given fixed quantity (10) may not match portfolio risk tolerance; packet does not provide portfolio context."
         ],
         "sources": []
       },
       {
         "agent": "Market Regime Agent",
         "verdict": "REJECT",
-        "confidence": 0.8,
-        "thesis": "As of the Nov 5, 2026 market close the US equity regime was hostile to momentum breakouts: the S&P 500 suffered a large one-day drop (~4.4%) and breadth was overwhelmingly negative (many more decliners than advancers) with a sharp rise in volatility. That macro environment (large index decline, negative advance/decline flow, elevated VIX) strongly raises risk for initiating a momentum breakout trade, even though BDX showed relative strength and reported positive fiscal results on Nov 5. On balance the broad-market sell-off and hostile breadth/volatility backdrop outweigh the single-stock catalyst for a reliable momentum breakout entry — recommend rejecting an entry that depends on broad risk-on market participation.",
+        "confidence": 0.85,
+        "thesis": "The US equity backdrop on Nov 5, 2026 was clearly hostile to new momentum breakouts: major indices suffered a sharp selloff (S&P 500 down ~4.3%, Nasdaq down ~5.5% on Nov 5), volatility spiked (VIX rose into the high-20s), and market breadth was lopsided with decliners heavily outnumbering advancers — a risk-on breakout environment is absent. ([portfolio-terminal.com](https://portfolio-terminal.com/markets/stock-market-close/november-5-2026?utm_source=openai))",
         "risks": [
-          "Company-specific upside (BDX fiscal results/guidance) or sector defensive flows could still drive an idiosyncratic breakout despite weak market breadth.",
-          "The market regime can flip quickly (e.g., intraday reversal or follow-through rally) — a rapid improvement in breadth/volatility would reduce the downside to a breakout attempt.",
-          "Quant packet shows internal breadth_gate PASS and strong breakout metrics; discrepancy between internal signals and public market breadth measures introduces model/data risk.",
-          "Elevated volatility increases the chance of false breakouts and wider intraday price swings that can trigger stops."
+          "A company-specific catalyst for CMG (surprising earnings, guidance, or operational news) could overpower broad-market weakness and produce a valid breakout despite the hostile backdrop.",
+          "The quant packet shows a breadth_gate PASS and market_breadth_pct=69.2; if that proprietary/latency-differing internal signal reflects a more favorable instant market state than public end-of-day prints, the regime assessment could differ.",
+          "Elevated VIX and fast selloffs increase the chance of false breakouts and whipsaws — stop execution or slippage risk may be higher than normal.",
+          "Macro/regulatory headlines (e.g., post-election or AI/regulation fears) could prolong market weakness through the planned trade horizon."
         ],
         "sources": [
           {
-            "url": "https://6ix.com/stock/nyse-bdx/becton-dickinson-and-company"
-          },
-          {
             "url": "https://apnews.com/article/4d12764c0b3ce38ffde3077712811182"
-          },
-          {
-            "url": "https://apnews.com/article/7ee9c212805aa5e70cf34d25aab7a36e"
           },
           {
             "url": "https://apnews.com/article/afe254c608c3d1fe2ea792812ba9765a"
@@ -60,22 +55,37 @@
             "url": "https://apnews.com/article/bba6f0bf9035a6e6b1c4fef3e8230b89"
           },
           {
-            "url": "https://en.wikipedia.org/wiki/List_of_largest_daily_changes_in_the_S%26P_500_Index"
+            "url": "https://assets.ctfassets.net/lmz2w5z92b9u/3T6xXZlG3m0dF3UuwhQRqs/d982827fdc0ff21d7082ee093e54feab/FactSetExchangeDataFeedSnapshotAPI_SymbolList_DataModel_V1.01A.pdf"
           },
           {
-            "url": "https://fwnbc.marketminute.com/quote/NY%3ABDX/historical"
+            "url": "https://es.finance.yahoo.com/quote/%5EVIX/history/"
           },
           {
-            "url": "https://investors.bd.com/news-events/press-releases/detail/984/bd-reports-fourth-quarter-and-full-year-fiscal-2026-financial-results"
+            "url": "https://finance.yahoo.com/quote/%5EVIX/history/"
           },
           {
-            "url": "https://markets.financialcontent.com/lightport.lightport1/quote?Symbol=NY%3ABDX"
+            "url": "https://fred.stlouisfed.org/graph/?graph_id=1444286"
+          },
+          {
+            "url": "https://moneyweek.com/investments/tech-stocks/tech-selloff-ai-spending-concerns"
           },
           {
             "url": "https://portfolio-terminal.com/markets/stock-market-close/november-5-2026"
           },
           {
-            "url": "https://wallstreetdigest.com/stocks/bdx/"
+            "url": "https://swingtradebot.com/market-recap/2026-11-05"
+          },
+          {
+            "url": "https://tallacoptions.com/Data/EOD/VIX"
+          },
+          {
+            "url": "https://vixchart.com/"
+          },
+          {
+            "url": "https://waverider.ai/market-analysis/market-summary-midday-2026-11-05/"
+          },
+          {
+            "url": "https://www.atlasvector.ai/breadth"
           },
           {
             "url": "https://www.axios.com/2026/11/05/nasdaq-plummets-correction"
@@ -84,22 +94,22 @@
             "url": "https://www.axios.com/2026/11/06/ai-stocks-midterms-nasdaq"
           },
           {
-            "url": "https://www.cboe.com/delayed_quotes/_vix/quote_table"
+            "url": "https://www.axios.com/2026/11/06/trump-stock-market-sell-off"
           },
           {
-            "url": "https://www.financecharts.com/stocks/BDX/summary/price"
+            "url": "https://www.cboe.com/delayed_quotes/_vix/quote_table/"
+          },
+          {
+            "url": "https://www.investing.com/news/stock-market-news/us-stocks-lower-at-close-of-trade-dow-jones-industrial-average-down-345-5005517"
           },
           {
             "url": "https://www.investors.com/wp-content/uploads/2026/11/DailyGMI_110226.pdf"
           },
           {
-            "url": "https://www.kiplinger.com/investing/stocks/17494/next-week-earnings-calendar-stocks"
+            "url": "https://www.kiplinger.com/investing/stocks/best-stocks-to-buy-now"
           },
           {
             "url": "https://www.reddit.com/r/TheMoat/comments/1xok36c/daily_charts_05_nov_2026/"
-          },
-          {
-            "url": "https://www.tallacoptions.com/Data/Eod/SPX"
           },
           {
             "url": "https://www.thedailybeast.com/bitter-loser-trump-takes-petty-swipe-at-voters-after-crushing-defeat"
@@ -108,92 +118,86 @@
             "url": "https://www.thedailybeast.com/wall-street-rallies-while-trump-media-spacex-and-tesla-stocks-sink"
           },
           {
-            "url": "https://www.thetrading.tools/advance-decline-line"
-          },
-          {
-            "url": "https://ycharts.com/indicators/vix_volatility_index"
-          },
-          {
-            "url": "https://ycharts.com/indices/%5ESPX/level"
+            "url": "https://ycharts.com/indices/%5EVIX/level"
           }
         ]
       },
       {
         "agent": "News and Event Agent",
         "verdict": "APPROVE",
-        "confidence": 0.78,
-        "thesis": "Recent public filings (Nov 5, 2026 press release and 8‑K) show Becton, Dickinson and Company (BDX) reported FY2026 results and provided FY2027 guidance (adjusted EPS $13.10–$13.30; low single‑digit revenue growth). The company disclosed remediation, restructuring and certain litigation/product charges that are already reflected in reported results and guidance. Multiple FDA recalls/early alerts in 2026 were disclosed publicly but do not appear to have triggered trading halts, a material earnings shock, or a regulatory ban that would contra-indicate initiating a new long at this time.",
+        "confidence": 0.8,
+        "thesis": "Search of public filings and press releases (including Chipotle’s Oct 28, 2026 Q3 earnings release and recent SEC filings) found no verified material adverse events (no trading halts, no announced merger, no regulatory enforcement action, and no certified MDL or other litigation outcome that would materially impair the business) that would argue against initiating a new long. Q3 2026 results showed revenue growth and positive comparable-restaurant-sales (+2.1%) but a modest decline in operating margin and EPS; management reiterated multi-year unit-opening plans and low-single-digit comp guidance for 2026 — these operational headwinds are noted but do not constitute a verified, material event that would require rejecting a new long.",
         "risks": [
-          "Multiple product recalls and FDA early alerts in 2026 (e.g., intraosseous needle sets, ChloraPrep applicators, other device recalls) that could expand or lead to additional remediation costs or lost sales.",
-          "Product remediation and litigation charges recorded in FY2026 (company disclosed charges and estimates); future legal settlements or adverse rulings could be larger than current reserves.",
-          "Restructuring and impairment charges (non‑cash $450M impairment disclosed) may indicate execution risk on operational changes and cost‑savings plans.",
-          "Uncertainty and timing risk around remediation/return to market for certain products (BD referenced timing of replacement/remediation for Alaris infusion system) which could affect near‑term revenue mix.",
-          "Geopolitical, supply‑chain, tariff and macro risks cited by company that could materially affect performance or guidance realization."
+          "Recent quarter showed compressed margins and a year-over-year EPS decline — margin pressure could continue and impair returns.",
+          "Company is expanding aggressively (350–370 openings guidance for 2026) which raises execution and capital-deployment risk.",
+          "Ongoing ordinary-course litigation and periodic food-safety claims (law firms advertising investigations) exist; while we found no consolidated MDL or regulatory enforcement action as of the filings reviewed, food-safety or large-scale litigation could become material.",
+          "Inflationary cost pressures (labor, protein, freight) cited by management could further compress margins.",
+          "No evidence of trading halts or announced mergers, but market/regulatory developments after Oct 28, 2026 could change the assessment and should be re-checked before trade entry."
         ],
         "sources": [
           {
-            "url": "https://en.wikipedia.org/wiki/BD_%28company%29"
+            "url": "https://goodmoat.com/stocks/cmg/transcripts/2026-year/3-quarter"
           },
           {
-            "url": "https://investors.bd.com/news-events"
+            "url": "https://last10k.com/sec-filings/cmg/0001058090-26-000104.htm"
           },
           {
-            "url": "https://investors.bd.com/news-events/press-releases/detail/967/bd-reports-third-quarter-fiscal-2026-financial-results"
+            "url": "https://nasdaqtrader.com/Trader.aspx?id=TradingHaltSearch"
           },
           {
-            "url": "https://investors.bd.com/news-events/press-releases/detail/984/bd-reports-fourth-quarter-and-full-year-fiscal-2026-financial-results"
+            "url": "https://s203.q4cdn.com/155743495/files/doc_financials/2025/q4/Earnings-Release-4Q25.pdf"
           },
           {
-            "url": "https://investors.bd.com/sec-filings/all-sec-filings/content/0001628280-26-053790/0001628280-26-053790.pdf"
+            "url": "https://s205.q4cdn.com/179588156/files/doc_news/2026/Nov/03/2026-Q3-Earnings-Press-Release.pdf"
           },
           {
-            "url": "https://investors.bd.com/sec-filings/all-sec-filings/content/0001628280-26-070511/bdx-20261105.htm"
+            "url": "https://s25.q4cdn.com/507451327/files/doc_presentations/2026/Feb/18/JACK-February-2026-IR-Presentation-VF.pdf"
           },
           {
-            "url": "https://news.bd.com/2026-11-05-BD-Reports-Fourth-Quarter-and-Full-Year-Fiscal-2026-Financial-Results"
+            "url": "https://www.govinfo.gov/content/pkg/FR-2026-09-11/pdf/2026-18537.pdf"
           },
           {
-            "url": "https://recallrecord.org/companies/becton-dickinson-company/"
+            "url": "https://www.kiplinger.com/investing/stocks/best-stocks-to-buy-now"
           },
           {
-            "url": "https://recallregister.com/firm/becton-dickinson-co/"
+            "url": "https://www.nasdaqtrader.com/Trader.aspx?id=TradeHaltCodes"
           },
           {
-            "url": "https://www.accessdata.fda.gov/SCRIPTs/cdrh/cfdocs/cfRes/res.cfm?id=222790"
+            "url": "https://www.schmidtandclark.com/chipotle-food-poisoning-lawsuit"
           },
           {
-            "url": "https://www.fda.gov/media/194569/download"
+            "url": "https://www.schmidtandclark.com/food-poisoning-lawsuit"
           },
           {
-            "url": "https://www.fda.gov/medical-devices/medical-device-safety/medical-device-recalls-and-early-alerts"
+            "url": "https://www.sec.gov/Archives/edgar/data/1058090/000105809025000014/cmg-20241231.htm"
           },
           {
-            "url": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/bd-issues-nationwide-recall-specific-lots-bdr-intraosseous-vascular-access-system-needle-sets-due"
+            "url": "https://www.sec.gov/Archives/edgar/data/1058090/000105809026000009/cmg-20251231.htm"
           },
           {
-            "url": "https://www.kiplinger.com/investing/stocks/17494/next-week-earnings-calendar-stocks"
+            "url": "https://www.sec.gov/Archives/edgar/data/1058090/000105809026000103/cmg-20261028xex991.htm"
           },
           {
-            "url": "https://www.life-assist.com/Content/Forms/Product%20Recalls/5-29-2029%20Urgent%20ChloraPrep%20Recall%20LIFE-ASSIST_BD%20Customer%20Letter%20Complete.pdf"
+            "url": "https://www.stocktitan.net/stock-halt-tracker"
           },
           {
-            "url": "https://www.ons.org/publications-research/voice/news-views/08-2026/fda-issues-early-alert-becton-dickinson-convenience-kits"
+            "url": "https://www.tipranks.com/news/company-announcements/chipotle-earnings-call-growth-engine-vs-margin-squeeze"
           },
           {
-            "url": "https://www.rapidtradeview.trade/earnings/reports/bdx-2026-q4"
+            "url": "https://www.trefis.com/data/companies/CMG?from=CMG_earnings_note_2026-11-01&mod=ctx_end_2026openingsguide"
           }
         ]
       },
       {
         "agent": "Technical Context Agent",
         "verdict": "APPROVE",
-        "confidence": 0.78,
-        "thesis": "Long setup: breakout_strength=1.7665 indicates a strong breakout, rs_excess_pct=26.2758 shows clear relative strength, and breadth_gate=PASS with market_breadth_pct=69.2% provides broad-market support. ATR_14=4.1394 characterizes expected short-term volatility. Authoritative execution parameters: entry_usd=214.15, stop_price=205.1663 (below entry), and target_price=254.57665, giving a defined risk/reward framework.",
+        "confidence": 0.79,
+        "thesis": "Setup is consistent with a long breakout: breakout_strength=0.2266 (positive), relative strength (rs_excess_pct)=+12.7848 (strong), and market breadth=69.2% (breadth gate PASS). Entry (34.19), stop (32.9415) and target (39.80825) are provided and the stop is below the entry while the target is above, so the parameters do not contradict a long breakout. ATR=1.2217 indicates the position will face normal intraday/near-term volatility that should be considered when sizing risk.",
         "risks": [
-          "Stop is below entry but within a few ATRs (ATR_14=4.1394); normal intraday volatility could trigger the stop.",
-          "Target is forward-looking and not guaranteed; price may fail to reach target before reversal.",
-          "Spread (spread_bps=14.486319773826597) and liquidity can affect execution price and slippage.",
-          "Single-quantity exposure (quantity=1.0) may not match portfolio sizing or risk limits — position-sizing decisions are not provided here."
+          "False breakout / breakout failure",
+          "Stop is relatively close to entry given ATR — normal volatility may hit the stop",
+          "Target may not be reached if momentum fades",
+          "Market-wide reversals despite favorable breadth and RS"
         ],
         "sources": []
       },
@@ -201,85 +205,82 @@
         "agent": "Thesis Agent",
         "verdict": "APPROVE",
         "confidence": 0.82,
-        "thesis": "Authoritative packet defines a long breakout trade with entry=214.15, stop=205.1663, and target=254.57665. Quant signals show a strong technical setup (breakout_strength=1.7665; rs_excess_pct=26.2758; breadth_gate=PASS; market_breadth_pct=69.2) and specialists (Scanner, Technical, News) consider the setup coherent and executable. The trade offers a defined risk (stop in place) and a materially larger upside per the provided target. The primary contrarian view (Market Regime) flags a hostile macro/breadth/volatility environment that raises the probability of a failed breakout; this elevates trade risk but does not on its own make the setup incoherent given the defined stop and trade parameters.",
+        "thesis": "Bull case: The packet describes a coherent long breakout setup — entry sits above the stop and below the target, the model’s breadth gate passed, relative strength is strongly positive, breakout strength and overall score are supportive, ATR is consistent with the stated stop placement, and execution parameters (entry, stop, target, quantity) are provided and internally consistent. These factors support initiating a small-sized, momentum-oriented long with defined risk and reward.",
         "risks": [
-          "Hostile macro/breadth/volatility regime (Market Regime Agent): large one‑day index decline, weak breadth, and elevated VIX increase false‑breakout risk and may overwhelm single‑stock strength.",
-          "Gap/overnight headline risk (Scanner Agent): adverse gaps could bypass the stop and produce larger realized losses.",
-          "Stop vulnerability to intraday volatility (Scanner/Technical): stop is ~2.17 ATR (ATR_14=4.1394) and may be triggered by normal intraday noise.",
-          "Company‑specific operational and regulatory risks (News Agent): multiple 2026 recalls, remediation costs, restructuring/impairment and potential litigation could depress fundamentals beyond current guidance.",
-          "Liquidity/spread and execution risk (Technical Agent): spread_bps and single-share quantity may materially affect realized entry/exit prices and slippage."
+          "Macro/market regime risk: a hostile market environment or a spike in volatility can produce false breakouts and rapid reversals, increasing the chance the trade fails or suffers slippage.",
+          "Execution/slippage risk: quoted spread and current session liquidity may cause adverse fills at entry or stop, degrading realized performance vs. modeled assumptions.",
+          "Proximity of stop to normal volatility: the stop is roughly one ATR from entry, so ordinary intraday movement could trigger a stop-out before momentum resumes.",
+          "Company-specific operational and margin risks: recent results and guidance show margin pressure and aggressive unit-opening plans that could weigh on returns if execution or costs deteriorate.",
+          "Legal/operational event risk: ordinary-course litigation and periodic food-safety claims exist and could become material if escalated or consolidated."
         ],
         "sources": []
       },
       {
         "agent": "Claude CRO",
         "verdict": "REJECT",
-        "confidence": 0.76,
-        "thesis": "REJECT the BDX long. I did not recompute entry, stop, target, or size. The main reason is a verified hostile market regime on the entry session, 2026-11-05. The S&P 500 fell about 4.36%, its worst day since April 2025. The Nasdaq fell about 5.5% into correction territory. Only about 14% of S&P 500 stocks advanced, all 11 sectors closed lower, and the VIX hit its highest level since March. The quant packet shows market_breadth_pct of 69.2 and breadth_gate PASS. That contradicts the public data and looks stale or mis-dated. The Scanner, Technical, and Thesis agents rely on that breadth reading, so I treat their support as unverified. The Market Regime Agent's REJECT is the one backed by public data. The entry of 214.15 is also at the 52-week high of about 214.78. BDX is up about 50% from its",
+        "confidence": 0.78,
+        "thesis": "Verified web research shows a hostile market regime on the as-of session (2026-11-05). The S&P 500 fell about 4.4% and the Nasdaq fell about 5.5% into correction territory. Public breadth was very weak, with roughly 14% of S&P 500 stocks advancing. The VIX hit a multi-month high, and selling continued after the close ahead of Friday's payrolls report. This contradicts the quant packet's market_breadth_pct of 69.2 and its breadth_gate PASS, so the PASS can't be relied on until it is reconciled. The Market Regime Agent's REJECT is supported by public data. The four APPROVE findings mostly restate the packet and don't address the market selloff. CMG is also extended after a 7-day run of about 26-27%. It trades near 32.5x trailing earnings, against a median near 19.4. Q3 GAAP EPS fell about 6.",
         "risks": [
-          "Market rout on the entry session: S&P 500 down about 4.4%, Nasdaq in correction, negative breadth, VIX at its highest since March",
-          "The packet's breadth_gate PASS and 69.2% breadth contradict public data, which points to a stale or mis-dated feed and model/data risk",
-          "Gap risk through the stop ahead of Friday payrolls, with futures still falling after the close",
-          "Entry sits at the 52-week high with RSI above 70 after a large one-day gain, so a failed breakout or pullback is likely in a risk-off tape",
-          "FY27 EPS guidance midpoint and Q1 guidance are below consensus, with Alaris and tariff headwinds and no tariff relief included"
+          "Packet breadth (69.2%, PASS) conflicts with public breadth of about 14% of S&P 500 stocks advancing",
+          "Extreme index volatility: S&P down about 4.4%, Nasdaq in correction, VIX at a multi-month high, with the payrolls report pending",
+          "CMG is extended after a 7-day run of about 26-27%, at an elevated valuation of about 32.5x trailing earnings, so breakout failure risk is high",
+          "Q3 EPS down about 6.9% year over year with margin compression; post-earnings price target cuts, some below the packet target",
+          "Part of the price strength may come from takeover speculation that Starbucks denied, leaving headline reversal risk"
         ],
         "sources": [
-          {
-            "url": "https://ca.investing.com/news/stock-market-news/wells-fargo-upgrades-becton-dickinson-stock-rating-on-execution-93CH-4937496"
-          },
           {
             "url": "https://cappnotes.substack.com/p/closing-look-thursday-november-5"
           },
           {
-            "url": "https://finance.yahoo.com/healthcare/articles/becton-dickinson-co-bdx-q4-031521152.html"
-          },
-          {
-            "url": "https://finance.yahoo.com/healthcare/articles/becton-dickinson-company-q4-earnings-121437287.html"
-          },
-          {
-            "url": "https://finance.yahoo.com/markets/stocks/articles/bdx-stock-down-pre-market-164500985.html"
-          },
-          {
-            "url": "https://finance.yahoo.com/markets/stocks/articles/stock-market-news-nov-5-132500891.html"
-          },
-          {
-            "url": "https://finance.yahoo.com/markets/stocks/articles/stock-market-today-nov-5-221502761.html"
-          },
-          {
-            "url": "https://finimize.com/content/becton-dickinson-beat-estimates-then-tempered-its-2027-view"
-          },
-          {
-            "url": "https://grafa.com/en/news/united-states/bd-q4-fy2026-earnings-revenue-eps-fy2027-guidance"
-          },
-          {
-            "url": "https://seekingalpha.com/news/4667093-bd-outlines-13_10-13_30-adjusted-eps-outlook-as-it-expects-low-single-digit-fy-2027-revenue"
+            "url": "https://finviz.com/stock?t=CMG"
           },
           {
             "url": "https://sellthenews.org/catalyx/market/2026-11-05"
           },
           {
+            "url": "https://stockanalysis.com/stocks/cmg/"
+          },
+          {
+            "url": "https://stocktwits.com/symbol/CMG"
+          },
+          {
             "url": "https://www.cnbc.com/2026/11/04/stock-market-today-live-updates.html"
+          },
+          {
+            "url": "https://www.cnn.com/markets/stocks/CMG"
+          },
+          {
+            "url": "https://www.economies.com/investing/stocks/why-did-the-stock-market-crash-on-nov-5-2026-197"
           },
           {
             "url": "https://www.fool.com/coverage/stock-market-today/2026/11/05/stock-market-today-nov-5-nasdaq-suffers-worst-day-in-18-months-as-ai-trade-comes-under-fire/"
           },
           {
-            "url": "https://www.fool.com/earnings/call-transcripts/2026/11/05/becton-dickinson-bdx-q4-2026-earnings-call-transcript/"
+            "url": "https://www.fool.com/quote/nyse/cmg/"
           },
           {
-            "url": "https://www.gurufocus.com/news/9174400/becton-dickinson-bdx-reports-q4-beat-raises-dividend-amid-mixed-valuation-signals"
+            "url": "https://www.foxbusiness.com/markets/stocks-nov-5-2026"
           },
           {
-            "url": "https://www.spglobal.com/spdji/en/documents/commentary/market-attributes-us-equities-202511.pdf"
+            "url": "https://www.google.com/finance/quote/CMG:NYSE"
+          },
+          {
+            "url": "https://www.hl.co.uk/shares/stock-market-news/market-reports/archive/us-open-stocks-mostly-higher-after-last-weeks-sell-off"
           },
           {
             "url": "https://www.stocktitan.net/articles/stock-market-today-live-november-5-2026"
           },
           {
-            "url": "https://www.tradingview.com/news/benzinga:b9df660e3094b:0-becton-dickinson-enters-fiscal-2027-with-more-focused-portfolio-for-sustainable-growth/"
+            "url": "https://www.trefis.com/stock/cmg/articles/622774/chipotle-mexican-grill-stock-6-straight-green-days-up-26/2026-11-05"
+          },
+          {
+            "url": "https://www.trefis.com/stock/cmg/articles/623205/a-7-day-winning-streak-has-chipotle-mexican-grill-stock-up-27/2026-11-06"
           },
           {
             "url": "https://www.washingtonpost.com/business/2026/11/05/us-stocks-slide-wiping-out-post-midterm-gains/"
+          },
+          {
+            "url": "https://www.webull.com/newslist/nyse-cmg"
           }
         ]
       }
