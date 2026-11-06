@@ -15952,6 +15952,350 @@
           ]
         }
       ]
+    },
+    "2026-11-05:RSG:673ad8b9e4541815f6d8141f4b89136ba864d5cb82aa2ad4b7c43650484a79c7": {
+      "verdict": "REJECT",
+      "reason": "Claude CRO rejected the proposal",
+      "symbol": "RSG",
+      "asof_session": "2026-11-05",
+      "param_hash": "673ad8b9e4541815f6d8141f4b89136ba864d5cb82aa2ad4b7c43650484a79c7",
+      "generated_at": "2026-11-06T20:02:36Z",
+      "findings": [
+        {
+          "agent": "Scanner Agent",
+          "verdict": "APPROVE",
+          "confidence": 0.82,
+          "thesis": "The packet is internally coherent: entry (246.46) sits above the stop (239.4298) and below the target (278.0959). Stop distance is ~7.03 USD (~1.41 × ATR 4.9901), yielding a reward:risk of ~4.5x (target minus entry vs entry minus stop). Breadth gate passes, breakout_strength is positive, relative strength excess is strong (21.46%), spread is low (~19.9 bps), and quantity, tier, and authority notes are provided. No fields conflict with one another.",
+          "risks": [
+            "Overnight or gap risk could breach the stop before execution (market events/earnings).",
+            "Stop distance ~1.41× ATR may be tight if volatility increases; false breakouts could trigger stop.",
+            "Single-quantity packet does not convey portfolio context or position sizing limits beyond the authoritative quantity.",
+            "Corporate or sector-specific news (earnings, guidance, M&A) could materially change profile between asof_session and execution."
+          ],
+          "sources": []
+        },
+        {
+          "agent": "Market Regime Agent",
+          "verdict": "REJECT",
+          "confidence": 0.75,
+          "thesis": "The US equity backdrop is hostile to momentum breakouts. Markets registered a broad, sharp sell-off on Nov 5 (large S&P and Nasdaq declines) with very poor breadth and elevated volatility; while there was a partial bounce Nov 6, breadth metrics and percent of stocks above key moving averages remain weak and VIX is elevated — conditions that typically swamp individual-stock breakout attempts. Given the recent, broad risk-off move and ongoing market volatility, I do not approve a momentum-entry for RSG right now.",
+          "risks": [
+            "Quant packet signals conflict with the public intraday/close market action (breadth_gate PASS vs. widely reported broad declines) — if the packet’s breadth measure is correct the regime call could flip quickly.",
+            "RSG is in a defensive/industrial area and may decouple from tech-led weakness; sector-specific strength or idiosyncratic news could still produce a valid breakout despite market stress.",
+            "A sustained market recovery over the next session(s) (clearing of the Nov 5 losses with improving breadth) would invalidate this REJECT — monitor index breadth and VIX closely.",
+            "Elevated VIX and higher Treasury yields increase the chance of false breakouts and wider price swings; stop may be more easily hit under current volatility.",
+            "Major macro/events (post-midterm positioning, earnings, or policy headlines) could rapidly change the regime — reassess with fresh breadth and volatility reads before trading."
+          ],
+          "sources": [
+            {
+              "url": "https://apnews.com/article/4d12764c0b3ce38ffde3077712811182"
+            },
+            {
+              "url": "https://apnews.com/article/7ee9c212805aa5e70cf34d25aab7a36e"
+            },
+            {
+              "url": "https://apnews.com/article/afe254c608c3d1fe2ea792812ba9765a"
+            },
+            {
+              "url": "https://apnews.com/article/bba6f0bf9035a6e6b1c4fef3e8230b89"
+            },
+            {
+              "url": "https://marketdly.com/"
+            },
+            {
+              "url": "https://moneyweek.com/investments/tech-stocks/tech-selloff-ai-spending-concerns"
+            },
+            {
+              "url": "https://portfolio-terminal.com/markets/stock-market-close/november-5-2026"
+            },
+            {
+              "url": "https://stocksetups.com/today"
+            },
+            {
+              "url": "https://swingfolio.com/daily/us/2026-11-05/afternoon"
+            },
+            {
+              "url": "https://tallacoptions.com/Data/EOD/VIX"
+            },
+            {
+              "url": "https://tradealmanac.com/en/markets/us/indices/vix"
+            },
+            {
+              "url": "https://www.axios.com/2026/11/05/nasdaq-plummets-correction"
+            },
+            {
+              "url": "https://www.axios.com/2026/11/06/ai-stocks-midterms-nasdaq"
+            },
+            {
+              "url": "https://www.cboe.com/delayed_quotes/_vix/quote_table/"
+            },
+            {
+              "url": "https://www.kiplinger.com/investing/stocks/dow-rallies-1-570-points-on-midterm-relief-stock-market-today"
+            },
+            {
+              "url": "https://www.kiplinger.com/investing/stocks/nasdaq-bounces-as-chips-lead-ai-revival-stock-market-today"
+            },
+            {
+              "url": "https://www.thedailybeast.com/bitter-loser-trump-takes-petty-swipe-at-voters-after-crushing-defeat"
+            },
+            {
+              "url": "https://www.thedailybeast.com/wall-street-rallies-while-trump-media-spacex-and-tesla-stocks-sink"
+            },
+            {
+              "url": "https://www.westernsouthern.com/-/media/files/touchstone/fund-literature/tsf-domestic-equity-monthly.pdf?hash=E92155FEB0DEE91C5CB32E69F449E799&rev=5d23f9984e6f478981f18f24c66565ef"
+            }
+          ]
+        },
+        {
+          "agent": "News and Event Agent",
+          "verdict": "APPROVE",
+          "confidence": 0.85,
+          "thesis": "Public-web search (company press release, SEC filings and multiple earnings transcripts) shows Republic Services (RSG) released third-quarter 2026 results on October 29, 2026 and raised full-year adjusted EBITDA guidance and updated revenue ranges. The search did not identify any recent verified material adverse events — no trading halts on NYSE:RSG, no new regulatory enforcement actions or consent decrees, no merger announcement that would affect initiating a new long, and no newly disclosed material litigation outcome that argues against a new long as of the as-of session date (2026-11-05).",
+          "risks": [
+            "Legacy and ongoing environmental/regulatory exposure (historical litigation related to landfill operations, which could produce future adverse rulings or restrictions).",
+            "Integration and remediation risk from prior acquisitions (e.g., US Ecology) that could produce future liabilities or costs.",
+            "Future guidance or macro shocks: company guidance could be revised downward in future reports, or broader macro/regulatory events could materially affect operations.",
+            "Unknown/undiscovered litigation or regulatory developments not captured by the performed searches (limited-time window)."
+          ],
+          "sources": [
+            {
+              "url": "https://apnews.com/article/0ac55ef09dd9acc982cefc4ee866edd6"
+            },
+            {
+              "url": "https://apnews.com/article/14b7cf7635cad30254b0ae1cdb6c0515"
+            },
+            {
+              "url": "https://apnews.com/article/25923606323624be8a12c9fafe83cb17"
+            },
+            {
+              "url": "https://apnews.com/article/361fa669019e0053cf6d4513e6e275e3"
+            },
+            {
+              "url": "https://apnews.com/article/f3e3daf4ebed0e99a744aa7bac5e86ee"
+            },
+            {
+              "url": "https://cdn-api.markitdigital.com/apiman-gateway/ASX/asx-research/1.0/file/2924-03090141-6A1325506%26v%3Dundefined"
+            },
+            {
+              "url": "https://data-api.marketindex.com.au/api/v1/announcements/XASX%3ARSG%3A6A1325506/pdf/inline/trading-halt"
+            },
+            {
+              "url": "https://docketnexus.com/party/republic-services-inc/?page=1"
+            },
+            {
+              "url": "https://en.wikipedia.org/wiki/Republic_Services"
+            },
+            {
+              "url": "https://en.wikipedia.org/wiki/Trading_halt"
+            },
+            {
+              "url": "https://finance.yahoo.com/markets/stocks/articles/republic-services-rsg-q3-2026-144421735.html"
+            },
+            {
+              "url": "https://fortune.com/company/republic-services/earnings/q3-2026/"
+            },
+            {
+              "url": "https://hotcopper.com.au/asx/rsg/announcements/"
+            },
+            {
+              "url": "https://investor.republicservices.com/news-releases/news-release-details/republic-services-completes-acquisition-us-ecology"
+            },
+            {
+              "url": "https://investor.republicservices.com/news-releases/news-release-details/republic-services-inc-reports-third-quarter-2026-results"
+            },
+            {
+              "url": "https://investor.republicservices.com/news-releases/news-release-details/republic-services-inc-sets-date-third-quarter-2026-earnings"
+            },
+            {
+              "url": "https://investor.republicservices.com/node/30841/ixbrl-viewer"
+            },
+            {
+              "url": "https://investor.republicservices.com/static-files/69267ad0-8f89-4328-bbb4-6538d32c374e"
+            },
+            {
+              "url": "https://investor.republicservices.com/static-files/70e0f46d-6070-4071-b164-de20eeb0446e"
+            },
+            {
+              "url": "https://investor.republicservices.com/static-files/974c5c38-e6e2-4ba9-b7fe-8298f2329d68"
+            },
+            {
+              "url": "https://investorpa.com/announcement/293193/"
+            },
+            {
+              "url": "https://investors.usecology.com/static-files/770a44b9-8566-46b1-8a64-84a7a070a0b5"
+            },
+            {
+              "url": "https://m.nasdaqtrader.com/Trader.aspx?id=TradingHaltSearch"
+            },
+            {
+              "url": "https://media.republicservices.com/2026-10-29-Republic-Services%2C-Inc-Reports-Third-Quarter-2026-Results"
+            },
+            {
+              "url": "https://quartr.com/events/republic-services-inc-rsg-q3-2026_338OPpki"
+            },
+            {
+              "url": "https://records.lexingtonky.news/federal-court/case/3-26-cv-00021/"
+            },
+            {
+              "url": "https://republicservicesinc.gcs-web.com/news-releases"
+            },
+            {
+              "url": "https://republicservicesinc.gcs-web.com/news-releases/news-release-details/republic-services-inc-reports-third-quarter-2026-results"
+            },
+            {
+              "url": "https://republicservicesinc.gcs-web.com/node/30836/pdf"
+            },
+            {
+              "url": "https://rgd.sg/sgxnet-announcements/"
+            },
+            {
+              "url": "https://stocktools.ai/charts?t=RSG"
+            },
+            {
+              "url": "https://tr-msd-fe-wa.azurewebsites.net/rsg/transcripts"
+            },
+            {
+              "url": "https://violationtrackerglobal.goodjobsfirst.org/violation-tracker-global/united-states-us-ecology-inc-0"
+            },
+            {
+              "url": "https://www.axios.com/2020/02/15/future-of-recycling-cost-troubles"
+            },
+            {
+              "url": "https://www.axios.com/local/denver/2026/06/10/ai-powered-robot-recycle-waste-republic-services"
+            },
+            {
+              "url": "https://www.axios.com/local/san-diego/2025/04/30/republic-services-thor-machine-organic-waste-compost"
+            },
+            {
+              "url": "https://www.axios.com/newsletters/axios-pro-rata-dbc820a7-dabd-44bd-9919-53bcaafca139"
+            },
+            {
+              "url": "https://www.fool.com.au/2026/05/14/this-asx-gold-stock-just-hit-pause-after-a-12-weekly-jump/"
+            },
+            {
+              "url": "https://www.fool.com/earnings/call-transcripts/2026/10/30/republic-services-rsg-q3-2026-earnings-call-transcript/"
+            },
+            {
+              "url": "https://www.govinfo.gov/content/pkg/FR-2026-09-03/pdf/FR-2026-09-03.pdf"
+            },
+            {
+              "url": "https://www.investsmart.com.au/security/asx/rsg/resolute-mining-limited/announcements?page=3"
+            },
+            {
+              "url": "https://www.marketindex.com.au/asx/rsg/announcements"
+            },
+            {
+              "url": "https://www.rml.com.au/wp-content/uploads/2023/03/Continuous-Disclosure-Policy.pdf"
+            },
+            {
+              "url": "https://www.rml.com.au/wp-content/uploads/2024/03/Continuous-Disclosure-Policy-2032024.pdf"
+            },
+            {
+              "url": "https://www.sec.gov/Archives/edgar/data/1060391/000106039126000326/rsg-20261028.htm"
+            },
+            {
+              "url": "https://www.tomshardware.com/pc-components/cpus/amd-expects-to-outsell-intel-in-q4-for-the-first-time-in-history-usd17b-guidance-would-exceed-intels-projections"
+            }
+          ]
+        },
+        {
+          "agent": "Technical Context Agent",
+          "verdict": "APPROVE",
+          "confidence": 0.82,
+          "thesis": "Moderate confirmed long breakout (breakout_strength=0.3218) supported by strong relative strength (rs_excess_pct=21.4613) and healthy market breadth (breadth_gate=PASS, market_breadth_pct=69.2). ATR (14)=4.9901 indicates moderate intraday volatility. Authoritative trade parameters provided: stop_price=239.4298 is below the entry and target_price=278.0959 aligns with a directional upside objective. These supplied fields together support approving a long breakout setup.",
+          "risks": [
+            "False breakout leading to quick reversal and stop hit",
+            "Stop proximity vs. intraday volatility (ATR) may produce a higher stop-hit probability",
+            "Broader market weakness could erode breakout follow-through despite current breadth reading",
+            "Overnight gaps can bypass the stop or target levels",
+            "Single-stock idiosyncratic news risk (earnings, guidance, catalysts)"
+          ],
+          "sources": []
+        },
+        {
+          "agent": "Thesis Agent",
+          "verdict": "APPROVE",
+          "confidence": 0.81,
+          "thesis": "Bull case: Quant packet shows a coherent, risk-defined long breakout into a favorable setup: breadth_gate=PASS and market_breadth_pct=69.2 support market participation; breakout_strength positive and rs_excess_pct=21.4613 signals strong relative leadership; authoritative entries place entry_usd=246.46 above stop_price=239.4298 and below target_price=278.0959, with a low spread and tier=A classification. Scanner and Technical Context specialists both approve the setup and note a favorable reward:risk profile (scanner ~4.5x). News/Events workup found no new material adverse corporate disclosures as of the as-of session, supporting initiation if regime metrics remain stable.",
+          "risks": [
+            "Overnight or gap risk could bypass the stop before execution (market events/earnings).",
+            "Stop proximity vs. current intraday volatility — stop distance noted (~1.41× ATR per scanner) may be tight and increase stop-hit probability if volatility expands.",
+            "Hostile market regime / elevated VIX and recent broad sell-off increase chance of false breakouts and stop triggers (Market Regime Agent rejection).",
+            "Material company-specific developments (earnings/guidance revision, regulatory action, litigation outcomes, or a trading halt) would materially alter the setup (News and Event Agent risk).",
+            "Single-packet / single-quantity context: position sizing and portfolio constraints are not provided here and may make the trade inappropriate for some accounts."
+          ],
+          "sources": []
+        },
+        {
+          "agent": "Claude CRO",
+          "verdict": "REJECT",
+          "confidence": 0.68,
+          "thesis": "REJECT. Verified reasons argue against the entry. I did not recompute price, stop, target or size.\n\n1) The packet's breadth conflicts with public market data. The packet shows breadth_gate PASS and market_breadth_pct 69.2 for the 2026-11-05 session. On that session the S&P 500 fell about 4.4%, all 11 sectors closed lower, and decliners outnumbered advancers about 6 to 1. The packet's breadth definition may differ, but I cannot verify it. The Scanner, Technical and Thesis approvals lean on this field and cite no sources, so I give them little weight.\n\n2) A volatility shock hit the signal session. The VIX closed up about 69.7% at 28.17. The Nasdaq 100 fell about 6.4%, its worst day since March 2020. The ATR of 4.99 predates this spike. The stop sits about 1.41x ATR from entry, which the Scan",
+          "risks": [
+            "Packet breadth (PASS, 69.2%) contradicts public data showing a broad sell-off with about 6:1 decliners on Nov 5",
+            "VIX spiked about 70% to 28.17 and the Nasdaq 100 had its worst day since March 2020; ATR and stop distance (~1.41x ATR) predate the shock and may be too tight",
+            "Nov 6 rebound is unconfirmed; the VIX is still elevated, the jobs report was hot, and rate-hike risk and a 10-year yield near 4.85% persist",
+            "Valuation is near the top of the 52-week range, with several post-Q3 analyst targets at or near the entry price",
+            "News and Event Agent evidence is partly contaminated by ASX Resolute Mining RSG items, so its no-halt finding is only partly relevant to NYSE:RSG"
+          ],
+          "sources": [
+            {
+              "url": "https://ca.investing.com/news/stock-market-news/form-144-vivmark-residential-for-6-november-93CH-4940073"
+            },
+            {
+              "url": "https://ca.investing.com/news/stock-market-news/form-4-ft-13325-for-6-november-93CH-4940005"
+            },
+            {
+              "url": "https://finance.yahoo.com/markets/stocks/articles/stock-market-news-nov-6-132900980.html"
+            },
+            {
+              "url": "https://finance.yahoo.com/quote/RSG/"
+            },
+            {
+              "url": "https://paraliatradingdesk.substack.com/p/daily-brief-nov-6-the-ai-trade-broke"
+            },
+            {
+              "url": "https://pro.thestreet.com/stock-market-today/2026-11-06"
+            },
+            {
+              "url": "https://robinhood.com/us/en/stocks/RSG/"
+            },
+            {
+              "url": "https://stockanalysis.com/stocks/rsg/"
+            },
+            {
+              "url": "https://swingfolio.com/daily/us/2026-11-06/morning"
+            },
+            {
+              "url": "https://tradingmomentum.substack.com/p/market-update-november-6-2026-after"
+            },
+            {
+              "url": "https://www.benzinga.com/markets/equities/26/11/62998202/stock-market-today-nasdaq-100-rebounds-chip-stocks-payrolls-beat"
+            },
+            {
+              "url": "https://www.cnbc.com/quotes/RSG"
+            },
+            {
+              "url": "https://www.cnn.com/markets"
+            },
+            {
+              "url": "https://www.cnn.com/markets/stocks/RSG"
+            },
+            {
+              "url": "https://www.google.com/finance/quote/RSG:NYSE"
+            },
+            {
+              "url": "https://www.marketbeat.com/stocks/NYSE/RSG/"
+            },
+            {
+              "url": "https://www.stocktitan.net/news/RSG/"
+            },
+            {
+              "url": "https://www.tipranks.com/stocks/rsg/stock-news"
+            }
+          ]
+        }
+      ]
     }
   }
 }
