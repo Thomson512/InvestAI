@@ -1,56 +1,55 @@
 {
-  "outcome": "COUNCIL_REJECT:KO",
+  "outcome": "COUNCIL_REJECT:EW",
   "session_date": "2026-11-16",
-  "generated_at": "2026-11-16T18:40:29Z",
+  "generated_at": "2026-11-16T18:50:29Z",
   "official": true,
   "extra_summary": [
-    "council: Claude CRO rejected the proposal"
+    "council: At least one specialist rejected the proposal"
   ],
   "plan": {
-    "symbol": "KO",
+    "symbol": "EW",
     "quantity": 3.0,
-    "entry_usd": 99.4,
-    "stop_price": 95.8585,
-    "target_price": 115.33675,
+    "entry_usd": 106.84,
+    "stop_price": 101.8282,
+    "target_price": 129.39310000000003,
     "fx_usdczk": 22.182,
-    "spread_bps": 2.0122748767491934
+    "spread_bps": 8.427360831499922
   },
   "council": {
     "verdict": "REJECT",
-    "reason": "Claude CRO rejected the proposal",
+    "reason": "At least one specialist rejected the proposal",
     "cached": true,
     "findings": [
       {
         "agent": "Scanner Agent",
         "verdict": "APPROVE",
-        "confidence": 0.8,
-        "thesis": "The packet is internally coherent. The authoritative entry (100.15) lies above the authoritative stop (95.8585) and below the authoritative target (119.46175); quantity is positive (3.0). Breadth gate = PASS, breakout_strength is high (0.8843), and RS_excess_pct is strongly positive (16.9128), all consistent with a breakout/strength-based long-tone recommendation. The packet includes ATR (1.6958), spread_bps, score, tier and the authority statement, with no contradictory fields present.",
+        "confidence": 0.82,
+        "thesis": "All authoritative fields are present and internally consistent: entry (106.91) is above stop (101.8282) and below target (129.7781); quantity (3.0) and ATR (2.6784) are provided; breadth gate passed and other metrics are coherent with an A-tier setup.",
         "risks": [
-          "Stop is relatively close to entry — may result in a higher chance of stop-outs given the provided ATR (1.6958).",
-          "Spread_bps (7.99) could meaningfully increase execution cost on a small-sized trade (quantity = 3).",
-          "Tier B denotes only moderate conviction compared with higher tiers; monitor for follow-through and volatility.",
-          "Quantity of 3.0 may limit position scaling or granularity for risk management if portfolio sizing rules require different lot sizing."
+          "Stop is relatively tight (~1.9 ATR) which increases chance of being stopped out on normal volatility.",
+          "Breakout strength is modest (0.4545), indicating the move may not be robust.",
+          "No liquidity or external market context provided in packet (spread is low but on-paper only)."
         ],
         "sources": []
       },
       {
         "agent": "Market Regime Agent",
         "verdict": "APPROVE",
-        "confidence": 0.7,
-        "thesis": "As of the U.S. market open on Nov 16, 2026 the tape is mixed: mega-cap tech weakness (Nvidia headlines) is dragging cap-weighted indexes while sector breadth shows consumer-defensive leadership and volatility is elevated (~19–20 VIX). The supplied quant packet shows strong internal breadth (market_breadth_pct 72.4), a high breakout_strength (0.8843) and strong RS for KO — a consumer-staples name that typically holds up or leads when defensive sectors are favored. Taken together the observable backdrop is not hostile and is supportive of a momentum breakout attempt in KO, so I APPROVE the trade with moderate confidence.",
+        "confidence": 0.72,
+        "thesis": "Broad-market pullbacks this week have been driven primarily by AI/mega-cap weakness, but the overall tape remains constructive (S&P near recent highs on Nov 13 with only a short-term pullback; breadth in the quant packet is PASS at 72.4%). Volatility is elevated but not extreme and rates (10y ~5.1%) create macro headwinds rather than a regime reversal. Crucially for EW, company-specific fundamentals are supportive: EW reported a Q3 beat and raised 2026 guidance (Nov 4), attracted multiple analyst upgrades/price-target raises, and the med-device group is holding up relative to tech. Given the internal breadth/pass signal and EW’s strong relative strength and guidance-driven momentum, the current backdrop supports a momentum breakout attempt for EW, though position sizing, stops and targets ",
         "risks": [
-          "Mega-cap tech-driven risk-off could deepen and spill into defensives, causing a false breakout.",
-          "Elevated VIX/near-term volatility increases chance of whipsaw and stop-hit before trend continuation.",
-          "News or event risk (company-specific, Fed/ macro, or geopolitical headlines) could rapidly change market regime.",
-          "External breadth readings are mixed across vendors — if breadth deteriorates from the quant packet’s reading the breakout probability falls.",
-          "Sector-rotation back to cyclicals or a renewed risk-on rally could limit upside for a consumer-staples momentum trade."
+          "Short-term market weakness led by AI/mega-cap selling could spill into health care and derail a breakout.",
+          "Elevated Treasury yields (~5.1% 10y) increase cost-of-capital and can pressure multiples if rates continue to rise.",
+          "Rising intraday volatility (VIX ~21) raises the chance of false breakouts and whipsaw stops.",
+          "Company- or trial-specific news, negative clinical/regulatory headlines, or disappointing forward comments could reverse momentum quickly.",
+          "Post-earnings profit-taking or lack of volume confirmation on the breakout could cause failure and a quick retracement into the prior range."
         ],
         "sources": [
           {
-            "url": "https://apnews.com/article/027cd5f4583d1a11c1795150bf065afb"
+            "url": "https://apnews.com/article/12c1e8155fb85c3c7b09e058ed6d3c74"
           },
           {
-            "url": "https://apnews.com/article/12c1e8155fb85c3c7b09e058ed6d3c74"
+            "url": "https://apnews.com/article/297d040c83844a9563327340b370c24e"
           },
           {
             "url": "https://apnews.com/article/35786b8f539ec95f16ae0500f71cfcc7"
@@ -59,244 +58,323 @@
             "url": "https://apnews.com/article/a31165456bf217de16f1c4e646b72bd2"
           },
           {
-            "url": "https://apnews.com/article/e7f3f746bcbaa3edbb6b2b2ff0f519c6"
+            "url": "https://apnews.com/article/f8edd0eeb1494d4d2584715686c5e619"
           },
           {
-            "url": "https://breadthmarket.com/breadth"
+            "url": "https://apnews.com/article/ffc5e5a2d384f00960034ec10087502e"
           },
           {
-            "url": "https://bullstory.io/en-us/investing/sp-500-today"
+            "url": "https://en.wikipedia.org/wiki/Edwards_Lifesciences"
           },
           {
-            "url": "https://dailyhub.io/daily/2026-11-16"
+            "url": "https://fedgazette.com/editions/2026-11-16.pdf"
           },
           {
-            "url": "https://forensics.us/briefing/today"
+            "url": "https://finance.yahoo.com/quote/%5EGSPC/history/?p=%5EGSPC"
           },
           {
-            "url": "https://marketsunrise.com/editions/2026-11-16/"
+            "url": "https://financialfilings.com/filings/edwards-lifesciences-corp/earnings-release/2026/75612934/"
           },
           {
-            "url": "https://nexqual.com/markets"
+            "url": "https://home.treasury.gov/system/files/221/Tentative-Auction-Schedule.pdf?inf_contact_key=d3a358a57b68c15767abf0c70a2645c09def1dbf585966007926372c74c482b3"
           },
           {
-            "url": "https://screenercharts.com/us/market-breadth"
+            "url": "https://ir.edwards.com/news/news-details/2026/Edwards-Lifesciences-to-Host-Earnings-Conference-Call-on-November-4-2026/default.aspx"
           },
           {
-            "url": "https://stockmarket.nexus/market-briefing/2026-11-16"
+            "url": "https://newspaperjoint.com/markets/stock-market-today/"
           },
           {
-            "url": "https://theweek.com/politics/will-democratic-victories-boost-wall-street"
+            "url": "https://portfolio-terminal.com/markets/sp-500"
           },
           {
-            "url": "https://www.axios.com/2026/11/12/nvidia-stocks-tech-huang"
+            "url": "https://portfolio-terminal.com/markets/stock-market-close"
           },
           {
-            "url": "https://www.axios.com/2026/11/16/nvidia-stocks-options-retail"
+            "url": "https://s27.q4cdn.com/788244549/files/content_files/EW-Q3-2026-Earnings-Call-Transcript.pdf"
           },
           {
-            "url": "https://www.axios.com/newsletters/axios-future-of-energy-528c1360-dc42-11f1-8081-0bc5bf633dcf"
+            "url": "https://s27.q4cdn.com/788244549/files/doc_news/Edwards-Lifesciences-Reports-Third-Quarter-Results-2026.pdf"
           },
           {
-            "url": "https://www.axios.com/newsletters/axios-future-of-energy-d2371940-e122-11f1-bb26-673c2c8bdef2"
+            "url": "https://simplywall.st/stocks/us/healthcare/nyse-ew/edwards-lifesciences/news/what-edwards-lifesciences-ew-earnings-beat-means-for-shareho/amp"
           },
           {
-            "url": "https://www.axios.com/newsletters/axios-twin-cities-48820a03-a713-42a4-830c-229ed98f2f10"
+            "url": "https://stockanalysis.com/stocks/ew/"
           },
           {
-            "url": "https://www.kiplinger.com/investing/stocks/is-the-stock-market-open-on-veterans-day"
+            "url": "https://tradetastic.io/stocks/ew/"
           },
           {
-            "url": "https://www.thetrading.tools/advance-decline-line"
+            "url": "https://tradingeconomics.com/united-states/government-bond-yield"
           },
           {
-            "url": "https://www.tomsguide.com/news/live/jensen-huang-nvidia-crisis-live-november-2026"
+            "url": "https://www.axios.com/newsletters/axios-closer-54cb8378-50e3-477d-999d-0aaa60f5efcc"
           },
           {
-            "url": "https://www.zacks.com/stock/news/3030162/stock-market-news-for-nov-16-2026"
+            "url": "https://www.benzinga.com/quote/EW/earnings-forecasts"
+          },
+          {
+            "url": "https://www.cboe.com/tradable-products/vix"
+          },
+          {
+            "url": "https://www.edwards.com/pr/newsroom/news/2026-11-04-edwards-lifesciences-reports-third-quarter-results-da98f70"
+          },
+          {
+            "url": "https://www.investors.com/wp-content/uploads/2026/11/DailyGMI_111326.pdf"
+          },
+          {
+            "url": "https://www.kiplinger.com/economic-forecasts/inflation"
+          },
+          {
+            "url": "https://www.kiplinger.com/investing/stocks/nasdaq-adds-400-points-after-coreweave-earnings-stock-market-today"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1099800/000109980026000038/ex-991q22026.htm"
+          },
+          {
+            "url": "https://www.statmuse.com/money/ask?q=s+and+p+500+closes+at+19%2C173"
+          },
+          {
+            "url": "https://www.stocktitan.net/sec-filings/EW/8-k-edwards-lifesciences-corp-reports-material-event-c30b6d9a960f.html"
+          },
+          {
+            "url": "https://www.streetinsider.com/Earnings/Edwards%2BLifesciences%2B%28EW%29%2BTops%2BQ3%2BEPS%2Bby%2B6c%3B%2Braises%2Bguidance/27290465.html"
+          },
+          {
+            "url": "https://www.streetinsider.com/dr/quote.php?q=EW"
+          },
+          {
+            "url": "https://www.tallacoptions.com/Data/Eod/SPX"
+          },
+          {
+            "url": "https://www.trefis.com/data/companies/EW?from=%5ERUA_high_2026-11-10&mod=co_end_ew"
+          },
+          {
+            "url": "https://ycharts.com/indices/%5EVIX/level"
           }
         ]
       },
       {
         "agent": "News and Event Agent",
-        "verdict": "APPROVE",
-        "confidence": 0.82,
-        "thesis": "Public filings and press releases show The Coca‑Cola Company (KO) reported third-quarter 2026 results on October 27, 2026 with EPS growth and the company raised full‑year 2026 guidance. I found no verified trading halts, no announced mergers or acquisitions, and no regulatory enforcement action or court judgment that would materially argue against opening a new long at this time.",
+        "verdict": "REJECT",
+        "confidence": 0.86,
+        "thesis": "Edwards Lifesciences (EW) reported strong Q3 results and raised 2026 guidance on Nov 4, 2026, but a verified FDA early alert and recall (mid‑October 2026) for specific Sapien M3/Commander M transcatheter mitral valve delivery system lots — including reports of balloon failures and at least one patient death — represents a material near‑term regulatory, clinical safety, and litigation risk that argues against initiating a new long at this time. Ongoing patent litigation and prior recalls increase downside event risk and uncertain near‑term clinical/regulatory developments could reverse the positive earnings momentum.",
         "risks": [
-          "Ongoing litigation: multiple routine and sector-specific lawsuits remain open (including environmental/plastic packaging suits and 'ultra‑processed food' litigation) that could eventually generate material exposure if outcomes deteriorate.",
-          "Privacy/class action risk: a recently reported privacy/cookie-related lawsuit filed in early November 2026 alleges tracking despite opt-outs; outcomes could lead to damages/settlement costs or reputational impact.",
-          "Data‑breach and related class actions: prior ransomware/data incidents have generated litigation risk and potential remediation costs.",
-          "Macro, currency, or commodity pressures: Coca‑Cola’s results and guidance remain exposed to volume/cost/currency swings which could change outlook between now and next guidance cycle.",
-          "Regulatory or policy changes in key markets: potential future regulation (packaging, marketing, sugar/health-related rules) could affect margins or demand."
+          "FDA early alert / recall (Oct 15–16, 2026) for specific Commander M delivery system lots tied to balloon failures and at least one reported patient death — potential for broader recalls, warnings, or use restrictions.",
+          "Potential regulatory action, increased post‑market surveillance, or labeling changes that could reduce procedure volumes and sales in affected product lines.",
+          "Elevated litigation exposure (recent patent suits and appeals disclosed in SEC filings) which could result in damages, injunctions, or settlement costs.",
+          "Reputational and clinical adoption risk: adverse clinical events may slow hospital adoption and procurement, hurting near‑term revenue and forecasts despite recent guidance raise.",
+          "Supply chain / inventory disruption for affected lots and potential corrective action costs impacting margins."
         ],
         "sources": [
           {
-            "url": "https://apnews.com/article/788cb4cd5b0a4e77a06322812a18d547"
+            "url": "https://assets.alm.com/db/f2/6e7bed2b4aa7a1289b0a6020ad54/nylj090826a.pdf"
           },
           {
-            "url": "https://clerk.solvrlabs.ai/company/KO"
+            "url": "https://cardiovascularbusiness.com/topics/clinical/interventional-cardiology/fda-shares-warning-about-edwards-lifesciences-heart-valve-tech-after-patient-death"
           },
           {
-            "url": "https://docketnexus.com/party/coca-cola-company/"
+            "url": "https://docketnexus.com/case/in-re-edwards-lifesciences-corporation-derivative-litigation-69510867/"
           },
           {
-            "url": "https://en.wikipedia.org/wiki/The_Coca-Cola_Company"
+            "url": "https://en.wikipedia.org/wiki/Earnings_call"
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/Edwards_Lifesciences"
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/Trading_curb"
           },
           {
             "url": "https://en.wikipedia.org/wiki/Trading_halt"
           },
           {
-            "url": "https://investors.coca-colacompany.com/?source=post_page---------------------------"
+            "url": "https://freshrecalls.com/brand/edwards-lifesciences"
           },
           {
-            "url": "https://investors.coca-colacompany.com/_assets/_1df3df91e6951f35952f0bd0d28b0ece/cocacolacompany/db/881/11142/file/CORRECTED_TRANSCRIPT_The_Coca-Cola_Co.%28KO-US%29_Q3_2026_Earnings_Call_27-October-2026_8_30_AM_ET.pdf"
+            "url": "https://fundamentalytics.com/stocks/ew/"
           },
           {
-            "url": "https://investors.coca-colacompany.com/_assets/_e981aab3c236d72f2e1a1f06f4dcfaa9/cocacolacompany/db/881/11142/file/CORRECTED_TRANSCRIPT_The_Coca-Cola_Co.%28KO-US%29_Q3_2026_Earnings_Call_27-October-2026_8_30_AM_ET.pdf"
+            "url": "https://health.readfirsthand.com/news/early-alert-transcatheter-mitral-valve-delivery-system-issue-from-edwa"
           },
           {
-            "url": "https://investors.coca-colacompany.com/_assets/_fd23f141e5493e5928f74e00f4a243a7/cocacolacompany/news/2026-09-29_The_Coca_Cola_Company_Announces_Timing_of_Third_1173.pdf"
+            "url": "https://investingly.io/stocks/EW/earnings"
           },
           {
-            "url": "https://investors.coca-colacompany.com/filings-reports/all-sec-filings/content/0001628280-26-067403/0001628280-26-067403.pdf"
+            "url": "https://ir.edwards.com/news/news-details/2026/Edwards-Lifesciences-to-Host-Earnings-Conference-Call-on-November-4-2026/default.aspx"
           },
           {
-            "url": "https://investors.coca-colacompany.com/filings-reports/all-sec-filings/content/0001628280-26-067403/a2026q3earningsreleaseex-9.htm"
+            "url": "https://nasdaqtrader.com/Trader.aspx?id=TradingHaltSearch"
           },
           {
-            "url": "https://investors.coca-colacompany.com/filings-reports/annual-filings-10-k/content/0001628280-26-010047/ko-20251231.htm"
+            "url": "https://ptacts.uspto.gov/ptacts/public-informations/petitions/1500894/download-documents?artifactId=Y26vFpmYS_jSZ3njRa7ZA2olG47mrhulyXD5LKRg5ZYhwd1kcoEcShc"
           },
           {
-            "url": "https://investors.coca-colacompany.com/news-events/press-releases?category=financial&page=1"
+            "url": "https://ptacts.uspto.gov/ptacts/public-informations/petitions/1500934/download-documents?artifactId=1MAtXcOCo9ob8btY5DbSfb4cVWgoOcbRtseM2tE6Izp8AN1Lk9kV0Wc"
           },
           {
-            "url": "https://investors.coca-colacompany.com/news-events/press-releases/detail/1176/coca-cola-reports-third-quarter-2026-results-and-raises-full-year-guidance"
+            "url": "https://recallrecordindex.com/firm/edwards-lifesciences/"
           },
           {
-            "url": "https://lawcompensate.com/coca-cola-lawsuit/"
+            "url": "https://recallregister.com/firm/edwards-lifesciences-llc/"
           },
           {
-            "url": "https://lawsuitinformer.com/coca-cola-lawsuit"
+            "url": "https://s27.q4cdn.com/788244549/files/content_files/EW-Q3-2026-Earnings-Call-Transcript.pdf"
           },
           {
-            "url": "https://www.axios.com/2026/02/19/coca-cola-bottler-work-discrimination-lawsuit-men-women"
+            "url": "https://s27.q4cdn.com/788244549/files/doc_news/Edwards-Lifesciences-Reports-Third-Quarter-Results-2026.pdf"
           },
           {
-            "url": "https://www.classactionpulse.com/news/coca-cola-cookie-opt-out-tracking-class-action"
+            "url": "https://stockanalysis.com/stocks/ew/transcripts/714238-q3-2026/"
           },
           {
-            "url": "https://www.coca-colacompany.com/media-center/the-coca-cola-company-announces-timing-of-third-quarter-2026-earnings-release"
+            "url": "https://streetalpha.app/stocks/ew/earnings-history"
           },
           {
-            "url": "https://www.kiplinger.com/investing/stocks/dow-hits-new-high-ahead-of-january-jobs-report-stock-market-today"
+            "url": "https://thejoe.com/device-recalls/edwards-lifesciences-llc/"
           },
           {
-            "url": "https://www.lemonde.fr/en/economy/article/2026/02/25/who-could-have-imagined-that-the-federal-agency-for-workplace-equality-would-one-day-accuse-coca-cola-of-anti-male-segregation_6750845_19.html"
+            "url": "https://therighttrader.com/earnings-calendar/ew"
           },
           {
-            "url": "https://www.marketbeat.com/stocks/NYSE/KO/earnings/"
+            "url": "https://tickerfilings.com/stock/EW/earnings"
           },
           {
-            "url": "https://www.reddit.com/r/ValueInvesting/comments/1xh9152/cocacola_raises_fullyear_forecast_after_higher/"
+            "url": "https://www.earningswhispers.com/filings/EW"
           },
           {
-            "url": "https://www.thedailybeast.com/lawyer-says-foxs-1m-melania-donation-should-set-off-every-alarm-bell"
+            "url": "https://www.edwards.com/pr/newsroom/news/2026-11-04-edwards-lifesciences-reports-third-quarter-results-da98f70"
+          },
+          {
+            "url": "https://www.edwardslifesciencessecuritieslitigation.com/faq"
+          },
+          {
+            "url": "https://www.fda.gov/media/196205/download"
+          },
+          {
+            "url": "https://www.hkexnews.hk/listedco/listconews/sehk/2026/0122/2026012200215.pdf"
+          },
+          {
+            "url": "https://www.kiplinger.com/investing/stocks/17494/next-week-earnings-calendar-stocks"
+          },
+          {
+            "url": "https://www.marketbeat.com/earnings/reports/2026-11-04-edwards-lifesciences-co-stock/"
+          },
+          {
+            "url": "https://www.massdevice.com/fda-alert-edwards-lifesciences-mitral-valve-delivery-patient-death/"
+          },
+          {
+            "url": "https://www.medtechdive.com/news/edwards-recall-of-sapien-mitral-delivery-systems-tied-to-1-death/833269/?trk=article-ssr-frontend-pulse_little-text-block"
+          },
+          {
+            "url": "https://www.regdatalab.com/company/edwards-lifesciences"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1099800/000109980026000053/ew-20261104.htm"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1099800/000109980026000054/ew-20260930.htm"
           }
         ]
       },
       {
         "agent": "Technical Context Agent",
         "verdict": "APPROVE",
-        "confidence": 0.82,
-        "thesis": "Breakout strength (0.8843) and strong relative strength (RS excess 16.9128%) with market breadth passing (72.4% / PASS) support a long bias. ATR (14) = 1.6958 indicates moderate intraday volatility to accommodate price movement. A defined stop at 95.8585 (below the authoritative entry 100.15) and target at 119.46175 provide clear risk management and an objective to trade toward, so the setup is actionable from a technical-context perspective.",
+        "confidence": 0.78,
+        "thesis": "Bullish long breakout: relative strength is strong (rs_excess_pct = 20.1588) and market breadth is favorable (market_breadth_pct = 72.4). Breakout strength is moderate (breakout_strength = 0.4545). Entry = 106.91 with stop = 101.8282 (below entry) and target = 129.7781 (above entry). ATR = 2.6784 indicates the present volatility context.",
         "risks": [
-          "False breakout / quick reversal back below entry.",
-          "Breadth may roll over despite the current PASS, reducing follow-through.",
-          "Normal ATR-driven volatility could trigger the stop before sustained continuation.",
-          "Macro news or liquidity shocks could prevent reaching the target."
+          "Breakout strength is moderate (breakout_strength = 0.4545); momentum could be insufficient to reach the target.",
+          "Price volatility (atr_14 = 2.6784) may trigger the stop before trend continuation.",
+          "Stop is relatively close to entry (stop_price = 101.8282 vs entry_usd = 106.91); may result in early stop-outs on normal intraday movement.",
+          "Macroeconomic or sector-specific shocks can quickly reverse market breadth despite current market_breadth_pct = 72.4.",
+          "Target may require sustained momentum and time; interim pullbacks are possible."
         ],
         "sources": []
       },
       {
         "agent": "Thesis Agent",
         "verdict": "APPROVE",
-        "confidence": 0.79,
-        "thesis": "Bull case: The quant packet shows a coherent breakout setup with entry 100.15, stop 95.8585 and target 119.46175; breadth gate = PASS (market_breadth_pct 72.4), high breakout_strength (0.8843) and strong relative strength (RS_excess_pct 16.9128) all support momentum continuation in a defensive, staples-led environment. ATR (1.6958) implies expected intraday volatility that is already accounted for by the defined stop, and the packet’s positive score/tier (B) and quantity (3.0) make the idea actionable from a technical/positioning perspective. Market-regime and news checks found no immediate structural barrier to a long and generally endorse the setup. Bear case: The setup is vulnerable to a false breakout / whipsaw: elevated near-term volatility (VIX described by specialists), mega-cap tec",
+        "confidence": 0.78,
+        "thesis": "Quant setup is internally coherent and actionable as a momentum breakout trade: the packet shows an A‑tier breakout with entry (106.91), stop (101.8282) and target (129.7781) defined, strong relative strength and positive breadth. Bull case rests on Q3 beat and raised guidance supporting continued outperformance, favorable market breadth and the quantified breakout/RS metrics. Bear case centers on material company‑specific regulatory and safety risk (FDA early alert/recall and at least one reported death tied to delivery system lots), elevated litigation/recall exposure, and macro/market regime headwinds (higher rates, elevated volatility, AI/mega‑cap weakness) that could produce a gap down or false breakout; technically the breakout strength is only moderate and the stop is relatively tig",
         "risks": [
-          "Stop is relatively close to entry — may result in a higher chance of stop-outs given the provided ATR (1.6958).",
-          "Spread_bps (7.99) could meaningfully increase execution cost on a small-sized trade (quantity = 3).",
-          "Tier B denotes only moderate conviction compared with higher tiers; monitor for follow-through and volatility.",
-          "Quantity of 3.0 may limit position scaling or granularity for risk management if portfolio sizing rules require different lot sizing.",
-          "Mega-cap tech-driven risk-off could deepen and spill into defensives, causing a false breakout."
+          "Verified FDA early alert/recall for affected delivery‑system lots including at least one reported death — material near‑term regulatory, clinical safety and litigation risk.",
+          "Elevated litigation and prior‑recall history that could produce damages, injunctions, or settlement costs and impair adoption/sales.",
+          "Stop is relatively close to entry (stop_price = 101.8282) and is ~1.9 ATR, increasing the chance of being stopped out on normal intraday volatility.",
+          "Breakout strength is modest (breakout_strength = 0.4545); momentum may be insufficient to reach the target without broad participation.",
+          "Macro and market regime risks: elevated rates and volatility (VIX) and sector spillovers (AI/mega‑cap selling) could trigger broader pullbacks and false breakouts."
         ],
         "sources": []
       },
       {
         "agent": "Claude CRO",
-        "verdict": "REJECT",
-        "confidence": 0.6,
-        "thesis": "I found no hard blocker: no halt, M&A or enforcement news, and no earnings event in a near-term hold (next earnings Feb 9, 2027). Q3 results beat and guidance was raised. The reported insider sale was a tax-withholding sale, so I treat it as non-informative. Even so, my approval confidence is only 0.6, below the 0.65 floor, so the rule requires REJECT.\n\nThe verified reasons for caution:\n1. The entry chases an all-time high. KO printed $99.28 on Nov 13, about 40% above its start-of-year price, and one vendor flags multiple overbought signals.\n2. The move is a crowded rotation trade out of AI and tech. The breadth, relative-strength and breakout readings are partly a product of the Nvidia/tech sell-off, so a tech rebound could reverse the breakout quickly. The Regime and Thesis agents treate",
+        "verdict": "APPROVE",
+        "confidence": 0.66,
+        "thesis": "Marginal approval. The main verified risk is the FDA early alert of Oct 15 on four lots of the Commander M delivery system for Sapien M3. It covers three balloon-rupture reports, with one death and one serious injury. The scope is narrow, and no problem has been identified with the valve itself. The alert was public before the Nov 4 earnings beat and guidance raise, and the stock has rallied since, so it looks largely priced in. Analyst sentiment is still constructive. Python's entry, stop, target and size were not recomputed. The News and Event Agent's REJECT rests on this same recall, and I could not verify that it is financially material. Its litigation claims were also not verified. Residual risks keep confidence barely above the threshold: the FDA has not set a severity classification",
         "risks": [
-          "Entry at an all-time high with overbought signals raises near-term pullback risk",
-          "Crowded defensive rotation out of tech could reverse sharply if tech rebounds",
-          "Street average target implies downside from entry and the packet target of 119.46 exceeds the top of the analyst range ($106)",
-          "Rich valuation: trailing P/E about 28, a negative margin of safety in one model, and Hold ratings",
-          "Unverified tail risk of an adverse IRS ruling requiring a $14B+ payment"
+          "FDA severity classification for the Commander M delivery system recall is undetermined; a Class I designation or wider lot scope would be a downside event",
+          "Prior Class I recall in 2019 for a Sapien 3 Ultra delivery system balloon-burst issue suggests a repeat pattern",
+          "Insider selling of about 53,945 shares ($5.5M) in the last 90 days, including a VP sale of 48,900 shares on Nov 9",
+          "Entry is at the 52-week high and about 18% above the 50-day average, so a pullback or failed breakout is plausible",
+          "Modest breakout strength (0.4545) and a tight stop of about 1.9 ATR raise the chance of an early stop-out"
         ],
         "sources": [
           {
-            "url": "https://alcapitaladvisory.com/research/equities/ko.html"
+            "url": "https://app.dealroom.co/news/note/fda-flags-edwards-lifesciences-heart-valve-delivery-system-issue-after-death-and-injury"
           },
           {
-            "url": "https://finance.yahoo.com/markets/stocks/articles/ko-stock-alert-coca-cola-210506859.html"
+            "url": "https://cardiovascularbusiness.com/topics/clinical/interventional-cardiology/fda-shares-warning-about-edwards-lifesciences-heart-valve-tech-after-patient-death"
           },
           {
-            "url": "https://investing.com/news/analyst-ratings/bofa-raises-cocacola-stock-price-target-on-bottler-volume-trends-93CH-5024773"
+            "url": "https://ckan.tradingeconomics.com/stock-symbol-ew"
           },
           {
-            "url": "https://qz.com/coca-cola-hbc-johannesburg-listing-africa-deal-111626"
+            "url": "https://gurufocus.com/news/9201635/ew-maintains-overweight-rating-by-wells-fargo-price-target-raised-to-121"
           },
           {
-            "url": "https://seekingalpha.com/article/4754547-coca-cola-q4-preview-trump-tariff-loser-rating-downgrade"
+            "url": "https://insights.citeline.com/medtech-insight/policy-and-regulation/recalls/edwards-mitral-valve-device-linked-to-one-death-one-injury-fda-warns-PGKMEZX4KFANPL75ABR4ATJG2Y/"
           },
           {
-            "url": "https://simplywall.st/stocks/us/food-beverage-tobacco/nyse-ko/coca-cola/future"
+            "url": "https://newsroomamerica.com/a/MNG7ESSkQ9PUVAzXeOntsjbUbzG/fda_warns_of_edwards_lifesciences_commander_m_delivery_system_recall_over_bursting_balloons_during_sapien_m3_mitral_valve_replacement_with_one_death_and_one_serious_injury_reported_as_of_october_5.html"
           },
           {
-            "url": "https://stockinvest.us/stock/KO"
+            "url": "https://robinhood.com/us/en/stocks/EW"
           },
           {
-            "url": "https://tradersunion.com/news/stocks/show/4239364-coca-cola-surges-1-78percent-today-on/"
+            "url": "https://stocktwits.com/symbol/EW/news"
           },
           {
-            "url": "https://www.cnn.com/markets/stocks/KO"
+            "url": "https://www.dailypolitical.com/2026/11/16/edwards-lifesciences-corporation-ew-stock-sold-by-fisher-asset-management-llc.html"
           },
           {
-            "url": "https://www.defenseworld.net/2026/11/14/coca-cola-company-the-ko-stock-aberdeen-group-plc-lowers-position.html"
+            "url": "https://www.fiercebiotech.com/medtech/fda-calls-early-alert-edwards-lifesciences-mitral-valve-replacement-after-injury-death"
           },
           {
-            "url": "https://www.google.com/finance/quote/KO:NYSE"
+            "url": "https://www.inkl.com/news/four-lots-of-edwards-mitral-valve-delivery-systems-pulled-after-balloon-bursts-linked-to-one-patient-death"
           },
           {
-            "url": "https://www.investing.com/equities/coca-cola-co-news"
+            "url": "https://www.marketbeat.com/instant-alerts/analyst-edwards-lifesciences-nyse-ew-stock-price-expected-to-rise-wells-fargo-company-analyst-says-2026-11-16/"
           },
           {
-            "url": "https://www.marketbeat.com/instant-alerts/estimates-coca-cola-stock-earnings-estimates-lowered-by-zacks-research-2026-11-12/"
+            "url": "https://www.marketbeat.com/instant-alerts/consensus-edwards-lifesciences-corporation-ew-what-are-analysts-saying-about-this-stock-2026-11-15/"
           },
           {
-            "url": "https://www.marketbeat.com/originals/is-the-coca-cola-company-nyse-ko-losing-its-fizz"
+            "url": "https://www.marketbeat.com/stocks/NYSE/EW/news/"
           },
           {
-            "url": "https://www.marketbeat.com/stocks/NYSE/KO/forecast/"
+            "url": "https://www.medicaldevice-network.com/news/edwards-sapien-m3-delivery-system-linked-to-patient-death-in-fda-alert/"
           },
           {
-            "url": "https://www.marketbeat.com/stocks/NYSE/Ko/news"
+            "url": "https://www.mpo-mag.com/breaking-news/fda-flags-edwards-tmvr-delivery-system-after-fatality/"
           },
           {
-            "url": "https://www.marketbeat.com/stocks/NYSE/ko/news"
+            "url": "https://www.ocbj.com/healthcare/fda-alert-follows-death-linked-to-edwards-device/"
           },
           {
-            "url": "https://www.tradingview.com/symbols/NYSE-KO/"
+            "url": "https://www.tctmd.com/news/edwards-pulls-some-lots-sapien-m3-delivery-system-fda-alert"
+          },
+          {
+            "url": "https://www.tradingview.com/symbols/NYSE-EW/"
           }
         ]
       }
