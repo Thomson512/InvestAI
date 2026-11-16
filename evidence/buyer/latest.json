@@ -1,48 +1,49 @@
 {
-  "outcome": "COUNCIL_REJECT:EW",
+  "outcome": "COUNCIL_REJECT:BDX",
   "session_date": "2026-11-16",
-  "generated_at": "2026-11-16T19:20:27Z",
+  "generated_at": "2026-11-16T19:30:24Z",
   "official": true,
   "extra_summary": [
-    "council: At least one specialist rejected the proposal"
+    "council: Claude CRO rejected the proposal"
   ],
   "plan": {
-    "symbol": "EW",
-    "quantity": 3.0,
-    "entry_usd": 106.62,
-    "stop_price": 101.8282,
-    "target_price": 128.18310000000005,
+    "symbol": "BDX",
+    "quantity": 1.0,
+    "entry_usd": 216.61,
+    "stop_price": 209.8521,
+    "target_price": 247.02055000000004,
     "fx_usdczk": 22.182,
-    "spread_bps": 4.6906515314987915
+    "spread_bps": 6.003371123785996
   },
   "council": {
     "verdict": "REJECT",
-    "reason": "At least one specialist rejected the proposal",
+    "reason": "Claude CRO rejected the proposal",
     "cached": true,
     "findings": [
       {
         "agent": "Scanner Agent",
         "verdict": "APPROVE",
-        "confidence": 0.82,
-        "thesis": "All authoritative fields are present and internally consistent: entry (106.91) is above stop (101.8282) and below target (129.7781); quantity (3.0) and ATR (2.6784) are provided; breadth gate passed and other metrics are coherent with an A-tier setup.",
+        "confidence": 0.92,
+        "thesis": "The packet is internally coherent. Authoritative fields present (entry_usd 218.63, stop_price 209.8521, target_price 258.13055, quantity 1.0). The stop sits ~2.14 ATR below entry (atr_14 4.0989) and the target implies a ~4.5:1 reward:risk. Breadth gate PASS, breakout_strength 0.6067, market_breadth_pct 72.4 and rs_excess_pct 22.483 support the bullish setup; tier A and score 52.4055 are consistent with the packet.",
         "risks": [
-          "Stop is relatively tight (~1.9 ATR) which increases chance of being stopped out on normal volatility.",
-          "Breakout strength is modest (0.4545), indicating the move may not be robust.",
-          "No liquidity or external market context provided in packet (spread is low but on-paper only)."
+          "Model risk: historical ATR/RS metrics may not persist into trade execution.",
+          "Execution risk: spread and slippage can widen effective entry/stop (spread_bps 10.0677 noted).",
+          "Gap risk: overnight moves could trigger worse-than-intended fills relative to stop_price.",
+          "Concentration/size: quantity is 1.0 (authoritative) which may not reflect portfolio sizing or diversification policies.",
+          "Market regime/sector risk: strong breakout metrics can still fail in broader market declines."
         ],
         "sources": []
       },
       {
         "agent": "Market Regime Agent",
         "verdict": "APPROVE",
-        "confidence": 0.72,
-        "thesis": "Broad-market pullbacks this week have been driven primarily by AI/mega-cap weakness, but the overall tape remains constructive (S&P near recent highs on Nov 13 with only a short-term pullback; breadth in the quant packet is PASS at 72.4%). Volatility is elevated but not extreme and rates (10y ~5.1%) create macro headwinds rather than a regime reversal. Crucially for EW, company-specific fundamentals are supportive: EW reported a Q3 beat and raised 2026 guidance (Nov 4), attracted multiple analyst upgrades/price-target raises, and the med-device group is holding up relative to tech. Given the internal breadth/pass signal and EW’s strong relative strength and guidance-driven momentum, the current backdrop supports a momentum breakout attempt for EW, though position sizing, stops and targets ",
+        "confidence": 0.68,
+        "thesis": "As of the strategy packet (as-of session 2026-11-13) the model’s breadth gate PASSED (market_breadth_pct 72.4) and the setup shows positive relative strength and moderate breakout strength (breakout_strength 0.6067, rs_excess_pct 22.48). Independent market checks through 2026-11-16 show the S&P had recent upside into the 11/13 close and volatility is elevated but not disorderly, while health-care / med-device group readings were constructive. Taken together the cross-checks support a momentum breakout attempt in BDX (medical-devices) rather than a market-wide selloff that would invalidate the trade.",
         "risks": [
-          "Short-term market weakness led by AI/mega-cap selling could spill into health care and derail a breakout.",
-          "Elevated Treasury yields (~5.1% 10y) increase cost-of-capital and can pressure multiples if rates continue to rise.",
-          "Rising intraday volatility (VIX ~21) raises the chance of false breakouts and whipsaw stops.",
-          "Company- or trial-specific news, negative clinical/regulatory headlines, or disappointing forward comments could reverse momentum quickly.",
-          "Post-earnings profit-taking or lack of volume confirmation on the breakout could cause failure and a quick retracement into the prior range."
+          "Near-term headline-driven volatility (Nov 16, 2026 tech-specific shock) could widen into broader risk-off and damage momentum.",
+          "VIX and intraday spikes could increase stop-hit probability despite the packet’s stop price.",
+          "Breadth can deteriorate quickly if market leadership narrows to a few names—this would hurt a breakout that relies on broad participation.",
+          "Company-specific news or earnings for BDX could negate sector strength and invalidate the momentum thesis."
         ],
         "sources": [
           {
@@ -58,237 +59,153 @@
             "url": "https://apnews.com/article/a31165456bf217de16f1c4e646b72bd2"
           },
           {
-            "url": "https://apnews.com/article/f8edd0eeb1494d4d2584715686c5e619"
+            "url": "https://finance.yahoo.com/quote/%5EVIX/history/?frequency=1d"
           },
           {
-            "url": "https://apnews.com/article/ffc5e5a2d384f00960034ec10087502e"
+            "url": "https://screenercharts.com/us/market-breadth"
           },
           {
-            "url": "https://en.wikipedia.org/wiki/Edwards_Lifesciences"
+            "url": "https://tallacoptions.com/Data/EOD/VIX"
           },
           {
-            "url": "https://fedgazette.com/editions/2026-11-16.pdf"
+            "url": "https://www.axios.com/2026/11/16/nvidia-stocks-options-retail"
           },
           {
-            "url": "https://finance.yahoo.com/quote/%5EGSPC/history/?p=%5EGSPC"
+            "url": "https://www.axios.com/newsletters/axios-future-of-energy-528c1360-dc42-11f1-8081-0bc5bf633dcf"
           },
           {
-            "url": "https://financialfilings.com/filings/edwards-lifesciences-corp/earnings-release/2026/75612934/"
-          },
-          {
-            "url": "https://home.treasury.gov/system/files/221/Tentative-Auction-Schedule.pdf?inf_contact_key=d3a358a57b68c15767abf0c70a2645c09def1dbf585966007926372c74c482b3"
-          },
-          {
-            "url": "https://ir.edwards.com/news/news-details/2026/Edwards-Lifesciences-to-Host-Earnings-Conference-Call-on-November-4-2026/default.aspx"
-          },
-          {
-            "url": "https://newspaperjoint.com/markets/stock-market-today/"
-          },
-          {
-            "url": "https://portfolio-terminal.com/markets/sp-500"
-          },
-          {
-            "url": "https://portfolio-terminal.com/markets/stock-market-close"
-          },
-          {
-            "url": "https://s27.q4cdn.com/788244549/files/content_files/EW-Q3-2026-Earnings-Call-Transcript.pdf"
-          },
-          {
-            "url": "https://s27.q4cdn.com/788244549/files/doc_news/Edwards-Lifesciences-Reports-Third-Quarter-Results-2026.pdf"
-          },
-          {
-            "url": "https://simplywall.st/stocks/us/healthcare/nyse-ew/edwards-lifesciences/news/what-edwards-lifesciences-ew-earnings-beat-means-for-shareho/amp"
-          },
-          {
-            "url": "https://stockanalysis.com/stocks/ew/"
-          },
-          {
-            "url": "https://tradetastic.io/stocks/ew/"
-          },
-          {
-            "url": "https://tradingeconomics.com/united-states/government-bond-yield"
-          },
-          {
-            "url": "https://www.axios.com/newsletters/axios-closer-54cb8378-50e3-477d-999d-0aaa60f5efcc"
-          },
-          {
-            "url": "https://www.benzinga.com/quote/EW/earnings-forecasts"
+            "url": "https://www.axios.com/newsletters/axios-future-of-energy-d2371940-e122-11f1-bb26-673c2c8bdef2"
           },
           {
             "url": "https://www.cboe.com/tradable-products/vix"
           },
           {
-            "url": "https://www.edwards.com/pr/newsroom/news/2026-11-04-edwards-lifesciences-reports-third-quarter-results-da98f70"
-          },
-          {
             "url": "https://www.investors.com/wp-content/uploads/2026/11/DailyGMI_111326.pdf"
           },
           {
-            "url": "https://www.kiplinger.com/economic-forecasts/inflation"
+            "url": "https://www.kiplinger.com/investing/dont-let-political-dread-dictate-your-portfolio"
           },
           {
-            "url": "https://www.kiplinger.com/investing/stocks/nasdaq-adds-400-points-after-coreweave-earnings-stock-market-today"
+            "url": "https://www.kiplinger.com/investing/stocks/nasdaq-drops-friday-on-nvidia-fallout-but-ends-the-week-up-stock-market-today"
           },
           {
-            "url": "https://www.sec.gov/Archives/edgar/data/1099800/000109980026000038/ex-991q22026.htm"
+            "url": "https://www.statmuse.com/money/ask/s-and-p-500-index-last-60-days"
           },
           {
-            "url": "https://www.statmuse.com/money/ask?q=s+and+p+500+closes+at+19%2C173"
+            "url": "https://www.thedailybeast.com/trump-self-soothes-with-dodgy-maga-math-after-election-disaster"
           },
           {
-            "url": "https://www.stocktitan.net/sec-filings/EW/8-k-edwards-lifesciences-corp-reports-material-event-c30b6d9a960f.html"
+            "url": "https://www.thetrading.tools/advance-decline-line"
           },
           {
-            "url": "https://www.streetinsider.com/Earnings/Edwards%2BLifesciences%2B%28EW%29%2BTops%2BQ3%2BEPS%2Bby%2B6c%3B%2Braises%2Bguidance/27290465.html"
+            "url": "https://www.tomsguide.com/news/live/jensen-huang-nvidia-crisis-live-november-2026"
           },
           {
-            "url": "https://www.streetinsider.com/dr/quote.php?q=EW"
-          },
-          {
-            "url": "https://www.tallacoptions.com/Data/Eod/SPX"
-          },
-          {
-            "url": "https://www.trefis.com/data/companies/EW?from=%5ERUA_high_2026-11-10&mod=co_end_ew"
-          },
-          {
-            "url": "https://ycharts.com/indices/%5EVIX/level"
+            "url": "https://www.tradestreamedge.com/desk-preview.html"
           }
         ]
       },
       {
         "agent": "News and Event Agent",
-        "verdict": "REJECT",
-        "confidence": 0.86,
-        "thesis": "Edwards Lifesciences (EW) reported strong Q3 results and raised 2026 guidance on Nov 4, 2026, but a verified FDA early alert and recall (mid‑October 2026) for specific Sapien M3/Commander M transcatheter mitral valve delivery system lots — including reports of balloon failures and at least one patient death — represents a material near‑term regulatory, clinical safety, and litigation risk that argues against initiating a new long at this time. Ongoing patent litigation and prior recalls increase downside event risk and uncertain near‑term clinical/regulatory developments could reverse the positive earnings momentum.",
+        "verdict": "APPROVE",
+        "confidence": 0.78,
+        "thesis": "Public web search found Becton, Dickinson and Company (BDX) fiscal Q4 and full‑year FY2026 results announced November 5, 2026, and the company provided FY2027 guidance (low single‑digit revenue growth; adjusted diluted EPS $13.10–$13.30). The same release discloses non‑cash restructuring/impairment charges (~$450M) tied to exit of certain activities and notes product‑liability and other legal charges; there is active multidistrict litigation (MDL) relating to implanted port catheters with recent filings and bellwether activity. I found no evidence of a trading halt, no announced merger/acquisition that would alter the equity materially, and no newly issued regulatory enforcement action that would immediately argue against opening a new long. Taken together, the company’s reported results a",
         "risks": [
-          "FDA early alert / recall (Oct 15–16, 2026) for specific Commander M delivery system lots tied to balloon failures and at least one reported patient death — potential for broader recalls, warnings, or use restrictions.",
-          "Potential regulatory action, increased post‑market surveillance, or labeling changes that could reduce procedure volumes and sales in affected product lines.",
-          "Elevated litigation exposure (recent patent suits and appeals disclosed in SEC filings) which could result in damages, injunctions, or settlement costs.",
-          "Reputational and clinical adoption risk: adverse clinical events may slow hospital adoption and procurement, hurting near‑term revenue and forecasts despite recent guidance raise.",
-          "Supply chain / inventory disruption for affected lots and potential corrective action costs impacting margins."
+          "Active product‑liability litigation (MDL for implanted port catheters with recent filings and bellwether cases) — outcome and damages exposure remain uncertain and could be material.",
+          "$450M non‑cash impairment and restructuring charges announced in FY2026 news release — signals execution/disruption risk tied to strategic changes.",
+          "Noted product remediation and legal charges in filings (charges/benefits to cost of goods sold and other operating expense) — future remediation or remediation cost revisions could impact margins and cash flow.",
+          "Historical SEC enforcement matter (Alaris infusion pump) remains in the public record and is a regulatory/reputational consideration; similar regulatory findings or recalls could be adverse.",
+          "Guidance is modest (low single‑digit revenue growth) — limits upside if macro or execution issues worsen."
         ],
         "sources": [
           {
-            "url": "https://assets.alm.com/db/f2/6e7bed2b4aa7a1289b0a6020ad54/nylj090826a.pdf"
+            "url": "https://apnews.com/article/a96f45b51ca0dd0fe812541bc9c5dadb"
           },
           {
-            "url": "https://cardiovascularbusiness.com/topics/clinical/interventional-cardiology/fda-shares-warning-about-edwards-lifesciences-heart-valve-tech-after-patient-death"
+            "url": "https://cadenaser.com/aragon/2024/08/30/la-sorpresa-de-becton-dickinson-35-trabajadores-a-la-calle-y-la-perdida-de-un-activo-para-el-sector-sanitario-en-aragon-radio-zaragoza/"
           },
           {
-            "url": "https://docketnexus.com/case/in-re-edwards-lifesciences-corporation-derivative-litigation-69510867/"
+            "url": "https://dockets.justia.com/docket/arizona/azdce/2%3A2026cv06857/1521096"
           },
           {
-            "url": "https://en.wikipedia.org/wiki/Earnings_call"
+            "url": "https://dockets.justia.com/docket/arizona/azdce/2%3A2026cv06914/1521512"
           },
           {
-            "url": "https://en.wikipedia.org/wiki/Edwards_Lifesciences"
+            "url": "https://dockets.justia.com/docket/arizona/azdce/2%3A2026cv06975/1521676"
           },
           {
-            "url": "https://en.wikipedia.org/wiki/Trading_curb"
+            "url": "https://dockets.justia.com/docket/arizona/azdce/2%3A2026cv06985/1521709"
           },
           {
-            "url": "https://en.wikipedia.org/wiki/Trading_halt"
+            "url": "https://dockets.justia.com/docket/arizona/azdce/2%3A2026cv07010/1521739"
           },
           {
-            "url": "https://freshrecalls.com/brand/edwards-lifesciences"
+            "url": "https://dockets.justia.com/docket/connecticut/ctdce/3%3A2026cv01477/172899"
           },
           {
-            "url": "https://fundamentalytics.com/stocks/ew/"
+            "url": "https://en.wikipedia.org/wiki/BD_%28company%29"
           },
           {
-            "url": "https://health.readfirsthand.com/news/early-alert-transcatheter-mitral-valve-delivery-system-issue-from-edwa"
+            "url": "https://en.wikipedia.org/wiki/Michael_David_Weiss"
           },
           {
-            "url": "https://investingly.io/stocks/EW/earnings"
+            "url": "https://en.wikipedia.org/wiki/Thermo_Fisher_Scientific"
           },
           {
-            "url": "https://ir.edwards.com/news/news-details/2026/Edwards-Lifesciences-to-Host-Earnings-Conference-Call-on-November-4-2026/default.aspx"
+            "url": "https://investors.bd.com/"
           },
           {
-            "url": "https://nasdaqtrader.com/Trader.aspx?id=TradingHaltSearch"
+            "url": "https://investors.bd.com/financial-information"
           },
           {
-            "url": "https://ptacts.uspto.gov/ptacts/public-informations/petitions/1500894/download-documents?artifactId=Y26vFpmYS_jSZ3njRa7ZA2olG47mrhulyXD5LKRg5ZYhwd1kcoEcShc"
+            "url": "https://investors.bd.com/financial-information/financial-results"
           },
           {
-            "url": "https://ptacts.uspto.gov/ptacts/public-informations/petitions/1500934/download-documents?artifactId=1MAtXcOCo9ob8btY5DbSfb4cVWgoOcbRtseM2tE6Izp8AN1Lk9kV0Wc"
+            "url": "https://investors.bd.com/news-events/press-releases/detail/984/bd-reports-fourth-quarter-and-full-year-fiscal-2026-financial-results"
           },
           {
-            "url": "https://recallrecordindex.com/firm/edwards-lifesciences/"
+            "url": "https://investors.bd.com/sec-filings/all-sec-filings/content/0000010795-26-000035/0000010795-26-000035.pdf"
           },
           {
-            "url": "https://recallregister.com/firm/edwards-lifesciences-llc/"
+            "url": "https://investors.bd.com/sec-filings/all-sec-filings/content/0001628280-26-053790/0001628280-26-053790.pdf"
           },
           {
-            "url": "https://s27.q4cdn.com/788244549/files/content_files/EW-Q3-2026-Earnings-Call-Transcript.pdf"
+            "url": "https://investors.bd.com/sec-filings/all-sec-filings/content/0001628280-26-070511/ex9919302026.htm"
           },
           {
-            "url": "https://s27.q4cdn.com/788244549/files/doc_news/Edwards-Lifesciences-Reports-Third-Quarter-Results-2026.pdf"
+            "url": "https://www.courthousenews.com/wp-content/uploads/2026/07/fractured-catheters.pdf"
           },
           {
-            "url": "https://stockanalysis.com/stocks/ew/transcripts/714238-q3-2026/"
+            "url": "https://www.govinfo.gov/content/pkg/USCOURTS-azd-2_23-md-03081/pdf/USCOURTS-azd-2_23-md-03081-41.pdf"
           },
           {
-            "url": "https://streetalpha.app/stocks/ew/earnings-history"
+            "url": "https://www.kiplinger.com/investing/stocks/dividend-stocks/best-dividend-stocks-you-can-count-on"
           },
           {
-            "url": "https://thejoe.com/device-recalls/edwards-lifesciences-llc/"
+            "url": "https://www.kiplinger.com/investing/value-stocks/worthy-value-stocks-to-consider-now"
           },
           {
-            "url": "https://therighttrader.com/earnings-calendar/ew"
+            "url": "https://www.reddit.com/r/edgar_news/comments/1q5xfa7/becton_dickinson_co/"
           },
           {
-            "url": "https://tickerfilings.com/stock/EW/earnings"
+            "url": "https://www.sec.gov/enforcement-litigation/distributions-harmed-investors/becton-dickinson-company"
           },
           {
-            "url": "https://www.earningswhispers.com/filings/EW"
-          },
-          {
-            "url": "https://www.edwards.com/pr/newsroom/news/2026-11-04-edwards-lifesciences-reports-third-quarter-results-da98f70"
-          },
-          {
-            "url": "https://www.edwardslifesciencessecuritieslitigation.com/faq"
-          },
-          {
-            "url": "https://www.fda.gov/media/196205/download"
-          },
-          {
-            "url": "https://www.hkexnews.hk/listedco/listconews/sehk/2026/0122/2026012200215.pdf"
-          },
-          {
-            "url": "https://www.kiplinger.com/investing/stocks/17494/next-week-earnings-calendar-stocks"
-          },
-          {
-            "url": "https://www.marketbeat.com/earnings/reports/2026-11-04-edwards-lifesciences-co-stock/"
-          },
-          {
-            "url": "https://www.massdevice.com/fda-alert-edwards-lifesciences-mitral-valve-delivery-patient-death/"
-          },
-          {
-            "url": "https://www.medtechdive.com/news/edwards-recall-of-sapien-mitral-delivery-systems-tied-to-1-death/833269/?trk=article-ssr-frontend-pulse_little-text-block"
-          },
-          {
-            "url": "https://www.regdatalab.com/company/edwards-lifesciences"
-          },
-          {
-            "url": "https://www.sec.gov/Archives/edgar/data/1099800/000109980026000053/ew-20261104.htm"
-          },
-          {
-            "url": "https://www.sec.gov/Archives/edgar/data/1099800/000109980026000054/ew-20260930.htm"
+            "url": "https://www.sec.gov/files/litigation/admin/2026/34-105932.pdf"
           }
         ]
       },
       {
         "agent": "Technical Context Agent",
         "verdict": "APPROVE",
-        "confidence": 0.78,
-        "thesis": "Bullish long breakout: relative strength is strong (rs_excess_pct = 20.1588) and market breadth is favorable (market_breadth_pct = 72.4). Breakout strength is moderate (breakout_strength = 0.4545). Entry = 106.91 with stop = 101.8282 (below entry) and target = 129.7781 (above entry). ATR = 2.6784 indicates the present volatility context.",
+        "confidence": 0.75,
+        "thesis": "Bullish technical context for a long breakout in BDX based solely on supplied fields: breakout_strength 0.6067, strong relative strength (rs_excess_pct 22.483%), market_breadth_pct 72.4 with breadth_gate PASS, and ATR_14 4.0989. Authoritative trade parameters: entry_usd 218.63, stop_price 209.8521, target_price 258.13055. These supplied metrics collectively support an approval of the long breakout setup.",
         "risks": [
-          "Breakout strength is moderate (breakout_strength = 0.4545); momentum could be insufficient to reach the target.",
-          "Price volatility (atr_14 = 2.6784) may trigger the stop before trend continuation.",
-          "Stop is relatively close to entry (stop_price = 101.8282 vs entry_usd = 106.91); may result in early stop-outs on normal intraday movement.",
-          "Macroeconomic or sector-specific shocks can quickly reverse market breadth despite current market_breadth_pct = 72.4.",
-          "Target may require sustained momentum and time; interim pullbacks are possible."
+          "Breakout_strength (0.6067) is moderate — there is a risk of a false breakout.",
+          "Stop (209.8521) is below the entry (218.63) but could be reached by ATR-driven volatility (ATR_14 4.0989).",
+          "Market breadth can reverse despite current breadth_pct 72.4 and breadth_gate PASS, undermining the breakout.",
+          "Target (258.13055) is not guaranteed; price may stall before reaching it.",
+          "Packet does not include broader fundamental or news context; unforeseen events could impact the trade."
         ],
         "sources": []
       },
@@ -296,85 +213,82 @@
         "agent": "Thesis Agent",
         "verdict": "APPROVE",
         "confidence": 0.78,
-        "thesis": "Quant setup is internally coherent and actionable as a momentum breakout trade: the packet shows an A‑tier breakout with entry (106.91), stop (101.8282) and target (129.7781) defined, strong relative strength and positive breadth. Bull case rests on Q3 beat and raised guidance supporting continued outperformance, favorable market breadth and the quantified breakout/RS metrics. Bear case centers on material company‑specific regulatory and safety risk (FDA early alert/recall and at least one reported death tied to delivery system lots), elevated litigation/recall exposure, and macro/market regime headwinds (higher rates, elevated volatility, AI/mega‑cap weakness) that could produce a gap down or false breakout; technically the breakout strength is only moderate and the stop is relatively tig",
+        "thesis": "Bull case: The packet presents a coherent momentum breakout long. Authoritative trade parameters are entry_usd 218.63, stop_price 209.8521, target_price 258.13055 and quantity 1.0. The setup shows a breadth_gate PASS with market_breadth_pct 72.4, moderate breakout_strength (0.6067), strong relative strength (rs_excess_pct 22.483) and a Tier A score (52.4055). The scanner notes the stop sits ~2.14 ATR below entry and the target implies ~4.5:1 reward:risk — together these technicals and cross‑checks (constructive health‑care/med‑device group readings) support taking a momentum breakout long at the supplied entry.",
         "risks": [
-          "Verified FDA early alert/recall for affected delivery‑system lots including at least one reported death — material near‑term regulatory, clinical safety and litigation risk.",
-          "Elevated litigation and prior‑recall history that could produce damages, injunctions, or settlement costs and impair adoption/sales.",
-          "Stop is relatively close to entry (stop_price = 101.8282) and is ~1.9 ATR, increasing the chance of being stopped out on normal intraday volatility.",
-          "Breakout strength is modest (breakout_strength = 0.4545); momentum may be insufficient to reach the target without broad participation.",
-          "Macro and market regime risks: elevated rates and volatility (VIX) and sector spillovers (AI/mega‑cap selling) could trigger broader pullbacks and false breakouts."
+          "False breakout / technical failure despite moderate breakout_strength (0.6067).",
+          "Elevated market volatility or a rapid regime shift (headline‑driven risk / VIX spikes) that widens spreads/slippage and increases stop‑hit probability.",
+          "Execution risk: quoted spread and slippage (spread_bps ~10 bps) and gap risk could worsen fills relative to the authoritative entry/stop.",
+          "Company‑specific legal and operational risk: active MDL product‑liability litigation, historical regulatory matters, and recent non‑cash restructuring/impairment activity that could produce adverse rulings or surprise charges.",
+          "Fundamental constraint: modest FY guidance (low single‑digit revenue growth) limits implied upside if macro or execution issues emerge."
         ],
         "sources": []
       },
       {
         "agent": "Claude CRO",
-        "verdict": "APPROVE",
-        "confidence": 0.66,
-        "thesis": "Marginal approval. The main verified risk is the FDA early alert of Oct 15 on four lots of the Commander M delivery system for Sapien M3. It covers three balloon-rupture reports, with one death and one serious injury. The scope is narrow, and no problem has been identified with the valve itself. The alert was public before the Nov 4 earnings beat and guidance raise, and the stock has rallied since, so it looks largely priced in. Analyst sentiment is still constructive. Python's entry, stop, target and size were not recomputed. The News and Event Agent's REJECT rests on this same recall, and I could not verify that it is financially material. Its litigation claims were also not verified. Residual risks keep confidence barely above the threshold: the FDA has not set a severity classification",
+        "verdict": "REJECT",
+        "confidence": 0.62,
+        "thesis": "Reject the BDX long entry. I did not recompute price, stop, target or size. The research found verified reasons against buying now, and they are not offset by the specialists' technical support. (1) Bard port-catheter litigation is escalating. A federal jury awarded $40M on Sept 4, 2026 in the second bellwether, the first plaintiff verdict in the MDL. Pending actions rose from over 3,300 in July to 4,140 by Oct 1, and there is no global settlement. The News and Event Agent called the litigation \"uncertain\" but did not mention the verdict or the case count. (2) Binary events fall inside the likely holding window. The Hicks bellwether (blood-clot claim) is set for Dec 1, 2026, and BD's Investor Day is Dec 10. The court plans five bellwethers, ending in Feb 2027. (3) Street targets contradict",
         "risks": [
-          "FDA severity classification for the Commander M delivery system recall is undetermined; a Class I designation or wider lot scope would be a downside event",
-          "Prior Class I recall in 2019 for a Sapien 3 Ultra delivery system balloon-burst issue suggests a repeat pattern",
-          "Insider selling of about 53,945 shares ($5.5M) in the last 90 days, including a VP sale of 48,900 shares on Nov 9",
-          "Entry is at the 52-week high and about 18% above the 50-day average, so a pullback or failed breakout is plausible",
-          "Modest breakout strength (0.4545) and a tight stop of about 1.9 ATR raise the chance of an early stop-out"
+          "$40M plaintiff verdict on Sept 4, 2026 in the second Bard port-catheter bellwether, and 4,140 pending MDL actions as of Oct 1 with no global settlement",
+          "Hicks bellwether (blood clot) on Dec 1, 2026 and BD Investor Day on Dec 10 fall inside the likely holding window and create gap risk",
+          "The five-trial bellwether schedule runs to Feb 2027, so legal overhang continues",
+          "Street targets contradict the upside: highest found is $242 against the packet's ~$258, Barclays Underweight at $195 is below the entry, and BofA is Hold at $225",
+          "Entry at the top of the post-earnings 52-week-high range with only moderate breakout strength (0.6067), so a false breakout is likely"
         ],
         "sources": [
           {
-            "url": "https://app.dealroom.co/news/note/fda-flags-edwards-lifesciences-heart-valve-delivery-system-issue-after-death-and-injury"
+            "url": "https://callfob.com/bard-powerport-lawsuit-alabama/"
           },
           {
-            "url": "https://cardiovascularbusiness.com/topics/clinical/interventional-cardiology/fda-shares-warning-about-edwards-lifesciences-heart-valve-tech-after-patient-death"
+            "url": "https://finance.yahoo.com/quote/BDX/"
           },
           {
-            "url": "https://ckan.tradingeconomics.com/stock-symbol-ew"
+            "url": "https://finance.yahoo.com/quote/BDX/news/"
           },
           {
-            "url": "https://gurufocus.com/news/9201635/ew-maintains-overweight-rating-by-wells-fargo-price-target-raised-to-121"
+            "url": "https://masstortinfo.com/bard-implanted-port-catheter-lawsuit/"
           },
           {
-            "url": "https://insights.citeline.com/medtech-insight/policy-and-regulation/recalls/edwards-mitral-valve-device-linked-to-one-death-one-injury-fda-warns-PGKMEZX4KFANPL75ABR4ATJG2Y/"
+            "url": "https://mdlupdate.com/mdl/3081-bard-implanted-port-catheter/"
           },
           {
-            "url": "https://newsroomamerica.com/a/MNG7ESSkQ9PUVAzXeOntsjbUbzG/fda_warns_of_edwards_lifesciences_commander_m_delivery_system_recall_over_bursting_balloons_during_sapien_m3_mitral_valve_replacement_with_one_death_and_one_serious_injury_reported_as_of_october_5.html"
+            "url": "https://robinhood.com/us/en/stocks/BDX/"
           },
           {
-            "url": "https://robinhood.com/us/en/stocks/EW"
+            "url": "https://www.cnn.com/markets/stocks/BDX"
           },
           {
-            "url": "https://stocktwits.com/symbol/EW/news"
+            "url": "https://www.lanierlawfirm.com/product-liability/bard-powerport-lawsuit/"
           },
           {
-            "url": "https://www.dailypolitical.com/2026/11/16/edwards-lifesciences-corporation-ew-stock-sold-by-fisher-asset-management-llc.html"
+            "url": "https://www.lawsuit-information-center.com/bard-powerport-lawsuit.html"
           },
           {
-            "url": "https://www.fiercebiotech.com/medtech/fda-calls-early-alert-edwards-lifesciences-mitral-valve-replacement-after-injury-death"
+            "url": "https://www.llamalab.ai/blog/bard-powerport-second-bellwether-august-2026"
           },
           {
-            "url": "https://www.inkl.com/news/four-lots-of-edwards-mitral-valve-delivery-systems-pulled-after-balloon-bursts-linked-to-one-patient-death"
+            "url": "https://www.marketbeat.com/stocks/NYSE/BDX/?Vote=0"
           },
           {
-            "url": "https://www.marketbeat.com/instant-alerts/analyst-edwards-lifesciences-nyse-ew-stock-price-expected-to-rise-wells-fargo-company-analyst-says-2026-11-16/"
+            "url": "https://www.marketbeat.com/stocks/NYSE/BDX/congress-trades"
           },
           {
-            "url": "https://www.marketbeat.com/instant-alerts/consensus-edwards-lifesciences-corporation-ew-what-are-analysts-saying-about-this-stock-2026-11-15/"
+            "url": "https://www.marketbeat.com/stocks/NYSE/BDX/congress-trades/chart/news/news"
           },
           {
-            "url": "https://www.marketbeat.com/stocks/NYSE/EW/news/"
+            "url": "https://www.marketbeat.com/stocks/NYSE/BDX/news/"
           },
           {
-            "url": "https://www.medicaldevice-network.com/news/edwards-sapien-m3-delivery-system-linked-to-patient-death-in-fda-alert/"
+            "url": "https://www.reichandbinstock.com/mass-tort/drug-and-device-lawsuits/bard-powerport/"
           },
           {
-            "url": "https://www.mpo-mag.com/breaking-news/fda-flags-edwards-tmvr-delivery-system-after-fatality/"
+            "url": "https://www.robertkinglawfirm.com/personal-injury/bard-powerport-lawsuit/"
           },
           {
-            "url": "https://www.ocbj.com/healthcare/fda-alert-follows-death-linked-to-edwards-device/"
+            "url": "https://www.stocktitan.net/news/BDX/"
           },
           {
-            "url": "https://www.tctmd.com/news/edwards-pulls-some-lots-sapien-m3-delivery-system-fda-alert"
-          },
-          {
-            "url": "https://www.tradingview.com/symbols/NYSE-EW/"
+            "url": "https://www.wisnerbaum.com/defective-medical-device-injuries/bard-powerport-lawsuit/"
           }
         ]
       }
