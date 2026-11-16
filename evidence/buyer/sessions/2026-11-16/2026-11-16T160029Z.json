@@ -1,0 +1,305 @@
+{
+  "outcome": "COUNCIL_REJECT:KO",
+  "session_date": "2026-11-16",
+  "generated_at": "2026-11-16T16:00:29Z",
+  "official": true,
+  "extra_summary": [
+    "council: Claude CRO rejected the proposal"
+  ],
+  "plan": {
+    "symbol": "KO",
+    "quantity": 3.0,
+    "entry_usd": 100.03,
+    "stop_price": 95.8585,
+    "target_price": 118.80174999999997,
+    "fx_usdczk": 22.182,
+    "spread_bps": 1.9996000799836051
+  },
+  "council": {
+    "verdict": "REJECT",
+    "reason": "Claude CRO rejected the proposal",
+    "cached": true,
+    "findings": [
+      {
+        "agent": "Scanner Agent",
+        "verdict": "APPROVE",
+        "confidence": 0.8,
+        "thesis": "The packet is internally coherent. The authoritative entry (100.15) lies above the authoritative stop (95.8585) and below the authoritative target (119.46175); quantity is positive (3.0). Breadth gate = PASS, breakout_strength is high (0.8843), and RS_excess_pct is strongly positive (16.9128), all consistent with a breakout/strength-based long-tone recommendation. The packet includes ATR (1.6958), spread_bps, score, tier and the authority statement, with no contradictory fields present.",
+        "risks": [
+          "Stop is relatively close to entry — may result in a higher chance of stop-outs given the provided ATR (1.6958).",
+          "Spread_bps (7.99) could meaningfully increase execution cost on a small-sized trade (quantity = 3).",
+          "Tier B denotes only moderate conviction compared with higher tiers; monitor for follow-through and volatility.",
+          "Quantity of 3.0 may limit position scaling or granularity for risk management if portfolio sizing rules require different lot sizing."
+        ],
+        "sources": []
+      },
+      {
+        "agent": "Market Regime Agent",
+        "verdict": "APPROVE",
+        "confidence": 0.7,
+        "thesis": "As of the U.S. market open on Nov 16, 2026 the tape is mixed: mega-cap tech weakness (Nvidia headlines) is dragging cap-weighted indexes while sector breadth shows consumer-defensive leadership and volatility is elevated (~19–20 VIX). The supplied quant packet shows strong internal breadth (market_breadth_pct 72.4), a high breakout_strength (0.8843) and strong RS for KO — a consumer-staples name that typically holds up or leads when defensive sectors are favored. Taken together the observable backdrop is not hostile and is supportive of a momentum breakout attempt in KO, so I APPROVE the trade with moderate confidence.",
+        "risks": [
+          "Mega-cap tech-driven risk-off could deepen and spill into defensives, causing a false breakout.",
+          "Elevated VIX/near-term volatility increases chance of whipsaw and stop-hit before trend continuation.",
+          "News or event risk (company-specific, Fed/ macro, or geopolitical headlines) could rapidly change market regime.",
+          "External breadth readings are mixed across vendors — if breadth deteriorates from the quant packet’s reading the breakout probability falls.",
+          "Sector-rotation back to cyclicals or a renewed risk-on rally could limit upside for a consumer-staples momentum trade."
+        ],
+        "sources": [
+          {
+            "url": "https://apnews.com/article/027cd5f4583d1a11c1795150bf065afb"
+          },
+          {
+            "url": "https://apnews.com/article/12c1e8155fb85c3c7b09e058ed6d3c74"
+          },
+          {
+            "url": "https://apnews.com/article/35786b8f539ec95f16ae0500f71cfcc7"
+          },
+          {
+            "url": "https://apnews.com/article/a31165456bf217de16f1c4e646b72bd2"
+          },
+          {
+            "url": "https://apnews.com/article/e7f3f746bcbaa3edbb6b2b2ff0f519c6"
+          },
+          {
+            "url": "https://breadthmarket.com/breadth"
+          },
+          {
+            "url": "https://bullstory.io/en-us/investing/sp-500-today"
+          },
+          {
+            "url": "https://dailyhub.io/daily/2026-11-16"
+          },
+          {
+            "url": "https://forensics.us/briefing/today"
+          },
+          {
+            "url": "https://marketsunrise.com/editions/2026-11-16/"
+          },
+          {
+            "url": "https://nexqual.com/markets"
+          },
+          {
+            "url": "https://screenercharts.com/us/market-breadth"
+          },
+          {
+            "url": "https://stockmarket.nexus/market-briefing/2026-11-16"
+          },
+          {
+            "url": "https://theweek.com/politics/will-democratic-victories-boost-wall-street"
+          },
+          {
+            "url": "https://www.axios.com/2026/11/12/nvidia-stocks-tech-huang"
+          },
+          {
+            "url": "https://www.axios.com/2026/11/16/nvidia-stocks-options-retail"
+          },
+          {
+            "url": "https://www.axios.com/newsletters/axios-future-of-energy-528c1360-dc42-11f1-8081-0bc5bf633dcf"
+          },
+          {
+            "url": "https://www.axios.com/newsletters/axios-future-of-energy-d2371940-e122-11f1-bb26-673c2c8bdef2"
+          },
+          {
+            "url": "https://www.axios.com/newsletters/axios-twin-cities-48820a03-a713-42a4-830c-229ed98f2f10"
+          },
+          {
+            "url": "https://www.kiplinger.com/investing/stocks/is-the-stock-market-open-on-veterans-day"
+          },
+          {
+            "url": "https://www.thetrading.tools/advance-decline-line"
+          },
+          {
+            "url": "https://www.tomsguide.com/news/live/jensen-huang-nvidia-crisis-live-november-2026"
+          },
+          {
+            "url": "https://www.zacks.com/stock/news/3030162/stock-market-news-for-nov-16-2026"
+          }
+        ]
+      },
+      {
+        "agent": "News and Event Agent",
+        "verdict": "APPROVE",
+        "confidence": 0.82,
+        "thesis": "Public filings and press releases show The Coca‑Cola Company (KO) reported third-quarter 2026 results on October 27, 2026 with EPS growth and the company raised full‑year 2026 guidance. I found no verified trading halts, no announced mergers or acquisitions, and no regulatory enforcement action or court judgment that would materially argue against opening a new long at this time.",
+        "risks": [
+          "Ongoing litigation: multiple routine and sector-specific lawsuits remain open (including environmental/plastic packaging suits and 'ultra‑processed food' litigation) that could eventually generate material exposure if outcomes deteriorate.",
+          "Privacy/class action risk: a recently reported privacy/cookie-related lawsuit filed in early November 2026 alleges tracking despite opt-outs; outcomes could lead to damages/settlement costs or reputational impact.",
+          "Data‑breach and related class actions: prior ransomware/data incidents have generated litigation risk and potential remediation costs.",
+          "Macro, currency, or commodity pressures: Coca‑Cola’s results and guidance remain exposed to volume/cost/currency swings which could change outlook between now and next guidance cycle.",
+          "Regulatory or policy changes in key markets: potential future regulation (packaging, marketing, sugar/health-related rules) could affect margins or demand."
+        ],
+        "sources": [
+          {
+            "url": "https://apnews.com/article/788cb4cd5b0a4e77a06322812a18d547"
+          },
+          {
+            "url": "https://clerk.solvrlabs.ai/company/KO"
+          },
+          {
+            "url": "https://docketnexus.com/party/coca-cola-company/"
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/The_Coca-Cola_Company"
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/Trading_halt"
+          },
+          {
+            "url": "https://investors.coca-colacompany.com/?source=post_page---------------------------"
+          },
+          {
+            "url": "https://investors.coca-colacompany.com/_assets/_1df3df91e6951f35952f0bd0d28b0ece/cocacolacompany/db/881/11142/file/CORRECTED_TRANSCRIPT_The_Coca-Cola_Co.%28KO-US%29_Q3_2026_Earnings_Call_27-October-2026_8_30_AM_ET.pdf"
+          },
+          {
+            "url": "https://investors.coca-colacompany.com/_assets/_e981aab3c236d72f2e1a1f06f4dcfaa9/cocacolacompany/db/881/11142/file/CORRECTED_TRANSCRIPT_The_Coca-Cola_Co.%28KO-US%29_Q3_2026_Earnings_Call_27-October-2026_8_30_AM_ET.pdf"
+          },
+          {
+            "url": "https://investors.coca-colacompany.com/_assets/_fd23f141e5493e5928f74e00f4a243a7/cocacolacompany/news/2026-09-29_The_Coca_Cola_Company_Announces_Timing_of_Third_1173.pdf"
+          },
+          {
+            "url": "https://investors.coca-colacompany.com/filings-reports/all-sec-filings/content/0001628280-26-067403/0001628280-26-067403.pdf"
+          },
+          {
+            "url": "https://investors.coca-colacompany.com/filings-reports/all-sec-filings/content/0001628280-26-067403/a2026q3earningsreleaseex-9.htm"
+          },
+          {
+            "url": "https://investors.coca-colacompany.com/filings-reports/annual-filings-10-k/content/0001628280-26-010047/ko-20251231.htm"
+          },
+          {
+            "url": "https://investors.coca-colacompany.com/news-events/press-releases?category=financial&page=1"
+          },
+          {
+            "url": "https://investors.coca-colacompany.com/news-events/press-releases/detail/1176/coca-cola-reports-third-quarter-2026-results-and-raises-full-year-guidance"
+          },
+          {
+            "url": "https://lawcompensate.com/coca-cola-lawsuit/"
+          },
+          {
+            "url": "https://lawsuitinformer.com/coca-cola-lawsuit"
+          },
+          {
+            "url": "https://www.axios.com/2026/02/19/coca-cola-bottler-work-discrimination-lawsuit-men-women"
+          },
+          {
+            "url": "https://www.classactionpulse.com/news/coca-cola-cookie-opt-out-tracking-class-action"
+          },
+          {
+            "url": "https://www.coca-colacompany.com/media-center/the-coca-cola-company-announces-timing-of-third-quarter-2026-earnings-release"
+          },
+          {
+            "url": "https://www.kiplinger.com/investing/stocks/dow-hits-new-high-ahead-of-january-jobs-report-stock-market-today"
+          },
+          {
+            "url": "https://www.lemonde.fr/en/economy/article/2026/02/25/who-could-have-imagined-that-the-federal-agency-for-workplace-equality-would-one-day-accuse-coca-cola-of-anti-male-segregation_6750845_19.html"
+          },
+          {
+            "url": "https://www.marketbeat.com/stocks/NYSE/KO/earnings/"
+          },
+          {
+            "url": "https://www.reddit.com/r/ValueInvesting/comments/1xh9152/cocacola_raises_fullyear_forecast_after_higher/"
+          },
+          {
+            "url": "https://www.thedailybeast.com/lawyer-says-foxs-1m-melania-donation-should-set-off-every-alarm-bell"
+          }
+        ]
+      },
+      {
+        "agent": "Technical Context Agent",
+        "verdict": "APPROVE",
+        "confidence": 0.82,
+        "thesis": "Breakout strength (0.8843) and strong relative strength (RS excess 16.9128%) with market breadth passing (72.4% / PASS) support a long bias. ATR (14) = 1.6958 indicates moderate intraday volatility to accommodate price movement. A defined stop at 95.8585 (below the authoritative entry 100.15) and target at 119.46175 provide clear risk management and an objective to trade toward, so the setup is actionable from a technical-context perspective.",
+        "risks": [
+          "False breakout / quick reversal back below entry.",
+          "Breadth may roll over despite the current PASS, reducing follow-through.",
+          "Normal ATR-driven volatility could trigger the stop before sustained continuation.",
+          "Macro news or liquidity shocks could prevent reaching the target."
+        ],
+        "sources": []
+      },
+      {
+        "agent": "Thesis Agent",
+        "verdict": "APPROVE",
+        "confidence": 0.79,
+        "thesis": "Bull case: The quant packet shows a coherent breakout setup with entry 100.15, stop 95.8585 and target 119.46175; breadth gate = PASS (market_breadth_pct 72.4), high breakout_strength (0.8843) and strong relative strength (RS_excess_pct 16.9128) all support momentum continuation in a defensive, staples-led environment. ATR (1.6958) implies expected intraday volatility that is already accounted for by the defined stop, and the packet’s positive score/tier (B) and quantity (3.0) make the idea actionable from a technical/positioning perspective. Market-regime and news checks found no immediate structural barrier to a long and generally endorse the setup. Bear case: The setup is vulnerable to a false breakout / whipsaw: elevated near-term volatility (VIX described by specialists), mega-cap tec",
+        "risks": [
+          "Stop is relatively close to entry — may result in a higher chance of stop-outs given the provided ATR (1.6958).",
+          "Spread_bps (7.99) could meaningfully increase execution cost on a small-sized trade (quantity = 3).",
+          "Tier B denotes only moderate conviction compared with higher tiers; monitor for follow-through and volatility.",
+          "Quantity of 3.0 may limit position scaling or granularity for risk management if portfolio sizing rules require different lot sizing.",
+          "Mega-cap tech-driven risk-off could deepen and spill into defensives, causing a false breakout."
+        ],
+        "sources": []
+      },
+      {
+        "agent": "Claude CRO",
+        "verdict": "REJECT",
+        "confidence": 0.6,
+        "thesis": "I found no hard blocker: no halt, M&A or enforcement news, and no earnings event in a near-term hold (next earnings Feb 9, 2027). Q3 results beat and guidance was raised. The reported insider sale was a tax-withholding sale, so I treat it as non-informative. Even so, my approval confidence is only 0.6, below the 0.65 floor, so the rule requires REJECT.\n\nThe verified reasons for caution:\n1. The entry chases an all-time high. KO printed $99.28 on Nov 13, about 40% above its start-of-year price, and one vendor flags multiple overbought signals.\n2. The move is a crowded rotation trade out of AI and tech. The breadth, relative-strength and breakout readings are partly a product of the Nvidia/tech sell-off, so a tech rebound could reverse the breakout quickly. The Regime and Thesis agents treate",
+        "risks": [
+          "Entry at an all-time high with overbought signals raises near-term pullback risk",
+          "Crowded defensive rotation out of tech could reverse sharply if tech rebounds",
+          "Street average target implies downside from entry and the packet target of 119.46 exceeds the top of the analyst range ($106)",
+          "Rich valuation: trailing P/E about 28, a negative margin of safety in one model, and Hold ratings",
+          "Unverified tail risk of an adverse IRS ruling requiring a $14B+ payment"
+        ],
+        "sources": [
+          {
+            "url": "https://alcapitaladvisory.com/research/equities/ko.html"
+          },
+          {
+            "url": "https://finance.yahoo.com/markets/stocks/articles/ko-stock-alert-coca-cola-210506859.html"
+          },
+          {
+            "url": "https://investing.com/news/analyst-ratings/bofa-raises-cocacola-stock-price-target-on-bottler-volume-trends-93CH-5024773"
+          },
+          {
+            "url": "https://qz.com/coca-cola-hbc-johannesburg-listing-africa-deal-111626"
+          },
+          {
+            "url": "https://seekingalpha.com/article/4754547-coca-cola-q4-preview-trump-tariff-loser-rating-downgrade"
+          },
+          {
+            "url": "https://simplywall.st/stocks/us/food-beverage-tobacco/nyse-ko/coca-cola/future"
+          },
+          {
+            "url": "https://stockinvest.us/stock/KO"
+          },
+          {
+            "url": "https://tradersunion.com/news/stocks/show/4239364-coca-cola-surges-1-78percent-today-on/"
+          },
+          {
+            "url": "https://www.cnn.com/markets/stocks/KO"
+          },
+          {
+            "url": "https://www.defenseworld.net/2026/11/14/coca-cola-company-the-ko-stock-aberdeen-group-plc-lowers-position.html"
+          },
+          {
+            "url": "https://www.google.com/finance/quote/KO:NYSE"
+          },
+          {
+            "url": "https://www.investing.com/equities/coca-cola-co-news"
+          },
+          {
+            "url": "https://www.marketbeat.com/instant-alerts/estimates-coca-cola-stock-earnings-estimates-lowered-by-zacks-research-2026-11-12/"
+          },
+          {
+            "url": "https://www.marketbeat.com/originals/is-the-coca-cola-company-nyse-ko-losing-its-fizz"
+          },
+          {
+            "url": "https://www.marketbeat.com/stocks/NYSE/KO/forecast/"
+          },
+          {
+            "url": "https://www.marketbeat.com/stocks/NYSE/Ko/news"
+          },
+          {
+            "url": "https://www.marketbeat.com/stocks/NYSE/ko/news"
+          },
+          {
+            "url": "https://www.tradingview.com/symbols/NYSE-KO/"
+          }
+        ]
+      }
+    ]
+  }
+}
