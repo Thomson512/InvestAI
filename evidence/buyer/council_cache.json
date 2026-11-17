@@ -19574,6 +19574,434 @@
           ]
         }
       ]
+    },
+    "2026-11-16:ADP:673ad8b9e4541815f6d8141f4b89136ba864d5cb82aa2ad4b7c43650484a79c7": {
+      "verdict": "APPROVE",
+      "reason": "6/6 approved with Claude CRO and confidence >= 0.65",
+      "symbol": "ADP",
+      "asof_session": "2026-11-16",
+      "param_hash": "673ad8b9e4541815f6d8141f4b89136ba864d5cb82aa2ad4b7c43650484a79c7",
+      "generated_at": "2026-11-17T15:52:41Z",
+      "findings": [
+        {
+          "agent": "Scanner Agent",
+          "verdict": "APPROVE",
+          "confidence": 0.86,
+          "thesis": "The packet is internally coherent. Entry (310.09) lies above the stop (300.682) and below the target (352.4259999999998) as expected; entry/stop/target/quantity are explicitly authoritative. Breadth gate = PASS, breakout_strength is positive (0.6034), relative strength excess is strong (+20.4978%), score (45.5807) and Tier A support a momentum trade. ATR (14) is provided (6.389) and spread_bps is present, so volatility and transaction cost context are available. No required fields are missing and there are no internal contradictions.",
+          "risks": [
+            "Breakout failure or reversal shortly after entry leading to stop execution",
+            "Market-moving news or earnings that can invalidate technical setup",
+            "Stop proximity relative to provided ATR (6.389) — normal intraday volatility could trigger the stop",
+            "Spread and execution costs (spread_bps = 16.46037407006926) may affect realized entry/exit prices",
+            "Single-quantity position limits sizing flexibility and may not reflect portfolio-level risk management"
+          ],
+          "sources": []
+        },
+        {
+          "agent": "Market Regime Agent",
+          "verdict": "APPROVE",
+          "confidence": 0.68,
+          "thesis": "As of the Nov 16, 2026 close the market showed a one-day pullback (S&P 500 down ~1.9%, Nasdaq down ~2.5%) with volatility rising (VIX ~22.9). However, multiple breadth measures remain constructive (a majority of S&P members still above key moving averages on the Nov 16 close) and the supplied quant packet shows a PASS on the breadth gate (market_breadth_pct 67.6) plus a solid breakout_strength (0.6034) and strong relative strength (rs_excess_pct 20.50). Taken together the market backdrop is cautious but not hostile — still supportive enough for a momentum breakout in ADP given the authoritative trade metrics in the packet, provided the given stop and size are used and intraday weakness is monitored.",
+          "risks": [
+            "Recent index-wide pullback on Nov 16, 2026 could broaden into a multi-day correction and undercut a breakout.",
+            "VIX has risen and intraday volatility may trigger stops even if breadth remains positive.",
+            "Tech/AI-led selling (the proximate cause of the Nov 16 decline) could propagate and pressure broader market sentiment.",
+            "Material company- or macro-news between quant packet timestamp (Nov 16, 2026) and entry could change regime rapidly (earnings, Fed/policy headlines, political events).",
+            "Breadth readings show some provider-to-provider variability — if breadth deteriorates on the next session, the breakout likelihood falls sharply."
+          ],
+          "sources": [
+            {
+              "url": "https://2ndocean.com/en/breadth/"
+            },
+            {
+              "url": "https://ai.dexterchia.com/us-market"
+            },
+            {
+              "url": "https://apnews.com/article/2e6a9c41b6336e9240c1b01585d20cd4"
+            },
+            {
+              "url": "https://apnews.com/article/35786b8f539ec95f16ae0500f71cfcc7"
+            },
+            {
+              "url": "https://apnews.com/article/4d5a35288288389d894e63e6bebe8240"
+            },
+            {
+              "url": "https://apnews.com/article/6b7d1bc2fca305df9aae81de2a471377"
+            },
+            {
+              "url": "https://apnews.com/article/f8edd0eeb1494d4d2584715686c5e619"
+            },
+            {
+              "url": "https://chartinmotion.com/markets/us-breadth/"
+            },
+            {
+              "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0000008670/a5f86714-1ea6-4524-97a6-ad2404853e4b.pdf"
+            },
+            {
+              "url": "https://deanfi.com/insights/marketpulse/2026-11-16/"
+            },
+            {
+              "url": "https://docs.publicnow.com/viewDoc?filename=35916%5CEXT%5C7C577E05582B4D51177953CC0A5DBB25C49FE89E_EF3601B5A325D4A7E4A96A3BC4BD71A067FFCF2C.PDF"
+            },
+            {
+              "url": "https://en.wikipedia.org/wiki/List_of_S%26P_500_companies"
+            },
+            {
+              "url": "https://finance.yahoo.com/quote/%5EGSPC/history/?trk=article-ssr-frontend-pulse_little-text-block"
+            },
+            {
+              "url": "https://finance.yahoo.com/quote/ADP/news/"
+            },
+            {
+              "url": "https://finance.yahoo.com/quote/ADP/sec-filing/"
+            },
+            {
+              "url": "https://investors.adp.com/financials/quarterly-results/default.aspx"
+            },
+            {
+              "url": "https://investors.adp.com/news/news-details/2026/ADP-Increases-Cash-Dividend-Marks-52nd-Consecutive-Year-of-Dividend-Increases/default.aspx"
+            },
+            {
+              "url": "https://investors.adp.com/news/news-details/2026/ADP-to-Announce-First-Quarter-Fiscal-2027-Financial-Results-on-October-28-2026/default.aspx"
+            },
+            {
+              "url": "https://investors.adp.com/overview/"
+            },
+            {
+              "url": "https://newspaperjoint.com/markets/stock-market-today/"
+            },
+            {
+              "url": "https://portfolio-terminal.com/markets/stock-market-close"
+            },
+            {
+              "url": "https://theweek.com/politics/will-democratic-victories-boost-wall-street"
+            },
+            {
+              "url": "https://www.axios.com/2026/11/06/watch-axios-bfd-summit-2026"
+            },
+            {
+              "url": "https://www.axios.com/2026/11/16/fed-warsh-ai-boom-stocks"
+            },
+            {
+              "url": "https://www.axios.com/newsletters/axios-am-b87057dc-2d9b-4ebf-8ed4-4887eef28291"
+            },
+            {
+              "url": "https://www.axios.com/newsletters/axios-closer-54cb8378-50e3-477d-999d-0aaa60f5efcc"
+            },
+            {
+              "url": "https://www.axios.com/newsletters/axios-macro-58454b30-e1c1-11f1-9da9-cf6b9ae889ac"
+            },
+            {
+              "url": "https://www.investors.adp.com/financials/quarterly-results/default.aspx"
+            },
+            {
+              "url": "https://www.kiplinger.com/investing/stocks/17494/next-week-earnings-calendar-stocks"
+            },
+            {
+              "url": "https://www.kiplinger.com/investing/stocks/dividend-stocks/best-dividend-stocks-you-can-count-on"
+            },
+            {
+              "url": "https://www.kiplinger.com/investing/stocks/stocks-drop-as-rate-hike-worries-rise-stock-market-today"
+            },
+            {
+              "url": "https://www.marketbeat.com/stocks/NASDAQ/ADP/news/"
+            },
+            {
+              "url": "https://www.marketscreener.com/quote/stock/AUTOMATIC-DATA-PROCESSING-11713/news/"
+            },
+            {
+              "url": "https://www.reddit.com/r/RobinHood/comments/1xtfxxs/daily_discussion_thread_november_11th_2026/"
+            },
+            {
+              "url": "https://www.reddit.com/r/RobinHood/comments/1xyimbx/daily_discussion_thread_november_17th_2026/"
+            },
+            {
+              "url": "https://www.reddit.com/r/dividends/comments/1xtom28/automatic_data_processing_adp_dividend_increase/"
+            },
+            {
+              "url": "https://www.reddit.com/r/getagraph/comments/1xvd6ef/buy_signal_automatic_data_processing_13_nov_2026/"
+            },
+            {
+              "url": "https://www.sec.gov/Archives/edgar/data/8670/000000867026000044/q1fy2710q.pdf"
+            },
+            {
+              "url": "https://www.sec.gov/Archives/edgar/data/8670/000130817926000409/adp2026_courtesy-pdf.pdf"
+            },
+            {
+              "url": "https://www.stocksxray.com/market-breadth"
+            },
+            {
+              "url": "https://www.stocktitan.net/overview/ADP/"
+            },
+            {
+              "url": "https://www.stocktitan.net/sec-filings/ADP/8-k-automatic-data-processing-inc-reports-material-event-5a6ee681111a.html"
+            },
+            {
+              "url": "https://www.thedailybeast.com/donald-trumps-jaw-dropping-stake-in-nvidia-revealed"
+            },
+            {
+              "url": "https://www.thetrading.tools/stocks-above-moving-average"
+            },
+            {
+              "url": "https://www.tipranks.com/stocks/adp/earnings"
+            },
+            {
+              "url": "https://www.tomsguide.com/news/live/jensen-huang-nvidia-crisis-live-november-2026"
+            },
+            {
+              "url": "https://ycharts.com/indicators/vix_volatility_index"
+            }
+          ]
+        },
+        {
+          "agent": "News and Event Agent",
+          "verdict": "APPROVE",
+          "confidence": 0.82,
+          "thesis": "Web search (company filings and press coverage) found no verified material event that would argue against opening a new long in ADP as of the Nov 16, 2026 session. Recent SEC filings include a Form 10-Q for the quarter ended Sept. 30, 2026 and an Oct. 28, 2026 earnings release / guidance update that maintained a roughly ~6% fiscal‑2027 outlook (no adverse guidance revision). ([sec.gov](https://www.sec.gov/Archives/edgar/data/8670/000000867026000044/adp-20260930.htm?utm_source=openai)) The company disclosed and recorded a $48 million accrual to resolve a class ERISA/401(k) fee suit (settlement in 2026), which appears contained and had been booked in its filings. ([news.bloomberglaw.com](https://news.bloomberglaw.com/health-law-and-business/adp-agrees-to-48-million-deal-in-retirement-plan-fe",
+          "risks": [
+            "Recorded $48M ERISA settlement/claims — limited absolute dollar impact but indicates litigation exposure and precedent for further ERISA suits.",
+            "Customer-level unauthorized access reports in 2026 — ongoing cyber/reputational and remediation risk to monitor.",
+            "Multiple employment and other civil suits remain pending — potential additional liabilities or distractions for management.",
+            "Operational/revenue risk from slower payroll/client growth or unexpected guidance downgrades in future quarters (monitor upcoming earnings and guidance).",
+            "No evidence of trading halts, material regulatory enforcement, or major M&A that would change fundamentals was located in the search window."
+          ],
+          "sources": [
+            {
+              "url": "https://apnews.com/article/68760a6faf7f819673481d4246577c83"
+            },
+            {
+              "url": "https://app.edgar.tools/companies/ADP/disclosures/commitments-contingencies"
+            },
+            {
+              "url": "https://assets.alm.com/e3/d6/d27369084f7798c8341ec12175dd/nylj052126a.pdf"
+            },
+            {
+              "url": "https://bankrupt.com/CAR_Public/260818.mbx"
+            },
+            {
+              "url": "https://en.wikipedia.org/wiki/ADP_%28company%29"
+            },
+            {
+              "url": "https://en.wikipedia.org/wiki/List_of_data_breaches"
+            },
+            {
+              "url": "https://en.wikipedia.org/wiki/List_of_largest_mergers_and_acquisitions"
+            },
+            {
+              "url": "https://en.wikipedia.org/wiki/ShinyHunters"
+            },
+            {
+              "url": "https://en.wikipedia.org/wiki/Trading_halt"
+            },
+            {
+              "url": "https://financialfilings.com/filings/automatic-data-processing-inc/earnings-release/2026/74827271/"
+            },
+            {
+              "url": "https://finfab.pro/document/8670/000000867026000025/20184767"
+            },
+            {
+              "url": "https://mybenefits.wageworks.com/media/docs/CXWW/105108/2026%20SPD%20Final.pdf"
+            },
+            {
+              "url": "https://nasdaqtrader.com/Trader.aspx?id=TradingHaltSearch"
+            },
+            {
+              "url": "https://news.bloomberglaw.com/class-action/adp-401k-investors-advance-erisa-suit-challenging-plan-fees"
+            },
+            {
+              "url": "https://news.bloomberglaw.com/daily-labor-report/adp-settles-50-000-person-401k-fee-class-suit-ahead-of-trial"
+            },
+            {
+              "url": "https://news.bloomberglaw.com/employment/adp-settles-50-000-person-401k-fee-class-suit-ahead-of-trial"
+            },
+            {
+              "url": "https://news.bloomberglaw.com/health-law-and-business/adp-agrees-to-48-million-deal-in-retirement-plan-fee-lawsuit"
+            },
+            {
+              "url": "https://news.bloomberglaw.com/litigation/adp-401k-investors-advance-erisa-suit-challenging-plan-fees"
+            },
+            {
+              "url": "https://news.bloomberglaw.com/new-york-brief/adp-agrees-to-48-million-deal-in-retirement-plan-fee-lawsuit"
+            },
+            {
+              "url": "https://news.bloomberglaw.com/payroll/adp-settles-50-000-person-401k-fee-class-suit-ahead-of-trial"
+            },
+            {
+              "url": "https://openclassactions.com/lawsuits/wage-and-hour/adp-customer-service-representatives-off-the-clock-overtime-class-action-lawsuit.php"
+            },
+            {
+              "url": "https://s205.q4cdn.com/887941133/files/doc_financials/2026/q3/ADP-3QFY26-Transcript.pdf"
+            },
+            {
+              "url": "https://trellis.law/case/24stcv24931/jason-fazzinga-vs-automatic-data-processing-inc-a-delaware-corporation-et-al"
+            },
+            {
+              "url": "https://www.bankrupt.com/CAR_Public/260714.mbx"
+            },
+            {
+              "url": "https://www.columbiathreadneedleus.com/binaries/content/assets/cti-institutional/insights/blogs/2026/october/10.29.26-cross-q4-2026-happenings-on-and-off-the-hill-insight.pdf"
+            },
+            {
+              "url": "https://www.companiesmarketcap.com/automatic-data-processing/sec-reports-10k/0000008670-26-000030/"
+            },
+            {
+              "url": "https://www.earningswhispers.com/filings/ADP"
+            },
+            {
+              "url": "https://www.govinfo.gov/content/pkg/USCOURTS-njd-2_20-cv-05696/pdf/USCOURTS-njd-2_20-cv-05696-2.pdf"
+            },
+            {
+              "url": "https://www.haynesboone.com/news/blogs/48-million-dollar-erisa-settlement-reminder-of-401k-fiduciary-duties"
+            },
+            {
+              "url": "https://www.haynesboone.com/news/blogs/48-million-dollar-erisa-settlement-reminder-of-401k-fiduciary-duties.pdf"
+            },
+            {
+              "url": "https://www.hcamag.com/us/specialization/employment-law/16-year-manager-sues-adp-over-disability-accommodation-firing/574388"
+            },
+            {
+              "url": "https://www.itpro.com/security/data-breaches/nissan-employee-data-exposed-in-oracle-peoplesoft-zero-day-attacks"
+            },
+            {
+              "url": "https://www.itpro.com/security/data-breaches/thousands-of-drivers-licenses-exposed-in-uber-data-breach"
+            },
+            {
+              "url": "https://www.kiplinger.com/investing/stocks/17494/next-week-earnings-calendar-stocks"
+            },
+            {
+              "url": "https://www.kiplinger.com/investing/stocks/601018/kiplinger-dividend-15-our-favorite-dividend-paying-stocks"
+            },
+            {
+              "url": "https://www.kiplinger.com/investing/stocks/nasdaq-drops-friday-on-nvidia-fallout-but-ends-the-week-up-stock-market-today"
+            },
+            {
+              "url": "https://www.law360.com/articles/2508868"
+            },
+            {
+              "url": "https://www.marketbeat.com/stocks/NASDAQ/ADP/earnings/"
+            },
+            {
+              "url": "https://www.nebraska.gov/ago/data-breach/documents/4198fb4a-ccbe-4d58-bdc8-853c55047cf6.pdf"
+            },
+            {
+              "url": "https://www.reddit.com/r/ADP/comments/1xo0am6/email_sent_to_me/"
+            },
+            {
+              "url": "https://www.sec.gov/Archives/edgar/data/8670/000000867026000030/q4fy2610k.pdf"
+            },
+            {
+              "url": "https://www.sec.gov/Archives/edgar/data/8670/000000867026000044/R21.htm"
+            },
+            {
+              "url": "https://www.sec.gov/Archives/edgar/data/8670/000000867026000044/adp-20260930.htm"
+            },
+            {
+              "url": "https://www.sec.gov/Archives/edgar/data/8670/000000867026000044/q1fy2710q.pdf"
+            },
+            {
+              "url": "https://www.sec.gov/Archives/edgar/data/8670/000130817926000409/adp2026_courtesy-pdf.pdf"
+            },
+            {
+              "url": "https://www.sec.gov/Archives/edgar/data/8670/000130817926000411/adp015474-ars.pdf"
+            }
+          ]
+        },
+        {
+          "agent": "Technical Context Agent",
+          "verdict": "APPROVE",
+          "confidence": 0.78,
+          "thesis": "Long setup validated by a moderate breakout (breakout_strength=0.6034), strong relative strength (rs_excess_pct=20.4978), and constructive breadth (breadth_gate=PASS; market_breadth_pct=67.6). ATR (atr_14=6.389) indicates the expected volatility regime. The stop_price (300.682) sits below the entry (entry_usd=310.09) and the target_price (352.4259999999998) provides a defined upside — the supplied fields are internally consistent with a long breakout trade.",
+          "risks": [
+            "False breakout risk despite moderate breakout strength",
+            "Stop may be reached on normal volatility given ATR=6.389 (risk of being stopped out before trend continuation)",
+            "Market breadth or leadership can deteriorate, invalidating the breakout before the target is reached"
+          ],
+          "sources": []
+        },
+        {
+          "agent": "Thesis Agent",
+          "verdict": "APPROVE",
+          "confidence": 0.79,
+          "thesis": "Authoritative quant setup: open a momentum long using the packet’s parameters (entry_usd=310.09, stop_price=300.682, target_price=352.4259999999998, quantity=1.0). Supporting evidence in the packet and specialist findings: breadth_gate = PASS with market_breadth_pct 67.6, breakout_strength = 0.6034, rs_excess_pct = 20.4978, Tier A and score 45.5807 — all point to a leadership breakout. ATR_14 = 6.389 and spread_bps = 16.46037407006926 are provided to frame volatility and execution cost; use the authoritative entry/stop/target/quantity as given.",
+          "risks": [
+            "False breakout or immediate reversal after entry leading to stop execution (technical/volatility risk).",
+            "Market-wide regime deterioration (multi-day correction, rising VIX or extended index selling) that undercuts breakout momentum before the target is reached.",
+            "Stop proximity relative to ATR (atr_14=6.389) — normal intraday volatility could trigger the stop prior to trend continuation.",
+            "Spread and execution costs (spread_bps = 16.46037407006926) may worsen realized entry/exit prices versus packet values.",
+            "Material company-specific adverse events (earnings/guidance miss, major cyber incident, regulatory/enforcement action or large litigation development) that change fundamentals or sentiment."
+          ],
+          "sources": []
+        },
+        {
+          "agent": "Claude CRO",
+          "verdict": "APPROVE",
+          "confidence": 0.7,
+          "thesis": "I found no verified event or contradiction that argues against this long entry. All six specialists approve, and the quant packet is internally consistent: the stop is below entry, the target is above it, the breadth gate passes at 67.6%, relative strength excess is +20.5% and breakout strength is 0.60. The company news is contained. ADP booked a $48M ERISA settlement, kept its fiscal-2027 outlook at about 6% in the Oct 28 earnings release, and I found no halts, enforcement actions or M&A. The remaining litigation and the cyber incidents are older and look manageable. The main caution is the market backdrop. On Nov 16 the S&P fell about 1.9% and the Nasdaq about 2.5%, with the VIX near 22.9, so a breakout could fail on a multi-day correction. The stop is roughly 1.5 ATR from entry, so ordi",
+          "risks": [
+            "Market pullback on Nov 16 (S&P -1.9%, Nasdaq -2.5%, VIX ~22.9) could extend into a multi-day correction and fail the breakout",
+            "Stop is about 1.5 ATR from entry, so normal intraday volatility could stop out the position",
+            "Spread of about 16.5 bps raises execution cost for entry and exit",
+            "Pending litigation (ERISA, wage-and-hour, employment) and cyber/unauthorized-access incidents could bring further liabilities or headlines",
+            "Future earnings or guidance disappointments could invalidate the setup"
+          ],
+          "sources": [
+            {
+              "url": "https://en.wikipedia.org/wiki/CDK_Global"
+            },
+            {
+              "url": "https://finance.yahoo.com/quote/ADP/"
+            },
+            {
+              "url": "https://gloom.sh/stocks/adp/risk-factors/2026"
+            },
+            {
+              "url": "https://news.bloomberglaw.com/daily-labor-report/adp-must-face-lawsuit-over-alleged-failure-to-catch-missed-meals"
+            },
+            {
+              "url": "https://news.bloomberglaw.com/employee-benefits/adp-agrees-to-48-million-deal-in-retirement-plan-fee-lawsuit"
+            },
+            {
+              "url": "https://pluang.com/en/asset/usstock/ADP/10425/news"
+            },
+            {
+              "url": "https://robinhood.com/us/en/stocks/ADP/"
+            },
+            {
+              "url": "https://seekingalpha.com/symbol/ADP"
+            },
+            {
+              "url": "https://www.board-cybersecurity.com/incidents/tracker/adp-cybersecurity-incident-48b93e0d"
+            },
+            {
+              "url": "https://www.cnn.com/markets/stocks/ADP"
+            },
+            {
+              "url": "https://www.federmanlaw.com/blog/federman-sherwood-announces-filing-of-securities-class-action-lawsuit-against-automatic-data-processing-inc-adp-llc-and-american-century-investments-services-inc/"
+            },
+            {
+              "url": "https://www.google.com/finance/quote/ADP:NASDAQ"
+            },
+            {
+              "url": "https://www.investing.com/news/company-news/adp-stock-hits-52week-high-at-31435-usd-93CH-5030224"
+            },
+            {
+              "url": "https://www.sec.gov/Archives/edgar/data/8670/000000867024000007/adp-20231231.htm"
+            },
+            {
+              "url": "https://www.sec.gov/Archives/edgar/data/8670/000000867024000030/adp-20240930.htm"
+            },
+            {
+              "url": "https://www.securityweek.com/adp-experiences-security-breach/"
+            },
+            {
+              "url": "https://www.tradingview.com/symbols/NASDAQ-ADP/"
+            },
+            {
+              "url": "https://www.webull.com/newslist/nasdaq-adp"
+            }
+          ]
+        }
+      ]
     }
   }
 }
