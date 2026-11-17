@@ -1,0 +1,321 @@
+{
+  "outcome": "COUNCIL_REJECT:KO",
+  "session_date": "2026-11-17",
+  "generated_at": "2026-11-17T16:00:28Z",
+  "official": true,
+  "extra_summary": [
+    "council: At least one specialist rejected the proposal"
+  ],
+  "plan": {
+    "symbol": "KO",
+    "quantity": 3.0,
+    "entry_usd": 99.36,
+    "stop_price": 96.2457,
+    "target_price": 113.37434999999999,
+    "fx_usdczk": 22.182,
+    "spread_bps": 2.013085052843082
+  },
+  "council": {
+    "verdict": "REJECT",
+    "reason": "At least one specialist rejected the proposal",
+    "cached": true,
+    "findings": [
+      {
+        "agent": "Scanner Agent",
+        "verdict": "APPROVE",
+        "confidence": 0.83,
+        "thesis": "The packet is internally coherent: authoritative fields (entry 99.04, stop 96.2457, target 111.61435, quantity 3.0) present a consistent trade plan with stop below entry and target above entry. Ancillary metrics (ATR 1.6796, breakout_strength 0.3122, rs_excess_pct 16.1238, breadth_gate PASS) support a plausible breakout setup and manageable volatility-based stop distance. Spread_bps of ~2.02% and tier B classification are compatible with a small, discretionary position of 3 shares.",
+        "risks": [
+          "False breakout — breakout_strength is modest (0.3122), so price may fail to sustain above entry and hit the stop.",
+          "Volatility or gap risk — overnight moves or earnings-related gaps could bypass the stop level.",
+          "Execution/transaction cost — spread_bps ~2% increases effective entry cost and reduces net edge for a small position.",
+          "Concentration/position sizing — quantity is low; while not a contradiction, small share counts can lead to coarse risk control and execution rounding issues.",
+          "Market regime risk — a broader market reversal despite market_breadth_pct currently favorable would widen losses."
+        ],
+        "sources": []
+      },
+      {
+        "agent": "Market Regime Agent",
+        "verdict": "REJECT",
+        "confidence": 0.78,
+        "thesis": "As of the U.S. session on November 16, 2026 the headline market regime was risk-off: major indices fell (~S&P 500 down ~1.9%, Nasdaq down ~2.5%, Russell 2000 down ~1.7%) and volatility (VIX) was elevated (~19), with news pointing to a tech-led selloff ahead of Nvidia earnings. That combination (broad index weakness + rising volatility) is a hostile backdrop for initiating momentum breakout trades. While the supplied quant packet shows a breadth_gate PASS and market_breadth_pct = 67.6, public market action on 2026-11-16 and market headlines indicate broad selling and higher volatility that reduce the odds of a clean momentum breakout for the symbol (KO). Therefore the regime does not support a momentum breakout entry at this time.",
+        "risks": [
+          "The supplied quant_packet signals (breadth_gate PASS, market_breadth_pct 67.6, positive breakout_strength and strong RS excess) conflict with public headline action — if the internal breadth signals are authoritative and persist intraday, the setup could still work (risk of false REJECT).",
+          "KO is a defensive consumer-staples name and could outperform in risk-off days; defensive outperformance could support a breakout despite a weak tape.",
+          "Near-term event risk: Nvidia earnings and related tech volatility (and FOMC minutes due 2026-11-18) could rapidly reverse market direction, changing regime quickly.",
+          "Elevated volatility increases execution risk (wider fills and slippage) and can trigger stop-outs even if the breakout briefly occurs.",
+          "If market breadth or index action improves in the next session (e.g., a rotation away from tech into staples), the rejection should be re-assessed."
+        ],
+        "sources": [
+          {
+            "url": "https://apnews.com/article/2e6a9c41b6336e9240c1b01585d20cd4"
+          },
+          {
+            "url": "https://apnews.com/article/35786b8f539ec95f16ae0500f71cfcc7"
+          },
+          {
+            "url": "https://apnews.com/article/4d5a35288288389d894e63e6bebe8240"
+          },
+          {
+            "url": "https://apnews.com/article/6b7d1bc2fca305df9aae81de2a471377"
+          },
+          {
+            "url": "https://apnews.com/article/7713e7968f5d7cab0897d4e65eb0ba78"
+          },
+          {
+            "url": "https://apnews.com/article/87fdbf321cffc98ecb9b1f7242ba2437"
+          },
+          {
+            "url": "https://dd9ztr76gkqyi.cloudfront.net/indicators/dow-jones-industrial-average"
+          },
+          {
+            "url": "https://deanfi.com/insights/marketpulse/2026-11-16/"
+          },
+          {
+            "url": "https://eoddata.com/stockquote/INDEX/DJI.htm"
+          },
+          {
+            "url": "https://finance.pineify.app/indices/dow-jones/historical-data"
+          },
+          {
+            "url": "https://finance.yahoo.com/quote/%5EGSPC/history/?trk=article-ssr-frontend-pulse_little-text-block"
+          },
+          {
+            "url": "https://moneyweek.com/investments/tech-stocks/nvidia-share-price-should-you-buy"
+          },
+          {
+            "url": "https://newspaperjoint.com/markets/stock-market-today/"
+          },
+          {
+            "url": "https://portfolio-terminal.com/markets/stock-market-close"
+          },
+          {
+            "url": "https://www.axios.com/2026/11/06/watch-axios-bfd-summit-2026"
+          },
+          {
+            "url": "https://www.axios.com/newsletters/axios-closer-54cb8378-50e3-477d-999d-0aaa60f5efcc"
+          },
+          {
+            "url": "https://www.axios.com/newsletters/axios-macro-58454b30-e1c1-11f1-9da9-cf6b9ae889ac"
+          },
+          {
+            "url": "https://www.axios.com/newsletters/axios-pro-rata-e1701604-785f-4db0-b6d3-aee779abaf93"
+          },
+          {
+            "url": "https://www.cboe.com/tradable-products/vix"
+          },
+          {
+            "url": "https://www.investing.com/indices/us-30-historical-data?_pmch=1706861271961"
+          },
+          {
+            "url": "https://www.kiplinger.com/investing/economy/this-weeks-economic-calendar"
+          },
+          {
+            "url": "https://www.kiplinger.com/investing/stocks/nasdaq-drops-friday-on-nvidia-fallout-but-ends-the-week-up-stock-market-today"
+          },
+          {
+            "url": "https://www.thedailybeast.com/donald-trumps-jaw-dropping-stake-in-nvidia-revealed"
+          },
+          {
+            "url": "https://www.thetrading.tools/market-breadth"
+          },
+          {
+            "url": "https://www.tomshardware.com/pc-components/cpus/intel-reclaims-overall-cpu-market-share-for-the-first-time-since-2025-massive-desktop-gains-offset-amds-record-server-and-mobile-growth"
+          }
+        ]
+      },
+      {
+        "agent": "News and Event Agent",
+        "verdict": "APPROVE",
+        "confidence": 0.78,
+        "thesis": "Web search for ticker KO turned up a verified Q3 2026 earnings release (Oct 27, 2026) in which The Coca‑Cola Company reported results and raised full‑year guidance; I found no verified trading halts, no announced mergers/acquisitions, and no single litigation or regulatory development that appears material enough to argue against initiating a new long at this time.",
+        "risks": [
+          "Class‑action privacy/cookie tracking suit filed Nov 6, 2026 (potential reputational/legal exposure, likely limited near term).",
+          "EEOC lawsuit against a Coca‑Cola bottler announced Feb 19, 2026 (operational/legal risk at the bottler level).",
+          "Ongoing product/industry litigation (e.g., ultra‑processed food suits) that could produce adverse rulings or settlements over time.",
+          "Regulatory or guidance changes that could arise after the Oct 27, 2026 guidance update and negatively affect near‑term outlook.",
+          "Unidentified material event between the as‑of session (2026‑11‑16) and trade decision time (market/real‑time risk)."
+        ],
+        "sources": [
+          {
+            "url": "https://apnews.com/article/788cb4cd5b0a4e77a06322812a18d547"
+          },
+          {
+            "url": "https://classactionbuddy.com/blog/is-there-a-class-action-against-coca-cola-in-2026/"
+          },
+          {
+            "url": "https://clerk.solvrlabs.ai/company/KO"
+          },
+          {
+            "url": "https://docketnexus.com/party/coca-cola-company/?activity=all"
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/Coca-Cola"
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/Coca-Cola_Europacific_Aboitiz_Philippines"
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/Trading_halt"
+          },
+          {
+            "url": "https://filing-flows.com/c/ko/guidance/"
+          },
+          {
+            "url": "https://investors.coca-colacompany.com/?trk=public_post_main-feed-card-text"
+          },
+          {
+            "url": "https://investors.coca-colacompany.com/_assets/_113922efea4553381957ab7c133a08d5/cocacolacompany/db/856/11090/presentation/2026%2BCAGNY%2BPresentation%2B-%2BFinal.pdf"
+          },
+          {
+            "url": "https://investors.coca-colacompany.com/_assets/_1df3df91e6951f35952f0bd0d28b0ece/cocacolacompany/db/881/11142/file/CORRECTED_TRANSCRIPT_The_Coca-Cola_Co.%28KO-US%29_Q3_2026_Earnings_Call_27-October-2026_8_30_AM_ET.pdf"
+          },
+          {
+            "url": "https://investors.coca-colacompany.com/_assets/_e981aab3c236d72f2e1a1f06f4dcfaa9/cocacolacompany/db/861/11143/pdf/Q3%2726_IR_Overview_Presentation.pdf"
+          },
+          {
+            "url": "https://investors.coca-colacompany.com/_assets/_fd23f141e5493e5928f74e00f4a243a7/cocacolacompany/news/2026-09-29_The_Coca_Cola_Company_Announces_Timing_of_Third_1173.pdf"
+          },
+          {
+            "url": "https://investors.coca-colacompany.com/filings-reports/all-sec-filings/content/0001628280-26-067403/0001628280-26-067403.pdf"
+          },
+          {
+            "url": "https://investors.coca-colacompany.com/filings-reports/all-sec-filings/content/0001628280-26-067403/a2026q3earningsreleaseex-9.htm"
+          },
+          {
+            "url": "https://investors.coca-colacompany.com/filings-reports/all-sec-filings/content/0001628280-26-067403/ko-20261027.htm"
+          },
+          {
+            "url": "https://investors.coca-colacompany.com/news-events/press-releases/detail/1176/coca-cola-reports-third-quarter-2026-results-and-raises-full-year-guidance"
+          },
+          {
+            "url": "https://lawsuitinformer.com/coca-cola-lawsuit"
+          },
+          {
+            "url": "https://www.axios.com/2026/02/19/coca-cola-bottler-work-discrimination-lawsuit-men-women"
+          },
+          {
+            "url": "https://www.classactionpulse.com/news/coca-cola-cookie-opt-out-tracking-class-action"
+          },
+          {
+            "url": "https://www.coca-colahellenic.com/content/dam/cch/us/documents/investors-and-financial/2026-q3-trading-update/Coca-Cola_HBC_%202026_Q3_4Nov2026.pdf.downloadasset.pdf"
+          },
+          {
+            "url": "https://www.law360.com/cases/6aee4f4ea757c24b663535e5"
+          },
+          {
+            "url": "https://www.lemonde.fr/en/economy/article/2026/02/25/who-could-have-imagined-that-the-federal-agency-for-workplace-equality-would-one-day-accuse-coca-cola-of-anti-male-segregation_6750845_19.html"
+          },
+          {
+            "url": "https://www.reddit.com/r/EarningsCalls/comments/1va6t3a/coca_cola_ko_the_good_the_bad_and_the_ugly_from/"
+          },
+          {
+            "url": "https://www.reddit.com/r/ValueInvesting/comments/1xh9152/cocacola_raises_fullyear_forecast_after_higher/"
+          },
+          {
+            "url": "https://www.reddit.com/r/ValueInvesting/comments/1xxs7ye/coca_cola_ko_is_100_a_share_for_the_first_time_in/"
+          },
+          {
+            "url": "https://www.sec.gov/edgar/browse/?CIK=21344&owner=exclude"
+          }
+        ]
+      },
+      {
+        "agent": "Technical Context Agent",
+        "verdict": "APPROVE",
+        "confidence": 0.79,
+        "thesis": "Breakout strength 0.3122 (moderate), RS excess +16.1238% (strong relative strength), market breadth 67.6% (breadth gate PASS), ATR 1.6796. Supplied stop (96.2457) is below the entry and supplied target (111.61435) is above the entry, so the supplied fields are coherent with a long breakout setup.",
+        "risks": [
+          "Volatility could hit the stop before the breakout trend resumes.",
+          "Target may not be reached if momentum stalls or reverses.",
+          "Overall market breadth can deteriorate, weakening the setup.",
+          "Execution and intraday liquidity risk may affect fills; follow authoritative price fields."
+        ],
+        "sources": []
+      },
+      {
+        "agent": "Thesis Agent",
+        "verdict": "APPROVE",
+        "confidence": 0.79,
+        "thesis": "Bull case: The quant packet describes a coherent momentum breakout long with authoritative entry = 99.04, stop = 96.2457 and target = 111.61435. Ancillary metrics (breadth_gate PASS, market_breadth_pct 67.6, RS excess +16.12%, ATR 1.6796) support a selective breakout in a name showing relative strength; the stop is placed below entry to limit loss and the target offers a defined reward. The trade is sized small (quantity 3.0) consistent with the ~2% spread and tier B classification. Bear case: Market-regime and headline risk are the largest threats — broad risk‑off action, elevated volatility, or tech‑led market selling could reverse momentum and produce a false breakout. Modest breakout_strength (0.3122), spread_bps ~2.02% and potential for overnight/event gaps increase the probability of",
+        "risks": [
+          "False breakout — breakout_strength is modest (0.3122) so the setup can fail and hit the stop.",
+          "Market-regime/headline risk — broad risk-off moves or elevated volatility can reverse momentum and are already flagged by a specialist.",
+          "Volatility/gap risk — overnight or event gaps can bypass the stop and amplify losses.",
+          "Execution/slippage — spread_bps ~2.02% and intraday fills for a small position can meaningfully reduce edge.",
+          "Concentration/position sizing — small share count (quantity 3.0) can create coarse risk control and rounding issues."
+        ],
+        "sources": []
+      },
+      {
+        "agent": "Claude CRO",
+        "verdict": "APPROVE",
+        "confidence": 0.66,
+        "thesis": "Marginal approval. I found no verified reason that decisively argues against entry. I did not recompute price, stop, target or size.\n\nThe Market Regime Agent's REJECT correctly describes the tape. On 2026-11-16 the S&P 500 fell about 1.9% and the Nasdaq about 2.5%, and the VIX spiked. But the selloff was tech-led. Only Consumer Staples and Utilities finished higher, and KO set a record close near $100.56 on the rotation. The packet's breadth gate passes (67.6%) and relative strength is strong (+16.1% excess). A defensive name benefiting from a risk-off tape is not a verified reason to reject.\n\nThe News and Event Agent found no trading halt, M&A event, or material litigation or regulatory development. The Q3 print on Oct 27 raised guidance. The spread of about 2.02 bps is roughly 0.02%, not",
+        "risks": [
+          "Stretched valuation: P/E about 29.3, near its five-year high, and about 45% YTD return",
+          "Crowded defensive rotation (KO/SOXX ratio up 55% in two months) could reverse sharply on a tech rebound",
+          "Event risk from Nvidia earnings and possible FOMC minutes (date unverified) could change the regime quickly and cause gaps through the stop",
+          "Target (~$111.6) is at the Street-high end; at least one source puts the average analyst target below the current price",
+          "Fundamental softness: muted North America demand and tough 2027 comparisons after the World Cup and hot-weather boost; Bernstein rates KO Hold; unverified EVP share sale of over $1.4M"
+        ],
+        "sources": [
+          {
+            "url": "https://benzinga.com/etfs/sector-etfs/26/11/63320554/coca-cola-chips-rotation-ko-soxx-ratio-strongest-since-2001"
+          },
+          {
+            "url": "https://cappnotes.substack.com/p/closing-look-monday-november-16-2026"
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/S%26P_500"
+          },
+          {
+            "url": "https://finance.yahoo.com/markets/live/stock-market-today-monday-november-16-dow-sp-500-nasdaq-nvidia-oil-091631084.html"
+          },
+          {
+            "url": "https://finance.yahoo.com/markets/stocks/articles/stock-market-news-nov-16-132700717.html"
+          },
+          {
+            "url": "https://washingtonpost.com/business/2026/11/16/wall-street-stocks-dow-nasdaq/a51e8bec-e207-11f1-a99e-b3e3805c6b8b_story.html"
+          },
+          {
+            "url": "https://www.cnbc.com/2026/11/15/stock-market-today-live-updates.html"
+          },
+          {
+            "url": "https://www.cnbc.com/quotes/KO"
+          },
+          {
+            "url": "https://www.cnn.com/markets/stocks/KO"
+          },
+          {
+            "url": "https://www.fool.com/coverage/stock-market-today/2026/11/16/stock-market-midday-nov-16-stocks-slide-as-tech-selling-intensifies-across-the-market/"
+          },
+          {
+            "url": "https://www.fool.com/coverage/stock-market-today/2026/11/16/stock-market-today-nov-16-amazon-falls-on-new-ai-chip-export-rule-and-leo-satellite-launch-failure/"
+          },
+          {
+            "url": "https://www.gurufocus.com/news/9204850/td-cowen-raises-cocacola-ko-price-target-to-112-maintains-buy-rating"
+          },
+          {
+            "url": "https://www.investing.com/equities/coca-cola-co-news"
+          },
+          {
+            "url": "https://www.investing.com/news/analyst-ratings/td-cowen-raises-cocacola-stock-price-target-on-growth-outlook-93CH-5033065"
+          },
+          {
+            "url": "https://www.investing.com/news/stock-market-news/td-cowen-names-cocacola-its-top-pick-for-2027-lifts-target-to-streethigh-5033092"
+          },
+          {
+            "url": "https://www.stocktitan.net/articles/stock-market-today-live-november-16-2026"
+          },
+          {
+            "url": "https://www.tipranks.com/news/coca-cola-stock-ko-rises-above-100-as-investors-seek-safety-in-a-volatile-market"
+          },
+          {
+            "url": "https://www.tradingview.com/symbols/NYSE-KO/"
+          }
+        ]
+      }
+    ]
+  }
+}
