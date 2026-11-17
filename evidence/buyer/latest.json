@@ -1,50 +1,54 @@
 {
-  "outcome": "COUNCIL_REJECT:RSG",
+  "outcome": "COUNCIL_REJECT:SJM",
   "session_date": "2026-11-17",
-  "generated_at": "2026-11-17T20:40:25Z",
+  "generated_at": "2026-11-17T20:52:28Z",
   "official": true,
   "extra_summary": [
-    "council: At least one specialist rejected the proposal"
+    "council: Claude CRO rejected the proposal"
   ],
   "plan": {
-    "symbol": "RSG",
-    "quantity": 1.0,
-    "entry_usd": 254.49,
-    "stop_price": 246.7033,
-    "target_price": 289.53015,
+    "symbol": "SJM",
+    "quantity": 2.0,
+    "entry_usd": 133.85,
+    "stop_price": 129.4421,
+    "target_price": 153.68554999999992,
     "fx_usdczk": 22.182,
-    "spread_bps": 18.091717139935813
+    "spread_bps": 9.717083380049742
   },
   "council": {
     "verdict": "REJECT",
-    "reason": "At least one specialist rejected the proposal",
-    "cached": true,
+    "reason": "Claude CRO rejected the proposal",
+    "cached": false,
     "findings": [
       {
         "agent": "Scanner Agent",
         "verdict": "APPROVE",
-        "confidence": 0.88,
-        "thesis": "The packet is internally coherent: authoritative fields are present and mutually consistent. Stop (246.7033) is below entry (254.04) and target (287.05515) is above entry. Stop distance (~7.3367 USD, ~1.64 ATR) and target produce a plausible reward:risk ratio consistent with the packet's score, RS excess, and breadth gate PASS. No required authoritative fields are missing or self-contradictory.",
+        "confidence": 0.85,
+        "thesis": "The packet is internally coherent: entry (133.85), stop (129.4421) and target (153.68555) are directionally consistent (stop < entry < target). The stop distance (~4.41 USD) is roughly 1.4 ATR (ATR_14 = 3.1039), so risk per share is defined and not contradictory with the provided ATR. Quantity is numeric (2.0) and other metadata (breakout_strength 0.4368, rs_excess_pct 18.807, breadth_gate PASS) consistently indicate a moderate-strength, breadth-supported setup. No fields conflict with the authoritative note that entry_usd, stop_price, target_price and quantity are Python-authoritative.",
         "risks": [
-          "Breakout_strength is low (0.1881), which may indicate a weak or marginal setup despite breadth gate PASS and high RS excess.",
-          "Stop is only ~1.6 ATR below entry — vulnerable to intraday/short-term volatility and noise.",
-          "Quantity is 1.0 (single share) which may be a placeholder; position sizing implications are unclear from the packet.",
-          "Spread_bps (17.335) will modestly affect execution slippage for larger orders."
+          "Stop is relatively tight (~1.4 ATR) and could be susceptible to normal intraday/overnight volatility causing a stop-out.",
+          "Breakout strength is moderate (0.4368), so there is risk of a failed breakout/false signal.",
+          "Tier B classification implies this is not a highest-conviction setup; execution/market microstructure could impact outcome.",
+          "Spread (spread_bps ~9.72) and liquidity considerations could increase execution costs versus ideal fill price."
         ],
         "sources": []
       },
       {
         "agent": "Market Regime Agent",
-        "verdict": "REJECT",
-        "confidence": 0.85,
-        "thesis": "Headline U.S. equity indices moved lower on November 16, 2026 (S&P 500 −1.92%, Nasdaq −2.49%, Dow −1.41%), signaling risk-off pressure into the close. ([portfolio-terminal.com](https://portfolio-terminal.com/markets/stock-market-close?utm_source=openai)) Intraday volatility is elevated (VIX ~19.3), consistent with higher near-term downside risk for momentum breakouts. ([cboe.com](https://www.cboe.com/tradable-products/vix?utm_source=openai)) Sector breadth showed weakness across cyclical areas including Industrials on the session, reducing the odds that a stock in or near Industrials (RSG) can sustain a clean momentum breakout while broad selling persists. ([streetstats.finance](https://streetstats.finance/markets/sectors-industries?utm_source=openai)) Given these market-level signals, the",
+        "verdict": "APPROVE",
+        "confidence": 0.7,
+        "thesis": "As of the 2026-11-16 session the macro/market backdrop is mixed but supportive for a sector-led momentum breakout in SJM: the S&P 500 fell on 2026-11-16 while the Consumer Staples sector outperformed (small positive on the day) and SJM itself closed higher on 2026-11-16. The supplied quant packet shows breadth_gate PASS, market_breadth_pct 67.6 and strong relative strength (RS excess ~18.8%), indicating participation and stock-level strength despite index weakness. Taken together, sector leadership plus the packet’s internal breadth and RS signals support approving a momentum breakout attempt in SJM.",
         "risks": [
-          "Internal breadth provided in the quant packet (market_breadth_pct 67.6, breadth_gate PASS) contradicts the headline session sell-off — strong internal breadth could still permit a breakout despite index weakness (monitor for divergence between breadth and index prints).",
-          "Company-specific catalysts could override market pressure: Republic Services reported Q3 2026 results/metrics recently, which may provide stock-specific momentum independent of the broader market. ([republicservicesinc.gcs-web.com](https://republicservicesinc.gcs-web.com/node/30836/pdf?utm_source=openai))",
-          "VIX near 19–20 is elevated but not extreme; a rapid retracement in volatility and a rebound in leadership (e.g., mega-cap repair) would change the assessment and could make a breakout feasible.",
-          "Session weakness appears concentrated in certain sectors (tech/AI) and megacaps; a rotation into defensives or services intraday could alter the regime — watch sector flows and leadership change before reconsidering. ([apnews.com](https://apnews.com/article/4d5a35288288389d894e63e6bebe8240?utm_source=openai))"
+          "Overall index weakness on 2026-11-16 and elevated implied volatility (VIX elevated) could broaden and negate a breakout despite sector strength.",
+          "Macroeconomic / Fed-related headlines (FOMC minutes and other data due around 2026-11-18) may increase market volatility and cause abrupt reversals.",
+          "Company-specific news or the upcoming fiscal Q2 earnings release (SJM scheduled for Nov 24, 2026) could quickly invalidate the breakout.",
+          "Liquidity or wide spreads in a stressed session could push price through the stop before momentum resumes.",
+          "Breakout_strength in the packet is moderate (0.4368); success depends on follow-through and not just a one-day gap."
         ],
         "sources": [
+          {
+            "url": "https://apnews.com/article/0f76e8e304f5560e5a3116c4fec5d6b0"
+          },
           {
             "url": "https://apnews.com/article/297d040c83844a9563327340b370c24e"
           },
@@ -55,249 +59,319 @@
             "url": "https://apnews.com/article/4d5a35288288389d894e63e6bebe8240"
           },
           {
-            "url": "https://apnews.com/article/6b7d1bc2fca305df9aae81de2a471377"
+            "url": "https://apnews.com/article/81233fa35ec35e98455862541a9c1723"
           },
           {
-            "url": "https://apnews.com/article/7713e7968f5d7cab0897d4e65eb0ba78"
+            "url": "https://apnews.com/article/aa99eda4de6d94fca1a385ea1964f36b"
+          },
+          {
+            "url": "https://apnews.com/article/f37a3ec4028be7eca7cf5e963ce43135"
           },
           {
             "url": "https://apnews.com/article/f8edd0eeb1494d4d2584715686c5e619"
           },
           {
-            "url": "https://dd9ztr76gkqyi.cloudfront.net/indicators/dow-jones-industrial-average"
+            "url": "https://apnews.com/article/f9f8c119b3bec81f023100c788c0d925"
           },
           {
-            "url": "https://eoddata.com/stockquote/INDEX/DJI.htm"
+            "url": "https://chartexchange.com/symbol/nyse-sjm/"
           },
           {
-            "url": "https://finance.pineify.app/indices/dow-jones/historical-data"
+            "url": "https://cylvex.com/recap/2026-11-16"
+          },
+          {
+            "url": "https://digital.fidelity.com/prgw/digital/research/sector/detail/cons-staples"
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/Companies_listed_on_the_New_York_Stock_Exchange_%28J%29"
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/List_of_Russell_1000_companies"
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/List_of_S%26P_500_companies"
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/The_J.M._Smucker_Company"
           },
           {
             "url": "https://finance.yahoo.com/quote/%5EGSPC/history/?trk=article-ssr-frontend-pulse_little-text-block"
           },
           {
+            "url": "https://finviz.com/stock?t=SJM"
+          },
+          {
+            "url": "https://fred.stlouisfed.org/graph/?g=QxjV"
+          },
+          {
+            "url": "https://investors.jmsmucker.com/news/news-details/2026/The-J-M--Smucker-Co--to-Report-Second-Quarter-Earnings/default.aspx"
+          },
+          {
+            "url": "https://investors.jmsmucker.com/stock-info/default.aspx"
+          },
+          {
+            "url": "https://market-wrap.com/daily-wrap/2026-11-16/"
+          },
+          {
+            "url": "https://markets.ptc.ft.markitdigital.com/data/equities/tearsheet/historical?s=SJM%3ANYQ"
+          },
+          {
             "url": "https://newspaperjoint.com/markets/stock-market-today/"
+          },
+          {
+            "url": "https://oicharts.com/us/stocks/SJM"
           },
           {
             "url": "https://portfolio-terminal.com/markets/stock-market-close"
           },
           {
-            "url": "https://republicservicesinc.gcs-web.com/node/30836/pdf"
+            "url": "https://s203.q4cdn.com/703080298/files/doc_financials/2026/q4/The-J-M-Smucker-Co-FY26-Q4-Earnings-Prepared-Remarks.pdf"
           },
           {
-            "url": "https://sectivia.com/today"
+            "url": "https://s203.q4cdn.com/703080298/files/doc_financials/2027/q1/The-J-M-Smucker-Co-Announces-Fiscal-Year-2027-First-Quarter-Results-and-Updates-Full-Year-Fiscal-2027-Outlook.pdf?_sp=a4feec1c-cb30-4f77-8466-36da8270f290.1790427155010"
           },
           {
-            "url": "https://streetstats.finance/markets/sectors-industries"
+            "url": "https://s203.q4cdn.com/703080298/files/doc_news/The-J-M--Smucker-Co--to-Report-Second-Quarter-Earnings-2026.pdf"
           },
           {
-            "url": "https://www.axios.com/2026/11/06/watch-axios-bfd-summit-2026"
+            "url": "https://staging.www.jmsmucker.com/assets/jmsmucker/news-stories/corporate-publications/2026-annual-report.pdf"
+          },
+          {
+            "url": "https://stockanalysis.com/stocks/sjm/history/"
+          },
+          {
+            "url": "https://stockcharted.com/sjm/3-months"
+          },
+          {
+            "url": "https://stocknear.com/stocks/SJM/history"
+          },
+          {
+            "url": "https://trendreport.com/stocks/market/sectors/"
+          },
+          {
+            "url": "https://wkow.marketminute.com/quote/NY%3ASJM/historical"
+          },
+          {
+            "url": "https://worldmoneyroadmap.com/en/reports/2026-11-17-morning/"
           },
           {
             "url": "https://www.axios.com/newsletters/axios-closer-54cb8378-50e3-477d-999d-0aaa60f5efcc"
           },
           {
-            "url": "https://www.axios.com/newsletters/axios-macro-58454b30-e1c1-11f1-9da9-cf6b9ae889ac"
+            "url": "https://www.investing.com/equities/jm-smucker-co-historical-data"
           },
           {
-            "url": "https://www.cboe.com/tradable-products/vix"
-          },
-          {
-            "url": "https://www.investing.com/indices/us-30-historical-data?_pmch=1706861271961"
+            "url": "https://www.investing.com/indices/s-p-500-consumer-staples-historical-data"
           },
           {
             "url": "https://www.kiplinger.com/investing/economy/this-weeks-economic-calendar"
           },
           {
-            "url": "https://www.kiplinger.com/investing/stocks/nasdaq-adds-400-points-after-coreweave-earnings-stock-market-today"
+            "url": "https://www.kiplinger.com/investing/stocks/dividend-stocks/best-dividend-stocks-you-can-count-on"
           },
           {
-            "url": "https://www.quantisnow.com/sector-performance/industrials"
+            "url": "https://www.kiplinger.com/investing/stocks/nasdaq-drops-friday-on-nvidia-fallout-but-ends-the-week-up-stock-market-today"
           },
           {
-            "url": "https://www.thedailybeast.com/donald-trumps-jaw-dropping-stake-in-nvidia-revealed"
+            "url": "https://www.kiplinger.com/investing/stocks/nasdaq-slides-as-chip-stocks-slump-stock-market-today"
+          },
+          {
+            "url": "https://www.schwab.wallst.com/research/Public/Stocks/Summary?symbol=SJM"
+          },
+          {
+            "url": "https://www.tomsguide.com/news/live/jensen-huang-nvidia-crisis-live-november-2026"
+          },
+          {
+            "url": "https://www.tomshardware.com/pc-components/cpus/intel-sued-by-shareholders-for-misleading-investors-after-stock-plunges-29-percent-class-action-claims-the-company-downplayed-the-severity-of-pc-market-headwinds"
           },
           {
             "url": "https://www.wmtmt.com/notes/daily-2026-11-16"
+          },
+          {
+            "url": "https://ycharts.com/indicators/vix_volatility_index"
           }
         ]
       },
       {
         "agent": "News and Event Agent",
         "verdict": "APPROVE",
-        "confidence": 0.8,
-        "thesis": "Search of public filings and recent news through the company’s October 29, 2026 Q3 2026 earnings release and related SEC filings (10-Q for period ended September 30, 2026 and 10-K filed Feb 18, 2026) found an earnings beat/positive results (Q3 2026 EPS up vs. prior year), no downward guidance or guidance cut disclosed, no trading halts, and no material merger or acquisition that would contradict initiating a new long. The only material items identified are routine regulatory/environmental actions and previously disclosed litigation/contingencies; none constitute a verified event that argues against a new long at this time.",
+        "confidence": 0.78,
+        "thesis": "Web search found no verified material event (no trading halts, no announced merger/acquisition, no new adverse regulatory or judicial ruling) that argues against initiating a new long in SJM. Recent company disclosures show routine earnings cadence and guidance updates; the next scheduled fiscal Q2 (FY2027) results are announced for Nov 24, 2026. Ongoing legacy litigation/recall matters exist but no new adverse developments were found that would constitute a material contra-indication to a new long.",
         "risks": [
-          "Oregon Department of Environmental Quality issued a $3.1 million penalty to a Republic Services subsidiary (reported March 12, 2026) — ongoing environmental remediation and compliance risk.",
-          "Ongoing regulatory risk including EPA-related matters and petitions (e.g., EPA review of Land Disposal Restrictions variance processes) and potential future PFAS-related liabilities disclosed in the 2025 10-K (filed Feb 18, 2026).",
-          "Legal proceedings and contingent liabilities described in the company’s SEC filings (10-K/10-Q) — ongoing litigation outcomes remain a risk even if no recent material adverse legal verdicts were reported.",
-          "No formal 2027 guidance published in the Q3 2026 release (company indicated 2027 guidance is expected later), creating short-term guidance uncertainty ahead of any forward-looking updates.",
-          "Acquisition activity (~$1.1 billion YTD through Sep 30, 2026) and associated integration or transaction risks, though no material merger agreement or divestiture was reported."
+          "Upcoming fiscal Q2 (FY2027) earnings release scheduled for Nov 24, 2026 — results or guidance could be a catalyst causing significant price movement.",
+          "Ongoing product-liability/recall exposure related to past Jif peanut-butter recall and associated litigation — while insurer-coverage rulings have been reported, recall/liability outcomes remain a continued risk.",
+          "Pending litigation (e.g., lawsuit involving Trader Joe’s over frozen PB&J products) has been permitted to proceed — potential litigation costs, settlements, or rulings could be material.",
+          "Exposure to commodity/coffee tariffs and input-cost changes (prior tariff/news events have previously impacted the company) which can pressure margins and guidance.",
+          "No evidence of regulatory enforcement actions, trading halts, or announced mergers was found, but such events (if they arise between now and trade entry) would be material and should be re-checked before entry."
         ],
         "sources": [
           {
-            "url": "https://apnews.com/article/220385fc1a71b0e210afd7484067ee9b"
+            "url": "https://apnews.com/article/78d3e5702dcaf39e45a6e5fa6297dea5"
           },
           {
-            "url": "https://apnews.com/article/2d3d5551a522618f94669fbcde1aa180"
+            "url": "https://apnews.com/article/f9f8c119b3bec81f023100c788c0d925"
           },
           {
-            "url": "https://apnews.com/article/d6802417764a125aa1668e62189d00ee"
+            "url": "https://app.edgar.tools/companies/SJM/changes/risk-factors"
           },
           {
-            "url": "https://app.edgar.tools/companies/RSG/disclosures/commitments-contingencies"
+            "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0000091419/4e950508-e474-4d5c-936b-1968b9969aeb.pdf"
           },
           {
-            "url": "https://en.wikipedia.org/wiki/Republic_Services"
+            "url": "https://d5bp8bijhhba2.cloudfront.net/pdf/4d6a3ae764f2b7089436de4f982de11c44b791617bb3d8980dd29e4044560f1d.pdf"
           },
           {
-            "url": "https://en.wikipedia.org/wiki/Trading_halt"
+            "url": "https://docs.publicnow.com/viewDoc?filename=32742%5CEXT%5C7570E483469B85B0BC3AE3E3B88EF2243DACBAE1_929981F4BDF0F8335AE8202893F5127532CFEDFD.PDF"
           },
           {
-            "url": "https://investor.republicservices.com/node/30691/pdf"
+            "url": "https://en.wikipedia.org/wiki/Product_recall"
           },
           {
-            "url": "https://investor.republicservices.com/static-files/9bc2f8b9-764b-4a60-8499-033f9ac07aee?_sp=59cdadf2-3309-4024-9f53-a2ae01b28ea4"
+            "url": "https://finance.yahoo.com/markets/stocks/articles/j-m-smucker-building-momentum-164751339.html"
           },
           {
-            "url": "https://media.republicservices.com/2026-10-29-Republic-Services%2C-Inc-Reports-Third-Quarter-2026-Results"
+            "url": "https://fundamentalytics.com/stocks/sjm/"
           },
           {
-            "url": "https://nasdaqtrader.com/Trader.aspx?id=TradingHaltSearch"
+            "url": "https://investors.jmsmucker.com/news/news-details/2026/The-J-M--Smucker-Co--Announces-Fiscal-Year-2026-Fourth-Quarter-Results-and-Provides-Full-Year-Fiscal-2027-Outlook/default.aspx"
           },
           {
-            "url": "https://quartr.com/events/republic-services-inc-rsg-q3-2026_338OPpki"
+            "url": "https://investors.jmsmucker.com/news/news-details/2026/The-J-M--Smucker-Co--Announces-Fiscal-Year-2027-First-Quarter-Results-and-Updates-Full-Year-Fiscal-2027-Outlook/default.aspx"
           },
           {
-            "url": "https://republicservicesinc.gcs-web.com/news-releases/news-release-details/republic-services-inc-reports-third-quarter-2026-results"
+            "url": "https://investors.jmsmucker.com/overview/"
           },
           {
-            "url": "https://republicservicesinc.gcs-web.com/node/30836/pdf"
+            "url": "https://picks.utilarium.app/company/SJM/"
           },
           {
-            "url": "https://resource-recycling.com/recycling/2026/03/12/oregon-deq-issues-3-1-million-fine-to-republic-services-subsidiary/"
+            "url": "https://s203.q4cdn.com/703080298/files/doc_financials/2026/q4/The-J-M-Smucker-Co-FY26-Q4-Earnings-Prepared-Remarks.pdf"
           },
           {
-            "url": "https://smart-goblin.com/RSG/10-Q/2026-09-30-0001060391-26-000327/sections"
+            "url": "https://s203.q4cdn.com/703080298/files/doc_news/The-J-M--Smucker-Co--to-Report-Second-Quarter-Earnings-2026.pdf"
           },
           {
-            "url": "https://tickerscout.ai/rsg/"
+            "url": "https://sectracker.app/en/SJM"
           },
           {
-            "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/trading-halts-and-delays"
+            "url": "https://www.axios.com/2022/09/06/jif-recall-peanut-butter-salmonella-outbreak-jm-smucker"
           },
           {
-            "url": "https://www.reddit.com/r/HollowPointTrading/comments/1xx1cm6/republic_services_reported_eps_growth_outruns_the/"
+            "url": "https://www.axios.com/2025/06/10/trump-tariffs-coffee-dunkin-starbucks"
           },
           {
-            "url": "https://www.reddit.com/r/ValueInvesting/comments/1xsvip3/garbage_is_a_great_business_the_four_big_us_trash/"
+            "url": "https://www.businessinsurance.com/smucker-wins-salmonella-coverage-fight/"
           },
           {
-            "url": "https://www.reddit.com/r/corvallis/comments/1rr8t1j/state_fines_coffin_butte_landfill_3_million_for/"
+            "url": "https://www.kiplinger.com/investing/stocks/dividend-stocks/best-dividend-stocks-you-can-count-on"
           },
           {
-            "url": "https://www.reginfo.gov/public/do/eAgendaViewRule?RIN=2050-AH21&pubId=202510"
+            "url": "https://www.kiplinger.com/investing/stocks/nasdaq-slides-as-chip-stocks-slump-stock-market-today"
           },
           {
-            "url": "https://www.sec.gov/Archives/edgar/data/1060391/000106039126000327/rsg-20260930.htm"
+            "url": "https://www.sec.gov/Archives/edgar/data/91419/000009141926000079/sjm-20260826.htm"
           },
           {
-            "url": "https://www.stocktitan.net/news/RSG/republic-services-inc-reports-third-quarter-2026-blmt9m87xjum.html"
+            "url": "https://www.stocktitan.net/sec-filings/SJM/8-k.html"
+          },
+          {
+            "url": "https://www.trefis.com/data/companies/SJM/"
           }
         ]
       },
       {
         "agent": "Technical Context Agent",
         "verdict": "APPROVE",
-        "confidence": 0.72,
-        "thesis": "Supportive technical context: market breadth is positive (67.6%) and relative strength is strong (+21.52%), while a breakout signal exists (breakout_strength=0.1881). ATR (4.4783) indicates measurable volatility. Stop (246.7033) is below the entry and target (287.05515) is defined; no direct contradiction to a long breakout. Recommend approval with monitoring for false breakouts and ATR-driven noise.",
+        "confidence": 0.78,
+        "thesis": "Signal is supportive: breakout_strength=0.4368 (positive), rs_excess_pct=18.807 indicates strong relative performance, and breadth shows PASS with market_breadth_pct=67.6. ATR(14)=3.1039 indicates measurable intraday volatility. stop_price=129.4421 is below the entry (no contradiction to a long breakout) and target_price=153.68555 provides a defined upside objective. Overall the setup is coherent and approvable based on the supplied fields.",
         "risks": [
-          "Modest breakout strength (0.1881) — elevated risk of a false breakout.",
-          "Stop is relatively close to entry and may be within normal ATR-driven noise (ATR=4.4783), increasing chance of being stopped out.",
-          "General market risk — breadth (67.6%) could deteriorate, undermining the setup."
+          "Breakout strength is moderate (0.4368); false breakouts are possible.",
+          "ATR(14)=3.1039 indicates the position can experience significant intra-period swings that may hit the stop.",
+          "Market breadth could deteriorate despite the current PASS and 67.6% breadth, undermining the breakout.",
+          "Target_price is an objective, not a guarantee; overnight gaps or execution risk can alter outcomes."
         ],
         "sources": []
       },
       {
         "agent": "Thesis Agent",
         "verdict": "APPROVE",
-        "confidence": 0.75,
-        "thesis": "Bull case: The packet is internally coherent and shows a defined, tradable long setup with authoritative entry (254.04), stop (246.7033) and target (287.05515). Market internals in the packet are constructive (market_breadth_pct 67.6 — breadth_gate PASS) and the stock shows strong relative strength (rs_excess_pct 21.5178), supporting a stock-specific breakout attempt despite broader weakness. The reward:risk is explicit and the technical context agent and scanner agent both approve the setup, so a disciplined long with the stated stop and target could capture continuation if the breakout holds.\n\nBear case: Breakout_strength is low (0.1881), implying elevated false-breakout risk. The stop is relatively tight (≈7.3367 USD below entry, ~1.64 ATR), so routine ATR-driven noise could trigger a s",
+        "confidence": 0.78,
+        "thesis": "Bull case: The quant packet and specialist findings form a coherent momentum breakout setup. Entry, stop and target are directionally consistent (entry 133.85, stop 129.4421, target 153.68555) and the packet shows breadth_gate PASS, market_breadth_pct 67.6 and strong relative strength (rs_excess_pct 18.807), indicating stock- and sector-level participation despite a weak index. Breakout_strength (0.4368) is positive and the setup defines risk per share using ATR(14)=3.1039, so risk is quantified and controlled. Together these signals support a directional long with a clear upside objective and defined stop.  Bear case: The breakout strength is only moderate (0.4368) so follow-through is uncertain and false breakouts are possible. The stop is relatively tight (~1.4 ATR per specialists), mak",
         "risks": [
-          "Breakout_strength is low (0.1881) — elevated false-breakout risk.",
-          "Stop is ~1.64 ATR below entry (ATR 4.4783) and may be within normal noise, increasing chance of being stopped out.",
-          "Market-level sell-off / elevated volatility noted by Market Regime Agent could suppress momentum and cause a failed breakout.",
-          "Ongoing regulatory/environmental and litigation contingencies (per News and Event Agent) add company-specific downside risk.",
-          "Quantity = 1.0 may be a placeholder; position-sizing implications are unclear."
+          "Stop is relatively tight (~1.4 ATR given ATR_14 = 3.1039) and could be hit by normal intraday/overnight volatility.",
+          "Breakout_strength is moderate (0.4368); false breakouts and lack of follow-through are possible.",
+          "Tier B classification and moderate score imply this is not highest-conviction; execution and market microstructure could affect outcome.",
+          "Spread and liquidity (spread_bps ~9.72) may increase execution costs and slippage versus ideal fills.",
+          "Macro/regime risk and near-term catalysts (FOMC/data, scheduled earnings) could increase volatility and reverse the breakout."
         ],
         "sources": []
       },
       {
         "agent": "Claude CRO",
-        "verdict": "APPROVE",
-        "confidence": 0.67,
-        "thesis": "I found no verified company-specific event that argues against the entry. RSG beat Q3 estimates and raised FY26 guidance on Oct 29. It also expanded its buyback and received a JPMorgan upgrade. I found no trading halt, guidance cut or merger news. The Market Regime Agent's REJECT rests on the Nov 16 broad sell-off (S&P 500 -1.92%). That sell-off is real, but RSG is defensive and closed up about 1% at $255.56, so the REJECT is not supported for this name. Scanner, Technical Context, Thesis and News specialists approve. The packet shows breadth_gate PASS, breadth of 67.6% and strong relative strength of +21.5%. Confidence is only modestly above the threshold. RSI is about 75, the stock is at its 52-week high, and breakout_strength is low (0.1881). Nvidia earnings and the elevated VIX and 10-",
+        "verdict": "REJECT",
+        "confidence": 0.7,
+        "thesis": "REJECT. Smucker will report Q2 FY2027 results pre-market on 2026-11-24, about 5 sessions after the as-of date. That falls inside the likely holding window. The stop is only about 1.4 ATR below entry, so an overnight earnings gap could pass straight through it and the stop would not cap the loss. The News, Regime and Thesis specialists all listed this risk but approved anyway, with no explanation of why it is acceptable. The stock is up about 41% year to date and just hit a 52-week high after a JPMorgan target raise, so a beat is likely priced in. The P/E is about 63, net margin is about 2.5%, and acquisition-related leverage is elevated. The consensus 1-year target of about $141.88 is well below the packet's target. The company missed EPS in the prior-year Q2 report because of commodity co",
         "risks": [
-          "Overbought: RSI about 75, up about 12% in a month and at the 52-week high, so pullback or false-breakout risk is elevated.",
-          "Low breakout_strength (0.1881), flagged by several specialists.",
-          "Analyst targets cluster near the current price (Bernstein Hold $230, Barclays Hold $254), so upside may be limited.",
-          "Macro event risk: Nvidia earnings the day after the sell-off, 10-year yield above 5%, and VIX spiking. A gap could hit the stop.",
-          "The last close of $255.56 is above the authoritative entry of 254.04, so execution must confirm the fill matches the Python entry."
+          "Confirmed Q2 FY2027 earnings on 2026-11-24 pre-market, inside the holding window; a gap through the stop is possible.",
+          "Stop is only about 1.4 ATR below entry, so it is vulnerable to normal volatility and offers no protection against gaps.",
+          "Stock is up about 41% YTD at a 52-week high, so a beat is likely priced in and a miss or cautious guidance could reverse it sharply.",
+          "Valuation (P/E about 63), thin net margin (about 2.5%) and acquisition-related leverage leave little room for error.",
+          "The packet target is well above the consensus 1-year target of about $141.88."
         ],
         "sources": [
           {
-            "url": "https://benzinga.com/trading-ideas/short-ideas/26/11/63338710/top-3-industrials-stocks-that-are-ticking-portfolio-bombs-4"
+            "url": "https://au.investing.com/news/stock-market-news/jm-smucker-stock-hits-52week-high-at-13623-usd-93CH-4774487"
           },
           {
-            "url": "https://cappnotes.substack.com/p/closing-look-monday-november-16-2026"
+            "url": "https://edition.cnn.com/markets/stocks/SJM"
           },
           {
-            "url": "https://en.wikipedia.org/wiki/S%26P_500"
+            "url": "https://finance.yahoo.com/news/j-m-smucker-sets-stage-144400488.html"
           },
           {
-            "url": "https://finance.yahoo.com/markets/live/stock-market-today-monday-november-16-dow-sp-500-nasdaq-nvidia-oil-091631084.html"
+            "url": "https://finance.yahoo.com/quote/SJM/"
           },
           {
-            "url": "https://finance.yahoo.com/markets/stocks/articles/stock-market-news-nov-16-132700717.html"
+            "url": "https://pro.thestreet.com/trade-ideas/this-unlikely-consumer-stock-is-quietly-beating-apple-and-exxonmobil-in-2026"
           },
           {
-            "url": "https://finance.yahoo.com/quote/RSG/"
+            "url": "https://robinhood.com/us/en/stocks/SJM/"
           },
           {
-            "url": "https://finance.yahoo.com/quote/RSG/news/"
+            "url": "https://stockanalysis.com/stocks/sjm/"
           },
           {
-            "url": "https://seekingalpha.com/symbol/RSG"
+            "url": "https://www.defenseworld.net/2026/11/17/j-m-smucker-nysesjm-hits-new-52-week-high-on-analyst-upgrade.html"
           },
           {
-            "url": "https://simplywall.st/stocks/us/commercial-services/nyse-rsg/republic-services/news/earnings-upgrade-change-the-bull-case-for-republic-services/amp&gsessionid=b-Z8IKqdkmxXBuA3AROKdCTe5Fnczd5X6ZZ1UkOwFnGufrajwB5XNQ"
+            "url": "https://www.defenseworld.net/2026/11/17/jpmorgan-chase-co-issues-positive-forecast-for-j-m-smucker-nysesjm-stock-price.html"
           },
           {
-            "url": "https://stockanalysis.com/stocks/rsg/"
+            "url": "https://www.investing.com/news/company-news/jm-smucker-stock-hits-52week-high-at-13623-usd-93CH-5030649"
           },
           {
-            "url": "https://www.cnbc.com/2026/11/15/stock-market-today-live-updates.html"
+            "url": "https://www.marketbeat.com/earnings/reports/2025-11-25-the-j-m-smucker-company-stock/"
           },
           {
-            "url": "https://www.cnn.com/markets/stocks/RSG"
+            "url": "https://www.marketbeat.com/instant-alerts/price-j-m-smucker-nyse-sjm-reaches-new-1-year-high-on-analyst-upgrade-2026-11-16/"
           },
           {
-            "url": "https://www.fool.com/coverage/stock-market-today/2026/11/16/stock-market-midday-nov-16-stocks-slide-as-tech-selling-intensifies-across-the-market/"
+            "url": "https://www.marketbeat.com/instant-alerts/upcoming-j-m-smucker-sjm-expected-to-announce-earnings-on-tuesday-2026-11-17/"
           },
           {
-            "url": "https://www.fool.com/coverage/stock-market-today/2026/11/16/stock-market-today-nov-16-amazon-falls-on-new-ai-chip-export-rule-and-leo-satellite-launch-failure/"
+            "url": "https://www.morningstar.com/news/pr-newswire/20261103cl87340/the-jm-smucker-co-to-report-second-quarter-earnings"
           },
           {
-            "url": "https://www.fool.com/coverage/stock-market-today/2026/11/16/stock-market-today-nov-16-snap-falls-amid-tech-sector-sell-off-and-ongoing-youth-social-media-addiction-lawsuit-exposure/"
+            "url": "https://www.nasdaq.com/press-release/jm-smucker-co-report-second-quarter-earnings-2026-11-03"
           },
           {
-            "url": "https://www.google.com/finance/quote/RSG:NYSE"
+            "url": "https://www.sec.gov/Archives/edgar/data/0000091419/000009141926000047/sjm06092026exhibit991.htm"
           },
           {
-            "url": "https://www.stocktitan.net/articles/stock-market-today-live-november-16-2026"
+            "url": "https://www.tipranks.com/stocks/sjm/earnings"
           },
           {
-            "url": "https://www.tipranks.com/stocks/rsg/stock-news"
+            "url": "https://www.tradingview.com/news/prnewswire:ce19bfdd1c949:0-the-j-m-smucker-co-to-report-second-quarter-earnings/"
           }
         ]
       }
