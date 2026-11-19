@@ -1,7 +1,297 @@
 {
-  "outcome": "SPREAD_REJECTED:DRI",
+  "outcome": "ORDER_SUBMITTED:58300322159",
   "session_date": "2026-11-19",
-  "generated_at": "2026-11-19T15:10:36Z",
+  "generated_at": "2026-11-19T15:22:31Z",
   "official": true,
-  "extra_summary": []
+  "extra_summary": [],
+  "plan": {
+    "symbol": "DRI",
+    "quantity": 1.0,
+    "entry_usd": 233.97,
+    "stop_price": 228.9174,
+    "target_price": 256.70670000000007,
+    "fx_usdczk": 22.219,
+    "spread_bps": 19.251748700506475
+  },
+  "fence_key": "2026-11-19:DRI:673ad8b9e4541815f6d8141f4b89136ba864d5cb82aa2ad4b7c43650484a79c7",
+  "stop_order_id": "58300322174",
+  "param_hash": "673ad8b9e4541815f6d8141f4b89136ba864d5cb82aa2ad4b7c43650484a79c7",
+  "council": {
+    "verdict": "APPROVE",
+    "reason": "6/6 approved with Claude CRO and confidence >= 0.65",
+    "cached": false,
+    "findings": [
+      {
+        "agent": "Scanner Agent",
+        "verdict": "APPROVE",
+        "confidence": 0.86,
+        "thesis": "The packet is internally coherent: required authoritative fields are present (entry_usd, stop_price, target_price, quantity) and follow a consistent directional trade setup — stop_price (228.9174) is below entry_usd (233.97) and target_price (256.7067) is above entry_usd. Other reported metrics (atr_14, breakout_strength, rs_excess_pct, spread_bps, market_breadth_pct) are numeric and non-contradictory with the stated entry/stop/target. The authority note is respected: no authoritative fields are altered.",
+        "risks": [
+          "Stop is relatively tight (stop is roughly one ATR below entry), increasing sensitivity to normal volatility.",
+          "Spread of ~19.25 bps may cause execution slippage against the stated entry price.",
+          "Quantity = 1.0 may reflect rounding/minimum sizing and does not indicate portfolio risk allocation.",
+          "Tier B and moderate breakout_strength imply this is not the strongest category of setup and may carry higher failure probability than Tier A."
+        ],
+        "sources": []
+      },
+      {
+        "agent": "Market Regime Agent",
+        "verdict": "APPROVE",
+        "confidence": 0.65,
+        "thesis": "Market backdrop is mixed-to-cautious but not clearly hostile. Volatility is elevated (VIX ~24.6) which raises the risk of whipsaw and false breakouts; however breadth readings and sector-level data show enough constructive elements that a momentum breakout for DRI remains plausible. Treasury yields are high (10‑yr ~5.07%), and Fed minutes signal a bias toward further tightening — these are macro headwinds that increase the chance of abrupt risk-off moves. At the same time, intraday/sector data show pockets of discretionary/restaurant strength versus the broader market, so given the quant packet’s positive breadth_gate, strong breakout_strength, and RS excess versus the market, the regime does not rule out a momentum breakout for DRI but warrants caution and active risk management. ([ychart",
+        "risks": [
+          "Elevated implied volatility (VIX ~24.6) increases odds of false breakouts and wider intraday moves. ([ycharts.com](https://ycharts.com/indicators/vix_volatility_index?utm_source=openai))",
+          "High real rates / 10‑yr Treasury around 5.07% raise discount-rate pressure on equities and can trigger rotation away from cyclicals. ([fedgazette.com](https://fedgazette.com/treasury-yield-curve/?utm_source=openai))",
+          "Fed minutes indicate further tightening is likely, raising the probability of risk-off market episodes that can invalidate momentum breakouts. ([apnews.com](https://apnews.com/article/9e72f3b6e3484173471cc382d6918de0?utm_source=openai))",
+          "Sector divergence: consumer discretionary / restaurants show mixed signals across data providers — the trade could fail if discretionary sentiment deteriorates. ([ph.investing.com](https://ph.investing.com/etfs/spdr-consumer-discr.-select-sector-historical-data?utm_source=openai))",
+          "Event/headline risk (large IPOs, geopolitical or macro surprises) is elevating market noise and can abruptly change regime. ([apnews.com](https://apnews.com/article/206c84045137824feabe052a29ff6140?utm_source=openai))"
+        ],
+        "sources": [
+          {
+            "url": "https://aistockmonitor.io/tools/market-pulse"
+          },
+          {
+            "url": "https://apnews.com/article/206c84045137824feabe052a29ff6140"
+          },
+          {
+            "url": "https://apnews.com/article/40f0920738b6fea43d4049c995fb43a8"
+          },
+          {
+            "url": "https://apnews.com/article/990749d3d269f7ef05b9f6c089713a58"
+          },
+          {
+            "url": "https://apnews.com/article/9e72f3b6e3484173471cc382d6918de0"
+          },
+          {
+            "url": "https://data.pivox.pro/indices/VIX"
+          },
+          {
+            "url": "https://fedgazette.com/treasury-yield-curve/"
+          },
+          {
+            "url": "https://moneyweek.com/investments/investing-expert-top-stock-picks"
+          },
+          {
+            "url": "https://ph.investing.com/etfs/spdr-consumer-discr.-select-sector-historical-data"
+          },
+          {
+            "url": "https://saferate.com/treasury/rates/2026-11-18"
+          },
+          {
+            "url": "https://screenercharts.com/us/market-breadth"
+          },
+          {
+            "url": "https://tollbit.forbes.com/advisor/investing/treasury-rates/"
+          },
+          {
+            "url": "https://www.axios.com/2026/11/18/homebuilders-construction-housing-market-october"
+          },
+          {
+            "url": "https://www.axios.com/2026/11/18/interest-rates-new-york-fed"
+          },
+          {
+            "url": "https://www.axios.com/newsletters/axios-macro-58454b30-e1c1-11f1-9da9-cf6b9ae889ac"
+          },
+          {
+            "url": "https://www.axios.com/newsletters/axios-pro-rata-f4fcb2c0-4012-49f5-8d2b-93e19791ce1a"
+          },
+          {
+            "url": "https://www.kiplinger.com/investing/dont-let-political-dread-dictate-your-portfolio"
+          },
+          {
+            "url": "https://www.kiplinger.com/investing/stocks/nasdaq-drops-friday-on-nvidia-fallout-but-ends-the-week-up-stock-market-today"
+          },
+          {
+            "url": "https://www.marketdly.com/"
+          },
+          {
+            "url": "https://www.mcoscillator.com/market_breadth_data"
+          },
+          {
+            "url": "https://www.theatlantic.com/technology/2026/11/anthropic-winner-ai-race/689479/?utm_source=openai"
+          },
+          {
+            "url": "https://www.thedailybeast.com/worlds-second-richest-man-jeff-bezos-suddenly-jumps-off-trump-train"
+          },
+          {
+            "url": "https://ycharts.com/indicators/vix_volatility_index"
+          },
+          {
+            "url": "https://ycharts.com/indices/%5EVIX/level"
+          }
+        ]
+      },
+      {
+        "agent": "News and Event Agent",
+        "verdict": "APPROVE",
+        "confidence": 0.78,
+        "thesis": "Web search (filings and press releases through Nov 18, 2026) shows Darden Restaurants (DRI) reported fiscal Q1 FY2027 results and on Sep 24, 2026 reaffirmed full-year FY2027 guidance (diluted net EPS guidance $11.10–$11.35). Recent 10-Q / 8-K disclosures (quarter ended Aug 30, 2026) show modest same-restaurant sales growth and plans to convert/close Bahama Breeze locations; no trading halts, no material regulatory actions, no merger or major acquisition announcements, and litigation disclosures in SEC filings describe routine guest/employee matters the company states are not expected to be material. I found no verified material event that argues against initiating a new long as of the most recent public filings and releases through Nov 18, 2026.",
+        "risks": [
+          "Pending lawsuits and claims disclosed in the FY2026 10-K and subsequent filings (typical guest/employee/operational claims) — company states they are not expected to be material but outcomes can change.",
+          "Ongoing Bahama Breeze portfolio actions (closures/conversions) could have execution risk or one-time charges during conversion period (company expects conversions over 12–18 months from early 2026).",
+          "Earnings/guidance revisions or surprise negative disclosures at upcoming earnings (next scheduled report/earnings date may be Dec 11, 2026) could change outlook.",
+          "Macroeconomic or consumer-spend weakness in casual dining that materially reduces same-restaurant sales or margins.",
+          "Unforeseen regulatory action, large litigation verdict, or trading halt that emerges after the date of this search (Nov 18, 2026)."
+        ],
+        "sources": [
+          {
+            "url": "https://apnews.com/article/7a0f5f6ddbc171095b060a903595f074"
+          },
+          {
+            "url": "https://apnews.com/article/d711a4c1662f1bbcca20593122579f4e"
+          },
+          {
+            "url": "https://app.edgar.tools/companies/DRI/disclosures/commitments-contingencies"
+          },
+          {
+            "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0000940944/06d55998-da31-445f-b6f3-55e1daf9c2be.pdf"
+          },
+          {
+            "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0000940944/e8bcf5e9-9bd9-44a2-8599-17510e3796fa.pdf"
+          },
+          {
+            "url": "https://docs.publicnow.com/viewDoc?filename=42202%5CEXT%5CCD7F268EB4E3BB377772DF705E56C990DD124ABF_5752315EA67119EC2F7CC661F509034D1E32658D.PDF"
+          },
+          {
+            "url": "https://ebs.publicnow.com/view/AA7DFB796B5EF6D998167DA6F7B279A170C3406F"
+          },
+          {
+            "url": "https://equireason.com/company/DRI/estimates"
+          },
+          {
+            "url": "https://s27.q4cdn.com/308865545/files/doc_earnings/2026/q1/presentation/Q1-FY2026-Earnings-Release-Deck.pdf"
+          },
+          {
+            "url": "https://s27.q4cdn.com/308865545/files/doc_earnings/2026/q3/transcript/Q3-FY2026-Transcript.pdf"
+          },
+          {
+            "url": "https://sectracker.app/en/DRI"
+          },
+          {
+            "url": "https://stockatlas.com/companies/DRI/guidance/"
+          },
+          {
+            "url": "https://trellis.law/case/26cv00376/kevin-scott-vs-darden-restaurants-inc-et-al"
+          },
+          {
+            "url": "https://www.axios.com/2026/11/17/nvidia-earnings-jensen-huang-colette-kress"
+          },
+          {
+            "url": "https://www.investing.com/equities/dardem-rest-earnings"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/940944/000094094426000016/exhibit991-q4fy26.htm"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/940944/000094094426000032/exhibit991-q1fy27.htm"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/940944/000119312526342051/d117676dars.pdf"
+          },
+          {
+            "url": "https://www.stocktitan.net/sec-filings/DRI/10-q-darden-restaurants-inc-quarterly-earnings-report-04dfbae82a86.html"
+          },
+          {
+            "url": "https://www.stocktitan.net/sec-filings/DRI/8-k-darden-restaurants-inc-reports-material-event-bd5f15542ce5.html"
+          },
+          {
+            "url": "https://www.trefis.com/data/companies/DRI?from=covered_call_finder"
+          }
+        ]
+      },
+      {
+        "agent": "Technical Context Agent",
+        "verdict": "APPROVE",
+        "confidence": 0.87,
+        "thesis": "Breakout strength 2.2866 indicates a strong long breakout. Relative strength (rs_excess_pct 14.6746) is robust, and breadth signals are healthy (breadth_gate PASS; market_breadth_pct 61.2). ATR 14 (atr_14) = 5.2013 indicates non-negligible volatility to monitor. Stop_price 228.9174 is below the entry (entry_usd 233.97), so the stop does not contradict a long breakout. Target_price 256.7067 is above the entry and consistent with a bullish setup.",
+        "risks": [
+          "False breakout leading to a stop loss being hit",
+          "Volatility (ATR 5.2013) could produce whipsaws around the breakout level",
+          "Market breadth could deteriorate, undermining the breakout",
+          "Target may not be reached before adverse market moves occur"
+        ],
+        "sources": []
+      },
+      {
+        "agent": "Thesis Agent",
+        "verdict": "APPROVE",
+        "confidence": 0.79,
+        "thesis": "Bull case: Quant signals show a coherent momentum breakout setup with entry_usd = 233.97, stop_price = 228.9174, and target_price = 256.7067. Breakout_strength (2.2866) and RS excess (14.6746%) are supportive, breadth_gate = PASS and market_breadth_pct = 61.2 indicate constructive participation, and the target lies above the entry with a logical protective stop below—all consistent with initiating a long breakout trade. Bear case: Elevated market volatility (ATR_14 = 5.2013 and broader-market VIX/volatility signals noted by specialists), macro headwinds (high yields / tightening Fed bias) and sector/consumer discretionary uncertainty increase odds of a false breakout or rapid regime shift; the stop is relatively tight versus current volatility, so normal whipsaw could trigger an early exit",
+        "risks": [
+          "Stop is relatively tight (stop is roughly one ATR below entry), increasing sensitivity to normal volatility and whipsaw risk.",
+          "Elevated macro volatility and Fed tightening risk increase probability of false breakouts and abrupt risk-off moves.",
+          "Spread (~19.25 bps) may cause execution slippage versus the stated entry price.",
+          "Tier B / moderate breakout_strength implies higher failure probability than top-tier setups.",
+          "Company-specific risks: pending routine litigation, execution risk from store conversions/closures, or an earnings/guidance miss could quickly reverse the setup."
+        ],
+        "sources": []
+      },
+      {
+        "agent": "Claude CRO",
+        "verdict": "APPROVE",
+        "confidence": 0.67,
+        "thesis": "I found no verified event that clearly argues against this long entry. All five specialists approved, and the quant packet is internally consistent. Breadth passes, relative strength is strong, and the stop sits below entry with the target above it. The web research found no halts, merger news, regulatory action or material litigation. The litigation it did find was routine employment-law filings. Several cautions remain. (1) Fiscal Q2 2027 earnings are confirmed for Dec 18, 2026, before the open. That is about a month out and inside any multi-week hold. The News and Event Agent's Dec 11 date appears to be wrong. (2) The last print was soft. Q1 revenue slightly missed estimates, EPS only met consensus, and costs were high. The stock fell about 6% after the report. (3) Public analyst target",
+        "risks": [
+          "Fiscal Q2 2027 earnings are confirmed for Dec 18, 2026, inside a multi-week hold. The News and Event Agent's Dec 11 date conflicts with this.",
+          "The last print was soft: revenue slightly missed, EPS only met consensus, costs were high, and the stock fell about 6% afterward.",
+          "Public analyst targets are mixed to cautious: Stephens $220 Equal-Weight, Raymond James Hold, Citigroup $247. All are below or near the quant target.",
+          "Public quotes found (about $216 to $223) are below the packet entry. They are undated, so the current quote should be confirmed before execution.",
+          "The macro claims (VIX about 24.6, 10-year yield about 5.07%, Fed tightening bias) are unverified, and elevated volatility raises the risk of a false breakout."
+        ],
+        "sources": [
+          {
+            "url": "https://benzinga.com/news/earnings/22/06/27826211/why-darden-restaurants-stock-is-on-the-move-today"
+          },
+          {
+            "url": "https://finance.yahoo.com/quote/DRI/"
+          },
+          {
+            "url": "https://finance.yahoo.com/quote/DRI/news/"
+          },
+          {
+            "url": "https://marketchameleon.com/Overview/DRI/Earnings/Earnings-Dates/"
+          },
+          {
+            "url": "https://public.com/stocks/dri/earnings"
+          },
+          {
+            "url": "https://public.com/stocks/dri/news"
+          },
+          {
+            "url": "https://scanx.trade/stock-market-news/companies/darden-restaurants-q2fy27-results-earnings-release-set-december-18/56584310"
+          },
+          {
+            "url": "https://seekingalpha.com/symbol/DRI"
+          },
+          {
+            "url": "https://stockanalysis.com/stocks/dri/"
+          },
+          {
+            "url": "https://www.chartmill.com/stock/quote/DRI/analyst-ratings"
+          },
+          {
+            "url": "https://www.cnn.com/markets/stocks/DRI"
+          },
+          {
+            "url": "https://www.earningswhispers.com/stocks/DRI"
+          },
+          {
+            "url": "https://www.investing.com/equities/dardem-rest-earnings"
+          },
+          {
+            "url": "https://www.marketbeat.com/stocks/NYSE/DRI/"
+          },
+          {
+            "url": "https://www.marketbeat.com/stocks/NYSE/DRI/earnings/"
+          },
+          {
+            "url": "https://www.stocktitan.net/news/DRI/darden-restaurants-to-release-fiscal-2027-second-quarter-results-on-jn0loqqna77v.html"
+          },
+          {
+            "url": "https://www.tradingview.com/symbols/NYSE-DRI/"
+          }
+        ]
+      }
+    ]
+  }
 }
