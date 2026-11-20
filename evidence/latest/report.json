@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-11-19T02:34:09Z",
+  "generated_at": "2026-11-20T02:19:22Z",
   "universe_hash": "7ad575355432378826473b256fd72f995bb9a9b959176be86fa2d1aa1cf63ef5",
-  "source_dataset_sha256": "4a09435c1b1a921a7b0584fe2696e01537718b783782831e97ae706cbcbece16",
+  "source_dataset_sha256": "bf5f11c99e37a628e672942684fcc9984d7ede23ebfb252b721ec69b9aa6ffec",
   "param_hash": "673ad8b9e4541815f6d8141f4b89136ba864d5cb82aa2ad4b7c43650484a79c7",
   "sizing": {
     "max_risk_per_trade_czk": 500,
@@ -16,22 +16,22 @@
     "min_days": 90,
     "min_trades": 100,
     "days": 364,
-    "trades": 66,
+    "trades": 67,
     "promotion_authorized": false
   },
-  "first_session": "2025-11-19",
-  "last_session": "2026-11-18",
+  "first_session": "2025-11-20",
+  "last_session": "2026-11-19",
   "scenarios": {
     "baseline": {
-      "completed_trades": 66,
+      "completed_trades": 67,
       "winners": 15,
-      "losers": 51,
-      "win_rate_pct": 22.73,
-      "realized_pnl": 307.08,
-      "marked_pnl": 349.15,
+      "losers": 52,
+      "win_rate_pct": 22.39,
+      "realized_pnl": -118.96,
+      "marked_pnl": -589.4,
       "max_drawdown_pct": 11.09,
-      "expectancy": -0.002,
-      "profit_factor": 1.0127,
+      "expectancy": -0.0241,
+      "profit_factor": 0.9952,
       "open_positions": 7,
       "trades": [
         {
@@ -269,21 +269,21 @@
           "symbol": "AMAT",
           "entry_session": "2025-11-28",
           "exit_session": "2026-01-28",
-          "entry_price": 249.2546,
-          "exit_price": 341.909,
-          "stop_price": 228.6124,
-          "target_price": 340.9091,
+          "entry_price": 248.8844,
+          "exit_price": 341.3992,
+          "stop_price": 228.2727,
+          "target_price": 340.4027,
           "shares": 1,
           "exit_reason": "TARGET",
-          "r_multiple": 4.3024,
-          "realized_pnl_czk": 1585.63,
+          "r_multiple": 4.3023,
+          "realized_pnl_czk": 1583.25,
           "fx_entry": 18.0504,
           "fx_exit": 17.842993,
           "costs": {
             "commission_czk": 0.0,
-            "slippage_czk": 7.11,
-            "fx_fee_czk": 15.9,
-            "fx_drift_czk": -70.91
+            "slippage_czk": 7.1,
+            "fx_fee_czk": 15.88,
+            "fx_drift_czk": -70.81
           }
         },
         {
@@ -1419,19 +1419,40 @@
             "fx_fee_czk": 19.05,
             "fx_drift_czk": -62.37
           }
+        },
+        {
+          "symbol": "HAS",
+          "entry_session": "2026-11-05",
+          "exit_session": "2026-11-19",
+          "entry_price": 122.8914,
+          "exit_price": 115.0986,
+          "stop_price": 115.1562,
+          "target_price": 146.6922,
+          "shares": 3,
+          "exit_reason": "STOP",
+          "r_multiple": -1.482,
+          "realized_pnl_czk": -423.66,
+          "fx_entry": 16.618762,
+          "fx_exit": 16.568457,
+          "costs": {
+            "commission_czk": 0.0,
+            "slippage_czk": 102.65,
+            "fx_fee_czk": 17.77,
+            "fx_drift_czk": -17.37
+          }
         }
       ]
     },
     "conservative": {
-      "completed_trades": 66,
+      "completed_trades": 67,
       "winners": 15,
-      "losers": 51,
-      "win_rate_pct": 22.73,
-      "realized_pnl": -99.53,
-      "marked_pnl": -79.8,
+      "losers": 52,
+      "win_rate_pct": 22.39,
+      "realized_pnl": -531.51,
+      "marked_pnl": -1024.7,
       "max_drawdown_pct": 11.26,
-      "expectancy": -0.0192,
-      "profit_factor": 0.9959,
+      "expectancy": -0.0414,
+      "profit_factor": 0.9787,
       "open_positions": 7,
       "trades": [
         {
@@ -1669,21 +1690,21 @@
           "symbol": "AMAT",
           "entry_session": "2025-11-28",
           "exit_session": "2026-01-28",
-          "entry_price": 249.3791,
-          "exit_price": 341.7379,
-          "stop_price": 228.6124,
-          "target_price": 340.9091,
+          "entry_price": 249.0088,
+          "exit_price": 341.2284,
+          "stop_price": 228.2727,
+          "target_price": 340.4027,
           "shares": 1,
           "exit_reason": "TARGET",
-          "r_multiple": 4.288,
-          "realized_pnl_czk": 1580.34,
+          "r_multiple": 4.2879,
+          "realized_pnl_czk": 1577.95,
           "fx_entry": 18.0504,
           "fx_exit": 17.842993,
           "costs": {
             "commission_czk": 0.0,
-            "slippage_czk": 12.41,
-            "fx_fee_czk": 15.9,
-            "fx_drift_czk": -70.88
+            "slippage_czk": 12.39,
+            "fx_fee_czk": 15.87,
+            "fx_drift_czk": -70.77
           }
         },
         {
@@ -2819,19 +2840,40 @@
             "fx_fee_czk": 19.05,
             "fx_drift_czk": -62.33
           }
+        },
+        {
+          "symbol": "HAS",
+          "entry_session": "2026-11-05",
+          "exit_session": "2026-11-19",
+          "entry_price": 122.9528,
+          "exit_price": 115.041,
+          "stop_price": 115.1562,
+          "target_price": 146.6922,
+          "shares": 3,
+          "exit_reason": "STOP",
+          "r_multiple": -1.5028,
+          "realized_pnl_czk": -429.59,
+          "fx_entry": 16.618762,
+          "fx_exit": 16.568457,
+          "costs": {
+            "commission_czk": 0.0,
+            "slippage_czk": 108.57,
+            "fx_fee_czk": 17.77,
+            "fx_drift_czk": -17.36
+          }
         }
       ]
     },
     "severe": {
-      "completed_trades": 66,
+      "completed_trades": 67,
       "winners": 15,
-      "losers": 51,
-      "win_rate_pct": 22.73,
-      "realized_pnl": -912.79,
-      "marked_pnl": -937.69,
+      "losers": 52,
+      "win_rate_pct": 22.39,
+      "realized_pnl": -1356.59,
+      "marked_pnl": -1895.3,
       "max_drawdown_pct": 11.59,
-      "expectancy": -0.0536,
-      "profit_factor": 0.9637,
+      "expectancy": -0.0759,
+      "profit_factor": 0.947,
       "open_positions": 7,
       "trades": [
         {
@@ -3069,21 +3111,21 @@
           "symbol": "AMAT",
           "entry_session": "2025-11-28",
           "exit_session": "2026-01-28",
-          "entry_price": 249.6283,
-          "exit_price": 341.3958,
-          "stop_price": 228.6124,
-          "target_price": 340.9091,
+          "entry_price": 249.2575,
+          "exit_price": 340.8869,
+          "stop_price": 228.2727,
+          "target_price": 340.4027,
           "shares": 1,
           "exit_reason": "TARGET",
-          "r_multiple": 4.2593,
-          "realized_pnl_czk": 1569.74,
+          "r_multiple": 4.2592,
+          "realized_pnl_czk": 1567.37,
           "fx_entry": 18.0504,
           "fx_exit": 17.842993,
           "costs": {
             "commission_czk": 0.0,
-            "slippage_czk": 23.01,
-            "fx_fee_czk": 15.9,
-            "fx_drift_czk": -70.81
+            "slippage_czk": 22.97,
+            "fx_fee_czk": 15.87,
+            "fx_drift_czk": -70.7
           }
         },
         {
@@ -4218,6 +4260,27 @@
             "slippage_czk": 119.83,
             "fx_fee_czk": 19.05,
             "fx_drift_czk": -62.27
+          }
+        },
+        {
+          "symbol": "HAS",
+          "entry_session": "2026-11-05",
+          "exit_session": "2026-11-19",
+          "entry_price": 123.0757,
+          "exit_price": 114.9259,
+          "stop_price": 115.1562,
+          "target_price": 146.6922,
+          "shares": 3,
+          "exit_reason": "STOP",
+          "r_multiple": -1.5442,
+          "realized_pnl_czk": -441.43,
+          "fx_entry": 16.618762,
+          "fx_exit": 16.568457,
+          "costs": {
+            "commission_czk": 0.0,
+            "slippage_czk": 120.42,
+            "fx_fee_czk": 17.77,
+            "fx_drift_czk": -17.34
           }
         }
       ]
