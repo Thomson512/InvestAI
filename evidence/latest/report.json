@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-11-20T02:19:22Z",
+  "generated_at": "2026-11-21T02:14:02Z",
   "universe_hash": "7ad575355432378826473b256fd72f995bb9a9b959176be86fa2d1aa1cf63ef5",
-  "source_dataset_sha256": "bf5f11c99e37a628e672942684fcc9984d7ede23ebfb252b721ec69b9aa6ffec",
+  "source_dataset_sha256": "4bf9b87285ce5b817c35d9a7883998ad981d3ef816474de574acdeb82f48cc3e",
   "param_hash": "673ad8b9e4541815f6d8141f4b89136ba864d5cb82aa2ad4b7c43650484a79c7",
   "sizing": {
     "max_risk_per_trade_czk": 500,
@@ -16,23 +16,23 @@
     "min_days": 90,
     "min_trades": 100,
     "days": 364,
-    "trades": 67,
+    "trades": 68,
     "promotion_authorized": false
   },
-  "first_session": "2025-11-20",
-  "last_session": "2026-11-19",
+  "first_session": "2025-11-21",
+  "last_session": "2026-11-20",
   "scenarios": {
     "baseline": {
-      "completed_trades": 67,
+      "completed_trades": 68,
       "winners": 15,
-      "losers": 52,
-      "win_rate_pct": 22.39,
-      "realized_pnl": -118.96,
-      "marked_pnl": -589.4,
+      "losers": 53,
+      "win_rate_pct": 22.06,
+      "realized_pnl": -599.34,
+      "marked_pnl": -1371.34,
       "max_drawdown_pct": 11.09,
-      "expectancy": -0.0241,
-      "profit_factor": 0.9952,
-      "open_positions": 7,
+      "expectancy": -0.0386,
+      "profit_factor": 0.9761,
+      "open_positions": 6,
       "trades": [
         {
           "symbol": "CAH",
@@ -41,7 +41,7 @@
           "entry_price": 210.9854,
           "exit_price": 203.4197,
           "stop_price": 203.5215,
-          "target_price": 248.9434,
+          "target_price": 248.9433,
           "shares": 2,
           "exit_reason": "STOP",
           "r_multiple": -1.0047,
@@ -80,21 +80,21 @@
           "symbol": "AMGN",
           "entry_session": "2025-12-01",
           "exit_session": "2025-12-05",
-          "entry_price": 336.4281,
-          "exit_price": 324.5193,
-          "stop_price": 324.6816,
-          "target_price": 400.6829,
+          "entry_price": 334.4972,
+          "exit_price": 322.6479,
+          "stop_price": 322.8093,
+          "target_price": 398.3833,
           "shares": 1,
           "exit_reason": "STOP",
-          "r_multiple": -0.9361,
-          "realized_pnl_czk": -233.45,
+          "r_multiple": -0.9367,
+          "realized_pnl_czk": -232.26,
           "fx_entry": 18.046283,
           "fx_exit": 18.044295,
           "costs": {
             "commission_czk": 0.0,
-            "slippage_czk": -34.46,
-            "fx_fee_czk": 17.89,
-            "fx_drift_czk": -0.65
+            "slippage_czk": -34.13,
+            "fx_fee_czk": 17.79,
+            "fx_drift_czk": -0.64
           }
         },
         {
@@ -1440,20 +1440,41 @@
             "fx_fee_czk": 17.77,
             "fx_drift_czk": -17.37
           }
+        },
+        {
+          "symbol": "LUV",
+          "entry_session": "2026-11-19",
+          "exit_session": "2026-11-20",
+          "entry_price": 46.9585,
+          "exit_price": 43.8674,
+          "stop_price": 43.8893,
+          "target_price": 61.4106,
+          "shares": 9,
+          "exit_reason": "STOP",
+          "r_multiple": -1.0137,
+          "realized_pnl_czk": -481.57,
+          "fx_entry": 16.568457,
+          "fx_exit": 16.567653,
+          "costs": {
+            "commission_czk": 0.0,
+            "slippage_czk": -14.1,
+            "fx_fee_czk": 20.31,
+            "fx_drift_czk": -0.32
+          }
         }
       ]
     },
     "conservative": {
-      "completed_trades": 67,
+      "completed_trades": 68,
       "winners": 15,
-      "losers": 52,
-      "win_rate_pct": 22.39,
-      "realized_pnl": -531.51,
-      "marked_pnl": -1024.7,
+      "losers": 53,
+      "win_rate_pct": 22.06,
+      "realized_pnl": -1018.63,
+      "marked_pnl": -1809.87,
       "max_drawdown_pct": 11.26,
-      "expectancy": -0.0414,
-      "profit_factor": 0.9787,
-      "open_positions": 7,
+      "expectancy": -0.0559,
+      "profit_factor": 0.96,
+      "open_positions": 6,
       "trades": [
         {
           "symbol": "CAH",
@@ -1462,7 +1483,7 @@
           "entry_price": 211.0909,
           "exit_price": 203.318,
           "stop_price": 203.5215,
-          "target_price": 248.9434,
+          "target_price": 248.9433,
           "shares": 2,
           "exit_reason": "STOP",
           "r_multiple": -1.0297,
@@ -1501,20 +1522,20 @@
           "symbol": "AMGN",
           "entry_session": "2025-12-01",
           "exit_session": "2025-12-05",
-          "entry_price": 336.5963,
-          "exit_price": 324.3569,
-          "stop_price": 324.6816,
-          "target_price": 400.6829,
+          "entry_price": 334.6643,
+          "exit_price": 322.4865,
+          "stop_price": 322.8093,
+          "target_price": 398.3833,
           "shares": 1,
           "exit_reason": "STOP",
-          "r_multiple": -0.9601,
-          "realized_pnl_czk": -239.41,
+          "r_multiple": -0.9606,
+          "realized_pnl_czk": -238.19,
           "fx_entry": 18.046283,
           "fx_exit": 18.044295,
           "costs": {
             "commission_czk": 0.0,
-            "slippage_czk": -28.5,
-            "fx_fee_czk": 17.89,
+            "slippage_czk": -28.2,
+            "fx_fee_czk": 17.79,
             "fx_drift_czk": -0.64
           }
         },
@@ -2861,20 +2882,41 @@
             "fx_fee_czk": 17.77,
             "fx_drift_czk": -17.36
           }
+        },
+        {
+          "symbol": "LUV",
+          "entry_session": "2026-11-19",
+          "exit_session": "2026-11-20",
+          "entry_price": 46.9819,
+          "exit_price": 43.8454,
+          "stop_price": 43.8893,
+          "target_price": 61.4106,
+          "shares": 9,
+          "exit_reason": "STOP",
+          "r_multiple": -1.028,
+          "realized_pnl_czk": -488.34,
+          "fx_entry": 16.568457,
+          "fx_exit": 16.567653,
+          "costs": {
+            "commission_czk": 0.0,
+            "slippage_czk": -7.33,
+            "fx_fee_czk": 20.32,
+            "fx_drift_czk": -0.32
+          }
         }
       ]
     },
     "severe": {
-      "completed_trades": 67,
+      "completed_trades": 68,
       "winners": 15,
-      "losers": 52,
-      "win_rate_pct": 22.39,
-      "realized_pnl": -1356.59,
-      "marked_pnl": -1895.3,
+      "losers": 53,
+      "win_rate_pct": 22.06,
+      "realized_pnl": -1857.18,
+      "marked_pnl": -2686.94,
       "max_drawdown_pct": 11.59,
-      "expectancy": -0.0759,
-      "profit_factor": 0.947,
-      "open_positions": 7,
+      "expectancy": -0.0903,
+      "profit_factor": 0.9288,
+      "open_positions": 6,
       "trades": [
         {
           "symbol": "CAH",
@@ -2883,7 +2925,7 @@
           "entry_price": 211.3018,
           "exit_price": 203.1145,
           "stop_price": 203.5215,
-          "target_price": 248.9434,
+          "target_price": 248.9433,
           "shares": 2,
           "exit_reason": "STOP",
           "r_multiple": -1.0799,
@@ -2922,20 +2964,20 @@
           "symbol": "AMGN",
           "entry_session": "2025-12-01",
           "exit_session": "2025-12-05",
-          "entry_price": 336.9325,
-          "exit_price": 324.0322,
-          "stop_price": 324.6816,
-          "target_price": 400.6829,
+          "entry_price": 334.9987,
+          "exit_price": 322.1637,
+          "stop_price": 322.8093,
+          "target_price": 398.3833,
           "shares": 1,
           "exit_reason": "STOP",
-          "r_multiple": -1.0079,
-          "realized_pnl_czk": -251.34,
+          "r_multiple": -1.0084,
+          "realized_pnl_czk": -250.05,
           "fx_entry": 18.046283,
           "fx_exit": 18.044295,
           "costs": {
             "commission_czk": 0.0,
-            "slippage_czk": -16.57,
-            "fx_fee_czk": 17.89,
+            "slippage_czk": -16.35,
+            "fx_fee_czk": 17.79,
             "fx_drift_czk": -0.64
           }
         },
@@ -4281,6 +4323,27 @@
             "slippage_czk": 120.42,
             "fx_fee_czk": 17.77,
             "fx_drift_czk": -17.34
+          }
+        },
+        {
+          "symbol": "LUV",
+          "entry_session": "2026-11-19",
+          "exit_session": "2026-11-20",
+          "entry_price": 47.0289,
+          "exit_price": 43.8015,
+          "stop_price": 43.8893,
+          "target_price": 61.4106,
+          "shares": 9,
+          "exit_reason": "STOP",
+          "r_multiple": -1.0565,
+          "realized_pnl_czk": -501.88,
+          "fx_entry": 16.568457,
+          "fx_exit": 16.567653,
+          "costs": {
+            "commission_czk": 0.0,
+            "slippage_czk": 6.21,
+            "fx_fee_czk": 20.32,
+            "fx_drift_czk": -0.32
           }
         }
       ]
