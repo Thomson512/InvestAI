@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-11-21T02:14:02Z",
+  "generated_at": "2026-11-24T05:20:13Z",
   "universe_hash": "7ad575355432378826473b256fd72f995bb9a9b959176be86fa2d1aa1cf63ef5",
-  "source_dataset_sha256": "4bf9b87285ce5b817c35d9a7883998ad981d3ef816474de574acdeb82f48cc3e",
+  "source_dataset_sha256": "3741bbcb4ba9790b7297a2c4841f49bffe3a1b3ee4330746cbb0239ff0c058a4",
   "param_hash": "673ad8b9e4541815f6d8141f4b89136ba864d5cb82aa2ad4b7c43650484a79c7",
   "sizing": {
     "max_risk_per_trade_czk": 500,
@@ -16,22 +16,22 @@
     "min_days": 90,
     "min_trades": 100,
     "days": 364,
-    "trades": 68,
+    "trades": 69,
     "promotion_authorized": false
   },
-  "first_session": "2025-11-21",
-  "last_session": "2026-11-20",
+  "first_session": "2025-11-24",
+  "last_session": "2026-11-23",
   "scenarios": {
     "baseline": {
-      "completed_trades": 68,
-      "winners": 15,
-      "losers": 53,
-      "win_rate_pct": 22.06,
-      "realized_pnl": -599.34,
-      "marked_pnl": -1371.34,
-      "max_drawdown_pct": 11.09,
-      "expectancy": -0.0386,
-      "profit_factor": 0.9761,
+      "completed_trades": 69,
+      "winners": 17,
+      "losers": 52,
+      "win_rate_pct": 24.64,
+      "realized_pnl": 3239.23,
+      "marked_pnl": 2999.24,
+      "max_drawdown_pct": 9.65,
+      "expectancy": 0.1064,
+      "profit_factor": 1.1342,
       "open_positions": 6,
       "trades": [
         {
@@ -41,7 +41,7 @@
           "entry_price": 210.9854,
           "exit_price": 203.4197,
           "stop_price": 203.5215,
-          "target_price": 248.9433,
+          "target_price": 248.9434,
           "shares": 2,
           "exit_reason": "STOP",
           "r_multiple": -1.0047,
@@ -62,7 +62,7 @@
           "entry_price": 366.5832,
           "exit_price": 347.3391,
           "stop_price": 347.5129,
-          "target_price": 455.0219,
+          "target_price": 455.0217,
           "shares": 1,
           "exit_reason": "STOP",
           "r_multiple": -1.045,
@@ -146,7 +146,7 @@
           "entry_price": 261.4407,
           "exit_price": 236.6725,
           "stop_price": 236.7909,
-          "target_price": 383.251,
+          "target_price": 383.2509,
           "shares": 1,
           "exit_reason": "STOP",
           "r_multiple": -0.9636,
@@ -167,7 +167,7 @@
           "entry_price": 282.071,
           "exit_price": 271.1015,
           "stop_price": 271.2371,
-          "target_price": 331.4782,
+          "target_price": 331.4781,
           "shares": 1,
           "exit_reason": "STOP",
           "r_multiple": -1.1068,
@@ -200,27 +200,6 @@
             "slippage_czk": 1.45,
             "fx_fee_czk": 20.58,
             "fx_drift_czk": -13.03
-          }
-        },
-        {
-          "symbol": "BIIB",
-          "entry_session": "2025-11-24",
-          "exit_session": "2026-01-16",
-          "entry_price": 177.1085,
-          "exit_price": 165.5068,
-          "stop_price": 165.5896,
-          "target_price": 218.9418,
-          "shares": 2,
-          "exit_reason": "STOP",
-          "r_multiple": -1.4394,
-          "realized_pnl_czk": -504.41,
-          "fx_entry": 18.062287,
-          "fx_exit": 17.860359,
-          "costs": {
-            "commission_czk": 0.0,
-            "slippage_czk": 68.65,
-            "fx_fee_czk": 18.46,
-            "fx_drift_czk": -66.84
           }
         },
         {
@@ -272,7 +251,7 @@
           "entry_price": 248.8844,
           "exit_price": 341.3992,
           "stop_price": 228.2727,
-          "target_price": 340.4027,
+          "target_price": 340.4026,
           "shares": 1,
           "exit_reason": "TARGET",
           "r_multiple": 4.3023,
@@ -305,27 +284,6 @@
             "slippage_czk": -76.31,
             "fx_fee_czk": 11.91,
             "fx_drift_czk": -52.08
-          }
-        },
-        {
-          "symbol": "BA",
-          "entry_session": "2026-01-21",
-          "exit_session": "2026-01-28",
-          "entry_price": 248.7443,
-          "exit_price": 238.3712,
-          "stop_price": 238.4904,
-          "target_price": 295.9082,
-          "shares": 1,
-          "exit_reason": "STOP",
-          "r_multiple": -1.0827,
-          "realized_pnl_czk": -201.85,
-          "fx_entry": 17.85796,
-          "fx_exit": 17.842993,
-          "costs": {
-            "commission_czk": 0.0,
-            "slippage_czk": -1.19,
-            "fx_fee_czk": 13.04,
-            "fx_drift_czk": -3.57
           }
         },
         {
@@ -413,6 +371,48 @@
           }
         },
         {
+          "symbol": "LUV",
+          "entry_session": "2025-12-15",
+          "exit_session": "2026-02-04",
+          "entry_price": 40.9905,
+          "exit_price": 51.1953,
+          "stop_price": 38.0687,
+          "target_price": 51.2209,
+          "shares": 10,
+          "exit_reason": "TARGET",
+          "r_multiple": 3.9435,
+          "realized_pnl_czk": 1700.04,
+          "fx_entry": 18.028062,
+          "fx_exit": 17.803569,
+          "costs": {
+            "commission_czk": 0.0,
+            "slippage_czk": 100.2,
+            "fx_fee_czk": 24.76,
+            "fx_drift_czk": -114.93
+          }
+        },
+        {
+          "symbol": "CHRW",
+          "entry_session": "2026-01-30",
+          "exit_session": "2026-02-12",
+          "entry_price": 190.4852,
+          "exit_price": 182.9885,
+          "stop_price": 183.08,
+          "target_price": 229.3352,
+          "shares": 2,
+          "exit_reason": "STOP",
+          "r_multiple": -1.0713,
+          "realized_pnl_czk": -321.36,
+          "fx_entry": 17.834249,
+          "fx_exit": 17.741272,
+          "costs": {
+            "commission_czk": 0.0,
+            "slippage_czk": -32.59,
+            "fx_fee_czk": 19.93,
+            "fx_drift_czk": -34.03
+          }
+        },
+        {
           "symbol": "FDX",
           "entry_session": "2026-02-02",
           "exit_session": "2026-02-12",
@@ -455,24 +455,45 @@
           }
         },
         {
-          "symbol": "TXN",
-          "entry_session": "2026-02-03",
-          "exit_session": "2026-02-24",
-          "entry_price": 221.0004,
-          "exit_price": 209.607,
-          "stop_price": 209.7119,
-          "target_price": 275.6466,
-          "shares": 2,
+          "symbol": "WMT",
+          "entry_session": "2026-02-13",
+          "exit_session": "2026-02-18",
+          "entry_price": 131.9259,
+          "exit_price": 126.7353,
+          "stop_price": 126.7987,
+          "target_price": 159.9708,
+          "shares": 3,
           "exit_reason": "STOP",
-          "r_multiple": -1.131,
-          "realized_pnl_czk": -482.96,
-          "fx_entry": 17.810582,
-          "fx_exit": 17.681331,
+          "r_multiple": -0.9622,
+          "realized_pnl_czk": -308.73,
+          "fx_entry": 17.733824,
+          "fx_exit": 17.702375,
           "costs": {
             "commission_czk": 0.0,
-            "slippage_czk": -21.21,
-            "fx_fee_czk": 22.93,
-            "fx_drift_czk": -54.18
+            "slippage_czk": -44.73,
+            "fx_fee_czk": 20.62,
+            "fx_drift_czk": -11.96
+          }
+        },
+        {
+          "symbol": "LUV",
+          "entry_session": "2026-02-05",
+          "exit_session": "2026-02-27",
+          "entry_price": 51.9059,
+          "exit_price": 48.4041,
+          "stop_price": 48.4283,
+          "target_price": 67.3576,
+          "shares": 8,
+          "exit_reason": "STOP",
+          "r_multiple": -1.1552,
+          "realized_pnl_czk": -566.05,
+          "fx_entry": 17.79622,
+          "fx_exit": 17.677079,
+          "costs": {
+            "commission_czk": 0.0,
+            "slippage_czk": 8.54,
+            "fx_fee_czk": 21.35,
+            "fx_drift_czk": -46.14
           }
         },
         {
@@ -497,45 +518,24 @@
           }
         },
         {
-          "symbol": "LUV",
-          "entry_session": "2026-01-30",
+          "symbol": "ADI",
+          "entry_session": "2026-02-19",
           "exit_session": "2026-03-05",
-          "entry_price": 48.3942,
-          "exit_price": 44.5577,
-          "stop_price": 44.58,
-          "target_price": 62.3451,
-          "shares": 8,
+          "entry_price": 342.7213,
+          "exit_price": 323.952,
+          "stop_price": 324.1141,
+          "target_price": 429.5264,
+          "shares": 1,
           "exit_reason": "STOP",
-          "r_multiple": -1.3548,
-          "realized_pnl_czk": -624.36,
-          "fx_entry": 17.834249,
+          "r_multiple": -1.0541,
+          "realized_pnl_czk": -357.54,
+          "fx_entry": 17.697541,
           "fx_exit": 17.673817,
           "costs": {
             "commission_czk": 0.0,
-            "slippage_czk": 86.5,
-            "fx_fee_czk": 19.81,
-            "fx_drift_czk": -57.19
-          }
-        },
-        {
-          "symbol": "GLW",
-          "entry_session": "2026-02-25",
-          "exit_session": "2026-03-05",
-          "entry_price": 152.2061,
-          "exit_price": 135.1024,
-          "stop_price": 137.43,
-          "target_price": 208.9849,
-          "shares": 2,
-          "exit_reason": "STOP",
-          "r_multiple": -1.3511,
-          "realized_pnl_czk": -621.55,
-          "fx_entry": 17.679542,
-          "fx_exit": 17.673817,
-          "costs": {
-            "commission_czk": 0.0,
-            "slippage_czk": 64.84,
-            "fx_fee_czk": 15.24,
-            "fx_drift_czk": -1.55
+            "slippage_czk": -7.02,
+            "fx_fee_czk": 17.69,
+            "fx_drift_czk": -7.69
           }
         },
         {
@@ -581,45 +581,45 @@
           }
         },
         {
-          "symbol": "BALL",
-          "entry_session": "2026-02-05",
-          "exit_session": "2026-03-09",
-          "entry_price": 64.3522,
-          "exit_price": 60.6896,
-          "stop_price": 61.2588,
-          "target_price": 77.2703,
-          "shares": 7,
-          "exit_reason": "STOP",
-          "r_multiple": -1.4711,
-          "realized_pnl_czk": -533.51,
-          "fx_entry": 17.79622,
-          "fx_exit": 17.66918,
-          "costs": {
-            "commission_czk": 0.0,
-            "slippage_czk": 26.45,
-            "fx_fee_czk": 23.28,
-            "fx_drift_czk": -53.97
-          }
-        },
-        {
           "symbol": "VTRS",
           "entry_session": "2026-02-05",
           "exit_session": "2026-03-13",
-          "entry_price": 13.947,
-          "exit_price": 13.3324,
-          "stop_price": 13.3391,
-          "target_price": 17.0839,
+          "entry_price": 13.8669,
+          "exit_price": 13.2476,
+          "stop_price": 13.2542,
+          "target_price": 16.9711,
           "shares": 32,
           "exit_reason": "STOP",
-          "r_multiple": -1.1146,
-          "realized_pnl_czk": -432.18,
+          "r_multiple": -1.1288,
+          "realized_pnl_czk": -434.41,
           "fx_entry": 17.79622,
           "fx_exit": 17.657924,
           "costs": {
             "commission_czk": 0.0,
-            "slippage_czk": -37.82,
-            "fx_fee_czk": 23.21,
-            "fx_drift_czk": -59.0
+            "slippage_czk": -32.17,
+            "fx_fee_czk": 23.07,
+            "fx_drift_czk": -58.63
+          }
+        },
+        {
+          "symbol": "HSY",
+          "entry_session": "2026-02-06",
+          "exit_session": "2026-03-19",
+          "entry_price": 218.9494,
+          "exit_price": 206.6066,
+          "stop_price": 206.905,
+          "target_price": 265.6726,
+          "shares": 2,
+          "exit_reason": "STOP",
+          "r_multiple": -1.3919,
+          "realized_pnl_czk": -529.11,
+          "fx_entry": 17.788598,
+          "fx_exit": 17.625535,
+          "costs": {
+            "commission_czk": 0.0,
+            "slippage_czk": 52.01,
+            "fx_fee_czk": 22.61,
+            "fx_drift_czk": -67.38
           }
         },
         {
@@ -644,6 +644,27 @@
           }
         },
         {
+          "symbol": "APA",
+          "entry_session": "2026-03-02",
+          "exit_session": "2026-03-24",
+          "entry_price": 31.926,
+          "exit_price": 40.3689,
+          "stop_price": 27.4713,
+          "target_price": 40.3891,
+          "shares": 12,
+          "exit_reason": "TARGET",
+          "r_multiple": 3.4638,
+          "realized_pnl_czk": 1725.55,
+          "fx_entry": 17.675223,
+          "fx_exit": 17.58793,
+          "costs": {
+            "commission_czk": 0.0,
+            "slippage_czk": 450.94,
+            "fx_fee_czk": 22.94,
+            "fx_drift_czk": -42.29
+          }
+        },
+        {
           "symbol": "GILD",
           "entry_session": "2026-02-02",
           "exit_session": "2026-03-27",
@@ -662,6 +683,27 @@
             "slippage_czk": -30.74,
             "fx_fee_czk": 21.62,
             "fx_drift_czk": -100.73
+          }
+        },
+        {
+          "symbol": "AKAM",
+          "entry_session": "2026-03-26",
+          "exit_session": "2026-03-30",
+          "entry_price": 118.6493,
+          "exit_price": 109.9534,
+          "stop_price": 110.0084,
+          "target_price": 159.737,
+          "shares": 3,
+          "exit_reason": "STOP",
+          "r_multiple": -1.0204,
+          "realized_pnl_czk": -486.37,
+          "fx_entry": 17.57203,
+          "fx_exit": 17.542033,
+          "costs": {
+            "commission_czk": 0.0,
+            "slippage_czk": -18.23,
+            "fx_fee_czk": 18.06,
+            "fx_drift_czk": -9.89
           }
         },
         {
@@ -686,27 +728,6 @@
           }
         },
         {
-          "symbol": "CVX",
-          "entry_session": "2026-03-13",
-          "exit_session": "2026-04-08",
-          "entry_price": 190.7353,
-          "exit_price": 184.0411,
-          "stop_price": 184.1332,
-          "target_price": 226.7957,
-          "shares": 2,
-          "exit_reason": "STOP",
-          "r_multiple": -1.1487,
-          "realized_pnl_czk": -314.66,
-          "fx_entry": 17.657924,
-          "fx_exit": 17.499038,
-          "costs": {
-            "commission_czk": 0.0,
-            "slippage_czk": -37.56,
-            "fx_fee_czk": 19.77,
-            "fx_drift_czk": -58.48
-          }
-        },
-        {
           "symbol": "HAL",
           "entry_session": "2026-03-26",
           "exit_session": "2026-04-08",
@@ -728,24 +749,45 @@
           }
         },
         {
-          "symbol": "OXY",
-          "entry_session": "2026-03-13",
-          "exit_session": "2026-04-17",
-          "entry_price": 57.1486,
-          "exit_price": 53.2933,
-          "stop_price": 53.9291,
-          "target_price": 75.604,
-          "shares": 7,
+          "symbol": "FFIV",
+          "entry_session": "2026-04-07",
+          "exit_session": "2026-04-10",
+          "entry_price": 307.3336,
+          "exit_price": 289.5985,
+          "stop_price": 289.7434,
+          "target_price": 388.5047,
+          "shares": 1,
           "exit_reason": "STOP",
-          "r_multiple": -1.149,
-          "realized_pnl_czk": -559.71,
-          "fx_entry": 17.657924,
+          "r_multiple": -1.0438,
+          "realized_pnl_czk": -328.02,
+          "fx_entry": 17.501755,
+          "fx_exit": 17.494989,
+          "costs": {
+            "commission_czk": 0.0,
+            "slippage_czk": -3.88,
+            "fx_fee_czk": 15.67,
+            "fx_drift_czk": -1.96
+          }
+        },
+        {
+          "symbol": "DVN",
+          "entry_session": "2026-03-16",
+          "exit_session": "2026-04-17",
+          "entry_price": 45.4627,
+          "exit_price": 42.6087,
+          "stop_price": 42.8937,
+          "target_price": 57.8885,
+          "shares": 9,
+          "exit_reason": "STOP",
+          "r_multiple": -1.2319,
+          "realized_pnl_czk": -533.31,
+          "fx_entry": 17.643986,
           "fx_exit": 17.489577,
           "costs": {
             "commission_czk": 0.0,
-            "slippage_czk": -85.91,
-            "fx_fee_czk": 20.38,
-            "fx_drift_czk": -62.8
+            "slippage_czk": -21.62,
+            "fx_fee_czk": 20.89,
+            "fx_drift_czk": -59.21
           }
         },
         {
@@ -920,21 +962,21 @@
           "symbol": "VLO",
           "entry_session": "2026-03-06",
           "exit_session": "2026-07-13",
-          "entry_price": 225.8229,
-          "exit_price": 288.076,
-          "stop_price": 212.2466,
-          "target_price": 288.2201,
+          "entry_price": 225.0024,
+          "exit_price": 287.0233,
+          "stop_price": 211.4662,
+          "target_price": 287.1669,
           "shares": 2,
           "exit_reason": "TARGET",
-          "r_multiple": 3.7999,
-          "realized_pnl_czk": 1855.3,
+          "r_multiple": 3.7993,
+          "realized_pnl_czk": 1848.35,
           "fx_entry": 17.673094,
           "fx_exit": 17.120563,
           "costs": {
             "commission_czk": 0.0,
-            "slippage_czk": -3.45,
-            "fx_fee_czk": 26.77,
-            "fx_drift_czk": -318.34
+            "slippage_czk": -3.13,
+            "fx_fee_czk": 26.67,
+            "fx_drift_czk": -317.18
           }
         },
         {
@@ -1106,27 +1148,6 @@
           }
         },
         {
-          "symbol": "APA",
-          "entry_session": "2026-03-16",
-          "exit_session": "2026-09-10",
-          "entry_price": 33.7169,
-          "exit_price": 45.7471,
-          "stop_price": 31.2952,
-          "target_price": 45.2365,
-          "shares": 11,
-          "exit_reason": "TARGET",
-          "r_multiple": 3.9309,
-          "realized_pnl_czk": 1933.84,
-          "fx_entry": 17.643986,
-          "fx_exit": 16.891883,
-          "costs": {
-            "commission_czk": 0.0,
-            "slippage_czk": -17.71,
-            "fx_fee_czk": 22.57,
-            "fx_drift_czk": -378.47
-          }
-        },
-        {
           "symbol": "CRM",
           "entry_session": "2026-08-31",
           "exit_session": "2026-09-22",
@@ -1145,27 +1166,6 @@
             "slippage_czk": -6.54,
             "fx_fee_czk": 12.38,
             "fx_drift_czk": -29.9
-          }
-        },
-        {
-          "symbol": "HPQ",
-          "entry_session": "2026-09-14",
-          "exit_session": "2026-09-22",
-          "entry_price": 35.1326,
-          "exit_price": 32.3064,
-          "stop_price": 32.3226,
-          "target_price": 49.661,
-          "shares": 9,
-          "exit_reason": "STOP",
-          "r_multiple": -0.9652,
-          "realized_pnl_czk": -461.81,
-          "fx_entry": 16.863782,
-          "fx_exit": 16.803414,
-          "costs": {
-            "commission_czk": 0.0,
-            "slippage_czk": -49.53,
-            "fx_fee_czk": 15.33,
-            "fx_drift_czk": -17.55
           }
         },
         {
@@ -1256,21 +1256,21 @@
           "symbol": "VLO",
           "entry_session": "2026-09-04",
           "exit_session": "2026-10-14",
-          "entry_price": 364.202,
-          "exit_price": 458.6705,
-          "stop_price": 351.2256,
-          "target_price": 457.785,
+          "entry_price": 362.8713,
+          "exit_price": 457.0014,
+          "stop_price": 349.9488,
+          "target_price": 456.1054,
           "shares": 1,
           "exit_reason": "TARGET",
-          "r_multiple": 4.5675,
-          "realized_pnl_czk": 1497.42,
+          "r_multiple": 4.5684,
+          "realized_pnl_czk": 1492.06,
           "fx_entry": 16.921281,
           "fx_exit": 16.746112,
           "costs": {
             "commission_czk": 0.0,
-            "slippage_czk": -104.42,
-            "fx_fee_czk": 20.77,
-            "fx_drift_czk": -80.34
+            "slippage_czk": -104.11,
+            "fx_fee_czk": 20.69,
+            "fx_drift_czk": -80.05
           }
         },
         {
@@ -1292,6 +1292,27 @@
             "slippage_czk": -65.49,
             "fx_fee_czk": 11.53,
             "fx_drift_czk": -0.33
+          }
+        },
+        {
+          "symbol": "EBAY",
+          "entry_session": "2026-04-07",
+          "exit_session": "2026-10-15",
+          "entry_price": 96.7584,
+          "exit_price": 122.2135,
+          "stop_price": 91.5545,
+          "target_price": 122.2746,
+          "shares": 4,
+          "exit_reason": "TARGET",
+          "r_multiple": 3.553,
+          "realized_pnl_czk": 1389.31,
+          "fx_entry": 17.501755,
+          "fx_exit": 16.744287,
+          "costs": {
+            "commission_czk": 0.0,
+            "slippage_czk": -22.62,
+            "fx_fee_czk": 22.44,
+            "fx_drift_czk": -370.29
           }
         },
         {
@@ -1421,24 +1442,24 @@
           }
         },
         {
-          "symbol": "HAS",
-          "entry_session": "2026-11-05",
+          "symbol": "FISV",
+          "entry_session": "2026-11-06",
           "exit_session": "2026-11-19",
-          "entry_price": 122.8914,
-          "exit_price": 115.0986,
-          "stop_price": 115.1562,
-          "target_price": 146.6922,
-          "shares": 3,
+          "entry_price": 61.1005,
+          "exit_price": 58.6314,
+          "stop_price": 58.6607,
+          "target_price": 81.0971,
+          "shares": 7,
           "exit_reason": "STOP",
-          "r_multiple": -1.482,
-          "realized_pnl_czk": -423.66,
-          "fx_entry": 16.618762,
+          "r_multiple": -0.6871,
+          "realized_pnl_czk": -325.94,
+          "fx_entry": 16.612203,
           "fx_exit": 16.568457,
           "costs": {
             "commission_czk": 0.0,
-            "slippage_czk": 102.65,
-            "fx_fee_czk": 17.77,
-            "fx_drift_czk": -17.37
+            "slippage_czk": -187.24,
+            "fx_fee_czk": 20.86,
+            "fx_drift_czk": -17.95
           }
         },
         {
@@ -1465,15 +1486,15 @@
       ]
     },
     "conservative": {
-      "completed_trades": 68,
-      "winners": 15,
-      "losers": 53,
-      "win_rate_pct": 22.06,
-      "realized_pnl": -1018.63,
-      "marked_pnl": -1809.87,
-      "max_drawdown_pct": 11.26,
-      "expectancy": -0.0559,
-      "profit_factor": 0.96,
+      "completed_trades": 69,
+      "winners": 17,
+      "losers": 52,
+      "win_rate_pct": 24.64,
+      "realized_pnl": 2806.98,
+      "marked_pnl": 2547.79,
+      "max_drawdown_pct": 9.77,
+      "expectancy": 0.0892,
+      "profit_factor": 1.1147,
       "open_positions": 6,
       "trades": [
         {
@@ -1483,7 +1504,7 @@
           "entry_price": 211.0909,
           "exit_price": 203.318,
           "stop_price": 203.5215,
-          "target_price": 248.9433,
+          "target_price": 248.9434,
           "shares": 2,
           "exit_reason": "STOP",
           "r_multiple": -1.0297,
@@ -1504,7 +1525,7 @@
           "entry_price": 366.7664,
           "exit_price": 347.1654,
           "stop_price": 347.5129,
-          "target_price": 455.0219,
+          "target_price": 455.0217,
           "shares": 1,
           "exit_reason": "STOP",
           "r_multiple": -1.0632,
@@ -1588,7 +1609,7 @@
           "entry_price": 261.5713,
           "exit_price": 236.5541,
           "stop_price": 236.7909,
-          "target_price": 383.251,
+          "target_price": 383.2509,
           "shares": 1,
           "exit_reason": "STOP",
           "r_multiple": -0.973,
@@ -1609,7 +1630,7 @@
           "entry_price": 282.2119,
           "exit_price": 270.9659,
           "stop_price": 271.2371,
-          "target_price": 331.4782,
+          "target_price": 331.4781,
           "shares": 1,
           "exit_reason": "STOP",
           "r_multiple": -1.1321,
@@ -1642,27 +1663,6 @@
             "slippage_czk": 8.31,
             "fx_fee_czk": 20.58,
             "fx_drift_czk": -13.03
-          }
-        },
-        {
-          "symbol": "BIIB",
-          "entry_session": "2025-11-24",
-          "exit_session": "2026-01-16",
-          "entry_price": 177.197,
-          "exit_price": 165.424,
-          "stop_price": 165.5896,
-          "target_price": 218.9418,
-          "shares": 2,
-          "exit_reason": "STOP",
-          "r_multiple": -1.457,
-          "realized_pnl_czk": -510.57,
-          "fx_entry": 18.062287,
-          "fx_exit": 17.860359,
-          "costs": {
-            "commission_czk": 0.0,
-            "slippage_czk": 74.81,
-            "fx_fee_czk": 18.47,
-            "fx_drift_czk": -66.81
           }
         },
         {
@@ -1714,7 +1714,7 @@
           "entry_price": 249.0088,
           "exit_price": 341.2284,
           "stop_price": 228.2727,
-          "target_price": 340.4027,
+          "target_price": 340.4026,
           "shares": 1,
           "exit_reason": "TARGET",
           "r_multiple": 4.2879,
@@ -1747,27 +1747,6 @@
             "slippage_czk": -72.34,
             "fx_fee_czk": 11.9,
             "fx_drift_czk": -52.06
-          }
-        },
-        {
-          "symbol": "BA",
-          "entry_session": "2026-01-21",
-          "exit_session": "2026-01-28",
-          "entry_price": 248.8686,
-          "exit_price": 238.2519,
-          "stop_price": 238.4904,
-          "target_price": 295.9082,
-          "shares": 1,
-          "exit_reason": "STOP",
-          "r_multiple": -1.1061,
-          "realized_pnl_czk": -206.2,
-          "fx_entry": 17.85796,
-          "fx_exit": 17.842993,
-          "costs": {
-            "commission_czk": 0.0,
-            "slippage_czk": 3.16,
-            "fx_fee_czk": 13.04,
-            "fx_drift_czk": -3.57
           }
         },
         {
@@ -1855,6 +1834,48 @@
           }
         },
         {
+          "symbol": "LUV",
+          "entry_session": "2025-12-15",
+          "exit_session": "2026-02-04",
+          "entry_price": 41.011,
+          "exit_price": 51.1697,
+          "stop_price": 38.0687,
+          "target_price": 51.2209,
+          "shares": 10,
+          "exit_reason": "TARGET",
+          "r_multiple": 3.9243,
+          "realized_pnl_czk": 1691.79,
+          "fx_entry": 18.028062,
+          "fx_exit": 17.803569,
+          "costs": {
+            "commission_czk": 0.0,
+            "slippage_czk": 108.45,
+            "fx_fee_czk": 24.76,
+            "fx_drift_czk": -114.87
+          }
+        },
+        {
+          "symbol": "CHRW",
+          "entry_session": "2026-01-30",
+          "exit_session": "2026-02-12",
+          "entry_price": 190.5804,
+          "exit_price": 182.8969,
+          "stop_price": 183.08,
+          "target_price": 229.3352,
+          "shares": 2,
+          "exit_reason": "STOP",
+          "r_multiple": -1.0934,
+          "realized_pnl_czk": -328.0,
+          "fx_entry": 17.834249,
+          "fx_exit": 17.741272,
+          "costs": {
+            "commission_czk": 0.0,
+            "slippage_czk": -25.95,
+            "fx_fee_czk": 19.93,
+            "fx_drift_czk": -34.01
+          }
+        },
+        {
           "symbol": "FDX",
           "entry_session": "2026-02-02",
           "exit_session": "2026-02-12",
@@ -1897,24 +1918,45 @@
           }
         },
         {
-          "symbol": "TXN",
-          "entry_session": "2026-02-03",
-          "exit_session": "2026-02-24",
-          "entry_price": 221.1109,
-          "exit_price": 209.5022,
-          "stop_price": 209.7119,
-          "target_price": 275.6466,
-          "shares": 2,
+          "symbol": "WMT",
+          "entry_session": "2026-02-13",
+          "exit_session": "2026-02-18",
+          "entry_price": 131.9919,
+          "exit_price": 126.6719,
+          "stop_price": 126.7987,
+          "target_price": 159.9708,
+          "shares": 3,
           "exit_reason": "STOP",
-          "r_multiple": -1.1489,
-          "realized_pnl_czk": -490.6,
-          "fx_entry": 17.810582,
-          "fx_exit": 17.681331,
+          "r_multiple": -0.9836,
+          "realized_pnl_czk": -315.6,
+          "fx_entry": 17.733824,
+          "fx_exit": 17.702375,
           "costs": {
             "commission_czk": 0.0,
-            "slippage_czk": -13.57,
-            "fx_fee_czk": 22.93,
-            "fx_drift_czk": -54.16
+            "slippage_czk": -37.86,
+            "fx_fee_czk": 20.62,
+            "fx_drift_czk": -11.95
+          }
+        },
+        {
+          "symbol": "LUV",
+          "entry_session": "2026-02-05",
+          "exit_session": "2026-02-27",
+          "entry_price": 51.9319,
+          "exit_price": 48.3799,
+          "stop_price": 48.4283,
+          "target_price": 67.3576,
+          "shares": 8,
+          "exit_reason": "STOP",
+          "r_multiple": -1.1697,
+          "realized_pnl_czk": -573.16,
+          "fx_entry": 17.79622,
+          "fx_exit": 17.677079,
+          "costs": {
+            "commission_czk": 0.0,
+            "slippage_czk": 15.66,
+            "fx_fee_czk": 21.35,
+            "fx_drift_czk": -46.11
           }
         },
         {
@@ -1939,45 +1981,24 @@
           }
         },
         {
-          "symbol": "LUV",
-          "entry_session": "2026-01-30",
+          "symbol": "ADI",
+          "entry_session": "2026-02-19",
           "exit_session": "2026-03-05",
-          "entry_price": 48.4184,
-          "exit_price": 44.5354,
-          "stop_price": 44.58,
-          "target_price": 62.3451,
-          "shares": 8,
+          "entry_price": 342.8925,
+          "exit_price": 323.79,
+          "stop_price": 324.1141,
+          "target_price": 429.5264,
+          "shares": 1,
           "exit_reason": "STOP",
-          "r_multiple": -1.3692,
-          "realized_pnl_czk": -630.96,
-          "fx_entry": 17.834249,
+          "r_multiple": -1.0715,
+          "realized_pnl_czk": -363.44,
+          "fx_entry": 17.697541,
           "fx_exit": 17.673817,
           "costs": {
             "commission_czk": 0.0,
-            "slippage_czk": 93.1,
-            "fx_fee_czk": 19.81,
-            "fx_drift_czk": -57.16
-          }
-        },
-        {
-          "symbol": "GLW",
-          "entry_session": "2026-02-25",
-          "exit_session": "2026-03-05",
-          "entry_price": 152.2821,
-          "exit_price": 135.0348,
-          "stop_price": 137.43,
-          "target_price": 208.9849,
-          "shares": 2,
-          "exit_reason": "STOP",
-          "r_multiple": -1.3622,
-          "realized_pnl_czk": -626.63,
-          "fx_entry": 17.679542,
-          "fx_exit": 17.673817,
-          "costs": {
-            "commission_czk": 0.0,
-            "slippage_czk": 69.91,
-            "fx_fee_czk": 15.24,
-            "fx_drift_czk": -1.55
+            "slippage_czk": -1.13,
+            "fx_fee_czk": 17.69,
+            "fx_drift_czk": -7.68
           }
         },
         {
@@ -2023,45 +2044,45 @@
           }
         },
         {
-          "symbol": "BALL",
-          "entry_session": "2026-02-05",
-          "exit_session": "2026-03-09",
-          "entry_price": 64.3843,
-          "exit_price": 60.6593,
-          "stop_price": 61.2588,
-          "target_price": 77.2703,
-          "shares": 7,
-          "exit_reason": "STOP",
-          "r_multiple": -1.4925,
-          "realized_pnl_czk": -541.27,
-          "fx_entry": 17.79622,
-          "fx_exit": 17.66918,
-          "costs": {
-            "commission_czk": 0.0,
-            "slippage_czk": 34.21,
-            "fx_fee_czk": 23.28,
-            "fx_drift_czk": -53.94
-          }
-        },
-        {
           "symbol": "VTRS",
           "entry_session": "2026-02-05",
           "exit_session": "2026-03-13",
-          "entry_price": 13.9539,
-          "exit_price": 13.3258,
-          "stop_price": 13.3391,
-          "target_price": 17.0839,
+          "entry_price": 13.8739,
+          "exit_price": 13.2409,
+          "stop_price": 13.2542,
+          "target_price": 16.9711,
           "shares": 32,
           "exit_reason": "STOP",
-          "r_multiple": -1.1345,
-          "realized_pnl_czk": -439.92,
+          "r_multiple": -1.1488,
+          "realized_pnl_czk": -442.1,
           "fx_entry": 17.79622,
           "fx_exit": 17.657924,
           "costs": {
             "commission_czk": 0.0,
-            "slippage_czk": -30.08,
-            "fx_fee_czk": 23.21,
-            "fx_drift_czk": -58.97
+            "slippage_czk": -24.48,
+            "fx_fee_czk": 23.07,
+            "fx_drift_czk": -58.6
+          }
+        },
+        {
+          "symbol": "HSY",
+          "entry_session": "2026-02-06",
+          "exit_session": "2026-03-19",
+          "entry_price": 219.0588,
+          "exit_price": 206.5033,
+          "stop_price": 206.905,
+          "target_price": 265.6726,
+          "shares": 2,
+          "exit_reason": "STOP",
+          "r_multiple": -1.4117,
+          "realized_pnl_czk": -536.65,
+          "fx_entry": 17.788598,
+          "fx_exit": 17.625535,
+          "costs": {
+            "commission_czk": 0.0,
+            "slippage_czk": 59.54,
+            "fx_fee_czk": 22.61,
+            "fx_drift_czk": -67.35
           }
         },
         {
@@ -2086,6 +2107,27 @@
           }
         },
         {
+          "symbol": "APA",
+          "entry_session": "2026-03-02",
+          "exit_session": "2026-03-24",
+          "entry_price": 31.9419,
+          "exit_price": 40.3487,
+          "stop_price": 27.4713,
+          "target_price": 40.3891,
+          "shares": 12,
+          "exit_reason": "TARGET",
+          "r_multiple": 3.4485,
+          "realized_pnl_czk": 1717.9,
+          "fx_entry": 17.675223,
+          "fx_exit": 17.58793,
+          "costs": {
+            "commission_czk": 0.0,
+            "slippage_czk": 458.59,
+            "fx_fee_czk": 22.94,
+            "fx_drift_czk": -42.27
+          }
+        },
+        {
           "symbol": "GILD",
           "entry_session": "2026-02-02",
           "exit_session": "2026-03-27",
@@ -2104,6 +2146,27 @@
             "slippage_czk": -23.54,
             "fx_fee_czk": 21.62,
             "fx_drift_czk": -100.68
+          }
+        },
+        {
+          "symbol": "AKAM",
+          "entry_session": "2026-03-26",
+          "exit_session": "2026-03-30",
+          "entry_price": 118.7086,
+          "exit_price": 109.8984,
+          "stop_price": 110.0084,
+          "target_price": 159.737,
+          "shares": 3,
+          "exit_reason": "STOP",
+          "r_multiple": -1.0331,
+          "realized_pnl_czk": -492.39,
+          "fx_entry": 17.57203,
+          "fx_exit": 17.542033,
+          "costs": {
+            "commission_czk": 0.0,
+            "slippage_czk": -12.21,
+            "fx_fee_czk": 18.06,
+            "fx_drift_czk": -9.89
           }
         },
         {
@@ -2128,27 +2191,6 @@
           }
         },
         {
-          "symbol": "CVX",
-          "entry_session": "2026-03-13",
-          "exit_session": "2026-04-08",
-          "entry_price": 190.8306,
-          "exit_price": 183.9491,
-          "stop_price": 184.1332,
-          "target_price": 226.7957,
-          "shares": 2,
-          "exit_reason": "STOP",
-          "r_multiple": -1.1727,
-          "realized_pnl_czk": -321.25,
-          "fx_entry": 17.657924,
-          "fx_exit": 17.499038,
-          "costs": {
-            "commission_czk": 0.0,
-            "slippage_czk": -30.97,
-            "fx_fee_czk": 19.77,
-            "fx_drift_czk": -58.45
-          }
-        },
-        {
           "symbol": "HAL",
           "entry_session": "2026-03-26",
           "exit_session": "2026-04-08",
@@ -2170,24 +2212,45 @@
           }
         },
         {
-          "symbol": "OXY",
-          "entry_session": "2026-03-13",
-          "exit_session": "2026-04-17",
-          "entry_price": 57.1771,
-          "exit_price": 53.2667,
-          "stop_price": 53.9291,
-          "target_price": 75.604,
-          "shares": 7,
+          "symbol": "FFIV",
+          "entry_session": "2026-04-07",
+          "exit_session": "2026-04-10",
+          "entry_price": 307.4872,
+          "exit_price": 289.4537,
+          "stop_price": 289.7434,
+          "target_price": 388.5047,
+          "shares": 1,
           "exit_reason": "STOP",
-          "r_multiple": -1.163,
-          "realized_pnl_czk": -566.51,
-          "fx_entry": 17.657924,
+          "r_multiple": -1.0604,
+          "realized_pnl_czk": -333.25,
+          "fx_entry": 17.501755,
+          "fx_exit": 17.494989,
+          "costs": {
+            "commission_czk": 0.0,
+            "slippage_czk": 1.34,
+            "fx_fee_czk": 15.67,
+            "fx_drift_czk": -1.96
+          }
+        },
+        {
+          "symbol": "DVN",
+          "entry_session": "2026-03-16",
+          "exit_session": "2026-04-17",
+          "entry_price": 45.4854,
+          "exit_price": 42.5874,
+          "stop_price": 42.8937,
+          "target_price": 57.8885,
+          "shares": 9,
+          "exit_reason": "STOP",
+          "r_multiple": -1.248,
+          "realized_pnl_czk": -540.27,
+          "fx_entry": 17.643986,
           "fx_exit": 17.489577,
           "costs": {
             "commission_czk": 0.0,
-            "slippage_czk": -79.12,
-            "fx_fee_czk": 20.38,
-            "fx_drift_czk": -62.77
+            "slippage_czk": -14.66,
+            "fx_fee_czk": 20.89,
+            "fx_drift_czk": -59.18
           }
         },
         {
@@ -2362,21 +2425,21 @@
           "symbol": "VLO",
           "entry_session": "2026-03-06",
           "exit_session": "2026-07-13",
-          "entry_price": 225.9357,
-          "exit_price": 287.9319,
-          "stop_price": 212.2466,
-          "target_price": 288.2201,
+          "entry_price": 225.1149,
+          "exit_price": 286.8797,
+          "stop_price": 211.4662,
+          "target_price": 287.1669,
           "shares": 2,
           "exit_reason": "TARGET",
-          "r_multiple": 3.7816,
-          "realized_pnl_czk": 1846.38,
+          "r_multiple": 3.781,
+          "realized_pnl_czk": 1839.46,
           "fx_entry": 17.673094,
           "fx_exit": 17.120563,
           "costs": {
             "commission_czk": 0.0,
-            "slippage_czk": 5.48,
-            "fx_fee_czk": 26.77,
-            "fx_drift_czk": -318.18
+            "slippage_czk": 5.76,
+            "fx_fee_czk": 26.67,
+            "fx_drift_czk": -317.02
           }
         },
         {
@@ -2548,27 +2611,6 @@
           }
         },
         {
-          "symbol": "APA",
-          "entry_session": "2026-03-16",
-          "exit_session": "2026-09-10",
-          "entry_price": 33.7337,
-          "exit_price": 45.7242,
-          "stop_price": 31.2952,
-          "target_price": 45.2365,
-          "shares": 11,
-          "exit_reason": "TARGET",
-          "r_multiple": 3.9156,
-          "realized_pnl_czk": 1926.32,
-          "fx_entry": 17.643986,
-          "fx_exit": 16.891883,
-          "costs": {
-            "commission_czk": 0.0,
-            "slippage_czk": -10.19,
-            "fx_fee_czk": 22.56,
-            "fx_drift_czk": -378.28
-          }
-        },
-        {
           "symbol": "CRM",
           "entry_session": "2026-08-31",
           "exit_session": "2026-09-22",
@@ -2587,27 +2629,6 @@
             "slippage_czk": -2.41,
             "fx_fee_czk": 12.38,
             "fx_drift_czk": -29.88
-          }
-        },
-        {
-          "symbol": "HPQ",
-          "entry_session": "2026-09-14",
-          "exit_session": "2026-09-22",
-          "entry_price": 35.1501,
-          "exit_price": 32.2903,
-          "stop_price": 32.3226,
-          "target_price": 49.661,
-          "shares": 9,
-          "exit_reason": "STOP",
-          "r_multiple": -0.9759,
-          "realized_pnl_czk": -466.92,
-          "fx_entry": 16.863782,
-          "fx_exit": 16.803414,
-          "costs": {
-            "commission_czk": 0.0,
-            "slippage_czk": -44.42,
-            "fx_fee_czk": 15.33,
-            "fx_drift_czk": -17.54
           }
         },
         {
@@ -2698,21 +2719,21 @@
           "symbol": "VLO",
           "entry_session": "2026-09-04",
           "exit_session": "2026-10-14",
-          "entry_price": 364.384,
-          "exit_price": 458.4411,
-          "stop_price": 351.2256,
-          "target_price": 457.785,
+          "entry_price": 363.0527,
+          "exit_price": 456.7728,
+          "stop_price": 349.9488,
+          "target_price": 456.1054,
           "shares": 1,
           "exit_reason": "TARGET",
-          "r_multiple": 4.5464,
-          "realized_pnl_czk": 1490.5,
+          "r_multiple": 4.5473,
+          "realized_pnl_czk": 1485.16,
           "fx_entry": 16.921281,
           "fx_exit": 16.746112,
           "costs": {
             "commission_czk": 0.0,
-            "slippage_czk": -97.5,
-            "fx_fee_czk": 20.76,
-            "fx_drift_czk": -80.3
+            "slippage_czk": -97.21,
+            "fx_fee_czk": 20.69,
+            "fx_drift_czk": -80.01
           }
         },
         {
@@ -2734,6 +2755,27 @@
             "slippage_czk": -61.65,
             "fx_fee_czk": 11.53,
             "fx_drift_czk": -0.33
+          }
+        },
+        {
+          "symbol": "EBAY",
+          "entry_session": "2026-04-07",
+          "exit_session": "2026-10-15",
+          "entry_price": 96.8067,
+          "exit_price": 122.1523,
+          "stop_price": 91.5545,
+          "target_price": 122.2746,
+          "shares": 4,
+          "exit_reason": "TARGET",
+          "r_multiple": 3.5339,
+          "realized_pnl_czk": 1381.83,
+          "fx_entry": 17.501755,
+          "fx_exit": 16.744287,
+          "costs": {
+            "commission_czk": 0.0,
+            "slippage_czk": -15.14,
+            "fx_fee_czk": 22.44,
+            "fx_drift_czk": -370.11
           }
         },
         {
@@ -2863,24 +2905,24 @@
           }
         },
         {
-          "symbol": "HAS",
-          "entry_session": "2026-11-05",
+          "symbol": "FISV",
+          "entry_session": "2026-11-06",
           "exit_session": "2026-11-19",
-          "entry_price": 122.9528,
-          "exit_price": 115.041,
-          "stop_price": 115.1562,
-          "target_price": 146.6922,
-          "shares": 3,
+          "entry_price": 61.1311,
+          "exit_price": 58.602,
+          "stop_price": 58.6607,
+          "target_price": 81.0971,
+          "shares": 7,
           "exit_reason": "STOP",
-          "r_multiple": -1.5028,
-          "realized_pnl_czk": -429.59,
-          "fx_entry": 16.618762,
+          "r_multiple": -0.7018,
+          "realized_pnl_czk": -332.89,
+          "fx_entry": 16.612203,
           "fx_exit": 16.568457,
           "costs": {
             "commission_czk": 0.0,
-            "slippage_czk": 108.57,
-            "fx_fee_czk": 17.77,
-            "fx_drift_czk": -17.36
+            "slippage_czk": -180.29,
+            "fx_fee_czk": 20.86,
+            "fx_drift_czk": -17.95
           }
         },
         {
@@ -2907,15 +2949,15 @@
       ]
     },
     "severe": {
-      "completed_trades": 68,
-      "winners": 15,
-      "losers": 53,
-      "win_rate_pct": 22.06,
-      "realized_pnl": -1857.18,
-      "marked_pnl": -2686.94,
-      "max_drawdown_pct": 11.59,
-      "expectancy": -0.0903,
-      "profit_factor": 0.9288,
+      "completed_trades": 69,
+      "winners": 17,
+      "losers": 52,
+      "win_rate_pct": 24.64,
+      "realized_pnl": 1942.47,
+      "marked_pnl": 1644.88,
+      "max_drawdown_pct": 10.01,
+      "expectancy": 0.0547,
+      "profit_factor": 1.0774,
       "open_positions": 6,
       "trades": [
         {
@@ -2925,7 +2967,7 @@
           "entry_price": 211.3018,
           "exit_price": 203.1145,
           "stop_price": 203.5215,
-          "target_price": 248.9433,
+          "target_price": 248.9434,
           "shares": 2,
           "exit_reason": "STOP",
           "r_multiple": -1.0799,
@@ -2946,7 +2988,7 @@
           "entry_price": 367.1328,
           "exit_price": 346.8179,
           "stop_price": 347.5129,
-          "target_price": 455.0219,
+          "target_price": 455.0217,
           "shares": 1,
           "exit_reason": "STOP",
           "r_multiple": -1.0997,
@@ -3030,7 +3072,7 @@
           "entry_price": 261.8326,
           "exit_price": 236.3173,
           "stop_price": 236.7909,
-          "target_price": 383.251,
+          "target_price": 383.2509,
           "shares": 1,
           "exit_reason": "STOP",
           "r_multiple": -0.9917,
@@ -3051,7 +3093,7 @@
           "entry_price": 282.4939,
           "exit_price": 270.6946,
           "stop_price": 271.2371,
-          "target_price": 331.4782,
+          "target_price": 331.4781,
           "shares": 1,
           "exit_reason": "STOP",
           "r_multiple": -1.1825,
@@ -3084,27 +3126,6 @@
             "slippage_czk": 22.03,
             "fx_fee_czk": 20.58,
             "fx_drift_czk": -13.01
-          }
-        },
-        {
-          "symbol": "BIIB",
-          "entry_session": "2025-11-24",
-          "exit_session": "2026-01-16",
-          "entry_price": 177.374,
-          "exit_price": 165.2584,
-          "stop_price": 165.5896,
-          "target_price": 218.9418,
-          "shares": 2,
-          "exit_reason": "STOP",
-          "r_multiple": -1.4921,
-          "realized_pnl_czk": -522.88,
-          "fx_entry": 18.062287,
-          "fx_exit": 17.860359,
-          "costs": {
-            "commission_czk": 0.0,
-            "slippage_czk": 87.12,
-            "fx_fee_czk": 18.47,
-            "fx_drift_czk": -66.74
           }
         },
         {
@@ -3156,7 +3177,7 @@
           "entry_price": 249.2575,
           "exit_price": 340.8869,
           "stop_price": 228.2727,
-          "target_price": 340.4027,
+          "target_price": 340.4026,
           "shares": 1,
           "exit_reason": "TARGET",
           "r_multiple": 4.2592,
@@ -3189,27 +3210,6 @@
             "slippage_czk": -64.4,
             "fx_fee_czk": 11.9,
             "fx_drift_czk": -52.01
-          }
-        },
-        {
-          "symbol": "BA",
-          "entry_session": "2026-01-21",
-          "exit_session": "2026-01-28",
-          "entry_price": 249.1172,
-          "exit_price": 238.0134,
-          "stop_price": 238.4904,
-          "target_price": 295.9082,
-          "shares": 1,
-          "exit_reason": "STOP",
-          "r_multiple": -1.1527,
-          "realized_pnl_czk": -214.9,
-          "fx_entry": 17.85796,
-          "fx_exit": 17.842993,
-          "costs": {
-            "commission_czk": 0.0,
-            "slippage_czk": 11.85,
-            "fx_fee_czk": 13.04,
-            "fx_drift_czk": -3.56
           }
         },
         {
@@ -3297,6 +3297,48 @@
           }
         },
         {
+          "symbol": "LUV",
+          "entry_session": "2025-12-15",
+          "exit_session": "2026-02-04",
+          "entry_price": 41.0519,
+          "exit_price": 51.1185,
+          "stop_price": 38.0687,
+          "target_price": 51.2209,
+          "shares": 10,
+          "exit_reason": "TARGET",
+          "r_multiple": 3.886,
+          "realized_pnl_czk": 1675.29,
+          "fx_entry": 18.028062,
+          "fx_exit": 17.803569,
+          "costs": {
+            "commission_czk": 0.0,
+            "slippage_czk": 124.95,
+            "fx_fee_czk": 24.75,
+            "fx_drift_czk": -114.76
+          }
+        },
+        {
+          "symbol": "CHRW",
+          "entry_session": "2026-01-30",
+          "exit_session": "2026-02-12",
+          "entry_price": 190.7708,
+          "exit_price": 182.7138,
+          "stop_price": 183.08,
+          "target_price": 229.3352,
+          "shares": 2,
+          "exit_reason": "STOP",
+          "r_multiple": -1.1377,
+          "realized_pnl_czk": -341.29,
+          "fx_entry": 17.834249,
+          "fx_exit": 17.741272,
+          "costs": {
+            "commission_czk": 0.0,
+            "slippage_czk": -12.66,
+            "fx_fee_czk": 19.93,
+            "fx_drift_czk": -33.98
+          }
+        },
+        {
           "symbol": "FDX",
           "entry_session": "2026-02-02",
           "exit_session": "2026-02-12",
@@ -3339,24 +3381,45 @@
           }
         },
         {
-          "symbol": "TXN",
-          "entry_session": "2026-02-03",
-          "exit_session": "2026-02-24",
-          "entry_price": 221.3318,
-          "exit_price": 209.2925,
-          "stop_price": 209.7119,
-          "target_price": 275.6466,
-          "shares": 2,
+          "symbol": "WMT",
+          "entry_session": "2026-02-13",
+          "exit_session": "2026-02-18",
+          "entry_price": 132.1237,
+          "exit_price": 126.5451,
+          "stop_price": 126.7987,
+          "target_price": 159.9708,
+          "shares": 3,
           "exit_reason": "STOP",
-          "r_multiple": -1.1847,
-          "realized_pnl_czk": -505.88,
-          "fx_entry": 17.810582,
-          "fx_exit": 17.681331,
+          "r_multiple": -1.0264,
+          "realized_pnl_czk": -329.35,
+          "fx_entry": 17.733824,
+          "fx_exit": 17.702375,
           "costs": {
             "commission_czk": 0.0,
-            "slippage_czk": 1.72,
-            "fx_fee_czk": 22.93,
-            "fx_drift_czk": -54.1
+            "slippage_czk": -24.11,
+            "fx_fee_czk": 20.62,
+            "fx_drift_czk": -11.94
+          }
+        },
+        {
+          "symbol": "LUV",
+          "entry_session": "2026-02-05",
+          "exit_session": "2026-02-27",
+          "entry_price": 51.9838,
+          "exit_price": 48.3314,
+          "stop_price": 48.4283,
+          "target_price": 67.3576,
+          "shares": 8,
+          "exit_reason": "STOP",
+          "r_multiple": -1.1988,
+          "realized_pnl_czk": -587.4,
+          "fx_entry": 17.79622,
+          "fx_exit": 17.677079,
+          "costs": {
+            "commission_czk": 0.0,
+            "slippage_czk": 29.89,
+            "fx_fee_czk": 21.35,
+            "fx_drift_czk": -46.07
           }
         },
         {
@@ -3381,45 +3444,24 @@
           }
         },
         {
-          "symbol": "LUV",
-          "entry_session": "2026-01-30",
+          "symbol": "ADI",
+          "entry_session": "2026-02-19",
           "exit_session": "2026-03-05",
-          "entry_price": 48.4667,
-          "exit_price": 44.4908,
-          "stop_price": 44.58,
-          "target_price": 62.3451,
-          "shares": 8,
+          "entry_price": 343.2351,
+          "exit_price": 323.4659,
+          "stop_price": 324.1141,
+          "target_price": 429.5264,
+          "shares": 1,
           "exit_reason": "STOP",
-          "r_multiple": -1.3978,
-          "realized_pnl_czk": -644.17,
-          "fx_entry": 17.834249,
+          "r_multiple": -1.1062,
+          "realized_pnl_czk": -375.23,
+          "fx_entry": 17.697541,
           "fx_exit": 17.673817,
           "costs": {
             "commission_czk": 0.0,
-            "slippage_czk": 106.31,
-            "fx_fee_czk": 19.81,
-            "fx_drift_czk": -57.1
-          }
-        },
-        {
-          "symbol": "GLW",
-          "entry_session": "2026-02-25",
-          "exit_session": "2026-03-05",
-          "entry_price": 152.4343,
-          "exit_price": 134.8997,
-          "stop_price": 137.43,
-          "target_price": 208.9849,
-          "shares": 2,
-          "exit_reason": "STOP",
-          "r_multiple": -1.3843,
-          "realized_pnl_czk": -636.79,
-          "fx_entry": 17.679542,
-          "fx_exit": 17.673817,
-          "costs": {
-            "commission_czk": 0.0,
-            "slippage_czk": 80.07,
-            "fx_fee_czk": 15.24,
-            "fx_drift_czk": -1.54
+            "slippage_czk": 10.66,
+            "fx_fee_czk": 17.69,
+            "fx_drift_czk": -7.67
           }
         },
         {
@@ -3465,45 +3507,45 @@
           }
         },
         {
-          "symbol": "BALL",
-          "entry_session": "2026-02-05",
-          "exit_session": "2026-03-09",
-          "entry_price": 64.4486,
-          "exit_price": 60.5986,
-          "stop_price": 61.2588,
-          "target_price": 77.2703,
-          "shares": 7,
-          "exit_reason": "STOP",
-          "r_multiple": -1.5353,
-          "realized_pnl_czk": -556.79,
-          "fx_entry": 17.79622,
-          "fx_exit": 17.66918,
-          "costs": {
-            "commission_czk": 0.0,
-            "slippage_czk": 49.73,
-            "fx_fee_czk": 23.29,
-            "fx_drift_czk": -53.89
-          }
-        },
-        {
           "symbol": "VTRS",
           "entry_session": "2026-02-05",
           "exit_session": "2026-03-13",
-          "entry_price": 13.9679,
-          "exit_price": 13.3124,
-          "stop_price": 13.3391,
-          "target_price": 17.0839,
+          "entry_price": 13.8877,
+          "exit_price": 13.2277,
+          "stop_price": 13.2542,
+          "target_price": 16.9711,
           "shares": 32,
           "exit_reason": "STOP",
-          "r_multiple": -1.1744,
-          "realized_pnl_czk": -455.4,
+          "r_multiple": -1.1887,
+          "realized_pnl_czk": -457.49,
           "fx_entry": 17.79622,
           "fx_exit": 17.657924,
           "costs": {
             "commission_czk": 0.0,
-            "slippage_czk": -14.61,
-            "fx_fee_czk": 23.21,
-            "fx_drift_czk": -58.91
+            "slippage_czk": -9.1,
+            "fx_fee_czk": 23.07,
+            "fx_drift_czk": -58.54
+          }
+        },
+        {
+          "symbol": "HSY",
+          "entry_session": "2026-02-06",
+          "exit_session": "2026-03-19",
+          "entry_price": 219.2777,
+          "exit_price": 206.2966,
+          "stop_price": 206.905,
+          "target_price": 265.6726,
+          "shares": 2,
+          "exit_reason": "STOP",
+          "r_multiple": -1.4514,
+          "realized_pnl_czk": -551.72,
+          "fx_entry": 17.788598,
+          "fx_exit": 17.625535,
+          "costs": {
+            "commission_czk": 0.0,
+            "slippage_czk": 74.62,
+            "fx_fee_czk": 22.61,
+            "fx_drift_czk": -67.28
           }
         },
         {
@@ -3528,6 +3570,27 @@
           }
         },
         {
+          "symbol": "APA",
+          "entry_session": "2026-03-02",
+          "exit_session": "2026-03-24",
+          "entry_price": 31.9738,
+          "exit_price": 40.3083,
+          "stop_price": 27.4713,
+          "target_price": 40.3891,
+          "shares": 12,
+          "exit_reason": "TARGET",
+          "r_multiple": 3.4178,
+          "realized_pnl_czk": 1702.61,
+          "fx_entry": 17.675223,
+          "fx_exit": 17.58793,
+          "costs": {
+            "commission_czk": 0.0,
+            "slippage_czk": 473.88,
+            "fx_fee_czk": 22.93,
+            "fx_drift_czk": -42.22
+          }
+        },
+        {
           "symbol": "GILD",
           "entry_session": "2026-02-02",
           "exit_session": "2026-03-27",
@@ -3546,6 +3609,27 @@
             "slippage_czk": -9.12,
             "fx_fee_czk": 21.62,
             "fx_drift_czk": -100.58
+          }
+        },
+        {
+          "symbol": "AKAM",
+          "entry_session": "2026-03-26",
+          "exit_session": "2026-03-30",
+          "entry_price": 118.8272,
+          "exit_price": 109.7884,
+          "stop_price": 110.0084,
+          "target_price": 159.737,
+          "shares": 3,
+          "exit_reason": "STOP",
+          "r_multiple": -1.0583,
+          "realized_pnl_czk": -504.43,
+          "fx_entry": 17.57203,
+          "fx_exit": 17.542033,
+          "costs": {
+            "commission_czk": 0.0,
+            "slippage_czk": -0.17,
+            "fx_fee_czk": 18.06,
+            "fx_drift_czk": -9.88
           }
         },
         {
@@ -3570,27 +3654,6 @@
           }
         },
         {
-          "symbol": "CVX",
-          "entry_session": "2026-03-13",
-          "exit_session": "2026-04-08",
-          "entry_price": 191.0213,
-          "exit_price": 183.7649,
-          "stop_price": 184.1332,
-          "target_price": 226.7957,
-          "shares": 2,
-          "exit_reason": "STOP",
-          "r_multiple": -1.2208,
-          "realized_pnl_czk": -334.43,
-          "fx_entry": 17.657924,
-          "fx_exit": 17.499038,
-          "costs": {
-            "commission_czk": 0.0,
-            "slippage_czk": -17.79,
-            "fx_fee_czk": 19.77,
-            "fx_drift_czk": -58.4
-          }
-        },
-        {
           "symbol": "HAL",
           "entry_session": "2026-03-26",
           "exit_session": "2026-04-08",
@@ -3612,24 +3675,45 @@
           }
         },
         {
-          "symbol": "OXY",
-          "entry_session": "2026-03-13",
-          "exit_session": "2026-04-17",
-          "entry_price": 57.2342,
-          "exit_price": 53.2134,
-          "stop_price": 53.9291,
-          "target_price": 75.604,
-          "shares": 7,
+          "symbol": "FFIV",
+          "entry_session": "2026-04-07",
+          "exit_session": "2026-04-10",
+          "entry_price": 307.7944,
+          "exit_price": 289.1639,
+          "stop_price": 289.7434,
+          "target_price": 388.5047,
+          "shares": 1,
           "exit_reason": "STOP",
-          "r_multiple": -1.1909,
-          "realized_pnl_czk": -580.09,
-          "fx_entry": 17.657924,
+          "r_multiple": -1.0936,
+          "realized_pnl_czk": -343.69,
+          "fx_entry": 17.501755,
+          "fx_exit": 17.494989,
+          "costs": {
+            "commission_czk": 0.0,
+            "slippage_czk": 11.79,
+            "fx_fee_czk": 15.67,
+            "fx_drift_czk": -1.96
+          }
+        },
+        {
+          "symbol": "DVN",
+          "entry_session": "2026-03-16",
+          "exit_session": "2026-04-17",
+          "entry_price": 45.5309,
+          "exit_price": 42.5447,
+          "stop_price": 42.8937,
+          "target_price": 57.8885,
+          "shares": 9,
+          "exit_reason": "STOP",
+          "r_multiple": -1.2801,
+          "realized_pnl_czk": -554.2,
+          "fx_entry": 17.643986,
           "fx_exit": 17.489577,
           "costs": {
             "commission_czk": 0.0,
-            "slippage_czk": -65.53,
-            "fx_fee_czk": 20.38,
-            "fx_drift_czk": -62.71
+            "slippage_czk": -0.73,
+            "fx_fee_czk": 20.89,
+            "fx_drift_czk": -59.12
           }
         },
         {
@@ -3804,21 +3888,21 @@
           "symbol": "VLO",
           "entry_session": "2026-03-06",
           "exit_session": "2026-07-13",
-          "entry_price": 226.1614,
-          "exit_price": 287.6437,
-          "stop_price": 212.2466,
-          "target_price": 288.2201,
+          "entry_price": 225.3398,
+          "exit_price": 286.5926,
+          "stop_price": 211.4662,
+          "target_price": 287.1669,
           "shares": 2,
           "exit_reason": "TARGET",
-          "r_multiple": 3.7451,
-          "realized_pnl_czk": 1828.53,
+          "r_multiple": 3.7445,
+          "realized_pnl_czk": 1821.68,
           "fx_entry": 17.673094,
           "fx_exit": 17.120563,
           "costs": {
             "commission_czk": 0.0,
-            "slippage_czk": 23.32,
-            "fx_fee_czk": 26.76,
-            "fx_drift_czk": -317.86
+            "slippage_czk": 23.55,
+            "fx_fee_czk": 26.67,
+            "fx_drift_czk": -316.7
           }
         },
         {
@@ -3990,27 +4074,6 @@
           }
         },
         {
-          "symbol": "APA",
-          "entry_session": "2026-03-16",
-          "exit_session": "2026-09-10",
-          "entry_price": 33.7674,
-          "exit_price": 45.6785,
-          "stop_price": 31.2952,
-          "target_price": 45.2365,
-          "shares": 11,
-          "exit_reason": "TARGET",
-          "r_multiple": 3.885,
-          "realized_pnl_czk": 1911.28,
-          "fx_entry": 17.643986,
-          "fx_exit": 16.891883,
-          "costs": {
-            "commission_czk": 0.0,
-            "slippage_czk": 4.86,
-            "fx_fee_czk": 22.56,
-            "fx_drift_czk": -377.9
-          }
-        },
-        {
           "symbol": "CRM",
           "entry_session": "2026-08-31",
           "exit_session": "2026-09-22",
@@ -4029,27 +4092,6 @@
             "slippage_czk": 5.84,
             "fx_fee_czk": 12.38,
             "fx_drift_czk": -29.85
-          }
-        },
-        {
-          "symbol": "HPQ",
-          "entry_session": "2026-09-14",
-          "exit_session": "2026-09-22",
-          "entry_price": 35.1852,
-          "exit_price": 32.258,
-          "stop_price": 32.3226,
-          "target_price": 49.661,
-          "shares": 9,
-          "exit_reason": "STOP",
-          "r_multiple": -0.9973,
-          "realized_pnl_czk": -477.14,
-          "fx_entry": 16.863782,
-          "fx_exit": 16.803414,
-          "costs": {
-            "commission_czk": 0.0,
-            "slippage_czk": -34.2,
-            "fx_fee_czk": 15.33,
-            "fx_drift_czk": -17.53
           }
         },
         {
@@ -4140,21 +4182,21 @@
           "symbol": "VLO",
           "entry_session": "2026-09-04",
           "exit_session": "2026-10-14",
-          "entry_price": 364.748,
-          "exit_price": 457.9822,
-          "stop_price": 351.2256,
-          "target_price": 457.785,
+          "entry_price": 363.4154,
+          "exit_price": 456.3155,
+          "stop_price": 349.9488,
+          "target_price": 456.1054,
           "shares": 1,
           "exit_reason": "TARGET",
-          "r_multiple": 4.5042,
-          "realized_pnl_czk": 1476.66,
+          "r_multiple": 4.5051,
+          "realized_pnl_czk": 1471.37,
           "fx_entry": 16.921281,
           "fx_exit": 16.746112,
           "costs": {
             "commission_czk": 0.0,
-            "slippage_czk": -83.65,
-            "fx_fee_czk": 20.76,
-            "fx_drift_czk": -80.22
+            "slippage_czk": -83.42,
+            "fx_fee_czk": 20.69,
+            "fx_drift_czk": -79.93
           }
         },
         {
@@ -4176,6 +4218,27 @@
             "slippage_czk": -53.96,
             "fx_fee_czk": 11.53,
             "fx_drift_czk": -0.33
+          }
+        },
+        {
+          "symbol": "EBAY",
+          "entry_session": "2026-04-07",
+          "exit_session": "2026-10-15",
+          "entry_price": 96.9034,
+          "exit_price": 122.0301,
+          "stop_price": 91.5545,
+          "target_price": 122.2746,
+          "shares": 4,
+          "exit_reason": "TARGET",
+          "r_multiple": 3.4956,
+          "realized_pnl_czk": 1366.87,
+          "fx_entry": 17.501755,
+          "fx_exit": 16.744287,
+          "costs": {
+            "commission_czk": 0.0,
+            "slippage_czk": -0.18,
+            "fx_fee_czk": 22.44,
+            "fx_drift_czk": -369.74
           }
         },
         {
@@ -4305,24 +4368,24 @@
           }
         },
         {
-          "symbol": "HAS",
-          "entry_session": "2026-11-05",
+          "symbol": "FISV",
+          "entry_session": "2026-11-06",
           "exit_session": "2026-11-19",
-          "entry_price": 123.0757,
-          "exit_price": 114.9259,
-          "stop_price": 115.1562,
-          "target_price": 146.6922,
-          "shares": 3,
+          "entry_price": 61.1921,
+          "exit_price": 58.5434,
+          "stop_price": 58.6607,
+          "target_price": 81.0971,
+          "shares": 7,
           "exit_reason": "STOP",
-          "r_multiple": -1.5442,
-          "realized_pnl_czk": -441.43,
-          "fx_entry": 16.618762,
+          "r_multiple": -0.7311,
+          "realized_pnl_czk": -346.8,
+          "fx_entry": 16.612203,
           "fx_exit": 16.568457,
           "costs": {
             "commission_czk": 0.0,
-            "slippage_czk": 120.42,
-            "fx_fee_czk": 17.77,
-            "fx_drift_czk": -17.34
+            "slippage_czk": -166.39,
+            "fx_fee_czk": 20.86,
+            "fx_drift_czk": -17.93
           }
         },
         {
