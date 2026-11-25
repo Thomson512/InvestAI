@@ -1,0 +1,343 @@
+{
+  "outcome": "COUNCIL_UNAVAILABLE:BIIB",
+  "session_date": "2026-11-25",
+  "generated_at": "2026-11-25T16:52:46Z",
+  "official": true,
+  "extra_summary": [
+    "council: Claude CRO found insufficient evidence"
+  ],
+  "plan": {
+    "symbol": "BIIB",
+    "quantity": 1.0,
+    "entry_usd": 259.89,
+    "stop_price": 254.8924,
+    "target_price": 282.37919999999986,
+    "fx_usdczk": 22.329,
+    "spread_bps": 17.715474081490395
+  },
+  "council": {
+    "verdict": "NO_TRADE",
+    "reason": "Claude CRO found insufficient evidence",
+    "cached": false,
+    "findings": [
+      {
+        "agent": "Scanner Agent",
+        "verdict": "APPROVE",
+        "confidence": 0.9,
+        "thesis": "The packet is internally coherent. Required authoritative fields (entry_usd 259.89, stop_price 254.8924, target_price 282.3792, quantity 1.0) are present and consistent: stop < entry < target. ATR (7.1788), breakout_strength (3.2044), breadth_gate PASS, market_breadth_pct 60 and tier A are provided and do not contradict any other fields. The authority note is present and respected in the packet.",
+        "risks": [
+          "Stop is relatively tight versus the recorded volatility (ATR present) which increases chance of being stopped out on normal intraday moves.",
+          "Spread (17.7 bps) is non-negligible and could meaningfully affect execution/slippage for small position sizes.",
+          "Single-share quantity and the breakout strength imply a small, potentially discretionary trade where execution and position-sizing constraints matter; false-breakout risk remains despite positive breakout_strength."
+        ],
+        "sources": []
+      },
+      {
+        "agent": "Market Regime Agent",
+        "verdict": "APPROVE",
+        "confidence": 0.65,
+        "thesis": "As of the Nov 24–25, 2026 market sessions the backdrop is mixed but supportive enough for a momentum breakout in BIIB. Breadth readings around the Nov 24 close showed a majority of advancers (mid-50s percent), indicating participation beyond a few mega-cap AI names that led an otherwise headline-driven selloff. BIIB also has recent company-level positive datapoints and conference/clinical readouts that provide idiosyncratic catalyst support. Given the quant packet’s strong breakout_strength and breadth_gate PASS, the current market regime does not present a clear structural headwind to this specific momentum trade, so the breakout may be actionable provided the trade uses the authoritative stop and sizing outputs.",
+        "risks": [
+          "Elevated headline-driven volatility (AI/name-concentration swings) that can widen spreads and produce sharp intraday reversals.",
+          "Macro risk: upcoming major US data (PCE) and Fed expectations can rapidly change risk appetite across sectors.",
+          "Biotech-specific binary risks — FDA decisions, trial readouts or adverse news for Biogen or peers can abruptly negate momentum.",
+          "Liquidity and execution risk given wider spreads and larger intraday gaps during volatile sessions.",
+          "Correlation risk: broad-market weakness led by tech/AI could spill into cyclical and growth-adjacent names, increasing downside risk even if breadth is currently positive."
+        ],
+        "sources": [
+          {
+            "url": "https://6ix.com/company/biogen-inc/news?year=2026"
+          },
+          {
+            "url": "https://apnews.com/article/10044b4fb55d3ff20fde9ba9e9acaab1"
+          },
+          {
+            "url": "https://apnews.com/article/6cc4e580290aadf304ee316d6d46dd81"
+          },
+          {
+            "url": "https://apnews.com/article/feec0e25b9994b1c86b16329cf770192"
+          },
+          {
+            "url": "https://breadthmarket.com/breadth"
+          },
+          {
+            "url": "https://investors.biogen.com/news-releases/news-release-details/biogen-present-new-data-across-alzheimers-disease-portfolio-ctad"
+          },
+          {
+            "url": "https://marketchameleon.com/Overview/BIIB/PressReleases/"
+          },
+          {
+            "url": "https://markets.financialcontent.com/medicinehatnews/quote/news?Symbol=NQ%3ABIIB"
+          },
+          {
+            "url": "https://markets.financialcontent.com/stocks/quote/news?Symbol=537%3A1720684"
+          },
+          {
+            "url": "https://moneyweek.com/investments/us-stock-markets/us-stocks-boost-mid-term-elections"
+          },
+          {
+            "url": "https://newspaperjoint.com/markets/stock-market-today/"
+          },
+          {
+            "url": "https://sterlingcapital.com/cdn/Weekly-Market-Recap-11-23-26.pdf"
+          },
+          {
+            "url": "https://therighttrader.com/stock-market-today"
+          },
+          {
+            "url": "https://use-ny-p1-a2-rs.kineticpanel.net/symbol/nasdaq-biib/news/?date=2026-11-22"
+          },
+          {
+            "url": "https://www.aries.com/us/en/stocks/BIIB/news"
+          },
+          {
+            "url": "https://www.axios.com/2026/11/25/bonds-nvidia-ai-stocks"
+          },
+          {
+            "url": "https://www.axios.com/newsletters/axios-pro-rata-a3e26c0f-6d85-4b97-8f1c-aa734828f95b"
+          },
+          {
+            "url": "https://www.benzinga.com/quote/BIIB/news"
+          },
+          {
+            "url": "https://www.cboe.com/tradable-products/vix/?trk=article-ssr-frontend-pulse_little-text-block"
+          },
+          {
+            "url": "https://www.hlb.com.my/content/dam/hlb/my/docs/pdf/Global_Markets/daily-market-watch/2026/25-11-2026.pdf"
+          },
+          {
+            "url": "https://www.investech.com/daily-data/"
+          },
+          {
+            "url": "https://www.investing.com/indices/us-spx-500-historical-data?trk=article-ssr-frontend-pulse_little-text-block"
+          },
+          {
+            "url": "https://www.investors.com/wp-content/uploads/2026/11/DailyGMI_112326.pdf"
+          },
+          {
+            "url": "https://www.kiplinger.com/investing/economy/this-weeks-economic-calendar"
+          },
+          {
+            "url": "https://www.kiplinger.com/investing/stocks/best-stocks-to-buy-for-the-new-congress"
+          },
+          {
+            "url": "https://www.kiplinger.com/investing/stocks/nasdaq-dives-1-261-points-as-anthropic-ai-stocks-sink-stock-market-today"
+          },
+          {
+            "url": "https://www.kiplinger.com/news/live/nvidia-earnings-live-updates-and-commentary-november-2026"
+          },
+          {
+            "url": "https://www.marketbeat.com/stocks/NASDAQ/BIIB/chart/"
+          },
+          {
+            "url": "https://www.marketscreener.com/quote/stock/BIOGEN-INC-4853/news/"
+          },
+          {
+            "url": "https://www.mcoscillator.com/market_breadth_data/?ad=semD&am=broad&an=msn_s&askid=faa2d734-665b-425b-bbec-b49f443c9be4-0-ab_msb&l=sem&o=12619&q=Mcclellan+Oscillator&qsrc=999"
+          },
+          {
+            "url": "https://www.reddit.com/r/TheMoat/comments/1y58rc5/daily_charts_25_nov_2026/"
+          },
+          {
+            "url": "https://www.stocktitan.net/overview/BIIB/"
+          },
+          {
+            "url": "https://www.tallacoptions.com/Indices/VIX"
+          },
+          {
+            "url": "https://www.theatlantic.com/ideas/2026/11/nvidia-stock-market-crisis/689557/?utm_source=openai"
+          },
+          {
+            "url": "https://www.thedailybeast.com/billionaire-who-bet-on-ceos-comeback-makes-ominous-prediction"
+          },
+          {
+            "url": "https://www.thetrading.tools/advance-decline-line"
+          },
+          {
+            "url": "https://www.trade8.org/market-notes/market-notes-20261120.pdf"
+          },
+          {
+            "url": "https://www.tradestreamedge.com/desk-preview.html"
+          },
+          {
+            "url": "https://www.wmtmt.com/stock/BIIB"
+          },
+          {
+            "url": "https://www.zacks.com/stock/news/3034883/stock-market-news-for-nov-25-2026"
+          },
+          {
+            "url": "https://ycharts.com/indices/%5EVIX/level"
+          }
+        ]
+      },
+      {
+        "agent": "News and Event Agent",
+        "verdict": "APPROVE",
+        "confidence": 0.85,
+        "thesis": "Web search (EDGAR filings and company releases) shows Biogen (BIIB) reported Q3 2026 results and an 8-K on Oct 28, 2026 with an EPS beat and a modest raise to the lower end of full‑year non‑GAAP EPS guidance; the company completed its announced Apellis acquisition (tender offer expired May 13, 2026 / related 8‑K filings in May 2026) which adds near‑term commercial products; a proposed securities class‑action settlement was reported/outlined in September 2026 and appears progressing toward resolution. No trading halts or adverse regulatory enforcement events denying commercialization were found in the search. These items do not constitute a verified material event arguing against initiating a new long.",
+        "risks": [
+          "Ongoing and/or newly amended securities litigation and related settlements could produce additional financial or disclosure risk despite reported settlement steps.",
+          "Acquisition/integration risk from Apellis (execution, cost, and potential near‑term dilution or operational distraction).",
+          "Regulatory or reimbursement developments for Alzheimer’s therapies (LEQEMBI) or other key products could change market dynamics or revenue assumptions.",
+          "Product‑specific clinical or safety developments (for legacy or newly acquired products) could be material and emerge after the cited filings.",
+          "Macroeconomic or sector/market selloffs that materially affect biotech multiples and liquidity."
+        ],
+        "sources": [
+          {
+            "url": "https://apnews.com/article/dfb364a61e4e77da27fc055e826b9a49"
+          },
+          {
+            "url": "https://apnews.com/article/ea22a1f7d4d4e69dfc2a2c94412a6f35"
+          },
+          {
+            "url": "https://biogen.gcs-web.com/node/30611/html"
+          },
+          {
+            "url": "https://biogen.gcs-web.com/node/31086/html"
+          },
+          {
+            "url": "https://biogen.gcs-web.com/static-files/aff7ea2e-12c1-49ce-8838-e2ee059adc42"
+          },
+          {
+            "url": "https://biogensecuritieslitigation.com/"
+          },
+          {
+            "url": "https://claimwatch.org/settlements/biogen-securities-litigation-settlement"
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/Biogen"
+          },
+          {
+            "url": "https://investors.biogen.com/news-releases/news-release-details/biogen-acquire-apellis-enhancing-companys-growth-portfolio"
+          },
+          {
+            "url": "https://investors.biogen.com/news-releases/news-release-details/update-fda-priority-review-leqembir-iqliktm-lecanemab-irmb"
+          },
+          {
+            "url": "https://investors.biogen.com/node/31091/html"
+          },
+          {
+            "url": "https://investors.biogen.com/static-files/811bc588-fc52-4804-ba9f-4dd244850d97"
+          },
+          {
+            "url": "https://investors.biogen.com/static-files/93b56a9f-83b5-40cf-bfb5-82a5692df1a6"
+          },
+          {
+            "url": "https://investors.biogen.com/static-files/fdd9f18b-3e21-4148-9243-cdcc908a281b"
+          },
+          {
+            "url": "https://news.bloomberglaw.com/class-action/biogen-investors-reach-settlement-outline-over-alzheimers-drug"
+          },
+          {
+            "url": "https://sectracker.app/en/BIIB"
+          },
+          {
+            "url": "https://securities.stanford.edu/filings-case.html?id=108370"
+          },
+          {
+            "url": "https://www.marketbeat.com/stocks/NASDAQ/BIIB/earnings/"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/875045/000087504526000096/biib-20260930.htm"
+          }
+        ]
+      },
+      {
+        "agent": "Technical Context Agent",
+        "verdict": "APPROVE",
+        "confidence": 0.87,
+        "thesis": "Long setup: breakout_strength=3.2044 (strong breakout) with strong relative strength (rs_excess_pct=27.7118) and healthy breadth (market_breadth_pct=60.0, breadth_gate=PASS). ATR=7.1788 indicates meaningful intraday volatility. Stop (254.8924) is below entry (259.89) and target (282.3792) is above entry, producing a positive reward profile consistent with a long breakout trade.",
+        "risks": [
+          "Stop is relatively tight versus volatility (ATR=7.1788) — normal price movement could trigger the stop.",
+          "Breakout failure risk: despite strong breakout and RS, momentum can roll over and invalidate the setup.",
+          "Breadth can deteriorate; a decline in market-wide participation would reduce the chance of reaching the target.",
+          "Target depends on continued directional follow-through; lack of follow-through would keep trade range-bound and increase chance of being stopped out."
+        ],
+        "sources": []
+      },
+      {
+        "agent": "Thesis Agent",
+        "verdict": "APPROVE",
+        "confidence": 0.82,
+        "thesis": "Quant signals present a long momentum breakout setup with an authoritative entry at 259.89, stop at 254.8924, target at 282.3792 and quantity 1.0. The setup is supported by a strong breakout_strength (3.2044), high relative strength (rs_excess_pct 27.7118), a breadth_gate PASS and market_breadth_pct = 60, indicating participation beyond a few leaders. Tier = A and the packet fields are internally coherent. Execute with the provided stop and sizing outputs and monitor execution costs and volatility.",
+        "risks": [
+          "Tight stop relative to ATR (ATR=7.1788) — normal intraday volatility could trigger the stop before directional follow-through.",
+          "Idiosyncratic biotech binary risk (FDA decisions, trial readouts, litigation or adverse company news) that can abruptly reverse momentum.",
+          "Macro/regime risk (near-term data like PCE or shifts in Fed expectations) that can widen spreads, provoke sharp reversals, or depress breadth.",
+          "Liquidity and execution risk: non-negligible spread (~17.7 bps) and potential intraday gaps could materially affect realized entry/exit prices.",
+          "Breakout failure / momentum rollover despite strong breakout_strength and RS; lack of follow-through would leave the position range-bound and increase stop-hit probability."
+        ],
+        "sources": []
+      },
+      {
+        "agent": "Claude CRO",
+        "verdict": "NO_TRADE",
+        "confidence": 0.6,
+        "thesis": "Evidence is missing, not clearly adverse, so I am not approving. I did not recompute price, stop, target or size. (1) Entry conflict: the authoritative entry is 259.89 with a stop of 254.89. Public quotes show BIIB trading about 256.75-269.85, with a last print near 269.11 around 2026-11-24/25. The entry is about 3.5% below that print, and the stop sits below the session low. I cannot tell whether the packet price is stale, an intraday snapshot or an unfillable limit. No specialist checked it against a live quote. The stock is also pressing 20-day resistance and a three-month high near 269.89. (2) Possible binary clinical event: aggregator trackers list Biogen Phase 3 readouts as upcoming catalysts. These are felzartamab TRANSCEND (estimated Dec 01) and litifilimab TOPAZ-1/2 in SLE. The da",
+        "risks": [
+          "Packet entry 259.89 does not match the public tape (about 269.11 last print); the entry may be stale or unfillable",
+          "Unconfirmed Phase 3 readouts (felzartamab TRANSCEND, litifilimab TOPAZ-1/2) could land inside the holding window and gap through the stop",
+          "The stock is extended near a 52-week high and resistance at about 269.89, so breakout failure is a risk",
+          "Stop is tight relative to ATR (7.18), and the spread is about 17.7 bps",
+          "Securities litigation and Apellis integration are secondary risks"
+        ],
+        "sources": [
+          {
+            "url": "https://catalystalert.io/pdufa/december-2026"
+          },
+          {
+            "url": "https://checkrare.com/2026-orphan-drugs-pdufa-dates-and-fda-approvals/"
+          },
+          {
+            "url": "https://investors.biogen.com/news-releases/news-release-details/fda-accepts-leqembir-iqliktm-lecanemab-irmb-supplemental"
+          },
+          {
+            "url": "https://journalarta.com/en/2026/11/25/us-stocks-to-watch-today-vz-southern-company-pep-and-more-november-25-2026"
+          },
+          {
+            "url": "https://robinhood.com/us/en/stocks/BIIB/"
+          },
+          {
+            "url": "https://stockanalysis.com/stocks/biib/"
+          },
+          {
+            "url": "https://stocktwits.com/symbol/BIIB"
+          },
+          {
+            "url": "https://tradersunion.com/news/stocks/show/4401038-biogen-surges-4-15percent-today-to/"
+          },
+          {
+            "url": "https://www.benzinga.com/news/fda/26/05/52416594/biogen-stock-gains-despite-extended-fda-review-for-alzheimers-therapy"
+          },
+          {
+            "url": "https://www.biopharmawatch.com/company/BIIB"
+          },
+          {
+            "url": "https://www.biospace.com/fda/6-fda-decisions-to-watch-in-q2-2026"
+          },
+          {
+            "url": "https://www.cnn.com/markets/stocks/BIIB"
+          },
+          {
+            "url": "https://www.fxstreet.com/amp/news/biib-stock-price-today-biogen-inc-crashes-30-after-alzheimers-treatment-setback-202011091523"
+          },
+          {
+            "url": "https://www.investing.com/equities/biogen-idec-inc-news"
+          },
+          {
+            "url": "https://www.marketbeat.com/stocks/NASDAQ/BIIB/fda-events/"
+          },
+          {
+            "url": "https://www.pdufa.bio/calendar"
+          },
+          {
+            "url": "https://www.sci.bio/q3-2026-upcoming-fda-decision-dates-pdufas/"
+          },
+          {
+            "url": "https://www.tradingview.com/symbols/NASDAQ-BIIB/"
+          }
+        ]
+      }
+    ]
+  }
+}
