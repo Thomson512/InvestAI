@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-11-24T05:20:13Z",
+  "generated_at": "2026-11-25T04:11:59Z",
   "universe_hash": "7ad575355432378826473b256fd72f995bb9a9b959176be86fa2d1aa1cf63ef5",
-  "source_dataset_sha256": "3741bbcb4ba9790b7297a2c4841f49bffe3a1b3ee4330746cbb0239ff0c058a4",
+  "source_dataset_sha256": "fa22f84817dc33bf0b334803feacae5521549de39487be434c89611bc6b5a0b9",
   "param_hash": "673ad8b9e4541815f6d8141f4b89136ba864d5cb82aa2ad4b7c43650484a79c7",
   "sizing": {
     "max_risk_per_trade_czk": 500,
@@ -16,52 +16,31 @@
     "min_days": 90,
     "min_trades": 100,
     "days": 364,
-    "trades": 69,
+    "trades": 70,
     "promotion_authorized": false
   },
-  "first_session": "2025-11-24",
-  "last_session": "2026-11-23",
+  "first_session": "2025-11-25",
+  "last_session": "2026-11-24",
   "scenarios": {
     "baseline": {
-      "completed_trades": 69,
+      "completed_trades": 70,
       "winners": 17,
-      "losers": 52,
-      "win_rate_pct": 24.64,
-      "realized_pnl": 3239.23,
-      "marked_pnl": 2999.24,
-      "max_drawdown_pct": 9.65,
-      "expectancy": 0.1064,
-      "profit_factor": 1.1342,
-      "open_positions": 6,
+      "losers": 53,
+      "win_rate_pct": 24.29,
+      "realized_pnl": 3175.95,
+      "marked_pnl": 3903.39,
+      "max_drawdown_pct": 9.66,
+      "expectancy": 0.09,
+      "profit_factor": 1.1312,
+      "open_positions": 7,
       "trades": [
-        {
-          "symbol": "CAH",
-          "entry_session": "2025-11-26",
-          "exit_session": "2025-12-02",
-          "entry_price": 210.9854,
-          "exit_price": 203.4197,
-          "stop_price": 203.5215,
-          "target_price": 248.9434,
-          "shares": 2,
-          "exit_reason": "STOP",
-          "r_multiple": -1.0047,
-          "realized_pnl_czk": -299.61,
-          "fx_entry": 18.055303,
-          "fx_exit": 18.045551,
-          "costs": {
-            "commission_czk": 0.0,
-            "slippage_czk": -25.02,
-            "fx_fee_czk": 22.44,
-            "fx_drift_czk": -3.97
-          }
-        },
         {
           "symbol": "RL",
           "entry_session": "2025-11-28",
           "exit_session": "2025-12-04",
           "entry_price": 366.5832,
-          "exit_price": 347.3391,
-          "stop_price": 347.5129,
+          "exit_price": 347.3392,
+          "stop_price": 347.513,
           "target_price": 455.0217,
           "shares": 1,
           "exit_reason": "STOP",
@@ -182,6 +161,27 @@
           }
         },
         {
+          "symbol": "GOOGL",
+          "entry_session": "2025-11-26",
+          "exit_session": "2025-12-17",
+          "entry_price": 319.7798,
+          "exit_price": 300.6367,
+          "stop_price": 300.7871,
+          "target_price": 420.923,
+          "shares": 1,
+          "exit_reason": "STOP",
+          "r_multiple": -0.9464,
+          "realized_pnl_czk": -373.23,
+          "fx_entry": 18.055303,
+          "fx_exit": 18.019334,
+          "costs": {
+            "commission_czk": 0.0,
+            "slippage_czk": -48.75,
+            "fx_fee_czk": 16.79,
+            "fx_drift_czk": -10.81
+          }
+        },
+        {
           "symbol": "DLTR",
           "entry_session": "2025-12-16",
           "exit_session": "2025-12-22",
@@ -250,7 +250,7 @@
           "exit_session": "2026-01-28",
           "entry_price": 248.8844,
           "exit_price": 341.3992,
-          "stop_price": 228.2727,
+          "stop_price": 228.2728,
           "target_price": 340.4026,
           "shares": 1,
           "exit_reason": "TARGET",
@@ -389,6 +389,27 @@
             "slippage_czk": 100.2,
             "fx_fee_czk": 24.76,
             "fx_drift_czk": -114.93
+          }
+        },
+        {
+          "symbol": "AIZ",
+          "entry_session": "2025-12-18",
+          "exit_session": "2026-02-11",
+          "entry_price": 234.9374,
+          "exit_price": 227.6961,
+          "stop_price": 228.1059,
+          "target_price": 264.0432,
+          "shares": 1,
+          "exit_reason": "STOP",
+          "r_multiple": -1.7267,
+          "realized_pnl_czk": -203.24,
+          "fx_entry": 18.014155,
+          "fx_exit": 17.748969,
+          "costs": {
+            "commission_czk": 0.0,
+            "slippage_czk": 7.38,
+            "fx_fee_czk": 12.41,
+            "fx_drift_czk": -60.38
           }
         },
         {
@@ -539,27 +560,6 @@
           }
         },
         {
-          "symbol": "GOOGL",
-          "entry_session": "2025-11-25",
-          "exit_session": "2026-03-06",
-          "entry_price": 326.123,
-          "exit_price": 295.3223,
-          "stop_price": 295.7192,
-          "target_price": 415.7886,
-          "shares": 1,
-          "exit_reason": "STOP",
-          "r_multiple": -1.7419,
-          "realized_pnl_czk": -686.7,
-          "fx_entry": 18.058524,
-          "fx_exit": 17.673094,
-          "costs": {
-            "commission_czk": 0.0,
-            "slippage_czk": 157.43,
-            "fx_fee_czk": 16.66,
-            "fx_drift_czk": -113.83
-          }
-        },
-        {
           "symbol": "FDX",
           "entry_session": "2026-02-19",
           "exit_session": "2026-03-06",
@@ -578,6 +578,27 @@
             "slippage_czk": -25.56,
             "fx_fee_czk": 15.72,
             "fx_drift_czk": -7.07
+          }
+        },
+        {
+          "symbol": "GLW",
+          "entry_session": "2026-02-12",
+          "exit_session": "2026-03-09",
+          "entry_price": 132.3962,
+          "exit_price": 119.9275,
+          "stop_price": 119.9875,
+          "target_price": 185.7814,
+          "shares": 2,
+          "exit_reason": "STOP",
+          "r_multiple": -1.1146,
+          "realized_pnl_czk": -473.12,
+          "fx_entry": 17.741272,
+          "fx_exit": 17.66918,
+          "costs": {
+            "commission_czk": 0.0,
+            "slippage_czk": 17.95,
+            "fx_fee_czk": 13.4,
+            "fx_drift_czk": -17.29
           }
         },
         {
@@ -1486,50 +1507,29 @@
       ]
     },
     "conservative": {
-      "completed_trades": 69,
+      "completed_trades": 70,
       "winners": 17,
-      "losers": 52,
-      "win_rate_pct": 24.64,
-      "realized_pnl": 2806.98,
-      "marked_pnl": 2547.79,
-      "max_drawdown_pct": 9.77,
-      "expectancy": 0.0892,
-      "profit_factor": 1.1147,
-      "open_positions": 6,
+      "losers": 53,
+      "win_rate_pct": 24.29,
+      "realized_pnl": 2742.55,
+      "marked_pnl": 3448.58,
+      "max_drawdown_pct": 9.78,
+      "expectancy": 0.0728,
+      "profit_factor": 1.1118,
+      "open_positions": 7,
       "trades": [
-        {
-          "symbol": "CAH",
-          "entry_session": "2025-11-26",
-          "exit_session": "2025-12-02",
-          "entry_price": 211.0909,
-          "exit_price": 203.318,
-          "stop_price": 203.5215,
-          "target_price": 248.9434,
-          "shares": 2,
-          "exit_reason": "STOP",
-          "r_multiple": -1.0297,
-          "realized_pnl_czk": -307.09,
-          "fx_entry": 18.055303,
-          "fx_exit": 18.045551,
-          "costs": {
-            "commission_czk": 0.0,
-            "slippage_czk": -17.54,
-            "fx_fee_czk": 22.44,
-            "fx_drift_czk": -3.97
-          }
-        },
         {
           "symbol": "RL",
           "entry_session": "2025-11-28",
           "exit_session": "2025-12-04",
           "entry_price": 366.7664,
-          "exit_price": 347.1654,
-          "stop_price": 347.5129,
+          "exit_price": 347.1655,
+          "stop_price": 347.513,
           "target_price": 455.0217,
           "shares": 1,
           "exit_reason": "STOP",
           "r_multiple": -1.0632,
-          "realized_pnl_czk": -375.14,
+          "realized_pnl_czk": -375.13,
           "fx_entry": 18.0504,
           "fx_exit": 18.044633,
           "costs": {
@@ -1645,6 +1645,27 @@
           }
         },
         {
+          "symbol": "GOOGL",
+          "entry_session": "2025-11-26",
+          "exit_session": "2025-12-17",
+          "entry_price": 319.9396,
+          "exit_price": 300.4863,
+          "stop_price": 300.7871,
+          "target_price": 420.923,
+          "shares": 1,
+          "exit_reason": "STOP",
+          "r_multiple": -0.9606,
+          "realized_pnl_czk": -378.83,
+          "fx_entry": 18.055303,
+          "fx_exit": 18.019334,
+          "costs": {
+            "commission_czk": 0.0,
+            "slippage_czk": -43.16,
+            "fx_fee_czk": 16.79,
+            "fx_drift_czk": -10.81
+          }
+        },
+        {
           "symbol": "DLTR",
           "entry_session": "2025-12-16",
           "exit_session": "2025-12-22",
@@ -1713,11 +1734,11 @@
           "exit_session": "2026-01-28",
           "entry_price": 249.0088,
           "exit_price": 341.2284,
-          "stop_price": 228.2727,
+          "stop_price": 228.2728,
           "target_price": 340.4026,
           "shares": 1,
           "exit_reason": "TARGET",
-          "r_multiple": 4.2879,
+          "r_multiple": 4.288,
           "realized_pnl_czk": 1577.95,
           "fx_entry": 18.0504,
           "fx_exit": 17.842993,
@@ -1852,6 +1873,27 @@
             "slippage_czk": 108.45,
             "fx_fee_czk": 24.76,
             "fx_drift_czk": -114.87
+          }
+        },
+        {
+          "symbol": "AIZ",
+          "entry_session": "2025-12-18",
+          "exit_session": "2026-02-11",
+          "entry_price": 235.0548,
+          "exit_price": 227.5822,
+          "stop_price": 228.1059,
+          "target_price": 264.0432,
+          "shares": 1,
+          "exit_reason": "STOP",
+          "r_multiple": -1.7618,
+          "realized_pnl_czk": -207.38,
+          "fx_entry": 18.014155,
+          "fx_exit": 17.748969,
+          "costs": {
+            "commission_czk": 0.0,
+            "slippage_czk": 11.52,
+            "fx_fee_czk": 12.41,
+            "fx_drift_czk": -60.35
           }
         },
         {
@@ -2002,27 +2044,6 @@
           }
         },
         {
-          "symbol": "GOOGL",
-          "entry_session": "2025-11-25",
-          "exit_session": "2026-03-06",
-          "entry_price": 326.286,
-          "exit_price": 295.1745,
-          "stop_price": 295.7192,
-          "target_price": 415.7886,
-          "shares": 1,
-          "exit_reason": "STOP",
-          "r_multiple": -1.756,
-          "realized_pnl_czk": -692.26,
-          "fx_entry": 18.058524,
-          "fx_exit": 17.673094,
-          "costs": {
-            "commission_czk": 0.0,
-            "slippage_czk": 162.98,
-            "fx_fee_czk": 16.66,
-            "fx_drift_czk": -113.77
-          }
-        },
-        {
           "symbol": "FDX",
           "entry_session": "2026-02-19",
           "exit_session": "2026-03-06",
@@ -2041,6 +2062,27 @@
             "slippage_czk": -20.32,
             "fx_fee_czk": 15.72,
             "fx_drift_czk": -7.06
+          }
+        },
+        {
+          "symbol": "GLW",
+          "entry_session": "2026-02-12",
+          "exit_session": "2026-03-09",
+          "entry_price": 132.4623,
+          "exit_price": 119.8675,
+          "stop_price": 119.9875,
+          "target_price": 185.7814,
+          "shares": 2,
+          "exit_reason": "STOP",
+          "r_multiple": -1.1252,
+          "realized_pnl_czk": -477.58,
+          "fx_entry": 17.741272,
+          "fx_exit": 17.66918,
+          "costs": {
+            "commission_czk": 0.0,
+            "slippage_czk": 22.42,
+            "fx_fee_czk": 13.4,
+            "fx_drift_czk": -17.28
           }
         },
         {
@@ -2949,45 +2991,24 @@
       ]
     },
     "severe": {
-      "completed_trades": 69,
+      "completed_trades": 70,
       "winners": 17,
-      "losers": 52,
-      "win_rate_pct": 24.64,
-      "realized_pnl": 1942.47,
-      "marked_pnl": 1644.88,
-      "max_drawdown_pct": 10.01,
-      "expectancy": 0.0547,
-      "profit_factor": 1.0774,
-      "open_positions": 6,
+      "losers": 53,
+      "win_rate_pct": 24.29,
+      "realized_pnl": 1875.7,
+      "marked_pnl": 2538.96,
+      "max_drawdown_pct": 10.02,
+      "expectancy": 0.0382,
+      "profit_factor": 1.0745,
+      "open_positions": 7,
       "trades": [
-        {
-          "symbol": "CAH",
-          "entry_session": "2025-11-26",
-          "exit_session": "2025-12-02",
-          "entry_price": 211.3018,
-          "exit_price": 203.1145,
-          "stop_price": 203.5215,
-          "target_price": 248.9434,
-          "shares": 2,
-          "exit_reason": "STOP",
-          "r_multiple": -1.0799,
-          "realized_pnl_czk": -322.05,
-          "fx_entry": 18.055303,
-          "fx_exit": 18.045551,
-          "costs": {
-            "commission_czk": 0.0,
-            "slippage_czk": -2.58,
-            "fx_fee_czk": 22.44,
-            "fx_drift_czk": -3.96
-          }
-        },
         {
           "symbol": "RL",
           "entry_session": "2025-11-28",
           "exit_session": "2025-12-04",
           "entry_price": 367.1328,
-          "exit_price": 346.8179,
-          "stop_price": 347.5129,
+          "exit_price": 346.818,
+          "stop_price": 347.513,
           "target_price": 455.0217,
           "shares": 1,
           "exit_reason": "STOP",
@@ -3108,6 +3129,27 @@
           }
         },
         {
+          "symbol": "GOOGL",
+          "entry_session": "2025-11-26",
+          "exit_session": "2025-12-17",
+          "entry_price": 320.2592,
+          "exit_price": 300.1855,
+          "stop_price": 300.7871,
+          "target_price": 420.923,
+          "shares": 1,
+          "exit_reason": "STOP",
+          "r_multiple": -0.9889,
+          "realized_pnl_czk": -390.02,
+          "fx_entry": 18.055303,
+          "fx_exit": 18.019334,
+          "costs": {
+            "commission_czk": 0.0,
+            "slippage_czk": -31.96,
+            "fx_fee_czk": 16.79,
+            "fx_drift_czk": -10.8
+          }
+        },
+        {
           "symbol": "DLTR",
           "entry_session": "2025-12-16",
           "exit_session": "2025-12-22",
@@ -3176,7 +3218,7 @@
           "exit_session": "2026-01-28",
           "entry_price": 249.2575,
           "exit_price": 340.8869,
-          "stop_price": 228.2727,
+          "stop_price": 228.2728,
           "target_price": 340.4026,
           "shares": 1,
           "exit_reason": "TARGET",
@@ -3315,6 +3357,27 @@
             "slippage_czk": 124.95,
             "fx_fee_czk": 24.75,
             "fx_drift_czk": -114.76
+          }
+        },
+        {
+          "symbol": "AIZ",
+          "entry_session": "2025-12-18",
+          "exit_session": "2026-02-11",
+          "entry_price": 235.2896,
+          "exit_price": 227.3544,
+          "stop_price": 228.1059,
+          "target_price": 264.0432,
+          "shares": 1,
+          "exit_reason": "STOP",
+          "r_multiple": -1.8321,
+          "realized_pnl_czk": -215.65,
+          "fx_entry": 18.014155,
+          "fx_exit": 17.748969,
+          "costs": {
+            "commission_czk": 0.0,
+            "slippage_czk": 19.79,
+            "fx_fee_czk": 12.41,
+            "fx_drift_czk": -60.29
           }
         },
         {
@@ -3465,27 +3528,6 @@
           }
         },
         {
-          "symbol": "GOOGL",
-          "entry_session": "2025-11-25",
-          "exit_session": "2026-03-06",
-          "entry_price": 326.6119,
-          "exit_price": 294.8791,
-          "stop_price": 295.7192,
-          "target_price": 415.7886,
-          "shares": 1,
-          "exit_reason": "STOP",
-          "r_multiple": -1.7841,
-          "realized_pnl_czk": -703.37,
-          "fx_entry": 18.058524,
-          "fx_exit": 17.673094,
-          "costs": {
-            "commission_czk": 0.0,
-            "slippage_czk": 174.09,
-            "fx_fee_czk": 16.66,
-            "fx_drift_czk": -113.66
-          }
-        },
-        {
           "symbol": "FDX",
           "entry_session": "2026-02-19",
           "exit_session": "2026-03-06",
@@ -3504,6 +3546,27 @@
             "slippage_czk": -9.84,
             "fx_fee_czk": 15.72,
             "fx_drift_czk": -7.05
+          }
+        },
+        {
+          "symbol": "GLW",
+          "entry_session": "2026-02-12",
+          "exit_session": "2026-03-09",
+          "entry_price": 132.5947,
+          "exit_price": 119.7475,
+          "stop_price": 119.9875,
+          "target_price": 185.7814,
+          "shares": 2,
+          "exit_reason": "STOP",
+          "r_multiple": -1.1462,
+          "realized_pnl_czk": -486.52,
+          "fx_entry": 17.741272,
+          "fx_exit": 17.66918,
+          "costs": {
+            "commission_czk": 0.0,
+            "slippage_czk": 31.35,
+            "fx_fee_czk": 13.4,
+            "fx_drift_czk": -17.27
           }
         },
         {
