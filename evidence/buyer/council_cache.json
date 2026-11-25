@@ -24476,6 +24476,338 @@
           ]
         }
       ]
+    },
+    "2026-11-24:DRI:673ad8b9e4541815f6d8141f4b89136ba864d5cb82aa2ad4b7c43650484a79c7": {
+      "verdict": "APPROVE",
+      "reason": "5/6 approved with Claude CRO and confidence >= 0.65",
+      "symbol": "DRI",
+      "asof_session": "2026-11-24",
+      "param_hash": "673ad8b9e4541815f6d8141f4b89136ba864d5cb82aa2ad4b7c43650484a79c7",
+      "generated_at": "2026-11-25T19:52:22Z",
+      "findings": [
+        {
+          "agent": "Scanner Agent",
+          "verdict": "APPROVE",
+          "confidence": 0.86,
+          "thesis": "The supplied packet for DRI is internally coherent. Required authoritative fields are present (entry_usd 241.14, stop_price 228.3601, target_price 298.64955, quantity 1.0) and are consistent with a long trade (stop below entry, target above entry). Ancillary metrics (atr_14, breakout_strength, spread_bps, market_breadth_pct, rs_excess_pct, tier) are provided and contain no obvious contradictions with the stated entry/stop/target/quantity.",
+          "risks": [
+            "Breakout strength is low (0.0708), indicating a weaker technical signal than stronger breakouts.",
+            "Spread of ~19.93 bps could increase execution cost versus quoted entry price.",
+            "ATR is provided (6.0); stop placement may be relatively close to short-term volatility, creating risk of being stopped by normal price noise.",
+            "Tier B and single-share quantity: position is not sized for diversification; market-wide moves (market_breadth_pct 60.0) could still impact the trade."
+          ],
+          "sources": []
+        },
+        {
+          "agent": "Market Regime Agent",
+          "verdict": "APPROVE",
+          "confidence": 0.64,
+          "thesis": "Although broad headline indices have been weak into late November (short-term S&P/Nasdaq softness and elevated VIX), internal breadth in the quant packet is PASS at 60% and the symbol shows clear relative strength and a positive breakout_strength (0.0708) and RS excess (~16.6%). Company-level fundamentals appear supportive (recent quarterly results and a reaffirmed outlook), and DRI traded up on the 2026-11-24 session — all of which make a momentum breakout plausible given the supplied entry, stop and target parameters. Net: the micro (stock-specific) setup and breadth signal support executing the breakout trade despite a fragile macro environment.",
+          "risks": [
+            "Elevated overall market volatility (VIX elevated) increases chance of false breakouts and wider intraday moves.",
+            "Recent market weakness (S&P/Nasdaq pullback in November) creates a risk of correlation-driven downside that can overwhelm single-stock strength.",
+            "DRI has an upcoming earnings/announcement cadence (calendar risk) that could gap the stock before the stop is hit.",
+            "Restaurant/consumer discretionary exposure makes DRI sensitive to near-term consumer-spending or inflation surprises (food/commodity cost pressure).",
+            "Macro/regulatory headlines (Fed rate path, tariffs or sudden risk-off tied to AI-sector swings) could quickly tilt the backdrop hostile."
+          ],
+          "sources": [
+            {
+              "url": "https://apnews.com/article/10044b4fb55d3ff20fde9ba9e9acaab1"
+            },
+            {
+              "url": "https://apnews.com/article/31fab1e32dda1ad3a29c192f620d5733"
+            },
+            {
+              "url": "https://apnews.com/article/6cc4e580290aadf304ee316d6d46dd81"
+            },
+            {
+              "url": "https://apnews.com/article/feec0e25b9994b1c86b16329cf770192"
+            },
+            {
+              "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0000940944/06d55998-da31-445f-b6f3-55e1daf9c2be.pdf"
+            },
+            {
+              "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0000940944/e8bcf5e9-9bd9-44a2-8599-17510e3796fa.pdf"
+            },
+            {
+              "url": "https://finance.yahoo.com/quote/DRI/?trk=article-ssr-frontend-pulse_little-text-block"
+            },
+            {
+              "url": "https://finance.yahoo.com/quote/DRI/history/?p=DRI"
+            },
+            {
+              "url": "https://insiderstreet.ai/research/DRI/pdf"
+            },
+            {
+              "url": "https://investor.darden.com/news/news-details/2026/Darden-Restaurants-Reports-Fiscal-2027-First-Quarter-Results-Declares-Quarterly-Dividend-and-Reaffirms-Fiscal-2027-Outlook/default.aspx"
+            },
+            {
+              "url": "https://kbjr.marketminute.com/quote/NY%3ADRI/historical"
+            },
+            {
+              "url": "https://markets.financialcontent.com/wss/quote/ny%3Adri"
+            },
+            {
+              "url": "https://moneyweek.com/investments/stock-markets/how-to-protect-against-greater-market-volatility"
+            },
+            {
+              "url": "https://oicharts.com/us/stocks/DRI"
+            },
+            {
+              "url": "https://portfolio-terminal.com/markets/stock-market-close/november-24-2026"
+            },
+            {
+              "url": "https://s27.q4cdn.com/308865545/files/doc_earnings/2026/q3/transcript/Q3-FY2026-Transcript.pdf"
+            },
+            {
+              "url": "https://snowshagal.com/en/market/sp500/"
+            },
+            {
+              "url": "https://stockanalysis.com/stocks/dri/history/"
+            },
+            {
+              "url": "https://stockvs.com/en/stock/dri"
+            },
+            {
+              "url": "https://strongtoweradvisors.net/market-commentary/2026-11-24"
+            },
+            {
+              "url": "https://www.axios.com/2026/11/25/incomes-layoffs-rates-pce-ai"
+            },
+            {
+              "url": "https://www.davemanuel.com/where-did-the-djia-nasdaq-sp500-trade-on.php?date=2026-11-09&from=2025-11-09&to=2026-11-09"
+            },
+            {
+              "url": "https://www.investing.com/equities/dardem-rest-historical-data"
+            },
+            {
+              "url": "https://www.investing.com/indices/us-spx-500-historical-data?trk=article-ssr-frontend-pulse_little-text-block"
+            },
+            {
+              "url": "https://www.kiplinger.com/investing/economy/this-weeks-economic-calendar"
+            },
+            {
+              "url": "https://www.kiplinger.com/investing/stocks/dividend-stocks/best-dividend-stocks-you-can-count-on"
+            },
+            {
+              "url": "https://www.marketbeat.com/stocks/NYSE/DRI/chart/"
+            },
+            {
+              "url": "https://www.persistfolio.com/market-conditions"
+            },
+            {
+              "url": "https://www.quantellect.ai/us/stocks/nyse/dri"
+            },
+            {
+              "url": "https://www.reddit.com/r/restaurateur/comments/1wijlcv/restaurants_sep_7_sep_11_2026_wk_37_restaurant/"
+            },
+            {
+              "url": "https://www.schwab.wallst.com/Research/Public/stocks/summary/?symbol=dri"
+            },
+            {
+              "url": "https://www.statmuse.com/money/ask/s-and-p-500-index-today"
+            },
+            {
+              "url": "https://www.stocknear.com/stocks/DRI/history"
+            },
+            {
+              "url": "https://www.tallacoptions.com/Indices/VIX"
+            },
+            {
+              "url": "https://www.theatlantic.com/ideas/2026/11/nvidia-stock-market-crisis/689557/?utm_source=openai"
+            },
+            {
+              "url": "https://www.thedailybeast.com/trump-80-spews-delusional-reason-markets-are-tanking"
+            },
+            {
+              "url": "https://www.youtube.com/watch?v=J_WpEewVn4A"
+            },
+            {
+              "url": "https://ycharts.com/indicators/vix_volatility_index?source=content_type%3Areact%7Cfirst_level_url%3Aarticle%7Csection%3Amain_content%7Cbutton%3Abody_link"
+            }
+          ]
+        },
+        {
+          "agent": "News and Event Agent",
+          "verdict": "APPROVE",
+          "confidence": 0.8,
+          "thesis": "Web search through publicly available filings and news up to Nov 24, 2026 shows Darden Restaurants (DRI) reported fiscal Q1 FY2027 results (reported Sep 24, 2026), declared a quarterly dividend, and reaffirmed its fiscal 2027 outlook. I found no verified material events—no new adverse guidance, no regulatory enforcement actions, no material litigation developments, no trading halts, and no announced mergers/acquisitions—that would argue against initiating a new long at this time. Routine company actions disclosed earlier (Bahama Breeze closures/conversions; completed acquisitions such as Chuy’s and Cheddar’s) are noted in filings but are already public and were not identified as newly material negative developments.",
+          "risks": [
+            "Upcoming next earnings release (market consensus/expected date mid-December 2026) could produce volatility or negative guidance and should be monitored closely.",
+            "Ongoing brand rationalization (Bahama Breeze closures/conversions) could weigh on reported same-restaurant sales if conversions underperform expectations.",
+            "Restaurant-sector macro risks (higher commodity/labor costs, consumer spending weakness) remain relevant and could impact near-term results.",
+            "Isolated or routine litigation filings were found but no single material litigation or regulatory enforcement was identified; new filings could emerge—monitor EDGAR/8-Ks for updates.",
+            "Unexpected M&A, capital-structure actions, or a trading halt between now and entry would materially change the thesis and must be rechecked prior to initiating a position."
+          ],
+          "sources": [
+            {
+              "url": "https://apnews.com/article/a30cf6293208eefd0aaaf2bcb2782291"
+            },
+            {
+              "url": "https://apnews.com/article/caeb42b84b9f36294b1c6f6eea5b18ba"
+            },
+            {
+              "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0000940944/e8bcf5e9-9bd9-44a2-8599-17510e3796fa.pdf"
+            },
+            {
+              "url": "https://en.wikipedia.org/wiki/Darden_Restaurants"
+            },
+            {
+              "url": "https://finance.yahoo.com/quote/DRI/?ltr=1"
+            },
+            {
+              "url": "https://investor.darden.com/news/news-details/2026/Darden-Restaurants-Reports-Fiscal-2027-First-Quarter-Results-Declares-Quarterly-Dividend-and-Reaffirms-Fiscal-2027-Outlook/default.aspx"
+            },
+            {
+              "url": "https://picks.utilarium.app/company/DRI/"
+            },
+            {
+              "url": "https://repleader.net/companies/darden-restaurants-inc/"
+            },
+            {
+              "url": "https://s27.q4cdn.com/308865545/files/doc_earnings/2026/q4/presentation/Q4-FY2026-Earnings-Release-Deck.pdf"
+            },
+            {
+              "url": "https://sectracker.app/en/DRI"
+            },
+            {
+              "url": "https://tickerfilings.com/stock/DRI/earnings?period=quarterly"
+            },
+            {
+              "url": "https://www.axios.com/2024/07/18/olive-garden-darden-chuys"
+            },
+            {
+              "url": "https://www.axios.com/newsletters/axios-pro-rata-f84acf89-55d1-40a5-9e9b-21dd8a75823c"
+            },
+            {
+              "url": "https://www.investing.com/equities/dardem-rest-earnings"
+            },
+            {
+              "url": "https://www.kiplinger.com/investing/stocks/17494/next-week-earnings-calendar-stocks"
+            },
+            {
+              "url": "https://www.marketbeat.com/stocks/NYSE/DRI/earnings/"
+            },
+            {
+              "url": "https://www.reddit.com/r/restaurateur/comments/1wijlcv/restaurants_sep_7_sep_11_2026_wk_37_restaurant/"
+            },
+            {
+              "url": "https://www.sec.gov/Archives/edgar/data/940944/000094094426000032/dri-20260924.htm"
+            },
+            {
+              "url": "https://www.sec.gov/Archives/edgar/data/940944/000094094426000042/dri-20260830.htm"
+            },
+            {
+              "url": "https://www.sec.gov/Archives/edgar/data/940944/000119312526342051/d117676dars.pdf"
+            },
+            {
+              "url": "https://www.stocktitan.net/sec-filings/DRI/10-q-darden-restaurants-inc-quarterly-earnings-report-04dfbae82a86.html"
+            },
+            {
+              "url": "https://www.stocktitan.net/sec-filings/DRI/8-k-darden-restaurants-inc-reports-material-event-bd5f15542ce5.html"
+            },
+            {
+              "url": "https://www.youtube.com/watch?v=O4LaY0FDZ7Q"
+            }
+          ]
+        },
+        {
+          "agent": "Technical Context Agent",
+          "verdict": "APPROVE",
+          "confidence": 0.78,
+          "thesis": "Breakout strength (0.0708) combined with strong relative strength (rs_excess_pct 16.5799%) and supportive market breadth (60%) indicates a viable long breakout. ATR (6.0) signals moderate volatility. A stop at 228.3601 and target at 298.64955 are provided and do not contradict a long breakout, so the setup is approved on the supplied metrics.",
+          "risks": [
+            "Moderate volatility (ATR=6.0) could trigger the stop before a sustained trend resumes.",
+            "Breakout strength is positive but modest; false breakouts remain possible.",
+            "Market breadth at 60% is supportive but not dominant; weakening breadth could invalidate the move.",
+            "Target requires sustained upside; monitor RS and breadth for deterioration."
+          ],
+          "sources": []
+        },
+        {
+          "agent": "Thesis Agent",
+          "verdict": "APPROVE",
+          "confidence": 0.77,
+          "thesis": "Bull case: The quant packet shows a coherent long breakout setup with positive (if modest) breakout strength and strong relative strength, supported by internal breadth PASS and company-level results/outlook that were reaffirmed. The technical stop is below entry and a higher target is provided, so the setup can capture a momentum continuation if stock-specific fundamentals and breadth hold.\n\nBear case: Breakout strength is low and volatility is moderate, so the move may be a false breakout or be stopped out by normal ATR-driven noise. Broader market weakness, elevated VIX, or a sector-specific downturn (consumer spending, commodity/labor cost pressure) could overwhelm the individual setup. Upcoming earnings or an unexpected company-level event (negative guidance, material litigation, trad",
+          "risks": [
+            "Modest breakout strength (0.0708) — higher false-breakout risk",
+            "Moderate ATR (6.0) — stop may be hit by normal volatility",
+            "Elevated market volatility/VIX and recent headline-driven index weakness — correlation risk",
+            "Upcoming earnings/calendar risk that could gap the stock",
+            "Restaurant/consumer-discretionary exposure — sensitivity to consumer spending and commodity/labor costs"
+          ],
+          "sources": []
+        },
+        {
+          "agent": "Claude CRO",
+          "verdict": "APPROVE",
+          "confidence": 0.66,
+          "thesis": "Marginal approval. I found no verified adverse event for DRI: no new litigation, trading halt, M&A or regulatory action. Management reaffirmed FY27 EPS guidance of $11.10 to $11.35, and beta is low at about 0.63. The specialists' setup is internally coherent. Breadth passes at 60%, relative-strength excess is about 16.6%, and the stock is making new highs. The main concerns are real but do not amount to a verified reason to reject. Fiscal Q2 earnings are confirmed for Dec 18, 2026, inside the likely holding period. The last two earnings reactions were negative, so a gap through the stop is possible. Entry is at or near the all-time high of $240.32, and InvestingPro flags the stock as overvalued. The consensus price target of about $235 sits below entry, and the highest target found ($263) ",
+          "risks": [
+            "Fiscal Q2 earnings are confirmed for 2026-12-18, inside the likely holding period. The last two earnings reactions were negative (about -6% after Q1, and a tumble in June), so a gap through the stop is possible.",
+            "The stock is at an all-time high after a strong session. InvestingPro flags it as overvalued relative to fair value, and breakout strength is modest (0.0708), so a false breakout is possible.",
+            "The consensus price target (about $235) is below entry. The highest target found ($263) is well below the packet target, which raises a plausibility concern.",
+            "Analysts flag weaker casual-dining traffic, Olive Garden growth fading, and weaker future free cash flow. Bahama Breeze closures and conversions add execution risk.",
+            "The macro backdrop is fragile: the Market Regime Agent cites elevated VIX and index weakness. I did not verify this, and the sources behind it were not reviewed. The Scanner, Technical Context and Thesis agents attached no sources."
+          ],
+          "sources": [
+            {
+              "url": "https://benzinga.com/news/earnings/21/12/24664262/earnings-scheduled-for-december-17-2021"
+            },
+            {
+              "url": "https://benzinga.com/news/earnings/22/06/27826211/why-darden-restaurants-stock-is-on-the-move-today"
+            },
+            {
+              "url": "https://benzinga.com/z/23076484"
+            },
+            {
+              "url": "https://finance.yahoo.com/quote/DRI/"
+            },
+            {
+              "url": "https://finance.yahoo.com/quote/DRI/news/"
+            },
+            {
+              "url": "https://greeksoup.ai/stocks/us/dri/"
+            },
+            {
+              "url": "https://invesaro.com/company/DRI"
+            },
+            {
+              "url": "https://investing.com/news/company-news/darden-restaurants-stock-hits-alltime-high-at-24032-usd-93CH-5048982"
+            },
+            {
+              "url": "https://marketbeat.com/instant-alerts/analyst-bnp-paribas-exane-begins-coverage-on-darden-restaurants-nyse-dri-2026-11-24"
+            },
+            {
+              "url": "https://stockanalysis.com/stocks/dri/"
+            },
+            {
+              "url": "https://www.benzinga.com/news/earnings-previews/19/12/15012432/user/password"
+            },
+            {
+              "url": "https://www.chartmill.com/stock/quote/DRI/analyst-ratings"
+            },
+            {
+              "url": "https://www.defenseworld.net/2026/11/25/darden-restaurants-nysedri-reaches-new-52-week-high-following-analyst-upgrade.html"
+            },
+            {
+              "url": "https://www.earningswhispers.com/stocks/DRI"
+            },
+            {
+              "url": "https://www.investing.com/equities/dardem-rest-earnings"
+            },
+            {
+              "url": "https://www.marketbeat.com/instant-alerts/price-darden-restaurants-nyse-dri-sets-new-52-week-high-following-analyst-upgrade-2026-11-24/"
+            },
+            {
+              "url": "https://www.tradingview.com/symbols/NASDAQ-RUTH"
+            },
+            {
+              "url": "https://www.tradingview.com/symbols/NYSE-DRI/"
+            }
+          ]
+        }
+      ]
     }
   }
 }
