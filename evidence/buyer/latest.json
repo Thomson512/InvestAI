@@ -1,7 +1,363 @@
 {
-  "outcome": "GLOBAL_BLOCKER:NO_PNL_RECORD_TODAY",
+  "outcome": "ORDER_SUBMITTED:58600500193",
   "session_date": "2026-11-25",
-  "generated_at": "2026-11-25T14:30:25Z",
+  "generated_at": "2026-11-25T14:42:28Z",
   "official": true,
-  "extra_summary": []
+  "extra_summary": [],
+  "plan": {
+    "symbol": "GILD",
+    "quantity": 2.0,
+    "entry_usd": 176.38,
+    "stop_price": 168.9969,
+    "target_price": 209.60394999999994,
+    "fx_usdczk": 22.329,
+    "spread_bps": 18.1591192827144
+  },
+  "fence_key": "2026-11-25:GILD:673ad8b9e4541815f6d8141f4b89136ba864d5cb82aa2ad4b7c43650484a79c7",
+  "stop_order_id": "58600500209",
+  "param_hash": "673ad8b9e4541815f6d8141f4b89136ba864d5cb82aa2ad4b7c43650484a79c7",
+  "council": {
+    "verdict": "APPROVE",
+    "reason": "6/6 approved with Claude CRO and confidence >= 0.65",
+    "cached": false,
+    "findings": [
+      {
+        "agent": "Scanner Agent",
+        "verdict": "APPROVE",
+        "confidence": 0.9,
+        "thesis": "The packet for GILD is internally coherent. Entry (176.38) sits above the stop (168.9969) and below the target (209.60395). Stop distance (~1.58 ATR) and target distance (~7.12 ATR) produce a plausible reward:risk profile; breakout_strength > 1, RS excess (~27%) and breadth_gate = PASS support a technical setup, and spread_bps is small. Quantity (2.0) and tier = A are present and consistent with the rest of the packet.",
+        "risks": [
+          "Market or news-driven gap risk could trigger the stop before the setup plays out.",
+          "Model/parameter risk: assumptions behind breakout_strength, RS, and tier may not hold in all market conditions.",
+          "Position concentration: a 2-share/lot size may under- or over-expose depending on portfolio context (packet does not provide portfolio-level constraints).",
+          "Execution risk: intraday liquidity or slippage could worsen effective entry/stop given real-market dynamics."
+        ],
+        "sources": []
+      },
+      {
+        "agent": "Market Regime Agent",
+        "verdict": "APPROVE",
+        "confidence": 0.78,
+        "thesis": "Quant packet shows a narrow but positive momentum setup (breakout_strength 1.0054) with breadth_gate = PASS and market_breadth_pct = 60% plus strong relative strength (rs_excess_pct 26.97%). Independent market data for 2026-11-24 shows Health Care leading performance and positive advance/decline breadth (more advancers than decliners) while headline indices gave back some gains — a backdrop that favors sector leaders like GILD and supports a momentum breakout attempt.",
+        "risks": [
+          "Elevated market volatility (VIX elevated) increases chance of false breakouts or wider intra-day swings.",
+          "Broader index weakness / tech-led pullback could spill into health names during risk-off rotations and hurt continuation.",
+          "Event risk: upcoming company/investor events or sector headlines (conference presentations, FDA/regulatory or clinical data) could quickly reverse momentum.",
+          "Liquidity and execution risk given spread_bps ~18; wider spreads increase slippage on entries/stops.",
+          "Clinical/regulatory downside specific to Gilead (pipeline or trial news) could invalidate the breakout."
+        ],
+        "sources": [
+          {
+            "url": "https://apnews.com/article/6cc4e580290aadf304ee316d6d46dd81"
+          },
+          {
+            "url": "https://apnews.com/article/9d13d96cc3e4bac8f334f9145c718e42"
+          },
+          {
+            "url": "https://bijlagen.nos.nl/artikel-26485356/2026_Access_to_Medicine_Index___Embargo_10Nov2026.pdf"
+          },
+          {
+            "url": "https://chartrow.com/market-breadth"
+          },
+          {
+            "url": "https://chartrow.com/quote/gild/earnings"
+          },
+          {
+            "url": "https://convectramacro.com/sector-pulse"
+          },
+          {
+            "url": "https://daniox.com/stocks/sectors"
+          },
+          {
+            "url": "https://eu-assets.contentstack.com/v3/assets/blt0a48a1f3edca9eb0/blt8e1fdecffbff02fd/6b05d8ed0d36d951b9ee4b2e/BPI_Dec2026_Featured_Report-v3.pdf"
+          },
+          {
+            "url": "https://finance.yahoo.com/quote/%5EVIX/history/?frequency=1d"
+          },
+          {
+            "url": "https://fundamentalytics.com/stocks/gild/"
+          },
+          {
+            "url": "https://galapagos.gcs-web.com/static-files/ba8083ce-a6d8-4a65-9ee8-0741871524ac"
+          },
+          {
+            "url": "https://getsignal.finance/stocks/gild"
+          },
+          {
+            "url": "https://investors.gilead.com/overview/default.aspx"
+          },
+          {
+            "url": "https://lt.morningstar.com/1c6qh1t6k9/snapshotresearchpdf/default.aspx?Id=0P0001CW8F&LanguageId=en-GB&ms-redirect-path=%2F1c6qh1t6k9default.aspx"
+          },
+          {
+            "url": "https://marketchameleon.com/Overview/GILD/StockPosts/"
+          },
+          {
+            "url": "https://marketfieldbook.com/reports/daily-market/2026-11-24/"
+          },
+          {
+            "url": "https://stockanalysis.com/stocks/gild/transcripts/723977-q3-2026/"
+          },
+          {
+            "url": "https://www.advfn.com/stock-market/NASDAQ/GILD/news"
+          },
+          {
+            "url": "https://www.axios.com/newsletters/axios-am-aebd8048-f11d-44eb-9abb-c81c36ceb5fe"
+          },
+          {
+            "url": "https://www.axios.com/newsletters/axios-media-trends-1fbf9e90-e852-11f1-bc70-f9cadc7f0c37"
+          },
+          {
+            "url": "https://www.benzinga.com/quote/gild"
+          },
+          {
+            "url": "https://www.cboe.com/data/quotes/vix/metrics/"
+          },
+          {
+            "url": "https://www.investech.com/daily-data/"
+          },
+          {
+            "url": "https://www.kiplinger.com/investing/economy/this-weeks-economic-calendar"
+          },
+          {
+            "url": "https://www.kiplinger.com/investing/etfs/601112/top-artificial-intelligence-ai-etfs"
+          },
+          {
+            "url": "https://www.market-wrap.com/daily-wrap/2026-11-24/"
+          },
+          {
+            "url": "https://www.marketbeat.com/stocks/NASDAQ/GILD/"
+          },
+          {
+            "url": "https://www.morningstar.com/stocks/xnas/gild/news"
+          },
+          {
+            "url": "https://www.quantisnow.com/company/GILD"
+          },
+          {
+            "url": "https://www.scannerxmi.com/sector/"
+          },
+          {
+            "url": "https://www.streetinsider.com/dr/quote.php?q=gild"
+          },
+          {
+            "url": "https://www.theatlantic.com/ideas/2026/11/nvidia-stock-market-crisis/689557/?utm_source=openai"
+          },
+          {
+            "url": "https://www.thedailybeast.com/billionaire-who-bet-on-ceos-comeback-makes-ominous-prediction"
+          },
+          {
+            "url": "https://www.vesperbrief.com/sector-moves/"
+          }
+        ]
+      },
+      {
+        "agent": "News and Event Agent",
+        "verdict": "APPROVE",
+        "confidence": 0.82,
+        "thesis": "Recent public filings and press releases (Q3 2026 / Oct 29, 2026 and related SEC filings and FDA notices) show no verified material adverse event that argues against opening a new long in GILD. Gilead reported Q3 2026 results and raised full‑year product sales guidance; completed multiple 2026 acquisitions (Arcellx, Tubulis, Ouro Medicines) and recorded large acquired IPR&D charges that drive GAAP loss guidance; the FDA has approved Trodelvy for a first‑line mTNBC indication (June 2026). There are no trading halts or major adverse litigation outcomes disclosed in these public sources that would mandate rejecting a new long, but there are several execution and regulatory risks to monitor.",
+        "risks": [
+          "Large acquired IPR&D charges in 2026 materially depress GAAP EPS (non‑cash) and increase reported GAAP loss guidance.",
+          "Integration and execution risk from multiple sizable 2026 acquisitions (Arcellx, Tubulis, Ouro Medicines, others) and associated contingent payments/milestones.",
+          "Upcoming binary regulatory milestone: FDA PDUFA/decision expected for anito‑cel (iMMagine‑1 / 4L+ R/R MM) on Dec 23, 2026 — outcome could be material.",
+          "Manufacturing/regulatory risks noted (pre‑commercial Trodelvy inventory and process approvals) that could affect supply/timing.",
+          "Policy and pricing headwinds (Medicare Part D redesign, other government pricing/reimbursement changes) called out in filings that could pressure net pricing and margins."
+        ],
+        "sources": [
+          {
+            "url": "https://en.wikipedia.org/wiki/Gilead_Sciences"
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/List_of_largest_mergers_and_acquisitions"
+          },
+          {
+            "url": "https://flcube.com/wp-content/uploads/2026/11/GILD-Q326-Earnings-Press-Release-29-October-2026.pdf"
+          },
+          {
+            "url": "https://gloom.sh/stocks/gild/transcripts/q3-2026"
+          },
+          {
+            "url": "https://investors.gilead.com/news/news-details/2026/Gilead-Sciences-Announces-Third-Quarter-2026-Financial-Results/default.aspx"
+          },
+          {
+            "url": "https://investors.gilead.com/news/news-details/2026/U-S--FDA-Approves-Trodelvy-for-First-Line-Treatment-of-Metastatic-Triple-Negative-Breast-Cancer/default.aspx"
+          },
+          {
+            "url": "https://quartr.com/events/gilead-sciences-inc-gild-q3-2026_3YEN2YWG"
+          },
+          {
+            "url": "https://s29.q4cdn.com/585078350/files/doc_financials/2026/q1/GILD-Q126-Prepared-Remarks-7-May-2026.pdf"
+          },
+          {
+            "url": "https://s29.q4cdn.com/585078350/files/doc_financials/2026/q1/v2/GILD-Q126-Earnings-Presentation-7-May-2026.pdf"
+          },
+          {
+            "url": "https://s29.q4cdn.com/585078350/files/doc_financials/2026/q3/GILD-Q326-Prepared-Remarks-29-October-2026.pdf"
+          },
+          {
+            "url": "https://s29.q4cdn.com/585078350/files/doc_financials/2026/q3/GILD-Q326-Summary-of-Prepared-Remarks-29-October-2026.pdf"
+          },
+          {
+            "url": "https://sectracker.app/en/GILD"
+          },
+          {
+            "url": "https://wallacemiller.com/cases/tdf-tenofovir/"
+          },
+          {
+            "url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761115Orig1s064ltr.pdf"
+          },
+          {
+            "url": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2026/761115s064lbl.pdf"
+          },
+          {
+            "url": "https://www.benzinga.com/quote/GILD/earnings-forecasts"
+          },
+          {
+            "url": "https://www.evotec.com/uploads/download-files/IR-ESG/Financial_Publications/2026/Interim-Statement-9M-2026-English.pdf"
+          },
+          {
+            "url": "https://www.fda.gov/drugs/cancer-approvals/fda-approves-sacituzumab-govitecan-hziy-monotherapy-and-combination-pembrolizumab-first-line"
+          },
+          {
+            "url": "https://www.gilead.com/news/news-details/2026/gilead-sciences-announces-first-quarter-financial-results"
+          },
+          {
+            "url": "https://www.gilead.com/news/news-details/2026/gilead-sciences-announces-third-quarter-2026-financial-results"
+          },
+          {
+            "url": "https://www.gilead.com/news/news-details/2026/u-s--fda-approves-trodelvy-for-first-line-treatment-of-metastatic-triple-negative-breast-cancer"
+          },
+          {
+            "url": "https://www.kiplinger.com/news/live/nvidia-earnings-live-updates-and-commentary-november-2026"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1421876/000110465926094518/tm2622771d1_ex99-1.htm"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1421876/000110465926094518/tm2622771d1_ex99-2.htm"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/882095/000088209526000006/gild-20251231.htm"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/882095/000088209526000024/gild-20260331.htm"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/882095/000088209526000037/exhibit991earningspressrel.htm"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/882095/000088209526000039/gild-20260930.htm"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/882095/000110465926049874/tm2612748d1_8k.htm"
+          },
+          {
+            "url": "https://www.stocktitan.net/sec-filings/GILD/8-k-gilead-sciences-inc-reports-material-event-ba1d612b8b6f.html"
+          },
+          {
+            "url": "https://www.trefis.com/data/companies/GILD?from=gild_rail_def_exit_20261016"
+          }
+        ]
+      },
+      {
+        "agent": "Technical Context Agent",
+        "verdict": "APPROVE",
+        "confidence": 0.78,
+        "thesis": "Breakout strength (1.0054) is marginally positive and is supported by strong relative strength (rs_excess_pct 26.9726) and passing market breadth (breadth_gate PASS; market_breadth_pct 60.0). ATR_14 is 4.6666, stop_price (168.9969) is below the entry (176.38), and target_price (209.60395) is meaningfully above the entry — the supplied fields collectively support a long trade based on the provided breakout context.",
+        "risks": [
+          "Breakout strength is only slightly above the threshold (breakout_strength 1.0054), so the move may lack breadth to sustain a long trend.",
+          "ATR at 4.6666 indicates material intraday/near-term volatility that could test the stop before trend continuation.",
+          "Market breadth could deteriorate; a reversal in overall breadth would increase probability of stop being hit.",
+          "Unexpected company- or sector-specific news can negate the technical setup despite favorable RS and breadth."
+        ],
+        "sources": []
+      },
+      {
+        "agent": "Thesis Agent",
+        "verdict": "APPROVE",
+        "confidence": 0.82,
+        "thesis": "Bull case: The quant packet defines a coherent long breakout setup with an authoritative entry (176.38), stop (168.9969) and target (209.60395). Technical signals support the trade: breakout_strength is marginally >1, relative strength outperformance is strong (rs_excess_pct ~26.97%), breadth_gate = PASS and market_breadth_pct = 60% — a context in which a sector leader can run toward the target while the stop (~1.58 ATR) limits downside. Spread_bps is small and the packet is tier A, making execution plausible.\n\nBear case: The breakout_strength is only slightly positive and ATR (4.6666) implies material intraday volatility that can trigger the stop before continuation. Elevated market volatility or a shift to risk-off (index/sector weakness) increases false-breakout risk. Company‑specific e",
+        "risks": [
+          "Market/news gap risk could trigger the stop before the setup plays out.",
+          "Marginal breakout_strength; risk of false breakout and short-lived move.",
+          "Elevated intraday volatility (ATR 4.6666) increases chance of stop being hit.",
+          "Event/regulatory binary risk (notably FDA PDUFA Dec 23, 2026) and acquisition/integration/IPR&D charge risks specific to the company.",
+          "Model/parameter risk: assumptions behind breakout_strength, RS and tier may fail in different regimes."
+        ],
+        "sources": []
+      },
+      {
+        "agent": "Claude CRO",
+        "verdict": "APPROVE",
+        "confidence": 0.68,
+        "thesis": "I found no verified event that argues against the entry, and the specialist findings do not contradict each other. All six specialists approve. The web research found no halts, litigation outcomes, safety actions or guidance cuts. Q3 results beat estimates and 2026 sales guidance was raised. The remaining risks are real but acceptable at the packet's stop distance. They are: entry right after a one-day spike to a 52-week high, the Dec 23 anito-cel PDUFA binary event, insider selling, the Medicare Maximum Fair Price for Biktarvy, and weak GAAP margins from non-cash IPR&D charges. I did not recompute price, stop, target or size. Confidence is held to 0.68 because the entry follows a news-driven spike, the stop is only about 1.6 ATR away, and the target sits above every analyst target found.",
+        "risks": [
+          "Entry follows a 4.8% one-day spike to a 52-week high, partly driven by an analyst initiation that may fade",
+          "Binary FDA decision on anito-cel (PDUFA Dec 23, 2026) could gap the stock through the stop; approval is partly priced in",
+          "Heavy insider selling over the last 90 days (about $37M)",
+          "Medicare Maximum Fair Price set for Biktarvy; impact not quantified",
+          "Negative GAAP net margin from large non-cash acquired IPR&D charges, plus acquisition integration risk"
+        ],
+        "sources": [
+          {
+            "url": "https://benzinga.com/news/20/04/15811968/why-gileads-stock-is-trading-lower-today"
+          },
+          {
+            "url": "https://biobuzz.io/news/breaking-gilead-doubles-down-on-car-t-with-7-8b-acquisition-of-arcellx/"
+          },
+          {
+            "url": "https://finance.biggo.com/news/0035c327-ab3b-43ef-b758-9aa564919a24"
+          },
+          {
+            "url": "https://oncodaily.com/technology/gilead461928"
+          },
+          {
+            "url": "https://www.benzinga.com/analyst-stock-ratings/initiation/26/11/63597327/gilead-sciences-diversifies-beyond-21-billion-hiv-franchise-analyst"
+          },
+          {
+            "url": "https://www.cellgenetherapyreview.com/3972-News/625422-Gilead-completes-Arcellx-acquisition/"
+          },
+          {
+            "url": "https://www.defenseworld.net/2026/11/25/gilead-sciences-nasdaqgild-coverage-initiated-by-analysts-at-william-blair.html"
+          },
+          {
+            "url": "https://www.defenseworld.net/2026/11/25/gilead-sciences-nasdaqgild-hits-new-12-month-high-following-analyst-upgrade.html"
+          },
+          {
+            "url": "https://www.google.com/finance/quote/GILD:NASDAQ"
+          },
+          {
+            "url": "https://www.gurufocus.com/news/9218311/why-gilead-gild-stock-is-up-today-health-care-rally-and-new-rating"
+          },
+          {
+            "url": "https://www.investing.com/news/transcripts/gilead-at-wolfe-healthcare-conference-anitocel-launch-in-focus-93CH-5016357"
+          },
+          {
+            "url": "https://www.marketbeat.com/instant-alerts/price-gilead-sciences-nasdaq-gild-hits-new-52-week-high-after-analyst-upgrade-2026-11-24/"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/0000882095/000088209526000024/gild-20260331.htm"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/0000882095/000088209526000031/gild-20260630.htm"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/0000882095/000088209526000039/gild-20260930.htm"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1786205/000110465926018531/tm267075d1_ex99-1.htm"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/882095/000110465926018314/tm267044d1_ex99-1.htm"
+          },
+          {
+            "url": "https://www.tradingkey.com/news/market-movers/262320448-market-movers-gild-20261124"
+          },
+          {
+            "url": "https://za.investing.com/news/stock-market-news/gilead-at-ubs-global-biopharma-conference-2026-growth-runway-widens-93CH-4580263"
+          }
+        ]
+      }
+    ]
+  }
 }
