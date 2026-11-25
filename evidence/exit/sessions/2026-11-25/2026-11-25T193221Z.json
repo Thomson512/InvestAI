@@ -1,0 +1,53 @@
+{
+  "outcome": "DRIFT broker_only=- evidence_only=ADP,APA,BBY,CME,COP,CVX,DHR,DRI,EXPD,HAS,HPQ,JNJ,MDT,MO,MOS,NTAP,NVDA,PSX,T,TXN,XOM",
+  "generated_at": "2026-11-25T19:32:21Z",
+  "pnl_written": true,
+  "extra_summary": [],
+  "session_date": "2026-11-25",
+  "close_allowed": true,
+  "close_reason": "OK",
+  "unprotected": [],
+  "reconcile": {
+    "matched": [
+      "A",
+      "GILD",
+      "ORLY",
+      "TGT",
+      "WMT"
+    ],
+    "broker_only": [],
+    "evidence_only": [
+      "ADP",
+      "APA",
+      "BBY",
+      "CME",
+      "COP",
+      "CVX",
+      "DHR",
+      "DRI",
+      "EXPD",
+      "HAS",
+      "HPQ",
+      "JNJ",
+      "MDT",
+      "MO",
+      "MOS",
+      "NTAP",
+      "NVDA",
+      "PSX",
+      "T",
+      "TXN",
+      "XOM"
+    ]
+  },
+  "daily_pnl": {
+    "trade_date": "2026-11-25",
+    "opening_equity": 118473.41,
+    "current_equity": 118520.05,
+    "peak_equity": 118635.13
+  },
+  "heartbeat": {
+    "loop_name": "exit-orchestrator",
+    "last_seen": "2026-11-25T19:32:16Z"
+  }
+}
