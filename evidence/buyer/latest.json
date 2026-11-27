@@ -1,7 +1,300 @@
 {
-  "outcome": "SPREAD_REJECTED:DIS",
+  "outcome": "ORDER_SUBMITTED:58699990502",
   "session_date": "2026-11-27",
-  "generated_at": "2026-11-27T15:10:24Z",
+  "generated_at": "2026-11-27T15:22:20Z",
   "official": true,
-  "extra_summary": []
+  "extra_summary": [],
+  "plan": {
+    "symbol": "WM",
+    "quantity": 1.0,
+    "entry_usd": 246.97,
+    "stop_price": 238.1094,
+    "target_price": 286.84270000000004,
+    "fx_usdczk": 22.312,
+    "spread_bps": 14.587300944121932
+  },
+  "fence_key": "2026-11-27:WM:673ad8b9e4541815f6d8141f4b89136ba864d5cb82aa2ad4b7c43650484a79c7",
+  "stop_order_id": "58699990507",
+  "param_hash": "673ad8b9e4541815f6d8141f4b89136ba864d5cb82aa2ad4b7c43650484a79c7",
+  "council": {
+    "verdict": "APPROVE",
+    "reason": "6/6 approved with Claude CRO and confidence >= 0.65",
+    "cached": false,
+    "findings": [
+      {
+        "agent": "Scanner Agent",
+        "verdict": "APPROVE",
+        "confidence": 0.83,
+        "thesis": "The packet is internally coherent. Authoritative fields (entry_usd, stop_price, target_price, quantity) are present and maintain the expected ordering (stop_price < entry_usd < target_price). Supporting metrics (positive ATR, positive breakout_strength, RS excess, breadth_gate PASS, tier A) are consistent with a breakout/long setup and do not contradict the authoritative values.",
+        "risks": [
+          "Breakout strength is modest (breakout_strength 0.0445) which may indicate limited near-term momentum despite the setup.",
+          "Spread (spread_bps 14.5873) and quantity 1.0 imply execution/position sizing considerations for a single-share trade in live markets.",
+          "Market breadth and RS are supportive but not guarantees; broader market reversals or idiosyncratic news could invalidate the setup quickly.",
+          "Packet does not include explicit timestamps for price feeds or liquidity/depth details; real-time execution risk is not addressed."
+        ],
+        "sources": []
+      },
+      {
+        "agent": "Market Regime Agent",
+        "verdict": "APPROVE",
+        "confidence": 0.7,
+        "thesis": "Market regime is constructive for a momentum breakout in WM. Quant packet shows market_breadth_pct 62% and a passing breadth gate; sector leadership is supportive with Industrials showing relative strength and major indices bouncing on the 2026-11-27 session. Volatility is elevated but trending lower intraday, and WM recently affirmed guidance — both supportive of continuation if price clears the supplied entry. The reported breakout_strength is modest (0.0445) but the broader tape and sector leadership make the risk/reward for a momentum entry reasonable.",
+        "risks": [
+          "Elevated overall market volatility (VIX in mid-to-high 20s) increases chance of whipsaw.",
+          "Market is recovering from a recent correction; breadth can quickly deteriorate if large-cap tech weakness resumes.",
+          "Thin liquidity on the Thanksgiving/Black Friday half-session can amplify false breakouts.",
+          "Political and macro headlines (Fed policy expectations, fiscal/political noise) could rapidly change market tone.",
+          "Company-specific surprises (earnings revisions, guidance changes) for WM would negate the regime support."
+        ],
+        "sources": [
+          {
+            "url": "https://apnews.com/article/10044b4fb55d3ff20fde9ba9e9acaab1"
+          },
+          {
+            "url": "https://apnews.com/article/21e10113de5d5941024b3220bec29433"
+          },
+          {
+            "url": "https://apnews.com/article/4fd800b44005ae11f950f96ff62f876e"
+          },
+          {
+            "url": "https://apnews.com/article/6cc4e580290aadf304ee316d6d46dd81"
+          },
+          {
+            "url": "https://apnews.com/article/c7ef10c1dbc5fa09668bd4fe0729c613"
+          },
+          {
+            "url": "https://daniox.com/stocks/sectors"
+          },
+          {
+            "url": "https://investors.wm.com/news-releases/news-release-details/wm-announces-third-quarter-2026-earnings"
+          },
+          {
+            "url": "https://marketdly.com/"
+          },
+          {
+            "url": "https://moneyweek.com/investments/stock-markets/how-to-protect-against-greater-market-volatility"
+          },
+          {
+            "url": "https://sanctuaryresearch.io/briefing/2026-11-27"
+          },
+          {
+            "url": "https://screenercharts.com/us/market-breadth"
+          },
+          {
+            "url": "https://stock.quant-labs.workers.dev/en/stock-market-today/2026-11-27"
+          },
+          {
+            "url": "https://terminal.hyperstocks.io/markets/today"
+          },
+          {
+            "url": "https://thedesperatetrader.com/sector-performance"
+          },
+          {
+            "url": "https://time.com/article/2026/11/27/trump-thanksgiving-truth-social-economic-data-growth-estimate-revision-election/"
+          },
+          {
+            "url": "https://uk.finance.yahoo.com/news/stock-market-news-nov-27-075400531.html"
+          },
+          {
+            "url": "https://www.axios.com/newsletters/axios-am-aebd8048-f11d-44eb-9abb-c81c36ceb5fe"
+          },
+          {
+            "url": "https://www.kiplinger.com/investing/economy/this-weeks-economic-calendar"
+          },
+          {
+            "url": "https://www.quantisnow.com/sector-performance/industrials"
+          },
+          {
+            "url": "https://www.thedailybeast.com/crazed-trump-80-explodes-in-deranged-thanksgiving-message"
+          },
+          {
+            "url": "https://www.thedailybeast.com/trump-80-spews-delusional-reason-markets-are-tanking"
+          },
+          {
+            "url": "https://www.thedailybeast.com/trump-gives-brazen-response-to-grilling-over-sex-mad-ceo"
+          }
+        ]
+      },
+      {
+        "agent": "News and Event Agent",
+        "verdict": "APPROVE",
+        "confidence": 0.72,
+        "thesis": "Web search found WM’s Q3 2026 earnings release with the company affirming 2026 guidance; no verified material negative event (earnings miss, negative guidance revision, trading halt, or merger that would argue against initiating a new long) was identified. Ongoing regulatory and litigation matters are disclosed in SEC filings and recent docketed lawsuits and proposed class actions exist, but these appear to be routine/known exposures or recently filed claims rather than a single new, company-changing adverse event.",
+        "risks": [
+          "Company disclosed regulatory actions in SEC filings including a Delaware DNREC order (discussed in the 10-Q) and an expected EPA Unilateral Administrative Order related to the San Jacinto River Waste Pits site — potential future liability risk if escalated.",
+          "Multiple ongoing lawsuits and class actions (environmental claims, odor/neighbor suits, and recent proposed class actions alleging a 2026 data breach) — these could become material depending on outcomes or settlements.",
+          "Securities litigation from earlier matters (prior settlement activity) and other routine personal injury/property claims remain on the company’s disclosure list and could resurface.",
+          "No evidence of an announced merger or acquisition that would materially change the capital structure, nor any trading halt reported in the searched results — but a major unreported event could change this assessment.",
+          "Information set is based on recent public filings and news; issuance of a formal EPA order, regulatory penalty, or a large adverse judgment would change the recommendation to REJECT."
+        ],
+        "sources": [
+          {
+            "url": "https://apnews.com/article/25642537b5b76ff201f53c5862efff58"
+          },
+          {
+            "url": "https://apnews.com/article/a00a64a2eb5a469758ce43d31847ed88"
+          },
+          {
+            "url": "https://claimmoney.com/data-breach/usa-waste-management-resources-2026/"
+          },
+          {
+            "url": "https://dockets.justia.com/docket/district-of-columbia/dcdce/1%3A2026cv02309/294034"
+          },
+          {
+            "url": "https://dockets.justia.com/docket/illinois/ilndce/1%3A2026cv09408/505604"
+          },
+          {
+            "url": "https://dockets.justia.com/docket/new-jersey/njdce/3%3A2026cv03132/594312"
+          },
+          {
+            "url": "https://dockets.justia.com/docket/pennsylvania/paedce/5%3A2026cv04354/656900"
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/Dean_Buntrock"
+          },
+          {
+            "url": "https://en.wikipedia.org/wiki/Waste_Management%2C_Inc."
+          },
+          {
+            "url": "https://investors.wm.com/news-releases/news-release-details/wm-announces-third-quarter-2026-earnings"
+          },
+          {
+            "url": "https://investors.wm.com/static-files/0039548c-8779-4482-aad7-65204c567f46"
+          },
+          {
+            "url": "https://investors.wm.com/static-files/e6417d88-e84a-44ee-a2df-40cdc1a36301"
+          },
+          {
+            "url": "https://investors.wm.com/static-files/f5b8d860-3fab-4786-91f2-4ccc14f34758"
+          },
+          {
+            "url": "https://law.justia.com/cases/federal/district-courts/new-york/nywdce/6%3A2018cv06588/118877/297/"
+          },
+          {
+            "url": "https://www.classaction.org/news/class-action-claims-n.j.-waste-management-facility-releases-noxious-odors-into-residential-area"
+          },
+          {
+            "url": "https://www.classactionpulse.com/settlements/waste-management-data-breach-lawsuit"
+          },
+          {
+            "url": "https://www.kiplinger.com/investing/stocks/17494/next-week-earnings-calendar-stocks"
+          },
+          {
+            "url": "https://www.law360.com/cases/6a2734c287ed570da8386ca2"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/823768/000110465926051283/wm-20260331x10q.htm"
+          },
+          {
+            "url": "https://www.supremecourt.gov/search.aspx?filename=%2Fdocket%2Fdocketfiles%2Fhtml%2Fpublic%2F26-6189.html"
+          },
+          {
+            "url": "https://www.wastemanagementsettlement.com/media/6730807/order_awarding_attorneys__fees_and_expenses_and_awards_to_lead_plaintiffs_pursuant_to_15_u.s.c.___78u-4_a__4__granting__157__motion_for_attorne_v.1.pdf"
+          },
+          {
+            "url": "https://www.youtube.com/watch?v=UxuJW2fNFdk"
+          }
+        ]
+      },
+      {
+        "agent": "Technical Context Agent",
+        "verdict": "APPROVE",
+        "confidence": 0.73,
+        "thesis": "Data supports a long breakout setup: breakout_strength=0.0445 (positive, modest), relative strength (rs_excess_pct)=20.9567 (strong outperformance), market breadth=62.0% (breadth gate PASS), ATR(14)=4.6253 (moderate volatility). A defined stop at 238.1094 and target at 286.8427 provide explicit risk and reward parameters. Given the positive breakout signal, strong RS, and passing breadth, approve the long trade setup conditional on the provided stop and target remaining authoritative.",
+        "risks": [
+          "Breakout magnitude is modest (0.0445) — higher chance of a false or short-lived breakout.",
+          "ATR of 4.6253 indicates moderate volatility; price may whipsaw to the stop in choppy conditions.",
+          "Market breadth is only moderate (62%) — broader market may not strongly confirm continuation.",
+          "Relative strength can mean the stock is extended and subject to mean-reversion or profit-taking."
+        ],
+        "sources": []
+      },
+      {
+        "agent": "Thesis Agent",
+        "verdict": "APPROVE",
+        "confidence": 0.75,
+        "thesis": "Quant packet and specialist findings describe a coherent long breakout setup with defined risk parameters. Entry_usd (246.97), stop_price (238.1094), and target_price (286.8427) are authoritative and correctly ordered; supporting metrics include positive (if modest) breakout_strength (0.0445), strong relative strength (rs_excess_pct 20.9567), market_breadth_pct 62% with breadth_gate PASS, ATR(14) 4.6253 (moderate volatility), and Tier A classification. Collectively these factors support a momentum-style long where risk is explicitly limited by the supplied stop and upside is defined by the supplied target.",
+        "risks": [
+          "Breakout magnitude is modest (breakout_strength 0.0445), increasing chance of a false or short-lived breakout and greater sensitivity to whipsaw.",
+          "Moderate ATR (4.6253), elevated market volatility, and a multi-basis-point spread (spread_bps 14.5873) raise execution and stop-hit risk, especially on thin/liquidity-affected sessions (holiday half-day).",
+          "Market breadth is only moderate (62%); a rapid deterioration in broader market or sector leadership could negate the breakout despite the setup.",
+          "Ongoing regulatory and litigation exposures noted in filings and dockets (including potential EPA/regulatory actions and multiple lawsuits) could become material and reverse the thesis if escalated.",
+          "Relative strength can indicate the name is extended and susceptible to mean-reversion or profit-taking, which compounds the modest breakout strength risk."
+        ],
+        "sources": []
+      },
+      {
+        "agent": "Claude CRO",
+        "verdict": "APPROVE",
+        "confidence": 0.67,
+        "thesis": "I found no verified disqualifying event. There is no downgrade to Sell, no trading halt, no confirmed guidance cut, and no new adverse event beyond the litigation and regulatory exposures the News Agent already listed. The quant packet is internally coherent and all five specialists approve. The residual risks are real but acceptable at this confidence. Q3 EPS missed slightly (2.15 vs 2.18) and the stock fell about 4.5% on earnings day. A Form 144 was filed on 11/25 with unknown size and seller, and one secondary source reports net insider selling. The breakout looks like a defensive-rotation bid on a heavy market sell-off, which could reverse if the market rebounds. Entry is at an all-time high near the consensus target. Holiday half-session liquidity is unverified. The case would flip to",
+        "risks": [
+          "Q3 EPS miss (2.15 vs 2.18) and a 4.5% drop on earnings day; the specialists' 'affirmed guidance' framing omits this",
+          "Form 144 filed 11/25 with unknown size and seller; single-source report of net insider selling and a Gates Foundation Trust stake cut",
+          "Breakout driven by a defensive-rotation bid on a heavy market sell-off; it may reverse on a market rebound and conflicts with the Market Regime Agent's 'constructive' reading",
+          "Entry at an all-time high near the average analyst target of about $254.77; the packet target is above the top analyst target of $283 (context only)",
+          "Estimate drift: Scotiabank trimmed its FY2026 EPS estimate and BNP Paribas cut its target"
+        ],
+        "sources": [
+          {
+            "url": "https://api.finexus.net/api/news/earnings/129479/html"
+          },
+          {
+            "url": "https://benzinga.com/quote/WM/analyst-ratings"
+          },
+          {
+            "url": "https://finance.yahoo.com/research/stock-forecast/WM/"
+          },
+          {
+            "url": "https://seekingalpha.com/symbol/WM"
+          },
+          {
+            "url": "https://simplywall.st/stocks/us/commercial-services/nyse-wm/waste-management"
+          },
+          {
+            "url": "https://www.cnn.com/markets/stocks/WM"
+          },
+          {
+            "url": "https://www.defenseworld.net/2026/11/07/waste-management-fy2026-earnings-forecast-cut-by-scotiabank.html"
+          },
+          {
+            "url": "https://www.google.com/finance/quote/WM:NYSE"
+          },
+          {
+            "url": "https://www.investing.com/equities/waste-managemnt"
+          },
+          {
+            "url": "https://www.investing.com/equities/waste-managemnt-news"
+          },
+          {
+            "url": "https://www.robinhood.com/us/en/stocks/WM"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/0000823768/000110465926050425/tm2612889d1_ex99-1.htm"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/0000823768/000110465926087575/tm2621414d1_ex99-1.htm"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/0000823768/000110465926119188/tm2628322d1_ex99-1.htm"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/823768/000110465926007476/tm264211d1_ex99-1.htm"
+          },
+          {
+            "url": "https://www.stocktitan.net/overview/WM/"
+          },
+          {
+            "url": "https://www.streetinsider.com/Downgrades/Goldman%20Sachs%20Downgrades%20Waste%20Management%20(WM)%20to%20Neutral/8413097.html"
+          },
+          {
+            "url": "https://www.thestockobserver.com/2026/11/04/recent-research-analysts-ratings-changes-for-waste-management-wm.html"
+          },
+          {
+            "url": "https://www.tradingview.com/symbols/NYSE-WM/"
+          }
+        ]
+      }
+    ]
+  }
 }
