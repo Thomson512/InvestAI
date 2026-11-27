@@ -1,0 +1,357 @@
+{
+  "outcome": "COUNCIL_REJECT:DIS",
+  "session_date": "2026-11-27",
+  "generated_at": "2026-11-27T15:02:30Z",
+  "official": true,
+  "extra_summary": [
+    "council: Claude CRO rejected the proposal"
+  ],
+  "plan": {
+    "symbol": "DIS",
+    "quantity": 2.0,
+    "entry_usd": 126.87,
+    "stop_price": 119.4796,
+    "target_price": 160.1268,
+    "fx_usdczk": 22.312,
+    "spread_bps": 7.8851916101568
+  },
+  "council": {
+    "verdict": "REJECT",
+    "reason": "Claude CRO rejected the proposal",
+    "cached": false,
+    "findings": [
+      {
+        "agent": "Scanner Agent",
+        "verdict": "APPROVE",
+        "confidence": 0.86,
+        "thesis": "The packet is internally coherent. Entry (126.87) is above the stop (119.4796) and below the target (160.1268). The ATR (3.0952), breakout_strength (1.885), positive rs_excess_pct (24.4812) and breadth_gate PASS align with a momentum-oriented trade that uses the supplied authoritative entry, stop, target and quantity (2.0). No fields conflict with each other and required authoritative values are present.",
+        "risks": [
+          "Stop may not be filled at the exact stop_price on gaps or illiquid events (execution risk).",
+          "Target may be optimistic if market trend reverses; momentum indicators can roll over suddenly.",
+          "Quantity is small (2.0) which may understate position-sizing risk relative to account size, but quantity is an authoritative input.",
+          "Market-wide events or sudden volatility could materially widen spreads or invalidate breakout strength despite the packet's metrics."
+        ],
+        "sources": []
+      },
+      {
+        "agent": "Market Regime Agent",
+        "verdict": "APPROVE",
+        "confidence": 0.72,
+        "thesis": "Quant packet (as-of 2026-11-25) shows a passed breadth gate (market_breadth_pct 62%) and strong breakout metrics for DIS (breakout_strength 1.885, RS excess +24.48%), which is a constructive internal signal for a momentum entry. External market checks on 2026-11-27 show S&P futures ripping higher in thin, holiday volume (gap-up tone), Disney-specific positive catalysts (Q4 FY26 beats / upbeat commentary released Nov 17, 2026; planned Hulu→Disney+ consolidation and Black Friday subscription promotions) and no single dominant market shock; these factors align with the packet’s momentum setup and support an approval for a breakout attempt.",
+        "risks": [
+          "Elevated market volatility — VIX remains elevated (mid-to-high 20s on 2026-11-25–27), increasing the chance of whipsaws that can trigger stops.",
+          "Thin holiday/pre-market liquidity (post-Thanksgiving sessions) — gap moves may reverse when normal volumes return, reducing breakout reliability.",
+          "Macro / rates risk — Treasury yields were rising into the holiday (hawkish Fed pricing ahead of the December meeting) which can pressure risk assets unexpectedly.",
+          "Sector/stock-specific risks — streaming competition, execution risks on the Hulu→Disney+ consolidation, and recent insider sales/filings could weigh on DIS despite positive headlines.",
+          "Model/data divergence risk — external market moves after the packet timestamp (2026-11-25) could change regime quickly; monitor intraday breadth and volatility for confirmation."
+        ],
+        "sources": [
+          {
+            "url": "https://apnews.com/article/10044b4fb55d3ff20fde9ba9e9acaab1"
+          },
+          {
+            "url": "https://apnews.com/article/21e10113de5d5941024b3220bec29433"
+          },
+          {
+            "url": "https://apnews.com/article/94fdb0ecb060ec65c0b02879ce0d2d09"
+          },
+          {
+            "url": "https://apnews.com/article/c7ef10c1dbc5fa09668bd4fe0729c613"
+          },
+          {
+            "url": "https://asleepace.com/daily-report"
+          },
+          {
+            "url": "https://finance.huiracocha.com/markets/us-10y"
+          },
+          {
+            "url": "https://finance.yahoo.com/markets/stocks/articles/stock-futures-rip-thanksgiving-night-120238091.html"
+          },
+          {
+            "url": "https://finance.yahoo.com/quote/DIS/?.tsrc=fin-srch&p=DIS"
+          },
+          {
+            "url": "https://investor.thewaltdisneycompany.com/events-and-presentations/event-details/2026/Disneys-Q4-FY26-Earnings-Results-Webcast-2026-r7J4pl6coY/default.aspx"
+          },
+          {
+            "url": "https://marketunclouded.com/tools/guide/Market_Unclouded_Clear_View_Guide_2026.pdf"
+          },
+          {
+            "url": "https://moneyweek.com/investments/stock-markets/how-to-protect-against-greater-market-volatility"
+          },
+          {
+            "url": "https://ph.investing.com/indices/volatility-s-p-500-historical-data?cid=1096487"
+          },
+          {
+            "url": "https://researchiq.rbc.com/docs/2b1048ad-0fcb-44c3-9dd8-7516e474d42a.pdf"
+          },
+          {
+            "url": "https://screenercharts.com/us/market-breadth"
+          },
+          {
+            "url": "https://spfutures.org/"
+          },
+          {
+            "url": "https://static.marketedge.com/pdf_articles/oe202611.pdf"
+          },
+          {
+            "url": "https://stockanalysis.com/stocks/dis/"
+          },
+          {
+            "url": "https://thecaliforniaindex.com/wp-content/uploads/1qa4qp/generated-pdfs/TCI-2026-11-11-22-10-09.pdf"
+          },
+          {
+            "url": "https://thewaltdisneycompany.com/news/disney-q4-earnings-2026/"
+          },
+          {
+            "url": "https://time.com/article/2026/11/26/china-brazil-eu-push-back-against-trump-tariffs/"
+          },
+          {
+            "url": "https://time.com/article/2026/11/27/trump-thanksgiving-truth-social-economic-data-growth-estimate-revision-election/"
+          },
+          {
+            "url": "https://vixchart.com/"
+          },
+          {
+            "url": "https://www.axios.com/"
+          },
+          {
+            "url": "https://www.axios.com/2026/11/26/musk-spacex-shares-trump-accounts"
+          },
+          {
+            "url": "https://www.axios.com/newsletters/axios-am-aebd8048-f11d-44eb-9abb-c81c36ceb5fe"
+          },
+          {
+            "url": "https://www.benzinga.com/quote/DIS/news"
+          },
+          {
+            "url": "https://www.cboe.com/tradable-products/vix/"
+          },
+          {
+            "url": "https://www.condoredge.com/stocks/market-breadth"
+          },
+          {
+            "url": "https://www.gamesradar.com/black-friday-disney-plus-deals-offers-on-gift-cards-bundles-and-subscriptions/"
+          },
+          {
+            "url": "https://www.investech.com/daily-data/"
+          },
+          {
+            "url": "https://www.investors.com/wp-content/uploads/2026/11/DailyGMI_112326.pdf"
+          },
+          {
+            "url": "https://www.kiplinger.com/investing/economy/this-weeks-economic-calendar"
+          },
+          {
+            "url": "https://www.kiplinger.com/investing/stocks/17494/next-week-earnings-calendar-stocks"
+          },
+          {
+            "url": "https://www.loudersound.com/features/black-friday-streaming-deals"
+          },
+          {
+            "url": "https://www.marketbeat.com/stocks/NYSE/DIS/news/"
+          },
+          {
+            "url": "https://www.mortgagenewsdaily.com/treasury/10yr"
+          },
+          {
+            "url": "https://www.neurobloom.ai/market-tools/us_marketbreadth.html"
+          },
+          {
+            "url": "https://www.reddit.com/r/u_DaddyDersch/comments/1y6uhd2/112726_pre_market/"
+          },
+          {
+            "url": "https://www.schwab.wallst.com/Research/Public/stocks/summary/?symbol=dis"
+          },
+          {
+            "url": "https://www.stockmonitor.com/news/dis/"
+          },
+          {
+            "url": "https://www.stocktitan.net/overview/DIS/"
+          },
+          {
+            "url": "https://www.techradar.com/entertainment/disney-plus/its-official-disney-confirms-the-hulu-app-will-be-phased-out-and-merged-with-disney-next-month-for-a-fully-unified-experience"
+          },
+          {
+            "url": "https://www.tomsguide.com/entertainment/disney-plus/disney-plus-hulu-black-friday-deal"
+          },
+          {
+            "url": "https://www.tomsguide.com/entertainment/streaming/what-to-watch-tonight-56-new-shows-and-movies-just-added-to-netflix-prime-video-disney-and-more-including-the-return-of-percy-jackson-nov-20"
+          }
+        ]
+      },
+      {
+        "agent": "News and Event Agent",
+        "verdict": "APPROVE",
+        "confidence": 0.8,
+        "thesis": "Public filings and press releases show The Walt Disney Company (DIS) released fiscal Q4/FY2026 results (Nov 17, 2026) that beat guidance (revenue up ~16% for the quarter; EPS improvement) and disclosed the completed sale of its 50% stake in A+E Global Media and planned reporting changes beginning in FY2027. Search found ongoing litigation and regulatory matters (various securities and consumer-related suits) but no recent verified adverse rulings, trading halts, downgrade guidance, or regulatory action that would clearly argue against initiating a new long position.",
+        "risks": [
+          "Ongoing securities class actions and other litigation (e.g., ADA/consumer/biometric suits) could result in material adverse rulings or settlements in the future.",
+          "Regulatory/legal actions (FCC-related and other challenges) remain pending and could create operational or financial risk if rulings are unfavorable.",
+          "Reporting changes announced for FY2027 (recasting prior periods) increase near-term comparability risk and could affect guidance interpretation or investor visibility.",
+          "Macro or consumer-demand deterioration could negatively affect parks, experiences, and streaming revenue despite the recent beat.",
+          "Asset-sale dynamics (e.g., A+E stake sale) and future M&A or divestiture activity could change capital allocation or content strategy in ways that affect upside potential."
+        ],
+        "sources": [
+          {
+            "url": "https://docketnexus.com/document/473032606/"
+          },
+          {
+            "url": "https://docs.publicnow.com/viewDoc?filename=32160%5CEXT%5C775E68E293199BFD35D95AB839E3C1D3AB69EE77_6972DC30B9A865312BCE62E179006E027FF3F64D.PDF"
+          },
+          {
+            "url": "https://fintel.io/doc/sec-the-walt-disney-company-1744489-10k-2026-november-17-20774-2856"
+          },
+          {
+            "url": "https://investor.thewaltdisneycompany.com/events-and-presentations/event-details/2026/Disneys-Q4-FY26-Earnings-Results-Webcast-2026-r7J4pl6coY/default.aspx"
+          },
+          {
+            "url": "https://investor.thewaltdisneycompany.com/news/news-details/2026/The-Walt-Disney-Company-Executives-to-Discuss-Fiscal-Full-Year-and-Fourth-Quarter-2026-Financial-Results-via-Webcast/default.aspx"
+          },
+          {
+            "url": "https://s206.q4cdn.com/979796730/files/content_files/q4-fy26-earnings-final.pdf"
+          },
+          {
+            "url": "https://s206.q4cdn.com/979796730/files/content_files/q4-fy26-earnings.pdf"
+          },
+          {
+            "url": "https://s206.q4cdn.com/979796730/files/doc_news/The-Walt-Disney-Company-to-Report-Fiscal-Full-Year-and-Fourth-Quarter-2026-Financial-Results-Tomorrow-2026.pdf"
+          },
+          {
+            "url": "https://stockanalysis.com/stocks/dis/transcripts/706102-q4-2026/"
+          },
+          {
+            "url": "https://tapeboard.com/stock/DIS"
+          },
+          {
+            "url": "https://usacomplaints.com/company/disney/"
+          },
+          {
+            "url": "https://www.bankrupt.com/CAR_Public/260525.mbx"
+          },
+          {
+            "url": "https://www.cinemablend.com/theme-parks/sandlot-patrick-renna-jokes-disney-world-jingle-cruise"
+          },
+          {
+            "url": "https://www.kiplinger.com/investing/blue-chip-stocks/sleeper-blue-chip-stock-picks-for-steady-long-term-gains"
+          },
+          {
+            "url": "https://www.kiplinger.com/investing/stocks/17494/next-week-earnings-calendar-stocks"
+          },
+          {
+            "url": "https://www.kiplinger.com/investing/stocks/dow-brushes-off-tech-rout-tariff-worries-stock-market-today"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1744489/000174448926000065/dis-20261117.htm"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1744489/000174448926000065/fy2026_q4xerxex991.htm"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1744489/000174448926000066/dis-20261003.htm"
+          },
+          {
+            "url": "https://www.stocktitan.net/sec-filings/DIS/8-k-walt-disney-co-reports-material-event-70e5bec33115.html"
+          }
+        ]
+      },
+      {
+        "agent": "Technical Context Agent",
+        "verdict": "APPROVE",
+        "confidence": 0.78,
+        "thesis": "Breakout strength (1.885) and strong relative strength (rs_excess_pct 24.4812) coupled with positive market breadth (market_breadth_pct 62, breadth_gate PASS) support a bullish technical setup. ATR (3.0952) indicates the current volatility environment and the provided stop (119.4796) is below the breakout, giving a defined risk; the target (160.1268) provides clear upside. Overall the supplied technical measures are coherent for a long breakout trade.",
+        "risks": [
+          "Breakout failure leading to rapid reversal and stop being hit",
+          "Volatility-driven price churn (ATR ~3.0952) could produce whipsaws before trend resumes",
+          "Market breadth could deteriorate, weakening the breakout despite current 62% breadth",
+          "Gap risk at market open could bypass the stop and increase realized loss",
+          "Overreliance on technicals without fundamental/news context"
+        ],
+        "sources": []
+      },
+      {
+        "agent": "Thesis Agent",
+        "verdict": "APPROVE",
+        "confidence": 0.79,
+        "thesis": "Bull case: The quant packet shows a coherent momentum breakout setup — breakout_strength 1.885, strong relative strength (rs_excess_pct 24.4812), and a passed breadth gate (market_breadth_pct 62.0) that supports a sector/market-friendly entry. ATR (3.0952) implies a defined volatility band and the supplied authoritative trade parameters (entry_usd 126.87, stop_price 119.4796, target_price 160.1268, quantity 2.0) give a clear risk/reward framework. Specialist checks concur: technical context and scanner agents validate the internal metrics, and news/regime checks found recent constructive company results and demand drivers (post-earnings commentary, streaming consolidation and promotional tailwinds) that align with a momentum continuation setup.\\n\\nBear case: The same setup is vulnerable to",
+        "risks": [
+          "Execution/gap risk: stop may not be filled at stop_price on gaps or in thin holiday liquidity.",
+          "Volatility/whipsaw risk: elevated VIX and ATR (~3.0952) increase chance of stop-triggering churn before trend continuation.",
+          "Regime/macro risk: rising yields or sudden risk-off could reverse breadth and momentum despite current breakout metrics.",
+          "Breakout failure risk: breakout_strength (1.885) can fail, producing rapid reversal and stop hit.",
+          "Company-specific legal/regulatory risk: ongoing litigation, regulatory actions, or negative operational surprises could materially impair upside."
+        ],
+        "sources": []
+      },
+      {
+        "agent": "Claude CRO",
+        "verdict": "REJECT",
+        "confidence": 0.6,
+        "thesis": "REJECT on stretched entry conditions, not on a hard event. I found no trading halt, adverse ruling or surprise guidance cut. I did not recompute entry, stop, target or size, and I treat the Python outputs as authoritative. The specialists were nearly unanimous in approving. They largely did not weigh the verified concerns below, and those concerns outweigh the clean breakout reading. (1) Valuation and upside: DIS trades at a trailing P/E of about 22x, the highest in a year. The average analyst target of about $131 implies only about 4.6% upside. Phillip Securities downgraded the stock on valuation, and Morningstar's fair value of $125 is below the 126.87 entry. The packet target of 160.13 is above every public sell-side target I found, with the highest at about $140-141. Nothing independen",
+        "risks": [
+          "Valuation at a one-year high with only about 5% upside to consensus target and a Morningstar fair value below entry",
+          "Packet target of 160.13 is uncorroborated by any public analyst target (highest about $140-141)",
+          "RSI around 70 and rally stalling near resistance; timing risk for a breakout entry",
+          "Earnings beat flattered by an extra week (about $0.17 EPS); ex-extra-week adjusted EPS missed expectations",
+          "Content spend growth of about 9% and weak Hong Kong/Shanghai parks expected to continue into FY27"
+        ],
+        "sources": [
+          {
+            "url": "https://247wallst.com/investing/2026/11/18/disney-wants-3-billion-in-savings-and-more-layoffs-are-coming/"
+          },
+          {
+            "url": "https://247wallst.com/investing/2026/11/26/disney-stock-just-closed-at-its-highest-level-since-april-2022/"
+          },
+          {
+            "url": "https://api.finexus.net/api/news/earnings/129934/html"
+          },
+          {
+            "url": "https://blockchain.news/news/20261127-price-prediction-dis-rally-stalls-near-resistance-as-rsi"
+          },
+          {
+            "url": "https://ca.investing.com/news/stock-market-news/phillip-securities-downgrades-disney-stock-rating-on-valuation-93CH-4974972"
+          },
+          {
+            "url": "https://finance.yahoo.com/markets/stocks/articles/could-derail-disney-stock-184158335.html"
+          },
+          {
+            "url": "https://finance.yahoo.com/markets/stocks/articles/disney-dis-stock-slips-q4-002132949.html"
+          },
+          {
+            "url": "https://finance.yahoo.com/markets/stocks/articles/disney-report-q4-earnings-whats-144400406.html"
+          },
+          {
+            "url": "https://finance.yahoo.com/markets/stocks/articles/disney-stock-just-closed-highest-212224669.html"
+          },
+          {
+            "url": "https://in.investing.com/news/stock-market-news/earnings-call-transcript-disney-beats-q4-2026-estimates-but-shares-slip-premarket-93CH-5710155"
+          },
+          {
+            "url": "https://invezz.com/news/2026/11/16/disney-earnings-preview-why-subscriber-count-may-not-be-most-important-number/"
+          },
+          {
+            "url": "https://invezz.com/news/2026/11/17/disney-shares-slip-despite-earnings-beat-and-3b-cost-cutting-plans/"
+          },
+          {
+            "url": "https://stockanalysis.com/stocks/dis/"
+          },
+          {
+            "url": "https://stocktwits.com/symbol/DIS"
+          },
+          {
+            "url": "https://www.benzinga.com/trading-ideas/movers/26/11/63650595/disney-stock-hits-52-week-high-whats-happening"
+          },
+          {
+            "url": "https://www.morningstar.com/stocks/disney-earnings-boosted-by-strong-streaming-parks-growth"
+          },
+          {
+            "url": "https://www.tradingview.com/news/stocktwits:6ffd4f37d094b:0-dis-stock-breaks-above-125-for-first-time-since-2022-disney-retail-bulls-are-talking-about-a-santa-claus-rally/"
+          },
+          {
+            "url": "https://www.tradingview.com/symbols/NYSE-DIS/"
+          }
+        ]
+      }
+    ]
+  }
+}
